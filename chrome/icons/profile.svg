@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6.875 6.875" width="22" height="22">
+  <linearGradient
+     id="g2"
+     gradientUnits="userSpaceOnUse"
+     x1="2.8318"
+     y1="16.25"
+     x2="17.1682"
+     y2="16.25"
+     gradientTransform="scale(0.34375)">
+    <stop
+       offset="0.3"
+       stop-color="#B2AEAA"
+       id="stop8" />
+    <stop
+       offset="0.8"
+       stop-color="#33312D"
+       id="stop10" />
+  </linearGradient>
+  <linearGradient
+     id="g1"
+     gradientUnits="userSpaceOnUse"
+     x1="6"
+     y1="7.5"
+     x2="14"
+     y2="7.5"
+     gradientTransform="scale(0.34375)">
+    <stop
+       offset="0.15"
+       stop-color="#B2AEAA"
+       id="stop13" />
+    <stop
+       offset="1"
+       stop-color="#393632"
+       id="stop15" />
+  </linearGradient>
+  <circle
+     fill="#33312d"
+     cx="3.4375"
+     cy="3.4375"
+     r="3.4375"
+     id="circle18"
+     style="stroke-width:1;fill:#c8c5c2;fill-opacity:1" />
+  <path
+     id="path20"
+     style="fill:#797674;fill-opacity:1;stroke-width:3.2"
+     d="M 10.966797 3.8496094 A 4.4 4.4 0 0 0 6.5996094 8.25 A 4.4 4.4 0 0 0 11 12.650391 A 4.4 4.4 0 0 0 15.400391 8.25 A 4.4 4.4 0 0 0 11 3.8496094 A 4.4 4.4 0 0 0 10.966797 3.8496094 z M 11 13.75 C 7.48 13.75 4.5100781 15.729219 3.0800781 18.699219 C 5.0600781 20.679219 7.92 22 11 22 C 14.08 22 16.939922 20.679219 18.919922 18.699219 C 17.489922 15.839219 14.52 13.75 11 13.75 z "
+     transform="scale(0.3125)" />
+</svg>

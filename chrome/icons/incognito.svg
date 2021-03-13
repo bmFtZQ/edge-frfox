@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6.875 6.875" width="22" height="22">
+  <linearGradient
+     id="g2"
+     gradientUnits="userSpaceOnUse"
+     x1="2.8318"
+     y1="16.25"
+     x2="17.1682"
+     y2="16.25"
+     gradientTransform="scale(0.34375)">
+    <stop
+       offset="0.3"
+       stop-color="#B2AEAA"
+       id="stop8" />
+    <stop
+       offset="0.8"
+       stop-color="#33312D"
+       id="stop10" />
+  </linearGradient>
+  <linearGradient
+     id="g1"
+     gradientUnits="userSpaceOnUse"
+     x1="6"
+     y1="7.5"
+     x2="14"
+     y2="7.5"
+     gradientTransform="scale(0.34375)">
+    <stop
+       offset="0.15"
+       stop-color="#B2AEAA"
+       id="stop13" />
+    <stop
+       offset="1"
+       stop-color="#393632"
+       id="stop15" />
+  </linearGradient>
+  <circle
+     fill="#33312d"
+     cx="3.4375"
+     cy="3.4375"
+     r="3.4375"
+     id="circle18"
+     style="stroke-width:1" />
+  <path
+     fill="url(#g2)"
+     d="M 3.4375,6.875 C 4.4,6.875 5.29375,6.4625 5.9125,5.84375 5.465625,4.95 4.5375,4.296875 3.4375,4.296875 c -1.1,0 -2.028125,0.61875 -2.475,1.546875 C 1.58125,6.4625 2.475,6.875 3.4375,6.875 Z"
+     id="path20"
+     style="fill:url(#g2);stroke-width:1" />
+  <circle
+     fill="url(#g1)"
+     cx="3.4375"
+     cy="2.578125"
+     r="1.375"
+     id="circle22"
+     style="fill:url(#g1);stroke-width:1" />
+</svg>
