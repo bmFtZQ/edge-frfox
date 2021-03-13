@@ -9,28 +9,34 @@
 @import "findbar/findbar.css";
 @import "tabbar/EdgeStyleTabShadow.css";
 
+/* Small Tweaks to make it look more like Edge */
+
 /* Swap Account icon and Overflow icon (Must be placed next to each other) */
-/* @media (min-width: 687px) {
+/*
+@media (min-width: 687px) {
     #nav-bar-overflow-button {
         transform: translateX(-44px);
     }
     #fxa-toolbar-menu-button {
         transform: translateX(44px);
     }
-} */
+}
+*/
 
 /* Replace Firefox identity icon with Edge */
+/*
 #identity-icon-label
 {
     display: none !important;
 }
 #identity-box.chromeUI[pageproxystate="valid"]::after {
-    content: "EdgeFox";
+    content: "Edge";
     padding-inline-start: 8px;
 }
 #identity-icon {
     list-style-image: url("icons/edge.svg") !important;
 }
+*/
 
 #urlbarView-row-162, #urlbarView-row-19, #urlbar .urlbarView .search-one-offs, /* Hide search engine selector on the urlbar dropdown */
 #context-sendpagetodevice, #context-sep-sendpagetodevice, /* Hide send page to device menu */
