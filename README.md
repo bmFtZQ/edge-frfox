@@ -1,4 +1,4 @@
-# Edge-Fox
+# Edge-FrFox
 A userChrome.css theme for Firefox that replicates Microsoft Edge.
 
 ## Screenshots
