@@ -1,5 +1,5 @@
 # Edge-Fox
-A userChrome.css theme for Firefox that replicates Microsoft Edge
+A userChrome.css theme for Firefox that replicates Microsoft Edge.
 
 ## Screenshots
 
@@ -8,6 +8,11 @@ A userChrome.css theme for Firefox that replicates Microsoft Edge
 
 #### Darkmode
 ![screenshot-dark](screenshots/screenshot-dark.png)
+
+#### Right Click Menus
+![rightclick-light](screenshots/rightclick-light.png)
+![rightclick-dark](screenshots/rightclick-dark.png)
+
 
 ## How to install
 
