@@ -21,7 +21,7 @@ A userChrome.css theme for Firefox that replicates Microsoft Edge.
 3. Go to about:config and enter the following values:
    1. `toolkit.legacyUserProfileCustomizations.stylesheets` = `true`
    2. `svg.context-properties.content.enabled` = `true`
-   ###### Recommeneded settings:
+   ###### Recommended settings:
    1. `browser.tabs.tabClipWidth` = `83`
    2. `security.insecure_connection_text.enabled` = `true`
 
@@ -30,4 +30,4 @@ A userChrome.css theme for Firefox that replicates Microsoft Edge.
 ## Acknowledgements
 [muckSponge](https://github.com/muckSponge) - [MaterialFox](https://github.com/muckSponge/MaterialFox)
 
-[Microsoft](https://github.com/microsoft) - [Fluent System Icons](https://github.com/microsoft/fluentui-system-icons)
+[Microsoft](https://github.com/microsoft) - [Fluent UI System Icons](https://github.com/microsoft/fluentui-system-icons)
