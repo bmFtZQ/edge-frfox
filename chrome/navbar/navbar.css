@@ -1,0 +1,44 @@
+#nav-bar
+{
+	min-height: 38px !important;
+	box-shadow: none !important;
+	padding-inline: 5px 6px !important;
+	background-color: var(--toolbar-bgcolor) !important;
+}
+
+#reload-button[disabled]:not(:-moz-window-inactive) > .toolbarbutton-icon
+{
+	opacity: 1 !important;
+}
+
+/* Windows */
+#PanelUI-button
+{
+	border: none !important;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+#PanelUI-menu-button[badge-status|="update"] .toolbarbutton-badge
+{
+	display: none !important;
+}
+
+:root[privatebrowsingmode] #fxa-toolbar-menu-button
+{
+	pointer-events: none !important;
+}
+
+/* show "Private" label for en languages only */
+:root[titlemodifier="(Private Browsing)"] #fxa-toolbar-menu-button::before
+{
+	content: "Private" !important;
+	display: -moz-box !important;
+	margin-inline-start: 12px !important;
+	margin-inline-end: 6px !important;
+}
+
+#nav-bar-customization-target
+{
+	overflow: visible !important;
+}

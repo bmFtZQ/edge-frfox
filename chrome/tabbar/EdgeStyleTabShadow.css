@@ -1,0 +1,36 @@
+/* Edge Style Tabs */
+.tabbrowser-tab[visuallyselected] .tab-background {
+  filter: drop-shadow(0 1px 2px #0006) !important;
+}
+:root[lwthemetextcolor="bright"] .tabbrowser-tab[visuallyselected] .tab-background, :root[lwthemetextcolor="bright"] {
+  filter: drop-shadow(0 1px 2px #0009) !important;
+}
+#nav-bar {
+  box-shadow: 0 0 2px #0005 !important;
+}
+:root[lwthemetextcolor="bright"] #nav-bar {
+  box-shadow: 0 0 2px #0008 !important;
+}
+#nav-bar:not([urlbar-exceeds-toolbar-bounds]) {
+  clip-path: inset(-10px 0 0 0);
+}
+:root[extradragspace][tabsintitlebar] {
+  --space-above-tabbar: 0 !important;
+}
+
+#tabbrowser-tabs, #tabbrowser-arrowscrollbox, #tabbrowser-tabs[positionpinnedtabs] > #tabbrowser-arrowscrollbox > .tabbrowser-tab[pinned] {
+  min-height: calc(var(--tab-min-height) + 8px) !important;
+}
+#tabbrowser-tabs #tabs-newtab-button, #TabsToolbar-customization-target > toolbarbutton, #scrollbutton-up, #scrollbutton-down {
+  max-height: 32px !important;
+}
+.tabbrowser-tab, #tabbrowser-tabs #tabs-newtab-button {
+  margin-top: 8px !important;
+}
+#TabsToolbar-customization-target > toolbarbutton {
+  transform: translateY(8px) !important;
+}
+#TabsToolbar toolbarbutton, #TabsToolbar .tabbrowser-arrowscrollbox::part(scrollbutton-up), #TabsToolbar .tabbrowser-arrowscrollbox::part(scrollbutton-down), #scrollbutton-up[part="scrollbutton-up"]:not(.menupopup-scrollbutton), #scrollbutton-down[part="scrollbutton-down"]:not(.menupopup-scrollbutton) {
+  margin-top: 10px !important;
+  margin-bottom: 0 !important;
+}

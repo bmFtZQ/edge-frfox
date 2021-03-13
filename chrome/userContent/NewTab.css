@@ -1,0 +1,61 @@
+@-moz-document url("about:newtab"), url(about:home) {
+  .icon.icon-settings {
+    background-image: url(../icons/settings.svg) !important;
+    background-size: 20px !important;
+  }
+  .search-wrapper .search-button {
+    background-image: url(../icons/search.svg) !important;
+    background-size: 20px !important;
+  }
+  .search-wrapper input {
+    background-color: var(--search-bg) !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    fill: var(--newtab-search-icon-color);
+    border-radius: 4px !important;
+    outline: none !important;
+  }
+  .search-inner-wrapper input {
+    transition: box-shadow .2s ease-in-out !important;
+    box-shadow: 0px 1.6px 3.6px rgb(0 0 0 / 13%), 0px 0px 2.9px rgb(0 0 0 / 11%) !important;
+  }
+  .search-inner-wrapper:hover input {
+    box-shadow: 0px 3.2px 7.2px rgb(0 0 0 / 13%), 0px 0px 3.8px rgb(0 0 0 / 11%) !important;
+  }
+  .search-wrapper :is(input, button) {
+    height: 44px !important;
+  }
+  #searchSubmit {
+    width: 68px !important;
+    background-color: var(--search-button-bg) !important;
+    fill: #fff !important;
+  }
+  #searchSubmit:hover {
+    background-color: var(--search-button-bg-hover) !important;
+  }
+  .top-site-outer .tile, .screenshot, .top-site-icon {
+    border-radius: 8px !important;
+  }
+
+  .outer-wrapper > main {
+    position: absolute !important;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  body {
+    background-color: #f5f5f5 !important;
+    --search-bg: #fff;
+    --search-button-bg: #0078D4;
+    --search-button-bg-hover: #006CBE;
+    --word-mark-color: #606060;
+  }
+  body[lwt-newtab-brighttext] {
+    background-color: #242424 !important;
+    --search-bg: #424242;
+    --search-button-bg: #006CBE;
+    --search-button-bg-hover: #0078D4;
+    --word-mark-color: #f3f3f3;
+  }
+}

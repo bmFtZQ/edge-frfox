@@ -1,0 +1,37 @@
+@-moz-document url-prefix(about:preferences), url-prefix(chrome://mozapps/content/extensions/aboutaddons.html) {
+    #category-general > .category-icon {
+        list-style-image: url(../icons/settings.svg) !important;
+    }
+    #category-home > .category-icon {
+        list-style-image: url(../icons/home.svg) !important;
+    }
+    #category-search > .category-icon {
+        list-style-image: url(../icons/search.svg) !important;
+    }
+    #category-privacy > .category-icon {
+        list-style-image: url(../icons/lock.svg) !important;
+    }
+    #category-sync > .category-icon {
+        list-style-image: url(../icons/sync.svg) !important;
+    }
+
+    .category[name="discover"] {
+        background-image: url(../icons/star.svg) !important;
+    }
+    .category[name="extension"] {
+        background-image: url(../icons/addons.svg) !important;
+    }
+    .category[name="theme"] {
+        background-image: url(../icons/brush.svg) !important;
+    }
+
+    .preferences-icon, .page-options-menu > .more-options-button {
+        background-image: url(../icons/settings.svg) !important;
+    }
+    .addons-icon {
+        list-style-image: url(../icons/addons.svg) !important;
+    }
+    .textbox-search-sign {
+        list-style-image: url(../icons/search.svg) !important;
+    }
+}
