@@ -1,18 +1,14 @@
 # Edge-FrFox
-A userChrome.css theme for Firefox that replicates Microsoft Edge.
+A userChrome.css theme for Firefox that replicates Microsoft Edge and adds icons to the right click menus.
+
+![thumbnail](screenshots/Edge-FrFox.png)
 
 ## Screenshots
-
-#### Lightmode
-![screenshot-light](screenshots/screenshot-light.png)
-
-#### Darkmode
-![screenshot-dark](screenshots/screenshot-dark.png)
-
-#### Right Click Menus
-![rightclick-light](screenshots/rightclick-light.png)
-![rightclick-dark](screenshots/rightclick-dark.png)
-
+Newtab Page Light|Newtab Page Dark
+:-:|:-:
+![screenshot-light](screenshots/screenshot-light.png) | ![screenshot-dark](screenshots/screenshot-dark.png)
+Right Click Menu Light | Right Click Menu Dark
+![rightclick-light](screenshots/rightclick-light.png) | ![rightclick-dark](screenshots/rightclick-dark.png)
 
 ## How to install
 
