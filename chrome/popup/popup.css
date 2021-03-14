@@ -1052,7 +1052,7 @@ richlistitem:-moz-any(
 
 
 /* Popup Icons */
-menupopup menuitem:not(.menuitem-iconic, [type], menu menuitem)::before {
+menupopup:not(#ContentSelectDropdown > menupopup) menuitem:not(.menuitem-iconic, [type], menu menuitem)::before {
 	content: "";
 	-moz-context-properties: fill, fill-opacity !important;
 	padding-inline: 12px !important;
@@ -1062,6 +1062,10 @@ menupopup menuitem:not(.menuitem-iconic, [type], menu menuitem)::before {
 	background-size: 16px !important;
 	background-repeat: no-repeat !important;
 	background-position: center !important;
+}
+menulist > menupopup > menuitem[checked="true"]::before, menulist > menupopup > menuitem[selected="true"]::before {
+	margin-inline-start: 0 !important;
+	margin-inline-end: -15px !important;
 }
 
 #context-inspect::before {
