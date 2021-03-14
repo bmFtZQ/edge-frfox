@@ -30,7 +30,7 @@
 #TabsToolbar-customization-target > toolbarbutton {
   transform: translateY(8px) !important;
 }
-#TabsToolbar toolbarbutton, #TabsToolbar .tabbrowser-arrowscrollbox::part(scrollbutton-up), #TabsToolbar .tabbrowser-arrowscrollbox::part(scrollbutton-down), #scrollbutton-up[part="scrollbutton-up"]:not(.menupopup-scrollbutton), #scrollbutton-down[part="scrollbutton-down"]:not(.menupopup-scrollbutton) {
+#TabsToolbar toolbarbutton:not(.titlebar-button), #TabsToolbar .tabbrowser-arrowscrollbox::part(scrollbutton-up), #TabsToolbar .tabbrowser-arrowscrollbox::part(scrollbutton-down), #scrollbutton-up[part="scrollbutton-up"]:not(.menupopup-scrollbutton), #scrollbutton-down[part="scrollbutton-down"]:not(.menupopup-scrollbutton) {
   margin-top: 10px !important;
   margin-bottom: 0 !important;
 }
