@@ -8,7 +8,7 @@ Newtab Page Light|Newtab Page Dark
 :-:|:-:
 ![screenshot-light](screenshots/screenshot-light.png) | ![screenshot-dark](screenshots/screenshot-dark.png)
 Right Click Menu Light | Right Click Menu Dark
-![rightclick-light](screenshots/rightclick-light.png) | ![rightclick-dark](screenshots/rightclick-dark.png)
+![right-click-light](screenshots/rightclick-light.png) | ![right-click-dark](screenshots/rightclick-dark.png)
 
 ## How to install
 
