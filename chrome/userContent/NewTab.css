@@ -50,6 +50,8 @@
     --search-button-bg: #0078D4;
     --search-button-bg-hover: #006CBE;
     --word-mark-color: #606060;
+    
+    --newtab-topsites-background-color: var(--search-bg) !important;
   }
   body[lwt-newtab-brighttext] {
     background-color: #242424 !important;
