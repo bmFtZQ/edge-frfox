@@ -9,12 +9,20 @@ panel
 
 menupopup, panel
 {
-	--menu-border: 1px solid #fff1;
-	--menu-shadow: 0 3px 10px #0004, 0 0 0 1px rgba(0,0,0,0.12);
+	--menu-border: 0;
+	--menu-shadow: 
+		0 0 2px 1px rgba(0,0,0,.1),
+		0 5px 5px -3px rgba(0,0,0,.2),
+		0 6px 10px 1px rgba(0,0,0,.14),
+		0 4px 12px 2px rgba(0,0,0,.12);
 }
 :root[lwthemetextcolor="bright"] :-moz-any(menupopup, panel) {
-	--menu-border: 1px solid #fff3;
-	--menu-shadow: 0 3px 10px #0004, 0 0 0 1px rgba(0,0,0,0.8);
+	--menu-border: 0;
+	--menu-shadow: 
+		0 0 2px 1px rgba(0,0,0,.1),
+		0 5px 5px -3px rgba(0,0,0,.2),
+		0 6px 10px 1px rgba(0,0,0,.14),
+		0 4px 12px 2px rgba(0,0,0,.12);
 }
 
 menupopup,
@@ -66,7 +74,7 @@ panel[type="autocomplete-richlistbox"] > .autocomplete-richlistbox,
 {
 	margin: 0 !important;
 	padding: 4px 0 !important;
-	border-radius: 4px !important;
+	border-radius: 6px !important;
 	color: inherit !important;
 }
 
@@ -321,7 +329,7 @@ panel[type="arrow"][side="right"]
 {
 	background: var(--arrowpanel-background) !important;
 	border: var(--menu-border) !important;
-	border-radius: 4px !important;
+	border-radius: 6px !important;
 	box-shadow: var(--menu-shadow) !important;
 	color: var(--arrowpanel-color) !important;
 }
