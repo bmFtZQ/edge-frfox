@@ -16,7 +16,9 @@
 /* @import  "extras/swapaccount-overflow.css"; */ /* (BUGGY: USE AT OWN RISK!) Swap Account icon and Overflow icon (must be placed next to each other) */
 
 /* (MACOS ONLY!) Adjust window controls position to make the spacing even */
+/*
 .titlebar-buttonbox { margin-inline: 13px 5px !important; }
+*/
 
 #urlbarView-row-162, #urlbarView-row-19, #urlbar .urlbarView .search-one-offs, /* Hide search engine selector on the urlbar dropdown */
 #context-sendpagetodevice, #context-sep-sendpagetodevice, /* Hide send page to device menu */
