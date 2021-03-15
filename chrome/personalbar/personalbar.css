@@ -5,4 +5,5 @@
 #PersonalToolbar {
 	padding-top: 0 !important;
 	margin-top: -2px !important;
+	background: var(--toolbar-bgcolor) !important;
 }
