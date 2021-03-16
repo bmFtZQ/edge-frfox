@@ -231,7 +231,7 @@
 {
 	border: 0 !important;
 	padding: 0 !important;
-	padding-inline: 1px !important;
+	padding-inline: 1px 10px !important;
 	border-radius: 6px !important;
 	min-height: 37px !important;
 	margin: -4px 0 -1px !important;
