@@ -122,7 +122,6 @@
 	height: 30px !important;
 }
 
-#navigator-toolbox > #PersonalToolbar .toolbarbutton-1 > .toolbarbutton-icon,
 #navigator-toolbox .toolbarbutton-1 > :-moz-any(.toolbarbutton-icon, .toolbarbutton-badge-stack),
 /* no ::part workaround - may have side effects */
 #scrollbutton-up[part="scrollbutton-up"]:not(.menupopup-scrollbutton) > .toolbarbutton-icon,
