@@ -2,8 +2,18 @@
 {
 	padding: 6px !important;
 }
-#PersonalToolbar {
+#PersonalToolbar
+{
 	padding-top: 0 !important;
 	margin-top: -2px !important;
 	background: var(--toolbar-bgcolor) !important;
+}
+
+#PersonalToolbar .toolbarbutton-1 > :-moz-any(.toolbarbutton-icon, .toolbarbutton-badge-stack)
+{
+	max-height: 28px !important;
+}
+
+#PersonalToolbar .toolbarbutton-1 > .toolbarbutton-icon {
+	padding: 6px 12px !important;
 }
