@@ -1,18 +1,15 @@
 /* Edge Style Tabs */
-.tabbrowser-tab[visuallyselected] .tab-background {
-  filter: drop-shadow(0 1px 2px #0006) !important;
-}
-:root[lwthemetextcolor="bright"] .tabbrowser-tab[visuallyselected] .tab-background, :root[lwthemetextcolor="bright"] {
-  filter: drop-shadow(0 1px 2px #0009) !important;
-}
 #nav-bar {
-  box-shadow: 0 0 2px #0005 !important;
+  box-shadow: 0 -1px 2px -1px #0004 !important;
 }
 :root[lwthemetextcolor="bright"] #nav-bar {
-  box-shadow: 0 0 2px #0008 !important;
+  box-shadow: 0 -1px 2px -1px #0006 !important;
 }
-#nav-bar:not([urlbar-exceeds-toolbar-bounds]) {
-  clip-path: inset(-10px 0 0 0);
+.tabbrowser-tab[visuallyselected] .tab-background {
+  box-shadow: 0 2px 4px #0005, 0 -1px 2px -1px #0004 !important;
+}
+:root[lwthemetextcolor="bright"] .tabbrowser-tab[visuallyselected] .tab-background, :root[lwthemetextcolor="bright"] {
+  box-shadow: 0 2px 4px #0007, 0 -1px 2px -1px #0006 !important;
 }
 :root[extradragspace][tabsintitlebar] {
   --space-above-tabbar: 0 !important;
