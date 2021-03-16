@@ -114,7 +114,16 @@
 }
 
 #appMenu-library-downloads-button, #downloads-button {
-	list-style-image: url(download.svg) !important;
+	list-style-image: url(download.svg#arrow-with-bar) !important;
+}
+#downloads-indicator-icon {
+	background-image: url(download.svg#arrow) !important;
+}
+#downloads-indicator-progress-outer {
+	background-image: url(download.svg#default-bar) !important;
+}
+#downloads-indicator-progress-inner, #downloads-button[progress] > .toolbarbutton-badge-stack > #downloads-indicator-anchor > #downloads-indicator-progress-outer {
+	background-image: url(download.svg#progress-bar-fg) !important;
 }
 
 #PanelUI-fxa-menu-remotetabs-button, #appMenuRecentlyClosedTabs, #appMenu-library-remotetabs-button, #sync-button {

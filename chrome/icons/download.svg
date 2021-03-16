@@ -1,5 +1,22 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-   <path
-   style="fill:context-fill;fill-opacity:context-fill-opacity"
-   d="M 8 0 C 7.7239 0 7.50008 0.22382237 7.5 0.5 L 7.4960938 12.287109 L 3.8496094 8.6464844 L 3.78125 8.5878906 C 3.58629 8.4529722 3.3160181 8.4727608 3.1425781 8.6464844 C 2.9474481 8.8419111 2.9491312 9.158389 3.1445312 9.3535156 L 7.5996094 13.806641 C 7.6910194 13.924757 7.8351238 14 7.9960938 14 L 8.1015625 13.990234 C 8.1951625 13.971531 8.2850219 13.926126 8.3574219 13.853516 L 12.849609 9.3535156 L 12.90625 9.2832031 C 13.04105 9.0881765 13.021356 8.8199081 12.847656 8.6464844 L 12.779297 8.5878906 C 12.584297 8.4530723 12.314025 8.4727608 12.140625 8.6464844 L 8.4960938 12.294922 L 8.5 0.5 L 8.4921875 0.41015625 C 8.4498875 0.17686446 8.2455 0 8 0 z M 2.5 15 L 2.4101562 15.007812 C 2.1769163 15.050219 2 15.254467 2 15.5 C 2 15.776138 2.22386 16 2.5 16 L 13.5 16 L 13.589844 15.992188 C 13.823044 15.949883 14 15.745434 14 15.5 C 14 15.223763 13.7761 15 13.5 15 L 2.5 15 z " />
+  <style>
+    :root &gt; use:not(:target),
+    :root &gt; g:not(:target) {
+      display: none;
+    }
+  </style>
+  <defs>
+    <path id="arrow-icon" d="M 7.5,0 C 7.2238576,0 7,0.22385763 7,0.5 V 12.292969 L 3.3535156,8.6464844 C 3.2539411,8.5469099 3.1172275,8.4934016 2.9765625,8.5 c -0.1244406,0.00584 -0.242043,0.05834 -0.3300781,0.1464844 -0.1951121,0.1953531 -0.1952326,0.5117986 0,0.7070312 l 4.5,4.5000004 c 0.1952245,0.195225 0.5118067,0.195225 0.7070312,0 L 12.353516,9.3535156 c 0.195233,-0.1952326 0.195233,-0.5117985 0,-0.7070312 -0.195233,-0.1952331 -0.511799,-0.195233 -0.707032,0 L 8,12.292969 V 0.5 C 8,0.22385763 7.7761424,0 7.5,0 Z"/>
+    <path id="short-bar-icon" d="m 2.5,15 h 10 c 0.276142,0 0.5,0.223858 0.5,0.5 0,0.276142 -0.223858,0.5 -0.5,0.5 H 2.5 C 2.2238576,16 2,15.776142 2,15.5 2,15.223858 2.2238576,15 2.5,15 Z"/>
+    <!--can't seem to get progress bar to work, removing for now...-->
+    <path id="long-bar-icon" d=""/>
+  </defs>
+  <use id="arrow" fill="context-fill" fill-opacity="context-fill-opacity" href="#arrow-icon"/>
+  <g id="arrow-with-bar" fill="context-fill" fill-opacity="context-fill-opacity">
+    <use href="#arrow-icon"/>
+    <use href="#short-bar-icon"/>
+  </g>
+  <use id="default-bar" fill="context-fill" fill-opacity="context-fill-opacity" href="#short-bar-icon"/>
+  <use id="progress-bar-bg" fill="context-fill" fill-opacity="0.2" href="#long-bar-icon"/>
+  <use id="progress-bar-fg" fill="context-fill" fill-opacity="context-fill-opacity" href="#long-bar-icon"/>
 </svg>
