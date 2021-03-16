@@ -11,7 +11,7 @@ menupopup, panel
 {
 	--menu-border: 0;
 	--menu-shadow: 
-		0 0 2px 1px rgba(0,0,0,.1),
+		0 1px 2px 1px rgba(0,0,0,.1),
 		0 5px 5px -3px rgba(0,0,0,.2),
 		0 6px 10px 1px rgba(0,0,0,.14),
 		0 4px 12px 2px rgba(0,0,0,.12);
@@ -19,7 +19,7 @@ menupopup, panel
 :root[lwthemetextcolor="bright"] :-moz-any(menupopup, panel) {
 	--menu-border: 0;
 	--menu-shadow: 
-		0 0 2px 1px rgba(0,0,0,.1),
+		0 1px 2px 1px rgba(0,0,0,.1),
 		0 5px 5px -3px rgba(0,0,0,.2),
 		0 6px 10px 1px rgba(0,0,0,.14),
 		0 4px 12px 2px rgba(0,0,0,.12);
@@ -1094,22 +1094,25 @@ menulist > menupopup > menuitem[checked="true"]::before, menulist > menupopup > 
 #context-inspect-a11y::before {
 	background-image: url(icons/accessibility.svg);
 }
-#context-undo::before {
+:-moz-any(#context-undo, .textbox-contextmenu menuitem[cmd*="undo"])::before {
 	background-image: url(icons/undo.svg);
 }
-#context-selectall::before {
+:-moz-any(#context-selectall, .textbox-contextmenu menuitem[cmd*="selectAll"])::before {
 	background-image: url(icons/select-all.svg);
 }
-#context-cut::before {
+:-moz-any(#context-cut, .textbox-contextmenu menuitem[cmd*="cut"])::before {
 	background-image: url(icons/cut.svg);
 }
-:-moz-any(#context-copy, #context-copylink, #context-copyimage)::before {
+:-moz-any(#context-copy, #context-copylink, #context-copyimage, .textbox-contextmenu menuitem[cmd*="copy"])::before {
 	background-image: url(icons/copy.svg);
 }
-#context-paste::before {
+:-moz-any(#context-paste, .textbox-contextmenu menuitem[cmd*="paste"], #placesContext_paste)::before {
 	background-image: url(icons/paste.svg);
 }
-#context-delete::before {
+#paste-and-go::before {
+	background-image: url(icons/paste-and-go.svg) !important;
+}
+:-moz-any(#context-delete, .textbox-contextmenu menuitem[cmd*="delete"])::before {
 	background-image: url(icons/delete.svg);
 }
 #context-searchselect::before {
@@ -1133,7 +1136,7 @@ menulist > menupopup > menuitem[checked="true"]::before, menulist > menupopup > 
 #context-savelink::before {
 	background-image: url(icons/save-link.svg);
 }
-#context-savelinktopocket::before {
+:-moz-any(#context-savelinktopocket, #context-pocket)::before {
 	background-image: url(icons/save-pocket.svg);
 }
 #context-copyimage-contents::before {
@@ -1142,14 +1145,16 @@ menulist > menupopup > menuitem[checked="true"]::before, menulist > menupopup > 
 #context-sendimage::before {
 	background-image: url(icons/mail.svg);
 }
-#context-setDesktopBackground::before {
+:-moz-any(#context-setDesktopBackground, .viewCustomizeToolbar)::before {
 	background-image: url(icons/brush.svg);
 }
 #context-reloadimage::before {
 	background-image: url(icon/refresh.svg);
 }
-
-:-moz-any(#context_reloadTab, #context_reloadSelectedTabs)::before {
+menuitem[id*="placesContext_open"]::before {
+	background-image: url(icon/open.svg);
+}
+:-moz-any(#context_reloadTab, #context_reloadSelectedTabs, #toolbar-context-reloadSelectedTab, #toolbar-context-reloadSelectedTabs)::before {
 	background-image: url(icons/refresh.svg);
 }
 :-moz-any(#context_toggleMuteTab, #context_toggleMuteSelectedTabs)::before {
@@ -1161,13 +1166,13 @@ menulist > menupopup > menuitem[checked="true"]::before, menulist > menupopup > 
 :-moz-any(#context_duplicateTab, #context_duplicateTabs)::before {
 	background-image: url(icons/copy-tab.svg);
 }
-#context_selectAllTabs::before {
+:-moz-any(#context_selectAllTabs, #toolbar-context-selectAllTabs)::before {
 	background-image: url(icons/select-all.svg);
 }
-:-moz-any(#context_bookmarkTab, #context_bookmarkSelectedTabs)::before {
+:-moz-any(#context_bookmarkTab, #context_bookmarkSelectedTabs, #toolbar-context-bookmarkSelectedTab, #toolbar-context-bookmarkSelectedTabs, menuitem[id="#placesContext_new:bookmark"])::before {
 	background-image: url(icons/star.svg);
 }
-#context_undoCloseTab::before {
+:-moz-any(#context_undoCloseTab, #toolbar-context-undoCloseTab)::before {
 	background-image: url(icons/undo.svg);
 }
 #context_closeTab::before {
