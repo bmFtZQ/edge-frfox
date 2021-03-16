@@ -358,9 +358,19 @@ richlistitem[originaltype="loginsFooter"] .ac-site-icon,
 	list-style-image: url(media-blocked.svg) !important;
 }
 
-.downloadIconShow .button-icon, .bookmark-item[container]
+.downloadIconShow .button-icon
 {
 	list-style-image: url(folder.svg) !important;
+}
+
+:root[lwthemetextcolor="bright"] .bookmark-item[container]
+{
+	list-style-image: url(folder-bookmarks.svg#darkmode) !important;
+}
+
+.bookmark-item[container]
+{
+	list-style-image: url(folder-bookmarks.svg#lightmode) !important;
 }
 
 .panel-banner-item[notificationid^="update"]

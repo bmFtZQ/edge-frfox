@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+   <style>
+   :root &gt; use:not(:target) {
+      display: none;
+   }
+   </style>
+   <defs>
+      <path
+      style="fill-opacity:1;stroke-width:1px;stroke-opacity:1"
+      d="M 7.7500004,3.5 H 13.5 a 2,2 45 0 1 2,2 v 7 a 2,2 135 0 1 -2,2 h -11 a 2,2 45 0 1 -2,-2 v -9 a 2,2 135 0 1 2,-2 H 5.0000004 A 1.3150997,1.3150997 20.81677 0 1 5.8737051,1.8321819 L 7.7500004,3.5 5.8737051,5.1678181 A 1.3150997,1.3150997 159.18323 0 1 5.0000004,5.5 H 0.5"
+      id="folder" />
+   </defs>
+   <use id="lightmode" fill="#fee082" stroke="#b28501" href="#folder" />
+   <use id="darkmode" fill="#b28501" stroke="#fee082" href="#folder" />
+</svg>
