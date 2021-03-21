@@ -52,6 +52,8 @@
 	--lwt-toolbar-field-background-color: #fff !important;
     --lwt-toolbar-field-focus: #fff !important;
 	--lwt-toolbar-field-border-color: #ccc !important;
+
+	--tab-line-col: #0078d4 !important;
 }
 
 /* don't bother with sidebar in light mode */
@@ -112,6 +114,8 @@
 	--lwt-toolbar-field-background-color: #2b2b2b !important;
     --lwt-toolbar-field-focus: #2b2b2b !important;
 	--lwt-toolbar-field-border-color: #656565 !important;
+
+	--tab-line-col: #4C98D1 !important;
 }
 
 :-moz-any(#sidebar-box, #sidebar)
@@ -171,6 +175,7 @@
 #tabbrowser-tabs
 {
  	--tab-min-height: 32px !important;
+	--tab-line-color: var(--tab-line-col) !important;
 }
 
 @supports -moz-bool-pref("materialFox.reduceTabOverflow")
