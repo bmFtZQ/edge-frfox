@@ -12,39 +12,13 @@
   box-shadow: 0 2px 4px #0007, 0 -1px 2px -1px #0006 !important;
 }
 
-:not(:-moz-any([inFullscreen], [sizemode="maximized"])) [extradragspace] {
-  --space-above-tabbar: 6px !important;
+#TabsToolbar > .toolbar-items {
+  margin-top: -2px !important;
 }
 
-:not(:-moz-any([inFullscreen], [sizemode="maximized"])) [extradragspace] .tabbrowser-tab {
-  margin-top: 2px !important;
-}
-
-:root:not(:-moz-any([inFullscreen], [sizemode="maximized"])) [extradragspace] #TabsToolbar-customization-target > :not(#tabbrowser-tabs),
-:root:not(:-moz-any([inFullscreen], [sizemode="maximized"])) [extradragspace] #TabsToolbar #tabs-newtab-button
+.tabbrowser-tab,
+#TabsToolbar-customization-target > :not(#tabbrowser-tabs),
+#TabsToolbar #tabs-newtab-button
 {
   margin-top: 2px !important;
 }
-
-/*
-#TabsToolbar > .toolbar-items {
-  padding-top: 0 !important;
-}
-
-#TabsToolbar:not([inFullscreen]) :-moz-any(#tabbrowser-tabs, #tabbrowser-arrowscrollbox, #tabbrowser-tabs[positionpinnedtabs] > #tabbrowser-arrowscrollbox > .tabbrowser-tab[pinned]) {
-  min-height: calc(var(--tab-min-height) + 8px) !important;
-}
-#TabsToolbar:not([inFullscreen]) :-moz-any(#tabbrowser-tabs #tabs-newtab-button, #TabsToolbar-customization-target > toolbarbutton, #scrollbutton-up, #scrollbutton-down) {
-  max-height: 32px !important;
-}
-#TabsToolbar:not([inFullscreen]) :-moz-any(.tabbrowser-tab, #tabbrowser-tabs #tabs-newtab-button) {
-  margin-top: 8px !important;
-}
-#TabsToolbar:not([inFullscreen]) #TabsToolbar-customization-target > toolbarbutton {
-  transform: translateY(8px) !important;
-}
-#TabsToolbar:not([inFullscreen]) :-moz-any(toolbarbutton:not(.titlebar-button), .tabbrowser-arrowscrollbox::part(scrollbutton-up), .tabbrowser-arrowscrollbox::part(scrollbutton-down), #scrollbutton-up[part="scrollbutton-up"]:not(.menupopup-scrollbutton), #scrollbutton-down[part="scrollbutton-down"]:not(.menupopup-scrollbutton)) {
-  margin-top: 10px !important;
-  margin-bottom: 0 !important;
-}
-*/
