@@ -22,7 +22,12 @@
 
 /* (MACOS ONLY!) Adjust window controls position to make the spacing even */
 /*
-.titlebar-buttonbox { margin-inline: 13px 5px !important; }
+.titlebar-buttonbox { margin-inline: calc(var(--space-above-tabbar) / 2 + 9px) calc(var(--space-above-tabbar) / 2 + 1px) !important; }
+*/
+
+/* Hide scrollbox icons in tabbar */
+/*
+#scrollbutton-up[part], #scrollbutton-down[part] { display: none !important; }
 */
 
 #urlbarView-row-162, #urlbarView-row-19, #urlbar .urlbarView .search-one-offs, /* Hide search engine selector on the urlbar dropdown */
