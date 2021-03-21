@@ -175,7 +175,6 @@
 #tabbrowser-tabs
 {
  	--tab-min-height: 32px !important;
-	--tab-line-color: var(--tab-line-col) !important;
 }
 
 @supports -moz-bool-pref("materialFox.reduceTabOverflow")
@@ -245,4 +244,11 @@
 }
 #TabsToolbar .toolbarbutton-1 {
 	fill: var(--lwt-text-color) !important;
+}
+
+:-moz-any(:root:not([style]),
+:root:not([lwtheme]),
+:root[style*="--lwt-accent-color:rgb(227, 228, 230); --lwt-text-color:rgba(24, 25, 26);"],
+:root[style*="--lwt-accent-color:rgb(12, 12, 13); --lwt-text-color:rgba(249, 249, 250);"]) #tabbrowser-tabs {
+	--tab-line-color: var(--tab-line-col) !important;
 }
