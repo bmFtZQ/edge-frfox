@@ -11,23 +11,23 @@
 :root[lwthemetextcolor="bright"] .tabbrowser-tab[visuallyselected] .tab-background, :root[lwthemetextcolor="bright"] {
   box-shadow: 0 2px 4px #0007, 0 -1px 2px -1px #0006 !important;
 }
-:root[extradragspace][tabsintitlebar] {
-  --space-above-tabbar: 0 !important;
+#TabsToolbar > .toolbar-items {
+  padding-top: 0 !important;
 }
 
-#tabbrowser-tabs, #tabbrowser-arrowscrollbox, #tabbrowser-tabs[positionpinnedtabs] > #tabbrowser-arrowscrollbox > .tabbrowser-tab[pinned] {
-  min-height: calc(var(--tab-min-height) + 8px) !important;
+#TabsToolbar:not([inFullscreen]) :-moz-any(#tabbrowser-tabs, #tabbrowser-arrowscrollbox, #tabbrowser-tabs[positionpinnedtabs] > #tabbrowser-arrowscrollbox > .tabbrowser-tab[pinned]) {
+  min-height: calc(var(--tab-min-height) + var(--space-above-tabbar)) !important;
 }
-#tabbrowser-tabs #tabs-newtab-button, #TabsToolbar-customization-target > toolbarbutton, #scrollbutton-up, #scrollbutton-down {
+#TabsToolbar:not([inFullscreen]) :-moz-any(#tabbrowser-tabs #tabs-newtab-button, #TabsToolbar-customization-target > toolbarbutton, #scrollbutton-up, #scrollbutton-down) {
   max-height: 32px !important;
 }
-.tabbrowser-tab, #tabbrowser-tabs #tabs-newtab-button {
-  margin-top: 8px !important;
+#TabsToolbar:not([inFullscreen]) :-moz-any(.tabbrowser-tab, #tabbrowser-tabs #tabs-newtab-button) {
+  margin-top: var(--space-above-tabbar) !important;
 }
-#TabsToolbar-customization-target > toolbarbutton {
-  transform: translateY(8px) !important;
+#TabsToolbar:not([inFullscreen]) #TabsToolbar-customization-target > toolbarbutton {
+  transform: translateY(var(--space-above-tabbar)) !important;
 }
-#TabsToolbar toolbarbutton:not(.titlebar-button), #TabsToolbar .tabbrowser-arrowscrollbox::part(scrollbutton-up), #TabsToolbar .tabbrowser-arrowscrollbox::part(scrollbutton-down), #scrollbutton-up[part="scrollbutton-up"]:not(.menupopup-scrollbutton), #scrollbutton-down[part="scrollbutton-down"]:not(.menupopup-scrollbutton) {
-  margin-top: 10px !important;
+#TabsToolbar:not([inFullscreen]) :-moz-any(toolbarbutton:not(.titlebar-button), .tabbrowser-arrowscrollbox::part(scrollbutton-up), .tabbrowser-arrowscrollbox::part(scrollbutton-down), #scrollbutton-up[part="scrollbutton-up"]:not(.menupopup-scrollbutton), #scrollbutton-down[part="scrollbutton-down"]:not(.menupopup-scrollbutton)) {
+  margin-top: 0 !important;
   margin-bottom: 0 !important;
 }
