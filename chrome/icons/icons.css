@@ -363,10 +363,12 @@ richlistitem[originaltype="loginsFooter"] .ac-site-icon,
 	list-style-image: url(folder.svg) !important;
 }
 
+/*
 :root[lwthemetextcolor="bright"] .bookmark-item[container]
 {
 	list-style-image: url(folder-bookmarks.svg#darkmode) !important;
 }
+*/
 
 .bookmark-item[container]
 {
