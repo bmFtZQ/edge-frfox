@@ -46,6 +46,7 @@
 	--lwt-toolbar-field-border-color: #ccc !important;
 
     --tab-line-col: #0078d4 !important;
+	--toolbar-field-focus-border-color: #0078d4a0 !important;
 }
 
 /* dark mode */
@@ -106,6 +107,7 @@
 	--lwt-toolbar-field-border-color: #656565 !important;
 
     --tab-line-col: #4C98D1 !important;
+	--toolbar-field-focus-border-color: #4c97d1a0 !important;
 }
 
 /* Inactive Window Light */
