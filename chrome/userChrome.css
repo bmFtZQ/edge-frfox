@@ -30,9 +30,3 @@
 #permissions-granted-icon, #appMenu-fxa-status, toolbarseparator.sync-ui-item, #appMenu-protection-report-button, #appMenu-tp-separator, /* Hide Account and protection dashboard from menu */
 #appMenu-edit-controls, .panel-subview-body toolbarseparator:nth-child(12) /* Hide Edit Controls */
 { display: none !important; }
-
-/* Changelog (DD/MM) */
-/* 86.0 / Titlebar buttons no longer squashed on windows */
-/* 86.0 r1 / Fix spacing issues with <select> menupopups */
-/* 86.0 r2 / Add Optional Extras: Vibrancy(macOS), hidetoolbarbuttons / Fixed blurry text for some users. */
-/* 86.0 r3 / Add full theme support / add show tab-line option */
