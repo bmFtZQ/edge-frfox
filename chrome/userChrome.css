@@ -15,6 +15,11 @@
 /* @import "extras/hidetoolbarbuttons.css"; */ /* (BUGGY: USE AT OWN RISK!) Hide toolbar buttons other than extensions */
 /* @import  "extras/swapaccount-overflow.css"; */ /* (BUGGY: USE AT OWN RISK!) Swap Account icon and Overflow icon (must be placed next to each other) */
 
+/* Display tab-line above tabs */
+/*
+.tab-line { display: -moz-box !important; }
+*/
+
 /* (MACOS ONLY!) Adjust window controls position to make the spacing even */
 /*
 .titlebar-buttonbox { margin-inline: 13px 5px !important; }
@@ -29,4 +34,4 @@
 /* Changelog (DD/MM) */
 /* 86.0 / Titlebar buttons no longer squashed on windows */
 /* 86.0 r1 / Fix spacing issues with <select> menupopups */
-/* 86.0 r2 / Add Optional Extras: Vibrancy(macOS), hidetoolbarbuttons / Fixed blurry text for some users, corrected colours. */
+/* 86.0 r2 / Add Optional Extras: Vibrancy(macOS), hidetoolbarbuttons / Fixed blurry text for some users. */
