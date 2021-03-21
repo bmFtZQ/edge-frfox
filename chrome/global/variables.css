@@ -1,7 +1,15 @@
+:root
+{		
+	--toolbar-field-background-color: var(--lwt-toolbar-field-background-color) !important;
+	--toolbar-field-hover-background-color: var(--lwt-toolbar-field-background-color) !important;
+	--toolbar-field-focus-background-color: var(--lwt-toolbar-field-focus) !important;
+	--toolbar-field-hover-border-color: var(--lwt-toolbar-field-border-color) !important;
+}
+
 /* light mode */
 :root:not([style]),
-:root[style*="--lwt-accent-color:rgb(227, 228, 230);"],
-:root[style*="--lwt-accent-color:white;"]
+:root:not([lwtheme]),
+:root[style*="--lwt-accent-color:rgb(227, 228, 230); --lwt-text-color:rgba(24, 25, 26);"]
 {
 	/* accentcolor */
 	--lwt-accent-color: #cecece !important;
@@ -13,7 +21,7 @@
 	--toolbar-bgcolor: #f7f7f7 !important;
 	
 	/* toolbar_text */
-	--toolbar-color: red !important;
+	--toolbar-color: #000 !important;
 	
 	/* toolbar_bottom_separator */
 	--toolbox-border-bottom-color: #d2d2d2 !important; /* legacy */
@@ -32,19 +40,24 @@
 	--lwt-toolbarbutton-active-background: #0002 !important;
 	
 	--lwt-toolbar-field-color: #000 !important;
+	--lwt-toolbar-field-focus-color: #000 !important;
 	
 	/* popup_highlight */
 	--autocomplete-popup-highlight-background: #f7f7f7 !important;
 	
 	/* popup_highlight_text */
 	--autocomplete-popup-highlight-color: #000 !important;
+
+	--urlbar-popup-url-color: #0172C9 !important;
+	--lwt-toolbar-field-background-color: #fff !important;
+    --lwt-toolbar-field-focus: #fff !important;
+	--lwt-toolbar-field-border-color: #ccc !important;
 }
 
 /* don't bother with sidebar in light mode */
 
 /* dark mode */
-:root[style*="--lwt-accent-color:rgb(12, 12, 13);"],
-:root[privatebrowsingmode=temporary]
+:root[style*="--lwt-accent-color:rgb(12, 12, 13); --lwt-text-color:rgba(249, 249, 250);"]
 {
 	/* accentcolor */
 	--lwt-accent-color: #1b1b1b !important;
@@ -75,6 +88,7 @@
 	--lwt-toolbarbutton-active-background: #fff2 !important;
 	
 	--lwt-toolbar-field-color: #fff !important;
+	--lwt-toolbar-field-focus-color: #fff !important;
 	
 	/* popup */
 	--arrowpanel-background: #4a4a4a !important;
@@ -93,6 +107,11 @@
 	
 	/* popup_highlight_text */
 	--autocomplete-popup-highlight-color: #fff !important;
+
+	--urlbar-popup-url-color: #75B6E8 !important;
+	--lwt-toolbar-field-background-color: #2b2b2b !important;
+    --lwt-toolbar-field-focus: #2b2b2b !important;
+	--lwt-toolbar-field-border-color: #656565 !important;
 }
 
 :-moz-any(#sidebar-box, #sidebar)
@@ -144,6 +163,8 @@
 	
 	--toolbar-non-lwt-bgcolor: var(--toolbar-bgcolor) !important;
 	--toolbar-non-lwt-textcolor: var(--toolbar-color) !important;
+
+	--tab-separator-opacity: .35 !important;
 }
 
 #titlebar,
@@ -160,33 +181,6 @@
 	}
 }
 
-:root
-{	
-	--tab-separator-opacity: .35 !important;
-	
-	--toolbar-field-background-color: #fff !important;
-	--toolbar-field-hover-background-color: #fff !important;
-	--toolbar-field-focus-background-color: #fff !important;
-	--toolbar-field-hover-border-color: #ccc !important;
-	--urlbar-popup-url-color: #0172C9 !important;
-}
-
-:root:-moz-any(:-moz-lwtheme-brighttext, [privatebrowsingmode=temporary])
-{
-	--toolbar-field-background-color: #2b2b2b !important;
-	--toolbar-field-hover-background-color: #2b2b2b !important;
-	--toolbar-field-focus-background-color: #2b2b2b !important;
-	--toolbar-field-hover-border-color: #656565 !important;
-	--urlbar-popup-url-color: #75B6E8 !important;
-}
-
-:root:not(:-moz-lwtheme):not([privatebrowsingmode=temporary])
-{
-	--toolbar-bgcolor: #f5f5f5 !important;
-	--toolbar-color: #000 !important;
-	--toolbox-border-bottom-color: #C8C8C8 !important;
-}
-
 @media (-moz-mac-yosemite-theme)
 {
 	:root[extradragspace]
@@ -198,7 +192,7 @@
 /* Ubuntu */
 @media (-moz-gtk-csd-available)
 {
-	:root:not(:-moz-lwtheme):not([privatebrowsingmode=temporary])
+	:root:not(:-moz-lwtheme)
 	{
 		--toolbar-bgcolor: -moz-dialog !important;
 		--toolbar-color: -moz-dialogtext !important;
@@ -228,18 +222,18 @@
 	--toolbarbutton-active-background: #0002 !important;
 }
 
-:root:-moz-any([privatebrowsingmode=temporary], :-moz-lwtheme-brighttext) :-moz-any(#urlbar, #searchbar)
+:root:-moz-lwtheme-brighttext :-moz-any(#urlbar, #searchbar)
 {
 	--toolbarbutton-hover-background: #fff1 !important;
 	--toolbarbutton-active-background: #fff2 !important;
 }
 
-:-moz-any(:root:not([style]), :root[style*="--lwt-accent-color:rgb(227, 228, 230);"], :root[style*="--lwt-accent-color:white;"]):-moz-window-inactive #TabsToolbar {
+:-moz-any(:root:not([style]), :root:not([lwtheme]), :root[style*="--lwt-accent-color:rgb(227, 228, 230); --lwt-text-color:rgba(24, 25, 26);"]):-moz-window-inactive :-moz-any(#TabsToolbar, #navigator-toolbox) {
 	--lwt-accent-color: #e8e8e8 !important;
 	--lwt-text-color: #3a3a3a !important;
 	--toolbar-color: #3a3a3a !important;
 }
-:-moz-any(:root[style*="--lwt-accent-color:rgb(12, 12, 13);"], :root[privatebrowsingmode=temporary]):-moz-window-inactive #TabsToolbar {
+:-moz-any(:root[style*="--lwt-accent-color:rgb(12, 12, 13); --lwt-text-color:rgba(249, 249, 250);"]):-moz-window-inactive :-moz-any(#TabsToolbar, #navigator-toolbox) {
 	--lwt-accent-color: #2e2e2e !important;
 	--lwt-text-color: #b7b7b7 !important;
 	--toolbar-color: #cecece !important;
