@@ -139,7 +139,7 @@
 	list-style-image: url(sidebar.svg) !important;
 }
 
-#PlacesChevron, #nav-bar-overflow-button {
+#PlacesChevron, #nav-bar-overflow-button, #alltabs-button {
 	list-style-image: url(overflow.svg) !important;
 }
 
