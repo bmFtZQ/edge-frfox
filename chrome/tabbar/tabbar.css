@@ -16,7 +16,7 @@
 	opacity: 0.9 !important;
 }
 
-#TabsToolbar, #titlebar
+#TabsToolbar
 {
 	-moz-appearance: none !important;
     -moz-default-appearance: none !important;
