@@ -258,7 +258,7 @@ menuitem[checked="true"] > .menu-iconic-left > .menu-iconic-icon,
 menuitem[type="radio"] > .menu-iconic-left > .menu-iconic-icon
 {
 	display: -moz-box !important;
-	padding: 3px !important;
+	padding: 4px !important;
 }
 
 menuitem[checked="true"] > .menu-iconic-left > .menu-iconic-icon
@@ -903,7 +903,7 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label
 .customization-lwtheme-menu-theme[active]::after,
 .customization-uidensity-menuitem[active]::after
 {
-	content: url(checkmark-18dp.svg) !important;
+	content: url(checkmark.svg) !important;
 	-moz-context-properties: fill, fill-opacity !important;
 	fill: currentColor !important;
 	display: -moz-box !important;
