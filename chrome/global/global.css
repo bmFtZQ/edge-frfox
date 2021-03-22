@@ -8,20 +8,28 @@
 			{
 				:root[tabsintitlebar] .titlebar-buttonbox-container
 				{
+					height: 32px !important;
+					margin: 0 !important;
+				}
+				
+				:root[tabsintitlebar][sizemode=normal] .titlebar-buttonbox-container:not(#toolbar-menubar .titlebar-buttonbox-container)
+				{
+					margin-block-start: calc(0px - (var(--space-above-tabbar) + 1px)) !important;
+				}
+				
+				:root[tabsintitlebar][sizemode=maximized] #toolbar-menubar .titlebar-buttonbox-container
+				{
 					height: 30px !important;
+					margin-top: -4px !important;
+					margin-bottom: -4px !important;
 				}
-				
-				:root[tabsintitlebar][sizemode=normal] .titlebar-buttonbox-container
-				{
-					margin-block-start: calc(0px - (var(--space-above-tabbar) + 5px)) !important;
+				:root[tabsintitlebar] #toolbar-menubar:not([inactive="true"]) {
+					height: 24px !important;
 				}
-				
-				:root[tabsintitlebar][sizemode=maximized] .titlebar-buttonbox-container
-				{
-					margin-block-start: calc(2px - (var(--space-above-tabbar))) !important;
+				:root[tabsintitlebar] #toolbar-menubar:not([inactive="true"]) .titlebar-button {
+					padding-block: 4px !important;
 				}
-					
-				:root[tabsintitlebar][sizemode=maximized]:not([extradragspace]) .titlebar-buttonbox-container
+				:root[tabsintitlebar][sizemode=maximized]:not([extradragspace]) .titlebar-buttonbox-container:not(#toolbar-menubar .titlebar-buttonbox-container)
 				{
 					-moz-box-align: start !important;
 					margin-block-start: -5px !important;
