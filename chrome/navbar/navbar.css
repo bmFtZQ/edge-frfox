@@ -11,6 +11,25 @@
 	opacity: 1 !important;
 }
 
+.toolbarbutton-badge
+{
+	box-shadow: 0 0 0 1px #0001 !important;
+	margin: 10px 0 0 !important;
+	margin-inline-end: -6px !important;
+}
+
+#nav-bar .toolbarbutton-badge
+{
+	box-shadow: 0 0 0 1px var(--toolbar-bgcolor) !important;
+	margin: 10px 0 0 !important;
+	margin-inline-end: -6px !important;
+}
+
+panel .toolbarbutton-badge
+{
+	box-shadow: 0 0 0 1px var(--arrowpanel-background) !important;
+}
+
 /* Windows */
 #PanelUI-button
 {
