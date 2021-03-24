@@ -154,7 +154,7 @@
 	--tab-transition-duration: .2s;
 }
 
-:-moz-any(:root[privatebrowsingmode=temporary], #TabsToolbar[brighttext]) .tabbrowser-tab
+#TabsToolbar[brighttext] .tabbrowser-tab
 {
 	--tab-opacity: 0;
 	--tab-bgcolor: #fff;
@@ -166,8 +166,8 @@
 	--tab-opacity: .1;
 }
 
-:-moz-any(:root[privatebrowsingmode=temporary], #TabsToolbar[brighttext]) .tabbrowser-tab:not([selected=true]):hover,
-:-moz-any(:root[privatebrowsingmode=temporary], #TabsToolbar[brighttext]) .tabbrowser-tab[multiselected]:not([selected=true])
+#TabsToolbar[brighttext] .tabbrowser-tab:not([selected=true]):hover,
+#TabsToolbar[brighttext] .tabbrowser-tab[multiselected]:not([selected=true])
 {
 	--tab-opacity: .06;
 }
@@ -180,9 +180,10 @@
 
 .tab-background
 {
+	--tab-border-radius: 4px;
  	background: var(--tab-bgcolor) !important;
 	/* rounded top corners */
-	border-radius: 4px 4px 0 0 !important;
+	border-radius: var(--tab-border-radius) var(--tab-border-radius) 0 0 !important;
 	position: relative !important;
 	border: 0 !important;
 	transition:
@@ -194,7 +195,7 @@
 }
 .tab-line {
 	height: 8px !important;
-	border-radius: 4px 4px 0 0 !important;
+	border-radius: var(--tab-border-radius) var(--tab-border-radius) 0 0 !important;
 	clip-path: inset(0 0 6px 0);
 	display: none !important;
 }
@@ -216,7 +217,7 @@
 
 .tab-background::before
 {
-	border-bottom-right-radius: 4px !important;
+	border-bottom-right-radius: var(--tab-border-radius) !important;
 	left: 0 !important;
 	transform: translateX(-8px) !important;
 	box-shadow: 4px 4px 0 4px var(--tab-bgcolor) !important;
@@ -224,7 +225,7 @@
 
 .tab-background::after
 {
-	border-bottom-left-radius: 4px !important;
+	border-bottom-left-radius: var(--tab-border-radius) !important;
 	right: 0 !important;
 	transform: translateX(8px) !important;
 	box-shadow: -4px 4px 0 4px var(--tab-bgcolor) !important;
