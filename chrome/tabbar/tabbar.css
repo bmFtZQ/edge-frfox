@@ -150,7 +150,7 @@
 .tabbrowser-tab
 {
 	--tab-opacity: 0;
-	--tab-bgcolor: #000;
+	--tab-bgcolor: #fff;
 	--tab-transition-duration: .2s;
 }
 
@@ -163,7 +163,7 @@
 .tabbrowser-tab:not([selected=true]):hover,
 .tabbrowser-tab[multiselected]:not([selected=true])
 {
-	--tab-opacity: .1;
+	--tab-opacity: .3;
 }
 
 #TabsToolbar[brighttext] .tabbrowser-tab:not([selected=true]):hover,
@@ -296,7 +296,7 @@
 .tab-icon-overlay:-moz-any([soundplaying], [muted], [activemedia-blocked]),
 .tab-icon-sound
 {
-	border-radius: 99px !important;
+	border-radius: 2px !important;
 	color: inherit !important;
 	-moz-context-properties: fill, fill-opacity !important;
 	transition-property: fill-opacity, background-color !important;
