@@ -423,6 +423,11 @@ panelview .toolbarbutton-1,
 	background-color: var(--panelview-toolbarbutton-active-bgcolor) !important;
 }
 
+panelview .toolbarbutton-1:not([disabled]):is([open], :hover:active), toolbarbutton.subviewbutton:not([disabled]):is([open], :hover:active), .navigable.subviewbutton:not([disabled]):is([open], :hover:active), menu.subviewbutton:not([disabled])[_moz-menuactive]:active, menuitem.subviewbutton:not([disabled])[_moz-menuactive]:active, .widget-overflow-list .toolbarbutton-1:not([disabled]):is([open], :hover:active), .toolbaritem-combined-buttons:is(:not([cui-areatype="toolbar"]), [overflowedItem="true"]) > toolbarbutton:not([disabled]):is([open], :hover:active)
+{
+	box-shadow: none !important;
+}
+
 .toolbaritem-combined-buttons:not([widget-type="button-and-view"]), .toolbaritem-menu-buttons {
 	padding-inline-start: 24px !important;
 	margin-block: -6px !important;
