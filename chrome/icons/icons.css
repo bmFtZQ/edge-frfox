@@ -130,8 +130,8 @@
 	list-style-image: url(synced-tabs.svg) !important;
 }
 
-#appMenu-library-pocket-button {
-	list-style-image: url(pocket.svg) !important;
+#appMenu-library-pocket-button, #pocket-button, #pageAction-panel-pocket {
+	list-style-image: url(save-pocket.svg) !important;
 }
 
 #PanelUI-remotetabs-view-sidebar,
@@ -185,12 +185,12 @@ richlistitem[originaltype="loginsFooter"] .ac-site-icon,
 }
 
 #email-link-button,
-#pageAction-panel-emailLink
+#pageAction-panel-emailLink, #pageAction-urlbar-emailLink
 {
 	list-style-image: url(email.svg) !important;
 }
 
-#pageAction-panel-copyURL
+#pageAction-panel-copyURL, #pageAction-urlbar-copyURL
 {
 	list-style-image: url(hyperlink.svg) !important;
 }
@@ -215,6 +215,12 @@ richlistitem[originaltype="loginsFooter"] .ac-site-icon,
 #screenshots_mozilla_org-menuitem-_create-screenshot .menu-iconic-icon
 {
 	visibility: hidden !important;
+}
+
+#pageAction-panel-screenshots_mozilla_org .toolbarbutton-icon,
+#pageAction-urlbar-screenshots_mozilla_org
+{
+	list-style-image: url(screenshot.svg) !important;
 }
 
 #tabs-newtab-button,
@@ -243,7 +249,7 @@ richlistitem[originaltype="loginsFooter"] .ac-site-icon,
 	list-style-image: url(profile.svg) !important;
 }
 
-:root[fxastatus=signedin]:not([style*="--avatar-image-url"]) :-moz-any(#fxa-avatar-image, #fxa-menu-avatar)
+:root[fxastatus=signedin]:not([style*="--avatar-image-url"]) :-moz-any(#fxa-avatar-image, #fxa-menu-avatar, #appMenu-fxa-label)
 {
 	list-style-image: url(profile.svg) !important;
 }
@@ -256,6 +262,10 @@ richlistitem[originaltype="loginsFooter"] .ac-site-icon,
 #tracking-protection-icon
 {
 	list-style-image: url(tracking-protection.svg) !important;
+}
+
+#appMenu-protection-report-icon {
+	list-style-image: url(protections.svg) !important;
 }
 
 #pageActionButton
@@ -344,6 +354,14 @@ richlistitem[originaltype="loginsFooter"] .ac-site-icon,
 .tab-icon-sound
 {
     list-style-image: url(audio.svg) !important;
+}
+
+#pageAction-panel-pinTab, #pageAction-urlbar-pinTab {
+	list-style-image: url(pin.svg) !important;
+}
+
+#pageAction-urlbar-shareURL, #pageAction-panel-shareURL {
+	list-style-image: url(share.svg) !important;
 }
 
 .tab-icon-overlay[muted],
