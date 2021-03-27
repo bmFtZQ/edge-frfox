@@ -34,6 +34,6 @@
 
 #urlbarView-row-162, #urlbarView-row-19, #urlbar .urlbarView .search-one-offs, /* Hide search engine selector on the urlbar dropdown */
 #context-sendpagetodevice, #context-sep-sendpagetodevice, /* Hide send page to device menu */
-#permissions-granted-icon, #appMenu-fxa-status, toolbarseparator.sync-ui-item, #appMenu-protection-report-button, #appMenu-tp-separator, /* Hide Account and protection dashboard from menu */
+#appMenu-fxa-status, toolbarseparator.sync-ui-item, #appMenu-protection-report-button, #appMenu-tp-separator, /* Hide Account and protection dashboard from menu */
 #appMenu-edit-controls, .panel-subview-body toolbarseparator:nth-child(12) /* Hide Edit Controls */
 { display: none !important; }
