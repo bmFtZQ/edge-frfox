@@ -255,16 +255,23 @@ menupopup
 
 menuitem[type="checkbox"] > .menu-iconic-left > .menu-iconic-icon,
 menuitem[checked="true"] > .menu-iconic-left > .menu-iconic-icon,
-menuitem[type="radio"] > .menu-iconic-left > .menu-iconic-icon
+menuitem[type="radio"] > .menu-iconic-left > .menu-iconic-icon,
+menuitem[selected="true"] > .menu-iconic-left > .menu-iconic-icon
 {
 	display: -moz-box !important;
 	padding: 4px !important;
 }
 
-menuitem[checked="true"] > .menu-iconic-left > .menu-iconic-icon
+menuitem[checked="true"] > .menu-iconic-left > .menu-iconic-icon,
+menuitem[selected="true"] > .menu-iconic-left > .menu-iconic-icon
 {
 	/* checkmark is 18px, not 16px, hence reduced padding */
 	list-style-image: url(checkmark.svg) !important;
+}
+
+menulist > menupopup > menuitem[checked="true"]::before, menulist > menupopup > menuitem[selected="true"]::before
+{
+	display: none !important;
 }
 
 #context-navigation
@@ -347,13 +354,13 @@ panelview .toolbarbutton-1,
 .panel-banner-item
 {
 	min-height: 32px !important;
-	padding: 0 16px !important;
+	padding: 0 12px !important;
 }
 
 .subviewbutton .toolbarbutton-icon,
 .panel-banner-item .toolbarbutton-icon
 {
-	margin-inline-end: 16px !important;
+	margin-inline-end: 8px !important;
 	width: 24px !important;
 	height: 24px !important;
 	padding: 4px !important;
@@ -368,11 +375,32 @@ panelview .toolbarbutton-1,
 #appMenu-zoom-controls > .subviewbutton,
 #appMenu-edit-controls > .subviewbutton
 {
-	min-width: 32px !important;
-	border-radius: 16px !important;
-	padding: 0 8px !important;
+	min-width: 42px !important;
+	max-width: 46px !important;
+	border-radius: 0 !important;
 	border: 0 !important;
-	margin-inline-start: 4px !important;
+	padding: 0 !important;
+	margin-inline-start: 0 !important;
+	background-clip: padding-box !important;
+}
+
+#appMenu-zoom-controls > .subviewbutton-iconic,
+#appMenu-edit-controls > .subviewbutton-iconic
+{
+	padding: 0 !important;
+	width: 42px !important;
+}
+
+#appMenu-zoomReset-button {
+	width: 46px !important;
+}
+
+#appMenu-edit-controls > .subviewbutton,
+#appMenu-zoom-controls > #appMenu-fullscreen-button,
+#appMenu-zoom-controls > #appMenu-zoomReduce-button
+{
+	border-left: 1px solid var(--panel-separator-color) !important;
+	padding-left: 1px !important;
 }
 
 #appMenu-zoom-controls > toolbarseparator[orient="vertical"] + .subviewbutton
@@ -380,10 +408,29 @@ panelview .toolbarbutton-1,
 	margin-inline-start: 0 !important;
 }
 
-#appMenu-zoom-controls > .subviewbutton-iconic,
-#appMenu-edit-controls > .subviewbutton-iconic
+#appMenu-zoomReset-button
 {
-	padding: 0 !important;
+	background-color: transparent !important;
+}
+
+#appMenu-zoomReset-button:not([disabled], [open], :active):is(:hover, :focus), #appMenu-zoomReset-button2:not([disabled], [open], :active):is(:hover, :focus)
+{
+	background-color: var(--panelview-toolbarbutton-hover-bgcolor) !important;
+}
+
+#appMenu-zoomReset-button:not([disabled]):is([open], :hover:active), #appMenu-zoomReset-button2:not([disabled]):is([open], :hover:active)
+{
+	background-color: var(--panelview-toolbarbutton-active-bgcolor) !important;
+}
+
+.toolbaritem-combined-buttons:not([widget-type="button-and-view"]), .toolbaritem-menu-buttons {
+	padding-inline-start: 24px !important;
+	margin-block: -6px !important;
+	margin-inline-end: 0 !important;
+}
+
+.toolbaritem-combined-buttons toolbarseparator {
+	display: none !important;
 }
 
 .panel-banner-item
@@ -985,15 +1032,48 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label
 {
 	content: "" !important;
 	display: block !important;
-	border-radius: 4px !important;
+	border-radius: 2px !important;
 	position: absolute !important;
 	left: 0 !important;
 	top: 0 !important;
 	width: 100% !important;
 	height: 100% !important;
 	border: 1px solid currentColor !important;
-	opacity: .42 !important;
+	opacity: .2 !important;
 	box-sizing: border-box !important;
+}
+
+panel menulist
+{
+	appearance: none !important;
+	color: var(--arrowpanel-color) !important;
+	height: 30px !important;
+	padding-inline: 6px 10px !important;
+	background-image: 
+		url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' %3E%3Crect style='fill:none; stroke:context-stroke; stroke-width:1px; stroke-opacity:context-stroke-opacity; height:calc(100%25 - 1px); width:calc(100%25 + 2px)' x='.5' y='.5' rx='2.5'/%3E%3C/svg%3E"),
+		url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2' %3E%3Crect style='fill:none; stroke:context-stroke; stroke-width:1px; stroke-opacity:context-stroke-opacity; height:calc(100%25 - 1px); width:4px; x:-2.5px;' y='.5' rx='2.5'/%3E%3C/svg%3E") !important;
+	background-size: calc(100% - 2px) 30px, 2px 30px !important;
+	background-position: left, right !important;
+	background-repeat: no-repeat !important;
+	-moz-context-properties: stroke, stroke-opacity !important;
+	stroke: currentColor !important;
+	stroke-opacity: .3 !important;
+}
+
+panel menulist::after
+{
+	content: "";
+	width: 16px !important;
+	height: 16px !important;
+	display: block !important;
+	-moz-context-properties: fill, fill-opacity !important;
+	background-image: url(menu-right.svg) !important;
+	background-size: 16px !important;
+	background-position: center !important;
+	background-repeat: no-repeat !important;
+	margin-inline-start: 8px !important;
+	transform: rotate(90deg) !important;
+	opacity: .7 !important;
 }
 
 .panel-footer button:not([default]):hover:active:not([disabled]) > .button-box::before
@@ -1060,7 +1140,7 @@ richlistitem:-moz-any(
 
 
 /* Popup Icons */
-menupopup:not(#ContentSelectDropdown > menupopup) menuitem:not(.menuitem-iconic, [type], menu menuitem)::before {
+menupopup:not(#ContentSelectDropdown > menupopup) menuitem:not(.menuitem-iconic, [type], menu menuitem, .in-menulist menuitem)::before {
 	content: "";
 	-moz-context-properties: fill, fill-opacity !important;
 	padding-inline: 12px !important;
@@ -1070,10 +1150,6 @@ menupopup:not(#ContentSelectDropdown > menupopup) menuitem:not(.menuitem-iconic,
 	background-size: 16px !important;
 	background-repeat: no-repeat !important;
 	background-position: center !important;
-}
-menulist > menupopup > menuitem[checked="true"]::before, menulist > menupopup > menuitem[selected="true"]::before {
-	margin-inline-start: 0 !important;
-	margin-inline-end: -15px !important;
 }
 
 #context-inspect::before {
