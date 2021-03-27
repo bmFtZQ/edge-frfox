@@ -263,6 +263,7 @@
 	height: auto !important;
 	padding: 0 !important;
 	border: 0 !important;
+	border-radius: 0 !important;
 }
 
 .urlbar-input-box,
@@ -468,8 +469,9 @@
 .urlbar-icon,
 #page-action-buttons > toolbarbutton,
 .searchbar-search-button,
-#identity-box,
-#tracking-protection-icon-box
+#tracking-protection-icon-box,
+#identity-icon-box,
+#identity-permission-box
 {
 	min-width: 36px !important;
 	height: 26px !important;
@@ -482,6 +484,25 @@
 	transition: background-color .2s var(--ease-basic) !important;
 	background: 0 !important;
 	background-color: transparent !important;
+}
+
+#identity-box
+{
+	margin: 0 !important;
+}
+
+#identity-icon-box
+{
+	min-width: 40px !important;
+	padding: 5px 12px !important;
+}
+
+#identity-permission-box
+{
+	min-width: 28px !important;
+	padding: 5px 0px !important;
+	padding-inline-end: 12px !important;
+	margin: 0 0 0 -8px !important;
 }
 
 #tracking-protection-icon-container
@@ -557,7 +578,7 @@
 .urlbar-icon:hover:not([disabled]),
 #page-action-buttons > toolbarbutton:hover:not([disabled]),
 .searchbar-search-button:hover,
-#identity-box:hover:not(.no-hover),
+#identity-icon-box:hover, #identity-permission-box:hover,
 #tracking-protection-icon-container:hover #tracking-protection-icon-box
 {
 	background-color: var(--toolbarbutton-hover-background) !important;
@@ -567,7 +588,7 @@
 .urlbar-icon[open],
 #page-action-buttons > toolbarbutton:hover:active:not([disabled]),
 .searchbar-search-button:hover:active,
-#identity-box:hover:active:not(.no-hover),
+:-moz-any(#identity-icon-box, #identity-permission-box):-moz-any(:active, [open]),
 #identity-box[open]:not(.no-hover),
 #tracking-protection-icon-container[open] #tracking-protection-icon-box
 {
@@ -760,21 +781,134 @@
 }
 
 /* lock (secure) */
-#identity-box[pageproxystate="valid"]:-moz-any(.verifiedDomain, .verifiedIdentity, .mixedActiveBlocked) > #identity-icon
+#identity-box[pageproxystate="valid"].verifiedDomain #identity-icon, #identity-box[pageproxystate="valid"].mixedActiveBlocked #identity-icon
 {
-	list-style-image: var(--lock-icon) !important;
+	list-style-image: url(connection.svg) !important;
+}
+#identity-popup[connection^="secure"] .identity-popup-security-connection
+{
+	background-image: url(connection.svg) !important;
 }
 
 /* info (not secure) */
-#identity-box[pageproxystate="valid"]:-moz-any(.mixedDisplayContent, .mixedDisplayContentLoadedActiveBlocked, .unknownIdentity) > #identity-icon
+#identity-box[pageproxystate="valid"].notSecure #identity-icon, #identity-box[pageproxystate="valid"].mixedActiveContent #identity-icon, #identity-box[pageproxystate="valid"].httpsOnlyErrorPage #identity-icon
 {
-    list-style-image: var(--info-icon) !important;
+    list-style-image: url(info.svg) !important;
+}
+
+.identity-popup-security-connection {
+	background-image: url(info.svg) !important;
 }
 
 /* warning (dangerous) */
 #identity-box[pageproxystate="valid"]:-moz-any(.notSecure, .weakCipher, .certUserOverridden, .certErrorPage, .insecureLoginForms, .mixedActiveContent) > #identity-icon
 {
-    list-style-image: var(--warning-icon) !important;
+    list-style-image: url(connection-warning.svg) !important;
+}
+
+/* local file */
+#identity-box[pageproxystate="valid"].localResource #identity-icon {
+	list-style-image: url(document.svg) !important;
+}
+
+#identity-popup[connection="file"] .identity-popup-security-connection
+{
+	background-image: url(document.svg) !important;
+}
+
+/* permissions */
+#permissions-granted-icon
+{
+	list-style-image: url(permissions.svg) !important;
+}
+
+.geo-icon
+{
+	list-style-image: url(permissions/geo.svg) !important;
+}
+.geo-icon.blocked-permission-icon
+{
+	list-style-image: url(permissions/geo-blocked.svg) !important;
+}
+
+.xr-icon {
+	list-style-image: url(permissions/xr.svg) !important;
+}
+
+.xr-icon.blocked-permission-icon {
+	list-style-image: url(permissions/xr-blocked.svg) !important;
+}
+
+.popup-notification-icon[popupid="web-notifications"], .desktop-notification-icon {
+	list-style-image: url(permissions/desktop-notification.svg) !important;
+}
+
+.desktop-notification-icon.blocked-permission-icon {
+	list-style-image: url(permissions/desktop-notification-blocked.svg) !important;
+}
+
+.camera-icon {
+	list-style-image: url(permissions/camera.svg) !important;
+}
+
+.camera-icon.blocked-permission-icon {
+	list-style-image: url(permissions/camera-blocked.svg) !important;
+}
+
+.microphone-icon {
+	list-style-image: url(permissions/microphone.svg) !important;
+}
+
+.microphone-icon.blocked-permission-icon {
+	list-style-image: url(permissions/microphone-blocked.svg) !important;
+}
+
+.screen-icon {
+	list-style-image: url(permissions/screen.svg) !important;
+}
+
+.screen-icon.blocked-permission-icon {
+	list-style-image: url(permissions/screen-blocked.svg) !important;
+}
+
+.popup-notification-icon[popupid="persistent-storage"], .persistent-storage-icon {
+	list-style-image: url(permissions/persistent-storage.svg) !important;
+}
+
+.persistent-storage-icon.blocked-permission-icon {
+	list-style-image: url(permissions/persistent-storage-blocked.svg) !important;
+}
+
+.popup-icon {
+	list-style-image: url(permissions/popup.svg) !important;
+}
+
+.autoplay-media-icon {
+	list-style-image: url(permissions/autoplay-media.svg) !important;
+}
+
+.autoplay-media-icon.blocked-permission-icon {
+	list-style-image: url(permissions/autoplay-media-blocked.svg) !important;
+}
+
+#canvas-notification-icon, .popup-notification-icon[popupid="canvas-permissions-prompt"], .canvas-icon {
+	list-style-image: url(permissions/canvas.svg) !important;
+}
+
+.canvas-icon.blocked-permission-icon {
+	list-style-image: url(permissions/canvas-blocked.svg) !important;
+}
+
+.midi-icon, .midi-sysex-icon, .popup-notification-icon[popupid="midi"], .popup-notification-icon[popupid="midi-sysex"] {
+	list-style-image: url(permissions/midi.svg) !important;
+}
+
+.install-icon {
+	list-style-image: url(permissions/addon-install.svg) !important;
+}
+
+.install-icon.blocked-permission-icon, .popup-notification-icon[popupid="xpinstall-disabled"], .popup-notification-icon[popupid="addon-install-blocked"], .popup-notification-icon[popupid="addon-install-origin-blocked"] {
+	list-style-image: url(permissions/addon-install-blocked.svg) !important;
 }
 
 #urlbar-input,
@@ -783,14 +917,6 @@
 {
 	transform: translateY(var(--input-offset)) !important;
 	line-height: 1.745em !important;
-}
-
-/* 1x */
-#urlbar
-{
-	--info-icon: url(info.svg);
-	--lock-icon: url(connection.svg);
-	--warning-icon: url(connection-warning.svg);
 }
 
 #urlbar,
