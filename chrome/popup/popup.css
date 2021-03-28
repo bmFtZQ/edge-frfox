@@ -1157,6 +1157,10 @@ menupopup:not(#ContentSelectDropdown > menupopup) menuitem:not(.menuitem-iconic,
 	background-position: center !important;
 }
 
+menupopup:not(#ContentSelectDropdown > menupopup) menu:not(.menu-iconic, menu menu) {
+	padding-inline-start: 44px !important;
+}
+
 #context-inspect::before {
 	background-image: url(icons/inspect.svg);
 }
