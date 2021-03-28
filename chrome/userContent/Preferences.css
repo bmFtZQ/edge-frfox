@@ -1,4 +1,7 @@
-@-moz-document url-prefix(about:preferences), url-prefix(chrome://mozapps/content/extensions/aboutaddons.html) {
+@-moz-document url-prefix(about:preferences) {
+    /* Icons */
+
+    /* Categories */
     #category-general > .category-icon {
         list-style-image: url(../icons/settings.svg) !important;
     }
@@ -14,7 +17,6 @@
     #category-sync > .category-icon {
         list-style-image: url(../icons/sync.svg) !important;
     }
-
     .category[name="discover"] {
         background-image: url(../icons/star.svg) !important;
     }
@@ -25,6 +27,52 @@
         background-image: url(../icons/brush.svg) !important;
     }
 
+    /* Permissions */
+    .geo-icon {
+        list-style-image: url(../urlbar/permissions/geo.svg) !important;
+    }
+    .camera-icon {
+        list-style-image: url(../urlbar/permissions/camera.svg) !important;
+    }
+    .microphone-icon {
+        list-style-image: url(../urlbar/permissions/microphone.svg) !important;
+    }
+    .desktop-notification-icon {
+        list-style-image: url(../urlbar/permissions/desktop-notification.svg) !important;
+    }
+    .autoplay-icon {
+        list-style-image: url(../urlbar/permissions/autoplay-media.svg) !important;
+    }
+    .xr-icon {
+        list-style-image: url(../urlbar/permissions/xr.svg) !important;
+    }
+
+    /* Sync Items */
+    .sync-engine-bookmarks .checkbox-icon, .sync-engine-bookmarks.sync-engine-image {
+        list-style-image: url(../icons/bookmark.svg) !important;
+    }
+    .sync-engine-history .checkbox-icon, .sync-engine-history.sync-engine-image {
+        list-style-image: url(../icons/history.svg) !important;
+    }
+    .sync-engine-tabs .checkbox-icon, .sync-engine-tabs.sync-engine-image {
+        list-style-image: url(../icons/new-tab-image.svg) !important;
+    }
+    .sync-engine-passwords .checkbox-icon, .sync-engine-passwords.sync-engine-image {
+        list-style-image: url(../icons/key.svg) !important;
+    }
+    .sync-engine-addons .checkbox-icon, .sync-engine-addons.sync-engine-image {
+        list-style-image: url(../icons/addons.svg) !important;
+    }
+    .sync-engine-prefs .checkbox-icon, .sync-engine-prefs.sync-engine-image {
+        list-style-image: url(../icons/settings.svg) !important;
+    }
+
+    /* Profile Picture */
+    .fxaProfileImage {
+        list-style-image: url(../icons/profile.svg) !important;
+    }
+
+    /* links */
     .preferences-icon, .page-options-menu > .more-options-button {
         background-image: url(../icons/settings.svg) !important;
     }
@@ -33,5 +81,55 @@
     }
     .textbox-search-sign {
         list-style-image: url(../icons/search.svg) !important;
+    }
+
+    /* Visual Ajustments */
+    :root {
+        --in-content-page-background: #f7f7f7 !important;
+        --sidebar-border-color: #B6B6B6;
+        --heading-color: #262626 !important;
+        --category-active: #0078d4;
+    }
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --in-content-page-background: #333 !important;
+            --sidebar-border-color: #6b6b6b;
+            --heading-color: #fff !important;
+            --category-active: #63ade5;
+        }
+    }
+
+    .navigation {
+        border-right: 1px solid var(--sidebar-border-color) !important;
+    }
+    #categories::before {
+        content: "Settings" !important;
+        font-size: 24px !important;
+        font-weight: 500 !important;
+        color: var(--heading-color) !important;
+    }
+    #categories {
+        padding-inline: 16px !important;
+        margin: 16px 0 0 !important;
+    }
+    .category:nth-child(1) {
+        margin-block-start: 8px !important;
+    }
+    .category,
+    .sidebar-footer-link, .sidebar-footer-button > .text-link {
+        position: relative !important;
+        margin-inline: 0 !important;
+        width: 100% !important;
+    }
+    .category::before {
+        content: "";
+        height: calc(100% - 28px) !important;
+        position: absolute !important;
+        top: 14px;
+        left: 0;
+        border-left: 3px solid transparent !important; /* #63ADE5 */
+    }
+    .category[selected]::before {
+        border-color: var(--category-active) !important;
     }
 }
