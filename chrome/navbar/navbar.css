@@ -80,7 +80,7 @@ panel .toolbarbutton-badge
 	margin-inline-end: 6px !important;
 }
 :root[privatebrowsingmode] #navigator-toolbox #fxa-toolbar-menu-button {
-	background-color: var(--private-browsing-indicator) !important;
+	background-color: var(--private-browsing-indicator, #006cbe) !important;
 	color: white !important;
 	margin-inline: 0 !important;
 }
