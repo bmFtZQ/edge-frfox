@@ -321,33 +321,31 @@ richlistitem[originaltype="loginsFooter"] .ac-site-icon,
 	list-style-image: url(sync.svg) !important;
 }
 
-.tab-icon-image:not([src]), .bookmark-item
+.tab-icon-image, .bookmark-item
 {
     list-style-image: url(globe.svg) !important;
 }
 
-.tab-icon-image:-moz-any([src="chrome://global/skin/icons/settings.svg"], [src="chrome://branding/content/icon32.png"], [src="chrome://browser/skin/privatebrowsing/favicon.svg"])
-{
-	display: none !important;
+.tab-icon-image[src="chrome://global/skin/icons/settings.svg"] {
+	background-image: url(settings.svg) !important;
+	padding-left: 16px !important;
 }
 
-.tab-icon-image[src="chrome://global/skin/icons/settings.svg"] ~ .tab-icon-overlay
-{
-	display: -moz-box !important;
-	margin: 0 !important;
-	list-style-image: url(settings.svg) !important;
-	-moz-context-properties: fill, fill-opacity !important;
-	fill: currentColor !important;
+.tab-icon-image:-moz-any([src="chrome://branding/content/icon32.png"], [src="chrome://browser/skin/privatebrowsing/favicon.svg"]):not([busy]) {
+	background-image: url(new-tab-image.svg) !important;
+	padding-left: 16px !important;
 }
 
-.tab-icon-image:-moz-any([src="chrome://branding/content/icon32.png"], [src="chrome://browser/skin/privatebrowsing/favicon.svg"]):not([busy]) ~ .tab-icon-overlay
-{
-	display: -moz-box !important;
-	margin: 0 !important;
-	list-style-image: url(new-tab-image.svg) !important;
-	-moz-context-properties: fill, fill-opacity !important;
-	fill: currentColor !important;
+.tab-icon-image[src="chrome://mozapps/skin/extensions/extension.svg"] {
+	background-image: url(addons.svg) !important;
+	padding-left: 16px !important;
 }
+
+.tab-icon-image[src="chrome://browser/skin/customize.svg"] {
+	background-image: url(brush.svg) !important;
+	padding-left: 16px !important;
+}
+
 .tab-icon-pending[pinned], .tab-icon-image:not([src], [pinned], [crashed], [pictureinpicture])[selected], .tab-icon-image:not([src], [pinned], [crashed], [sharing], [pictureinpicture]), .tab-icon-image[busy], .tab-throbber:not([busy]), .tab-icon-sound:not([soundplaying], [muted], [activemedia-blocked], [pictureinpicture]), .tab-icon-sound[pinned], .tab-sharing-icon-overlay, .tab-icon-overlay
 
 .tab-icon-overlay[soundplaying],
