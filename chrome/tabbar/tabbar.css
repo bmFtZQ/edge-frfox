@@ -6,12 +6,12 @@
 	background-color: var(--lwt-accent-color) !important;
 }
 
-#navigator-toolbox {
-	background-image: var(--lwt-additional-images) !important;
-	background-position: var(--lwt-background-alignment) !important;
-	background-repeat: var(--lwt-background-tiling) !important;
-	background-color: var(--lwt-accent-color) !important;
+:root[lwtheme-image] #navigator-toolbox {
+	background-image: var(--lwt-header-image), var(--lwt-additional-images) !important;
+	background-repeat: no-repeat, var(--lwt-background-tiling) !important;
+	background-position: right top, var(--lwt-background-alignment) !important;
 }
+
 :root:not([style*="--lwt-accent-color:rgb(227, 228, 230); --lwt-text-color:rgba(24, 25, 26);"], [style*="--lwt-accent-color:rgb(12, 12, 13); --lwt-text-color:rgba(249, 249, 250);"])[lwtheme] #navigator-toolbox:-moz-window-inactive {
 	opacity: 0.9 !important;
 }
