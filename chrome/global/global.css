@@ -65,6 +65,7 @@
 #scrollbutton-down[part="scrollbutton-down"]:not(.menupopup-scrollbutton)
 {
 	border-radius: 4px !important;
+	transition: background-color .2s var(--ease-basic) !important;
 }
 
 #navigator-toolbox :-moz-any(.toolbarbutton-1, toolbarbutton.bookmark-item:not(.subviewbutton)),
@@ -112,6 +113,7 @@
 #scrollbutton-down[part="scrollbutton-down"]:not(.menupopup-scrollbutton):hover:active:not([disabled])
 {
 	background-color: var(--toolbarbutton-active-background) !important;
+	transition: none !important;
 }
 
 #navigator-toolbox :-moz-any(.toolbarbutton-icon, .toolbarbutton-badge-stack),
