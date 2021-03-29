@@ -5,16 +5,20 @@
 #PersonalToolbar
 {
 	padding-top: 0 !important;
+	padding-inline-end: 12px !important;
 	margin-top: -2px !important;
 	background: var(--toolbar-bgcolor) !important;
 	clip-path: inset(2px 0 0 0);
 }
 
-#PersonalToolbar .toolbarbutton-1 > :-moz-any(.toolbarbutton-icon, .toolbarbutton-badge-stack)
+#navigator-toolbox #PersonalToolbar .toolbarbutton-1 > :-moz-any(.toolbarbutton-icon, .toolbarbutton-badge-stack)
 {
-	max-height: 28px !important;
+	width: 28px !important;
+	height: 28px !important;
 }
 
-#PersonalToolbar .toolbarbutton-1 > .toolbarbutton-icon {
-	padding: 6px 12px !important;
+#navigator-toolbox #PersonalToolbar .toolbarbutton-1 > :-moz-any(.toolbarbutton-icon, .toolbarbutton-badge-stack)
+{
+	padding: 6px !important;
+	background: 0 !important;
 }
