@@ -6,6 +6,10 @@
 	background-color: var(--lwt-accent-color) !important;
 }
 
+#navigator-toolbox {
+	background-color: var(--lwt-accent-color) !important;
+}
+
 :root[lwtheme-image] #navigator-toolbox {
 	background-image: var(--lwt-header-image), var(--lwt-additional-images) !important;
 	background-repeat: no-repeat, var(--lwt-background-tiling) !important;
