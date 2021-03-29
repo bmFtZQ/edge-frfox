@@ -1,6 +1,7 @@
 findbar {
 	background: var(--toolbar-bgcolor) !important;
 	border-top-color: var(--chrome-content-separator-color) !important;
+	color: var(--toolbar-color) !important;
 }
 
 .findbar-find-previous {
@@ -12,6 +13,7 @@ findbar {
 
 .findbar-textbox
 {
+	color: inherit !important;
 	background-color: transparent !important;
 	background-image: url(../icons/search.svg) !important;
 	background-repeat: no-repeat !important;
@@ -26,13 +28,14 @@ findbar {
 hbox[anonid="findbar-textbox-wrapper"]
 {
 	background-color: var(--toolbar-field-background-color) !important;
+	color: var(--lwt-toolbar-field-color) !important;
 	border-radius: 4px !important;
 	position: relative !important;
 	display: flex !important;
 	padding: 2px !important;
 	height: 28px !important;
 	transition: background-color .1s var(--ease-basic) !important;
-	box-shadow: 0 1px 6px 0 #00000008 !important;
+	box-shadow: 0 1px 5px 0 #0001 !important;
 }
 
 hbox[anonid="findbar-textbox-wrapper"]:hover:not(:focus-within)
@@ -44,10 +47,8 @@ hbox[anonid="findbar-textbox-wrapper"]:hover:not(:focus-within)
 hbox[anonid="findbar-textbox-wrapper"]:focus-within
 {
 	background-color: var(--toolbar-field-focus-background-color) !important;
-	border: 2px solid var(--toolbar-field-focus-border-color) !important;
-	margin: -1px !important;
-	padding: 1px !important;
-	height: 30px !important;
+	color: var(--lwt-toolbar-field-focus-color) !important;
+	box-shadow: 0 0 0 1px inset var(--toolbar-field-focus-border-color), 0 0 0 1px var(--toolbar-field-focus-border-color) !important;
 }
 
 hbox[anonid="findbar-textbox-wrapper"] toolbarbutton
