@@ -169,8 +169,8 @@
 	
 	--downloads-item-height: 48px !important;
 	
-	--toolbar-non-lwt-bgcolor: var(--toolbar-bgcolor) !important;
-	--toolbar-non-lwt-textcolor: var(--toolbar-color) !important;
+	--toolbar-non-lwt-bgcolor: #f7f7f7 !important;
+	--toolbar-non-lwt-textcolor: #000 !important;
 
 	--tab-separator-opacity: .35 !important;
 }
