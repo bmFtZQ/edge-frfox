@@ -34,10 +34,10 @@
 	--lwt-toolbarbutton-icon-fill-attention: #0078d4 !important;
 	
 	/* button_background_hover */
-	--lwt-toolbarbutton-hover-background: #0001 !important;
+	--lwt-toolbarbutton-hover-background: #0000001a !important;
 	
 	/* button_background_active */
-	--lwt-toolbarbutton-active-background: #0002 !important;
+	--lwt-toolbarbutton-active-background: #0000002a !important;
 	
 	--lwt-toolbar-field-color: #000 !important;
 	--lwt-toolbar-field-focus-color: #000 !important;
@@ -85,10 +85,10 @@
 	--lwt-toolbarbutton-icon-fill-attention: #4C98D1 !important;
 	
 	/* button_background_hover */
-	--lwt-toolbarbutton-hover-background: #fff1 !important;
+	--lwt-toolbarbutton-hover-background: #ffffff1a !important;
 	
 	/* button_background_active */
-	--lwt-toolbarbutton-active-background: #fff2 !important;
+	--lwt-toolbarbutton-active-background: #ffffff2a !important;
 	
 	--lwt-toolbar-field-color: #fff !important;
 	--lwt-toolbar-field-focus-color: #fff !important;
