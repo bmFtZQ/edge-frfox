@@ -56,3 +56,52 @@
     --newtab-search-icon-color: #fff !important;
   }
 }
+
+@-moz-document url(about:privatebrowsing) {
+  html.private {
+    --in-content-page-color: #000d !important;
+    --in-content-text-color: #000 !important;
+    --in-content-page-background: #f5f5f5 !important;
+  }
+  .wordmark {
+    fill: #737373 !important;
+  }
+  .info {
+    background-color: #fff !important;
+    background-image: url(../icons/incognito.svg) !important;
+  }
+  .search-handoff-button {
+    background-color: #fff !important;
+    color: #000 !important;
+  }
+  @media (prefers-color-scheme: dark) {
+    html.private {
+      --in-content-page-color: #fffd !important;
+      --in-content-text-color: #fff !important;
+      --in-content-page-background: #242424 !important;
+    }
+    .wordmark {
+      fill: #f5f5f5 !important;
+    }
+    .info {
+      background-color: #2b2b2b !important;
+    }
+    .search-handoff-button {
+      background-color: #424242 !important;
+      color: #fff !important;
+    }
+  }
+  .fake-textbox {
+    color: inherit !important;
+  }
+  .search-handoff-button {
+    border: 0 !important;
+    border-radius: 4px !important;
+    height: 44px !important;
+    transition: box-shadow .2s ease-in-out !important;
+    box-shadow: 0px 1.6px 3.6px rgb(0 0 0 / 13%), 0px 0px 2.9px rgb(0 0 0 / 11%) !important;
+  }
+  .search-handoff-button:hover {
+    box-shadow: 0px 3.2px 7.2px rgb(0 0 0 / 13%), 0px 0px 3.8px rgb(0 0 0 / 11%) !important;
+  }
+}
