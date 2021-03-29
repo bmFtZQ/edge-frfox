@@ -68,7 +68,7 @@
     }
 
     /* Profile Picture */
-    .fxaProfileImage {
+    .fxaProfileImage:not([style*="list-style-image"]) {
         list-style-image: url(../icons/profile.svg) !important;
     }
 
