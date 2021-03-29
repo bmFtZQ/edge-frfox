@@ -313,3 +313,15 @@
 :root[lwt-sidebar-brighttext] :-moz-any(.sidebar-placesTree, #viewButton) {
 	color: #fff !important;
 }
+
+#statuspanel {
+	clip-path: inset(0) !important;
+}
+
+#statuspanel-label {
+	background-color: var(--toolbar-bgcolor) !important;
+	color: var(--toolbar-color) !important;
+	border: 0 !important;
+	box-shadow: 0 0 0 1px #0004, 0 4px 6px #0004 !important;
+	padding: 3px 6px !important;
+}
