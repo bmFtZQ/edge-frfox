@@ -205,7 +205,7 @@
 #urlbar[focused],
 #searchbar[focused]
 {
-	box-shadow: 0 0 0 1px var(--toolbar-field-focus-border-color), inset 0 0 0 1px var(--toolbar-field-focus-border-color) !important;
+	box-shadow: 0 0 0 1px var(--toolbar-field-focus-border-color), inset 0 0 0 1px var(--toolbar-field-focus-border-color), var(--urlbar-shadow) !important;
 	border: 0 !important;
 	padding: 2px !important;
 	margin: 0 !important;
