@@ -101,7 +101,7 @@
 {
 	position: relative !important;
 	overflow: hidden !important;
-	padding-inline-start: 12px !important;
+	padding-inline-start: 11px !important;
 	padding-inline-end: 8px !important;
 }
 
@@ -270,7 +270,7 @@
 .tabbrowser-tab[image] .tab-label-container,
 .tabbrowser-tab:-moz-any([progress], [busy]) .tab-label-container
 {
-	padding-inline-start: 8px !important;
+	padding-inline-start: 10px !important;
 }
 
 .tabbrowser-tab[pinned]:-moz-any([soundplaying], [muted], [activemedia-blocked]) .tab-icon-image
@@ -390,9 +390,9 @@
 
 .tab-content[pinned]
 {
-	width: 36px !important;
+	width: 40px !important;
 	padding: 0 !important;
-	padding-inline-start: 10px !important;
+	padding-inline-start: 12px !important;
 	padding-inline-end: 0 !important;
 }
 
