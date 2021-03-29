@@ -55,7 +55,7 @@
 
 	--tab-line-col: #0078d4 !important;
 	--toolbar-field-focus-border-color: #0078d4a0 !important;
-	--private-browinging-indicator: #0078d4 !important;
+	--private-browsing-indicator: #0078d4 !important;
 }
 
 /* don't bother with sidebar in light mode */
@@ -119,7 +119,7 @@
 
 	--tab-line-col: #4C98D1 !important;
 	--toolbar-field-focus-border-color: #4c97d1a0 !important;
-	--private-browinging-indicator: #006cbe !important;
+	--private-browsing-indicator: #006cbe !important;
 }
 
 :-moz-any(#sidebar-box, #sidebar)
