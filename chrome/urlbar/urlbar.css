@@ -27,6 +27,11 @@
 	max-width: 100% !important;
 }
 
+.urlbarView-row[type="tabtosearch"] .urlbarView-no-wrap
+{
+	height: 32px !important;
+}
+
 .urlbarView-row[has-url][type]:not([type=bookmark]) .urlbarView-row-inner
 {
 	flex-direction: column !important;
