@@ -43,7 +43,7 @@
 	--lwt-toolbar-field-focus-color: #000 !important;
 	
 	/* popup_highlight */
-	--autocomplete-popup-highlight-background: #f7f7f7 !important;
+	--autocomplete-popup-highlight-background: #0001 !important;
 	
 	/* popup_highlight_text */
 	--autocomplete-popup-highlight-color: #000 !important;
@@ -107,7 +107,7 @@
 	--autocomplete-popup-border-color: #636363 !important;
 	
 	/* popup_highlight */
-	--autocomplete-popup-highlight-background: #4c4f52 !important;
+	--autocomplete-popup-highlight-background: #fff1 !important;
 	
 	/* popup_highlight_text */
 	--autocomplete-popup-highlight-color: #fff !important;
