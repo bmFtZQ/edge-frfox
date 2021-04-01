@@ -154,7 +154,7 @@
 	list-style-image: url(menu-right.svg) !important;
 }
 
-#appMenu-customize-button {
+#appMenu-customize-button, #overflowMenu-customize-button {
 	list-style-image: url(brush.svg) !important;
 }
 
@@ -395,4 +395,21 @@ richlistitem[originaltype="loginsFooter"] .ac-site-icon,
 	list-style-image: url(menu-update.svg) !important;
 	-moz-context-properties: fill, fill-opacity !important;
 	fill: currentColor !important;
+}
+
+
+.urlbarView-favicon[src*="history.svg"], .urlbarView-favicon[src*="search-glass.svg"]
+{
+	padding-left: 16px !important;
+	box-sizing: border-box !important;
+}
+
+.urlbarView-favicon[src*="history.svg"]
+{
+	background-image: url(history.svg) !important;
+}
+
+.urlbarView-favicon[src*="search-glass.svg"]
+{
+	background-image: url(search.svg) !important;
 }
