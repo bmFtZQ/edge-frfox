@@ -1144,6 +1144,56 @@ richlistitem:-moz-any(
 	margin-inline-end: 0 !important;
 }
 
+/* Picture In Picture */
+#controls-bottom {
+	left: calc(-1 * var(--resize-margin)) !important;
+	bottom: calc(-1 * var(--resize-margin)) !important;
+	width: calc(100% + var(--resize-margin) * 2) !important;
+}
+.control-item {
+	background-size: 20px !important;
+	min-height: 24px !important;
+	min-width: 24px !important;
+	background-position: center !important;
+	-moz-context-properties: fill !important;
+	fill: #fff !important;
+	margin-block: 8px !important;
+	opacity: 1 !important;
+	--close-btn-bg-color: #0006 !important;
+	--btn-bg-color: #0000 !important;
+}
+.control-item:hover {
+	--btn-bg-color: #fff8 !important;
+}
+#controls-bottom {
+	background-color: #0006 !important;
+}
+#controls {
+	opacity: 0 !important;;
+}
+#controls:hover {
+	opacity: 1 !important;;
+}
+#unpip {
+	background-image: url(icons/open.svg) !important;
+}
+#controls:not(.playing) #playpause {
+	background-image: url(icons/play.svg) !important;
+}
+#controls.playing #playpause {
+	background-image: url(icons/pause.svg) !important;
+}
+#controls:not(.muted) #audio {
+	background-image: url(icons/audio.svg) !important;
+}
+#controls.muted #audio {
+	background-image: url(icons/audio-mute.svg) !important;
+}
+#close {
+	background-image: url(icons/close.svg) !important;
+	margin: 0 !important;
+	box-shadow: 0 0 0 99px inset var(--btn-bg-color) !important;
+}
 
 /* Popup Icons */
 
