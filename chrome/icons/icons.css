@@ -29,7 +29,8 @@
 	animation-duration: 0ms !important;
 }
 
-#stop-button
+#stop-button,
+#context-stop
 {
 	list-style-image: url(stop.svg) !important;
 }
