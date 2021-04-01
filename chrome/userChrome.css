@@ -33,6 +33,8 @@
 */
 
 #urlbarView-row-162, #urlbarView-row-19, #urlbar .urlbarView .search-one-offs, /* Hide search engine selector on the urlbar dropdown */
+/* .urlbarView-row[type="tabtosearch"], */ /* Hide Tab to Search Panels in urlbar */
+/* #urlbar:not([usertyping]) .urlbarView, */ /* Hide search suggestions until typing */
 #context-sendpagetodevice, #context-sep-sendpagetodevice, /* Hide send page to device menu */
 #appMenu-fxa-status, toolbarseparator.sync-ui-item, #appMenu-protection-report-button, #appMenu-tp-separator, /* Hide Account and protection dashboard from menu */
 #appMenu-edit-controls, .panel-subview-body toolbarseparator:nth-child(12) /* Hide Edit Controls */
