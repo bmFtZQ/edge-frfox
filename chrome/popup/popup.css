@@ -226,6 +226,7 @@ menupopup
 .menu-iconic-left
 {
 	-moz-appearance: none !important;
+	margin-inline-start: -4px !important;
 }
 
 .menu-iconic-icon
@@ -1145,125 +1146,176 @@ richlistitem:-moz-any(
 
 
 /* Popup Icons */
-menupopup:not(#ContentSelectDropdown > menupopup) menuitem:not(.menuitem-iconic, [type], menu menuitem, .in-menulist menuitem)::before {
-	content: "";
-	-moz-context-properties: fill, fill-opacity !important;
-	padding-inline: 12px !important;
-	margin-inline-end: 8px;
-	fill: currentColor;
 
+#allTabsMenu-undoCloseTab {
+	list-style-image: url(icons/undo.svg) !important;
+}
+#allTabsMenu-searchTabs {
+	list-style-image: url(icons/search.svg) !important;
+}
+#context-media-loop:not([checked="true"]) {
+	list-style-image: url(icons/loop.svg) !important;
+}
+#context-video-pictureinpicture:not([checked="true"]) {
+	list-style-image: url(icons/picture-in-picture.svg) !important;
+}
+
+menupopup:not(#ContentSelectDropdown > menupopup) :-moz-any(menuitem:not(.menuitem-iconic, [type], menu menuitem, .in-menulist menuitem), menu:not(.menu-iconic, menu menu)) {
+	padding-inline-start: 40px !important;
 	background-size: 16px !important;
 	background-repeat: no-repeat !important;
-	background-position: center !important;
+	background-position: 12px center !important;
+	-moz-context-properties: fill, fill-opacity !important;
+	fill: currentColor !important;
 }
 
-menupopup:not(#ContentSelectDropdown > menupopup) menu:not(.menu-iconic, menu menu) {
-	padding-inline-start: 44px !important;
+#context-inspect {
+	background-image: url(icons/inspect.svg) !important;
 }
-
-#context-inspect::before {
-	background-image: url(icons/inspect.svg);
+#context-savepage, #context-saveimage, #context-savevideo, #context-saveaudio {
+	background-image: url(icons/savefile.svg) !important;
 }
-:-moz-any(#context-savepage, #context-saveimage)::before {
-	background-image: url(icons/savefile.svg);
+#context-viewbgimage, #context-viewimage {
+	background-image: url(icons/image.svg) !important;
 }
-:-moz-any(#context-viewbgimage, #context-viewimage)::before {
-	background-image: url(icons/image.svg);
+#context-viewinfo, #context-viewimageinfo, #context-viewimagedesc {
+	background-image: url(icons/info.svg) !important;
 }
-:-moz-any(#context-viewinfo, #context-viewimageinfo)::before {
-	background-image: url(icons/info.svg);
+#context-viewsource, #context-viewpartialsource-selection {
+	background-image: url(icons/source.svg) !important;
 }
-:-moz-any(#context-viewsource, #context-viewpartialsource-selection)::before {
-	background-image: url(icons/source.svg);
+#context-inspect-a11y {
+	background-image: url(icons/accessibility.svg) !important;
 }
-#context-inspect-a11y::before {
-	background-image: url(icons/accessibility.svg);
+#context-undo, .textbox-contextmenu menuitem[cmd*="undo"] {
+	background-image: url(icons/undo.svg) !important;
 }
-:-moz-any(#context-undo, .textbox-contextmenu menuitem[cmd*="undo"])::before {
-	background-image: url(icons/undo.svg);
+#context-selectall, .textbox-contextmenu menuitem[cmd*="selectAll"] {
+	background-image: url(icons/select-all.svg) !important;
 }
-:-moz-any(#context-selectall, .textbox-contextmenu menuitem[cmd*="selectAll"])::before {
-	background-image: url(icons/select-all.svg);
+#context-cut, .textbox-contextmenu menuitem[cmd*="cut"] {
+	background-image: url(icons/cut.svg) !important;
 }
-:-moz-any(#context-cut, .textbox-contextmenu menuitem[cmd*="cut"])::before {
-	background-image: url(icons/cut.svg);
+#context-copy, #context-copylink, #context-copyimage, .textbox-contextmenu menuitem[cmd*="copy"], #context-copyvideourl, #context-copyaudiourl {
+	background-image: url(icons/copy.svg) !important;
 }
-:-moz-any(#context-copy, #context-copylink, #context-copyimage, .textbox-contextmenu menuitem[cmd*="copy"])::before {
-	background-image: url(icons/copy.svg);
+#context-paste, .textbox-contextmenu menuitem[cmd*="paste"], #placesContext_paste {
+	background-image: url(icons/paste.svg) !important;
 }
-:-moz-any(#context-paste, .textbox-contextmenu menuitem[cmd*="paste"], #placesContext_paste)::before {
-	background-image: url(icons/paste.svg);
-}
-#paste-and-go::before {
+#paste-and-go {
 	background-image: url(icons/paste-and-go.svg) !important;
 }
-:-moz-any(#context-delete, .textbox-contextmenu menuitem[cmd*="delete"])::before {
-	background-image: url(icons/delete.svg);
+#context-delete, .textbox-contextmenu menuitem[cmd*="delete"], .customize-context-removeExtension, .customize-context-removeFromToolbar {
+	background-image: url(icons/delete.svg) !important;
 }
-#context-searchselect::before {
-	background-image: url(icons/search.svg);
+#context-searchselect {
+	background-image: url(icons/search.svg) !important;
 }
-#context-print-selection::before {
-	background-image: url(icons/print.svg);
+#context-print-selection {
+	background-image: url(icons/print.svg) !important;
 }
-#context-openlinkintab::before {
-	background-image: url(icons/open-link-newtab.svg);
+#context-openlinkintab {
+	background-image: url(icons/open-link-newtab.svg) !important;
 }
-#context-openlink::before {
-	background-image: url(icons/open-link-window.svg);
+#context-openlink {
+	background-image: url(icons/open-link-window.svg) !important;
 }
-#context-openlinkprivate::before {
-	background-image: url(icons/open-link-private-window.svg);
+#context-openlinkprivate {
+	background-image: url(icons/open-link-private-window.svg) !important;
 }
-#context-bookmarklink::before {
-	background-image: url(icons/star.svg);
+#context-bookmarklink {
+	background-image: url(icons/star.svg) !important;
 }
-#context-savelink::before {
-	background-image: url(icons/save-link.svg);
+#context-savelink {
+	background-image: url(icons/save-link.svg) !important;
 }
-:-moz-any(#context-savelinktopocket, #context-pocket)::before {
-	background-image: url(icons/save-pocket.svg);
+#context-savelinktopocket, #context-pocket {
+	background-image: url(icons/save-pocket.svg) !important;
 }
-#context-copyimage-contents::before {
-	background-image: url(icons/copy-image.svg);
+#context-copyimage-contents {
+	background-image: url(icons/copy-image.svg) !important;
 }
-#context-sendimage::before {
-	background-image: url(icons/mail.svg);
+#context-sendimage, #context-sendvideo, #context-sendaudio {
+	background-image: url(icons/mail.svg) !important;
 }
-:-moz-any(#context-setDesktopBackground, .viewCustomizeToolbar)::before {
-	background-image: url(icons/brush.svg);
+#context-setDesktopBackground, .viewCustomizeToolbar {
+	background-image: url(icons/brush.svg) !important;
 }
-#context-reloadimage::before {
-	background-image: url(icon/refresh.svg);
+#context-reloadimage {
+	background-image: url(icons/refresh.svg) !important;
 }
-menuitem[id*="placesContext_open"]::before {
-	background-image: url(icon/open.svg);
+menuitem[id*="placesContext_open"] {
+	background-image: url(icons/open.svg) !important;
 }
-:-moz-any(#context_reloadTab, #context_reloadSelectedTabs, #toolbar-context-reloadSelectedTab, #toolbar-context-reloadSelectedTabs)::before {
-	background-image: url(icons/refresh.svg);
+#context_reloadTab, #context_reloadSelectedTabs, #toolbar-context-reloadSelectedTab, #toolbar-context-reloadSelectedTabs {
+	background-image: url(icons/refresh.svg) !important;
 }
-:-moz-any(#context_toggleMuteTab, #context_toggleMuteSelectedTabs)::before {
-	background-image: url(icons/mute.svg);
+#context_toggleMuteTab, #context_toggleMuteSelectedTabs {
+	background-image: url(icons/mute.svg) !important;
 }
-:-moz-any(#context_pinTab, #context_unpinTab, #context_pinSelectedTabs, #context_unpinSelectedTabs)::before {
-	background-image: url(icons/pin.svg);
+#context_pinTab, #context_unpinTab, #context_pinSelectedTabs, #context_unpinSelectedTabs, .customize-context-moveToPanel {
+	background-image: url(icons/pin.svg) !important;
 }
-:-moz-any(#context_duplicateTab, #context_duplicateTabs)::before {
-	background-image: url(icons/copy-tab.svg);
+#context_duplicateTab, #context_duplicateTabs {
+	background-image: url(icons/copy-tab.svg) !important;
 }
-:-moz-any(#context_selectAllTabs, #toolbar-context-selectAllTabs)::before {
-	background-image: url(icons/select-all.svg);
+#context_selectAllTabs, #toolbar-context-selectAllTabs {
+	background-image: url(icons/select-all.svg) !important;
 }
-:-moz-any(#context_bookmarkTab, #context_bookmarkSelectedTabs, #toolbar-context-bookmarkSelectedTab, #toolbar-context-bookmarkSelectedTabs, menuitem[id="#placesContext_new:bookmark"])::before {
-	background-image: url(icons/star.svg);
+#context_bookmarkTab, #context_bookmarkSelectedTabs, #toolbar-context-bookmarkSelectedTab, #toolbar-context-bookmarkSelectedTabs, menuitem[id="#placesContext_new:bookmark"], #toggle_PersonalToolbar {
+	background-image: url(icons/star.svg) !important;
 }
-:-moz-any(#context_undoCloseTab, #toolbar-context-undoCloseTab)::before {
-	background-image: url(icons/undo.svg);
+#context_undoCloseTab, #toolbar-context-undoCloseTab {
+	background-image: url(icons/undo.svg) !important;
 }
-#context_closeTab::before {
-	background-image: url(icons/close.svg);
+#context_closeTab {
+	background-image: url(icons/close.svg) !important;
 }
-
-
-
-
+.customize-context-manageExtension {
+	background-image: url(icons/settings.svg) !important;
+}
+.customize-context-reportExtension {
+	background-image: url(icons/report.svg) !important;
+}
+#context_sendTabToDevice, #context-sendpagetodevice, #context-sendlinktodevice {
+	background-image: url(icons/send-to-device.svg) !important;
+}
+#context_moveTabOptions {
+	background-image: url(icons/move-tab.svg) !important;
+}
+#context_closeTabOptions {
+	background-image: url(icons/close-tabs.svg) !important;
+}
+#context-media-play {
+	background-image: url(icons/play.svg) !important;
+}
+#context-media-pause {
+	background-image: url(icons/pause.svg) !important;
+}
+#context-media-mute {
+	background-image: url(icons/audio-mute.svg) !important;
+}
+#context-media-unmute {
+	background-image: url(icons/audio.svg) !important;
+}
+#context-media-playbackrate {
+	background-image: url(icons/speed.svg) !important;
+}
+#context-media-showcontrols {
+	background-image: url(icons/show-controls.svg) !important;
+}
+#context-media-hidecontrols {
+	background-image: url(icons/hide-controls.svg) !important;
+}
+#context-video-fullscreen {
+	background-image: url(icons/fullscreen-enter.svg) !important;
+}
+#context-leave-dom-fullscreen {
+	background-image: url(icons/fullscreen-exit.svg) !important;
+}
+#context-video-saveimage {
+	background-image: url(icons/video-snapshot.svg) !important;
+}
+#context-viewvideo {
+	background-image: url(icons/video-clip.svg) !important;
+}
