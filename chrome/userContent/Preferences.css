@@ -86,6 +86,10 @@
     /* Visual Ajustments */
     :root {
         --in-content-page-background: #f7f7f7 !important;
+        --in-content-text-color: #262626 !important;
+        --in-content-page-color: #262626 !important;
+        --card-background: #fff;
+        --card-shadow: rgb(0 0 0 / 13%) 0px 1.6px 3.6px, rgb(0 0 0 / 11%) 0px 0px 2.9px !important;
         --sidebar-border-color: #bebebe;
         --category-active: #0078d4;
         --in-content-category-text-selected: #0078d4 !important;
@@ -107,9 +111,16 @@
     .content-blocking-category.selected {
         border-color: #0078d4 !important;
     }
+    .content-blocking-category.expanded:not(.selected) .content-blocking-warning {
+        background-color: #f7f7f7 !important;
+    }
     @media (prefers-color-scheme: dark) {
         :root {
             --in-content-page-background: #333 !important;
+            --in-content-text-color: #fff !important;
+            --in-content-page-color: #fff !important;
+            --card-background: #3b3b3b;
+            --card-shadow: 0px 1.6px 3.6px rgb(0 0 0 / 25%), 0px 0px 2.9px rgb(0 0 0 / 22%) !important;
             --sidebar-border-color: #6b6b6b;
             --category-active: #63ade5;
             --in-content-category-text-selected: #63ade5 !important;
@@ -130,7 +141,37 @@
         .content-blocking-category.selected {
             border-color: #63ade5 !important;
         }
+        .content-blocking-category.expanded:not(.selected) .content-blocking-warning {
+            background-color: #333 !important;
+        }
     }
+
+    /* Cards For Certain Sections */
+    #fxaGroup, .sync-group, #trackingGroup, #searchbarGroup, #homeContentsGroup, #permissionsGroup, #httpsOnlyBox, #applicationsGroup, #oneClickSearchProvidersGroup {
+        padding: 12px 16px !important;
+        background: var(--card-background) !important;
+        box-shadow: var(--card-shadow) !important;
+        border-radius: 4px !important;
+        border: 0 !important;
+    }
+    :is(.sync-group, #trackingGroup, #searchbarGroup, #homeContentsGroup, #permissionsGroup, #httpsOnlyBox, #applicationsGroup, #oneClickSearchProvidersGroup) h2 {
+        margin-top: 2px !important;
+    }
+    h1 {
+        margin: 0 0 16px !important;
+        font-weight: 600 !important;
+        font-size: 20px !important;
+    }
+    #openChangeProfileImage {
+        height: 64px !important;
+        width: 64px !important;
+        margin: 10px !important;
+        margin-inline: 6px 20px !important;
+    }
+    menulist {
+        max-width: 400px !important;
+    }
+
 
     search-textbox, input[type="text"] {
         background-color: transparent !important;
@@ -192,7 +233,9 @@
         margin-top: 16px !important;
     }
     .checkbox-check {
+        /* Move Checkboxes to Right */
         -moz-box-ordinal-group: 2 !important;
+
         width: 40px !important;
         height: 20px !important;
         padding: 4px !important;
@@ -209,6 +252,9 @@
         background-color: var(--checkbox-bgcolor) !important;
         color: var(--checkbox-fill-color) !important;
         border: 1px solid var(--checkbox-border-color) !important;
+        margin: 3px 8px !important;
+    }
+    .indent > checkbox > .checkbox-check {
         margin-inline-start: 32px !important;
     }
     .checkbox-check:hover {
