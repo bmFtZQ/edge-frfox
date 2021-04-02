@@ -16,6 +16,7 @@
 /* @import "extras/swapaccount-overflow.css"; */ /* (BUGGY: USE AT OWN RISK!) Swap Account icon and Overflow icon (must be placed next to each other) */
 /* @import "extras/customColorTheme.css"; */ /* Custom Color Theme Template, Modify colors more easily */
 /* @import "extras/hidetabclosebutton.css"; */ /* Hide tab close button when mouse not hovering over it */
+/* @import url(extras/addIconsToMenubarPopups.css); */ /* (UNFINISHED) (TESTED ON MACOS ONLY!) Add icons to menubar popups */
 
 /* Display tab-line above tabs */
 /*
