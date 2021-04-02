@@ -1,0 +1,71 @@
+/* (UNFINISHED) (TESTED ON MACOS ONLY!) Add icons to menubar popups  */
+
+#menu_newNavigatorTab {
+    list-style-image: url(../icons/new-tab-image.svg) !important;
+}
+#menu_newNavigator {
+    list-style-image: url(../icons/new-window.svg) !important;
+}
+#menu_newPrivateWindow {
+    list-style-image: url(../icons/new-private-window.svg) !important;
+}
+#menu_openLocation {
+    list-style-image: url(../icons/globe.svg) !important;
+}
+#menu_openFile {
+    list-style-image: url(../icons/folder.svg) !important;
+}
+#menu_close, #menu_closeWindow, #menu_findAgain, #historyRestoreLastSession, #hiddenTabsMenu, #historyUndoMenu, #historyUndoWindowMenu {
+    list-style-image: url(../icons/blank.svg) !important;
+}
+#menu_savePage {
+    list-style-image: url(../icons/savefile.svg) !important;
+}
+#menu_sendLink {
+    list-style-image: url(../icons/email.svg) !important;
+}
+#menu_printSetup, #menu_print {
+    list-style-image: url(../icons/print.svg) !important;
+}
+#menu_undo {
+    list-style-image: url(../popup/icons/undo.svg) !important;
+}
+#menu_redo {
+    list-style-image: url(../popup/icons/redo.svg) !important;
+}
+#menu_cut {
+    list-style-image: url(../popup/icons/cut.svg) !important;
+}
+#menu_copy {
+    list-style-image: url(../popup/icons/copy.svg) !important;
+}
+#menu_paste {
+    list-style-image: url(../popup/icons/paste.svg) !important;
+}
+#menu_delete {
+    list-style-image: url(../popup/icons/delete.svg) !important;
+}
+#menu_selectAll {
+    list-style-image: url(../popup/icons/select-all.svg) !important;
+}
+#menu_find {
+    list-style-image: url(../icons/search-file.svg) !important;
+}
+#toggle_PersonalToolbar, #menu_bookmarksSidebar {
+    list-style-image: url(../icons/bookmark.svg) !important;
+}
+#menu_customizeToolbars {
+    list-style-image: url(../icons/brush.svg) !important;
+}
+#menu_historySidebar {
+    list-style-image: url(../icons/history.svg) !important;
+}
+#menu_tabsSidebar, #sync-tabs-menuitem {
+    list-style-image: url(../icons/synced-tabs.svg) !important;
+}
+#menu_showAllHistory {
+    list-style-image: url(../icons/history.svg) !important;
+}
+#sanitizeItem {
+    list-style-image: url(../icons/forget.svg) !important;
+}
