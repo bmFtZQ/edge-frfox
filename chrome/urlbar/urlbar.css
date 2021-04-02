@@ -10,7 +10,7 @@
 }
 
 .urlbarView-row:last-of-type {
-	margin-bottom: 6px !important;
+	margin-bottom: 8px !important;
 }
 
 .urlbarView-row-inner
@@ -18,14 +18,15 @@
 	align-items: center !important;
 	position: relative !important;
 	padding: 10px 0 !important;
-	padding-inline: 48px 16px !important;
+	padding-inline: 41px 16px !important;
 	max-width: 100% !important;
 	width: auto !important;
 	border-radius: 0 !important;
+	border-left: 3px solid transparent !important;
 }
 
 .urlbarView-row:not([type="tip"], [type="dynamic"])[selected] > .urlbarView-row-inner, .urlbarView-row-inner[selected] {
-	border-left: 3px solid var(--urlbar-popup-url-color) !important;
+	border-color: var(--urlbar-popup-url-color) !important;
 }
 
 .urlbarView-no-wrap
@@ -76,7 +77,7 @@
 .urlbarView-favicon
 {
 	position: absolute !important;
-	left: 12px !important;
+	left: 11px !important;
 	top: 50% !important;
 	transform: translateY(-50%) !important;
 	fill-opacity: .6 !important;
@@ -135,7 +136,7 @@
 {
 	padding: 4px !important;
 	display: flex !important;
-	margin-top: -6px !important;
+	margin-top: -8px !important;
 }
 
 .urlbarView .search-panel-one-offs-header
