@@ -347,11 +347,40 @@ richlistitem[originaltype="loginsFooter"] .ac-site-icon,
 	padding-left: 16px !important;
 }
 
-.tab-icon-pending[pinned], .tab-icon-image:not([src], [pinned], [crashed], [pictureinpicture])[selected], .tab-icon-image:not([src], [pinned], [crashed], [sharing], [pictureinpicture]), .tab-icon-image[busy], .tab-throbber:not([busy]), .tab-icon-sound:not([soundplaying], [muted], [activemedia-blocked], [pictureinpicture]), .tab-icon-sound[pinned], .tab-sharing-icon-overlay, .tab-icon-overlay,
-.tab-icon-overlay[soundplaying],
+.tab-icon-pending[pinned], .tab-icon-image:not([src], [pinned], [crashed], [pictureinpicture])[selected], .tab-icon-image:not([src], [pinned], [crashed], [sharing], [pictureinpicture]), .tab-icon-image[busy], .tab-throbber:not([busy]), .tab-icon-sound:not([soundplaying], [muted], [activemedia-blocked], [pictureinpicture]), .tab-icon-sound[pinned], .tab-sharing-icon-overlay,
 .tab-icon-sound
 {
     list-style-image: url(audio.svg) !important;
+}
+
+.tab-icon-sound[muted]
+{
+    list-style-image: url(audio-muted.svg) !important;
+}
+
+.tab-icon-sound[pictureinpicture] {
+	list-style-image: url(picture-in-picture.svg) !important;
+	width: 16px !important;
+	height: 16px !important;
+}
+
+.tab-icon-overlay {
+	border-radius: 2px !important;
+	margin-inline: -10px -6px !important;
+}
+
+.tab-icon-overlay[soundplaying] {
+	list-style-image: url(audio.svg#overlayStroke) !important;
+	-moz-context-properties: fill, fill-opacity, stroke, stroke-opacity !important;
+	fill: var(--toolbar-color) !important;
+	stroke: var(--toolbar-bgcolor) !important;
+}
+
+.tab-icon-overlay[muted] {
+	list-style-image: url(audio-muted.svg#overlayStroke) !important;
+	-moz-context-properties: fill, fill-opacity, stroke, stroke-opacity !important;
+	fill: var(--toolbar-color) !important;
+	stroke: var(--toolbar-bgcolor) !important;
 }
 
 #pageAction-panel-pinTab, #pageAction-urlbar-pinTab {
@@ -360,12 +389,6 @@ richlistitem[originaltype="loginsFooter"] .ac-site-icon,
 
 #pageAction-urlbar-shareURL, #pageAction-panel-shareURL {
 	list-style-image: url(share.svg) !important;
-}
-
-.tab-icon-overlay[muted],
-.tab-icon-sound[muted]
-{
-    list-style-image: url(audio-muted.svg) !important;
 }
 
 .tab-icon-overlay[activemedia-blocked],
