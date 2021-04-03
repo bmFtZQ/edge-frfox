@@ -298,7 +298,7 @@
 }
 
 .tab-close-button,
-.tab-icon-overlay:-moz-any([soundplaying], [muted], [activemedia-blocked]),
+.tab-icon-overlay[activemedia-blocked],
 .tab-icon-sound
 {
 	border-radius: 2px !important;
