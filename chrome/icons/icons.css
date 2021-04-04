@@ -207,6 +207,10 @@ richlistitem[originaltype="loginsFooter"] .ac-site-icon,
 	list-style-image: url(hyperlink.svg) !important;
 }
 
+#reader-mode-button {
+	list-style-image: url(readerMode.svg) !important;
+}
+
 #pageAction-panel-webcompat-reporter_mozilla_org
 {
 	list-style-image: url(bug.svg) !important;
