@@ -21,7 +21,7 @@ Right Click Menu Light | Right Click Menu Dark | Firefox Alpenglow Dark
    1. `browser.tabs.tabClipWidth` = `83`
    2. `security.insecure_connection_text.enabled` = `true`
 
-**Note: Only tested on macOS Big Sur with Firefox Release 86**
+**Note: Only properly tested on macOS 11 Big Sur
 
 ## Acknowledgements
 [muckSponge](https://github.com/muckSponge) - [MaterialFox](https://github.com/muckSponge/MaterialFox)
