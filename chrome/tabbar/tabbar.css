@@ -268,8 +268,12 @@
 
 .tab-label-container
 {
-	margin-top: -2px !important;
+	margin-top: 0 !important;
 	opacity: 1 !important;
+}
+
+.tab-label {
+	margin-block: 0 !important;
 }
 
 .tabbrowser-tab[image] .tab-label-container,
