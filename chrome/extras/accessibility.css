@@ -1,6 +1,6 @@
 /* High Contrast Theme */
 @media (prefers-contrast) {
-    :root, :root #navigator-toolbox {
+    :root, :root #navigator-toolbox, findbar {
         --highContrastTheme-border-color: #777 !important;
         --highContrastTheme-urlbar-border-color: #000a;
 
@@ -21,7 +21,7 @@
         --panelview-toolbarbutton-active-color: var(--highContrastTheme-menuitem-selected-color) !important;
     }
 
-    :root[lwthemetextcolor="bright"], :root[lwthemetextcolor="bright"] #navigator-toolbox {
+    :root[lwthemetextcolor="bright"], :root[lwthemetextcolor="bright"] #navigator-toolbox, :root[lwthemetextcolor="bright"] findbar {
         --highContrastTheme-border-color: #999 !important;
         --highContrastTheme-urlbar-border-color: #fffa;
 
@@ -67,10 +67,10 @@
         color: var(--highContrastTheme-menuitem-selected-color) !important;
     }
 
-    #urlbar, #searchbar {
+    #urlbar, #searchbar, hbox[anonid="findbar-textbox-wrapper"] {
         box-shadow: 0 0 0 1px var(--highContrastTheme-urlbar-border-color) inset !important;
     }
-    #urlbar:hover, #searchbar:hover {
+    #urlbar:hover, #searchbar:hover, hbox[anonid="findbar-textbox-wrapper"]:hover:not(:focus-within) {
         box-shadow: 0 0 0 1px var(--highContrastTheme-urlbar-border-color) inset, 0 0 0 1px var(--highContrastTheme-urlbar-border-color) inset !important;
     }
     #urlbar[open], #searchbar[open] {
@@ -164,7 +164,9 @@
         #pageAction-urlbar-emailLink,
         #pageAction-urlbar-copyURL,
         #pageAction-urlbar-shareURL,
-        #pageAction-urlbar-addSearchEngine)
+        #pageAction-urlbar-addSearchEngine),
+        hbox[anonid="findbar-textbox-wrapper"] toolbarbutton,
+        hbox[anonid="findbar-textbox-wrapper"]
     {
         transition-duration: 0s, 0s, 0s, 0s, 0s !important;
     }
