@@ -1221,6 +1221,7 @@ richlistitem:-moz-any(
 #context-video-pictureinpicture:not([checked="true"]) {
 	list-style-image: url(icons/picture-in-picture.svg) !important;
 }
+
 /*
 menupopup:not(#ContentSelectDropdown > menupopup) :is(menuitem:not(.menuitem-iconic, [type], menu menuitem, .in-menulist menuitem), menu:not(.menu-iconic, menu menu)) {
 	padding-inline-start: 40px !important;
@@ -1244,7 +1245,6 @@ menupopup:not(#ContentSelectDropdown > menupopup) :is(menuitem:not(.menuitem-ico
 
 	background-image: var(--menuitem-image) !important;
 	/* list-style-image: var(--menuitem-image)  !important; */ /* For native context menus on macOS (Firefox Nightly 89: widget.macos.native-context-menus) */
-	list-style-image: unset !important;
 }
 
 #context-inspect {
