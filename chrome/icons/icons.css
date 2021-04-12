@@ -430,6 +430,7 @@ richlistitem[originaltype="loginsFooter"] .ac-site-icon,
 {
 	padding-left: 16px !important;
 	box-sizing: border-box !important;
+	width: 0 !important;
 }
 
 .urlbarView-favicon[src*="history.svg"]
