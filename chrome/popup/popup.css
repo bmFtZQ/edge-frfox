@@ -1055,15 +1055,8 @@ panel menulist
 	color: var(--arrowpanel-color) !important;
 	height: 30px !important;
 	padding-inline: 6px 10px !important;
-	background-image: 
-		url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' %3E%3Crect style='fill:none; stroke:context-stroke; stroke-width:1px; stroke-opacity:context-stroke-opacity; height:calc(100%25 - 1px); width:calc(100%25 + 2px)' x='.5' y='.5' rx='2.5'/%3E%3C/svg%3E"),
-		url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2' %3E%3Crect style='fill:none; stroke:context-stroke; stroke-width:1px; stroke-opacity:context-stroke-opacity; height:calc(100%25 - 1px); width:4px; x:-2.5px;' y='.5' rx='2.5'/%3E%3C/svg%3E") !important;
-	background-size: calc(100% - 2px) 30px, 2px 30px !important;
-	background-position: left, right !important;
-	background-repeat: no-repeat !important;
-	-moz-context-properties: stroke, stroke-opacity !important;
-	stroke: currentColor !important;
-	stroke-opacity: .3 !important;
+	border-radius: 4px !important;
+	box-shadow: 0 0 0 1px var(--panel-separator-color) inset, 0 0 0 1px var(--panel-separator-color) inset !important;
 }
 
 panel menulist::after
@@ -1210,8 +1203,9 @@ richlistitem:-moz-any(
 	list-style-image: url(icons/picture-in-picture.svg) !important;
 }
 
-:not(menu, #ContentSelectDropdown) > menupopup > menuitem:not(.menuitem-iconic, [type="checkbox"]),
-:not(menu, #ContentSelectDropdown) > menupopup > menu:not(.menu-iconic, [type="checkbox"]) {
+:not(menu, #ContentSelectDropdown) > menupopup > menuitem:not(.menuitem-iconic, [type="checkbox"], .in-menulist),
+:not(menu, #ContentSelectDropdown) > menupopup > menu:not(.menu-iconic, [type="checkbox"], .in-menulist)
+{
 	padding-inline-start: 40px !important;
 	background-size: 16px !important;
 	background-repeat: no-repeat !important;
