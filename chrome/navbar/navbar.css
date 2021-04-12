@@ -2,7 +2,7 @@
 {
 	min-height: 38px !important;
 	box-shadow: none !important;
-	padding-inline: 5px 6px !important;
+	padding-inline: 6px !important;
 	background-color: var(--toolbar-bgcolor) !important;
 }
 
@@ -88,4 +88,27 @@ panel .toolbarbutton-badge
 #nav-bar-customization-target
 {
 	overflow: visible !important;
+}
+
+/* Compact mode */
+:root[uidensity="compact"] {
+	--button-padding: 8px !important;
+}
+:root[uidensity="compact"] #nav-bar {
+	padding-inline: 4px !important;
+}
+:root[uidensity="compact"] :is(#navigator-toolbox .webextension-browser-action > :is(.toolbarbutton-badge-stack, .toolbarbutton-icon),
+#navigator-toolbox #nav-bar .toolbarbutton-1:not(#fxa-toolbar-menu-button) > :is(.toolbarbutton-badge-stack, .toolbarbutton-icon)) {
+    padding-inline: var(--button-padding) !important;
+    width: calc(16px + var(--button-padding) * 2) !important;
+}
+:root[uidensity="compact"] #fxa-toolbar-menu-button {
+    margin-inline: 1px !important;
+}
+:root[uidensity="compact"] :is(#reload-button > .toolbarbutton-animatable-box, #stop-button > .toolbarbutton-animatable-box,
+#nav-bar-overflow-button > .toolbarbutton-animatable-box) {
+	margin-inline-start: calc((16px + 2 * var(--button-padding) - 18px) / 2) !important;
+}
+:root[uidensity="compact"] #PersonalToolbar {
+	padding-inline: 2px;
 }
