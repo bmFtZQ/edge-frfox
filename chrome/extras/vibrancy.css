@@ -1,26 +1,26 @@
 /* (MACOS ONLY!) Enable window vibrancy behind tabs */
 
-#TabsToolbar:not(:-moz-window-inactive)
+#navigator-toolbox:not(:-moz-window-inactive)
 {
     background-color: #0001 !important;
 }
-#main-window:-moz-any([lwthemetextcolor="bright"], [privatebrowsingmode=temporary]) #TabsToolbar:not(:-moz-window-inactive)
+#main-window[lwthemetextcolor="bright"] #navigator-toolbox:not(:-moz-window-inactive)
 {
     background-color: #1114 !important;
 }
 
 #main-window
 {
-    -moz-appearance: -moz-mac-vibrant-titlebar-light !important;
+    appearance: -moz-mac-vibrant-titlebar-light !important;
 }
 
-#main-window:-moz-any([lwthemetextcolor="bright"], [privatebrowsingmode=temporary])
+#main-window[lwthemetextcolor="bright"]
 {
-    -moz-appearance: -moz-mac-vibrant-titlebar-dark !important;
+    appearance: -moz-mac-vibrant-titlebar-dark !important;
 }
 
-:-moz-any(#main-window, #TabsToolbar):-moz-any([inFullscreen="true"], :-moz-window-inactive)
+:-moz-any(#main-window, #navigator-toolbox):-moz-any([inFullscreen="true"], :-moz-window-inactive)
 {
-    -moz-appearance: none !important;
+    appearance: none !important;
     background-color: var(--lwt-accent-color) !important;
 }
