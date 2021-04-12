@@ -11,6 +11,7 @@
 
 /* Optional Extras (uncomment/comment to enable/disable) */
 
+@import "extras/accessibility.css"; /* High Contrast theme and reduced motion (Only used on OS setting) */
 /* @import "extras/vibrancy.css"; */ /* (MACOS ONLY!) Enable window vibrancy behind tabs */
 /* @import "extras/hidetoolbarbuttons.css"; */ /* (BUGGY: USE AT OWN RISK!) Hide toolbar buttons other than extensions */
 /* @import "extras/swapaccount-overflow.css"; */ /* (BUGGY: USE AT OWN RISK!) Swap Account icon and Overflow icon (must be placed next to each other) */
