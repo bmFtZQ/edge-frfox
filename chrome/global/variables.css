@@ -9,7 +9,8 @@
 /* Light Mode */
 :root:not([style]),
 :root:not([lwtheme]),
-:root[style*="--lwt-accent-color:rgb(227, 228, 230); --lwt-text-color:rgba(24, 25, 26);"]
+:root[style*="--lwt-accent-color:rgb(227, 228, 230); --lwt-text-color:rgba(24, 25, 26);"],
+:root[style*="--lwt-accent-color:rgb(240, 240, 244); --lwt-text-color:rgba(21, 20, 26);"] /* Used for Proton (May be changed in future) */
 {
 	/* accentcolor */
 	--lwt-accent-color: #cecece !important;
@@ -19,6 +20,9 @@
 	
 	/* toolbar */
 	--toolbar-bgcolor: #f7f7f7 !important;
+
+	/* Force tabs to match --toolbar-bgcolor */
+	--lwt-selected-tab-background-color: var(--toolbar-bgcolor) !important;
 	
 	/* toolbar_text */
 	--toolbar-color: #000 !important;
@@ -58,7 +62,8 @@
 	--private-browsing-indicator: #0078d4 !important;
 }
 /* Dark Mode */
-:root[style*="--lwt-accent-color:rgb(12, 12, 13); --lwt-text-color:rgba(249, 249, 250);"]
+:root[style*="--lwt-accent-color:rgb(12, 12, 13); --lwt-text-color:rgba(249, 249, 250);"],
+:root[style*="--lwt-accent-color:rgb(28, 27, 34); --lwt-text-color:rgba(251, 251, 254);"] /* Used for Proton (May be changed in future) */
 {
 	/* accentcolor */
 	--lwt-accent-color: #1b1b1b !important;
@@ -68,6 +73,9 @@
 	
 	/* toolbar */
 	--toolbar-bgcolor: #3b3b3b !important;
+
+	/* Force tabs to match --toolbar-bgcolor */
+	--lwt-selected-tab-background-color: var(--toolbar-bgcolor) !important;
 	
 	/* toolbar_text */
 	--toolbar-color: #fff !important;
@@ -173,7 +181,14 @@
 	--toolbar-non-lwt-bgcolor: #f7f7f7 !important;
 	--toolbar-non-lwt-textcolor: #000 !important;
 
-	--tab-separator-opacity: .35 !important;
+	--tab-separator-opacity: .5 !important;
+}
+
+@media (-moz-proton) {
+	:root {
+		--arrowpanel-menuitem-margin: 0 !important; /* used to get rid of the left/right margins in Proton */
+		--space-above-tabbar: 0;
+	}
 }
 
 #titlebar,
