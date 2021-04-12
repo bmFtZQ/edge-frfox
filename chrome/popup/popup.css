@@ -1055,7 +1055,7 @@ panel menulist
 	color: var(--arrowpanel-color) !important;
 	height: 30px !important;
 	padding-inline: 6px 10px !important;
-	border-radius: 4px !important;
+	border-radius: 2px !important;
 	box-shadow: 0 0 0 1px var(--panel-separator-color) inset, 0 0 0 1px var(--panel-separator-color) inset !important;
 }
 
