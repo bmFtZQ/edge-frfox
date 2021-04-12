@@ -120,7 +120,7 @@
 	height: 20px !important;
 	transform: translateY(-10px) !important;
 	opacity: 0 !important;
-	transition: opacity .2s var(--ease-basic) !important;
+	transition: opacity var(--tab-transition-duration) var(--ease-basic) !important;
 }
 
 .tab-content::before
