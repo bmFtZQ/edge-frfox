@@ -1210,7 +1210,8 @@ richlistitem:-moz-any(
 	list-style-image: url(icons/picture-in-picture.svg) !important;
 }
 
-menupopup:not(#ContentSelectDropdown > menupopup) :-moz-any(menuitem:not(.menuitem-iconic, [type], menu menuitem, .in-menulist menuitem), menu:not(.menu-iconic, menu menu)) {
+:not(menu, #ContentSelectDropdown) > menupopup > menuitem:not(.menuitem-iconic),
+:not(menu, #ContentSelectDropdown) > menupopup > menu:not(.menu-iconic) {
 	padding-inline-start: 40px !important;
 	background-size: 16px !important;
 	background-repeat: no-repeat !important;
