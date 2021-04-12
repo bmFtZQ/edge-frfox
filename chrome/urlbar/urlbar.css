@@ -635,7 +635,7 @@
 		visibility 0s 4s !important;
 	opacity: 0 !important;
 	visibility: hidden !important;
-	margin-inline-start: -32px !important;
+	margin-inline-start: -36px !important;
 }
 
 #urlbar:hover .urlbar-page-action:-moz-any(
