@@ -5,13 +5,18 @@
 	fill: currentColor;
   }
 
-.toolbarbutton-1:-moz-any(#back-button, #forward-button),
+.toolbarbutton-1#back-button,
 #context-back,
-#context-forward,
 .subviewbutton-back,
 .identity-popup-expander
 {
 	list-style-image: url(arrow-back.svg) !important;
+}
+
+.toolbarbutton-1#forward-button,
+#context-forward
+{
+	list-style-image: url(arrow-back.svg#flip) !important;
 }
 
 #PanelUI-menu-button
@@ -24,9 +29,14 @@
 {
 	list-style-image: url(refresh.svg) !important;
 }
-:-moz-any(#reload-button, #stop-button):not([displaystop]) > .toolbarbutton-animatable-box > .toolbarbutton-animatable-image {
-	animation-timing-function: steps(0) !important;
-	animation-duration: 0ms !important;
+
+#reload-button > .toolbarbutton-animatable-box, #stop-button > .toolbarbutton-animatable-box,
+#nav-bar-overflow-button > .toolbarbutton-animatable-box {
+	margin-inline-start: calc((16px + 2 * 12px - 18px) / 2) !important;
+}
+
+#stop-reload-button[animate] > #reload-button > .toolbarbutton-animatable-box > .toolbarbutton-animatable-image {
+	background-image: url(reload-to-stop.svg) !important;
 }
 
 #stop-button,
@@ -35,10 +45,12 @@
 	list-style-image: url(stop.svg) !important;
 }
 
-.toolbarbutton-1#forward-button,
-#context-forward
-{
-	transform: scaleX(-1) !important;
+#stop-reload-button[animate] > #reload-button[displaystop] + #stop-button > .toolbarbutton-animatable-box > .toolbarbutton-animatable-image {
+	background-image: url(stop-to-reload.svg) !important;
+}
+
+#nav-bar-overflow-button[animate] > .toolbarbutton-animatable-box > .toolbarbutton-animatable-image {
+	background-image: url(chevron-animation.svg) !important;
 }
 
 #home-button
@@ -145,6 +157,14 @@
 #PanelUI-remotetabs-view-sidebar,
 #sidebar-button {
 	list-style-image: url(sidebar.svg) !important;
+}
+
+#sidebar-button[positionend] {
+	transform: scaleX(-1) !important;
+}
+
+#sidebar-button[checked] {
+	list-style-image: url(sidebar-fill.svg) !important;
 }
 
 #nav-bar-overflow-button, #alltabs-button {
