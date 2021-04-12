@@ -96,7 +96,7 @@
 #scrollbutton-up[part="scrollbutton-up"]:not(.menupopup-scrollbutton)[disabled],
 #scrollbutton-down[part="scrollbutton-down"]:not(.menupopup-scrollbutton)[disabled]
 {
-	opacity: 1 !important;
+	opacity: .42 !important;
 }
 
 #navigator-toolbox :-moz-any(.toolbarbutton-1, toolbarbutton.bookmark-item:not(.subviewbutton)):hover:not([disabled]),
