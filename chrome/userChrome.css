@@ -21,7 +21,7 @@
 
 /* Display tab-line above tabs */
 /*
-.tab-line { display: -moz-box !important; }
+.tabbrowser-tab[visuallyselected] .tab-line { display: -moz-box !important; }
 */
 
 /* (MACOS ONLY!) Adjust window controls position to make the spacing even */
