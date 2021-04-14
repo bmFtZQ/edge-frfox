@@ -18,7 +18,10 @@
 
 .tabbrowser-tab,
 #TabsToolbar-customization-target > :not(#tabbrowser-tabs),
-#TabsToolbar #tabs-newtab-button
+#TabsToolbar #tabs-newtab-button,
+/* no ::part workaround - may have side effects */
+#scrollbutton-up[part="scrollbutton-up"]:not(.menupopup-scrollbutton),
+#scrollbutton-down[part="scrollbutton-down"]:not(.menupopup-scrollbutton)
 {
   margin-top: 2px !important;
 }
