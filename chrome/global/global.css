@@ -47,9 +47,9 @@
 					{
 						background-color: #e7eaed !important;
 						color: #666a6d !important;
-        		  	}
-        		}
-      		}
+        	}
+        }
+      }
 		}
 	}
 }
@@ -133,16 +133,16 @@
 	height: 30px !important;
 }
 
-#navigator-toolbox .toolbarbutton-1 > :-moz-any(.toolbarbutton-icon, .toolbarbutton-badge-stack),
-/* no ::part workaround - may have side effects */
-#scrollbutton-up[part="scrollbutton-up"]:not(.menupopup-scrollbutton) > .toolbarbutton-icon,
-#scrollbutton-down[part="scrollbutton-down"]:not(.menupopup-scrollbutton) > .toolbarbutton-icon
+#navigator-toolbox .toolbarbutton-1 > :-moz-any(.toolbarbutton-icon, .toolbarbutton-badge-stack)
 {
 	padding: 7px 12px !important;
 	background: 0 !important;
 }
 
-#TabsToolbar .toolbarbutton-1 > :-moz-any(.toolbarbutton-icon, .toolbarbutton-badge-stack)
+#TabsToolbar .toolbarbutton-1 > :-moz-any(.toolbarbutton-icon, .toolbarbutton-badge-stack),
+/* no ::part workaround - may have side effects */
+#scrollbutton-up[part="scrollbutton-up"]:not(.menupopup-scrollbutton) > .toolbarbutton-icon,
+#scrollbutton-down[part="scrollbutton-down"]:not(.menupopup-scrollbutton) > .toolbarbutton-icon
 {
 	padding: 6px !important;
 	width: 28px !important;
