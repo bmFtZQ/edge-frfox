@@ -1,3 +1,8 @@
+.tabbrowser-tab:not([pinned], [tabdrop-samewindow])
+{
+	transition: min-width 150ms cubic-bezier(0, 1, .25, 1), max-width 150ms cubic-bezier(0, .9, .25 ,1) !important;
+}
+
 :-moz-any(.titlebar-placeholder, .titlebar-spacer)[type=pre-tabs]
 {
 	width: 0 !important;
@@ -23,7 +28,7 @@
 #TabsToolbar
 {
 	-moz-appearance: none !important;
-    -moz-default-appearance: none !important;
+  -moz-default-appearance: none !important;
 	background-color: transparent !important;
 	color: var(--lwt-text-color) !important;
 }
@@ -197,7 +202,9 @@
 	visibility: visible !important;
 	margin: 0 !important;
 }
-.tab-line {
+
+.tab-line
+{
 	height: 8px !important;
 	border-radius: var(--tab-border-radius) var(--tab-border-radius) 0 0 !important;
 	clip-path: inset(0 0 6px 0);
