@@ -1,25 +1,25 @@
-#navigator-toolbox toolbarbutton.bookmark-item:not(.subviewbutton)
-{
-	padding: 6px !important;
+#navigator-toolbox toolbarbutton.bookmark-item:not(.subviewbutton) {
+  padding: 6px !important;
 }
-#PersonalToolbar
-{
-	padding-top: 0 !important;
-	padding-inline: 6px 12px !important;
-	margin-top: -2px !important;
-	background: var(--toolbar-bgcolor) !important;
-	clip-path: inset(2px 0 0 0);
+
+#PersonalToolbar {
+  padding-top: 0 !important;
+  padding-inline: 6px 12px !important;
+  margin-top: -2px !important;
+  background: var(--toolbar-bgcolor) !important;
+  clip-path: inset(2px 0 0 0);
 }
-#navigator-toolbox #PersonalToolbar .toolbarbutton-1 > :-moz-any(.toolbarbutton-icon, .toolbarbutton-badge-stack)
-{
-	width: 28px !important;
-	height: 28px !important;
+
+#navigator-toolbox #PersonalToolbar .toolbarbutton-1> :-moz-any(.toolbarbutton-icon, .toolbarbutton-badge-stack) {
+  width: 28px !important;
+  height: 28px !important;
 }
-#navigator-toolbox #PersonalToolbar .toolbarbutton-1 > :-moz-any(.toolbarbutton-icon, .toolbarbutton-badge-stack)
-{
-	padding: 6px !important;
-	background: 0 !important;
+
+#navigator-toolbox #PersonalToolbar .toolbarbutton-1> :-moz-any(.toolbarbutton-icon, .toolbarbutton-badge-stack) {
+  padding: 6px !important;
+  background: 0 !important;
 }
+
 :root[uidensity="compact"] #PersonalToolbar {
-	padding-inline: 4px 6px !important;
+  padding-inline: 4px 6px !important;
 }
