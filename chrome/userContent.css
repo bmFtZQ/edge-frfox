@@ -1,6 +1,2 @@
 @import "userContent/NewTab.css";
 @import "userContent/Preferences.css";
-
-img.transparent {
-    background: transparent !important;
-}
