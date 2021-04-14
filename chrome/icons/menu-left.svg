@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+   <path
+   style="fill:context-fill;fill-opacity:context-fill-opacity"
+   transform="scale(-1 1)"
+   transform-origin="center"
+   d="M 5.4765625 2 A 0.5 0.5 0 0 0 5.1464844 2.1464844 A 0.5 0.5 0 0 0 5.1464844 2.8535156 L 10.292969 8 L 5.1464844 13.146484 A 0.5 0.5 0 0 0 5.1464844 13.853516 A 0.5 0.5 0 0 0 5.8535156 13.853516 L 11.353516 8.3535156 A 0.50005 0.50005 0 0 0 11.353516 7.6464844 L 5.8535156 2.1464844 A 0.5 0.5 0 0 0 5.4765625 2 z " />
+</svg>

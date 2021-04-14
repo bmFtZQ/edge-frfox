@@ -175,6 +175,11 @@
 	list-style-image: url(menu-right.svg) !important;
 }
 
+#scrollbutton-up[part="scrollbutton-up"]:not(.menupopup-scrollbutton),
+#scrollbutton-down[part="scrollbutton-down"]:not(.menupopup-scrollbutton) {
+	list-style-image: url(menu-left.svg) !important;
+}
+
 #appMenu-customize-button, #overflowMenu-customize-button {
 	list-style-image: url(brush.svg) !important;
 }
