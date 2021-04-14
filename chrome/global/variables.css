@@ -1,9 +1,8 @@
-:root
-{		
-	--toolbar-field-background-color: var(--lwt-toolbar-field-background-color) !important;
-	--toolbar-field-hover-background-color: var(--lwt-toolbar-field-background-color) !important;
-	--toolbar-field-focus-background-color: var(--lwt-toolbar-field-focus) !important;
-	--toolbar-field-hover-border-color: var(--lwt-toolbar-field-border-color) !important;
+:root {
+  --toolbar-field-background-color: var(--lwt-toolbar-field-background-color) !important;
+  --toolbar-field-hover-background-color: var(--lwt-toolbar-field-background-color) !important;
+  --toolbar-field-focus-background-color: var(--lwt-toolbar-field-focus) !important;
+  --toolbar-field-hover-border-color: var(--lwt-toolbar-field-border-color) !important;
 }
 
 /* Light Mode */
@@ -11,254 +10,241 @@
 :root:not([lwtheme]),
 :root[style*="--lwt-accent-color:rgb(227, 228, 230); --lwt-text-color:rgba(24, 25, 26);"],
 :root[style*="--lwt-accent-color:rgb(240, 240, 244); --lwt-text-color:rgba(21, 20, 26);"] /* Used for Proton (May be changed in future) */
-{
-	/* accentcolor */
-	--lwt-accent-color: #cecece !important;
-	
-	/* textcolor */
-	--lwt-text-color: #000 !important;
-	
-	/* toolbar */
-	--toolbar-bgcolor: #f7f7f7 !important;
+  {
+  /* accentcolor */
+  --lwt-accent-color: #cecece !important;
 
-	/* Force tabs to match --toolbar-bgcolor */
-	--lwt-selected-tab-background-color: var(--toolbar-bgcolor) !important;
-	
-	/* toolbar_text */
-	--toolbar-color: #000 !important;
-	
-	/* toolbar_bottom_separator */
-	--toolbox-border-bottom-color: #d2d2d2 !important; /* legacy */
-	--chrome-content-separator-color: #d2d2d2 !important;
-	
-	/* icons */
-	--lwt-toolbarbutton-icon-fill: #000 !important;
-	
-	/* icons_attention */
-	--lwt-toolbarbutton-icon-fill-attention: #0078d4 !important;
-	
-	/* button_background_hover */
-	--lwt-toolbarbutton-hover-background: #0000001a !important;
-	
-	/* button_background_active */
-	--lwt-toolbarbutton-active-background: #0000002a !important;
-	
-	--lwt-toolbar-field-color: #000 !important;
-	--lwt-toolbar-field-focus-color: #000 !important;
-	
-	/* popup_highlight */
-	--autocomplete-popup-highlight-background: #0001 !important;
-	
-	/* popup_highlight_text */
-	--autocomplete-popup-highlight-color: #000 !important;
+  /* textcolor */
+  --lwt-text-color: #000 !important;
 
-	--urlbar-popup-url-color: #0172C9 !important;
-	--lwt-toolbar-field-background-color: #fff !important;
-    --lwt-toolbar-field-focus: #fff !important;
-	--lwt-toolbar-field-border-color: #ccc !important;
+  /* toolbar */
+  --toolbar-bgcolor: #f7f7f7 !important;
 
-	--tab-line-col: #0078d4 !important;
-	--toolbar-field-focus-border-color: #0078d4a0 !important;
-	--private-browsing-indicator: #0078d4 !important;
+  /* tab background (unset to match toolbar-bgcolor) */
+  --lwt-selected-tab-background-color: unset !important;
+
+  /* toolbar_text */
+  --toolbar-color: #000 !important;
+
+  /* toolbar_bottom_separator */
+  --toolbox-border-bottom-color: #d2d2d2 !important; /* legacy */
+  --chrome-content-separator-color: #d2d2d2 !important;
+
+  /* icons */
+  --lwt-toolbarbutton-icon-fill: #000 !important;
+
+  /* icons_attention */
+  --lwt-toolbarbutton-icon-fill-attention: #0078d4 !important;
+
+  /* button_background_hover */
+  --lwt-toolbarbutton-hover-background: #0000001a !important;
+
+  /* button_background_active */
+  --lwt-toolbarbutton-active-background: #0000002a !important;
+
+  --lwt-toolbar-field-color: #000 !important;
+  --lwt-toolbar-field-focus-color: #000 !important;
+
+  /* popup_highlight */
+  --autocomplete-popup-highlight-background: #0001 !important;
+
+  /* popup_highlight_text */
+  --autocomplete-popup-highlight-color: #000 !important;
+
+  --urlbar-popup-url-color: #0172C9 !important;
+  --lwt-toolbar-field-background-color: #fff !important;
+  --lwt-toolbar-field-focus: #fff !important;
+  --lwt-toolbar-field-border-color: #ccc !important;
+
+  --tab-line-col: #0078d4 !important;
+  --toolbar-field-focus-border-color: #0078d4a0 !important;
+  --private-browsing-indicator: #0078d4 !important;
 }
+
 /* Dark Mode */
 :root[style*="--lwt-accent-color:rgb(12, 12, 13); --lwt-text-color:rgba(249, 249, 250);"],
 :root[style*="--lwt-accent-color:rgb(28, 27, 34); --lwt-text-color:rgba(251, 251, 254);"] /* Used for Proton (May be changed in future) */
-{
-	/* accentcolor */
-	--lwt-accent-color: #1b1b1b !important;
-	
-	/* textcolor */
-	--lwt-text-color: #fff !important;
-	
-	/* toolbar */
-	--toolbar-bgcolor: #3b3b3b !important;
+  {
+  /* accentcolor */
+  --lwt-accent-color: #1b1b1b !important;
 
-	/* Force tabs to match --toolbar-bgcolor */
-	--lwt-selected-tab-background-color: var(--toolbar-bgcolor) !important;
-	
-	/* toolbar_text */
-	--toolbar-color: #fff !important;
-	
-	/* toolbar_bottom_separator */
-	--toolbox-border-bottom-color: #5B5B5B !important; /* legacy */
-	--chrome-content-separator-color: #5B5B5B !important;
-	
-	/* icons */
-	--lwt-toolbarbutton-icon-fill: #fff !important;
-	
-	/* icons_attention */
-	--lwt-toolbarbutton-icon-fill-attention: #4C98D1 !important;
-	
-	/* button_background_hover */
-	--lwt-toolbarbutton-hover-background: #ffffff1a !important;
-	
-	/* button_background_active */
-	--lwt-toolbarbutton-active-background: #ffffff2a !important;
-	
-	--lwt-toolbar-field-color: #fff !important;
-	--lwt-toolbar-field-focus-color: #fff !important;
-	
-	/* popup */
-	--arrowpanel-background: #4a4a4a !important;
-	
-	/* popup_text */
-	--arrowpanel-color: #fff !important;
-	--autocomplete-popup-color: #fff !important;
-	--panel-disabled-color: hsla(0, 0%, 100%, .5) !important;
-	
-	/* popup_border */
-	--arrowpanel-border-color: #63636363 !important;
-	--autocomplete-popup-border-color: #636363 !important;
-	
-	/* popup_highlight */
-	--autocomplete-popup-highlight-background: #fff1 !important;
-	
-	/* popup_highlight_text */
-	--autocomplete-popup-highlight-color: #fff !important;
+  /* textcolor */
+  --lwt-text-color: #fff !important;
 
-	--urlbar-popup-url-color: #75B6E8 !important;
-	--lwt-toolbar-field-background-color: #2b2b2b !important;
-    --lwt-toolbar-field-focus: #2b2b2b !important;
-	--lwt-toolbar-field-border-color: #656565 !important;
+  /* toolbar */
+  --toolbar-bgcolor: #3b3b3b !important;
 
-	--tab-line-col: #4C98D1 !important;
-	--toolbar-field-focus-border-color: #4c97d1a0 !important;
-	--private-browsing-indicator: #006cbe !important;
+  /* tab background (unset to match toolbar-bgcolor) */
+  --lwt-selected-tab-background-color: unset !important;
+
+  /* toolbar_text */
+  --toolbar-color: #fff !important;
+
+  /* toolbar_bottom_separator */
+  --toolbox-border-bottom-color: #5B5B5B !important; /* legacy */
+  --chrome-content-separator-color: #5B5B5B !important;
+
+  /* icons */
+  --lwt-toolbarbutton-icon-fill: #fff !important;
+
+  /* icons_attention */
+  --lwt-toolbarbutton-icon-fill-attention: #4C98D1 !important;
+
+  /* button_background_hover */
+  --lwt-toolbarbutton-hover-background: #ffffff1a !important;
+
+  /* button_background_active */
+  --lwt-toolbarbutton-active-background: #ffffff2a !important;
+
+  --lwt-toolbar-field-color: #fff !important;
+  --lwt-toolbar-field-focus-color: #fff !important;
+
+  /* popup */
+  --arrowpanel-background: #4a4a4a !important;
+
+  /* popup_text */
+  --arrowpanel-color: #fff !important;
+  --autocomplete-popup-color: #fff !important;
+  --panel-disabled-color: hsla(0, 0%, 100%, .5) !important;
+
+  /* popup_border */
+  --arrowpanel-border-color: #63636363 !important;
+  --autocomplete-popup-border-color: #636363 !important;
+
+  /* popup_highlight */
+  --autocomplete-popup-highlight-background: #fff1 !important;
+
+  /* popup_highlight_text */
+  --autocomplete-popup-highlight-color: #fff !important;
+
+  --urlbar-popup-url-color: #75B6E8 !important;
+  --lwt-toolbar-field-background-color: #2b2b2b !important;
+  --lwt-toolbar-field-focus: #2b2b2b !important;
+  --lwt-toolbar-field-border-color: #656565 !important;
+
+  --tab-line-col: #4C98D1 !important;
+  --toolbar-field-focus-border-color: #4c97d1a0 !important;
+  --private-browsing-indicator: #006cbe !important;
 }
 
 /* Inactive Window Light Mode */
 :-moz-any(:root:not([style]), :root:not([lwtheme]), :root[style*="--lwt-accent-color:rgb(227, 228, 230); --lwt-text-color:rgba(24, 25, 26);"]):-moz-window-inactive :-moz-any(#TabsToolbar, #navigator-toolbox) {
-	--lwt-accent-color: #e8e8e8 !important;
-	--lwt-text-color: #3a3a3a !important;
-	--toolbar-color: #3a3a3a !important;
+  --lwt-accent-color: #e8e8e8 !important;
+  --lwt-text-color: #3a3a3a !important;
+  --toolbar-color: #3a3a3a !important;
 }
 
 /* Inactive Window Dark Mode */
 :-moz-any(:root[style*="--lwt-accent-color:rgb(12, 12, 13); --lwt-text-color:rgba(249, 249, 250);"]):-moz-window-inactive :-moz-any(#TabsToolbar, #navigator-toolbox) {
-	--lwt-accent-color: #2e2e2e !important;
-	--lwt-text-color: #b7b7b7 !important;
-	--toolbar-color: #cecece !important;
+  --lwt-accent-color: #2e2e2e !important;
+  --lwt-text-color: #b7b7b7 !important;
+  --toolbar-color: #cecece !important;
 }
 
 /* Sidebar Light Mode */
 :-moz-any(#sidebar-box, #sidebar),
-:-moz-any(.sidebar-panel, body)
-{
-	/* sidebar */
-	--sidebar-background-color: #f5f5f5 !important;
-	--lwt-sidebar-background-color: var(--sidebar-background-color) !important;
-	
-	/* sidebar_text */
-	--sidebar-text-color: #000 !important;
-	--lwt-sidebar-text-color: var(--sidebar-text-color) !important;
+:-moz-any(.sidebar-panel, body) {
+  /* sidebar */
+  --sidebar-background-color: #f5f5f5 !important;
+  --lwt-sidebar-background-color: var(--sidebar-background-color) !important;
+
+  /* sidebar_text */
+  --sidebar-text-color: #000 !important;
+  --lwt-sidebar-text-color: var(--sidebar-text-color) !important;
 }
 
 /* Sidebar Dark Mode */
-:-moz-any(#sidebar-box, #sidebar)[style*="--sidebar-background-color:rgb(56, 56, 61);"], :-moz-any(.sidebar-panel, body)[style*="--lwt-sidebar-background-color:rgb(56, 56, 61);"],
-:-moz-any(.sidebar-panel, body)[style*="--lwt-sidebar-background-color:rgb(56, 56, 61);"]
-{
-	/* sidebar */
-	--sidebar-background-color: #3b3b3b !important;
-	--lwt-sidebar-background-color: var(--sidebar-background-color) !important;
-	
-	/* sidebar_text */
-	--sidebar-text-color: #fff !important;
-	--lwt-sidebar-text-color: var(--sidebar-text-color) !important;
+:-moz-any(#sidebar-box, #sidebar)[style*="--sidebar-background-color:rgb(56, 56, 61);"],
+:-moz-any(.sidebar-panel, body)[style*="--lwt-sidebar-background-color:rgb(56, 56, 61);"] {
+  /* sidebar */
+  --sidebar-background-color: #3b3b3b !important;
+  --lwt-sidebar-background-color: var(--sidebar-background-color) !important;
+
+  /* sidebar_text */
+  --sidebar-text-color: #fff !important;
+  --lwt-sidebar-text-color: var(--sidebar-text-color) !important;
 }
 
-:root
-{
-    --ease-in: cubic-bezier(.4, 0, 1, 1);
-	--ease-out: cubic-bezier(0, 0, .2, 1);
-	--ease-basic: linear;
+:root {
+  --ease-in: cubic-bezier(.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, .2, 1);
+  --ease-basic: linear;
 
-	--button-size: 32px; /* is this used? */
-	--icon-size: 24px; /* is this used? */
-	
-	--downloads-item-height: 48px !important;
-	
-	--toolbar-non-lwt-bgcolor: #f7f7f7 !important;
-	--toolbar-non-lwt-textcolor: #000 !important;
+  --button-size: 32px; /* is this used? */
+  --icon-size: 24px; /* is this used? */
 
-	--tab-separator-opacity: .5 !important;
+  --downloads-item-height: 48px !important;
+
+  --toolbar-non-lwt-bgcolor: #f7f7f7 !important;
+  --toolbar-non-lwt-textcolor: #000 !important;
+
+  --tab-separator-opacity: .5 !important;
 }
 
 @media (-moz-proton) {
-	:root {
-		--arrowpanel-menuitem-margin: 0 !important; /* used to get rid of the left/right margins in Proton */
-		--space-above-tabbar: 0;
-	}
+  :root {
+    --arrowpanel-menuitem-margin: 0 !important; /* used to get rid of the left/right margins in Proton */
+    --space-above-tabbar: 0;
+  }
 }
 
 #titlebar,
-#tabbrowser-tabs
-{
- 	--tab-min-height: 32px !important;
+#tabbrowser-tabs {
+  --tab-min-height: 32px !important;
 }
 
-@supports -moz-bool-pref("materialFox.reduceTabOverflow")
-{
-	#tabbrowser-tabs
-	{
-		--tab-min-width: 32px !important;
-	}
+@supports -moz-bool-pref("materialFox.reduceTabOverflow") {
+  #tabbrowser-tabs {
+    --tab-min-width: 32px !important;
+  }
 }
 
-@media (-moz-mac-yosemite-theme)
-{
-	:root[extradragspace]
-	{
-		--space-above-tabbar: 8px !important;
-	}
+@media (-moz-mac-yosemite-theme) {
+  :root[extradragspace] {
+    --space-above-tabbar: 8px !important;
+  }
 }
 
 /* Ubuntu */
-@media (-moz-gtk-csd-available)
-{
-	:root:not(:-moz-lwtheme)
-	{
-		--toolbar-bgcolor: -moz-dialog !important;
-		--toolbar-color: -moz-dialogtext !important;
-	}
+@media (-moz-gtk-csd-available) {
+  :root:not(:-moz-lwtheme) {
+    --toolbar-bgcolor: -moz-dialog !important;
+    --toolbar-color: -moz-dialogtext !important;
+  }
 }
 
 :root:-moz-lwtheme-darktext,
 :root toolbar:not([brighttext]),
-.tabbrowser-tab[visuallyselected]
-{
-	--toolbarbutton-hover-background: var(--lwt-toolbarbutton-hover-background, hsla(0, 0%, 0%, .07)) !important;
-    --toolbarbutton-active-background: var(--lwt-toolbarbutton-active-background, hsla(0, 0%, 0%, .11)) !important;
+.tabbrowser-tab[visuallyselected] {
+  --toolbarbutton-hover-background: var(--lwt-toolbarbutton-hover-background, hsla(0, 0%, 0%, .07)) !important;
+  --toolbarbutton-active-background: var(--lwt-toolbarbutton-active-background, hsla(0, 0%, 0%, .11)) !important;
 }
 
 :root:-moz-lwtheme-brighttext,
 :root toolbar[brighttext],
-.tabbrowser-tab[visuallyselected]:-moz-lwtheme-brighttext
-{
-    --toolbarbutton-hover-background: var(--lwt-toolbarbutton-hover-background, hsla(0, 0%, 100%, .1)) !important;
-    --toolbarbutton-active-background: var(--lwt-toolbarbutton-active-background, hsla(0, 0%, 100%, .17)) !important;
+.tabbrowser-tab[visuallyselected]:-moz-lwtheme-brighttext {
+  --toolbarbutton-hover-background: var(--lwt-toolbarbutton-hover-background, hsla(0, 0%, 100%, .1)) !important;
+  --toolbarbutton-active-background: var(--lwt-toolbarbutton-active-background, hsla(0, 0%, 100%, .17)) !important;
 }
 
 /* special case for urlbar buttons */
-:-moz-any(#urlbar, #searchbar)
-{
-	--toolbarbutton-hover-background: #0001 !important;
-	--toolbarbutton-active-background: #0002 !important;
+:-moz-any(#urlbar, #searchbar) {
+  --toolbarbutton-hover-background: #0001 !important;
+  --toolbarbutton-active-background: #0002 !important;
 }
 
-:root:-moz-lwtheme-brighttext :-moz-any(#urlbar, #searchbar)
-{
-	--toolbarbutton-hover-background: #fff1 !important;
-	--toolbarbutton-active-background: #fff2 !important;
+:root:-moz-lwtheme-brighttext :-moz-any(#urlbar, #searchbar) {
+  --toolbarbutton-hover-background: #fff1 !important;
+  --toolbarbutton-active-background: #fff2 !important;
 }
 
 #TabsToolbar .toolbarbutton-1 {
-	fill: var(--lwt-text-color) !important;
+  fill: var(--lwt-text-color) !important;
 }
 
 :-moz-any(:root:not([style]),
-:root:not([lwtheme]),
-:root[style*="--lwt-accent-color:rgb(227, 228, 230); --lwt-text-color:rgba(24, 25, 26);"],
-:root[style*="--lwt-accent-color:rgb(12, 12, 13); --lwt-text-color:rgba(249, 249, 250);"]) #tabbrowser-tabs {
-	--tab-line-color: var(--tab-line-col) !important;
+  :root:not([lwtheme]),
+  :root[style*="--lwt-accent-color:rgb(227, 228, 230); --lwt-text-color:rgba(24, 25, 26);"],
+  :root[style*="--lwt-accent-color:rgb(12, 12, 13); --lwt-text-color:rgba(249, 249, 250);"]) #tabbrowser-tabs {
+  --tab-line-color: var(--tab-line-col) !important;
 }
