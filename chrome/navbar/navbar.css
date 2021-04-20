@@ -9,19 +9,17 @@
   opacity: 1 !important;
 }
 
-.toolbarbutton-badge {
+.toolbarbutton-badge:not(.feature-callout) {
   box-shadow: 0 0 0 1px #0001 !important;
   margin: 10px 0 0 !important;
   margin-inline-end: -6px !important;
 }
 
-#nav-bar .toolbarbutton-badge {
+#nav-bar .toolbarbutton-badge:not(.feature-callout) {
   box-shadow: 0 0 0 1px var(--toolbar-bgcolor) !important;
-  margin: 10px 0 0 !important;
-  margin-inline-end: -6px !important;
 }
 
-panel .toolbarbutton-badge {
+panel .toolbarbutton-badge:not(.feature-callout) {
   box-shadow: 0 0 0 1px var(--arrowpanel-background) !important;
 }
 
