@@ -20,6 +20,9 @@ Right Click Menu Light | Right Click Menu Dark | Firefox Alpenglow Dark
    ###### Recommended settings:
    1. `browser.tabs.tabClipWidth` = `83`
    2. `security.insecure_connection_text.enabled` = `true`
+   
+   ###### Firefox 88 or higher:
+   1. `layout.css.color-mix.enabled` = `true`
 
 **Note: Only properly tested on macOS 11 Big Sur**
 
