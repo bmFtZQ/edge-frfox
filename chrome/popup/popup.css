@@ -1366,3 +1366,7 @@ menuitem[id="#placesContext_new:bookmark"],
 #context-viewvideo {
   --menuitem-image: url(icons/video-clip.svg) !important;
 }
+
+#context-take-screenshot {
+  --menuitem-image: url(../icons/screenshot.svg) !important;
+}
