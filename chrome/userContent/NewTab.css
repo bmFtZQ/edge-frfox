@@ -10,6 +10,18 @@
     background-size: 20px !important;
   }
 
+  .icon.icon-history-item {
+    background-image: url(../icons/history.svg) !important;
+  }
+
+  .icon.icon-bookmark-added {
+    background-image: url(../icons/star-fill.svg) !important;
+  }
+
+  .icon.icon-download {
+    background-image: url(../icons/download.svg#arrow-with-bar) !important;
+  }
+
   .search-wrapper input {
     border: 0 !important;
     box-shadow: none !important;
@@ -46,8 +58,31 @@
     border-radius: 8px !important;
   }
 
+  .card-outer .card-preview-image-outer {
+    background-color: #0002 !important;
+  }
+
+  .outer-wrapper:not(.newtab-experience) .top-site-outer .top-site-icon,
+  .outer-wrapper:not(.newtab-experience) .top-site-outer .screenshot {
+    box-shadow: none !important;
+  }
+
+  .top-site-outer:not(:hover) .tile {
+    box-shadow: var(--newtab-card-shadow) !important;
+  }
+
+  .compact-cards .card-outer .card-context::after,
+  .card-outer .card-preview-image-outer::after {
+    border-color: #0001 !important;
+  }
+
+  .top-site-outer .screenshot {
+    background-color: transparent !important;
+  }
+
   body:not([lwt-newtab], [style*="color"]) {
     --newtab-background-color: #f5f5f5 !important;
+    --newtab-search-header-background-color: #f5f5f5f0 !important;
     --newtab-text-primary-color: #000 !important;
     --newtab-textbox-background-color: #fff !important;
     --newtab-topsites-background-color: #fff !important;
@@ -55,10 +90,15 @@
     --search-button-bg: #0078D4;
     --search-button-bg-hover: #006CBE;
     --newtab-search-icon-color: #fff !important;
+
+    --newtab-snippets-background-color: var(--newtab-topsites-background-color) !important;
+    --newtab-card-background-color: var(--newtab-topsites-background-color) !important;
+    --newtab-card-hairline-color: var(--newtab-topsites-background-color) !important;
   }
 
-  body[style*="--newtab-background-color:rgba(42, 42, 46, 1); --newtab-text-primary-color:rgba(249, 249, 250, 1);"] {
+  body[lwt-newtab-brighttext] {
     --newtab-background-color: #242424 !important;
+    --newtab-search-header-background-color: #242424f0 !important;
     --newtab-text-primary-color: #fff !important;
     --newtab-textbox-background-color: #424242 !important;
     --newtab-topsites-background-color: #424242 !important;
@@ -66,6 +106,10 @@
     --search-button-bg: #006CBE;
     --search-button-bg-hover: #0078D4;
     --newtab-search-icon-color: #fff !important;
+
+    --newtab-snippets-background-color: var(--newtab-topsites-background-color) !important;
+    --newtab-card-background-color: var(--newtab-topsites-background-color) !important;
+    --newtab-card-hairline-color: var(--newtab-topsites-background-color) !important;
   }
 }
 
