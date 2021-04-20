@@ -1,23 +1,11 @@
 .tabbrowser-tab:not([pinned], [tabdrop-samewindow]) {
-  transition: min-width 150ms cubic-bezier(0, 1, .25, 1), max-width 150ms cubic-bezier(0, .9, .25, 1) !important;
+  --width-transition-duration: 150ms;
+  --width-transition-timing-function: cubic-bezier(0, .9, .25, 1);
+  transition: min-width var(--width-transition-duration) var(--width-transition-timing-function), max-width var(--width-transition-duration) var(--width-transition-timing-function) !important;
 }
 
 :-moz-any(.titlebar-placeholder, .titlebar-spacer)[type=pre-tabs] {
   width: 0 !important;
-}
-
-#main-window {
-  background-color: var(--lwt-accent-color) !important;
-}
-
-#navigator-toolbox {
-  background-color: var(--lwt-accent-color) !important;
-}
-
-:root[lwtheme-image] #navigator-toolbox {
-  background-image: var(--lwt-header-image), var(--lwt-additional-images) !important;
-  background-repeat: no-repeat, var(--lwt-background-tiling) !important;
-  background-position: right top, var(--lwt-background-alignment) !important;
 }
 
 :root:not([style*="--lwt-accent-color:rgb(227, 228, 230); --lwt-text-color:rgba(24, 25, 26);"], [style*="--lwt-accent-color:rgb(12, 12, 13); --lwt-text-color:rgba(249, 249, 250);"])[lwtheme] #navigator-toolbox:-moz-window-inactive {
