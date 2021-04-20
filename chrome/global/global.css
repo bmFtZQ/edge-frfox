@@ -1,3 +1,16 @@
+@media not (-moz-os-version: windows-win7) {
+  @media not (-moz-os-version: windows-win8) {
+    :root[windowtype="navigator:browser"] {
+      background-color: var(--lwt-accent-color) !important;
+      appearance: none !important;
+    }
+
+    :root:not(:-moz-lwtheme) #navigator-toolbox {
+      background-color: transparent !important;
+    }
+  }
+}
+
 @media (-moz-windows-compositor) {
   @media not (-moz-os-version: windows-win7) {
     @media not (-moz-os-version: windows-win8) {
@@ -43,6 +56,21 @@
         }
       }
     }
+  }
+}
+
+@media (-moz-os-version: windows-win7), (-moz-os-version: windows-win8) {
+  :root[tabsintitlebar] .titlebar-buttonbox-container {
+    height: calc(32px + var(--space-above-tabbar)) !important;
+    margin: 0 !important;
+  }
+
+  :root[windowtype="navigator:browser"]:not([style*="image"]) {
+    background-color: #0000 !important;
+  }
+
+  :root[lwtheme]:not([style*="image"]) .tabbrowser-tab {
+    background-color: var(--lwt-accent-color) !important;
   }
 }
 
@@ -273,6 +301,10 @@
 #sidebar-box,
 #sidebar {
   appearance: none !important;
+}
+
+#sidebar-box {
+  background-color: var(--sidebar-background-color) !important;
 }
 
 .sidebar-placesTree,
