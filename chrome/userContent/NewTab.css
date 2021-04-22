@@ -81,8 +81,8 @@
   }
 
   body:not([lwt-newtab], [style*="color"]) {
-    --newtab-background-color: #f5f5f5 !important;
-    --newtab-search-header-background-color: #f5f5f5f0 !important;
+    --newtab-background-color: #f7f7f7 !important;
+    --newtab-search-header-background-color: #f7f7f7f0 !important;
     --newtab-text-primary-color: #000 !important;
     --newtab-textbox-background-color: #fff !important;
     --newtab-topsites-background-color: #fff !important;
