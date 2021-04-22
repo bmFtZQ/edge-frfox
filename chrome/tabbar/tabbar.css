@@ -427,7 +427,7 @@
   transition-timing-function: var(--ease-out) !important;
 }
 
-.tab-bottom-line {
+.tab-bottom-line, .tab-context-line {
   display: none !important;
 }
 
