@@ -90,7 +90,7 @@
   }
 
   /* Profile Picture */
-  .fxaProfileImage:not([style*="list-style-image"]) {
+  .fxaProfileImage:is(:not([style*="list-style-image"]), [style*="https://profile.accounts.firefox.com/v1/avatar/"]) {
     list-style-image: url(../icons/profile.svg) !important;
   }
 
@@ -116,8 +116,7 @@
     --card-background: #fff;
     --card-shadow: rgb(0 0 0 / 13%) 0px 1.6px 3.6px, rgb(0 0 0 / 11%) 0px 0px 2.9px !important;
     --sidebar-border-color: #bebebe;
-    --category-active: #0078d4;
-    --in-content-category-text-selected: #0078d4 !important;
+    --in-content-accent-color: #0078d4 !important;
     --category-selected: #0001;
     --in-content-link-color: #0078d4 !important;
     --section-highlight-background-color: #0078d420 !important;
@@ -150,8 +149,7 @@
       --card-background: #3b3b3b;
       --card-shadow: 0px 1.6px 3.6px rgb(0 0 0 / 25%), 0px 0px 2.9px rgb(0 0 0 / 22%) !important;
       --sidebar-border-color: #6b6b6b;
-      --category-active: #63ade5;
-      --in-content-category-text-selected: #63ade5 !important;
+      --in-content-accent-color: #63ade5 !important;
       --category-selected: #fff1;
       --in-content-link-color: #63ade5 !important;
       --section-highlight-background-color: #63ade520 !important;
@@ -227,6 +225,7 @@
   input[type="text"]:focus,
   input[type="text"]:hover {
     --input-border-color: var(--input-border-color-focused) !important;
+    outline: 0 !important;
   }
 
   search-textbox[focused],
@@ -362,15 +361,19 @@
   .sidebar-footer-link,
   .sidebar-footer-button>.text-link {
     margin-inline: 16px !important;
+    height: 40px !important;
   }
 
   .sidebar-footer-icon {
-    margin: 16px !important;
+    margin: 12px 16px !important;
     height: 16px !important;
     width: 16px !important;
+    scale: 1 !important;
+    translate: 0 !important;
   }
 
-  .sidebar-footer-button:last-of-type {
+  .sidebar-footer-list {
+    margin: 0 !important;
     margin-bottom: 16px !important;
   }
 
@@ -394,6 +397,6 @@
   }
 
   .category[selected]::before {
-    border-color: var(--category-active) !important;
+    border-color: var(--in-content-accent-color) !important;
   }
 }
