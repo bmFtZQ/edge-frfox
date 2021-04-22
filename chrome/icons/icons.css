@@ -280,7 +280,7 @@ richlistitem[originaltype="loginsFooter"] .ac-site-icon,
 }
 
 :root:not([fxastatus=signedin]) #fxa-avatar-image,
-:root[fxastatus=signedin]:not([style*="--avatar-image-url"]) :-moz-any(#fxa-avatar-image, #fxa-menu-avatar, #appMenu-fxa-label) {
+:root[fxastatus=signedin]:is(:not([style*="--avatar-image-url"]), [style*="https://profile.accounts.firefox.com/v1/avatar/"]) :-moz-any(#fxa-avatar-image, #fxa-menu-avatar, #appMenu-fxa-label) {
   list-style-image: url(profile.svg) !important;
 }
 
