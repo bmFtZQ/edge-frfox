@@ -145,12 +145,15 @@
 :-moz-any(#sidebar-box, #sidebar),
 :-moz-any(.sidebar-panel, body) {
   /* sidebar */
-  --sidebar-background-color: #f5f5f5 !important;
+  --sidebar-background-color: #f7f7f7 !important;
   --lwt-sidebar-background-color: var(--sidebar-background-color) !important;
 
   /* sidebar_text */
   --sidebar-text-color: #000 !important;
   --lwt-sidebar-text-color: var(--sidebar-text-color) !important;
+}
+#browser {
+	--sidebar-border-color: var(--chrome-content-separator-color) !important;
 }
 
 /* Sidebar Dark Mode */
