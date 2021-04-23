@@ -128,14 +128,14 @@
 }
 
 /* Inactive Window Light Mode */
-:-moz-any(:root:not([style]), :root:not([lwtheme]), :root[style*="--lwt-accent-color:rgb(227, 228, 230); --lwt-text-color:rgba(24, 25, 26);"]):-moz-window-inactive :-moz-any(#TabsToolbar, #navigator-toolbox) {
+:-moz-any(:root:not([style]), :root:not([lwtheme]), :root[style*="--lwt-accent-color:rgb(227, 228, 230); --lwt-text-color:rgba(24, 25, 26);"]):-moz-window-inactive {
   --lwt-accent-color: #e8e8e8 !important;
   --lwt-text-color: #3a3a3a !important;
   --toolbar-color: #3a3a3a !important;
 }
 
 /* Inactive Window Dark Mode */
-:-moz-any(:root[style*="--lwt-accent-color:rgb(12, 12, 13); --lwt-text-color:rgba(249, 249, 250);"]):-moz-window-inactive :-moz-any(#TabsToolbar, #navigator-toolbox) {
+:root[style*="--lwt-accent-color:rgb(12, 12, 13); --lwt-text-color:rgba(249, 249, 250);"]:-moz-window-inactive {
   --lwt-accent-color: #2e2e2e !important;
   --lwt-text-color: #b7b7b7 !important;
   --toolbar-color: #cecece !important;
