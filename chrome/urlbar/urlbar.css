@@ -154,7 +154,7 @@
 
 #urlbar,
 #searchbar {
-  --urlbar-shadow: 0 1px 5px 0 #0001;
+  --urlbar-shadow: 0 0px 4px 0 #0001;
   font-size: 14px !important;
   border-radius: 4px !important;
   background-color: var(--toolbar-field-background-color) !important;
