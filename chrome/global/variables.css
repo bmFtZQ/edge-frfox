@@ -1,10 +1,3 @@
-:root {
-  --toolbar-field-background-color: var(--lwt-toolbar-field-background-color) !important;
-  --toolbar-field-hover-background-color: var(--lwt-toolbar-field-background-color) !important;
-  --toolbar-field-focus-background-color: var(--lwt-toolbar-field-focus) !important;
-  --toolbar-field-hover-border-color: var(--lwt-toolbar-field-border-color) !important;
-}
-
 /* Light Mode */
 :root:not([style]),
 :root:not([lwtheme]),
@@ -59,6 +52,7 @@
   --tab-line-col: #0078d4 !important;
   --toolbar-field-focus-border-color: #0078d4a0 !important;
   --private-browsing-indicator: #0078d4 !important;
+  --toolbar-field-icon-color: color-mix(in srgb, var(--toolbar-color) 60%, transparent) !important;
 }
 
 /* Dark Mode */
@@ -125,6 +119,7 @@
   --tab-line-col: #4C98D1 !important;
   --toolbar-field-focus-border-color: #4c97d1a0 !important;
   --private-browsing-indicator: #006cbe !important;
+  --toolbar-field-icon-color: var(--toolbar-color) !important;
 }
 
 /* Inactive Window Light Mode */
@@ -152,9 +147,6 @@
   --sidebar-text-color: #000 !important;
   --lwt-sidebar-text-color: var(--sidebar-text-color) !important;
 }
-#browser {
-	--sidebar-border-color: var(--chrome-content-separator-color) !important;
-}
 
 /* Sidebar Dark Mode */
 :-moz-any(#sidebar-box, #sidebar)[style*="--sidebar-background-color:rgb(56, 56, 61);"],
@@ -166,6 +158,17 @@
   /* sidebar_text */
   --sidebar-text-color: #fff !important;
   --lwt-sidebar-text-color: var(--sidebar-text-color) !important;
+}
+
+#browser {
+	--sidebar-border-color: var(--chrome-content-separator-color) !important;
+}
+
+:root {
+  --toolbar-field-background-color: var(--lwt-toolbar-field-background-color) !important;
+  --toolbar-field-hover-background-color: var(--lwt-toolbar-field-background-color) !important;
+  --toolbar-field-focus-background-color: var(--lwt-toolbar-field-focus) !important;
+  --toolbar-field-hover-border-color: var(--lwt-toolbar-field-border-color) !important;
 }
 
 :root {
@@ -250,4 +253,8 @@
   :root[style*="--lwt-accent-color:rgb(227, 228, 230); --lwt-text-color:rgba(24, 25, 26);"],
   :root[style*="--lwt-accent-color:rgb(12, 12, 13); --lwt-text-color:rgba(249, 249, 250);"]) #tabbrowser-tabs {
   --tab-line-color: var(--tab-line-col) !important;
+}
+
+#urlbar-container {
+  color: var(--toolbar-field-icon-color, var(--toolbar-color)) !important;
 }
