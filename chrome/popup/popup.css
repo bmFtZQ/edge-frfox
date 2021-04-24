@@ -460,7 +460,7 @@ panelmultiview .toolbaritem-combined-buttons>spacer.after-label {
 
 .subviewbutton-back {
   padding: 4px !important;
-  border-radius: 16px !important;
+  border-radius: 2px !important;
 }
 
 .subviewbutton-back .toolbarbutton-icon {
