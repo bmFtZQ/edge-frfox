@@ -114,7 +114,8 @@
 .tab-icon-image,
 .tab-sharing-icon-overlay,
 .tab-icon-sound,
-.tab-close-button {
+.tab-close-button,
+.tab-icon-stack {
   margin-top: 0 !important;
 }
 
@@ -285,6 +286,16 @@
 .tab-icon-overlay[pinned] {
   margin: 0 !important;
   margin-inline-start: -16px !important;
+}
+
+.tab-icon-overlay {
+  border-radius: 2px !important;
+}
+
+.tab-icon-overlay[pictureinpicture] {
+  margin: 0 !important;
+  top: -4px !important;
+  inset-inline-end: -8px !important;
 }
 
 @keyframes rotate-360 {
