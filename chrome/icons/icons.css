@@ -394,11 +394,6 @@ richlistitem[originaltype="loginsFooter"] .ac-site-icon,
   height: 16px !important;
 }
 
-.tab-icon-overlay {
-  border-radius: 2px !important;
-  margin-inline: -10px -6px !important;
-}
-
 .tab-icon-overlay[soundplaying] {
   list-style-image: url(audio.svg#overlayStroke) !important;
   -moz-context-properties: fill, fill-opacity, stroke, stroke-opacity !important;
