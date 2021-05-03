@@ -3,7 +3,7 @@
 }
 
 #PersonalToolbar {
-  padding-top: 0 !important;
+  padding-block: 0 2px !important;
   padding-inline: 6px 12px !important;
   margin-top: -2px !important;
   background: var(--toolbar-bgcolor) !important;
