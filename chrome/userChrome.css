@@ -9,35 +9,19 @@
 @import "findbar/findbar.css";
 @import "tabbar/EdgeStyleTabShadow.css";
 
-/* Optional Extras (uncomment/comment to enable/disable) */
-
 @import "extras/accessibility.css"; /* High Contrast theme and reduced motion (Only used on OS setting) */
-/* @import "extras/vibrancy.css"; */ /* (MACOS ONLY!) Enable window vibrancy behind tabs */
-/* @import "extras/hidetoolbarbuttons.css"; */ /* (BUGGY: USE AT OWN RISK!) Hide toolbar buttons other than extensions */
-/* @import "extras/swapaccount-overflow.css"; */ /* (BUGGY: USE AT OWN RISK!) Swap Account icon and Overflow icon (must be placed next to each other) */
-/* @import "extras/customColorTheme.css"; */ /* Custom Color Theme Template, Modify colors more easily */
-/* @import "extras/hidetabclosebutton.css"; */ /* Hide tab close button when mouse not hovering over it */
-/* @import "extras/addIconsToMenubarPopups.css"; */ /* (UNFINISHED) (TESTED ON MACOS ONLY!) Add icons to menubar popups */
+
+/* Force Drag Space (Useful for Proton) */
+/*
+:root { --space-above-tabbar: 8px !important; }
+*/
 
 /* Display tab-line above tabs */
 /*
 .tabbrowser-tab[visuallyselected] .tab-line { display: -moz-box !important; }
 */
 
-/* (MACOS ONLY!) Adjust window controls position to make the spacing even */
-/*
-.titlebar-buttonbox { margin-inline: calc(var(--space-above-tabbar) / 2 + 9px) calc(var(--space-above-tabbar) / 2 + 1px) !important; }
-*/
-
-/* Hide scrollbox icons in tabbar */
-/*
-#scrollbutton-up[part], #scrollbutton-down[part] { display: none !important; }
-*/
-
 #urlbarView-row-162, #urlbarView-row-19, #urlbar .urlbarView .search-one-offs, /* Hide search engine selector on the urlbar dropdown */
-/* .urlbarView-row[type="tabtosearch"], */ /* Hide Tab to Search Panels in urlbar */
-/* #urlbar:not([usertyping]) .urlbarView, */ /* Hide search suggestions until typing */
-#context-sendpagetodevice, #context-sep-sendpagetodevice, /* Hide send page to device menu */
-#appMenu-fxa-status, toolbarseparator.sync-ui-item, #appMenu-protection-report-button, #appMenu-tp-separator, /* Hide Account and protection dashboard from menu */
-#appMenu-edit-controls, .panel-subview-body toolbarseparator:nth-child(12) /* Hide Edit Controls */
+#appMenu-protection-report-button, #appMenu-tp-separator, /* Hide protection dashboard from menu */
+#appMenu-edit-controls, #appMenu-edit-controls + toolbarseparator /* Hide Edit Controls */
 { display: none !important; }
