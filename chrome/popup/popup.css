@@ -1,3 +1,12 @@
+:root {
+  --panel-separator-margin-2: 6px !important;
+  --panel-subview-body-padding: 6px 0 !important;
+  --arrowpanel-menuitem-border-radius: 0 !important;
+  --panel-separator-margin: var(--panel-separator-margin-2) 0 !important;
+}
+
+
+
 menupopup,
 menupopup menuitem,
 menupopup menu,
@@ -335,6 +344,10 @@ panelview .toolbarbutton-1,
   padding: 0 12px !important;
 }
 
+#appMenu-fxa-status2[fxastatus] {
+  padding: 0 !important;
+}
+
 .subviewbutton .toolbarbutton-icon,
 .panel-banner-item .toolbarbutton-icon {
   margin-inline-end: 8px !important;
@@ -409,6 +422,67 @@ menuitem.subviewbutton:not([disabled])[_moz-menuactive]:active,
   padding-inline-start: 24px !important;
   margin-block: -6px !important;
   margin-inline-end: 0 !important;
+}
+
+@media (-moz-proton) {
+  #appMenu-zoom-controls2 {
+    margin-block: var(--panel-separator-margin-2) calc(-1 * var(--panel-separator-margin-2)) !important;
+    padding-inline: 44px 0 !important;
+    border-top: 1px solid var(--panel-separator-color) !important;
+  }
+
+  #appMenu-zoomReset-button2 > .toolbarbutton-text {
+    background-color: transparent !important;
+  }
+
+  #appMenu-zoomReduce-button2 > .toolbarbutton-icon, #appMenu-zoomEnlarge-button2 > .toolbarbutton-icon, #appMenu-fullscreen-button2 > .toolbarbutton-icon {
+    background-color: transparent !important;
+  }
+
+  #appMenu-zoomReduce-button2:not([disabled], [open], :active):is(:hover) > .toolbarbutton-icon, #appMenu-zoomEnlarge-button2:not([disabled], [open], :active):is(:hover) > .toolbarbutton-icon, #appMenu-fullscreen-button2:not([disabled], [open], :active):is(:hover) > .toolbarbutton-icon {
+    background-color: var(--panelview-toolbarbutton-hover-bgcolor) !important;
+  }
+
+  #appMenu-zoomReduce-button2:not([disabled]):is([open], :hover:active) > .toolbarbutton-icon, #appMenu-zoomEnlarge-button2:not([disabled]):is([open], :hover:active) > .toolbarbutton-icon, #appMenu-fullscreen-button2:not([disabled]):is([open], :hover:active) > .toolbarbutton-icon {
+    background-color: var(--panelview-toolbarbutton-active-bgcolor) !important;
+  }
+
+  #appMenu-zoom-controls2>.subviewbutton,
+  #appMenu-edit-controls2>.subviewbutton {
+    min-width: 42px !important;
+    max-width: 46px !important;
+    border-radius: 0 !important;
+    border: 0 !important;
+    padding: 0 !important;
+    margin-inline-start: 0 !important;
+    background-clip: padding-box !important;
+  }
+
+  #appMenu-zoom-controls2>.subviewbutton-iconic,
+  #appMenu-edit-controls2>.subviewbutton-iconic {
+    padding: 0 !important;
+    width: 42px !important;
+  }
+
+  #appMenu-zoomReset-button2 {
+    width: 46px !important;
+  }
+
+  #appMenu-edit-controls2>.subviewbutton,
+  #appMenu-zoom-controls2>#appMenu-fullscreen-button2,
+  #appMenu-zoom-controls2>#appMenu-zoomReduce-button2 {
+    border-left: 1px solid var(--panel-separator-color) !important;
+    padding-left: 1px !important;
+  }
+
+  #appMenu-zoomReduce-button2 > .toolbarbutton-icon,
+  #appMenu-zoomEnlarge-button2 > .toolbarbutton-icon,
+  #appMenu-fullscreen-button2 > .toolbarbutton-icon {
+    border-radius: 0 !important;
+    width: 42px !important;
+    height: 32px !important;
+    padding: 8px 13px !important;
+  }
 }
 
 .toolbaritem-combined-buttons toolbarseparator {
@@ -939,28 +1013,16 @@ panelmultiview .toolbaritem-combined-buttons>spacer.after-label {
   box-sizing: border-box !important;
 }
 
-panel menulist {
-  appearance: none !important;
-  color: var(--arrowpanel-color) !important;
-  height: 30px !important;
-  padding-inline: 6px 10px !important;
-  border-radius: 2px !important;
-  box-shadow: 0 0 0 1px var(--panel-separator-color) inset, 0 0 0 1px var(--panel-separator-color) inset !important;
-}
-
-panel menulist:not(.panel-button)::after {
-  content: "";
-  width: 16px !important;
-  height: 16px !important;
-  display: block !important;
-  -moz-context-properties: fill, fill-opacity !important;
-  background-image: url(menu-right.svg) !important;
-  background-size: 16px !important;
-  background-position: center !important;
-  background-repeat: no-repeat !important;
-  margin-inline-start: 8px !important;
-  transform: rotate(90deg) !important;
-  opacity: .7 !important;
+@media (-moz-proton) {
+  panel menulist {
+    appearance: none !important;
+    color: var(--arrowpanel-color) !important;
+    height: 30px !important;
+    padding-inline: 6px 10px !important;
+    border-radius: 2px !important;
+    box-shadow: 0 0 0 1px var(--panel-separator-color) inset, 0 0 0 1px var(--panel-separator-color) inset !important;
+    background-color: transparent !important;
+  }
 }
 
 .panel-footer button:not([default]):hover:active:not([disabled])>.button-box::before {
@@ -1111,8 +1173,8 @@ menupopup:not(#ContentSelectDropdown > menupopup) :is(menuitem:not(.menuitem-ico
 }
 */
 
-:not(menu, #ContentSelectDropdown)>menupopup>menuitem:not(.menuitem-iconic, [type="checkbox"], .in-menulist),
-:not(menu, #ContentSelectDropdown)>menupopup>menu:not(.menu-iconic, [type="checkbox"], .in-menulist) {
+:not(menu, #ContentSelectDropdown)>menupopup>menuitem:not(.menuitem-iconic, [type="checkbox"], .in-menulist, .in-menulist menuitem, .unified-nav-current),
+:not(menu, #ContentSelectDropdown)>menupopup>menu:not(.menu-iconic, [type="checkbox"], .in-menulist, .in-menulist menu, .unified-nav-current) {
   padding-inline-start: 40px !important;
   background-size: 16px !important;
   background-repeat: no-repeat !important;
@@ -1205,8 +1267,15 @@ menupopup:not(#ContentSelectDropdown > menupopup) :is(menuitem:not(.menuitem-ico
   --menuitem-image: url(icons/print.svg) !important;
 }
 
-#context-openlinkintab {
+#context-openlinkintab,
+#context_openANewTab,
+#toolbar-context-openANewTab {
   --menuitem-image: url(icons/open-link-newtab.svg) !important;
+}
+
+#context-openlinkinusercontext-menu,
+#context_reopenInContainer {
+  --menuitem-image: url(icons/open-link-new-container-tab.svg) !important;
 }
 
 #context-openlink {
@@ -1369,4 +1438,30 @@ menuitem[id="#placesContext_new:bookmark"],
 
 #context-take-screenshot {
   --menuitem-image: url(../icons/screenshot.svg) !important;
+}
+
+@media (-moz-proton) {
+  #context-back {
+    --menuitem-image: url(../icons/arrow-back.svg) !important;
+  }
+
+  #context-forward {
+    --menuitem-image: url(../icons/arrow-back.svg#flip) !important;
+  }
+
+  #context-reload {
+    --menuitem-image: url(../icons/refresh.svg) !important;
+  }
+
+  #context-stop {
+    --menuitem-image: url(../icons/stop.svg) !important;
+  }
+
+  #context-bookmarkpage {
+    --menuitem-image: url(../icons/star.svg) !important;
+  }
+
+  #context-bookmarkpage[starred] {
+    --menuitem-image: url(../icons/star-fill.svg) !important;
+  }
 }
