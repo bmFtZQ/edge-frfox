@@ -26,14 +26,9 @@
   list-style-image: url(refresh.svg) !important;
 }
 
-#reload-button>.toolbarbutton-animatable-box,
-#stop-button>.toolbarbutton-animatable-box,
-#nav-bar-overflow-button>.toolbarbutton-animatable-box {
-  margin-inline-start: calc((16px + 2 * 12px - 18px) / 2) !important;
-}
-
 #stop-reload-button[animate]>#reload-button>.toolbarbutton-animatable-box>.toolbarbutton-animatable-image {
   background-image: url(reload-to-stop.svg) !important;
+  width: 468px !important;
 }
 
 #stop-button,
@@ -43,6 +38,7 @@
 
 #stop-reload-button[animate]>#reload-button[displaystop]+#stop-button>.toolbarbutton-animatable-box>.toolbarbutton-animatable-image {
   background-image: url(stop-to-reload.svg) !important;
+  width: 468px !important;
 }
 
 #nav-bar-overflow-button[animate]>.toolbarbutton-animatable-box>.toolbarbutton-animatable-image {
@@ -102,21 +98,25 @@
 }
 
 #appMenu-fullscreen-button,
-#fullscreen-button {
+#fullscreen-button,
+#appMenu-fullscreen-button2 {
   list-style-image: url(fullscreen-enter.svg) !important;
 }
 
 #appMenu-fullscreen-button[checked],
-#fullscreen-button[checked] {
+#fullscreen-button[checked],
+#appMenu-fullscreen-button2[checked] {
   list-style-image: url(fullscreen-exit.svg) !important;
 }
 
 #appMenu-zoomEnlarge-button,
+#appMenu-zoomEnlarge-button2,
 #zoom-in-button {
   list-style-image: url(zoom-in.svg) !important;
 }
 
 #appMenu-zoomReduce-button,
+#appMenu-zoomReduce-button2,
 #zoom-out-button {
   list-style-image: url(zoom-out.svg) !important;
 }
@@ -126,25 +126,49 @@
   list-style-image: url(download.svg#arrow-with-bar) !important;
 }
 
-#downloads-indicator-icon {
-  background-image: url(download.svg#arrow) !important;
+@media (-moz-proton: 0) {
+  #downloads-indicator-icon {
+    background-image: url(download.svg#arrow) !important;
+  }
+
+  #downloads-button[progress] #downloads-indicator-icon {
+    background-image: url(download.svg#arrow-progress) !important;
+  }
+
+  #downloads-indicator-progress-outer {
+    background-image: url(download.svg#default-bar) !important;
+  }
+
+  #downloads-indicator-progress-inner,
+  #downloads-button[progress]>.toolbarbutton-badge-stack>#downloads-indicator-anchor>#downloads-indicator-progress-outer {
+    background-image: url(download.svg#progress-bar-fg) !important;
+  }
+
+  #downloads-button[progress]>.toolbarbutton-badge-stack>#downloads-indicator-anchor>#downloads-indicator-progress-outer {
+    background-image: url(download.svg#progress-bar-bg) !important;
+  }
 }
 
-#downloads-button[progress] #downloads-indicator-icon {
-  background-image: url(download.svg#arrow-progress) !important;
-}
+@media (-moz-proton) {
+  #downloads-indicator-start-image {
+    list-style-image: url(notification-start-animation.svg) !important;
+  }
 
-#downloads-indicator-progress-outer {
-  background-image: url(download.svg#default-bar) !important;
-}
+  #downloads-indicator-finish-image {
+    list-style-image: url(notification-finish-animation.svg) !important;
+  }
 
-#downloads-indicator-progress-inner,
-#downloads-button[progress]>.toolbarbutton-badge-stack>#downloads-indicator-anchor>#downloads-indicator-progress-outer {
-  background-image: url(download.svg#progress-bar-fg) !important;
-}
+  #downloads-indicator-anchor {
+    list-style-image: url(download.svg#arrow-with-bar) !important;
+  }
 
-#downloads-button[progress]>.toolbarbutton-badge-stack>#downloads-indicator-anchor>#downloads-indicator-progress-outer {
-  background-image: url(download.svg#progress-bar-bg) !important;
+  #downloads-button[animate][notification="start"] > .toolbarbutton-badge-stack > #downloads-indicator-start-box > #downloads-indicator-start-image {
+    animation-duration: calc(var(--anim-steps) * 30ms) !important;
+  }
+
+  #downloads-button[animate][notification="finish"] > .toolbarbutton-badge-stack > #downloads-indicator-finish-box > #downloads-indicator-finish-image {
+    animation-duration: calc(var(--anim-steps) * 25ms) !important;
+  }
 }
 
 #PanelUI-fxa-menu-remotetabs-button,

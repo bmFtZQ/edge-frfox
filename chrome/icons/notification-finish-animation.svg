@@ -1,0 +1,277 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="20">
+  <style>
+    .arrow, .bar { fill: context-stroke; fill-opacity: context-stroke-opacity; }
+    #circle { stroke: context-fill; stroke-opacity: context-fill-opacity; stroke-width: 1; stroke-linecap: round; fill: none; }
+    .progress { fill: context-fill; fill-opacity: context-fill-opacity; }
+    .check { stroke: context-fill; context-fill-opacity: context-fill-opacity; stroke-width: 1.25; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+  </style>
+  <defs>
+    <circle id="circle" r="8.5" cx="10" cy="10"/>
+    <circle id="progress" class="progress" r="6.5" cx="10" cy="10"/>
+  </defs>
+  <g id="1">
+    <use href="#circle"/>
+    <use href="#progress"/>
+  </g>
+  <g id="2">
+    <use href="#circle" x="20"/>
+    <use href="#progress" x="20"/>
+  </g>
+  <g id="3">
+    <use href="#circle" x="40"/>
+    <use href="#progress" x="40"/>
+  </g>
+  <g id="4">
+    <use href="#circle" x="60"/>
+    <use href="#progress" x="60"/>
+  </g>
+  <g id="5">
+    <use href="#circle" x="80"/>
+    <use href="#progress" x="80"/>
+  </g>
+  <g id="6">
+    <use href="#circle" x="100"/>
+    <use href="#progress" x="100"/>
+  </g>
+  <g id="7">
+    <use href="#circle" x="120"/>
+    <use href="#progress" x="120"/>
+  </g>
+  <g id="8">
+    <use href="#circle" x="140"/>
+    <use href="#progress" x="140"/>
+  </g>
+  <g id="9">
+    <use href="#circle" x="160"/>
+    <circle class="progress" r="5.75" cx="170" cy="10"/>
+  </g>
+  <g id="10">
+    <use href="#circle" x="180"/>
+    <circle class="progress" r="4.25" cx="190" cy="10"/>
+  </g>
+  <g id="11">
+    <use href="#circle" x="200"/>
+    <circle class="progress" r="2.25" cx="210" cy="10"/>
+  </g>
+  <g id="12">
+    <use href="#circle" x="220"/>
+    <circle class="progress" r=".75" cx="230" cy="10"/>
+  </g>
+  <use href="#circle" x="240" id="13"/>
+  <use href="#circle" x="260" id="14"/>
+  <g id="15">
+    <use href="#circle" x="280"/>
+    <path class="check" d="m286.5 10 1.5 1.5"/>
+  </g>
+  <g id="16">
+    <use href="#circle" x="300"/>
+    <path class="check" d="m306.5 10 2.5 2.5 2-2"/>
+  </g>
+  <g id="17">
+    <use href="#circle" x="320"/>
+    <path class="check" d="m326.5 10 2.5 2.5 4-4"/>
+  </g>
+  <g id="18">
+    <use href="#circle" x="340"/>
+    <path class="check" d="m346.5 10 2.5 2.5 4.5-4.5"/>
+  </g>
+  <g id="19">
+  <use href="#circle" x="360"/>
+  <path class="check" d="m366.5 10 2.5 2.5 5-5"/>
+  </g>
+  <g id="20">
+    <use href="#circle" x="380"/>
+    <path class="check" d="m386.5 10 2.5 2.5 5-5"/>
+  </g>
+  <g id="21">
+    <use href="#circle" x="400"/>
+    <path class="check" d="m406.5 10 2.5 2.5 5-5"/>
+  </g>
+  <g id="22">
+    <use href="#circle" x="420"/>
+    <path class="check" d="m426.5 10 2.5 2.5 5-5"/>
+  </g>
+  <g id="23">
+    <use href="#circle" x="440"/>
+    <path class="check" d="m446.5 10 2.5 2.5 5-5"/>
+  </g>
+  <g id="24">
+    <use href="#circle" x="460"/>
+    <path class="check" d="m466.5 10 2.5 2.5 5-5"/>
+  </g>
+  <g id="25">
+    <use href="#circle" x="480"/>
+    <path class="check" d="m486.5 10 2.5 2.5 5-5"/>
+  </g>
+  <g id="26">
+    <use href="#circle" x="500"/>
+    <path class="check" d="m506.5 10 2.5 2.5 5-5"/>
+  </g>
+  <g id="27">
+    <use href="#circle" x="520"/>
+    <path class="check" d="m526.5 10 2.5 2.5 5-5"/>
+  </g>
+  <g id="28">
+    <use href="#circle" x="540"/>
+    <path class="check" d="m546.5 10 2.5 2.5 5-5"/>
+  </g>
+  <g id="29">
+    <use href="#circle" x="560"/>
+    <path class="check" d="m566.5 10 2.5 2.5 5-5"/>
+  </g>
+  <g id="30">
+    <use href="#circle" x="580"/>
+    <path class="check" d="m586.5 10 2.5 2.5 5-5"/>
+  </g>
+  <g id="31">
+    <use href="#circle" x="600"/>
+    <path class="check" d="m606.5 10 2.5 2.5 5-5"/>
+  </g>
+  <g id="32">
+    <use href="#circle" x="620"/>
+    <path class="check" d="m626.5 10 2.5 2.5 5-5"/>
+  </g>
+  <g id="33">
+    <use href="#circle" x="640"/>
+    <path class="check" d="m646.5 10 2.5 2.5 5-5"/>
+  </g>
+  <g id="34">
+    <use href="#circle" x="660"/>
+    <path class="check" d="m666.5 10 2.5 2.5 5-5"/>
+  </g>
+  <g id="35">
+    <use href="#circle" x="680"/>
+    <path class="check" d="m686.5 10 2.5 2.5 5-5"/>
+  </g>
+  <g id="36">
+    <use href="#circle" x="700"/>
+    <path class="check" d="m706.5 10 2.5 2.5 5-5"/>
+  </g>
+  <g id="37">
+    <use href="#circle" x="720"/>
+    <path class="check" d="m726.5 10 2.5 2.5 5-5"/>
+  </g>
+  <g id="38">
+    <use href="#circle" x="740"/>
+    <path class="check" d="m746.5 10 2.5 2.5 5-5"/>
+  </g>
+  <g id="39">
+    <use href="#circle" x="760"/>
+    <path class="check" d="m766.5 10 2.5 2.5 5-5"/>
+  </g>
+  <g id="40">
+    <use href="#circle" x="780"/>
+    <path class="check" d="m786.5 10 2.5 2.5 5-5"/>
+  </g>
+  <g id="41">
+    <use href="#circle" x="800"/>
+    <path class="check" d="m806.5 10 2.5 2.5 5-5"/>
+  </g>
+  <g id="42">
+    <use href="#circle" x="820"/>
+    <path class="check" d="m826.5 10 2.5 2.5 5-5"/>
+  </g>
+  <g id="43">
+    <use href="#circle" x="840"/>
+    <path class="check" d="m846.5 10 2.5 2.5 5-5"/>
+  </g>
+  <g id="44">
+    <use href="#circle" x="860"/>
+    <path class="check" d="m866.5 10 2.5 2.5 5-5"/>
+  </g>
+  <g id="45">
+    <use href="#circle" x="880"/>
+    <path class="check" d="m886.5 10 2.5 2.5 5-5"/>
+  </g>
+  <g id="46">
+    <use href="#circle" x="900"/>
+    <path class="check" d="m906.5 10 2.5 2.5 5-5"/>
+  </g>
+  <g id="47">
+    <use href="#circle" x="920"/>
+    <path class="check" d="m926.5 10 2.5 2.5 5-5"/>
+  </g>
+  <g id="48">
+    <use href="#circle" x="940"/>
+    <path class="check" d="m946.5 10 2.5 2.5 5-5"/>
+  </g>
+  <g id="49">
+    <use href="#circle" x="960"/>
+    <path class="check" d="m966.5 10 2.5 2.5 5-5"/>
+  </g>
+  <g id="50">
+    <use href="#circle" x="980"/>
+    <path class="check" d="m986.5 10 2.5 2.5 5-5"/>
+  </g>
+  <g id="51">
+    <use href="#circle" x="1000"/>
+    <path class="check" d="m1006.5 10 2.5 2.5 5-5"/>
+  </g>
+  <g id="52">
+    <use href="#circle" x="1020"/>
+    <path class="check" d="m1026.5 10 2.5 2.5 5-5"/>
+  </g>
+  <g id="53">
+    <use href="#circle" x="1040"/>
+    <path class="check" d="m1046.5 10 2.5 2.5 5-5"/>
+  </g>
+  <g id="54">
+    <use href="#circle" x="1060"/>
+    <path class="check" d="m1066.5 10 2.5 2.5 5-5"/>
+  </g>
+  <g id="55">
+    <use href="#circle" x="1080"/>
+    <path class="check" d="m1086.5 10 2.5 2.5 5-5"/>
+  </g>
+  <g id="56">
+    <use href="#circle" x="1100"/>
+    <path class="check" d="m1106.5 10 2.5 2.5 5-5"/>
+  </g>
+  <g id="57">
+    <use href="#circle" x="1120"/>
+    <path class="check" d="m1126.5 10 2.5 2.5 5-5"/>
+  </g>
+  <g id="58">
+    <use href="#circle" x="1140"/>
+    <path class="check" d="m1146.5 10 2.5 2.5 5-5"/>
+  </g>
+  <g id="59">
+    <use href="#circle" x="1160"/>
+    <path class="check" d="m1166.5 10 2.5 2.5 5-5"/>
+  </g>
+  <g id="60">
+    <use href="#circle" x="1180" style="opacity:.75"/>
+    <path class="check" style="opacity:.9" d="m1187.492 11.031 1.526 1.469 3.052-2.938"/>
+  </g>
+  <g id="61">
+    <use href="#circle" x="1200" style="opacity:.5"/>
+    <path class="check" style="opacity:.75" d="m1208.23 11.594.846.75 1.695-1.5"/>
+    <path class="arrow" style="opacity:.5" d="M1210.006 7.575c.05 0 .092.036.1.083v2.424l.743-.744a.102.102 0 0 1 .13-.012l.014.011c.035.036.04.09.012.13l-.012.015-.916.917a.103.103 0 0 1-.052.028l-.022.002a.103.103 0 0 1-.08-.04l-.91-.907a.102.102 0 0 1 .13-.156l.015.011.743.743V7.676c0-.056.046-.101.102-.101z"/>
+    <path class="bar" d="M1205.044 16a.5.5 0 0 1 .09.992l-.09.008h-.544a.5.5 0 0 1-.09-.992l.09-.008z"/>
+  </g>
+  <g id="62">
+    <use href="#circle" x="1220" style="opacity:.25"/>
+    <path class="arrow" style="opacity:.75" d="M1230.002 5.73c.11 0 .202.08.222.185l.01.04v5.302l1.638-1.64a.225.225 0 0 1 .287-.026l.03.026a.226.226 0 0 1 .027.286l-.026.031-2.02 2.023a.227.227 0 0 1-.114.062l-.048.004a.225.225 0 0 1-.178-.087l-2.003-2.001a.225.225 0 0 1 .286-.344l.031.026 1.639 1.636V5.955c0-.124.1-.224.224-.224z"/>
+    <path class="bar" d="M1226.762 16a.5.5 0 0 1 .09.992l-.09.008h-2.262a.5.5 0 0 1-.09-.992l.09-.008z"/>
+  </g>
+  <g id="63">
+    <use href="#circle" x="1240" style="opacity:.25"/>
+    <path class="arrow" d="M1250.001 3.918c.154 0 .282.111.309.258l.01.056v7.408l2.29-2.292a.314.314 0 0 1 .4-.036l.043.036a.313.313 0 0 1 .036.4l-.036.044-2.821 2.826a.31.31 0 0 1-.16.086l-.068.007a.314.314 0 0 1-.248-.122l-2.799-2.797a.314.314 0 0 1 .4-.48l.043.036 2.29 2.287V4.232c0-.173.14-.314.314-.314z"/>
+    <path class="bar" d="M1249.145 16.272a.5.5 0 0 1 .09.992l-.09.008h-4.645a.5.5 0 0 1-.09-.992l.09-.008z"/>
+  </g>
+  <g id="64">
+    <use href="#circle" x="1260" style="opacity:.25"/>
+    <path class="arrow" d="M1270 2.575a.41.41 0 0 1 .404.336l.01.074v9.671l2.99-2.992a.41.41 0 0 1 .522-.048l.056.048a.409.409 0 0 1 .047.523l-.047.057-3.683 3.69a.407.407 0 0 1-.21.112l-.087.008a.41.41 0 0 1-.324-.159l-3.655-3.65a.41.41 0 0 1 .523-.628l.056.047 2.99 2.986V2.984a.41.41 0 0 1 .41-.41z"/>
+    <path class="bar" d="M1272.458 16.513a.5.5 0 0 1 .09.992l-.09.008h-7.958a.5.5 0 0 1-.09-.992l.09-.008z"/>
+  </g>
+  <g id="65">
+    <use href="#circle" x="1280" style="opacity:.25"/>
+    <path class="arrow" d="M1290 2c.222 0 .406.16.444.37l.01.081v10.64l3.289-3.291a.451.451 0 0 1 .575-.053l.062.052a.45.45 0 0 1 .052.575l-.052.063-4.052 4.06a.447.447 0 0 1-.23.123l-.096.009a.45.45 0 0 1-.357-.175l-4.02-4.017a.451.451 0 0 1 .574-.69l.062.052 3.289 3.285V2.45c0-.25.202-.451.451-.451z"/>
+    <path class="bar" d="M1294.395 16.91a.5.5 0 0 1 .09.992l-.09.008h-9.895a.5.5 0 0 1-.09-.992l.09-.008z"/>
+  </g>
+  <g id="66">
+    <use href="#circle" x="1300" style="opacity:.25"/>
+    <path class="arrow" d="M1310 2a.5.5 0 0 1 .492.41l.01.09v11.794l3.645-3.648a.5.5 0 0 1 .638-.059l.07.058a.5.5 0 0 1 .057.638l-.058.07-4.492 4.5a.496.496 0 0 1-.255.136l-.106.01a.5.5 0 0 1-.395-.194l-4.457-4.452a.5.5 0 0 1 .637-.766l.07.058 3.645 3.641V2.5a.5.5 0 0 1 .5-.5z"/>
+    <path class="bar" d="M1315.5 16.998a.5.5 0 0 1 .09.992l-.09.008h-11a.5.5 0 0 1-.09-.992l.09-.008z"/>
+  </g>
+</svg>
