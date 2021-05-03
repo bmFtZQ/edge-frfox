@@ -4,6 +4,16 @@
   transition: min-width var(--width-transition-duration) var(--width-transition-timing-function), max-width var(--width-transition-duration) var(--width-transition-timing-function) !important;
 }
 
+@supports -moz-bool-pref("layout.css.osx-font-smoothing.enabled") {
+  .titlebar-buttonbox {
+    margin-inline: calc(var(--space-above-tabbar, 0px) / 2 + 9px) calc(var(--space-above-tabbar, 0px) / 2 + 1px) !important;
+  }
+}
+
+:root[tabsintitlebar] #TabsToolbar > .toolbar-items {
+	padding-top: var(--space-above-tabbar) !important;
+}
+
 :-moz-any(.titlebar-placeholder, .titlebar-spacer)[type=pre-tabs] {
   width: 0 !important;
 }
