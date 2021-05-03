@@ -104,3 +104,31 @@ panel .toolbarbutton-badge:not(.feature-callout) {
 :root[uidensity="compact"] #PersonalToolbar {
   padding-inline: 2px;
 }
+
+/* fix animation with the new Firefox icons (Firefox: 89 or higher) */
+@keyframes reload-stop-animation {
+  from { transform: translateX(0); }
+  to { transform: translateX(-450px); }
+}
+
+#stop-reload-button[animate] > #reload-button:not([displaystop]) > .toolbarbutton-animatable-box > .toolbarbutton-animatable-image,
+#stop-reload-button[animate] > #reload-button[displaystop] + #stop-button > .toolbarbutton-animatable-box > .toolbarbutton-animatable-image {
+  animation-name: reload-stop-animation !important;
+}
+
+#reload-button:not([displaystop]) > .toolbarbutton-animatable-box > .toolbarbutton-animatable-image {
+  animation-timing-function: steps(25) !important;
+  animation-duration: 417ms !important;
+}
+
+#reload-button[displaystop] + #stop-button > .toolbarbutton-animatable-box > .toolbarbutton-animatable-image {
+  animation-timing-function: steps(25) !important;
+  animation-duration: 417ms !important;
+}
+
+#reload-button>.toolbarbutton-animatable-box,
+#stop-button>.toolbarbutton-animatable-box,
+#nav-bar-overflow-button>.toolbarbutton-animatable-box {
+  margin-inline-start: calc((16px + 2 * 12px - 18px) / 2) !important;
+  width: 18px !important;
+}
