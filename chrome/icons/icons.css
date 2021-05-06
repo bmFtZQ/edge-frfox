@@ -520,17 +520,16 @@ richlistitem[originaltype="loginsFooter"] .ac-site-icon,
   #appMenu-fxa-label2::before {
     content: "";
     display: block;
-    height: 24px;
-    width: 24px;
-    padding: 2px;
-    margin-inline-end: 8px; 
+    height: 20px;
+    width: 20px;
+    margin: 2px;
+    margin-inline-end: 10px; 
   }
 
   :root[fxastatus="signedin"] #appMenu-fxa-label2::before {
     background-image: var(--avatar-image-url) !important;
-    background-size: 20px;
-    background-repeat: no-repeat;
-    background-position: center;
+    background-size: cover;
+    border-radius: 99px;
   }
 
   :root:not([fxastatus="signedin"]) #appMenu-fxa-label2::before, :root[fxastatus="signedin"]:is(:not([style*="--avatar-image-url"]), [style*="https://profile.accounts.firefox.com/v1/avatar/"]) #appMenu-fxa-label2::before {
