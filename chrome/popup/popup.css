@@ -424,67 +424,6 @@ menuitem.subviewbutton:not([disabled])[_moz-menuactive]:active,
   margin-inline-end: 0 !important;
 }
 
-@media (-moz-proton) {
-  #appMenu-zoom-controls2 {
-    margin-block: var(--panel-separator-margin-2) calc(-1 * var(--panel-separator-margin-2)) !important;
-    padding-inline: 44px 0 !important;
-    border-top: 1px solid var(--panel-separator-color) !important;
-  }
-
-  #appMenu-zoomReset-button2 > .toolbarbutton-text {
-    background-color: transparent !important;
-  }
-
-  #appMenu-zoomReduce-button2 > .toolbarbutton-icon, #appMenu-zoomEnlarge-button2 > .toolbarbutton-icon, #appMenu-fullscreen-button2 > .toolbarbutton-icon {
-    background-color: transparent !important;
-  }
-
-  #appMenu-zoomReduce-button2:not([disabled], [open], :active):is(:hover) > .toolbarbutton-icon, #appMenu-zoomEnlarge-button2:not([disabled], [open], :active):is(:hover) > .toolbarbutton-icon, #appMenu-fullscreen-button2:not([disabled], [open], :active):is(:hover) > .toolbarbutton-icon {
-    background-color: var(--panelview-toolbarbutton-hover-bgcolor) !important;
-  }
-
-  #appMenu-zoomReduce-button2:not([disabled]):is([open], :hover:active) > .toolbarbutton-icon, #appMenu-zoomEnlarge-button2:not([disabled]):is([open], :hover:active) > .toolbarbutton-icon, #appMenu-fullscreen-button2:not([disabled]):is([open], :hover:active) > .toolbarbutton-icon {
-    background-color: var(--panelview-toolbarbutton-active-bgcolor) !important;
-  }
-
-  #appMenu-zoom-controls2>.subviewbutton,
-  #appMenu-edit-controls2>.subviewbutton {
-    min-width: 42px !important;
-    max-width: 46px !important;
-    border-radius: 0 !important;
-    border: 0 !important;
-    padding: 0 !important;
-    margin-inline-start: 0 !important;
-    background-clip: padding-box !important;
-  }
-
-  #appMenu-zoom-controls2>.subviewbutton-iconic,
-  #appMenu-edit-controls2>.subviewbutton-iconic {
-    padding: 0 !important;
-    width: 42px !important;
-  }
-
-  #appMenu-zoomReset-button2 {
-    width: 46px !important;
-  }
-
-  #appMenu-edit-controls2>.subviewbutton,
-  #appMenu-zoom-controls2>#appMenu-fullscreen-button2,
-  #appMenu-zoom-controls2>#appMenu-zoomReduce-button2 {
-    border-left: 1px solid var(--panel-separator-color) !important;
-    padding-left: 1px !important;
-  }
-
-  #appMenu-zoomReduce-button2 > .toolbarbutton-icon,
-  #appMenu-zoomEnlarge-button2 > .toolbarbutton-icon,
-  #appMenu-fullscreen-button2 > .toolbarbutton-icon {
-    border-radius: 0 !important;
-    width: 42px !important;
-    height: 32px !important;
-    padding: 8px 13px !important;
-  }
-}
-
 .toolbaritem-combined-buttons toolbarseparator {
   display: none !important;
 }
@@ -584,7 +523,7 @@ panelmultiview .toolbaritem-combined-buttons>spacer.after-label {
 }
 
 .identity-popup-section {
-  padding: 16px !important;
+  padding: 8px 16px !important;
   display: flex !important;
 }
 
@@ -631,7 +570,7 @@ panelmultiview .toolbaritem-combined-buttons>spacer.after-label {
 
 #identity-popup-mainView-panel-header {
   -moz-box-align: start !important;
-  padding: 16px !important;
+  padding: 0 12px !important;
 }
 
 #identity-popup-securityView-body {
@@ -969,12 +908,17 @@ panelmultiview .toolbaritem-combined-buttons>spacer.after-label {
   text-align: start !important;
 }
 
+#identity-popup-security-button {
+  margin: 0 !important;
+}
+
 .panel-footer {
   padding: 4px !important;
   background: 0 !important;
   border-top: 1px solid var(--panel-separator-color) !important;
   justify-content: end !important;
   display: flex !important;
+  margin: 6px 0 0 !important;
 }
 
 .panel-footer button {
@@ -1011,18 +955,6 @@ panelmultiview .toolbaritem-combined-buttons>spacer.after-label {
   border: 1px solid currentColor !important;
   opacity: .2 !important;
   box-sizing: border-box !important;
-}
-
-@media (-moz-proton) {
-  panel menulist {
-    appearance: none !important;
-    color: var(--arrowpanel-color) !important;
-    height: 30px !important;
-    padding-inline: 6px 10px !important;
-    border-radius: 2px !important;
-    box-shadow: 0 0 0 1px var(--panel-separator-color) inset, 0 0 0 1px var(--panel-separator-color) inset !important;
-    background-color: transparent !important;
-  }
 }
 
 .panel-footer button:not([default]):hover:active:not([disabled])>.button-box::before {
@@ -1463,5 +1395,111 @@ menuitem[id="#placesContext_new:bookmark"],
 
   #context-bookmarkpage[starred] {
     --menuitem-image: url(../icons/star-fill.svg) !important;
+  }
+}
+
+/* Proton Adjustments */
+@media (-moz-proton) {
+  /* Zoom Controls */
+  #appMenu-zoom-controls2 {
+    margin-block: var(--panel-separator-margin-2) calc(-1 * var(--panel-separator-margin-2)) !important;
+    padding-inline: 44px 0 !important;
+    border-top: 1px solid var(--panel-separator-color) !important;
+  }
+
+  #appMenu-zoomReset-button2 > .toolbarbutton-text {
+    background-color: transparent !important;
+  }
+
+  #appMenu-zoomReduce-button2 > .toolbarbutton-icon, #appMenu-zoomEnlarge-button2 > .toolbarbutton-icon, #appMenu-fullscreen-button2 > .toolbarbutton-icon {
+    background-color: transparent !important;
+  }
+
+  #appMenu-zoomReduce-button2:not([disabled], [open], :active):is(:hover) > .toolbarbutton-icon, #appMenu-zoomEnlarge-button2:not([disabled], [open], :active):is(:hover) > .toolbarbutton-icon, #appMenu-fullscreen-button2:not([disabled], [open], :active):is(:hover) > .toolbarbutton-icon {
+    background-color: var(--panelview-toolbarbutton-hover-bgcolor) !important;
+  }
+
+  #appMenu-zoomReduce-button2:not([disabled]):is([open], :hover:active) > .toolbarbutton-icon, #appMenu-zoomEnlarge-button2:not([disabled]):is([open], :hover:active) > .toolbarbutton-icon, #appMenu-fullscreen-button2:not([disabled]):is([open], :hover:active) > .toolbarbutton-icon {
+    background-color: var(--panelview-toolbarbutton-active-bgcolor) !important;
+  }
+
+  #appMenu-zoom-controls2>.subviewbutton,
+  #appMenu-edit-controls2>.subviewbutton {
+    min-width: 42px !important;
+    max-width: 46px !important;
+    border-radius: 0 !important;
+    border: 0 !important;
+    padding: 0 !important;
+    margin-inline-start: 0 !important;
+    background-clip: padding-box !important;
+  }
+
+  #appMenu-zoom-controls2>.subviewbutton-iconic,
+  #appMenu-edit-controls2>.subviewbutton-iconic {
+    padding: 0 !important;
+    width: 42px !important;
+  }
+
+  #appMenu-zoomReset-button2 {
+    width: 46px !important;
+  }
+
+  #appMenu-edit-controls2>.subviewbutton,
+  #appMenu-zoom-controls2>#appMenu-fullscreen-button2,
+  #appMenu-zoom-controls2>#appMenu-zoomReduce-button2 {
+    border-left: 1px solid var(--panel-separator-color) !important;
+    padding-left: 1px !important;
+  }
+
+  #appMenu-zoomReduce-button2 > .toolbarbutton-icon,
+  #appMenu-zoomEnlarge-button2 > .toolbarbutton-icon,
+  #appMenu-fullscreen-button2 > .toolbarbutton-icon {
+    border-radius: 0 !important;
+    width: 42px !important;
+    height: 32px !important;
+    padding: 8px 13px !important;
+  }
+
+  /* Arrowpanel */
+  panel menulist {
+    appearance: none !important;
+    color: var(--arrowpanel-color) !important;
+    height: 30px !important;
+    padding-inline: 6px 10px !important;
+    border-radius: 2px !important;
+    box-shadow: 0 0 0 1px var(--panel-separator-color) inset, 0 0 0 1px var(--panel-separator-color) inset !important;
+    background-color: transparent !important;
+  }
+  
+  .panel-header {
+	padding: 4px !important;
+  }
+  
+  .panel-header + toolbarseparator {
+	margin-block: 0 !important;
+  }
+  
+  .subviewbutton-back {
+	margin: 0 !important;
+  }
+
+  .panel-subview-body {
+    padding-block: 6px !important;
+  }
+
+  .panel-subview-body + toolbarseparator {
+    margin-top: 0 !important;
+  }
+
+  panel :is(.toolbarbutton-1 > .toolbarbutton-badge-stack, .toolbarbutton-1 > .toolbarbutton-icon) {
+    margin-inline: 4px 12px !important;
+  }
+
+  .widget-overflow-list .toolbarbutton-1:not(.toolbarbutton-combined) > .toolbarbutton-text {
+    padding-inline-start: 0 !important;
+  }
+
+  .identity-popup-section {
+    padding-block: 0 !important;
   }
 }
