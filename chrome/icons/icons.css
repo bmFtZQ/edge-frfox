@@ -486,3 +486,111 @@ richlistitem[originaltype="loginsFooter"] .ac-site-icon,
 .urlbarView-favicon[src*="search-glass.svg"] {
   background-image: url(search.svg) !important;
 }
+
+/* Proton Icons */
+@media (-moz-proton) {
+  /* Download Animation */
+  #downloads-indicator-icon,
+  #downloads-indicator-progress-outer,
+  #downloads-indicator-progress-inner {
+    background-image: none !important;
+  }
+
+  #downloads-indicator-start-image {
+    list-style-image: url(notification-start-animation.svg) !important;
+  }
+
+  #downloads-indicator-finish-image {
+    list-style-image: url(notification-finish-animation.svg) !important;
+  }
+
+  #downloads-indicator-anchor {
+    list-style-image: url(download.svg#arrow-with-bar) !important;
+  }
+
+  #downloads-button[animate][notification="start"] > .toolbarbutton-badge-stack > #downloads-indicator-start-box > #downloads-indicator-start-image {
+    animation-duration: calc(var(--anim-steps) * 30ms) !important;
+  }
+
+  #downloads-button[animate][notification="finish"] > .toolbarbutton-badge-stack > #downloads-indicator-finish-box > #downloads-indicator-finish-image {
+    animation-duration: calc(var(--anim-steps) * 30ms) !important;
+  }
+
+  /* Profile Icon in Arrowpanel */
+  #appMenu-fxa-label2::before {
+    content: "";
+    display: block;
+    height: 24px;
+    width: 24px;
+    padding: 2px;
+    margin-inline-end: 8px; 
+  }
+
+  :root[fxastatus="signedin"] #appMenu-fxa-label2::before {
+    background-image: var(--avatar-image-url) !important;
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  :root:not([fxastatus="signedin"]) #appMenu-fxa-label2::before, :root[fxastatus="signedin"]:is(:not([style*="--avatar-image-url"]), [style*="https://profile.accounts.firefox.com/v1/avatar/"]) #appMenu-fxa-label2::before {
+    background-image: url(profile.svg) !important;
+  }
+
+  #appMenu-new-tab-button2 {
+    list-style-image: url(new-tab-image.svg) !important;
+  }
+
+  #appMenu-new-window-button2 {
+    list-style-image: url(new-window.svg) !important;
+  }
+
+  #appMenu-new-private-window-button2 {
+    list-style-image: url(new-private-window.svg) !important;
+  }
+
+  #appMenu-bookmarks-button {
+    list-style-image: url(bookmark.svg) !important;
+  }
+
+  #appMenu-history-button {
+    list-style-image: url(history.svg) !important;
+  }
+
+  #appMenu-downloads-button {
+    list-style-image: url(download.svg#arrow-with-bar) !important;
+  }
+
+  #appMenu-passwords-button {
+    list-style-image: url(key.svg) !important;
+  }
+
+  #appMenu-extensions-themes-button {
+    list-style-image: url(addons.svg) !important;
+  }
+
+  #appMenu-print-button2 {
+    list-style-image: url(print.svg) !important;
+  }
+
+  #appMenu-save-file-button2 {
+    list-style-image: url(savefile.svg) !important;
+  }
+  
+  #appMenu-find-button2 {
+    list-style-image: url(search-file.svg) !important;
+  }
+
+  #appMenu-settings-button {
+    list-style-image: url(settings.svg) !important;
+  }
+
+  #appMenu-more-button2 {
+    list-style-image: url(menu.svg) !important;
+  }
+
+  #appmenu-moreTools-button {
+    list-style-image: url(brush.svg) !important;
+  }
+  
+}
