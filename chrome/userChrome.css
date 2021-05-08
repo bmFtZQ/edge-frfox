@@ -1,6 +1,7 @@
 @import "global/variables.css";
 @import "global/global.css";
 @import "icons/icons.css";
+@import "icons/popupicons.css";
 @import "tabbar/tabbar.css";
 @import "navbar/navbar.css";
 @import "personalbar/personalbar.css";
