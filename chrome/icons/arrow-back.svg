@@ -1,12 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-   <style>
-      #flip:target {
-         transform: scaleX(-1);
-         transform-origin: center;
-      }
-   </style>
-   <path
-   style="fill:context-fill;fill-opacity:context-fill-opacity"
-   d="M 7.4765625,0.50024219 C 7.3521298,0.50624502 7.2344198,0.5584832 7.1464844,0.64672657 L 0.14648438,7.1464844 c -0.19518416,0.1952649 -0.19518416,0.5117663 0,0.7070312 L 7.1464844,14.353516 c 0.1952535,0.195212 0.5117777,0.195212 0.7070312,0 0.1952123,-0.195254 0.1952123,-0.511778 0,-0.707032 L 1.7070312,8 H 15.5 C 15.776142,8 16,7.7761424 16,7.5 16,7.2238576 15.776142,7 15.5,7 H 1.7070312 L 7.8535156,1.3537578 c 0.1952118,-0.1952535 0.1952118,-0.51177773 0,-0.70703123 C 7.7540987,0.54699465 7.6172351,0.49380931 7.4765625,0.50024219 Z"
-   id="flip" />
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16">
+  <style>
+    #flip:target{transform:scaleX(-1);transform-origin:center}
+  </style>
+  <path style="fill:context-fill;fill-opacity:context-fill-opacity" d="M7.477.5a.5.5 0 0 0-.33.147l-7 6.5a.5.5 0 0 0 0 .707l7 6.5a.5.5 0 0 0 .707-.708L1.707 8H15.5a.5.5 0 0 0 0-1H1.707l6.147-5.646A.5.5 0 0 0 7.477.5z" id="flip"/>
 </svg>

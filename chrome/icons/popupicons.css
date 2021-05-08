@@ -1,0 +1,349 @@
+/* Popup Icons */
+
+/* Picture-In-Picture Icons */
+#unpip {
+  background-image: url(open.svg) !important;
+}
+
+#controls:not(.playing) #playpause {
+  background-image: url(play.svg) !important;
+}
+
+#controls.playing #playpause {
+  background-image: url(pause.svg) !important;
+}
+
+#controls:not(.muted) #audio {
+  background-image: url(audio.svg#big) !important;
+}
+
+#controls.muted #audio {
+  background-image: url(audio-mute.svg#big) !important;
+}
+
+#close {
+  background-image: url(close.svg) !important;
+}
+
+/* Changing Existing Icons */
+
+#allTabsMenu-undoCloseTab {
+  list-style-image: url(undo.svg) !important;
+}
+
+#allTabsMenu-searchTabs {
+  list-style-image: url(search.svg) !important;
+}
+
+#context-media-loop:not([checked="true"]) {
+  list-style-image: url(loop.svg) !important;
+}
+
+#context-video-pictureinpicture:not([checked="true"]) {
+  list-style-image: url(picture-in-picture.svg#big) !important;
+}
+
+/* Displaying Custom Icons */
+/* menupopup:not(#ContentSelectDropdown > menupopup) :is(menuitem:not(.menuitem-iconic, [type], menu menuitem, .in-menulist menuitem), menu:not(.menu-iconic, menu menu)) {
+	padding-inline-start: 40px !important;
+	background-size: 16px !important;
+	background-repeat: no-repeat !important;
+	background-position: 12px center !important;
+	-moz-context-properties: fill, fill-opacity !important;
+	fill: currentColor !important;
+} */
+
+:not(menu, #ContentSelectDropdown)>menupopup>menuitem:not(.menuitem-iconic, [type="checkbox"], .in-menulist, .in-menulist menuitem, .unified-nav-current),
+:not(menu, #ContentSelectDropdown)>menupopup>menu:not(.menu-iconic, [type="checkbox"], .in-menulist, .in-menulist menu, .unified-nav-current) {
+  padding-inline-start: 40px !important;
+  background-size: 16px !important;
+  background-repeat: no-repeat !important;
+  background-position: 12px center !important;
+  -moz-context-properties: fill, fill-opacity !important;
+  fill: currentColor !important;
+  background-image: var(--menuitem-image) !important;
+}
+
+#context-inspect {
+  --menuitem-image: url(inspect.svg) !important;
+}
+
+#context-savepage,
+#context-saveimage,
+#context-savevideo,
+#context-saveaudio {
+  --menuitem-image: url(savefile.svg) !important;
+}
+
+#context-viewbgimage,
+#context-viewimage {
+  --menuitem-image: url(image.svg) !important;
+}
+
+#context-viewinfo,
+#context-viewimageinfo,
+#context-viewimagedesc {
+  --menuitem-image: url(info.svg) !important;
+}
+
+#context-viewsource,
+#context-viewpartialsource-selection {
+  --menuitem-image: url(source.svg) !important;
+}
+
+#context-inspect-a11y {
+  --menuitem-image: url(accessibility.svg) !important;
+}
+
+#context-undo,
+.textbox-contextmenu menuitem[cmd*="undo"] {
+  --menuitem-image: url(undo.svg) !important;
+}
+
+#context-cut,
+.textbox-contextmenu menuitem[cmd*="cut"] {
+  --menuitem-image: url(cut.svg) !important;
+}
+
+#context-copy,
+#context-copylink,
+#context-copyimage,
+.textbox-contextmenu menuitem[cmd*="copy"],
+#context-copyvideourl,
+#context-copyaudiourl {
+  --menuitem-image: url(copy.svg) !important;
+}
+
+#context-paste,
+.textbox-contextmenu menuitem[cmd*="paste"],
+#placesContext_paste {
+  --menuitem-image: url(paste.svg) !important;
+}
+
+#paste-and-go {
+  --menuitem-image: url(paste.svg#url) !important;
+}
+
+#context-delete,
+.textbox-contextmenu menuitem[cmd*="delete"],
+.customize-context-removeExtension,
+.customize-context-removeFromToolbar {
+  --menuitem-image: url(delete.svg) !important;
+}
+
+#context-searchselect {
+  --menuitem-image: url(search.svg) !important;
+}
+
+#context-print-selection {
+  --menuitem-image: url(print.svg) !important;
+}
+
+#context-openlinkintab,
+#context_openANewTab,
+#toolbar-context-openANewTab {
+  --menuitem-image: url(new-tab-image.svg) !important;
+}
+
+#context-openlinkinusercontext-menu,
+#context_reopenInContainer {
+  --menuitem-image: url(new-container-tab.svg) !important;
+}
+
+#context-openlink {
+  --menuitem-image: url(new-window.svg) !important;
+}
+
+#context-openlinkprivate {
+  --menuitem-image: url(new-private-window.svg) !important;
+}
+
+#context-bookmarklink {
+  --menuitem-image: url(star.svg) !important;
+}
+
+#context-savelink {
+  --menuitem-image: url(hyperlink.svg#save) !important;
+}
+
+#context-savelinktopocket,
+#context-pocket {
+  --menuitem-image: url(save-pocket.svg) !important;
+}
+
+#context-copyimage-contents {
+  --menuitem-image: url(image.svg#copy) !important;
+}
+
+#context-sendimage,
+#context-sendvideo,
+#context-sendaudio {
+  --menuitem-image: url(email.svg) !important;
+}
+
+#context-setDesktopBackground,
+.viewCustomizeToolbar {
+  --menuitem-image: url(brush.svg) !important;
+}
+
+#context-reloadimage {
+  --menuitem-image: url(refresh.svg) !important;
+}
+
+menuitem[id*="placesContext_open"] {
+  --menuitem-image: url(open.svg) !important;
+}
+
+#context_reloadTab,
+#context_reloadSelectedTabs,
+#toolbar-context-reloadSelectedTab,
+#toolbar-context-reloadSelectedTabs {
+  --menuitem-image: url(refresh.svg) !important;
+}
+
+#context_toggleMuteTab,
+#context_toggleMuteSelectedTabs,
+#context-media-mute {
+  --menuitem-image: url(audio-muted.svg#big) !important;
+}
+
+#context-media-unmute {
+  --menuitem-image: url(audio.svg#big) !important;
+}
+
+#context_pinTab,
+#context_unpinTab,
+#context_pinSelectedTabs,
+#context_unpinSelectedTabs,
+.customize-context-moveToPanel {
+  --menuitem-image: url(pin.svg) !important;
+}
+
+#context_duplicateTab,
+#context_duplicateTabs {
+  --menuitem-image: url(new-tab-image.svg#copy) !important;
+}
+
+#context_selectAllTabs,
+#toolbar-context-selectAllTabs,
+#context-selectall,
+.textbox-contextmenu menuitem[cmd*="selectAll"] {
+  --menuitem-image: url(select-all.svg) !important;
+}
+
+#context_bookmarkTab,
+#context_bookmarkSelectedTabs,
+#toolbar-context-bookmarkSelectedTab,
+#toolbar-context-bookmarkSelectedTabs,
+menuitem[id="#placesContext_new:bookmark"],
+#toggle_PersonalToolbar {
+  --menuitem-image: url(star.svg) !important;
+}
+
+#context_undoCloseTab,
+#toolbar-context-undoCloseTab {
+  --menuitem-image: url(undo.svg) !important;
+}
+
+#context_closeTab {
+  --menuitem-image: url(close.svg) !important;
+}
+
+.customize-context-manageExtension {
+  --menuitem-image: url(settings.svg) !important;
+}
+
+.customize-context-reportExtension {
+  --menuitem-image: url(report.svg) !important;
+}
+
+#context_sendTabToDevice,
+#context-sendpagetodevice,
+#context-sendlinktodevice {
+  --menuitem-image: url(send-to-device.svg) !important;
+}
+
+#context_moveTabOptions {
+  --menuitem-image: url(move-tab.svg) !important;
+}
+
+#context_closeTabOptions {
+  --menuitem-image: url(close.svg#multiple) !important;
+}
+
+#context-media-play {
+  --menuitem-image: url(play.svg) !important;
+}
+
+#context-media-pause {
+  --menuitem-image: url(pause.svg) !important;
+}
+
+#context-media-playbackrate {
+  --menuitem-image: url(speed.svg) !important;
+}
+
+#context-media-showcontrols {
+  --menuitem-image: url(controls.svg#show) !important;
+}
+
+#context-media-hidecontrols {
+  --menuitem-image: url(controls.svg#hide) !important;
+}
+
+#context-video-fullscreen {
+  --menuitem-image: url(fullscreen-enter.svg) !important;
+}
+
+#context-leave-dom-fullscreen {
+  --menuitem-image: url(fullscreen-exit.svg) !important;
+}
+
+#context-video-saveimage {
+  --menuitem-image: url(video-snapshot.svg) !important;
+}
+
+#context-viewvideo {
+  --menuitem-image: url(video-clip.svg) !important;
+}
+
+#context-take-screenshot {
+  --menuitem-image: url(screenshot.svg) !important;
+}
+
+
+/* Proton Icons */
+@media (-moz-proton) {
+  /* macOS specific */
+  @supports -moz-bool-pref("layout.css.osx-font-smoothing.enabled") {
+    #context-back {
+      --menuitem-image: url(arrow-back.svg) !important;
+      list-style-image: none !important;
+    }
+
+    #context-forward {
+      --menuitem-image: url(arrow-back.svg#flip) !important;
+      list-style-image: none !important;
+    }
+
+    #context-reload {
+      --menuitem-image: url(refresh.svg) !important;
+      list-style-image: none !important;
+    }
+
+    #context-stop {
+      --menuitem-image: url(stop.svg) !important;
+      list-style-image: none !important;
+    }
+
+    #context-bookmarkpage {
+      --menuitem-image: url(star.svg) !important;
+      list-style-image: none !important;
+    }
+
+    #context-bookmarkpage[starred] {
+      --menuitem-image: url(star.svg#fill) !important;
+      list-style-image: none !important;
+    }
+  }
+}

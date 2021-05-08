@@ -64,7 +64,7 @@
 #star-button[starred],
 #context-bookmarkpage[starred],
 #panelMenuBookmarkThisPage {
-  list-style-image: url(star-fill.svg) !important;
+  list-style-image: url(star.svg#fill) !important;
 }
 
 #bookmarks-menu-button,
@@ -199,7 +199,7 @@
 }
 
 #sidebar-button[checked] {
-  list-style-image: url(sidebar-fill.svg) !important;
+  list-style-image: url(sidebar.svg#fill) !important;
 }
 
 #nav-bar-overflow-button,
@@ -387,7 +387,7 @@ richlistitem[originaltype="loginsFooter"] .ac-site-icon,
 }
 
 .tab-icon-image:-moz-any([src="chrome://branding/content/icon32.png"], [src="chrome://browser/skin/privatebrowsing/favicon.svg"]):not([busy]) {
-  background-image: url(new-tab-image.svg) !important;
+  background-image: url(new-tab-image.svg#dots) !important;
   padding-left: 16px !important;
 }
 
@@ -537,7 +537,7 @@ richlistitem[originaltype="loginsFooter"] .ac-site-icon,
   }
 
   #appMenu-new-tab-button2 {
-    list-style-image: url(new-tab-image.svg) !important;
+    list-style-image: url(new-tab-image.svg#dots) !important;
   }
 
   #appMenu-new-window-button2 {
@@ -549,7 +549,7 @@ richlistitem[originaltype="loginsFooter"] .ac-site-icon,
   }
 
   #appMenu-bookmarks-button {
-    list-style-image: url(bookmark.svg) !important;
+    list-style-image: url(star.svg) !important;
   }
 
   #appMenu-history-button {

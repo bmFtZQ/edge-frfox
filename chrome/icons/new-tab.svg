@@ -1,5 +1,3 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-  <path
-  style="fill:context-fill;fill-opacity:context-fill-opacity"
-  d="M 7.5,0.5 C 7.2238576,0.5 7,0.7238576 7,1 V 7 H 1 C 0.7238576,7 0.5,7.2238576 0.5,7.5 0.5,7.7761424 0.7238576,8 1,8 h 6 v 6 c 0,0.276142 0.2238576,0.5 0.5,0.5 C 7.7761424,14.5 8,14.276142 8,14 V 8 h 6 C 14.276142,8 14.5,7.7761424 14.5,7.5 14.5,7.2238576 14.276142,7 14,7 H 8 V 1 C 8,0.7238576 7.7761424,0.5 7.5,0.5 Z" />
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16">
+  <path style="fill:context-fill;fill-opacity:context-fill-opacity" d="M7.5.5A.5.5 0 0 0 7 1v6H1a.5.5 0 1 0 0 1h6v6a.5.5 0 0 0 1 0V8h6a.5.5 0 0 0 0-1H8V1a.5.5 0 0 0-.5-.5z"/>
 </svg>
