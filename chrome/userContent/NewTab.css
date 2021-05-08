@@ -15,7 +15,7 @@
   }
 
   .icon.icon-bookmark-added {
-    background-image: url(../icons/star-fill.svg) !important;
+    background-image: url(../icons/star.svg#fill) !important;
   }
 
   .icon.icon-download {
@@ -96,7 +96,7 @@
     --newtab-card-hairline-color: var(--newtab-topsites-background-color) !important;
   }
 
-  body[lwt-newtab-brighttext] {
+  body[lwt-newtab-brighttext]:not([style*="--newtab-background-color"], [style*="--newtab-text-primary-color"]) {
     --newtab-background-color: #242424 !important;
     --newtab-search-header-background-color: #242424f0 !important;
     --newtab-text-primary-color: #fff !important;
