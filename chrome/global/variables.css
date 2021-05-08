@@ -25,6 +25,7 @@
 
   /* icons */
   --lwt-toolbarbutton-icon-fill: #000 !important;
+  --toolbarbutton-icon-fill: var(--lwt-toolbarbutton-icon-fill) !important;
 
   /* icons_attention */
   --lwt-toolbarbutton-icon-fill-attention: #0078d4 !important;
@@ -80,6 +81,7 @@
 
   /* icons */
   --lwt-toolbarbutton-icon-fill: #fff !important;
+  --toolbarbutton-icon-fill: var(--lwt-toolbarbutton-icon-fill) !important;
 
   /* icons_attention */
   --lwt-toolbarbutton-icon-fill-attention: #4C98D1 !important;
