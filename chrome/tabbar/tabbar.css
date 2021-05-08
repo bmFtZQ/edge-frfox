@@ -10,7 +10,7 @@
   }
 }
 
-:root[tabsintitlebar] #TabsToolbar > .toolbar-items {
+:root[tabsintitlebar]:not([inFullscreen])[sizemode="normal"] #TabsToolbar > .toolbar-items {
 	padding-top: var(--space-above-tabbar) !important;
 }
 
@@ -274,9 +274,7 @@
   border-radius: 2px !important;
   color: inherit !important;
   -moz-context-properties: fill, fill-opacity !important;
-  transition-property: fill-opacity, background-color !important;
-  transition-duration: .15s !important;
-  transition-timing-function: var(--ease-basic) !important;
+  transition: none !important;
   fill-opacity: 1 !important;
   opacity: 1 !important;
 }
@@ -492,5 +490,20 @@ spacer[part="overflow-end-indicator"] {
       margin-top: .5px !important;
       margin-bottom: -.5px !important;
     }
+  }
+}
+
+
+/* Proton Adjustments */
+@media (-moz-proton) {
+  .tab-secondary-label {
+    display: none !important;
+  }
+  
+  .tab-icon-overlay {
+    background: transparent !important;
+    margin-inline: 22px -4px !important;
+    opacity: 1 !important;
+    padding: 0 !important;
   }
 }
