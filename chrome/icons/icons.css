@@ -149,34 +149,6 @@
   background-image: url(download.svg#progress-bar-bg) !important;
 }
 
-@media (-moz-proton) {
-  #downloads-indicator-icon,
-  #downloads-indicator-progress-outer,
-  #downloads-indicator-progress-inner {
-    background-image: none !important;
-  }
-
-  #downloads-indicator-start-image {
-    list-style-image: url(notification-start-animation.svg) !important;
-  }
-
-  #downloads-indicator-finish-image {
-    list-style-image: url(notification-finish-animation.svg) !important;
-  }
-
-  #downloads-indicator-anchor {
-    list-style-image: url(download.svg#arrow-with-bar) !important;
-  }
-
-  #downloads-button[animate][notification="start"] > .toolbarbutton-badge-stack > #downloads-indicator-start-box > #downloads-indicator-start-image {
-    animation-duration: calc(var(--anim-steps) * 30ms) !important;
-  }
-
-  #downloads-button[animate][notification="finish"] > .toolbarbutton-badge-stack > #downloads-indicator-finish-box > #downloads-indicator-finish-image {
-    animation-duration: calc(var(--anim-steps) * 30ms) !important;
-  }
-}
-
 #PanelUI-fxa-menu-remotetabs-button,
 #appMenuRecentlyClosedTabs,
 #appMenu-library-remotetabs-button,
