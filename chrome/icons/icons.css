@@ -69,8 +69,9 @@
 
 #bookmarks-menu-button,
 #appMenu-library-bookmarks-button,
-#panelMenu_toggleBookmarksMenu {
-  list-style-image: url(star.svg) !important;
+#panelMenu_toggleBookmarksMenu,
+#appMenu-bookmarks-button {
+  list-style-image: url(star.svg#list) !important;
 }
 
 #library-button,
@@ -546,10 +547,6 @@ richlistitem[originaltype="loginsFooter"] .ac-site-icon,
 
   #appMenu-new-private-window-button2 {
     list-style-image: url(new-private-window.svg) !important;
-  }
-
-  #appMenu-bookmarks-button {
-    list-style-image: url(star.svg) !important;
   }
 
   #appMenu-history-button {
