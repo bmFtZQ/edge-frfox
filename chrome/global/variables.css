@@ -85,6 +85,7 @@
 
   /* icons_attention */
   --lwt-toolbarbutton-icon-fill-attention: #4C98D1 !important;
+  --toolbarbutton-icon-fill-attention: var(--lwt-toolbarbutton-icon-fill-attention) !important;
 
   /* button_background_hover */
   --lwt-toolbarbutton-hover-background: #ffffff1a !important;
@@ -171,6 +172,9 @@
   --toolbar-field-hover-background-color: var(--lwt-toolbar-field-background-color) !important;
   --toolbar-field-focus-background-color: var(--lwt-toolbar-field-focus) !important;
   --toolbar-field-hover-border-color: var(--lwt-toolbar-field-border-color) !important;
+
+  --toolbarbutton-icon-fill: var(--lwt-toolbarbutton-icon-fill) !important;
+  --toolbarbutton-icon-fill-attention: var(--lwt-toolbarbutton-icon-fill-attention) !important;
 }
 
 :root {
