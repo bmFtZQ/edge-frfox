@@ -41,10 +41,6 @@
   width: 468px !important;
 }
 
-#nav-bar-overflow-button[animate]>.toolbarbutton-animatable-box>.toolbarbutton-animatable-image {
-  background-image: url(chevron-animation.svg) !important;
-}
-
 #home-button {
   list-style-image: url(home.svg) !important;
 }
