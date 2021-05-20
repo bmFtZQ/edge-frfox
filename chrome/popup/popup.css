@@ -143,7 +143,8 @@ menupopup menuseparator {
   margin: 4px 0 !important;
   padding: 0 !important;
   height: 1px !important;
-  background: currentColor !important;
+  background: none !important;
+  border-top: 1px solid currentColor !important;
   opacity: .15 !important;
 }
 
@@ -274,6 +275,7 @@ menulist>menupopup>menuitem[selected="true"]::before {
 #context-navigation {
   background: 0 !important;
   margin: 0 2px !important;
+  padding: 0 !important;
 }
 
 #context-navigation .menuitem-iconic {
@@ -281,6 +283,7 @@ menulist>menupopup>menuitem[selected="true"]::before {
   padding: 0 !important;
   margin: 0 2px !important;
   border-radius: 4px !important;
+  -moz-box-pack: center !important;
 }
 
 #context-navigation .menu-iconic-left {
