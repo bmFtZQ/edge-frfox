@@ -24,11 +24,12 @@
   --chrome-content-separator-color: #d2d2d2 !important;
 
   /* icons */
-  --lwt-toolbarbutton-icon-fill: #000 !important;
-  --toolbarbutton-icon-fill: var(--lwt-toolbarbutton-icon-fill) !important;
+  --toolbarbutton-icon-fill: #000 !important;
+  --lwt-toolbarbutton-icon-fill: var(--toolbarbutton-icon-fill) !important;
 
   /* icons_attention */
-  --lwt-toolbarbutton-icon-fill-attention: #0078d4 !important;
+  --toolbarbutton-icon-fill-attention: #0078d4 !important;
+  --lwt-toolbarbutton-icon-fill-attention: var(--toolbarbutton-icon-fill-attention) !important;
 
   /* button_background_hover */
   --lwt-toolbarbutton-hover-background: #0000001a !important;
@@ -80,12 +81,12 @@
   --chrome-content-separator-color: #5B5B5B !important;
 
   /* icons */
-  --lwt-toolbarbutton-icon-fill: #fff !important;
-  --toolbarbutton-icon-fill: var(--lwt-toolbarbutton-icon-fill) !important;
+  --toolbarbutton-icon-fill: #fff !important;
+  --lwt-toolbarbutton-icon-fill: var(--toolbarbutton-icon-fill) !important;
 
   /* icons_attention */
-  --lwt-toolbarbutton-icon-fill-attention: #4C98D1 !important;
-  --toolbarbutton-icon-fill-attention: var(--lwt-toolbarbutton-icon-fill-attention) !important;
+  --toolbarbutton-icon-fill-attention: #4C98D1 !important;
+  --lwt-toolbarbutton-icon-fill-attention: var(--toolbarbutton-icon-fill-attention) !important;
 
   /* button_background_hover */
   --lwt-toolbarbutton-hover-background: #ffffff1a !important;
@@ -172,9 +173,6 @@
   --toolbar-field-hover-background-color: var(--lwt-toolbar-field-background-color) !important;
   --toolbar-field-focus-background-color: var(--lwt-toolbar-field-focus) !important;
   --toolbar-field-hover-border-color: var(--lwt-toolbar-field-border-color) !important;
-
-  --toolbarbutton-icon-fill: var(--lwt-toolbarbutton-icon-fill) !important;
-  --toolbarbutton-icon-fill-attention: var(--lwt-toolbarbutton-icon-fill-attention) !important;
 }
 
 :root {
