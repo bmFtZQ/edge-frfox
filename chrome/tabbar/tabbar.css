@@ -10,10 +10,6 @@
   }
 }
 
-:root[tabsintitlebar]:not([inFullscreen])[sizemode="normal"] #TabsToolbar > .toolbar-items {
-	padding-top: var(--space-above-tabbar) !important;
-}
-
 :-moz-any(.titlebar-placeholder, .titlebar-spacer)[type=pre-tabs] {
   width: 0 !important;
 }
@@ -175,6 +171,7 @@
   opacity: var(--tab-opacity) !important;
   visibility: visible !important;
   margin: 0 !important;
+  outline: 0 !important;
 }
 
 .tab-line {
@@ -505,5 +502,15 @@ spacer[part="overflow-end-indicator"] {
     margin-inline: 22px -4px !important;
     opacity: 1 !important;
     padding: 0 !important;
+  }
+
+  :root[tabsintitlebar]:not([inFullscreen])[sizemode="normal"] #TabsToolbar > .toolbar-items {
+    padding-top: var(--space-above-tabbar) !important;
+  }
+
+  @supports -moz-bool-pref("layout.css.osx-font-smoothing.enabled") {
+    :root[tabsintitlebar]:not([inFullscreen]) #TabsToolbar > .toolbar-items {
+      padding-top: var(--space-above-tabbar) !important;
+    }
   }
 }
