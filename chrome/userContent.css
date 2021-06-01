@@ -1,2 +1,3 @@
 @import "userContent/NewTab.css";
 @import "userContent/Preferences.css";
+@import "userContent/Proton-NewTab.css" (-moz-proton: 1);
