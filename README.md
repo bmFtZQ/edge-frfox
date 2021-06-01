@@ -4,6 +4,7 @@ A userChrome.css theme for Firefox that replicates Microsoft Edge and adds icons
 ![thumbnail](screenshots/Edge-FrFox-theme.png)
 
 ## Screenshots
+**(Screenshots from macOS Big Sur / Firefox 89.0)**
 Newtab Page Light|Newtab Page Dark|Firefox Alpenglow Light
 -|-|-
 ![screenshot-light](screenshots/screenshot-light.png) | ![screenshot-dark](screenshots/screenshot-dark.png) | ![screenshot-alpenglow-light](screenshots/screenshot-alpenglow-light.png)
@@ -23,6 +24,9 @@ Right Click Menu Light | Right Click Menu Dark | Firefox Alpenglow Dark
    
    ###### Firefox 88 or higher:
    1. `layout.css.color-mix.enabled` = `true`
+
+   ###### Firefox 89 or higher:
+   1. To use the Edge style context menu on macOS then make sure `widget.macos.native-context-menus` = `false`
 
 **Note: Only properly tested on macOS 11 Big Sur**
 
