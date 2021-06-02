@@ -504,6 +504,20 @@ spacer[part="overflow-end-indicator"] {
     padding: 0 !important;
   }
 
+  .tab-icon-overlay:is([pinned], [sharing]) {
+    margin-inline: 0 !important;
+    top: -4px !important;
+    right: -8px !important;
+  }
+
+  .tabbrowser-tab[pinned]:-moz-any([soundplaying], [muted], [activemedia-blocked]) .tab-icon-image {
+    visibility: visible !important;
+  }
+
+  .tabbrowser-tab:is([image], [pinned]) > .tab-stack > .tab-content[attention]:not([selected="true"]), .tabbrowser-tab > .tab-stack > .tab-content[pinned][titlechanged]:not([selected="true"]) {
+    background-position: center bottom 3px !important;
+  }
+
   :root[tabsintitlebar]:not([inFullscreen])[sizemode="normal"] #TabsToolbar > .toolbar-items {
     padding-top: var(--space-above-tabbar) !important;
   }
