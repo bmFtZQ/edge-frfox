@@ -13,11 +13,10 @@
 @import "extras/accessibility.css"; /* High Contrast theme and reduced motion (Only used on OS setting) */
 
 /* Force Drag Space (Useful for Proton) */
-/*
 :root { --space-above-tabbar: 8px !important; }
-*/
 
-/* Display tab-line above tabs */
+
+/* Display tab-line above tabs (Does not work with Proton) */
 /*
 .tabbrowser-tab[visuallyselected] .tab-line { display: -moz-box !important; }
 */
