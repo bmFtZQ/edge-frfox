@@ -21,6 +21,7 @@
 
   /* Darkmode Colours */
   body[style*="--newtab-background-color:rgba(42, 42, 46, 1); --newtab-text-primary-color:rgba(251, 251, 254, 1);"][lwt-newtab-brighttext],
+  body[style*="--newtab-background-color: rgba(43, 42, 51, 1); --newtab-text-primary-color: rgba(251, 251, 254, 1);"][lwt-newtab-brighttext],
   body:not([style*="color"])[lwt-newtab-brighttext] {
     --newtab-background-color: #242424 !important;
     --newtab-search-header-background-color: #242424f2 !important;
