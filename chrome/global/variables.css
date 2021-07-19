@@ -2,7 +2,8 @@
 :root:not([style]),
 :root:not(:-moz-lwtheme),
 :root[style*="--lwt-accent-color:rgb(227, 228, 230); --lwt-text-color:rgba(24, 25, 26);"],
-:root[style*="--lwt-accent-color:rgb(240, 240, 244); --lwt-text-color:rgba(21, 20, 26);"] /* Used for Proton (May be changed in future) */
+:root[style*="--lwt-accent-color:rgb(240, 240, 244); --lwt-text-color:rgba(21, 20, 26);"], /* Used for Proton (May be changed in future) */
+:root[style*="--lwt-accent-color: rgb(240, 240, 244); --lwt-text-color: rgba(21, 20, 26);"] /* Mozilla added spaces to the style string in Nightly 91 */
 {
   /* accentcolor */
   --lwt-accent-color: #cecece !important;
@@ -59,7 +60,8 @@
 
 /* Dark Mode */
 :root[style*="--lwt-accent-color:rgb(12, 12, 13); --lwt-text-color:rgba(249, 249, 250);"],
-:root[style*="--lwt-accent-color:rgb(28, 27, 34); --lwt-text-color:rgba(251, 251, 254);"] /* Used for Proton (May be changed in future) */
+:root[style*="--lwt-accent-color:rgb(28, 27, 34); --lwt-text-color:rgba(251, 251, 254);"], /* Used for Proton (May be changed in future) */
+:root[style*="--lwt-accent-color: rgb(28, 27, 34); --lwt-text-color: rgba(251, 251, 254);"] /* Mozilla added spaces to the style string in Nightly 91 */
 {
   /* accentcolor */
   --lwt-accent-color: #1b1b1b !important;
@@ -195,6 +197,9 @@
   --arrowpanel-dimmed: color-mix(in srgb, currentColor 9%, transparent) !important;
   --arrowpanel-dimmed-further: color-mix(in srgb, currentColor 14%, transparent) !important;
   --arrowpanel-dimmed-even-further: color-mix(in srgb, currentColor 25%, transparent) !important;
+
+  --button-hover-bgcolor: var(--arrowpanel-dimmed) !important;
+  --button-active-bgcolor: var(--arrowpanel-dimmed-further) !important;
 
   --panelview-toolbarbutton-hover-bgcolor: var(--arrowpanel-dimmed) !important;
   --panelview-toolbarbutton-active-bgcolor: var(--arrowpanel-dimmed-further) !important;
