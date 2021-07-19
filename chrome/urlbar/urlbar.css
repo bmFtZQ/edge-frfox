@@ -149,12 +149,13 @@
 }
 
 #urlbar-container {
+  min-width: 208px !important;
   max-height: 36px !important;
 }
 
 #urlbar,
 #searchbar {
-  --urlbar-shadow: 0 0px 4px 0 #0001;
+  --urlbar-shadow: 0 0 4px 0 #0001;
   font-size: 14px !important;
   border-radius: 4px !important;
   background-color: var(--toolbar-field-background-color) !important;
@@ -538,6 +539,12 @@
 
 #contextual-feature-recommendation {
   width: auto !important;
+}
+
+.urlbar-page-action {
+  padding: 0 !important;
+  background: none !important;
+  width: unset !important;
 }
 
 .urlbar-page-action:-moz-any(#reader-mode-button,
