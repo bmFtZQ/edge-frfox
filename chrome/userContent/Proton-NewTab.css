@@ -50,6 +50,8 @@
 
   .fake-textbox {
     white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
   }
   
   .outer-wrapper.newtab-experience .search-wrapper .search-inner-wrapper {
