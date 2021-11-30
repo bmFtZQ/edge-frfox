@@ -105,7 +105,8 @@
 	fill: var(--lwt-text-color) !important;
 }
 
-.tabbrowser-tab[multiselected]:not(:-moz-lwtheme), .tabbrowser-tab[visuallyselected="true"]:not(:-moz-lwtheme) {
+.tabbrowser-tab[multiselected]:not(:-moz-lwtheme),
+.tabbrowser-tab[visuallyselected="true"]:not(:-moz-lwtheme) {
 	color: var(--lwt-tab-text, var(--toolbar-color)) !important;
 }
 
@@ -117,8 +118,32 @@
 	border-radius: 2px !important;
 }
 
-.tab-throbber:not([pinned]), .tab-icon-pending:not([pinned]), .tab-icon-image:not([pinned]), .tab-sharing-icon-overlay:not([pinned]), .tab-icon-overlay:not([pinned]) {
+.tab-throbber:not([pinned]),
+.tab-icon-pending:not([pinned]),
+.tab-icon-image:not([pinned]),
+.tab-sharing-icon-overlay:not([pinned]) {
 	margin-inline-end: 10px !important;
+}
+
+/* tab volume icon/text */
+.tab-secondary-label {
+	display: none !important;
+}
+
+.tab-icon-stack:is([soundplaying], [muted], [activemedia-blocked]) > .tab-icon-overlay,
+.tabbrowser-tab:hover .tab-icon-stack:not([pinned], [sharing], [crashed]):is([soundplaying], [muted], [activemedia-blocked]) > :not(.tab-icon-overlay) {
+  opacity: 1 !important;
+}
+
+.tab-icon-overlay:not([pinned]) {
+  margin-inline: 22px 6px !important;
+}
+
+.tab-icon-overlay[soundplaying]:not([crashed]),
+.tab-icon-overlay[muted]:not([crashed]),
+.tab-icon-overlay[activemedia-blocked]:not([crashed]) {
+	border-radius: 2px !important;
+	padding: 0 !important;
 }
 
 .tabbrowser-tab {

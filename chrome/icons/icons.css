@@ -429,3 +429,16 @@
 .popup-notification-icon[popupid="addon-install-origin-blocked"] {
   list-style-image: url(extension-blocked.svg) !important;
 }
+
+/* tab sound icons */
+.tab-icon-overlay[soundplaying] {
+  list-style-image: url("tab-audio-playing-small.svg") !important;
+}
+
+.tab-icon-overlay[muted] {
+  list-style-image: url("tab-audio-muted-small.svg") !important;
+}
+
+.tab-icon-overlay[activemedia-blocked] {
+  list-style-image: url("tab-audio-blocked-small.svg") !important;
+}
