@@ -1,0 +1,190 @@
+/* EdgeFr-Fox by bmFtZQ - popup.css */
+
+:root {
+  --arrowpanel-border-radius: 4px !important;
+  --panel-subview-body-padding: 4px 0 !important;
+  --arrowpanel-menuitem-border-radius: 0 !important;
+  --arrowpanel-menuitem-margin: 0 !important;
+  --arrowpanel-menuitem-padding-block: 8px !important;
+  --arrowpanel-menuitem-padding-inline: 14px !important;
+  --uc-arrowpanel-menuicon-margin-inline: 14px;
+  --panel-separator-margin-vertical: 4px !important;
+  --panel-separator-margin-horizontal: 0 !important;
+	--uc-panel-zoom-button-padding: 8px;
+	--uc-panel-zoom-button-inline-padding: 13px;
+}
+
+/* app menu */
+.addon-banner-item, .panel-banner-item {
+	margin: 0 4px 4px !important;
+  padding-inline: 4px 12px !important;
+  border-radius: 2px !important;
+}
+
+#appMenu-fxa-label2 > vbox > label {
+	margin-block: 0 !important;
+}
+
+.widget-overflow-list .toolbarbutton-1:not(.toolbarbutton-combined) > .toolbarbutton-text,
+.subviewbutton:not(#appMenu-zoom-controls2 > .subviewbutton) > .toolbarbutton-icon + .toolbarbutton-text,
+#appMenu-fxa-label2 > vbox {
+	padding-inline-start: var(--uc-arrowpanel-menuicon-margin-inline) !important;
+}
+
+/* special case menuitems with no icons */
+#appMenu-zoom-controls2 > .toolbarbutton-text,
+#fxa-manage-account-button > vbox,
+#PanelUI-fxa-menu-syncnow-button > hbox {
+	padding-inline-start: calc(16px + var(--uc-arrowpanel-menuicon-margin-inline)) !important;
+}
+
+.subviewbutton > .toolbarbutton-icon {
+	width: 16px !important;
+}
+
+/* firefox profile avatar in appmenu */
+#appMenu-fxa-label2::before {
+	content: "";
+	display: -moz-box;
+	height: 16px;
+	width: 16px;
+	background: var(--avatar-image-url) 0/16px;
+	scale: 1.25;
+	border-radius: 99px;
+}
+
+
+/* disable proton account separator */
+#appMenu-fxa-separator {
+	border-image: none !important;
+}
+
+/* zoom controls */
+#appMenu-zoom-controls2 {
+	border-top: 1px solid var(--panel-separator-color) !important;
+	padding: 0 0 0 var(--arrowpanel-menuitem-padding-inline) !important;
+	margin: var(--panel-separator-margin-vertical) 0 calc(var(--panel-separator-margin-vertical) * -1) !important;
+}
+
+#appMenu-zoom-controls2 > .subviewbutton {
+	padding: var(--uc-panel-zoom-button-padding) var(--uc-panel-zoom-button-inline-padding) !important;
+	margin: 0 !important;
+}
+
+#appMenu-zoom-controls2 > #appMenu-zoomReset-button2 {
+	padding: var(--uc-panel-zoom-button-padding) calc(var(--uc-panel-zoom-button-padding) / 2) !important;
+}
+
+#appMenu-zoomReduce-button2,
+#appMenu-fullscreen-button2 {
+	border-inline-start: 1px solid var(--panel-separator-color) !important;
+}
+
+#appMenu-zoomReset-button2 {
+	height: calc(16px + var(--uc-panel-zoom-button-padding) * 2) !important;
+	min-height: calc(16px + var(--uc-panel-zoom-button-padding) * 2) !important;
+}
+
+#appMenu-zoomReset-button2:not([disabled], [open], :active):is(:hover) {
+	background-color: var(--panel-item-hover-bgcolor) !important;
+}
+
+#appMenu-zoomReset-button2:not([disabled]):is([open], :hover:active) {
+	background-color: var(--panel-item-active-bgcolor) !important;
+}
+
+#appMenu-zoomReduce-button2:not([disabled], [open], :active):is(:hover),
+#appMenu-zoomEnlarge-button2:not([disabled], [open], :active):is(:hover),
+#appMenu-fullscreen-button2:not([disabled], [open], :active):is(:hover) {
+	background-color: var(--panel-item-hover-bgcolor) !important;
+}
+
+#appMenu-zoomReduce-button2:not([disabled]):is([open], :hover:active),
+#appMenu-zoomEnlarge-button2:not([disabled]):is([open], :hover:active),
+#appMenu-fullscreen-button2:not([disabled]):is([open], :hover:active) {
+	background-color: var(--panel-item-active-bgcolor) !important;
+}
+
+#appMenu-zoomReduce-button2 > .toolbarbutton-icon, #appMenu-zoomEnlarge-button2 > .toolbarbutton-icon {
+	fill: currentColor !important;
+	stroke: none !important;
+}
+
+#appMenu-fullscreen-button2 > .toolbarbutton-icon {
+	background-color: transparent !important;
+}
+
+/* URL bar popup */
+.panel-footer > button {
+	border-radius: 2px !important;
+}
+
+#identity-popup-security-button {
+	padding-inline: calc(var(--arrowpanel-menuitem-padding-inline) - 4px) !important;
+}
+
+.identity-popup-security-connection > hbox {
+	margin-inline-start: calc(20px + var(--uc-arrowpanel-menuicon-margin-inline)) !important;
+}
+
+.identity-popup-security-connection > hbox > description {
+	margin-inline-start: 0 !important;
+}
+
+.identity-popup-security-connection.identity-button {
+	margin-inline-end: calc(-1 * (var(--arrowpanel-menuitem-padding-inline) - 10px)) !important;
+}
+
+/* subview */
+.panel-header {
+	padding: 4px;
+	padding-top: 4px !important;
+}
+
+.panel-header + toolbarseparator {
+	margin-block-start: 0 !important;
+}
+
+.subviewbutton-back {
+	margin: 0 !important;
+	border-radius: 2px !important;
+}
+
+.panel-subview-footer-button {
+	margin-bottom: 4px !important;
+}
+
+.webextension-popup-browser, .webextension-popup-stack {
+	margin-block-start: calc(var(--panel-separator-margin-vertical) * -.5) !important;
+}
+
+/* downloads popup */
+.downloadTypeIcon {
+  height: 16px !important;
+  width: 16px !important;
+}
+
+.downloadButton {
+	min-width: calc(16px + var(--uc-toolbarbutton-inner-inline-padding) * 2) !important;
+	height: calc(16px + var(--toolbarbutton-inner-padding) * 2) !important;
+	border-radius: var(--toolbarbutton-border-radius) !important;
+}
+
+.downloadMainArea {
+	padding-block: 4px !important;
+	padding-inline: 12px !important;
+	border-radius: 0 !important;
+}
+
+#downloadsListBox > richlistitem {
+	padding-inline-end: 8px !important;
+	border-radius: 0 !important;
+}
+
+#downloadsPanel-blockedSubview, #downloadsPanel-mainView {
+	padding: var(--panel-separator-margin-vertical) 0 0 !important;
+}
+
+#emptyDownloads {
+	padding: 1.5em 16px 1.7em !important;
+}

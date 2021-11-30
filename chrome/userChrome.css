@@ -1,27 +1,22 @@
-@import "global/variables.css";
-@import "global/global.css";
-@import "icons/icons.css";
-@import "icons/popupicons.css";
-@import "tabbar/tabbar.css";
-@import "navbar/navbar.css";
-@import "personalbar/personalbar.css";
-@import "popup/popup.css";
-@import "urlbar/urlbar.css";
-@import "findbar/findbar.css";
-@import "tabbar/EdgeStyleTabShadow.css";
+/* EdgeFr-Fox by bmFtZQ */
+@import url("icons/icons.css");
+@import url("toolbar/tabbar.css");
+@import url("toolbar/navbar.css");
+@import url("toolbar/personalbar.css");
+@import url("toolbar/findbar.css");
+@import url("toolbar/urlbar.css");
+@import url("global/colors.css");
+@import url("global/popup.css");
 
-@import "extras/accessibility.css"; /* High Contrast theme and reduced motion (Only used on OS setting) */
+/* tweaks */
 
-/* Force Drag Space (Useful for Proton) */
-:root { --space-above-tabbar: 8px !important; }
+/* disable drag space above tabs */
+/* :root #titlebar {
+  --tab-block-margin: 0px !important;
+} */
 
-
-/* Display tab-line above tabs (Does not work with Proton) */
-/*
-.tabbrowser-tab[visuallyselected] .tab-line { display: -moz-box !important; }
-*/
-
-#urlbarView-row-162, #urlbarView-row-19, #urlbar .urlbarView .search-one-offs, /* Hide search engine selector on the urlbar dropdown */
-#appMenu-protection-report-button, #appMenu-tp-separator, /* Hide protection dashboard from menu */
-#appMenu-edit-controls, #appMenu-edit-controls + toolbarseparator /* Hide Edit Controls */
-{ display: none !important; }
+/* force tabs to toolbar bg (useful for proton themes) (might experience some
+bugs with certain themes eg. dark text on dark background.) */
+:root  {
+  --lwt-selected-tab-background-color: unset !important;
+}

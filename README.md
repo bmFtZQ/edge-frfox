@@ -1,34 +1,26 @@
-# Edge-FrFox
-A userChrome.css theme for Firefox that replicates Microsoft Edge and adds icons to the right click menus.
+# Edge-FrFox rewrite
+A Firefox userChrome.css theme that aims to recreate the look and feel of the Chromium version of Microsoft Edge.
 
-![thumbnail](screenshots/Edge-FrFox-theme.png)
+This branch is for a new version that is rewritten from scratch. Old version can be found in the [`main`](https://github.com/bmFtZQ/Edge-FrFox/tree/main) branch.
 
-## Screenshots
-**(Screenshots from macOS Big Sur / Firefox 89.0)**
-Newtab Page Light|Newtab Page Dark|Firefox Alpenglow Light
--|-|-
-![screenshot-light](screenshots/screenshot-light.png) | ![screenshot-dark](screenshots/screenshot-dark.png) | ![screenshot-alpenglow-light](screenshots/screenshot-alpenglow-light.png)
-Right Click Menu Light | Right Click Menu Dark | Firefox Alpenglow Dark
-![right-click-light](screenshots/right-click-light.png) | ![right-click-dark](screenshots/right-click-dark.png) | ![screenshot-alpenglow-dark](screenshots/screenshot-alpenglow-dark.png)
+#### This version of the theme has only been test on Firefox Nightly 96 but should work on Firefox 94.
+
+![thumbnail](screenshots/thumb.png)
+###### Screenshot taken with macOS Monterey / Firefox Nightly 96.0a1 (2021-11-30)
 
 ## How to install
-
-1. Go to about:support and click the button that shows your profile folder in your file explorer.
-2. Copy the `chrome` folder into the profile folder
-3. Go to about:config and enter the following values:
+1. Go to `about:support` and click the "Show in File Explorer/Finder" button for the root directory of your browser profile/s.
+2. Download and copy the `chrome` folder into the profile folder.
+3. Go to about:config and change these preferences:
+   ###### For all operating systems:
    1. `toolkit.legacyUserProfileCustomizations.stylesheets` = `true`
    2. `svg.context-properties.content.enabled` = `true`
-   ###### Recommended settings:
-   1. `browser.tabs.tabClipWidth` = `83`
-   2. `security.insecure_connection_text.enabled` = `true`
+   3. `layout.css.color-mix.enabled` = `true`
+
+   ###### On macOS:
+   1. To use the Edge style context menu on macOS then set `widget.macos.native-context-menus` = `false` **(Not Implemented Yet!)**
    
-   ###### Firefox 88 or higher:
-   1. `layout.css.color-mix.enabled` = `true`
-
-   ###### Firefox 89 or higher:
-   1. To use the Edge style context menu on macOS then make sure `widget.macos.native-context-menus` = `false`
-
-**Note: Only properly tested on macOS 11 Big Sur**
+**Note: Most frequently tested on macOS**
 
 ## Acknowledgements
 [muckSponge](https://github.com/muckSponge) - [MaterialFox](https://github.com/muckSponge/MaterialFox)

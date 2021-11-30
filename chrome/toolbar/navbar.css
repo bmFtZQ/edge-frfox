@@ -1,0 +1,29 @@
+/* EdgeFr-Fox by bmFtZQ - navbar.css */
+
+:root {
+  --toolbarbutton-border-radius: 2px !important;
+  --toolbarbutton-inner-padding: 7px !important;
+  --uc-toolbarbutton-inner-inline-padding: 12px !important;
+  --tabs-navbar-shadow-size: 0 !important;
+}
+
+#nav-bar .toolbarbutton-1 > .toolbarbutton-icon {
+	width: calc(2 * var(--uc-toolbarbutton-inner-inline-padding) + 16px) !important;
+}
+
+#nav-bar .toolbarbutton-1 > .toolbarbutton-icon,
+#nav-bar .toolbarbutton-1 > .toolbarbutton-text,
+#nav-bar .toolbarbutton-1 > .toolbarbutton-badge-stack {
+	padding-inline: var(--uc-toolbarbutton-inner-inline-padding) !important;
+}
+
+/* move reload/stop icon to middle of button */
+#reload-button > .toolbarbutton-animatable-box,
+#stop-button > .toolbarbutton-animatable-box {
+	top: calc(50% - 10px) !important;
+	margin-inline-start: calc((16px + 2 * var(--uc-toolbarbutton-inner-inline-padding) - 20px) / 2) !important;
+}
+
+#nav-bar-customization-target :where(#reload-button, #stop-button) > .toolbarbutton-icon {
+	padding:  var(--toolbarbutton-inner-padding) var(--uc-toolbarbutton-inner-inline-padding) !important;
+}
