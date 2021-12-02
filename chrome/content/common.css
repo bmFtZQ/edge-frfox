@@ -35,6 +35,7 @@
     --in-content-danger-button-background-active: #BB353C !important;
     --in-content-focus-outline-color: color-mix(in srgb, #0055D7 50%, transparent) !important;
     --in-content-table-background: #f7f7f7 !important;
+    --in-content-text-color: var(--in-content-page-color) !important;
     scrollbar-color: rgba(37, 37, 37, 0.4) #f7f7f7 !important;
   }
   

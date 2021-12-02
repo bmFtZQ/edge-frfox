@@ -5,7 +5,7 @@
   body:not([lwt-newtab], [lwt-newtab-brighttext]) {
     --newtab-background-color: #F7F7F7 !important;
     --newtab-background-color-secondary: #fff !important;
-    --newtab-text-primary-color: #000 !important;
+    --newtab-text-primary-color: #252525 !important;
     --newtab-primary-action-background: #0078D4 !important;
     --newtab-text-secondary-color: color-mix(in srgb, var(--newtab-text-primary-color) 80%, transparent) !important;
     --newtab-element-hover-color: color-mix(in srgb, var(--newtab-background-color) 95%, #000) !important;
@@ -75,7 +75,6 @@
   
   .search-handoff-button:hover {
     --elevation: 6;
-    box-shadow: 0 0 calc((var(--elevation) * 0.225px) + 2px) rgba(0, 0, 0, 0.11), 0 calc(var(--elevation) * 0.4px) calc((var(--elevation) * 0.9px)) rgba(0, 0, 0, 0.13) !important;
   }
 
   .search-wrapper.fake-focus:not(.search.disabled) .search-handoff-button {
@@ -128,5 +127,62 @@
   .card-outer .card-preview-image-outer,
   .ds-card-grid.ds-card-grid-border .ds-card:not(.placeholder) .img-wrapper .img img {
     border-radius: 4px 4px 0 0 !important
+  }
+}
+
+/* private browsing newtab */
+@-moz-document url-prefix(about:privatebrowsing) {
+  :root {
+    --uc-wordmark-color: #737373 !important;
+    --uc-background-color-secondary: #fff !important;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --uc-wordmark-color: #fff !important;
+      --uc-background-color-secondary: #4a4a4a !important;
+    }
+  }
+
+  .search-inner-wrapper {
+    height: 44px !important;
+  }
+
+  .search-handoff-button,
+  .search-handoff-button:active,
+  .search-handoff-button:enabled:hover:active {
+    background-color: var(--uc-background-color-secondary) !important;
+    background-size: 24px;
+    border: 0 !important;
+    border-radius: 99px !important;
+    padding-inline-start: 48px !important;
+    --elevation: 4;
+    box-shadow: 0 0 calc((var(--elevation) * 0.225px) + 2px) rgba(0, 0, 0, 0.11), 0 calc(var(--elevation) * 0.4px) calc((var(--elevation) * 0.9px)) rgba(0, 0, 0, 0.13) !important;
+  }
+
+  .search-handoff-button:hover {
+    --elevation: 6;
+  }
+
+  .search-handoff-button.focused:not(.disabled) {
+    box-shadow: none !important;
+    outline: 2px solid var(--in-content-focus-outline-color) !important;
+    outline-offset: -1px !important;
+  }
+
+  .search-handoff-button.disabled {
+    opacity: 0 !important;
+  }
+
+  .fake-textbox {
+    color: var(--in-content-page-color) !important;
+  }
+
+  .wordmark {
+    fill: var(--uc-wordmark-color) !important;
+  }
+
+  .info {
+    background-color: var(--uc-background-color-secondary) !important;
   }
 }
