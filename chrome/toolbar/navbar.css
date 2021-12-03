@@ -42,3 +42,30 @@
 :root[fxastatus="signedin"] #fxa-avatar-image {
 	scale: 1.5 !important;
 }
+
+:root[privatebrowsingmode] #fxa-toolbar-menu-button::before {
+  content: "Private" !important;
+  display: -moz-box !important;
+	font-size: 12px !important;
+}
+
+:root[privatebrowsingmode] #fxa-toolbar-menu-button {
+  background: var(--button-primary-bgcolor, var(--lwt-toolbarbutton-icon-fill-attention, var(--toolbarbutton-icon-fill-attention))) !important;
+	margin: 4px !important;
+	padding-inline: 8px 0 !important;
+	color: var(--button-primary-color, var(--toolbar-bgcolor)) !important;
+	fill: currentColor !important;
+}
+
+:root[privatebrowsingmode] #fxa-toolbar-menu-button:hover {
+  background: var(--button-primary-hover-bgcolor, color-mix(in srgb, var(--lwt-toolbarbutton-icon-fill-attention, var(--toolbarbutton-icon-fill-attention)) 90%, transparent)) !important;
+}
+
+:root[privatebrowsingmode] #fxa-toolbar-menu-button:not([disabled=true]):is([open],[checked],:hover:active) {
+  background: var(--button-primary-active-bgcolor, color-mix(in srgb, var(--lwt-toolbarbutton-icon-fill-attention, var(--toolbarbutton-icon-fill-attention)) 70%, transparent)) !important;
+}
+
+:root[privatebrowsingmode] #nav-bar #fxa-toolbar-menu-button > .toolbarbutton-badge-stack {
+  background: transparent !important;
+	margin-inline: 0 !important;
+}

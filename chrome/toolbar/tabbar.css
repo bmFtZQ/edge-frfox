@@ -183,7 +183,8 @@
 	display: -moz-box !important;
 }
 
-.titlebar-spacer[type="pre-tabs"] {
+.titlebar-spacer[type="pre-tabs"],
+.private-browsing-indicator {
 	display: none !important;
 }
 
