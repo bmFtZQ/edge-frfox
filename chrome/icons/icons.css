@@ -276,7 +276,7 @@
 #identity-popup-mainView .subviewbutton-nav::after,
 .widget-overflow-list .subviewbutton-nav::after,
 .PanelUI-subView .subviewbutton-nav::after {
-	content: url(arrow-right.svg) !important;
+	content: url("arrow-right.svg") !important;
 }
 
 #PlacesChevron,
@@ -305,12 +305,14 @@
 .tab-icon-image[src="chrome://branding/content/icon32.png"],
 .tab-icon-image[src="chrome://global/skin/icons/settings.svg"],
 .tab-icon-image[src="chrome://mozapps/skin/extensions/extension.svg"],
-.tab-icon-image[src="chrome://browser/skin/customize.svg"] {
+.tab-icon-image[src="chrome://browser/skin/customize.svg"],
+.tab-icon-image[src="chrome://browser/skin/privatebrowsing/favicon.svg"] {
 	padding-left: 16px !important;
 	box-sizing: border-box !important;
 }
 
-.tab-icon-image[src="chrome://branding/content/icon32.png"] {
+.tab-icon-image[src="chrome://branding/content/icon32.png"],
+.tab-icon-image[src="chrome://browser/skin/privatebrowsing/favicon.svg"] {
 	background: url("new-tab-image.svg") !important;
 }
 
@@ -329,105 +331,105 @@
 
 /* permissions */
 #permissions-granted-icon {
-  list-style-image: url(permissions.svg) !important;
+  list-style-image: url("permissions.svg") !important;
 }
 
 .geo-icon {
-  list-style-image: url(geo.svg) !important;
+  list-style-image: url("geo.svg") !important;
 }
 
 .geo-icon.blocked-permission-icon {
-  list-style-image: url(geo-blocked.svg) !important;
+  list-style-image: url("geo-blocked.svg") !important;
 }
 
 .xr-icon {
-  list-style-image: url(xr.svg) !important;
+  list-style-image: url("xr.svg") !important;
 }
 
 .xr-icon.blocked-permission-icon {
-  list-style-image: url(xr-blocked.svg) !important;
+  list-style-image: url("xr-blocked.svg") !important;
 }
 
 .popup-notification-icon[popupid="web-notifications"],
 .desktop-notification-icon {
-  list-style-image: url(desktop-notification.svg) !important;
+  list-style-image: url("desktop-notification.svg") !important;
 }
 
 .desktop-notification-icon.blocked-permission-icon {
-  list-style-image: url(desktop-notification-blocked.svg) !important;
+  list-style-image: url("desktop-notification-blocked.svg") !important;
 }
 
 .camera-icon {
-  list-style-image: url(camera.svg) !important;
+  list-style-image: url("camera.svg") !important;
 }
 
 .camera-icon.blocked-permission-icon {
-  list-style-image: url(camera-blocked.svg) !important;
+  list-style-image: url("camera-blocked.svg") !important;
 }
 
 .microphone-icon {
-  list-style-image: url(microphone.svg) !important;
+  list-style-image: url("microphone.svg") !important;
 }
 
 .microphone-icon.blocked-permission-icon {
-  list-style-image: url(microphone-blocked.svg) !important;
+  list-style-image: url("microphone-blocked.svg") !important;
 }
 
 .screen-icon {
-  list-style-image: url(screen.svg) !important;
+  list-style-image: url("screen.svg") !important;
 }
 
 .screen-icon.blocked-permission-icon {
-  list-style-image: url(screen-blocked.svg) !important;
+  list-style-image: url("screen-blocked.svg") !important;
 }
 
 .popup-notification-icon[popupid="persistent-storage"],
 .persistent-storage-icon {
-  list-style-image: url(persistent-storage.svg) !important;
+  list-style-image: url("persistent-storage.svg") !important;
 }
 
 .persistent-storage-icon.blocked-permission-icon {
-  list-style-image: url(persistent-storage-blocked.svg) !important;
+  list-style-image: url("persistent-storage-blocked.svg") !important;
 }
 
 .popup-icon {
-  list-style-image: url(popup.svg) !important;
+  list-style-image: url("popup.svg") !important;
 }
 
 .autoplay-media-icon {
-  list-style-image: url(autoplay-media.svg) !important;
+  list-style-image: url("autoplay-media.svg") !important;
 }
 
 .autoplay-media-icon.blocked-permission-icon {
-  list-style-image: url(autoplay-media-blocked.svg) !important;
+  list-style-image: url("autoplay-media-blocked.svg") !important;
 }
 
 #canvas-notification-icon,
 .popup-notification-icon[popupid="canvas-permissions-prompt"],
 .canvas-icon {
-  list-style-image: url(canvas.svg) !important;
+  list-style-image: url("canvas.svg") !important;
 }
 
 .canvas-icon.blocked-permission-icon {
-  list-style-image: url(canvas-blocked.svg) !important;
+  list-style-image: url("canvas-blocked.svg") !important;
 }
 
 .midi-icon,
 .midi-sysex-icon,
 .popup-notification-icon[popupid="midi"],
 .popup-notification-icon[popupid="midi-sysex"] {
-  list-style-image: url(midi.svg) !important;
+  list-style-image: url("midi.svg") !important;
 }
 
 .install-icon {
-  list-style-image: url(extension.svg) !important;
+  list-style-image: url("extension.svg") !important;
 }
 
 .install-icon.blocked-permission-icon,
 .popup-notification-icon[popupid="xpinstall-disabled"],
 .popup-notification-icon[popupid="addon-install-blocked"],
 .popup-notification-icon[popupid="addon-install-origin-blocked"] {
-  list-style-image: url(extension-blocked.svg) !important;
+  list-style-image: url("extension-blocked.svg") !important;
 }
 
 /* tab sound icons */
@@ -441,4 +443,13 @@
 
 .tab-icon-overlay[activemedia-blocked] {
   list-style-image: url("tab-audio-blocked-small.svg") !important;
+}
+
+/* reload/stop animation */
+#stop-reload-button[animate] > #reload-button[displaystop] + #stop-button > .toolbarbutton-animatable-box > .toolbarbutton-animatable-image {
+  background-image: url("reload-to-stop.svg") !important;
+}
+
+#stop-reload-button[animate] > #reload-button > .toolbarbutton-animatable-box > .toolbarbutton-animatable-image {
+  background-image: url("stop-to-reload.svg") !important;
 }
