@@ -1,7 +1,8 @@
 /* EdgeFr-Fox by bmFtZQ - content/newtab.css */
 
 /* colours */
-@-moz-document url-prefix("about:newtab"), url-prefix("about:home") {
+@-moz-document url-prefix("about:newtab"),
+url-prefix("about:home") {
   body:not([lwt-newtab], [lwt-newtab-brighttext]) {
     --newtab-background-color: #F7F7F7 !important;
     --newtab-background-color-secondary: #fff !important;
@@ -48,12 +49,14 @@
   }
 }
 
-@-moz-document url-prefix("about:newtab"), url-prefix("about:home") {
+@-moz-document url-prefix("about:newtab"),
+url-prefix("about:home") {
+
   /* hide pin */
   .icon.icon-pin-small {
     display: none !important;
   }
-  
+
   /* unpinned sites have lower opacity title */
   .top-site-button .title:not(.pinned) {
     opacity: 0.6 !important;
@@ -63,6 +66,7 @@
   .search-wrapper .search-inner-wrapper {
     min-height: 44px !important;
   }
+
   .search-handoff-button {
     border-radius: 99px !important;
     background-position: 12px !important;
@@ -72,7 +76,7 @@
     --elevation: 4;
     box-shadow: 0 0 calc((var(--elevation) * 0.225px) + 2px) rgba(0, 0, 0, 0.11), 0 calc(var(--elevation) * 0.4px) calc((var(--elevation) * 0.9px)) rgba(0, 0, 0, 0.13) !important;
   }
-  
+
   .search-handoff-button:hover {
     --elevation: 6;
   }

@@ -1,78 +1,79 @@
 /* EdgeFr-Fox by bmFtZQ - urlbar.css */
 
 :root {
-	--urlbar-min-height: 28px !important;
+  --urlbar-min-height: 28px !important;
   --urlbarView-item-inline-padding: 14px !important;
-	--urlbar-icon-border-radius: var(--toolbarbutton-border-radius) !important;
-	--urlbar-icon-padding: calc(var(--toolbarbutton-inner-padding) - 2px) !important;
-	--uc-urlbar-icon-inline-padding: calc(var(--uc-toolbarbutton-inner-inline-padding) - 2px) !important;
-	--identity-box-margin-inline: 2px !important;
+  --urlbar-icon-border-radius: var(--toolbarbutton-border-radius) !important;
+  --urlbar-icon-padding: calc(var(--toolbarbutton-inner-padding) - 2px) !important;
+  --uc-urlbar-icon-inline-padding: calc(var(--uc-toolbarbutton-inner-inline-padding) - 2px) !important;
+  --identity-box-margin-inline: 2px !important;
 }
 
 /* color-mix(in srgb, var(--toolbar-field-focus-border-color) 50%, transparent) */
 
 :root:not(:-moz-lwtheme) #urlbar {
-	--urlbar-box-bgcolor: unset !important;
+  --urlbar-box-bgcolor: unset !important;
 }
 
-#urlbar[focused="true"]:not([suppress-focus-border]) > #urlbar-background:not(:-moz-lwtheme),
+#urlbar[focused="true"]:not([suppress-focus-border])>#urlbar-background:not(:-moz-lwtheme),
 #searchbar:not(:-moz-lwtheme):focus-within {
   outline-color: color-mix(in srgb, var(--toolbar-field-focus-border-color) 50%, transparent) !important;
 }
 
 :root:not([lwthemetextcolor="bright"]) #urlbar-background {
-	box-shadow: var(--uc-urlbar-shadow, none);
+  box-shadow: var(--uc-urlbar-shadow, none);
 }
 
-#urlbar[open] > #urlbar-background {
-	border-color: transparent !important;
-	box-shadow: 0 10px 16px #0005, 0 0 1px #0006 !important;
+#urlbar[open]>#urlbar-background {
+  border-color: transparent !important;
+  box-shadow: 0 10px 16px #0005, 0 0 1px #0006 !important;
 }
 
 .urlbarView {
-	margin-inline: 0 !important;
-	width: 100% !important;
-	border-inline: 0 !important;
+  margin-inline: 0 !important;
+  width: 100% !important;
+  border-inline: 0 !important;
 }
 
 .urlbarView-row {
-	padding-block: 0 !important;
+  padding-block: 0 !important;
 }
 
 .urlbarView-row-inner {
-	border-radius: 0 !important;
-	padding-block: 8px !important;
+  border-radius: 0 !important;
+  padding-block: 8px !important;
 }
 
-.urlbarView-row:not([type="tip"], [type="dynamic"])[selected] > .urlbarView-row-inner, .urlbarView-row-inner[selected] {
-	box-shadow: 3px 0 var(--toolbar-field-focus-border-color) inset !important;
+.urlbarView-row:not([type="tip"], [type="dynamic"])[selected]>.urlbarView-row-inner,
+.urlbarView-row-inner[selected] {
+  box-shadow: 3px 0 var(--toolbar-field-focus-border-color) inset !important;
 }
 
 #urlbar-anon-search-settings {
-	margin-inline-end: 8px !important;
+  margin-inline-end: 8px !important;
 }
 
 #urlbar .search-one-offs:not([hidden]) {
-	padding-block: 8px 0 !important;
+  padding-block: 8px 0 !important;
 }
 
 /* breakout */
 #urlbar[breakout][breakout-extend] {
-	left: 0 !important;
-	width: 100% !important;
+  left: 0 !important;
+  width: 100% !important;
 }
 
-#urlbar[breakout][breakout-extend] > #urlbar-input-container {
-	padding-inline: var(--urlbar-container-padding) !important;
+#urlbar[breakout][breakout-extend]>#urlbar-input-container {
+  padding-inline: var(--urlbar-container-padding) !important;
 }
 
 .urlbarView-results {
-	padding-block: 0 !important;
+  padding-block: 0 !important;
 }
 
-#urlbar[open] > .urlbarView > .urlbarView-body-outer > .urlbarView-body-inner,
-.urlbarView:not([noresults]) > .search-one-offs:not([hidden]) {
-	border-top: 0 !important;
+#urlbar[open]>.urlbarView>.urlbarView-body-outer>.urlbarView-body-inner,
+.urlbarView:not([noresults])>.search-one-offs:not([hidden]) {
+  border-top: 0 !important;
 }
 
 /* urlbar spacing */
@@ -85,60 +86,58 @@
   --urlbar-height: calc(16px + var(--toolbarbutton-inner-padding) * 2) !important;
 }
 
-#urlbar-container, #search-container {
-	margin-inline: 6px !important;
+#urlbar-container,
+#search-container {
+  margin-inline: 6px !important;
 }
 
-.urlbar-page-action, #urlbar-go-button, .search-go-button,
+.urlbar-page-action,
+#urlbar-go-button,
+.search-go-button,
 #tracking-protection-icon-container,
 #identity-icon-box {
-	padding-inline: var(--uc-urlbar-icon-inline-padding) !important;
-	width: calc(var(--uc-urlbar-icon-inline-padding) * 2 + 16px) !important;
+  padding-inline: var(--uc-urlbar-icon-inline-padding) !important;
+  width: calc(var(--uc-urlbar-icon-inline-padding) * 2 + 16px) !important;
 }
 
-#identity-box[pageproxystate="valid"].notSecureText > .identity-box-button,
-#identity-box[pageproxystate="valid"].chromeUI > .identity-box-button,
-#identity-box[pageproxystate="valid"].extensionPage > .identity-box-button,
+#identity-box[pageproxystate="valid"].notSecureText>.identity-box-button,
+#identity-box[pageproxystate="valid"].chromeUI>.identity-box-button,
+#identity-box[pageproxystate="valid"].extensionPage>.identity-box-button,
 #urlbar-label-box {
-	width: unset !important;
+  width: unset !important;
 }
 
 #identity-icon-box {
-	padding-inline: var(--uc-toolbarbutton-inner-inline-padding) !important;
+  padding-inline: var(--uc-toolbarbutton-inner-inline-padding) !important;
 }
 
 /* workaround for bringing lock icon and permission icon closer */
 #identity-permission-box {
-	padding-inline: 2px var(--uc-urlbar-icon-inline-padding) !important;
-	margin-inline-start: -8px !important;
+  padding-inline: 2px var(--uc-urlbar-icon-inline-padding) !important;
+  margin-inline-start: -8px !important;
 }
 
-#urlbar-background, #searchbar {
-	border-radius: calc(var(--toolbarbutton-border-radius) + 2px) !important;
+#urlbar-background,
+#searchbar {
+  border-radius: calc(var(--toolbarbutton-border-radius) + 2px) !important;
 }
 
 
 /* move tracking protection button */
 #tracking-protection-icon-container,
 #page-action-buttons {
-	-moz-box-ordinal-group: 2 !important;
+  -moz-box-ordinal-group: 2 !important;
 }
 
-#urlbar[focused="true"]:not([suppress-focus-border]) > #urlbar-background,
+#urlbar[focused="true"]:not([suppress-focus-border])>#urlbar-background,
 #searchbar:focus-within {
   outline-offset: calc(var(--focus-outline-width) * -1 + 1px) !important;
 }
 
 .urlbarView {
-	padding-block-end: 8px !important;
+  padding-block-end: 8px !important;
 }
 
-.urlbarView-row[pinned] > .urlbarView-row-inner > .urlbarView-no-wrap > .urlbarView-type-icon {
-	fill: var(--toolbar-field-color) !important;
+.urlbarView-row[pinned]>.urlbarView-row-inner>.urlbarView-no-wrap>.urlbarView-type-icon {
+  fill: var(--toolbar-field-color) !important;
 }
-
-
-
-
-
-

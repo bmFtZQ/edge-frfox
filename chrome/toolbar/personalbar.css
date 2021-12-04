@@ -7,23 +7,26 @@
 #personal-toolbar-empty-description,
 #PersonalToolbar .toolbarbutton-1,
 toolbarbutton.bookmark-item:not(.subviewbutton) {
-	margin-block: 0 4px !important;
-	padding: var(--bookmark-block-padding) 6px !important;
+  margin-block: 0 4px !important;
+  padding: var(--bookmark-block-padding) 6px !important;
   font-size: 12px !important;
 }
 
-#PlacesToolbarItems > toolbarseparator::before {
-	content: "";
-	display: block;
-	border-inline-start: 1px solid var(--toolbarseparator-color) !important;
+#PlacesToolbarItems>toolbarseparator::before {
+  content: "";
+  display: block;
+  border-inline-start: 1px solid var(--toolbarseparator-color) !important;
   margin-block: 8px !important;
-	border-image-source: none !important;
+  border-image-source: none !important;
 }
 
 #PersonalToolbar {
-	padding-inline: var(--toolbar-start-end-padding) calc(var(--toolbar-start-end-padding) + 4px) !important;
+  padding-inline: var(--toolbar-start-end-padding) calc(var(--toolbar-start-end-padding) + 4px) !important;
 }
 
-#managed-bookmarks > .toolbarbutton-icon, #bookmarks-toolbar-placeholder > .toolbarbutton-icon, #PlacesToolbarItems > .bookmark-item > .toolbarbutton-icon[label]:not([label=""]), #OtherBookmarks.bookmark-item[container] > .toolbarbutton-icon {
-	margin-inline-end: 6px !important;
+#managed-bookmarks>.toolbarbutton-icon,
+#bookmarks-toolbar-placeholder>.toolbarbutton-icon,
+#PlacesToolbarItems>.bookmark-item>.toolbarbutton-icon[label]:not([label=""]),
+#OtherBookmarks.bookmark-item[container]>.toolbarbutton-icon {
+  margin-inline-end: 6px !important;
 }

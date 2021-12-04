@@ -7,65 +7,65 @@
   --tabs-navbar-shadow-size: 0 !important;
 }
 
-#nav-bar .toolbarbutton-1 > .toolbarbutton-icon {
-	width: calc(2 * var(--uc-toolbarbutton-inner-inline-padding) + 16px) !important;
+#nav-bar .toolbarbutton-1>.toolbarbutton-icon {
+  width: calc(2 * var(--uc-toolbarbutton-inner-inline-padding) + 16px) !important;
 }
 
-#nav-bar .toolbarbutton-1 > .toolbarbutton-icon,
-#nav-bar .toolbarbutton-1 > .toolbarbutton-text,
-#nav-bar .toolbarbutton-1 > .toolbarbutton-badge-stack {
-	padding-inline: var(--uc-toolbarbutton-inner-inline-padding) !important;
+#nav-bar .toolbarbutton-1>.toolbarbutton-icon,
+#nav-bar .toolbarbutton-1>.toolbarbutton-text,
+#nav-bar .toolbarbutton-1>.toolbarbutton-badge-stack {
+  padding-inline: var(--uc-toolbarbutton-inner-inline-padding) !important;
 }
 
 /* move reload/stop icon to middle of button */
-#reload-button > .toolbarbutton-animatable-box,
-#stop-button > .toolbarbutton-animatable-box {
-	top: calc(50% - 10px) !important;
-	margin-inline-start: calc((16px + 2 * var(--uc-toolbarbutton-inner-inline-padding) - 20px) / 2) !important;
+#reload-button>.toolbarbutton-animatable-box,
+#stop-button>.toolbarbutton-animatable-box {
+  top: calc(50% - 10px) !important;
+  margin-inline-start: calc((16px + 2 * var(--uc-toolbarbutton-inner-inline-padding) - 20px) / 2) !important;
 }
 
-#nav-bar-customization-target :where(#reload-button, #stop-button) > .toolbarbutton-icon {
-	padding:  var(--toolbarbutton-inner-padding) var(--uc-toolbarbutton-inner-inline-padding) !important;
+#nav-bar-customization-target :where(#reload-button, #stop-button)>.toolbarbutton-icon {
+  padding: var(--toolbarbutton-inner-padding) var(--uc-toolbarbutton-inner-inline-padding) !important;
 }
 
 /* account button */
-#navigator-toolbox > toolbar #fxa-toolbar-menu-button,
-#navigator-toolbox > toolbar #fxa-toolbar-menu-button > .toolbarbutton-badge-stack {
-	border-radius: 99px !important;
+#navigator-toolbox>toolbar #fxa-toolbar-menu-button,
+#navigator-toolbox>toolbar #fxa-toolbar-menu-button>.toolbarbutton-badge-stack {
+  border-radius: 99px !important;
 }
 
-#nav-bar #fxa-toolbar-menu-button > .toolbarbutton-badge-stack {
-	padding: var(--toolbarbutton-inner-padding) !important;
-	margin-inline: calc(var(--uc-toolbarbutton-inner-inline-padding) - var(--toolbarbutton-inner-padding)) !important;
+#nav-bar #fxa-toolbar-menu-button>.toolbarbutton-badge-stack {
+  padding: var(--toolbarbutton-inner-padding) !important;
+  margin-inline: calc(var(--uc-toolbarbutton-inner-inline-padding) - var(--toolbarbutton-inner-padding)) !important;
 }
 
 :root[fxastatus="signedin"] #fxa-avatar-image {
-	scale: 1.5 !important;
+  scale: 1.5 !important;
 }
 
 :root[privatebrowsingmode] #fxa-toolbar-menu-button::before {
   content: "Private" !important;
   display: -moz-box !important;
-	font-size: 12px !important;
+  font-size: 12px !important;
 }
 
 :root[privatebrowsingmode] #fxa-toolbar-menu-button {
   background: var(--button-primary-bgcolor, var(--lwt-toolbarbutton-icon-fill-attention, var(--toolbarbutton-icon-fill-attention))) !important;
-	margin: 4px !important;
-	padding-inline: 8px 0 !important;
-	color: var(--button-primary-color, var(--toolbar-bgcolor)) !important;
-	fill: currentColor !important;
+  margin: 4px !important;
+  padding-inline: 8px 0 !important;
+  color: var(--button-primary-color, var(--toolbar-bgcolor)) !important;
+  fill: currentColor !important;
 }
 
 :root[privatebrowsingmode] #fxa-toolbar-menu-button:hover {
   background: var(--button-primary-hover-bgcolor, color-mix(in srgb, var(--lwt-toolbarbutton-icon-fill-attention, var(--toolbarbutton-icon-fill-attention)) 90%, transparent)) !important;
 }
 
-:root[privatebrowsingmode] #fxa-toolbar-menu-button:not([disabled=true]):is([open],[checked],:hover:active) {
+:root[privatebrowsingmode] #fxa-toolbar-menu-button:not([disabled=true]):is([open], [checked], :hover:active) {
   background: var(--button-primary-active-bgcolor, color-mix(in srgb, var(--lwt-toolbarbutton-icon-fill-attention, var(--toolbarbutton-icon-fill-attention)) 70%, transparent)) !important;
 }
 
-:root[privatebrowsingmode] #nav-bar #fxa-toolbar-menu-button > .toolbarbutton-badge-stack {
+:root[privatebrowsingmode] #nav-bar #fxa-toolbar-menu-button>.toolbarbutton-badge-stack {
   background: transparent !important;
-	margin-inline: 0 !important;
+  margin-inline: 0 !important;
 }
