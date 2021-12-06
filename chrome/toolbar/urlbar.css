@@ -9,8 +9,6 @@
   --identity-box-margin-inline: 2px !important;
 }
 
-/* color-mix(in srgb, var(--toolbar-field-focus-border-color) 50%, transparent) */
-
 :root:not(:-moz-lwtheme) #urlbar {
   --urlbar-box-bgcolor: unset !important;
 }
@@ -140,4 +138,10 @@
 
 .urlbarView-row[pinned]>.urlbarView-row-inner>.urlbarView-no-wrap>.urlbarView-type-icon {
   fill: var(--toolbar-field-color) !important;
+}
+
+#userContext-icons, #urlbar-zoom-button {
+  padding-inline: var(--uc-urlbar-icon-inline-padding) !important;
+  margin-block: 0 !important;
+  margin-inline: 0 !important;
 }

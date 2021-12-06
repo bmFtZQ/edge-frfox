@@ -1,8 +1,7 @@
 /* EdgeFr-Fox by bmFtZQ - content/newtab.css */
 
 /* colours */
-@-moz-document url-prefix("about:newtab"),
-url-prefix("about:home") {
+@-moz-document url-prefix("about:newtab"), url-prefix("about:home") {
   body:not([lwt-newtab], [lwt-newtab-brighttext]) {
     --newtab-background-color: #F7F7F7 !important;
     --newtab-background-color-secondary: #fff !important;
@@ -49,9 +48,7 @@ url-prefix("about:home") {
   }
 }
 
-@-moz-document url-prefix("about:newtab"),
-url-prefix("about:home") {
-
+@-moz-document url-prefix("about:newtab"), url-prefix("about:home") {
   /* hide pin */
   .icon.icon-pin-small {
     display: none !important;

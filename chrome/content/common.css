@@ -78,8 +78,7 @@
 }
 
 /* preferences */
-@-moz-document url-prefix(about:preferences),
-url-prefix(about:addons) {
+@-moz-document url-prefix(about:preferences), url-prefix(about:addons) {
   .category[selected] {
     position: relative !important;
     border-radius: 4px !important;
