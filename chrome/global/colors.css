@@ -119,11 +119,11 @@
 
 /* Change Colour of page when loading */
 :root:not(:-moz-lwtheme) #tabbrowser-tabpanels {
-  background-color: var(--toolbar-bgcolor) !important;
+  background-color: #f7f7f7 !important;
 }
 
 :root[lwt-default-theme-in-dark-mode="true"] #tabbrowser-tabpanels {
-  background-color: var(--lwt-accent-color) !important;
+  background-color: #252525 !important;
 }
 
 /* needed for theming the private browsing indicator  */
