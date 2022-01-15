@@ -1,9 +1,9 @@
 # Edge-FrFox rewrite
 A Firefox userChrome.css theme that aims to recreate the look and feel of the Chromium version of Microsoft Edge.
 
-This branch is for a new version that is rewritten from scratch. Old version can be found in the [`main`](https://github.com/bmFtZQ/Edge-FrFox/tree/main) branch.
+This branch is for a new version that is rewritten from scratch. Old version can be found in the [Here](https://github.com/bmFtZQ/Edge-FrFox/tree/v91.0-archive).
 
-#### This version of the theme has only been test on Firefox Nightly 96 but should work on Firefox 94.
+**The context menu and its icons have not been completed yet.**
 
 ![thumbnail](screenshots/thumb.png)
 ###### Screenshot taken with macOS Monterey / Firefox Nightly 96.0a1 (2021-11-30)
