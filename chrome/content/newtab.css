@@ -1,0 +1,189 @@
+/* EdgeFr-Fox by bmFtZQ - content/newtab.css */
+
+/* colours */
+@-moz-document url-prefix("about:newtab"), url-prefix("about:home") {
+  body:not([lwt-newtab], [lwt-newtab-brighttext]) {
+    --newtab-background-color: #F7F7F7 !important;
+    --newtab-background-color-secondary: #fff !important;
+    --newtab-text-primary-color: #252525 !important;
+    --newtab-primary-action-background: #0078D4 !important;
+    --newtab-text-secondary-color: color-mix(in srgb, var(--newtab-text-primary-color) 80%, transparent) !important;
+    --newtab-element-hover-color: color-mix(in srgb, var(--newtab-background-color) 95%, #000) !important;
+    --newtab-element-active-color: color-mix(in srgb, var(--newtab-background-color) 90%, #000) !important;
+    --newtab-element-secondary-color: color-mix(in srgb, currentColor 5%, transparent) !important;
+    --newtab-element-secondary-hover-color: color-mix(in srgb, currentColor 12%, transparent) !important;
+    --newtab-element-secondary-active-color: color-mix(in srgb, currentColor 25%, transparent) !important;
+    --newtab-primary-element-hover-color: color-mix(in srgb, var(--newtab-primary-action-background) 90%, #000) !important;
+    --newtab-primary-element-active-color: color-mix(in srgb, var(--newtab-primary-action-background) 80%, #000) !important;
+    --newtab-primary-element-text-color: #fff !important;
+    --newtab-primary-action-background-dimmed: color-mix(in srgb, var(--newtab-primary-action-background) 25%, transparent) !important;
+    --newtab-border-color: color-mix(in srgb, var(--newtab-background-color) 75%, #000) !important;
+    --newtab-wordmark-color: #737373 !important;
+    --newtab-status-success: #50B080 !important;
+    --newtab-status-error: #FF848A !important;
+    --newtab-inner-box-shadow-color: rgba(0, 0, 0, 0.1) !important;
+    --newtab-overlay-color: color-mix(in srgb, var(--newtab-background-color) 85%, transparent) !important;
+    --newtab-text-emphasis-background: #FFED32 !important;
+    --newtab-text-emphasis-text-color: #000 !important;
+    --newtab-textbox-focus-color: var(--newtab-primary-action-background) !important;
+    --newtab-textbox-focus-boxshadow: 0 0 0 1px var(--newtab-primary-action-background), 0 0 0 4px rgba(var(--newtab-primary-action-background), 0.3) !important;
+    --newtab-button-secondary-color: inherit !important;
+  }
+
+  body[style*="--newtab-background-color: rgb(43, 42, 51); --newtab-text-primary-color: rgba(251, 251, 254, 1);"]:not([style*="--newtab-background-color-secondary"])[lwt-newtab-brighttext],
+  body:not([style*="color"])[lwt-newtab-brighttext] {
+    --newtab-background-color: #252525 !important;
+    --newtab-background-color-secondary: #4A4A4A !important;
+    --newtab-text-primary-color: #fff !important;
+    --newtab-primary-action-background: #75B6E8 !important;
+    --newtab-element-hover-color: color-mix(in srgb, var(--newtab-background-color) 95%, #FFF) !important;
+    --newtab-element-active-color: color-mix(in srgb, var(--newtab-background-color) 90%, #FFF) !important;
+    --newtab-element-secondary-color: color-mix(in srgb, currentColor 10%, transparent) !important;
+    --newtab-element-secondary-hover-color: color-mix(in srgb, currentColor 17%, transparent) !important;
+    --newtab-element-secondary-active-color: color-mix(in srgb, currentColor 30%, transparent) !important;
+    --newtab-border-color: color-mix(in srgb, var(--newtab-background-color) 75%, #FFF) !important;
+    --newtab-primary-element-text-color: #252525 !important;
+    --newtab-wordmark-color: #fff !important;
+    --newtab-status-success: #50B080 !important;
+  }
+}
+
+@-moz-document url-prefix("about:newtab"), url-prefix("about:home") {
+  /* hide pin */
+  .icon.icon-pin-small {
+    display: none !important;
+  }
+
+  /* unpinned sites have lower opacity title */
+  .top-site-button .title:not(.pinned) {
+    opacity: 0.6 !important;
+  }
+
+  /* search bar */
+  .search-wrapper .search-inner-wrapper {
+    min-height: 44px !important;
+  }
+
+  .search-handoff-button {
+    border-radius: 99px !important;
+    background-position: 12px !important;
+    padding-inline-start: 48px !important;
+    white-space: nowrap !important;
+    text-overflow: ellipsis !important;
+    --elevation: 4;
+    box-shadow: 0 0 calc((var(--elevation) * 0.225px) + 2px) rgba(0, 0, 0, 0.11), 0 calc(var(--elevation) * 0.4px) calc((var(--elevation) * 0.9px)) rgba(0, 0, 0, 0.13) !important;
+  }
+
+  .search-handoff-button:hover {
+    --elevation: 6;
+  }
+
+  .search-wrapper.fake-focus:not(.search.disabled) .search-handoff-button {
+    border-color: transparent !important;
+    outline: 2px solid var(--newtab-primary-action-background) !important;
+    outline-offset: -1px !important;
+  }
+
+  .search-handoff-button .fake-caret {
+    inset-inline-start: 48px !important;
+    top: 13px !important;
+  }
+
+  .search-disabled .search-handoff-button {
+    opacity: 0 !important;
+  }
+
+  /* top sites */
+  .top-site-outer .tile {
+    border-radius: 12px !important;
+    height: 44px !important;
+    width: 44px !important;
+    box-shadow: none !important;
+  }
+
+  .top-site-outer .tile .icon-wrapper {
+    border-radius: 4px !important;
+    width: 24px !important;
+    height: 24px !important;
+  }
+
+  .top-site-outer .default-icon,
+  .top-site-outer .search-topsite {
+    background-size: 24px !important;
+    height: 24px !important;
+    width: 24px !important;
+  }
+
+  .top-site-outer .tile .icon-wrapper.letter-fallback::before {
+    font-size: 32px !important;
+  }
+
+  /* card */
+  .card-outer .card,
+  .ds-card-grid.ds-card-grid-border .ds-card:not(.placeholder) {
+    border-radius: 4px !important;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3) !important;
+  }
+
+  .card-outer .card-preview-image-outer,
+  .ds-card-grid.ds-card-grid-border .ds-card:not(.placeholder) .img-wrapper .img img {
+    border-radius: 4px 4px 0 0 !important
+  }
+}
+
+/* private browsing newtab */
+@-moz-document url-prefix(about:privatebrowsing) {
+  :root {
+    --uc-wordmark-color: #737373 !important;
+    --uc-background-color-secondary: #fff !important;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --uc-wordmark-color: #fff !important;
+      --uc-background-color-secondary: #4a4a4a !important;
+    }
+  }
+
+  .search-inner-wrapper {
+    height: 44px !important;
+  }
+
+  .search-handoff-button,
+  .search-handoff-button:active,
+  .search-handoff-button:enabled:hover:active {
+    background-color: var(--uc-background-color-secondary) !important;
+    background-size: 24px;
+    border: 0 !important;
+    border-radius: 99px !important;
+    padding-inline-start: 48px !important;
+    --elevation: 4;
+    box-shadow: 0 0 calc((var(--elevation) * 0.225px) + 2px) rgba(0, 0, 0, 0.11), 0 calc(var(--elevation) * 0.4px) calc((var(--elevation) * 0.9px)) rgba(0, 0, 0, 0.13) !important;
+  }
+
+  .search-handoff-button:hover {
+    --elevation: 6;
+  }
+
+  .search-handoff-button.focused:not(.disabled) {
+    box-shadow: none !important;
+    outline: 2px solid var(--in-content-focus-outline-color) !important;
+    outline-offset: -1px !important;
+  }
+
+  .search-handoff-button.disabled {
+    opacity: 0 !important;
+  }
+
+  .fake-textbox {
+    color: var(--in-content-page-color) !important;
+  }
+
+  .wordmark {
+    fill: var(--uc-wordmark-color) !important;
+  }
+
+  .info {
+    background-color: var(--uc-background-color-secondary) !important;
+  }
+}

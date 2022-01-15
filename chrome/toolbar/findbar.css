@@ -1,0 +1,30 @@
+/* EdgeFr-Fox by bmFtZQ - findbar.css */
+
+.findbar-find-previous,
+.findbar-find-next,
+.close-icon {
+  border-radius: var(--toolbarbutton-border-radius) !important;
+}
+
+.findbar-textbox {
+  border: 0 !important;
+  border-radius: calc(var(--toolbarbutton-border-radius) + 2px) !important;
+}
+
+.findbar-textbox:-moz-lwtheme {
+  background-color: var(--toolbar-field-background-color) !important;
+}
+
+.findbar-textbox:focus {
+  outline: 2px solid var(--focus-outline-color, -moz-accent-color) !important;
+  outline-offset: -1px !important;
+}
+
+.findbar-textbox[status="notfound"] {
+  outline: 2px solid var(--input-error-border-color, #E22850) !important;
+  outline-offset: -1px !important;
+}
+
+.findbar-container {
+  overflow-inline: visible !important;
+}
