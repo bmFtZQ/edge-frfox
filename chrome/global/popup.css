@@ -192,3 +192,19 @@
 #emptyDownloads {
   padding: 1.5em 16px 1.7em !important;
 }
+
+/* context menus */
+menupopup {
+  --panel-color: var(--arrowpanel-color) !important;
+  --panel-border-radius: 4px !important;
+  --panel-padding: 4px 0px !important;
+  --panel-border-color: var(--arrowpanel-border-color) !important;
+  --panel-background: var(--arrowpanel-background) !important;
+  --nested-margin: -6px !important;
+  --menuitem-hover-background-color: var(--panel-item-hover-bgcolor) !important;
+  --menu-background-color: var(--arrowpanel-background) !important;
+  --menu-color: var(--arrowpanel-color) !important;
+  --menuitem-disabled-hover-background-color: #0000 !important;
+  --menu-disabled-color: var(--panel-disabled-color) !important;
+  --menu-border-color: var(--panel-separator-color) !important;
+}

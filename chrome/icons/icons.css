@@ -35,20 +35,24 @@ and 11 so applied to both) */
   fill: currentColor !important;
 }
 
-#back-button {
+#back-button,
+#context-back {
   list-style-image: url("back.svg") !important;
 }
 
-#forward-button {
+#forward-button,
+#context-forward {
   list-style-image: url("forward.svg") !important;
 }
 
-#reload-button {
+#reload-button,
+#context-reload {
   list-style-image: url("reload.svg") !important;
 }
 
 #stop-button,
-.close-icon {
+.close-icon,
+#context-stop {
   list-style-image: url("close.svg") !important;
 }
 
@@ -304,7 +308,8 @@ and 11 so applied to both) */
 #protections-popup-mainView .subviewbutton-nav:not(.notFound)::after,
 #identity-popup-mainView .subviewbutton-nav::after,
 .widget-overflow-list .subviewbutton-nav::after,
-.PanelUI-subView .subviewbutton-nav::after {
+.PanelUI-subView .subviewbutton-nav::after,
+.menu-right {
   content: url("arrow-right.svg") !important;
 }
 
@@ -323,12 +328,14 @@ and 11 so applied to both) */
 }
 
 #pageAction-panel-bookmark,
-#star-button {
+#star-button,
+#context-bookmarkpage {
   list-style-image: url("bookmark-hollow.svg") !important;
 }
 
 #pageAction-panel-bookmark[starred],
-#star-button[starred] {
+#star-button[starred],
+#context-bookmarkpage[starred="true"] {
   list-style-image: url("bookmark.svg") !important;
 }
 
