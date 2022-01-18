@@ -1,5 +1,34 @@
 /* EdgeFr-Fox by bmFtZQ - icons.css */
 
+/* windows 11 style window controls (no known way to detect between windows 10
+and 11 so applied to both) */
+@media (-moz-os-version: windows-win10) {
+  .titlebar-min {
+    list-style-image: url("win11-minimize.svg") !important;
+  }
+
+  .titlebar-max {
+    list-style-image: url("win11-maximize.svg") !important;
+  }
+
+  .titlebar-restore {
+    list-style-image: url("win11-restore.svg") !important;
+  }
+
+  .titlebar-close {
+    list-style-image: url("win11-close.svg") !important;
+  }
+
+  /* darkmode icon that uses thicker strokes and easier to see (only needed at
+  1x scale) */
+  @media (max-resolution: 1dppx) {
+    :root[lwthemetextcolor="bright"] .titlebar-close,
+    .titlebar-close:hover {
+      list-style-image: url("win11-close-dark.svg") !important;
+    }
+  }
+}
+
 #appMenu-multiView .subviewbutton,
 #overflowMenu-customize-button {
   -moz-context-properties: fill, fill-opacity !important;

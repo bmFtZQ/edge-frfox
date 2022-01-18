@@ -133,3 +133,12 @@
   --button-primary-active-bgcolor: unset !important;
   --button-primary-color: unset !important;
 }
+
+/* make the titlebar buttons black/white on default themes */
+:root:not(:-moz-lwtheme)[tabsintitlebar] .titlebar-buttonbox {
+  color: #000 !important;
+}
+
+:root[lwt-default-theme-in-dark-mode="true"][tabsintitlebar] .titlebar-buttonbox {
+  color: #fff !important;
+}

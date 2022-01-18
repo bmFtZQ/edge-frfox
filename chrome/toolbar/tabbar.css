@@ -21,7 +21,7 @@
 #tabbrowser-tabs[movingtab]>#tabbrowser-arrowscrollbox>.tabbrowser-tab[fadein]:not([selected]):not([multiselected]),
 .tabbrowser-tab[tab-grouping],
 .tabbrowser-tab[tabdrop-samewindow] {
-	transition: transform 150ms cubic-bezier(0, .75, .25, 1) !important;
+  transition: transform 150ms cubic-bezier(0, .75, .25, 1) !important;
 }
 
 :root:is([inFullscreen], :not([tabsintitlebar])) #titlebar {
@@ -31,7 +31,7 @@
 /* hide space above tabs when maximised for non-macOS versions of Firefox */
 @supports not -moz-bool-pref("layout.css.osx-font-smoothing.enabled") {
   :root:is([inFullscreen], :not([tabsintitlebar]), [sizemode="maximized"]) #titlebar,
-  #toolbar-menubar:not([inactive]) + #TabsToolbar {
+  #toolbar-menubar:not([inactive])+#TabsToolbar {
     --tab-block-margin: 0px !important;
   }
 }
@@ -240,13 +240,15 @@ toolbarbutton[part="scrollbutton-down"] {
 }
 
 /* mac titlebar buttons */
-@media (-moz-mac-big-sur-theme:0) {
-  .titlebar-buttonbox {
-    margin-inline: 10px !important;
-  }
+@supports -moz-bool-pref("layout.css.osx-font-smoothing.enabled") {
+  @media (-moz-mac-big-sur-theme:0) {
+    .titlebar-buttonbox {
+      margin-inline: 10px !important;
+    }
 
-  .titlebar-buttonbox-container {
-    margin-inline-end: -8px !important;
+    .titlebar-buttonbox-container {
+      margin-inline-end: -8px !important;
+    }
   }
 }
 
