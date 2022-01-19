@@ -127,6 +127,26 @@
   -moz-box-ordinal-group: 2 !important;
 }
 
+#urlbar-container:not(:hover) #tracking-protection-icon-container {
+  visibility: collapse !important;
+}
+
+@media (max-width: 450px) {
+  #urlbar-container:not(:hover) #pageActionButton {
+    visibility: collapse !important;
+  }
+}
+
+@media (max-width: 570px) {
+  #urlbar-container {
+    min-width: 206px !important;
+  }
+  
+  #nav-bar-customization-target:not(:hover) #downloads-button {
+  	visibility: collapse !important;
+  }
+}
+
 #urlbar[focused="true"]:not([suppress-focus-border])>#urlbar-background,
 #searchbar:focus-within {
   outline-offset: calc(var(--focus-outline-width) * -1 + 1px) !important;
