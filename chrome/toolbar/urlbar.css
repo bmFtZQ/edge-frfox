@@ -142,7 +142,7 @@
     min-width: 206px !important;
   }
   
-  #nav-bar-customization-target:not(:hover) #downloads-button {
+  #nav-bar-customization-target:not(:hover) #downloads-button:not([open]) {
   	visibility: collapse !important;
   }
 }
