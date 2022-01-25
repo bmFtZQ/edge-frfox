@@ -35,18 +35,38 @@ and 11 so applied to both) */
   fill: currentColor !important;
 }
 
-#back-button,
-#context-back {
+/* disable context menu icons on macOS */
+@supports not -moz-bool-pref("layout.css.osx-font-smoothing.enabled") {
+  #context-back {
+    list-style-image: url("back.svg") !important;
+  }
+
+  #context-forward {
+    list-style-image: url("forward.svg") !important;
+  }
+
+  #context-reload {
+    list-style-image: url("reload.svg") !important;
+  }
+
+  #context-bookmarkpage {
+    list-style-image: url("bookmark-hollow.svg") !important;
+  }
+
+  #context-bookmarkpage[starred] {
+    list-style-image: url("bookmark.svg") !important;
+  }
+}
+
+#back-button {
   list-style-image: url("back.svg") !important;
 }
 
-#forward-button,
-#context-forward {
+#forward-button {
   list-style-image: url("forward.svg") !important;
 }
 
-#reload-button,
-#context-reload {
+#reload-button {
   list-style-image: url("reload.svg") !important;
 }
 
@@ -328,14 +348,12 @@ and 11 so applied to both) */
 }
 
 #pageAction-panel-bookmark,
-#star-button,
-#context-bookmarkpage {
+#star-button {
   list-style-image: url("bookmark-hollow.svg") !important;
 }
 
 #pageAction-panel-bookmark[starred],
-#star-button[starred],
-#context-bookmarkpage[starred="true"] {
+#star-button[starred] {
   list-style-image: url("bookmark.svg") !important;
 }
 
