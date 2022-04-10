@@ -20,3 +20,9 @@ bugs with certain themes eg. dark text on dark background.) */
 :root {
   --lwt-selected-tab-background-color: unset !important;
 }
+
+/* hide firefox account button when not in private mode (useful as a private
+browsing indicator) */
+/* :root:not([privatebrowsingmode]) #nav-bar:not([customizing]) #fxa-toolbar-menu-button {
+  display: none !important;
+} */
