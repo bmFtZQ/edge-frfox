@@ -12,6 +12,9 @@
   --panel-separator-margin-horizontal: 0 !important;
   --uc-panel-zoom-button-padding: 8px;
   --uc-panel-zoom-button-inline-padding: 13px;
+  --uc-autocomplete-panel-menuitem-margin: 4px;
+  --uc-autocomplete-panel-menuicon-padding-inline: 12px;
+  --uc-autocomplete-panel-separator-margin-vertical: 4px;
 }
 
 /* app menu */
@@ -194,17 +197,55 @@
 }
 
 /* context menus */
-menupopup {
-  --panel-color: var(--arrowpanel-color) !important;
-  --panel-border-radius: 4px !important;
-  --panel-padding: 4px 0px !important;
-  --panel-border-color: var(--arrowpanel-border-color) !important;
-  --panel-background: var(--arrowpanel-background) !important;
-  --nested-margin: -6px !important;
-  --menuitem-hover-background-color: var(--panel-item-hover-bgcolor) !important;
-  --menu-background-color: var(--arrowpanel-background) !important;
-  --menu-color: var(--arrowpanel-color) !important;
-  --menuitem-disabled-hover-background-color: #0000 !important;
-  --menu-disabled-color: var(--panel-disabled-color) !important;
-  --menu-border-color: var(--panel-separator-color) !important;
+@media (-moz-os-version: windows-win10) {
+  menupopup {
+    --panel-color: var(--arrowpanel-color) !important;
+    --panel-border-radius: 4px !important;
+    --panel-padding: 4px 0px !important;
+    --panel-border-color: var(--arrowpanel-border-color) !important;
+    --panel-background: var(--arrowpanel-background) !important;
+    --nested-margin: -6px !important;
+    --menuitem-hover-background-color: var(--panel-item-hover-bgcolor) !important;
+    --menu-background-color: var(--arrowpanel-background) !important;
+    --menu-color: var(--arrowpanel-color) !important;
+    --menuitem-disabled-hover-background-color: #0000 !important;
+    --menu-disabled-color: var(--panel-disabled-color) !important;
+    --menu-border-color: var(--panel-separator-color) !important;
+  }
+}
+
+/* auto complete popup */
+menupopup,
+panel[type="autocomplete-richlistbox"] {
+  /* -moz-window-shadow: none !important; */
+  appearance: none !important;
+}
+
+#PopupAutoComplete>.autocomplete-richlistbox {
+  background: var(--arrowpanel-background) !important;
+  color: var(--arrowpanel-color) !important;
+  box-shadow: 0 0 0 1px inset var(--arrowpanel-border-color) !important;
+}
+
+.autocomplete-richlistitem[originaltype="loginsFooter"] {
+  -moz-box-pack: start !important;
+  color: inherit !important;
+  border-color: var(--panel-separator-color) !important;
+  background-color: transparent !important;
+  height: 40px !important;
+  padding-inline-start: var(--uc-autocomplete-panel-menuicon-padding-inline) !important;
+}
+
+.autocomplete-richlistitem:hover {
+  background-color: var(--panel-item-hover-bgcolor) !important;
+}
+
+.autocomplete-richlistitem[selected] {
+  background-color: var(--panel-item-active-bgcolor) !important;
+  color: inherit !important;
+}
+
+.ac-site-icon {
+  fill: currentColor !important;
+  margin: auto var(--uc-autocomplete-panel-menuicon-padding-inline) !important;
 }

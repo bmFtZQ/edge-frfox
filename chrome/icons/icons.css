@@ -2,7 +2,7 @@
 
 /* windows 11 style window controls (no known way to detect between windows 10
 and 11 so applied to both) */
-@media (-moz-os-version: windows-win10) {
+@media (-moz-windows-compositor) {
   .titlebar-min {
     list-style-image: url("win11-minimize.svg") !important;
   }
@@ -49,6 +49,10 @@ and 11 so applied to both) */
     list-style-image: url("reload.svg") !important;
   }
 
+  #context-stop {
+    list-style-image: url("close.svg") !important;
+  }
+
   #context-bookmarkpage {
     list-style-image: url("bookmark-hollow.svg") !important;
   }
@@ -71,8 +75,7 @@ and 11 so applied to both) */
 }
 
 #stop-button,
-.close-icon,
-#context-stop {
+.close-icon {
   list-style-image: url("close.svg") !important;
 }
 
@@ -95,7 +98,10 @@ and 11 so applied to both) */
   list-style-image: url("downloads.svg") !important;
 }
 
-#appMenu-passwords-button {
+#appMenu-passwords-button,
+#PopupAutoComplete > richlistbox > richlistitem[originaltype="generatedPassword"] > .two-line-wrapper > .ac-site-icon,
+#PopupAutoComplete > richlistbox > richlistitem[originaltype="loginWithOrigin"] > .two-line-wrapper > .ac-site-icon,
+#PopupAutoComplete > richlistbox > richlistitem[originaltype="login"] > .ac-site-icon {
   list-style-image: url("passwords.svg") !important;
 }
 
