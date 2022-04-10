@@ -2,7 +2,7 @@
 
 /* windows 11 style window controls (no known way to detect between windows 10
 and 11 so applied to both) */
-@media (-moz-os-version: windows-win10) {
+@media (-moz-windows-compositor) {
   .titlebar-min {
     list-style-image: url("win11-minimize.svg") !important;
   }
