@@ -106,13 +106,11 @@
 }
 
 #identity-icon-box {
-  padding-inline: var(--uc-toolbarbutton-inner-inline-padding) !important;
+  padding-inline: var(--uc-urlbar-icon-inline-padding) !important;
 }
 
-/* workaround for bringing lock icon and permission icon closer */
 #identity-permission-box {
-  padding-inline: 2px var(--uc-urlbar-icon-inline-padding) !important;
-  margin-inline-start: -8px !important;
+  padding-inline: var(--uc-urlbar-icon-inline-padding) !important;
 }
 
 #urlbar-background,

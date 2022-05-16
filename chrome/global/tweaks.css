@@ -33,3 +33,14 @@ browsing indicator) */
     margin-inline-end: 0px !important;
   }
 }
+
+@supports -moz-bool-pref("uc.tweak.less-permissions-button-padding") {
+  #identity-icon-box {
+    padding-inline: var(--uc-toolbarbutton-inner-inline-padding) !important;
+  }
+
+  #identity-permission-box {
+    padding-inline: 2px var(--uc-urlbar-icon-inline-padding) !important;
+    margin-inline-start: -8px !important;
+  }
+}
