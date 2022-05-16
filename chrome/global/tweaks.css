@@ -1,0 +1,35 @@
+/* EdgeFr-Fox by bmFtZQ - tweaks.css */
+
+/* disable drag space above tabs */
+@supports -moz-bool-pref("uc.tweak.disable-drag-space") {
+  :root #titlebar {
+    --tab-block-margin: 0px !important;
+  }
+}
+
+/* force tabs to toolbar bg (useful for proton themes) (might experience some
+bugs with certain themes eg. dark text on dark background.) */
+@supports -moz-bool-pref("uc.tweak.force-tab-colour") {
+  :root {
+    --lwt-selected-tab-background-color: unset !important;
+  }
+}
+
+/* hide firefox account button when not in private mode (useful as a private
+browsing indicator) */
+@supports -moz-bool-pref("uc.tweak.fxa-button-as-private-indicator") {
+  :root:not([privatebrowsingmode]) #nav-bar:not([customizing]) #fxa-toolbar-menu-button {
+    display: none !important;
+  }
+}
+
+/* remove tab separators */
+@supports -moz-bool-pref("uc.tweak.remove-tab-separators") {
+  .tabbrowser-tab:not([selected="true"], :hover, [beforeselected-visible], [beforehovered]) .tab-stack::after {
+    display: none !important;
+  }
+
+  .tabbrowser-tab:not([last-visible-tab="true"]) {
+    margin-inline-end: 0px !important;
+  }
+}

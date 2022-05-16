@@ -215,12 +215,6 @@
 }
 
 /* auto complete popup */
-menupopup,
-panel[type="autocomplete-richlistbox"] {
-  /* -moz-window-shadow: none !important; */
-  appearance: none !important;
-}
-
 #PopupAutoComplete>.autocomplete-richlistbox {
   background: var(--arrowpanel-background) !important;
   color: var(--arrowpanel-color) !important;

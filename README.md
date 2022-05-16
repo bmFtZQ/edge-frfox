@@ -22,6 +22,29 @@ A Firefox userChrome.css theme that aims to recreate the look and feel of the Ch
    
 **Note: Most frequently tested on macOS**
 
+## Tweaks
+Certain tweaks can be applied to the theme, to enable them navigate to `about:config` and create a boolean key for each tweak and set it to `true` and restart the browser.
+
+To disable a tweak, set the key to false or delete it and restart the browser.
+
+|disable drag space above tabs|
+|-|
+|`uc.tweak.disable-drag-space`|
+
+|force tab background colour to `--toolbar-bg` (useful for Proton themes)|
+|-|
+|**NOTE: can cause readability issues with some themes! (eg. white text on white bg)**|
+|`uc.tweak.force-tab-colour`|
+
+|only show Firefox account button when in private mode (useful as a private browsing indicator)|
+|-|
+|**NOTE: all functionality of this button can still be accessed from the app menu.**|
+|`uc.tweak.fxa-button-as-private-indicator`|
+
+|remove tab separators|
+|-|
+|`uc.tweak.remove-tab-separators`|
+
 ## Acknowledgements
 [muckSponge](https://github.com/muckSponge) - [MaterialFox](https://github.com/muckSponge/MaterialFox)
 
