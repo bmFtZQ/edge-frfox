@@ -45,6 +45,10 @@ To disable a tweak, set the key to false or delete it and restart the browser.
 |-|
 |`uc.tweak.remove-tab-separators`|
 
+|remove extra padding from permissions button (older functionality)|
+|-|
+|`uc.tweak.less-permissions-button-padding`|
+
 ## Acknowledgements
 [muckSponge](https://github.com/muckSponge) - [MaterialFox](https://github.com/muckSponge/MaterialFox)
 
