@@ -197,7 +197,7 @@
 }
 
 /* context menus */
-@media (-moz-os-version: windows-win10) {
+@media (-moz-windows-compositor) {
   menupopup {
     --panel-color: var(--arrowpanel-color) !important;
     --panel-border-radius: 4px !important;
