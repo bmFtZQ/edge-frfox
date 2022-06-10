@@ -14,7 +14,9 @@
 }
 
 #urlbar[focused="true"]:not([suppress-focus-border])>#urlbar-background:not(:-moz-lwtheme),
-#searchbar:not(:-moz-lwtheme):focus-within {
+#searchbar:not(:-moz-lwtheme):focus-within,
+:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] #urlbar[focused="true"]:not([suppress-focus-border])>#urlbar-background,
+:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] #searchbar:focus-within {
   outline-color: color-mix(in srgb, var(--toolbar-field-focus-border-color) 50%, transparent) !important;
 }
 

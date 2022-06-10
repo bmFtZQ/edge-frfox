@@ -30,7 +30,7 @@
     --newtab-button-secondary-color: inherit !important;
   }
 
-  body[style*="--newtab-background-color: rgb(43, 42, 51); --newtab-text-primary-color: rgba(251, 251, 254, 1);"]:not([style*="--newtab-background-color-secondary"])[lwt-newtab-brighttext],
+  body[style*="--newtab-background-color: rgb(43, 42, 51)"][lwt-newtab-brighttext],
   body:not([style*="color"])[lwt-newtab-brighttext] {
     --newtab-background-color: #252525 !important;
     --newtab-background-color-secondary: #4A4A4A !important;

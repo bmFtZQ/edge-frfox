@@ -1,7 +1,8 @@
 /* EdgeFr-Fox by bmFtZQ - colors.css */
 
 /* light */
-:root:not(:-moz-lwtheme) {
+:root:not(:-moz-lwtheme),
+:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] {
   --lwt-accent-color: #cecece !important;
   --lwt-accent-color-inactive: #e8e8e8 !important;
   --lwt-text-color: #000 !important;
@@ -67,7 +68,8 @@
 }
 
 /* dark */
-:root[lwt-default-theme-in-dark-mode="true"] {
+:root[lwt-default-theme-in-dark-mode="true"],
+:root[style*="--lwt-accent-color: rgb(28, 27, 34)"] {
   --lwt-accent-color: #1C1C1C !important;
   --lwt-accent-color-inactive: #2e2e2e !important;
   --lwt-text-color: #E5E5E5 !important;
@@ -130,19 +132,23 @@
 }
 
 /* Change Colour of page when loading */
-:root:not(:-moz-lwtheme) #tabbrowser-tabpanels {
+:root:not(:-moz-lwtheme) #tabbrowser-tabpanels,
+:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] #tabbrowser-tabpanels {
   background-color: #f7f7f7 !important;
 }
 
-:root[lwt-default-theme-in-dark-mode="true"] #tabbrowser-tabpanels {
+:root[lwt-default-theme-in-dark-mode="true"] #tabbrowser-tabpanels,
+:root[style*="--lwt-accent-color: rgb(28, 27, 34)"] #tabbrowser-tabpanels {
   background-color: #252525 !important;
 }
 
 /* make the titlebar buttons black/white on default themes */
-:root:not(:-moz-lwtheme)[tabsintitlebar] .titlebar-buttonbox {
+:root:not(:-moz-lwtheme)[tabsintitlebar] .titlebar-buttonbox,
+:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] .titlebar-buttonbox {
   color: #000 !important;
 }
 
-:root[lwt-default-theme-in-dark-mode="true"][tabsintitlebar] .titlebar-buttonbox {
+:root[lwt-default-theme-in-dark-mode="true"][tabsintitlebar] .titlebar-buttonbox,
+:root[style*="--lwt-accent-color: rgb(28, 27, 34)"][tabsintitlebar] .titlebar-buttonbox {
   color: #fff !important;
 }
