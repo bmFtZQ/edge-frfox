@@ -138,14 +138,6 @@
   background-color: #252525 !important;
 }
 
-/* needed for theming the private browsing indicator  */
-/* :root:not([style*="--button-primary-bgcolor"]) {
-  --button-primary-bgcolor: unset !important;
-  --button-primary-hover-bgcolor: unset !important;
-  --button-primary-active-bgcolor: unset !important;
-  --button-primary-color: unset !important;
-} */
-
 /* make the titlebar buttons black/white on default themes */
 :root:not(:-moz-lwtheme)[tabsintitlebar] .titlebar-buttonbox {
   color: #000 !important;

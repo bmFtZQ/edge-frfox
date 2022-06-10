@@ -44,3 +44,153 @@ browsing indicator) */
     margin-inline-start: -8px !important;
   }
 }
+
+@supports -moz-bool-pref("uc.tweak.floating-tabs") {
+  :root:not(:-moz-lwtheme) {
+    --lwt-accent-color: #f3f3f3 !important;
+    --lwt-accent-color-inactive: unset !important;
+    --toolbar-bgcolor: #fff !important;
+  }
+
+  :root[lwt-default-theme-in-dark-mode="true"] {
+    --toolbar-bgcolor: #4D4D4D !important;
+    --lwt-accent-color-inactive: unset !important;
+    --chrome-content-separator-color: #535353 !important;
+  }
+
+  /* remove toolbar bg */
+  #nav-bar,
+  #PersonalToolbar {
+    background-color: transparent !important;
+  }
+
+  /* invert bottom corner radius for tabs */
+  .tab-background::before,
+  .tab-background::after {
+    display: none !important;
+  }
+
+  .tab-background {
+    border-radius: var(--tab-border-radius) !important;
+  }
+
+  /* adjust spacing of area above tabs */
+  @supports not -moz-bool-pref("layout.css.osx-font-smoothing.enabled") {
+    :root[sizemode="maximized"] #titlebar {
+      --tab-block-margin: 4px !important;
+    }
+  }
+
+  :root:is([inFullscreen], :not([tabsintitlebar])) #titlebar {
+    --tab-block-margin: 4px !important;
+  }
+
+  @supports -moz-bool-pref("uc.tweak.disable-drag-space") {
+    :root #titlebar {
+      --tab-block-margin: 4px !important;
+    }
+  }
+
+  :root #titlebar {
+    --tab-min-height: 33px !important;
+  }
+
+  /* remove navbar shadow */
+  #titlebar,
+  :root[lwtheme-brighttext="true"] #titlebar {
+    box-shadow: none !important;
+  }
+
+  /* move tab shadow behind urlbar */
+  .tabbrowser-tab[visuallyselected="true"],
+  #nav-bar {
+    z-index: 2 !important;
+  }
+
+  /* tab shadow adjustments */
+  .tabbrowser-tab {
+    overflow-clip-margin: 8px !important;
+  }
+
+  .tabbrowser-tab,
+  #TabsToolbar #tabs-newtab-button,
+  /* no ::part workaround - may have side effects */
+  #scrollbutton-up[part="scrollbutton-up"]:not(.menupopup-scrollbutton),
+  #scrollbutton-down[part="scrollbutton-down"]:not(.menupopup-scrollbutton) {
+    margin-bottom: 8px !important;
+  }
+
+  #tabbrowser-arrowscrollbox {
+    margin-bottom: -8px !important;
+  }
+
+  .tabbrowser-tab:is([visuallyselected="true"], [multiselected])>.tab-stack>.tab-background {
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.12), 0 0px 2px rgba(0, 0, 0, 0.1) !important;
+  }
+
+  :root[lwtheme-brighttext="true"] .tabbrowser-tab:is([visuallyselected="true"], [multiselected])>.tab-stack>.tab-background {
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.25), 0 0px 2px rgba(0, 0, 0, 0.1) !important;
+  }
+}
+
+@media (-moz-windows-compositor) {
+  @supports -moz-bool-pref("uc.tweak.win11-mica") {
+    /* enable mica appearance */
+    #main-window:not(:-moz-lwtheme),
+    #main-window[lwt-default-theme-in-dark-mode="true"] {
+      appearance: -moz-win-glass !important;
+      background: transparent !important;
+    }
+
+    #main-window[lwt-default-theme-in-dark-mode="true"] #navigator-toolbox:not(:-moz-window-inactive) {
+      background: transparent !important;
+    }
+
+    @supports -moz-bool-pref("uc.tweak.floating-tabs") {
+      #navigator-toolbox:not(:-moz-lwtheme),
+      #main-window[lwt-default-theme-in-dark-mode="true"] #navigator-toolbox:not(:-moz-window-inactive) {
+        background: transparent !important;
+      }
+    }
+
+    /* force tab color (for the tab transparency) */
+    .tab-background:is([selected], [multiselected]) {
+      background: var(--toolbar-bgcolor) !important;
+    }
+
+    /* color adjustments */
+    :root:not(:-moz-lwtheme):not(:-moz-window-inactive) {
+      --lwt-accent-color: #00000020 !important;
+    }
+
+    @supports -moz-bool-pref("uc.tweak.floating-tabs") {
+      :root:not(:-moz-lwtheme):not(:-moz-window-inactive) {
+        --toolbar-bgcolor: #ffffffcc !important;
+      }
+
+      :root[lwt-default-theme-in-dark-mode="true"]:not(:-moz-window-inactive) {
+        --toolbar-bgcolor: #ffffff20 !important;
+      }
+    }
+
+    /* line up buttons with duplicate icons from -moz-win-glass */
+    .titlebar-buttonbox-container {
+      --uc-titlebar-button-size: 30px;
+      --uc-titlebar-size: calc(var(--tab-min-height) + var(--tab-block-margin));
+      margin-bottom: calc(var(--uc-titlebar-size) - var(--uc-titlebar-button-size)) !important;
+    }
+
+    .titlebar-button:not(.titlebar-close:hover, :-moz-window-inactive) {
+      list-style-image: none !important;
+    }
+
+    :root:is([inFullscreen], [sizemode="maximized"]) .titlebar-button {
+      padding-block: 7px 9px !important;
+    }
+
+    :root:is([inFullscreen], [sizemode="maximized"]) .titlebar-close {
+      padding-block: 7px 9px !important;
+      padding-right: 19px !important;
+    }
+  }
+}
