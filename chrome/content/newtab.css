@@ -2,7 +2,8 @@
 
 /* colours */
 @-moz-document url-prefix("about:newtab"), url-prefix("about:home") {
-  body:not([lwt-newtab], [lwt-newtab-brighttext]) {
+  body:not([lwt-newtab], [lwt-newtab-brighttext]),
+  body[style*="--newtab-background-color: rgb(249, 249, 251)"] {
     --newtab-background-color: #F7F7F7 !important;
     --newtab-background-color-secondary: #fff !important;
     --newtab-text-primary-color: #252525 !important;

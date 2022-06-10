@@ -186,9 +186,9 @@ browsing indicator) */
 
     /* line up buttons with duplicate icons from -moz-win-glass */
     :root:is(:not(:-moz-lwtheme),
-    :root[style*="--lwt-accent-color: rgb(240, 240, 244)"],
+    [style*="--lwt-accent-color: rgb(240, 240, 244)"],
     [lwt-default-theme-in-dark-mode="true"],
-    :root[style*="--lwt-accent-color: rgb(28, 27, 34)"]
+    [style*="--lwt-accent-color: rgb(28, 27, 34)"]
     ) .titlebar-buttonbox-container {
       --uc-titlebar-button-size: 30px;
       --uc-titlebar-size: calc(var(--tab-min-height) + var(--tab-block-margin));
@@ -196,27 +196,26 @@ browsing indicator) */
     }
 
     :root:is(:not(:-moz-lwtheme),
-    :root[style*="--lwt-accent-color: rgb(240, 240, 244)"],
+    [style*="--lwt-accent-color: rgb(240, 240, 244)"],
     [lwt-default-theme-in-dark-mode="true"],
-    :root[style*="--lwt-accent-color: rgb(28, 27, 34)"]
+    [style*="--lwt-accent-color: rgb(28, 27, 34)"]
     ) .titlebar-button:not(.titlebar-close:hover, :-moz-window-inactive) {
       list-style-image: none !important;
     }
 
     :root:is(:not(:-moz-lwtheme),
-    :root[style*="--lwt-accent-color: rgb(240, 240, 244)"],
+    [style*="--lwt-accent-color: rgb(240, 240, 244)"],
     [lwt-default-theme-in-dark-mode="true"],
-    :root[style*="--lwt-accent-color: rgb(28, 27, 34)"]
-    ) :root:is([inFullscreen], [sizemode="maximized"]) .titlebar-button {
+    [style*="--lwt-accent-color: rgb(28, 27, 34)"]
+    ):is([inFullscreen], [sizemode="maximized"]) .titlebar-button {
       padding-block: 7px 9px !important;
     }
 
     :root:is(:not(:-moz-lwtheme),
-    :root[style*="--lwt-accent-color: rgb(240, 240, 244)"],
+    [style*="--lwt-accent-color: rgb(240, 240, 244)"],
     [lwt-default-theme-in-dark-mode="true"],
-    :root[style*="--lwt-accent-color: rgb(28, 27, 34)"]
-    ) :root:is([inFullscreen], [sizemode="maximized"]) .titlebar-close {
-      padding-block: 7px 9px !important;
+    [style*="--lwt-accent-color: rgb(28, 27, 34)"]
+    ):is([inFullscreen], [sizemode="maximized"]) .titlebar-close {
       padding-right: 19px !important;
     }
   }
