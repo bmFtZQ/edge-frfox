@@ -152,3 +152,130 @@
 :root[style*="--lwt-accent-color: rgb(28, 27, 34)"][tabsintitlebar] .titlebar-buttonbox {
   color: #fff !important;
 }
+
+/* library window theme */
+@media (-moz-platform: windows) {
+  window#places {
+    --organizer-color: #000 !important;
+    --organizer-deemphasized-color: #666 !important;
+    --organizer-toolbar-background: #f7f7f7 !important;
+    --organizer-pane-background: #f7f7f7 !important;
+    --organizer-content-background: #f7f7f7 !important;
+    --organizer-hover-background: #00000025 !important;
+    --organizer-selected-background: #006CBE80 !important;
+    --organizer-outline-color: #0055D7a0 !important;
+    --organizer-toolbar-field-background: #fff !important;
+    --organizer-toolbar-field-background-focused: #fff !important;
+    --organizer-border-color: #bfbfbf !important;
+    scrollbar-color: #0006 #f7f7f740 !important;
+  }
+
+  #placesViewsBox #downloadsListBox richlistitem[selected="true"] {
+    background-color: #006CBE !important;
+    color: #fff !important;
+  }
+
+  #placeContentColumns :is(treecol, treecolpicker) {
+    background-color: #f7f7f7 !important;
+    color: #000 !important;
+    border-inline-start: 1px solid #bfbfbf !important;
+    box-shadow: inset 0 -1px #bfbfbf !important;
+    appearance: none !important;
+  }
+
+  #placeContentColumns :is(treecol, treecolpicker):where(:hover) {
+    background-color: #cecece !important;
+    color: #000 !important;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    window#places {
+      --organizer-color: #fff !important;
+      --organizer-deemphasized-color: #bbb !important;
+      --organizer-toolbar-background: #3B3B3B !important;
+      --organizer-pane-background: #2B2B2B !important;
+      --organizer-content-background: #1C1C1C !important;
+      --organizer-hover-background: #ffffff25 !important;
+      --organizer-selected-background: #006CBE80 !important;
+      --organizer-outline-color: #63ADE5 !important;
+      --organizer-toolbar-field-background: #2B2B2B !important;
+      --organizer-toolbar-field-background-focused: #2B2B2B !important;
+      --organizer-border-color: #686868 !important;
+      scrollbar-color: #fff6 #2B2B2B40 !important;
+    }
+
+    #placesViewsBox #downloadsListBox richlistitem[selected="true"] {
+      background-color: #006CBE !important;
+      color: #fff !important;
+    }
+
+    #placeContentColumns :is(treecol, treecolpicker) {
+      background-color: #3B3B3B !important;
+      color: #fff !important;
+      border-inline-start: 1px solid #686868 !important;
+      box-shadow: inset 0 -1px #686868 !important;
+    }
+
+    #placeContentColumns :is(treecol, treecolpicker):where(:hover) {
+      background-color: #4A4A4A !important;
+      color: #fff !important;
+    }
+  }
+}
+
+/* side bar theme */
+#sidebar-box {
+  --sidebar-background-color: #f7f7f7 !important;
+  --sidebar-text-color: #000 !important;
+  appearance: none !important;
+}
+
+#sidebar-box[style*="--sidebar-background-color: rgb(56, 56, 61"] {
+  --sidebar-background-color: #3B3B3B !important;
+  --sidebar-text-color: #fff !important;
+}
+
+#browser {
+  --sidebar-border-color: #bfbfbf !important;
+}
+
+#browser[style*="--sidebar-border-color: rgba(255, 255, 255"] {
+  --sidebar-border-color: #686868 !important;
+}
+
+.sidebar-panel:not([lwt-sidebar]) {
+  color: #000 !important;
+}
+
+@-moz-document url(chrome://browser/content/syncedtabs/sidebar.xhtml) {
+  body {
+    background: transparent !important;
+  }
+}
+
+.sidebar-panel[lwt-sidebar-brighttext][style*="--lwt-sidebar-background-color: rgb(56, 56, 61)"],
+body[lwt-sidebar-brighttext][style*="--lwt-sidebar-background-color: rgb(56, 56, 61)"] {
+  --lwt-sidebar-background-color: #3B3B3B !important;
+  --lwt-sidebar-text-color: #fff !important;
+  scrollbar-color: #fff6 #3B3B3B40 !important;
+}
+
+@media(-moz-platform: windows) {
+  .sidebar-panel:not([lwt-sidebar]) #sidebar-search-container>#search-box,
+  .sidebar-panel:not([lwt-sidebar]) #viewButton {
+    appearance: none !important;
+    background-color: #fff !important;
+    color: inherit !important;
+    border: 1px solid #bfbfbf !important;
+    border-radius: 2px !important;
+  }
+
+  .sidebar-panel[lwt-sidebar-brighttext][style*="--lwt-sidebar-background-color: rgb(56, 56, 61)"] #sidebar-search-container>#search-box,
+  .sidebar-panel[lwt-sidebar-brighttext][style*="--lwt-sidebar-background-color: rgb(56, 56, 61)"] #viewButton {
+    appearance: none !important;
+    background-color: #2B2B2B !important;
+    color: inherit !important;
+    border: 1px solid #686868 !important;
+    border-radius: 2px !important;
+  }
+}
