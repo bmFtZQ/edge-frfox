@@ -48,6 +48,7 @@ To disable a tweak, set the key to `false` or delete it, then restart the browse
 |enable Mica toolbar background (Windows 11 only)|
 |-|
 |**See [Mica Tweak Instructions (Windows 11 Only)](#mica-tweak-instructions-windows-11-only) for installation instructions.**|
+|**NOTE: Only works on default theme: 'System theme - auto'**|
 |`uc.tweak.win11-mica`|
 
 |force tab background colour to `--toolbar-bg` (useful for Proton themes)|

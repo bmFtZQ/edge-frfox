@@ -129,7 +129,7 @@ browsing indicator) */
   }
 
   :root[lwtheme-brighttext="true"] .tabbrowser-tab:is([visuallyselected="true"], [multiselected])>.tab-stack>.tab-background {
-    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.25), 0 0px 2px rgba(0, 0, 0, 0.1) !important;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2), 0 0px 2px rgba(0, 0, 0, 0.1) !important;
   }
 }
 
@@ -174,21 +174,21 @@ browsing indicator) */
     }
 
     /* line up buttons with duplicate icons from -moz-win-glass */
-    .titlebar-buttonbox-container {
+    :root:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode="true"]) .titlebar-buttonbox-container {
       --uc-titlebar-button-size: 30px;
       --uc-titlebar-size: calc(var(--tab-min-height) + var(--tab-block-margin));
       margin-bottom: calc(var(--uc-titlebar-size) - var(--uc-titlebar-button-size)) !important;
     }
 
-    .titlebar-button:not(.titlebar-close:hover, :-moz-window-inactive) {
+    :root:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode="true"]) .titlebar-button:not(.titlebar-close:hover, :-moz-window-inactive) {
       list-style-image: none !important;
     }
 
-    :root:is([inFullscreen], [sizemode="maximized"]) .titlebar-button {
+    :root:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode="true"]) :root:is([inFullscreen], [sizemode="maximized"]) .titlebar-button {
       padding-block: 7px 9px !important;
     }
 
-    :root:is([inFullscreen], [sizemode="maximized"]) .titlebar-close {
+    :root:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode="true"]) :root:is([inFullscreen], [sizemode="maximized"]) .titlebar-close {
       padding-block: 7px 9px !important;
       padding-right: 19px !important;
     }
