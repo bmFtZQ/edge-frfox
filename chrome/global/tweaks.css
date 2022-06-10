@@ -139,23 +139,18 @@ browsing indicator) */
   @supports -moz-bool-pref("uc.tweak.win11-mica") {
     /* enable mica appearance */
     #main-window:not(:-moz-lwtheme),
-    #main-window[style*="--lwt-accent-color: rgb(240, 240, 244)"],
-    #main-window[lwt-default-theme-in-dark-mode="true"],
-    #main-window[style*="--lwt-accent-color: rgb(28, 27, 34)"] {
+    #main-window[lwt-default-theme-in-dark-mode="true"] {
       appearance: -moz-win-glass !important;
       background: transparent !important;
     }
 
-    #main-window[lwt-default-theme-in-dark-mode="true"] #navigator-toolbox:not(:-moz-window-inactive),
-    #main-window[style*="--lwt-accent-color: rgb(28, 27, 34)"] #navigator-toolbox:not(:-moz-window-inactive) {
+    #main-window[lwt-default-theme-in-dark-mode="true"] #navigator-toolbox:not(:-moz-window-inactive) {
       background: transparent !important;
     }
 
     @supports -moz-bool-pref("uc.tweak.floating-tabs") {
       #navigator-toolbox:not(:-moz-lwtheme),
-      #main-window[style*="--lwt-accent-color: rgb(240, 240, 244)"] #navigator-toolbox,
-      #main-window[lwt-default-theme-in-dark-mode="true"] #navigator-toolbox:not(:-moz-window-inactive),
-      #main-window[style*="--lwt-accent-color: rgb(28, 27, 34)"] #navigator-toolbox:not(:-moz-window-inactive) {
+      #main-window[lwt-default-theme-in-dark-mode="true"] #navigator-toolbox:not(:-moz-window-inactive) {
         background: transparent !important;
       }
     }
@@ -166,56 +161,36 @@ browsing indicator) */
     }
 
     /* color adjustments */
-    :root:not(:-moz-lwtheme):not(:-moz-window-inactive),
-    :root[style*="--lwt-accent-color: rgb(240, 240, 244)"]:not(:-moz-window-inactive) {
+    :root:not(:-moz-lwtheme):not(:-moz-window-inactive) {
       --lwt-accent-color: #00000020 !important;
     }
 
     @supports -moz-bool-pref("uc.tweak.floating-tabs") {
-      :root:not(:-moz-lwtheme):not(:-moz-window-inactive),
-      :root[style*="--lwt-accent-color: rgb(240, 240, 244)"]:not(:-moz-window-inactive) {
+      :root:not(:-moz-lwtheme):not(:-moz-window-inactive) {
         --toolbar-bgcolor: #ffffffcc !important;
       }
 
-      :root[lwt-default-theme-in-dark-mode="true"]:not(:-moz-window-inactive),
-      :root[style*="--lwt-accent-color: rgb(28, 27, 34)"]:not(:-moz-window-inactive)
-       {
+      :root[lwt-default-theme-in-dark-mode="true"]:not(:-moz-window-inactive) {
         --toolbar-bgcolor: #ffffff20 !important;
       }
     }
 
     /* line up buttons with duplicate icons from -moz-win-glass */
-    :root:is(:not(:-moz-lwtheme),
-    [style*="--lwt-accent-color: rgb(240, 240, 244)"],
-    [lwt-default-theme-in-dark-mode="true"],
-    [style*="--lwt-accent-color: rgb(28, 27, 34)"]
-    ) .titlebar-buttonbox-container {
+    :root:is(:not(:-moz-lwtheme),[lwt-default-theme-in-dark-mode="true"]) .titlebar-buttonbox-container {
       --uc-titlebar-button-size: 30px;
       --uc-titlebar-size: calc(var(--tab-min-height) + var(--tab-block-margin));
       margin-bottom: calc(var(--uc-titlebar-size) - var(--uc-titlebar-button-size)) !important;
     }
 
-    :root:is(:not(:-moz-lwtheme),
-    [style*="--lwt-accent-color: rgb(240, 240, 244)"],
-    [lwt-default-theme-in-dark-mode="true"],
-    [style*="--lwt-accent-color: rgb(28, 27, 34)"]
-    ) .titlebar-button:not(.titlebar-close:hover, :-moz-window-inactive) {
+    :root:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode="true"]) .titlebar-button:not(.titlebar-close:hover, :-moz-window-inactive) {
       list-style-image: none !important;
     }
 
-    :root:is(:not(:-moz-lwtheme),
-    [style*="--lwt-accent-color: rgb(240, 240, 244)"],
-    [lwt-default-theme-in-dark-mode="true"],
-    [style*="--lwt-accent-color: rgb(28, 27, 34)"]
-    ):is([inFullscreen], [sizemode="maximized"]) .titlebar-button {
+    :root:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode="true"]):is([inFullscreen], [sizemode="maximized"]) .titlebar-button {
       padding-block: 7px 9px !important;
     }
 
-    :root:is(:not(:-moz-lwtheme),
-    [style*="--lwt-accent-color: rgb(240, 240, 244)"],
-    [lwt-default-theme-in-dark-mode="true"],
-    [style*="--lwt-accent-color: rgb(28, 27, 34)"]
-    ):is([inFullscreen], [sizemode="maximized"]) .titlebar-close {
+    :root:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode="true"]):is([inFullscreen], [sizemode="maximized"]) .titlebar-close {
       padding-right: 19px !important;
     }
   }
