@@ -57,7 +57,13 @@
   --panel-banner-item-update-supported-bgcolor: #50B080 !important;
   --focus-outline-color: #0055D7 !important;
   --panel-shortcut-color: inherit !important;
-  --uc-urlbar-shadow: 0 0 4px #0002;
+  --uc-urlbar-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+  --toolbarbutton-hover-background: #00000014 !important;
+  --toolbarbutton-active-background: #00000021 !important;
+  --uc-private-browsing-indicator: var(--button-primary-bgcolor);
+  --uc-private-browding-indicator-hover: var(--button-primary-hover-bgcolor);
+  --uc-private-browding-indicator-active: var(--button-primary-active-bgcolor);
+  --uc-private-browding-indicator-text: var(--button-primary-color);
 }
 
 /* dark */
@@ -115,6 +121,12 @@
   --panel-banner-item-update-supported-bgcolor: #50B080 !important;
   --focus-outline-color: #63ADE5 !important;
   --panel-shortcut-color: inherit !important;
+  --toolbarbutton-hover-background: #ffffff25 !important;
+  --toolbarbutton-active-background: #ffffff32 !important;
+  --uc-private-browsing-indicator: var(--button-primary-bgcolor);
+  --uc-private-browding-indicator-hover: var(--button-primary-hover-bgcolor);
+  --uc-private-browding-indicator-active: var(--button-primary-active-bgcolor);
+  --uc-private-browding-indicator-text: var(--button-primary-color);
 }
 
 /* Change Colour of page when loading */
@@ -127,12 +139,12 @@
 }
 
 /* needed for theming the private browsing indicator  */
-:root:not([style*="--button-primary-bgcolor"]) {
+/* :root:not([style*="--button-primary-bgcolor"]) {
   --button-primary-bgcolor: unset !important;
   --button-primary-hover-bgcolor: unset !important;
   --button-primary-active-bgcolor: unset !important;
   --button-primary-color: unset !important;
-}
+} */
 
 /* make the titlebar buttons black/white on default themes */
 :root:not(:-moz-lwtheme)[tabsintitlebar] .titlebar-buttonbox {

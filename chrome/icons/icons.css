@@ -22,7 +22,7 @@ and 11 so applied to both) */
   /* darkmode icon that uses thicker strokes and easier to see (only needed at
   1x scale) */
   @media (max-resolution: 1dppx) {
-    :root[lwthemetextcolor="bright"] .titlebar-close,
+    :root[lwtheme-brighttext="true"] .titlebar-close,
     .titlebar-close:hover {
       list-style-image: url("win11-close-dark.svg") !important;
     }

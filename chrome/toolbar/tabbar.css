@@ -110,6 +110,15 @@
   color: var(--lwt-text-color) !important;
 }
 
+/* force inactive window on default theme */
+@media not (-moz-platform: windows-win7) {
+  @media not (-moz-platform: windows-win8) {
+    #navigator-toolbox:-moz-window-inactive:not(:-moz-lwtheme) {
+      background-color: var(--lwt-accent-color-inactive, var(--lwt-accent-color)) !important;
+    }
+  }
+}
+
 .tab-label-container:not([selected="true"], [multiselected]) {
   opacity: 1 !important;
 }
@@ -163,6 +172,7 @@
 .tabbrowser-tab {
   font-size: 12px !important;
   padding-inline: 0 !important;
+  overflow-clip-margin: 4px !important;
 }
 
 #TabsToolbar .toolbarbutton-1>.toolbarbutton-icon,
@@ -250,15 +260,15 @@ toolbarbutton[part="scrollbutton-down"] {
       margin-inline-end: -8px !important;
     }
   }
-}
 
-@media (-moz-mac-big-sur-theme:1) {
-  .titlebar-buttonbox {
-    margin-inline: calc((var(--tab-min-height) + var(--tab-block-margin) - 14px) / 2) !important;
-  }
-
-  .titlebar-buttonbox-container {
-    margin-inline-end: -8px !important;
+  @media (-moz-mac-big-sur-theme:1) {
+    .titlebar-buttonbox {
+      margin-inline: calc((var(--tab-min-height) + var(--tab-block-margin) - 14px) / 2) !important;
+    }
+  
+    .titlebar-buttonbox-container {
+      margin-inline-end: -8px !important;
+    }
   }
 }
 
@@ -289,28 +299,19 @@ toolbarbutton[part="scrollbutton-down"] {
 
 
 .tabbrowser-tab:is([visuallyselected="true"], [multiselected])>.tab-stack>.tab-background {
-  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2), 0 0px 2px rgba(0, 0, 0, 0.2) !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), 0 0px 2px rgba(0, 0, 0, 0.2) !important;
 }
 
 #titlebar {
   box-shadow: 0 -3px 2px -3px rgba(0, 0, 0, 0.2) inset !important;
 }
 
-:root[lwthemetextcolor="bright"] .tabbrowser-tab:is([visuallyselected="true"], [multiselected])>.tab-stack>.tab-background {
-  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.55), 0 0px 2px rgba(0, 0, 0, 0.6) !important;
+:root[lwtheme-brighttext="true"] .tabbrowser-tab:is([visuallyselected="true"], [multiselected])>.tab-stack>.tab-background {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.45), 0 0px 2px rgba(0, 0, 0, 0.2) !important;
 }
 
-:root[lwthemetextcolor="bright"] #titlebar {
+:root[lwtheme-brighttext="true"] #titlebar {
   box-shadow: 0 -3px 2px -3px rgba(0, 0, 0, 0.75) inset !important;
-}
-
-/* force inactive window on default theme */
-@media not (-moz-os-version: windows-win7) {
-  @media not (-moz-os-version: windows-win8) {
-    #navigator-toolbox:-moz-window-inactive {
-      background-color: var(--lwt-accent-color-inactive, var(--lwt-accent-color)) !important;
-    }
-  }
 }
 
 #tabbrowser-tabs[closebuttons="activetab"] .tabbrowser-tab[selected="true"] .tab-label-container {

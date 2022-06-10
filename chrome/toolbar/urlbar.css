@@ -18,7 +18,7 @@
   outline-color: color-mix(in srgb, var(--toolbar-field-focus-border-color) 50%, transparent) !important;
 }
 
-:root:not([lwthemetextcolor="bright"]) #urlbar-background {
+:root:not([lwtheme-brighttext="true"]) #urlbar-background {
   box-shadow: var(--uc-urlbar-shadow, none);
 }
 
