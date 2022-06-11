@@ -1,0 +1,35 @@
+<svg width="104" height="48" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <clipPath id="a">
+      <rect x="1" y="1" width="46" height="46" rx="4" ry="4"/>
+    </clipPath>
+  </defs>
+  <style>
+    :root {--border: #777;--bg: #ccc;--toolbar: #eee;--tab-1: #fff;--text: #555;}
+    @media(prefers-color-scheme:dark){
+      :root{--border: #888;--bg: #222;--toolbar: #444;--tab-1: #666; --text: #eee;}
+    }
+  </style>
+  <rect x="1" y="1" width="46" height="46" rx="4" ry="4" fill="var(--bg)" stroke="var(--border)" stroke-width="2" paint-order="stroke fill"/>
+  <g clip-path="url(#a)">
+    <path d="M11 8a3 3 0 0 0-3 3v12a3 3 0 0 1-3 3v4h43V8z" fill="var(--tab-1)"/>
+    <rect y="26" width="48" height="22" rx="0" ry="0" fill="var(--toolbar)"/>
+    <g fill="var(--text)">
+      <rect x="17" y="15" width="38" height="4" rx="2" ry="2"/>
+      <circle cx="16" cy="37" r="4"/>
+      <circle cx="40" cy="37" r="4"/>
+    </g>
+  </g>
+  <g transform="translate(56)">
+    <rect x="1" y="1" width="46" height="46" rx="4" ry="4" fill="var(--bg)" stroke="var(--border)" stroke-width="2" paint-order="stroke fill"/>
+    <g clip-path="url(#a)">
+      <path d="M11 8a3 3 0 0 0-3 3v12a3 3 0 0 1-3 3v4h43V8z" fill="var(--toolbar)"/>
+      <rect y="26" width="48" height="22" rx="0" ry="0" fill="var(--toolbar)"/>
+      <g fill="var(--text)">
+        <rect x="17" y="15" width="38" height="4" rx="2" ry="2"/>
+        <circle cx="16" cy="37" r="4"/>
+        <circle cx="40" cy="37" r="4"/>
+      </g>
+    </g>
+  </g>
+</svg>

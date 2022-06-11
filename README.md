@@ -51,10 +51,11 @@ To disable a tweak, set the key to `false` or delete it, then restart the browse
 |**NOTE: Only works on default theme: 'System theme - auto'**|
 |`uc.tweak.win11-mica`|
 
-|force tab background colour to `--toolbar-bg` (useful for Proton themes)|
+|force tab background colour to the same colour as the navbar background (useful for Proton themes)|
 |-|
 |**NOTE: can cause readability issues with some themes! (eg. white text on white bg)**|
 |`uc.tweak.force-tab-colour`|
+|![force tab colour example](screenshots/force-tab-colour.svg) (Left: OFF, Right: ON)|
 
 |only show Firefox account button when in private mode (useful as a private browsing indicator)|
 |-|
