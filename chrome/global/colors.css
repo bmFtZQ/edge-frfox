@@ -224,7 +224,7 @@
 }
 
 /* side bar theme */
-#sidebar-box {
+#sidebar-box:not([lwt-sidebar]) {
   --sidebar-background-color: #f7f7f7 !important;
   --sidebar-text-color: #000 !important;
   appearance: none !important;
@@ -235,7 +235,7 @@
   --sidebar-text-color: #fff !important;
 }
 
-#browser {
+#browser:not([style*="--sidebar-border-color"]) {
   --sidebar-border-color: #bfbfbf !important;
 }
 
