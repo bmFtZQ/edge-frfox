@@ -105,16 +105,18 @@
 }
 
 /* fix colours */
-#navigator-toolbox:not(:-moz-lwtheme) {
-  background-color: var(--lwt-accent-color) !important;
-  color: var(--lwt-text-color) !important;
-}
+@media not (-moz-gtk-csd-available) {
+  #navigator-toolbox:not(:-moz-lwtheme) {
+    background-color: var(--lwt-accent-color) !important;
+    color: var(--lwt-text-color) !important;
+  }
 
-/* force inactive window on default theme */
-@media not (-moz-platform: windows-win7) {
-  @media not (-moz-platform: windows-win8) {
-    #navigator-toolbox:-moz-window-inactive:not(:-moz-lwtheme) {
-      background-color: var(--lwt-accent-color-inactive, var(--lwt-accent-color)) !important;
+  /* force inactive window on default theme */
+  @media not (-moz-platform: windows-win7) {
+    @media not (-moz-platform: windows-win8) {
+      #navigator-toolbox:-moz-window-inactive:not(:-moz-lwtheme) {
+        background-color: var(--lwt-accent-color-inactive, var(--lwt-accent-color)) !important;
+      }
     }
   }
 }
@@ -125,7 +127,7 @@
 
 #TabsToolbar .toolbarbutton-animatable-box,
 #TabsToolbar .toolbarbutton-1 {
-  fill: var(--lwt-text-color) !important;
+  fill: currentColor !important;
 }
 
 .tabbrowser-tab[multiselected]:not(:-moz-lwtheme),

@@ -21,7 +21,7 @@
   --toolbar-field-focus-background-color: var(--toolbar-field-background-color) !important;
   --toolbar-field-focus-color: var(--toolbar-field-color) !important;
   --toolbar-field-focus-border-color: #0055D7 !important;
-  --urlbar-icon-fill-opacity: 1 !important;
+  --urlbar-icon-fill-opacity: 0.6 !important;
   --urlbar-popup-url-color: #0072C9 !important;
   --lwt-brighttext-url-color: var(--urlbar-popup-url-color) !important;
   --urlbar-box-bgcolor: var(--toolbar-field-background-color) !important;
@@ -277,5 +277,105 @@ body[lwt-sidebar-brighttext][style*="--lwt-sidebar-background-color: rgb(56, 56,
     color: inherit !important;
     border: 1px solid #686868 !important;
     border-radius: 2px !important;
+  }
+}
+
+/* Linux / GTK csd support */
+@media (-moz-gtk-csd-available) {
+  :root:not(:-moz-lwtheme) {
+    --toolbar-bgcolor: color-mix(in srgb, -moz-dialog 80%, #fff) !important;
+    --toolbar-bgimage: none !important;
+    --toolbar-color: -moz-dialogtext !important;
+    --tab-selected-bgimage: none !important;
+    --chrome-content-separator-color: ThreeDShadow !important;
+    --panel-separator-color: ThreeDShadow !important;
+    --button-bgcolor: color-mix(in srgb, currentColor 10%, transparent) !important;
+    --button-hover-bgcolor: color-mix(in srgb, currentColor 14%, transparent) !important;
+    --button-active-bgcolor: color-mix(in srgb, currentColor 20%, transparent) !important;
+    --button-color: currentColor !important;
+    --button-primary-bgcolor: -moz-accent-color !important;
+    --button-primary-hover-bgcolor: color-mix(in srgb, black 10%, -moz-accent-color) !important;
+    --button-primary-active-bgcolor: color-mix(in srgb, black 20%, -moz-accent-color) !important;
+    --button-primary-color: -moz-accent-color-foreground !important;
+    --autocomplete-popup-hover-background: var(--arrowpanel-dimmed) !important;
+    --autocomplete-popup-separator-color: color-mix(in srgb, currentColor 14%, transparent) !important;
+    --urlbar-box-bgcolor: var(--button-bgcolor) !important;
+    --urlbar-box-focus-bgcolor: var(--button-bgcolor) !important;
+    --urlbar-box-hover-bgcolor: var(--button-hover-bgcolor) !important;
+    --urlbar-box-active-bgcolor: var(--button-active-bgcolor) !important;
+    --urlbar-box-text-color: inherit !important;
+    --urlbar-box-hover-text-color: var(--urlbar-box-text-color) !important;
+    --urlbar-icon-fill-opacity: 0.9 !important;
+    --urlbar-popup-url-color: -moz-nativehyperlinktext !important;
+    --lwt-brighttext-url-color: #00ddff !important;
+    --toolbarbutton-icon-fill-attention: -moz-nativehyperlinktext !important;
+    --focus-outline-color: -moz-accent-color !important;
+    --arrowpanel-background: Field !important;
+    --arrowpanel-color: FieldText !important;
+    --arrowpanel-border-color: ThreeDShadow !important;
+    --arrowpanel-dimmed: color-mix(in srgb, currentColor 17%, transparent) !important;
+    --arrowpanel-dimmed-further: color-mix(in srgb, currentColor 30%, transparent) !important;
+    --panel-description-color: GrayText !important;
+    --panel-disabled-color: GrayText !important;
+    --toolbarbutton-icon-fill: currentColor !important;
+    --toolbar-field-background-color: Field !important;
+    --toolbar-field-color: FieldText !important;
+    --toolbar-field-border-color: ThreeDShadow !important;
+    --toolbar-field-focus-background-color: Field !important;
+    --toolbar-field-focus-color: FieldText !important;
+    --toolbar-field-focus-border-color: -moz-accent-color !important;
+    --toolbarbutton-hover-background: color-mix(in srgb, -moz-dialogtext 14%, transparent) !important;
+    --toolbarbutton-active-background: color-mix(in srgb, -moz-dialogtext 20%, transparent) !important;
+    --uc-urlbar-shadow: none;
+    --autocomplete-popup-highlight-color: FieldText !important;
+    --autocomplete-popup-highlight-background: color-mix(in srgb, currentColor 8%, transparent) !important;
+    --autocomplete-popup-hover-background: color-mix(in srgb, currentColor 12%, transparent) !important;
+    --autocomplete-popup-separator-color: #0000 !important;
+    --panel-item-hover-bgcolor: color-mix(in srgb, currentColor 17%, transparent) !important;
+    --panel-item-active-bgcolor: color-mix(in srgb, currentColor 30%, transparent) !important;
+    --panel-separator-color: ThreeDShadow !important;
+    --panel-banner-item-update-supported-bgcolor: #1bba6b !important;
+    --focus-outline-color: -moz-accent-color !important;
+    --uc-private-browsing-indicator: -moz-accent-color !important;
+    --uc-private-browding-indicator-hover: var(--button-primary-hover-bgcolor);
+    --uc-private-browding-indicator-active: var(--button-primary-active-bgcolor);
+    --uc-private-browding-indicator-text: var(--button-primary-color);
+  }
+
+  #sidebar-box:not([lwt-sidebar]) {
+    --sidebar-background-color: -moz-dialog !important;
+    --sidebar-text-color:  -moz-dialog-text !important;
+  }
+
+  #browser:not([style*="--sidebar-border-color"]) {
+    --sidebar-border-color: ThreeDShadow !important;
+  }
+
+  .sidebar-panel:not([lwt-sidebar]) {
+    color: -moz-dialogtext !important;
+  }
+
+  @media (prefers-color-scheme: light) {
+    :root:not(:-moz-lwtheme) {
+      --toolbar-bgcolor: color-mix(in srgb, -moz-dialog 65%, #fff) !important;
+      --urlbar-icon-fill-opacity: 0.7 !important;
+      --toolbar-field-border-color: transparent !important;
+      --toolbar-field-background-color: color-mix(in srgb, Field 90%, -moz-dialogtext) !important;
+      --toolbar-field-color: FieldText !important;
+      --toolbar-field-focus-background-color: Field !important;
+      --toolbar-field-focus-color: FieldText !important;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not(:-moz-lwtheme) {
+      --toolbar-bgcolor: color-mix(in srgb, -moz-dialog 90%, #fff) !important;
+      --urlbar-icon-fill-opacity: 1.0 !important;
+      --toolbar-field-border-color: transparent !important;
+      --toolbar-field-background-color: color-mix(in srgb, Field 90%, -moz-dialogtext) !important;
+      --toolbar-field-color: FieldText !important;
+      --toolbar-field-focus-background-color: color-mix(in srgb, Field 90%, -moz-dialogtext) !important;
+      --toolbar-field-focus-color: FieldText !important;
+    }
   }
 }

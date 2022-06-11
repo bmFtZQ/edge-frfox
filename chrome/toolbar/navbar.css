@@ -65,6 +65,21 @@
   background: var(--uc-private-browding-indicator-active, color-mix(in srgb, var(--lwt-toolbarbutton-icon-fill-attention, var(--toolbarbutton-icon-fill-attention)) 70%, transparent)) !important;
 }
 
+@media (-moz-gtk-csd-available) {
+  :root[privatebrowsingmode] #fxa-toolbar-menu-button:not(:-moz-lwtheme) {
+    background: -moz-accent-color !important;
+    color: -moz-accent-color-foreground !important;
+  }
+  
+  :root[privatebrowsingmode] #fxa-toolbar-menu-button:not(:-moz-lwtheme):hover {
+    background:color-mix(in srgb, black 8%, -moz-accent-color) !important;
+  }
+  
+  :root[privatebrowsingmode] #fxa-toolbar-menu-button:not(:-moz-lwtheme):not([disabled=true]):is([open], [checked], :hover:active) {
+    background: color-mix(in srgb, black 16%, -moz-accent-color) !important;
+  }
+}
+
 :root[privatebrowsingmode] #nav-bar #fxa-toolbar-menu-button>.toolbarbutton-badge-stack {
   background: transparent !important;
   margin-inline: 0 !important;

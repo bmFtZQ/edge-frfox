@@ -24,13 +24,14 @@ A Firefox userChrome.css theme that aims to recreate the look and feel of the Ch
 
 **Note: Most frequently tested on macOS**
 
-## Screenshots (Windows)
+## Screenshots
 |Theme|Light|Dark|
 |-|-|-|
-|Default|![Light](screenshots/light.png)|![Dark](screenshots/dark.png)|
-|Floating Tabs|![Light, Floating Tabs](screenshots/light-floating-tabs.png)|![Dark, Floating Tabs](screenshots/dark-floating-tabs.png)|
-|Mica|![Light, Mica](screenshots/light-mica.png)|![Dark, Mica](screenshots/dark-mica.png)|
-|Mica and Floating Tabs|![Light, Mica and Floating Tabs](screenshots/light-mica-floating-tabs.png)|![Dark, Mica and Floating Tabs](screenshots/dark-mica-floating-tabs.png)|
+|Default (Windows 11)|![Light](screenshots/light.png)|![Dark](screenshots/dark.png)|
+|Floating Tabs (Windows 11)|![Light, Floating Tabs](screenshots/light-floating-tabs.png)|![Dark, Floating Tabs](screenshots/dark-floating-tabs.png)|
+|Mica (Windows 11)|![Light, Mica](screenshots/light-mica.png)|![Dark, Mica](screenshots/dark-mica.png)|
+|Mica and Floating Tabs (Windows 11)|![Light, Mica and Floating Tabs](screenshots/light-mica-floating-tabs.png)|![Dark, Mica and Floating Tabs](screenshots/dark-mica-floating-tabs.png)|
+|GTK (GNOME 42, [adw-gtk3](https://github.com/lassekongo83/adw-gtk3) theme)|![Light, GTK](screenshots/gtk-light.png)|![Dark, GTK](screenshots/gtk-dark.png)|
 
 ## Tweaks
 Certain tweaks can be applied to the theme, to enable them navigate to `about:config` and create a boolean key for each tweak you want to use and set it to `true`, then restart the browser.

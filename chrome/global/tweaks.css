@@ -60,6 +60,13 @@ browsing indicator) */
     --chrome-content-separator-color: #535353 !important;
   }
 
+  @media (-moz-gtk-csd-available) {
+    :root:not(:-moz-lwtheme) {
+      --toolbar-bgcolor: color-mix(in srgb, -moz-dialog 80%, #fff) !important;
+      --toolbar-field-background-color: Field !important;
+    }
+  }
+
   /* remove toolbar bg */
   #nav-bar,
   #PersonalToolbar {

@@ -13,11 +13,16 @@
   --urlbar-box-bgcolor: unset !important;
 }
 
-#urlbar[focused="true"]:not([suppress-focus-border])>#urlbar-background:not(:-moz-lwtheme),
-#searchbar:not(:-moz-lwtheme):focus-within,
 :root[style*="--lwt-accent-color: rgb(240, 240, 244)"] #urlbar[focused="true"]:not([suppress-focus-border])>#urlbar-background,
 :root[style*="--lwt-accent-color: rgb(240, 240, 244)"] #searchbar:focus-within {
   outline-color: color-mix(in srgb, var(--toolbar-field-focus-border-color) 50%, transparent) !important;
+}
+
+@media not (-moz-gtk-csd-available) {
+  #urlbar[focused="true"]:not([suppress-focus-border])>#urlbar-background:not(:-moz-lwtheme),
+  #searchbar:not(:-moz-lwtheme):focus-within {
+    outline-color: color-mix(in srgb, var(--toolbar-field-focus-border-color) 50%, transparent) !important;
+  }
 }
 
 :root:not([lwtheme-brighttext="true"]) #urlbar-background {
@@ -168,24 +173,13 @@
 }
 
 /* make urlbar icons opaque in default theme */
-@media not (prefers-contrast) {
-  :is(:root:not(:-moz-lwtheme), :root[style*="--lwt-accent-color: rgb(240, 240, 244)"]) :is(
-    .urlbar-icon:not(#star-button[starred]),
-    .sharing-icon,
-    #identity-icon,
-    .searchbar-search-icon,
-    #identity-icon-label,
-    #permissions-granted-icon,
-    #tracking-protection-icon,
-    .notification-anchor-icon,
-    #blocked-permissions-container > .blocked-permission-icon) {
-    opacity: 0.6 !important;
-  }
-}
-
 #urlbar-input::placeholder,
 .searchbar-textbox::placeholder {
   opacity: 0.6 !important;
+}
+
+:is(:root:not(:-moz-lwtheme), :root[style*="--lwt-accent-color: rgb(240, 240, 244)"]) #identity-icon-label {
+  opacity: var(--urlbar-icon-fill-opacity) !important;
 }
 
 /* remove background from urlbar box */
@@ -219,7 +213,6 @@
 }
 
 @media not (prefers-reduced-motion) {
-
   :is(#identity-box[pageproxystate="valid"].notSecureText>.identity-box-button,
     #identity-box[pageproxystate="valid"].chromeUI>.identity-box-button,
     #identity-box[pageproxystate="valid"].extensionPage>.identity-box-button)::after {
