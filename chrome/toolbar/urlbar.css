@@ -141,9 +141,9 @@
   #urlbar-container {
     min-width: 206px !important;
   }
-  
+
   #nav-bar-customization-target:not(:hover) #downloads-button:not([open]) {
-  	visibility: collapse !important;
+    visibility: collapse !important;
   }
 }
 
@@ -160,7 +160,8 @@
   fill: var(--toolbar-field-color) !important;
 }
 
-#userContext-icons, #urlbar-zoom-button {
+#userContext-icons,
+#urlbar-zoom-button {
   padding-inline: var(--uc-urlbar-icon-inline-padding) !important;
   margin-block: 0 !important;
   margin-inline: 0 !important;
@@ -168,32 +169,35 @@
 
 /* make urlbar icons opaque in default theme */
 @media not (prefers-contrast) {
- :is(:root:not(:-moz-lwtheme), :root[style*="--lwt-accent-color: rgb(240, 240, 244)"]) :is(
-    #urlbar-input::placeholder,
-    .searchbar-textbox::placeholder,
-    .urlbar-icon,
+  :is(:root:not(:-moz-lwtheme), :root[style*="--lwt-accent-color: rgb(240, 240, 244)"]) :is(
+    .urlbar-icon:not(#star-button[starred]),
     .sharing-icon,
     #identity-icon,
+    .searchbar-search-icon,
     #identity-icon-label,
     #permissions-granted-icon,
     #tracking-protection-icon,
     .notification-anchor-icon,
-    #blocked-permissions-container > .blocked-permission-icon
-  ) {
+    #blocked-permissions-container > .blocked-permission-icon) {
     opacity: 0.6 !important;
   }
 }
 
+#urlbar-input::placeholder,
+.searchbar-textbox::placeholder {
+  opacity: 0.6 !important;
+}
+
 /* remove background from urlbar box */
-#identity-box[pageproxystate="valid"].notSecureText > .identity-box-button:not(:hover, [open]),
-#identity-box[pageproxystate="valid"].chromeUI > .identity-box-button:not(:hover, [open]),
-#identity-box[pageproxystate="valid"].extensionPage > .identity-box-button:not(:hover, [open]) {
+#identity-box[pageproxystate="valid"].notSecureText>.identity-box-button:not(:hover, [open]),
+#identity-box[pageproxystate="valid"].chromeUI>.identity-box-button:not(:hover, [open]),
+#identity-box[pageproxystate="valid"].extensionPage>.identity-box-button:not(:hover, [open]) {
   background-color: transparent !important;
 }
 
 /* increase space between icon and text */
 #identity-icon-label {
-	padding-inline-start: 8px !important;
+  padding-inline-start: 8px !important;
 }
 
 /* separator for urlbar box */
@@ -201,9 +205,9 @@
   position: relative;
 }
 
-:is(#identity-box[pageproxystate="valid"].notSecureText > .identity-box-button,
-#identity-box[pageproxystate="valid"].chromeUI > .identity-box-button,
-#identity-box[pageproxystate="valid"].extensionPage > .identity-box-button)::after {
+:is(#identity-box[pageproxystate="valid"].notSecureText>.identity-box-button,
+  #identity-box[pageproxystate="valid"].chromeUI>.identity-box-button,
+  #identity-box[pageproxystate="valid"].extensionPage>.identity-box-button)::after {
   content: "";
   position: absolute;
   display: block;
@@ -215,15 +219,16 @@
 }
 
 @media not (prefers-reduced-motion) {
-  :is(#identity-box[pageproxystate="valid"].notSecureText > .identity-box-button,
-  #identity-box[pageproxystate="valid"].chromeUI > .identity-box-button,
-  #identity-box[pageproxystate="valid"].extensionPage > .identity-box-button)::after {
+
+  :is(#identity-box[pageproxystate="valid"].notSecureText>.identity-box-button,
+    #identity-box[pageproxystate="valid"].chromeUI>.identity-box-button,
+    #identity-box[pageproxystate="valid"].extensionPage>.identity-box-button)::after {
     transition: opacity 0.2s ease;
   }
 }
 
-:is(#identity-box[pageproxystate="valid"].notSecureText > .identity-box-button:not(:hover, [open]),
-#identity-box[pageproxystate="valid"].chromeUI > .identity-box-button:not(:hover, [open]),
-#identity-box[pageproxystate="valid"].extensionPage > .identity-box-button:not(:hover, [open]))::after {
+:is(#identity-box[pageproxystate="valid"].notSecureText>.identity-box-button:not(:hover, [open]),
+  #identity-box[pageproxystate="valid"].chromeUI>.identity-box-button:not(:hover, [open]),
+  #identity-box[pageproxystate="valid"].extensionPage>.identity-box-button:not(:hover, [open]))::after {
   opacity: 0.375;
 }
