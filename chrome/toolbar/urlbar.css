@@ -165,3 +165,65 @@
   margin-block: 0 !important;
   margin-inline: 0 !important;
 }
+
+/* make urlbar icons opaque in default theme */
+@media not (prefers-contrast) {
+ :is(:root:not(:-moz-lwtheme), :root[style*="--lwt-accent-color: rgb(240, 240, 244)"]) :is(
+    #urlbar-input::placeholder,
+    .searchbar-textbox::placeholder,
+    .urlbar-icon,
+    .sharing-icon,
+    #identity-icon,
+    #identity-icon-label,
+    #permissions-granted-icon,
+    #tracking-protection-icon,
+    .notification-anchor-icon,
+    #blocked-permissions-container > .blocked-permission-icon
+  ) {
+    opacity: 0.6 !important;
+  }
+}
+
+/* remove background from urlbar box */
+#identity-box[pageproxystate="valid"].notSecureText > .identity-box-button:not(:hover, [open]),
+#identity-box[pageproxystate="valid"].chromeUI > .identity-box-button:not(:hover, [open]),
+#identity-box[pageproxystate="valid"].extensionPage > .identity-box-button:not(:hover, [open]) {
+  background-color: transparent !important;
+}
+
+/* increase space between icon and text */
+#identity-icon-label {
+	padding-inline-start: 8px !important;
+}
+
+/* separator for urlbar box */
+#identity-box {
+  position: relative;
+}
+
+:is(#identity-box[pageproxystate="valid"].notSecureText > .identity-box-button,
+#identity-box[pageproxystate="valid"].chromeUI > .identity-box-button,
+#identity-box[pageproxystate="valid"].extensionPage > .identity-box-button)::after {
+  content: "";
+  position: absolute;
+  display: block;
+  height: 16px;
+  border-right: 1px solid currentColor;
+  right: 0;
+  top: calc((var(--urlbar-height) / 2 - 1px - var(--urlbar-container-padding)) - 8px);
+  opacity: 0;
+}
+
+@media not (prefers-reduced-motion) {
+  :is(#identity-box[pageproxystate="valid"].notSecureText > .identity-box-button,
+  #identity-box[pageproxystate="valid"].chromeUI > .identity-box-button,
+  #identity-box[pageproxystate="valid"].extensionPage > .identity-box-button)::after {
+    transition: opacity 0.2s ease;
+  }
+}
+
+:is(#identity-box[pageproxystate="valid"].notSecureText > .identity-box-button:not(:hover, [open]),
+#identity-box[pageproxystate="valid"].chromeUI > .identity-box-button:not(:hover, [open]),
+#identity-box[pageproxystate="valid"].extensionPage > .identity-box-button:not(:hover, [open]))::after {
+  opacity: 0.375;
+}

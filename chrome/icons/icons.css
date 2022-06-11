@@ -99,6 +99,7 @@ and 11 so applied to both) */
 }
 
 #appMenu-passwords-button,
+#password-notification-icon,
 #PopupAutoComplete > richlistbox > richlistitem[originaltype="generatedPassword"] > .two-line-wrapper > .ac-site-icon,
 #PopupAutoComplete > richlistbox > richlistitem[originaltype="loginWithOrigin"] > .two-line-wrapper > .ac-site-icon,
 #PopupAutoComplete > richlistbox > richlistitem[originaltype="login"] > .ac-site-icon {
@@ -446,7 +447,8 @@ and 11 so applied to both) */
 }
 
 .popup-notification-icon[popupid="persistent-storage"],
-.persistent-storage-icon {
+.persistent-storage-icon,
+.indexedDB-icon {
   list-style-image: url("persistent-storage.svg") !important;
 }
 

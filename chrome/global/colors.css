@@ -24,7 +24,7 @@
   --urlbar-icon-fill-opacity: 1 !important;
   --urlbar-popup-url-color: #0072C9 !important;
   --lwt-brighttext-url-color: var(--urlbar-popup-url-color) !important;
-  --urlbar-box-bgcolor: #f7f7f7 !important;
+  --urlbar-box-bgcolor: var(--toolbar-field-background-color) !important;
   --autocomplete-popup-background: #fff !important;
   --autocomplete-popup-color: #fff !important;
   --autocomplete-popup-highlight-background: #f2f2f2 !important;
@@ -91,7 +91,7 @@
   --urlbar-icon-fill-opacity: 1 !important;
   --urlbar-popup-url-color: #75B6E8 !important;
   --lwt-brighttext-url-color: var(--urlbar-popup-url-color) !important;
-  --urlbar-box-bgcolor: #3B3B3B !important;
+  --urlbar-box-bgcolor: var(--toolbar-field-background-color) !important;
   --autocomplete-popup-background: #4A4A4A !important;
   --autocomplete-popup-color: #fff !important;
   --autocomplete-popup-highlight-background: #383838 !important;
