@@ -296,7 +296,7 @@ toolbarbutton[part="scrollbutton-down"] {
 }
 
 #tabbrowser-tabs[overflow] .tabbrowser-tab[last-visible-tab]:not([pinned]) {
-  margin-inline-end: 8px !important;
+  margin-inline-end: 7px !important;
 }
 
 
