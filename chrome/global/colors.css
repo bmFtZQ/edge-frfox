@@ -55,7 +55,7 @@
   --panel-item-active-bgcolor: #ddd !important;
   --arrowpanel-border-color: #dadada !important;
   --panel-separator-color: #dadada !important;
-  --panel-banner-item-update-supported-bgcolor: #50B080 !important;
+  --panel-banner-item-update-supported-bgcolor: #188038 !important;
   --focus-outline-color: #0055D7 !important;
   --panel-shortcut-color: inherit !important;
   --uc-urlbar-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
@@ -97,9 +97,9 @@
   --autocomplete-popup-highlight-background: #383838 !important;
   --autocomplete-popup-hover-background: #444444 !important;
   --autocomplete-popup-separator-color: #63636300 !important;
-  --button-bgcolor: #3B3B3B !important;
-  --button-hover-bgcolor: #545454 !important;
-  --button-active-bgcolor: #606060 !important;
+  --button-bgcolor: #5C5C5C !important;
+  --button-hover-bgcolor: #646464 !important;
+  --button-active-bgcolor: #575757 !important;
   --button-primary-bgcolor: #006CBE !important;
   --button-primary-hover-bgcolor: #0078D4 !important;
   --button-primary-active-bgcolor: #005CA3 !important;
@@ -120,7 +120,7 @@
   --panel-item-active-bgcolor: #747474 !important;
   --arrowpanel-border-color: #636363 !important;
   --panel-separator-color: #636363 !important;
-  --panel-banner-item-update-supported-bgcolor: #50B080 !important;
+  --panel-banner-item-update-supported-bgcolor: #81C995 !important;
   --focus-outline-color: #63ADE5 !important;
   --panel-shortcut-color: inherit !important;
   --toolbarbutton-hover-background: #ffffff25 !important;
