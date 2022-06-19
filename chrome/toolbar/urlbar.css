@@ -125,7 +125,6 @@
   border-radius: calc(var(--toolbarbutton-border-radius) + 2px) !important;
 }
 
-
 /* move tracking protection button */
 #tracking-protection-icon-container,
 #page-action-buttons {

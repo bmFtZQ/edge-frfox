@@ -2,7 +2,8 @@
 
 /* windows 11 style window controls (no known way to detect between windows 10
 and 11 so applied to both) */
-@media (-moz-windows-compositor), (-moz-gtk-csd-available) {
+@media (-moz-windows-compositor),
+(-moz-gtk-csd-available) {
   .titlebar-min {
     list-style-image: url("win11-minimize.svg") !important;
   }
@@ -36,7 +37,7 @@ and 11 so applied to both) */
 }
 
 /* disable context menu icons on macOS */
-@supports not -moz-bool-pref("layout.css.osx-font-smoothing.enabled") {
+@media not (-moz-platform: macos) {
   #context-back {
     list-style-image: url("back.svg") !important;
   }
@@ -100,9 +101,9 @@ and 11 so applied to both) */
 
 #appMenu-passwords-button,
 #password-notification-icon,
-#PopupAutoComplete > richlistbox > richlistitem[originaltype="generatedPassword"] > .two-line-wrapper > .ac-site-icon,
-#PopupAutoComplete > richlistbox > richlistitem[originaltype="loginWithOrigin"] > .two-line-wrapper > .ac-site-icon,
-#PopupAutoComplete > richlistbox > richlistitem[originaltype="login"] > .ac-site-icon {
+#PopupAutoComplete>richlistbox>richlistitem[originaltype="generatedPassword"]>.two-line-wrapper>.ac-site-icon,
+#PopupAutoComplete>richlistbox>richlistitem[originaltype="loginWithOrigin"]>.two-line-wrapper>.ac-site-icon,
+#PopupAutoComplete>richlistbox>richlistitem[originaltype="login"]>.ac-site-icon {
   list-style-image: url("passwords.svg") !important;
 }
 
@@ -345,6 +346,10 @@ and 11 so applied to both) */
   list-style-image: url("arrow-right.svg") !important;
 }
 
+.panel-header>.subviewbutton-back {
+  list-style-image: url("arrow-left.svg") !important;
+}
+
 #overflowMenu-customize-button,
 #appmenu-moreTools-button {
   list-style-image: url("customize.svg") !important;
@@ -382,7 +387,6 @@ and 11 so applied to both) */
 .tab-icon-image[src="chrome://global/skin/icons/settings.svg"] {
   background: url("settings.svg") !important;
 }
-
 
 .tab-icon-image[src="chrome://mozapps/skin/extensions/extension.svg"] {
   background: url("extension.svg") !important;
@@ -516,4 +520,46 @@ and 11 so applied to both) */
 
 #stop-reload-button[animate]>#reload-button>.toolbarbutton-animatable-box>.toolbarbutton-animatable-image {
   background-image: url("stop-to-reload.svg") !important;
+}
+
+/* Context Menu Icons */
+menupopup>menuitem:is([checked="true"], [selected="true"]) .menu-iconic-icon {
+  list-style-image: url("checkmark.svg") !important;
+}
+
+:not(:not(menubar)>menu, #ContentSelectDropdown)>menupopup>menuitem:not(.menuitem-iconic, [type="checkbox"], [type="radio"], .in-menulist, .in-menulist menuitem, .unified-nav-current),
+:not(:not(menubar)>menu, #ContentSelectDropdown)>menupopup>menu:not(.menu-iconic, [type="checkbox"], [type="radio"], .in-menulist, .in-menulist menu, .unified-nav-current) {
+  background-image: var(--uc-menu-image) !important;
+  background-size: 16px !important;
+  background-position: var(--arrowpanel-menuitem-padding-inline) center !important;
+  background-repeat: no-repeat !important;
+  -moz-context-properties: fill, fill-opacity !important;
+  fill: currentColor !important;
+}
+
+@media (-moz-platform: macos) {
+  #context-back {
+    --uc-menu-image: url("back.svg");
+  }
+
+  #context-forward {
+    --uc-menu-image: url("forward.svg");
+  }
+
+  #context-reload {
+    --uc-menu-image: url("reload.svg");
+  }
+
+  #context-stop {
+    --uc-menu-image: url("close.svg");
+  }
+
+  #context-bookmarkpage {
+    --uc-menu-image: url("bookmark-hollow.svg");
+  }
+
+  #contentAreaContextMenu #context-bookmarkpage[starred] {
+    --uc-menu-image: url("bookmark.svg");
+    fill: var(--lwt-toolbarbutton-icon-fill-attention, var(--toolbarbutton-icon-fill-attention, currentColor)) !important;
+  }
 }

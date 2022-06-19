@@ -84,7 +84,7 @@ browsing indicator) */
   }
 
   /* adjust spacing of area above tabs */
-  @supports not -moz-bool-pref("layout.css.osx-font-smoothing.enabled") {
+  @media not (-moz-platform: macos) {
     :root[sizemode="maximized"] #titlebar {
       --tab-block-margin: 4px !important;
     }
@@ -183,7 +183,7 @@ browsing indicator) */
     }
 
     /* line up buttons with duplicate icons from -moz-win-glass */
-    :root:is(:not(:-moz-lwtheme),[lwt-default-theme-in-dark-mode="true"]) .titlebar-buttonbox-container {
+    :root:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode="true"]) .titlebar-buttonbox-container {
       --uc-titlebar-button-size: 30px;
       --uc-titlebar-size: calc(var(--tab-min-height) + var(--tab-block-margin));
       margin-bottom: calc(var(--uc-titlebar-size) - var(--uc-titlebar-button-size)) !important;

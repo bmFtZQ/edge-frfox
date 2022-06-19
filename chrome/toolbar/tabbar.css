@@ -29,7 +29,7 @@
 }
 
 /* hide space above tabs when maximised for non-macOS versions of Firefox */
-@supports not -moz-bool-pref("layout.css.osx-font-smoothing.enabled") {
+@media not (-moz-platform: macos) {
   :root:is([inFullscreen], :not([tabsintitlebar]), [sizemode="maximized"]) #titlebar,
   #toolbar-menubar:not([inactive])+#TabsToolbar {
     --tab-block-margin: 0px !important;
@@ -252,7 +252,7 @@ toolbarbutton[part="scrollbutton-down"] {
 }
 
 /* mac titlebar buttons */
-@supports -moz-bool-pref("layout.css.osx-font-smoothing.enabled") {
+@media (-moz-platform: macos) {
   @media (-moz-mac-big-sur-theme:0) {
     .titlebar-buttonbox {
       margin-inline: 10px !important;
@@ -298,7 +298,6 @@ toolbarbutton[part="scrollbutton-down"] {
 #tabbrowser-tabs[overflow] .tabbrowser-tab[last-visible-tab]:not([pinned]) {
   margin-inline-end: 7px !important;
 }
-
 
 .tabbrowser-tab:is([visuallyselected="true"], [multiselected])>.tab-stack>.tab-background {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), 0 0px 2px rgba(0, 0, 0, 0.2) !important;

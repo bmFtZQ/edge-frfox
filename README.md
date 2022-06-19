@@ -14,7 +14,7 @@ A Firefox userChrome.css theme that aims to recreate the look and feel of the Ch
    3. `layout.css.color-mix.enabled` = `true`
 
    ###### On macOS:
-   ~~1. To use the Edge style context menu on macOS then set `widget.macos.native-context-menus` = `false`~~ **(Not Implemented Yet!)**
+   1. To use the Edge style context menu on macOS then set `widget.macos.native-context-menus` = `false`
 
    ##### Recommended:
    1. `browser.tabs.tabMinWidth` = `66`
