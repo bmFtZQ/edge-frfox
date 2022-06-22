@@ -76,6 +76,10 @@ To disable a tweak, set the key to `false` or delete it, then restart the browse
 |-|
 |`uc.tweak.less-permissions-button-padding`|
 
+|disable custom context menus|
+|-|
+|`uc.tweak.revert-context-menu`|
+
 ## Mica Tweak Instructions (Windows 11 Only)
 1. Download and install [Mica For Everyone](https://github.com/MicaForEveryone/MicaForEveryone).
 2. Create a custom process rule with the following:

@@ -204,42 +204,61 @@ browsing indicator) */
 }
 
 @media not (-moz-platform: macos) {
-  @supports -moz-bool-pref("uc.tweak.horizontal-context-navigation") {
-    #context-navigation {
-      flex-direction: column !important;
-      -moz-box-orient: vertical !important;
-    }
+  @supports not -moz-bool-pref("uc.tweak.revert-context-menu") {
+    @supports -moz-bool-pref("uc.tweak.horizontal-context-navigation") {
+      #context-navigation {
+        flex-direction: column !important;
+        -moz-box-orient: vertical !important;
+      }
 
-    #context-navigation>.menuitem-iconic {
-      -moz-box-pack: start !important;
-    }
+      #context-navigation>.menuitem-iconic {
+        -moz-box-pack: start !important;
+      }
 
-    #context-navigation .menu-iconic-text {
-      display: -moz-box !important;
-    }
+      #context-navigation .menu-iconic-text {
+        display: -moz-box !important;
+      }
 
-    #context-navigation>#context-back .menu-iconic-text::before {
-      content: "Back" !important;
-    }
+      #context-navigation>#context-back .menu-iconic-text::before {
+        content: "Back" !important;
+      }
 
-    #context-navigation>#context-forward .menu-iconic-text::before {
-      content: "Forward" !important;
-    }
+      #context-navigation>#context-forward .menu-iconic-text::before {
+        content: "Forward" !important;
+      }
 
-    #context-navigation>#context-reload .menu-iconic-text::before {
-      content: "Reload" !important;
-    }
+      #context-navigation>#context-reload .menu-iconic-text::before {
+        content: "Reload" !important;
+      }
 
-    #context-navigation>#context-stop .menu-iconic-text::before {
-      content: "Stop" !important;
-    }
+      #context-navigation>#context-stop .menu-iconic-text::before {
+        content: "Stop" !important;
+      }
 
-    #context-navigation>#context-bookmarkpage .menu-iconic-text::before {
-      content: "Bookmark Page" !important;
-    }
+      #context-navigation>#context-bookmarkpage .menu-iconic-text::before {
+        content: "Bookmark Page" !important;
+      }
 
-    #context-navigation>#context-bookmarkpage[starred] .menu-iconic-text::before {
-      content: "Edit Bookmark" !important;
+      #context-navigation>#context-bookmarkpage[starred] .menu-iconic-text::before {
+        content: "Edit Bookmark" !important;
+      }
+    }
+  }
+}
+
+@media (-moz-windows-compositor) {
+  @supports -moz-bool-pref("uc.tweak.revert-context-menu") {
+    menupopup {
+      --panel-color: var(--arrowpanel-color) !important;
+      --panel-border-radius: 4px !important;
+      --panel-border-color: var(--arrowpanel-border-color) !important;
+      --panel-background: var(--arrowpanel-background) !important;
+      --menuitem-hover-background-color: var(--panel-item-hover-bgcolor) !important;
+      --menu-background-color: var(--arrowpanel-background) !important;
+      --menu-color: var(--arrowpanel-color) !important;
+      --menuitem-disabled-hover-background-color: #0000 !important;
+      --menu-disabled-color: var(--panel-disabled-color) !important;
+      --menu-border-color: var(--panel-separator-color) !important;
     }
   }
 }

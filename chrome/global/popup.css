@@ -386,18 +386,20 @@ panelview .toolbarbutton-1,
   min-height: calc(16px + var(--uc-contextmenu-menuitem-padding-block) * 2) !important;
 }
 
+/* disable context menu when this tweak is applied */
+@supports not -moz-bool-pref("uc.tweak.revert-context-menu") {
 /* Context Menu */
-menupopup,
-menupopup menuitem,
-menupopup menu,
-menupopup menuseparator,
+menupopup:not(.PanelUI-subView),
+menupopup:not(.PanelUI-subView) menuitem,
+menupopup:not(.PanelUI-subView) menu,
+menupopup:not(.PanelUI-subView) menuseparator,
 panel {
   -moz-appearance: none !important;
 }
 
-menupopup,
+menupopup:not(.PanelUI-subView),
 panel[type="autocomplete-richlistbox"],
-menulist>menupopup>menucaption {
+menulist>menupopup:not(.PanelUI-subView)>menucaption {
   -moz-window-shadow: none !important;
   background: 0 !important;
   border: 0 !important;
@@ -412,14 +414,9 @@ panel[type="autocomplete-richlistbox"]>.autocomplete-richlistbox,
 }
 
 /* make room for menu shadow */
-menupopup {
+menupopup:not(.PanelUI-subView) {
   padding: 4px 12px 20px !important;
   margin: -6px -12px -16px !important;
-}
-
-#bookmarks-menu-button menupopup {
-  padding: 4px 12px 20px !important;
-  margin: -8px -24px -16px -12px !important;
 }
 
 /* cut off shadow so it doesn't get in the way of the menubar items */
@@ -428,28 +425,51 @@ menubar menupopup {
   margin: -1px -4px -16px !important;
 }
 
-.menupopup-arrowscrollbox {
-  box-shadow:
+menupopup {
+  --uc-margin: 0 !important;
+  --uc-box-shadow:
     0 8px 12px #0003,
     0 4px 5px #0002,
     0 2px 4px #0002,
-    0 0 0 1px #0001 !important;
+    0 0 0 1px #0001;
 }
 
-/* no way to get current firefox theme, using prefers-color-scheme instead */
 @media (prefers-color-scheme:dark) {
-  .menupopup-arrowscrollbox {
-    box-shadow:
+  menupopup {
+    --uc-box-shadow:
       0 8px 12px #0003,
       0 4px 5px #0003,
       0 2px 4px #0002,
-      0 0 0 1px #0002 !important;
+      0 0 0 1px #0002;
   }
+}
+
+/* use default shadow for subview menupopup (eg. bookmarks) */
+menupopup.PanelUI-subView {
+  --uc-box-shadow: 0 0 0 1px var(--panel-border-color);
+  --uc-margin: 1px !important;
+  margin-top: -5px !important;
+}
+
+.menupopup-arrowscrollbox {
+  box-shadow: var(--uc-box-shadow) !important;
 }
 
 .popup-internal-box,
 .menupopup-arrowscrollbox {
   margin: 0 !important;
+}
+
+.menupopup-arrowscrollbox {
+  margin: var(--uc-margin) !important;
+}
+
+.popup-internal-box {
+  margin: 0 !important;
+}
+
+.popup-internal-box,
+.menupopup-arrowscrollbox {
   padding: var(--uc-contextmenu-padding) !important;
   border-radius: var(--uc-contextmenu-border-radius) !important;
   color: inherit !important;
@@ -621,4 +641,5 @@ menuitem[checked="true"]>.menu-iconic-left,
   .panel-header {
     font-size: 13.6px !important;
   }
+}
 }

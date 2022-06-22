@@ -112,11 +112,9 @@
   width: unset !important;
 }
 
-#identity-icon-box {
-  padding-inline: var(--uc-urlbar-icon-inline-padding) !important;
-}
-
-#identity-permission-box {
+#identity-icon-box,
+#identity-permission-box,
+.notification-anchor-icon {
   padding-inline: var(--uc-urlbar-icon-inline-padding) !important;
 }
 
@@ -179,6 +177,15 @@
 
 :is(:root:not(:-moz-lwtheme), :root[style*="--lwt-accent-color: rgb(240, 240, 244)"]) #identity-icon-label {
   opacity: var(--urlbar-icon-fill-opacity) !important;
+}
+
+#notification-popup-box:hover {
+  background-color: var(--urlbar-box-hover-bgcolor) !important;
+}
+
+#notification-popup-box:hover:active,
+#notification-popup-box[open] {
+  background-color: var(--urlbar-box-active-bgcolor) !important;
 }
 
 /* remove background from urlbar box */
