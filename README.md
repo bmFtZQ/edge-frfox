@@ -63,6 +63,11 @@ To disable a tweak, set the key to `false` or delete it, then restart the browse
 |**NOTE: all functionality of this button can still be accessed from the app menu.**|
 |`uc.tweak.fxa-button-as-private-indicator`|
 
+|Show context menu navigation buttons (Back, Forward, Reload, etc.) horizontally|
+|-|
+|**NOTE: labels are only shown in the English language.**|
+|`uc.tweak.horizontal-context-navigation`|
+
 |remove tab separators|
 |-|
 |`uc.tweak.remove-tab-separators`|
