@@ -205,7 +205,7 @@ browsing indicator) */
 
 @media not (-moz-platform: macos) {
   @supports not -moz-bool-pref("uc.tweak.revert-context-menu") {
-    @supports -moz-bool-pref("uc.tweak.horizontal-context-navigation") {
+    @supports -moz-bool-pref("uc.tweak.vertical-context-navigation") {
       #context-navigation {
         flex-direction: column !important;
         -moz-box-orient: vertical !important;

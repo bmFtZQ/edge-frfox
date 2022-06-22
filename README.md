@@ -66,7 +66,7 @@ To disable a tweak, set the key to `false` or delete it, then restart the browse
 |Show context menu navigation buttons (Back, Forward, Reload, etc.) horizontally|
 |-|
 |**NOTE: labels are only shown in the English language.**|
-|`uc.tweak.horizontal-context-navigation`|
+|`uc.tweak.vertical-context-navigation`|
 
 |remove tab separators|
 |-|
