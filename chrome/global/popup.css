@@ -388,258 +388,260 @@ panelview .toolbarbutton-1,
 
 /* disable context menu when this tweak is applied */
 @supports not -moz-bool-pref("uc.tweak.revert-context-menu") {
-/* Context Menu */
-menupopup:not(.PanelUI-subView),
-menupopup:not(.PanelUI-subView) menuitem,
-menupopup:not(.PanelUI-subView) menu,
-menupopup:not(.PanelUI-subView) menuseparator,
-panel {
-  -moz-appearance: none !important;
-}
+  /* Context Menu */
+  menupopup:not(.PanelUI-subView),
+  menupopup:not(.PanelUI-subView) menuitem,
+  menupopup:not(.PanelUI-subView) menu,
+  menupopup:not(.PanelUI-subView) menuseparator,
+  panel {
+    -moz-appearance: none !important;
+  }
 
-menupopup:not(.PanelUI-subView),
-panel[type="autocomplete-richlistbox"],
-menulist>menupopup:not(.PanelUI-subView)>menucaption {
-  -moz-window-shadow: none !important;
-  background: 0 !important;
-  border: 0 !important;
-  color: var(--arrowpanel-color) !important;
-}
+  menupopup:not(.PanelUI-subView),
+  panel[type="autocomplete-richlistbox"],
+  menulist>menupopup:not(.PanelUI-subView)>menucaption {
+    -moz-window-shadow: none !important;
+    background: 0 !important;
+    border: 0 !important;
+    color: var(--arrowpanel-color) !important;
+  }
 
-.popup-internal-box,
-panel[type="autocomplete-richlistbox"]>.autocomplete-richlistbox,
-.menupopup-arrowscrollbox {
-  background: var(--arrowpanel-background) !important;
-  border: 0 !important;
-}
+  .popup-internal-box,
+  panel[type="autocomplete-richlistbox"]>.autocomplete-richlistbox,
+  .menupopup-arrowscrollbox {
+    background: var(--arrowpanel-background) !important;
+    border: 0 !important;
+  }
 
-/* make room for menu shadow */
-menupopup:not(.PanelUI-subView) {
-  padding: 4px 12px 20px !important;
-  margin: -6px -12px -16px !important;
-}
+  /* make room for menu shadow */
+  menupopup:not(.PanelUI-subView) {
+    padding: 4px 12px 20px !important;
+    margin: -6px -12px -16px !important;
+  }
 
-/* cut off shadow so it doesn't get in the way of the menubar items */
-menubar menupopup {
-  padding: 1px 8px 20px !important;
-  margin: -1px -4px -16px !important;
-}
+  /* cut off shadow so it doesn't get in the way of the menubar items */
+  menubar menupopup {
+    padding: 1px 8px 20px !important;
+    margin: -1px -4px -16px !important;
+  }
 
-menupopup {
-  --uc-margin: 0 !important;
-  --uc-box-shadow:
-    0 8px 12px #0003,
-    0 4px 5px #0002,
-    0 2px 4px #0002,
-    0 0 0 1px #0001;
-}
-
-@media (prefers-color-scheme:dark) {
   menupopup {
+    --uc-margin: 0 !important;
     --uc-box-shadow:
       0 8px 12px #0003,
-      0 4px 5px #0003,
+      0 4px 5px #0002,
       0 2px 4px #0002,
-      0 0 0 1px #0002;
+      0 0 0 1px #0001;
   }
-}
 
-/* use default shadow for subview menupopup (eg. bookmarks) */
-menupopup.PanelUI-subView {
-  --uc-box-shadow: 0 0 0 1px var(--panel-border-color);
-  --uc-margin: 1px !important;
-  margin-top: -5px !important;
-}
+  @media (prefers-color-scheme:dark) {
+    menupopup {
+      --uc-box-shadow:
+        0 8px 12px #0003,
+        0 4px 5px #0003,
+        0 2px 4px #0002,
+        0 0 0 1px #0002;
+    }
+  }
 
-.menupopup-arrowscrollbox {
-  box-shadow: var(--uc-box-shadow) !important;
-}
+  /* use default shadow for subview menupopup (eg. bookmarks) */
+  menupopup.PanelUI-subView {
+    --uc-box-shadow: 0 0 0 1px var(--panel-border-color);
+    --uc-margin: 1px !important;
+    margin-top: -5px !important;
+  }
 
-.popup-internal-box,
-.menupopup-arrowscrollbox {
-  margin: 0 !important;
-}
+  .menupopup-arrowscrollbox {
+    box-shadow: var(--uc-box-shadow) !important;
+  }
 
-.menupopup-arrowscrollbox {
-  margin: var(--uc-margin) !important;
-}
+  .popup-internal-box,
+  .menupopup-arrowscrollbox {
+    margin: 0 !important;
+  }
 
-.popup-internal-box {
-  margin: 0 !important;
-}
+  .menupopup-arrowscrollbox {
+    margin: var(--uc-margin) !important;
+  }
 
-.popup-internal-box,
-.menupopup-arrowscrollbox {
-  padding: var(--uc-contextmenu-padding) !important;
-  border-radius: var(--uc-contextmenu-border-radius) !important;
-  color: inherit !important;
-}
+  .popup-internal-box {
+    margin: 0 !important;
+  }
 
-menupopup menu[disabled="true"],
-menupopup menuitem[disabled="true"] {
-  color: var(--panel-disabled-color) !important;
-  background: none !important;
-}
+  .popup-internal-box,
+  .menupopup-arrowscrollbox {
+    padding: var(--uc-contextmenu-padding) !important;
+    border-radius: var(--uc-contextmenu-border-radius) !important;
+    color: inherit !important;
+  }
 
-menupopup menu:hover:not([disabled=true]),
-menupopup menuitem:hover:not([disabled=true]),
-menupopup menu[_moz-menuactive]:not([disabled=true]),
-menupopup menuitem[_moz-menuactive]:not([disabled=true]) {
-  background-color: var(--panel-item-hover-bgcolor) !important;
-  color: inherit !important;
-}
+  menupopup menu[disabled="true"],
+  menupopup menuitem[disabled="true"] {
+    color: var(--panel-disabled-color) !important;
+    background: none !important;
+  }
 
-menupopup menuitem:hover:active:not([disabled=true]),
-menupopup menu:hover:active:not([disabled=true]) {
-  background-color: var(--panel-item-active-bgcolor) !important;
-  color: inherit !important;
-}
+  menupopup menu:hover:not([disabled=true]),
+  menupopup menuitem:hover:not([disabled=true]),
+  menupopup menu[_moz-menuactive]:not([disabled=true]),
+  menupopup menuitem[_moz-menuactive]:not([disabled=true]) {
+    background-color: var(--panel-item-hover-bgcolor) !important;
+    color: inherit !important;
+  }
 
-menupopup menuseparator {
-  margin: var(--uc-contextmenu-separator-vertical) 0 !important;
-  padding: 0 !important;
-  background: none !important;
-  border-top: 1px solid var(--panel-separator-color) !important;
-}
+  menupopup menuitem:hover:active:not([disabled=true]),
+  menupopup menu:hover:active:not([disabled=true]) {
+    background-color: var(--panel-item-active-bgcolor) !important;
+    color: inherit !important;
+  }
 
-#PlacesToolbar menupopup[placespopup="true"] menuseparator::before {
-  display: none !important;
-}
+  menupopup menuseparator {
+    margin: var(--uc-contextmenu-separator-vertical) 0 !important;
+    padding: 0 !important;
+    background: none !important;
+    border-top: 1px solid var(--panel-separator-color) !important;
+  }
 
-menupopup menu,
-menupopup menuitem,
-menupopup menucaption,
-#PopupAutoComplete>richlistbox>richlistitem {
-  padding: var(--uc-contextmenu-menuitem-padding-block) var(--uc-contextmenu-menuitem-padding-inline) !important;
-  margin: var(--uc-contextmenu-menuitem-margin) !important;
-  border-radius: var(--uc-contextmenu-menuitem-border-radius) !important;
-  border: var(--uc-contextmenu-menuitem-border-width) solid transparent !important;
-  background-clip: padding-box !important;
-  min-height: calc(16px + (var(--uc-contextmenu-menuitem-padding-block) + var(--uc-contextmenu-menuitem-border-width)) * 2) !important;
-}
+  #PlacesToolbar menupopup[placespopup="true"] menuseparator::before {
+    display: none !important;
+  }
 
-:not(:not(menubar)>menu, #ContentSelectDropdown)>menupopup>menuitem:not(.menuitem-iconic, [type="checkbox"], [type="radio"], .in-menulist, .in-menulist menuitem, .unified-nav-current),
-:not(:not(menubar)>menu, #ContentSelectDropdown)>menupopup>menu:not(.menu-iconic, [type="checkbox"], [type="radio"], .in-menulist, .in-menulist menu, .unified-nav-current),
-:not(:not(menubar)>menu, #ContentSelectDropdown)>menupopup>menucaption {
-  padding-inline-start: calc(var(--uc-contextmenu-menuitem-padding-inline) + 16px + var(--uc-contextmenu-menuicon-margin-inline)) !important;
-}
+  menupopup menu,
+  menupopup menuitem,
+  menupopup menucaption,
+  #PopupAutoComplete>richlistbox>richlistitem {
+    padding: var(--uc-contextmenu-menuitem-padding-block) var(--uc-contextmenu-menuitem-padding-inline) !important;
+    margin: var(--uc-contextmenu-menuitem-margin) !important;
+    border-radius: var(--uc-contextmenu-menuitem-border-radius) !important;
+    border: var(--uc-contextmenu-menuitem-border-width) solid transparent !important;
+    background-clip: padding-box !important;
+    min-height: calc(16px + (var(--uc-contextmenu-menuitem-padding-block) + var(--uc-contextmenu-menuitem-border-width)) * 2) !important;
+  }
 
-.menu-iconic-icon {
-  margin-block: 0 !important;
-  margin-inline-end: 0 !important;
-  margin-inline-start: 0 !important;
-}
+  :not(:not(menubar)>menu, #ContentSelectDropdown)>menupopup>menuitem:not(.menuitem-iconic, [type="checkbox"], [type="radio"], .in-menulist, .in-menulist menuitem, .unified-nav-current),
+  :not(:not(menubar)>menu, #ContentSelectDropdown)>menupopup>menu:not(.menu-iconic, [type="checkbox"], [type="radio"], .in-menulist, .in-menulist menu, .unified-nav-current),
+  :not(:not(menubar)>menu, #ContentSelectDropdown)>menupopup>menucaption {
+    padding-inline-start: calc(var(--uc-contextmenu-menuitem-padding-inline) + 16px + var(--uc-contextmenu-menuicon-margin-inline)) !important;
+  }
 
-menu>.menu-iconic-text,
-menuitem>.menu-iconic-text {
-  padding-inline-start: var(--uc-contextmenu-menuicon-margin-inline) !important;
-}
-
-.menu-text,
-.menu-iconic-text {
-  margin-inline-start: 0 !important;
-  padding-block: 0 !important;
-}
-
-.menu-accel,
-.menu-iconic-accel {
-  margin-inline-end: 0 !important;
-  padding-block: 0 !important;
-  opacity: 0.7 !important;
-}
-
-.menu-iconic>.menu-iconic-left,
-.menuitem-iconic>.menu-iconic-left {
-  padding-inline-end: 0 !important;
-  padding-block: 0 !important;
-}
-
-menuitem:is(.menuitem-iconic:not([data-usercontextid]), [type="checkbox"], [type="radio"], [checked], [selected]) .menu-iconic-icon {
-  -moz-context-properties: fill !important;
-  fill: currentColor !important;
-}
-
-.menu-right,
-.menu-accel-container {
-  appearance: none !important;
-  margin-inline-end: 0 !important;
-  -moz-context-properties: fill;
-  fill: currentColor !important;
-}
-
-menupopup menuitem:is([type="checkbox"], [type="radio"]) .menu-iconic-icon,
-menulist>menupopup>menuitem .menu-iconic-icon,
-menu .menu-right {
-  height: 16px !important;
-  width: 16px !important;
-}
-
-menulist>menupopup>menuitem:is([checked="true"], [selected="true"])::before {
-  display: none !important;
-}
-
-menuitem:is([type="checkbox"], [checked="true"], [type="radio"])>.menu-iconic-left>.menu-iconic-icon {
-  display: -moz-box !important;
-}
-
-menuitem[checked="true"]>.menu-iconic-left,
-.menu-iconic>.menu-iconic-left,
-.menuitem-iconic>.menu-iconic-left {
-  margin: 0 !important;
-}
-
-#context-navigation:not([hidden]) {
-  padding: 0 !important;
-  --menuitem-min-width: calc(16px + var(--uc-contextmenu-menuitem-padding-inline) * 2) !important;
-  min-width: calc(4 * var(--menuitem-min-width));
-}
-
-#context-navigation>.menuitem-iconic>.menu-iconic-left>.menu-iconic-icon {
-  width: 16px !important;
-  height: 16px !important;
-  padding: 0 !important;
-}
-
-#context-navigation {
-  margin-inline: var(--uc-contextmenu-menuitem-margin-inline) !important;
-}
-
-#context-navigation>.menuitem-iconic {
-  -moz-box-pack: center !important;
-}
-
-#context-navigation>.menuitem-iconic {
-  margin: 0 !important;
-}
-
-#context-navigation>.menuitem-iconic {
-  flex-grow: 1 !important;
-  width: unset !important;
-}
-
-#context-navigation>.menuitem-iconic[_moz-menuactive="true"]>.menu-iconic-left>.menu-iconic-icon {
-  background-color: transparent !important;
-}
-
-#context-bookmarkpage[starred] .menu-iconic-icon {
-  fill: var(--lwt-toolbarbutton-icon-fill-attention, var(--toolbarbutton-icon-fill-attention, currentColor)) !important;
-}
-
-@media (-moz-platform: windows) {
-  .menu-text,
-  .menu-iconic-text,
-  panel .toolbarbutton-text {
+  .menu-iconic-icon {
+    margin-block: 0 !important;
+    margin-inline-end: 0 !important;
     margin-inline-start: 0 !important;
-    margin-block: -3px -1px !important;
+  }
+
+  menu>.menu-iconic-text,
+  menuitem>.menu-iconic-text {
+    padding-inline-start: var(--uc-contextmenu-menuicon-margin-inline) !important;
+  }
+
+  .menu-text,
+  .menu-iconic-text {
+    margin-inline-start: 0 !important;
     padding-block: 0 !important;
   }
 
-  .menu-text,
-  .menu-iconic-text,
-  panel .toolbarbutton-text,
-  #appMenu-fxa-status2,
-  .panel-header {
-    font-size: 13.6px !important;
+  .menu-accel,
+  .menu-iconic-accel {
+    margin-inline-end: 0 !important;
+    padding-block: 0 !important;
+    opacity: 0.7 !important;
   }
-}
+
+  .menu-iconic>.menu-iconic-left,
+  .menuitem-iconic>.menu-iconic-left {
+    padding-inline-end: 0 !important;
+    padding-block: 0 !important;
+  }
+
+  menuitem:is(.menuitem-iconic:not([data-usercontextid]), [type="checkbox"], [type="radio"], [checked], [selected]) .menu-iconic-icon {
+    -moz-context-properties: fill !important;
+    fill: currentColor !important;
+  }
+
+  .menu-right,
+  .menu-accel-container {
+    appearance: none !important;
+    margin-inline-end: 0 !important;
+    -moz-context-properties: fill;
+    fill: currentColor !important;
+  }
+
+  menupopup menuitem:is([type="checkbox"], [type="radio"]) .menu-iconic-icon,
+  menulist>menupopup>menuitem .menu-iconic-icon,
+  menu .menu-right {
+    height: 16px !important;
+    width: 16px !important;
+  }
+
+  menulist>menupopup>menuitem:is([checked="true"], [selected="true"])::before {
+    display: none !important;
+  }
+
+  menuitem:is([type="checkbox"], [checked="true"], [type="radio"])>.menu-iconic-left>.menu-iconic-icon {
+    display: -moz-box !important;
+  }
+
+  menuitem[checked="true"]>.menu-iconic-left,
+  .menu-iconic>.menu-iconic-left,
+  .menuitem-iconic>.menu-iconic-left {
+    margin: 0 !important;
+  }
+
+  #context-navigation:not([hidden]) {
+    padding: 0 !important;
+    --menuitem-min-width: calc(16px + var(--uc-contextmenu-menuitem-padding-inline) * 2) !important;
+    min-width: calc(4 * var(--menuitem-min-width));
+  }
+
+  #context-navigation>.menuitem-iconic>.menu-iconic-left>.menu-iconic-icon {
+    width: 16px !important;
+    height: 16px !important;
+    padding: 0 !important;
+  }
+
+  #context-navigation {
+    margin-inline: var(--uc-contextmenu-menuitem-margin-inline) !important;
+  }
+
+  #context-navigation>.menuitem-iconic {
+    -moz-box-pack: center !important;
+  }
+
+  #context-navigation>.menuitem-iconic {
+    margin: 0 !important;
+  }
+
+  #context-navigation>.menuitem-iconic {
+    flex-grow: 1 !important;
+    width: unset !important;
+  }
+
+  #context-navigation>.menuitem-iconic[_moz-menuactive="true"]>.menu-iconic-left>.menu-iconic-icon {
+    background-color: transparent !important;
+  }
+
+  #context-bookmarkpage[starred] .menu-iconic-icon {
+    fill: var(--lwt-toolbarbutton-icon-fill-attention, var(--toolbarbutton-icon-fill-attention, currentColor)) !important;
+  }
+
+  @supports not -moz-bool-pref("uc.tweak.smaller-context-menu-text") {
+    @media (-moz-platform: windows) {
+      .menu-text,
+      .menu-iconic-text,
+      panel .toolbarbutton-text {
+        margin-inline-start: 0 !important;
+        margin-block: -3px -1px !important;
+        padding-block: 0 !important;
+      }
+
+      .menu-text,
+      .menu-iconic-text,
+      panel .toolbarbutton-text,
+      #appMenu-fxa-status2,
+      .panel-header {
+        font-size: 13.6px !important;
+      }
+    }
+  }
 }
