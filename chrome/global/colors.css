@@ -161,7 +161,26 @@
   color: #fff !important;
 }
 
+#statuspanel-label {
+  background-color: var(--toolbar-field-focus-background-color) !important;
+  color: var(--toolbar-field-focus-color) !important;
+  border-color: transparent !important;
+  box-shadow: 0 2px 5px #0004, 0 0 0 1px #0002 !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  #statuspanel-label {
+    box-shadow: 0 2px 5px #0004, 0 0 0 1px #0004 !important;
+  }
+}
+
 @media (-moz-platform: windows) {
+  tooltip {
+    background-color: var(--arrowpanel-background) !important;
+    color: var(--arrowpanel-color) !important;
+    border-color: var(--arrowpanel-border-color) !important;
+  }
+
   .titlebar-button:not(.titlebar-close):hover {
     background-color: color-mix(in srgb, currentColor 11%, transparent) !important;
   }
