@@ -96,7 +96,8 @@
   #tracking-protection-icon-container,
   #fxa-toolbar-menu-button,
   panel button,
-  panel menulist {
+  panel menulist,
+  .titlebar-button {
     transition: background-color 0.25s ease !important;
   }
 
@@ -109,7 +110,8 @@
   #tracking-protection-icon-container:not([disabled=true]):is([open],[checked],:hover:active),
   #fxa-toolbar-menu-button:not([disabled=true]):is([open],[checked],:hover:active),
   panel button:not([disabled=true]):is([open],[checked],:hover:active),
-  panel menulist:not([disabled=true]):is([open],[checked],:hover:active) {
+  panel menulist:not([disabled=true]):is([open],[checked],:hover:active),
+  .titlebar-button:not([disabled=true]):hover:active {
     transition-duration: 0s !important;
   }
 }

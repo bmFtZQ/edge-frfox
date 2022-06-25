@@ -9,10 +9,6 @@
   --identity-box-margin-inline: 2px !important;
 }
 
-:root:not(:-moz-lwtheme) #urlbar {
-  --urlbar-box-bgcolor: unset !important;
-}
-
 :root[style*="--lwt-accent-color: rgb(240, 240, 244)"] #urlbar[focused="true"]:not([suppress-focus-border])>#urlbar-background,
 :root[style*="--lwt-accent-color: rgb(240, 240, 244)"] #searchbar:focus-within {
   outline-color: color-mix(in srgb, var(--toolbar-field-focus-border-color) 50%, transparent) !important;
@@ -193,6 +189,14 @@
 #identity-box[pageproxystate="valid"].chromeUI>.identity-box-button:not(:hover, [open]),
 #identity-box[pageproxystate="valid"].extensionPage>.identity-box-button:not(:hover, [open]) {
   background-color: transparent !important;
+}
+
+:is(:root:not(:-moz-lwtheme),
+:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] #urlbar[focused="true"],
+:root[lwt-default-theme-in-dark-mode="true"],
+:root[style*="--lwt-accent-color: rgb(28, 27, 34)"]
+) #urlbar-search-mode-indicator {
+  background-color: var(--urlbar-box-hover-bgcolor) !important;
 }
 
 /* increase space between icon and text */

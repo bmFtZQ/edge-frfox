@@ -51,6 +51,7 @@ browsing indicator) */
     --lwt-accent-color: #f3f3f3 !important;
     --lwt-accent-color-inactive: unset !important;
     --toolbar-bgcolor: #fff !important;
+    --lwt-tab-text: #262626 !important;
     --uc-urlbar-shadow: none !important;
   }
 
@@ -67,6 +68,8 @@ browsing indicator) */
     :root:not(:-moz-lwtheme) {
       --toolbar-bgcolor: color-mix(in srgb, -moz-dialog 80%, #fff) !important;
       --toolbar-field-background-color: Field !important;
+      --lwt-tab-text: -moz-dialogtext !important;
+      --uc-tab-border-color: #ffffff0f !important;
     }
   }
 
@@ -92,7 +95,13 @@ browsing indicator) */
   }
 
   .tabbrowser-tab[selected] .tab-label {
-    font-weight: 600 !important;
+    font-weight: 500 !important;
+  }
+
+  @media (-moz-platform: windows) {
+    .tabbrowser-tab[selected] .tab-label {
+      font-weight: 600 !important;
+    }
   }
 
   /* adjust spacing of area above tabs */
@@ -163,13 +172,6 @@ browsing indicator) */
       background: transparent !important;
     }
 
-    @supports -moz-bool-pref("uc.tweak.floating-tabs") {
-      #navigator-toolbox:not(:-moz-lwtheme),
-      #main-window[lwt-default-theme-in-dark-mode="true"] #navigator-toolbox:not(:-moz-window-inactive) {
-        background: transparent !important;
-      }
-    }
-
     /* force tab color (for the tab transparency) */
     .tab-background:is([selected], [multiselected]) {
       background: var(--toolbar-bgcolor) !important;
@@ -183,10 +185,12 @@ browsing indicator) */
     @supports -moz-bool-pref("uc.tweak.floating-tabs") {
       :root:not(:-moz-lwtheme):not(:-moz-window-inactive) {
         --toolbar-bgcolor: #ffffffcc !important;
+        --lwt-accent-color: #0000 !important;
       }
 
       :root[lwt-default-theme-in-dark-mode="true"]:not(:-moz-window-inactive) {
         --toolbar-bgcolor: #ffffff25 !important;
+        --lwt-accent-color: #0000 !important;
       }
     }
 
@@ -207,6 +211,26 @@ browsing indicator) */
 
     :root:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode="true"]):is([inFullscreen], [sizemode="maximized"]) .titlebar-close {
       padding-right: 19px !important;
+    }
+
+    @supports -moz-bool-pref("uc.tweak.win11-mica-toolbar") {
+      :root:not(:-moz-lwtheme):not(:-moz-window-inactive) {
+        --lwt-accent-color: #00000015 !important;
+        --toolbar-bgcolor: #ffffffbf !important;
+        --uc-urlbar-shadow: 0 0 4px rgba(0, 0, 0, 0.03) !important;
+      }
+
+      :root[lwt-default-theme-in-dark-mode="true"]:not(:-moz-window-inactive) {
+        --toolbar-bgcolor: #4a4a4a70 !important;
+        --toolbar-field-background-color: #0004 !important;
+        --toolbar-field-focus-background-color: #2B2B2B !important;
+        --chrome-content-separator-color: #fff3 !important;
+      }
+
+      #navigator-toolbox #titlebar,
+      #navigator-toolbox .tab-background {
+        box-shadow: none !important;
+      }
     }
   }
 }

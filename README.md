@@ -76,7 +76,7 @@ To disable a tweak, set the key to `false` or delete it, then restart the browse
 |-|
 |`uc.tweak.less-permissions-button-padding`|
 
-|use Firefox's default context menu font-size|
+|use Firefox's default context menu font-size (only applies to Windows)|
 |-|
 |`uc.tweak.smaller-context-menu-text`|
 

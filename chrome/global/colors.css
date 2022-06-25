@@ -21,17 +21,17 @@
   --toolbar-field-focus-background-color: var(--toolbar-field-background-color) !important;
   --toolbar-field-focus-color: var(--toolbar-field-color) !important;
   --toolbar-field-focus-border-color: #0055D7 !important;
+  --urlbar-box-bgcolor: rgba(0, 0, 0, 0.09) !important;
+  --urlbar-box-hover-bgcolor: rgba(0, 0, 0, 0.09) !important;
+  --urlbar-box-focus-bgcolor: rgba(0, 0, 0, 0.22) !important;
   --urlbar-icon-fill-opacity: 0.6 !important;
   --urlbar-popup-url-color: #0072C9 !important;
   --lwt-brighttext-url-color: var(--urlbar-popup-url-color) !important;
-  --urlbar-box-bgcolor: var(--toolbar-field-background-color) !important;
   --autocomplete-popup-background: #fff !important;
   --autocomplete-popup-color: #fff !important;
   --autocomplete-popup-highlight-background: #f2f2f2 !important;
   --autocomplete-popup-hover-background: #e5e5e5 !important;
   --autocomplete-popup-separator-color: #dadada00 !important;
-  --toolbarbutton-hover-background: #e0e0e0 !important;
-  --toolbarbutton-active-background: #d5d5d5 !important;
   --button-bgcolor: #EDEDED !important;
   --button-hover-bgcolor: #e5e5e5 !important;
   --button-active-bgcolor: #d5d5d5 !important;
@@ -59,8 +59,8 @@
   --focus-outline-color: #0055D7 !important;
   --panel-shortcut-color: inherit !important;
   --uc-urlbar-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
-  --toolbarbutton-hover-background: #00000014 !important;
-  --toolbarbutton-active-background: #00000021 !important;
+  --toolbarbutton-hover-background: rgba(0, 0, 0, 0.08) !important;
+  --toolbarbutton-active-background: rgba(0, 0, 0, 0.12) !important;
   --uc-private-browsing-indicator: var(--button-primary-bgcolor);
   --uc-private-browding-indicator-hover: var(--button-primary-hover-bgcolor);
   --uc-private-browding-indicator-active: var(--button-primary-active-bgcolor);
@@ -88,10 +88,12 @@
   --toolbar-field-focus-background-color: var(--toolbar-field-background-color) !important;
   --toolbar-field-focus-color: var(--toolbar-field-color) !important;
   --toolbar-field-focus-border-color: #63ADE5 !important;
+  --urlbar-box-bgcolor: rgba(255, 255, 255, 0.11) !important;
+  --urlbar-box-hover-bgcolor: rgba(255, 255, 255, 0.11) !important;
+  --urlbar-box-focus-bgcolor: rgba(255, 255, 255, 0.28) !important;
   --urlbar-icon-fill-opacity: 1 !important;
   --urlbar-popup-url-color: #75B6E8 !important;
   --lwt-brighttext-url-color: var(--urlbar-popup-url-color) !important;
-  --urlbar-box-bgcolor: var(--toolbar-field-background-color) !important;
   --autocomplete-popup-background: #4A4A4A !important;
   --autocomplete-popup-color: #fff !important;
   --autocomplete-popup-highlight-background: #383838 !important;
@@ -123,12 +125,18 @@
   --panel-banner-item-update-supported-bgcolor: #81C995 !important;
   --focus-outline-color: #63ADE5 !important;
   --panel-shortcut-color: inherit !important;
-  --toolbarbutton-hover-background: #ffffff25 !important;
-  --toolbarbutton-active-background: #ffffff32 !important;
+  --toolbarbutton-hover-background: rgba(255, 255, 255, 0.1) !important;
+  --toolbarbutton-active-background: rgba(255, 255, 255, 0.16) !important;
   --uc-private-browsing-indicator: var(--button-primary-bgcolor);
   --uc-private-browding-indicator-hover: var(--button-primary-hover-bgcolor);
   --uc-private-browding-indicator-active: var(--button-primary-active-bgcolor);
   --uc-private-browding-indicator-text: var(--button-primary-color);
+}
+
+#urlbar {
+  --urlbar-box-bgcolor: inherit !important;
+  --urlbar-box-hover-bgcolor: inherit !important;
+  --urlbar-box-focus-bgcolor: inherit !important;
 }
 
 /* Change Colour of page when loading */
@@ -144,7 +152,7 @@
 
 /* make the titlebar buttons black/white on default themes */
 :root:not(:-moz-lwtheme)[tabsintitlebar] .titlebar-buttonbox,
-:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] .titlebar-buttonbox {
+:root[style*="--lwt-accent-color: rgb(240, 240, 244)"][tabsintitlebar] .titlebar-buttonbox {
   color: #000 !important;
 }
 
@@ -153,8 +161,29 @@
   color: #fff !important;
 }
 
-/* library window theme */
 @media (-moz-platform: windows) {
+  .titlebar-button:not(.titlebar-close):hover {
+    background-color: color-mix(in srgb, currentColor 11%, transparent) !important;
+  }
+
+  .titlebar-button:hover:active {
+    background-color: color-mix(in srgb, currentColor 20%, transparent) !important;
+  }
+
+  .titlebar-close:hover {
+    stroke: white !important;
+    background-color: #e81123 !important;
+  }
+  
+  .titlebar-close:hover:active {
+    background-color: #EF6B76 !important;
+  }
+  
+  toolbar[brighttext] .titlebar-close:hover:active {
+    background-color: #9C1420 !important;
+  }
+
+  /* library window theme */
   window#places {
     --organizer-color: #000 !important;
     --organizer-deemphasized-color: #666 !important;
