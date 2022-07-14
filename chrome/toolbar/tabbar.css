@@ -9,6 +9,7 @@
   --uc-toolbarbutton-inner-padding: 6px !important;
   --toolbarbutton-border-radius: 2px !important;
   --tabs-navbar-shadow-size: 0 !important;
+  --tab-shadow-max-size: 0 !important;
 }
 
 /* tab open/close transition */
@@ -324,8 +325,12 @@ toolbarbutton[part="scrollbutton-down"] {
   padding-inline-start: 6px !important;
 }
 
-#tabbrowser-tabs[overflow] .tabbrowser-tab[last-visible-tab]:not([pinned]) {
-  margin-inline-end: 7px !important;
+#tabbrowser-tabs[positionpinnedtabs] > #tabbrowser-arrowscrollbox {
+  margin-inline-start: 8px !important;
+}
+
+#tabbrowser-tabs[positionpinnedtabs] > #tabbrowser-arrowscrollbox > .tabbrowser-tab[pinned] {
+  clip-path: inset(-4px -4px 0) !important;
 }
 
 .tabbrowser-tab:is([visuallyselected="true"], [multiselected])>.tab-stack>.tab-background {
