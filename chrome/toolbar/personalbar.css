@@ -16,12 +16,12 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
   content: "";
   display: block;
   border-inline-start: 1px solid var(--toolbarseparator-color) !important;
-  margin-block: 8px !important;
+  margin-block: 6px 10px !important;
   border-image-source: none !important;
 }
 
 #PersonalToolbar {
-  padding-inline: var(--toolbar-start-end-padding) calc(var(--toolbar-start-end-padding) + 4px) !important;
+  padding-inline: calc(var(--toolbar-start-end-padding) - 2px) calc(var(--toolbar-start-end-padding) + 4px) !important;
 }
 
 #managed-bookmarks>.toolbarbutton-icon,

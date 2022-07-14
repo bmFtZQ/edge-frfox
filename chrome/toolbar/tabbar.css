@@ -205,12 +205,19 @@
 #TabsToolbar .toolbarbutton-1>.toolbarbutton-icon,
 #TabsToolbar .toolbarbutton-1>.toolbarbutton-badge-stack {
   border-radius: var(--toolbarbutton-border-radius) !important;
-  padding: var(--uc-toolbarbutton-inner-padding) !important;
+  padding: var(--uc-toolbarbutton-inner-padding) var(--uc-toolbarbutton-inner-inline-padding) !important;
 }
 
 #TabsToolbar .toolbarbutton-1>.toolbarbutton-icon {
-  width: calc(2 * var(--uc-toolbarbutton-inner-padding) + 16px) !important;
+  width: calc(2 * var(--uc-toolbarbutton-inner-inline-padding) + 16px) !important;
   height: calc(2 * var(--uc-toolbarbutton-inner-padding) + 16px) !important;
+}
+
+#TabsToolbar #tabs-newtab-button>.toolbarbutton-icon,
+#TabsToolbar #alltabs-button>.toolbarbutton-badge-stack,
+#TabsToolbar #tabbrowser-tabs[hasadjacentnewtabbutton][overflow="true"] ~ #new-tab-button>.toolbarbutton-icon {
+  padding: var(--uc-toolbarbutton-inner-padding) !important;
+  width: calc(2 * var(--uc-toolbarbutton-inner-padding) + 16px) !important;
 }
 
 #tabbrowser-tabs #tabs-newtab-button {
@@ -278,24 +285,13 @@ toolbarbutton[part="scrollbutton-down"] {
 
 /* mac titlebar buttons */
 @media (-moz-platform: macos) {
-  @media (-moz-mac-big-sur-theme:0) {
-    .titlebar-buttonbox {
-      margin-inline: 10px !important;
-    }
-
-    .titlebar-buttonbox-container {
-      margin-inline-end: -8px !important;
-    }
+  .titlebar-buttonbox {
+    margin-inline: calc((var(--tab-min-height) + var(--tab-block-margin) - 14px) / 2) !important;
   }
 
-  @media (-moz-mac-big-sur-theme:1) {
-    .titlebar-buttonbox {
-      margin-inline: calc((var(--tab-min-height) + var(--tab-block-margin) - 14px) / 2) !important;
-    }
-  
-    .titlebar-buttonbox-container {
-      margin-inline-end: -8px !important;
-    }
+  .titlebar-buttonbox-container {
+    margin-inline-start: -6px !important;
+    margin-inline-end: -2px !important;
   }
 }
 
@@ -318,6 +314,14 @@ toolbarbutton[part="scrollbutton-down"] {
 
 #tabbrowser-tabs:not([overflow="true"]) .tabbrowser-tab[first-visible-tab] {
   margin-inline-start: 8px !important;
+}
+
+#tabbrowser-tabs {
+  margin-inline-start: -6px !important;
+}
+
+#TabsToolbar {
+  padding-inline-start: 6px !important;
 }
 
 #tabbrowser-tabs[overflow] .tabbrowser-tab[last-visible-tab]:not([pinned]) {
