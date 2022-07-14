@@ -30,7 +30,8 @@
 
 /* account button */
 #navigator-toolbox>toolbar #fxa-toolbar-menu-button,
-#navigator-toolbox>toolbar #fxa-toolbar-menu-button>.toolbarbutton-badge-stack {
+#navigator-toolbox>toolbar #fxa-toolbar-menu-button>.toolbarbutton-badge-stack,
+#fxa-avatar-image {
   border-radius: 99px !important;
 }
 
@@ -39,7 +40,15 @@
   margin-inline: calc(var(--uc-toolbarbutton-inner-inline-padding) - var(--toolbarbutton-inner-padding)) !important;
 }
 
-:root[fxastatus="signedin"] #fxa-avatar-image {
+#fxa-toolbar-menu-button {
+  display: -moz-box !important;
+}
+
+#widget-overflow-list>#fxa-toolbar-menu-button #fxa-avatar-image {
+  scale: 1.25 !important;
+}
+
+#nav-bar-customization-target>#fxa-toolbar-menu-button #fxa-avatar-image {
   scale: 1.5 !important;
 }
 

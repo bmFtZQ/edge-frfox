@@ -37,6 +37,14 @@ and 11 so applied to both) */
   fill: currentColor !important;
 }
 
+:root[fxastatus="not_configured"] #fxa-avatar-image {
+  list-style-image: url("account.svg") !important;
+}
+
+:root[privatebrowsingmode] #fxa-avatar-image {
+  list-style-image: url("account-private.svg") !important;
+}
+
 /* disable context menu icons on macOS */
 @media not (-moz-platform: macos) {
   #context-back {
