@@ -162,13 +162,13 @@ browsing indicator) */
 @media (-moz-windows-compositor) {
   @supports -moz-bool-pref("uc.tweak.win11-mica") {
     /* enable mica appearance */
-    #main-window:not(:-moz-lwtheme),
-    #main-window[lwt-default-theme-in-dark-mode="true"] {
+    #main-window:not([inFullscreen]):not(:-moz-lwtheme),
+    #main-window:not([inFullscreen])[lwt-default-theme-in-dark-mode="true"] {
       appearance: -moz-win-glass !important;
       background: transparent !important;
     }
 
-    #main-window[lwt-default-theme-in-dark-mode="true"] #navigator-toolbox:not(:-moz-window-inactive) {
+    #main-window:not([inFullscreen])[lwt-default-theme-in-dark-mode="true"] #navigator-toolbox:not(:-moz-window-inactive) {
       background: transparent !important;
     }
 
@@ -178,17 +178,17 @@ browsing indicator) */
     }
 
     /* color adjustments */
-    :root:not(:-moz-lwtheme):not(:-moz-window-inactive) {
+    :root:not([inFullscreen]):not(:-moz-lwtheme):not(:-moz-window-inactive) {
       --lwt-accent-color: #00000020 !important;
     }
 
     @supports -moz-bool-pref("uc.tweak.floating-tabs") {
-      :root:not(:-moz-lwtheme):not(:-moz-window-inactive) {
+      :root:not([inFullscreen]):not(:-moz-lwtheme):not(:-moz-window-inactive) {
         --toolbar-bgcolor: #ffffffcc !important;
         --lwt-accent-color: #0000 !important;
       }
 
-      :root[lwt-default-theme-in-dark-mode="true"]:not(:-moz-window-inactive) {
+      :root:not([inFullscreen])[lwt-default-theme-in-dark-mode="true"]:not(:-moz-window-inactive) {
         --toolbar-bgcolor: #ffffff25 !important;
         --lwt-accent-color: #0000 !important;
       }
@@ -201,7 +201,7 @@ browsing indicator) */
       margin-bottom: calc(var(--uc-titlebar-size) - var(--uc-titlebar-button-size)) !important;
     }
 
-    :root:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode="true"]) .titlebar-button:not(.titlebar-close:hover, :-moz-window-inactive) {
+    :root:not([inFullscreen]):is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode="true"]) .titlebar-button:not(.titlebar-close:hover, :-moz-window-inactive) {
       list-style-image: none !important;
     }
 
