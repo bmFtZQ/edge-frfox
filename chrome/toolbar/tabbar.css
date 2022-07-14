@@ -351,8 +351,12 @@ toolbarbutton[part="scrollbutton-down"] {
   box-shadow: 0 -3px 2px -3px rgba(0, 0, 0, 0.75) inset !important;
 }
 
-#tabbrowser-tabs[closebuttons="activetab"] .tabbrowser-tab[selected="true"] .tab-label-container {
-  --tab-label-mask-size: 0.5em !important;
+#tabbrowser-tabs[closebuttons="activetab"] .tabbrowser-tab .tab-label-container {
+  --tab-label-mask-size: 1em !important;
+}
+
+#tabbrowser-tabs[closebuttons="activetab"] .tabbrowser-tab:not([pinned]) .tab-content {
+  padding-inline: calc(var(--inline-tab-padding) - 4px) 0 !important;
 }
 
 .tab-content {

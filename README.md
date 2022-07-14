@@ -18,7 +18,7 @@ A Firefox userChrome.css theme that aims to recreate the look and feel of the Ch
 
    ##### Recommended:
    1. `browser.tabs.tabMinWidth` = `66`
-   2. `browser.tabs.tabClipWidth` = `66`
+   2. `browser.tabs.tabClipWidth` = `86`
 
    Additional tweaks can also be applied to the theme, such as Mica (Windows 11 Only), Floating Tabs and more. See [Tweaks](#tweaks).
 
@@ -83,6 +83,10 @@ To disable a tweak, set the key to `false` or delete it, then restart the browse
 |disable custom context menus|
 |-|
 |`uc.tweak.revert-context-menu`|
+
+|if a tab's close button is hidden, show it when hovering over tab|
+|-|
+|`uc.tweak.show-tab-close-button-on-hover`|
 
 ## Mica Tweak Instructions (Windows 11 Only)
 1. Download and install [Mica For Everyone](https://github.com/MicaForEveryone/MicaForEveryone).
