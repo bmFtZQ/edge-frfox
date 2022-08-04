@@ -16,7 +16,7 @@ A Firefox userChrome.css theme that aims to recreate the look and feel of the Ch
    ###### On macOS:
    1. To use the Edge style context menu on macOS then set `widget.macos.native-context-menus` = `false`
 
-   ##### Recommended:
+   ###### Recommended:
    1. `browser.tabs.tabMinWidth` = `66`
    2. `browser.tabs.tabClipWidth` = `86`
 
@@ -37,6 +37,16 @@ A Firefox userChrome.css theme that aims to recreate the look and feel of the Ch
 Certain tweaks can be applied to the theme, to enable them navigate to `about:config` and create a boolean key for each tweak you want to use and set it to `true`, then restart the browser.
 
 To disable a tweak, set the key to `false` or delete it, then restart the browser.
+
+|use background image on newtab page|
+|-|
+|**SETUP: Add an image named `background-0.(jpg/png)` to the `chrome` folder.**|
+|**OPTIONAL: Add a second image named `background-1.(jpg/png)` for seperate dark mode background.**|
+|`uc.tweak.newtab-background`|
+
+|hide Firefox logo on newtab page|
+|-|
+|`uc.tweak.hide-newtab-logo`|
 
 |disable drag space above tabs|
 |-|

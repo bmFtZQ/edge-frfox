@@ -57,7 +57,7 @@
 
   /* unpinned sites have lower opacity title */
   .top-site-button .title:not(.pinned) {
-    opacity: 0.6 !important;
+    opacity: 0.7 !important;
   }
 
   /* search bar */
@@ -120,15 +120,40 @@
   }
 
   /* card */
+  .card-outer,
   .card-outer .card,
   .ds-card-grid.ds-card-grid-border .ds-card:not(.placeholder) {
-    border-radius: 4px !important;
+    border-radius: 6px !important;
+  }
+
+  .card-outer .card,
+  .ds-card-grid.ds-card-grid-border .ds-card:not(.placeholder) {
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3) !important;
   }
 
   .card-outer .card-preview-image-outer,
   .ds-card-grid.ds-card-grid-border .ds-card:not(.placeholder) .img-wrapper .img img {
-    border-radius: 4px 4px 0 0 !important
+    border-radius: 6px 6px 0 0 !important
+  }
+
+  .fake-textbox {
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  .outer-wrapper.only-search {
+    display: flex !important;
+    padding: 30px !important;
+  }
+
+  @supports -moz-bool-pref("uc.tweak.hide-newtab-logo") {
+    .logo-and-wordmark {
+      display: none !important;
+    }
+
+    .outer-wrapper:not(.fixed-search) .search-wrapper {
+      padding-top: 0 !important;
+    }
   }
 }
 
@@ -186,5 +211,64 @@
 
   .info {
     background-color: var(--uc-background-color-secondary) !important;
+  }
+}
+
+@supports -moz-bool-pref("uc.tweak.newtab-background") {
+  @-moz-document url(about:newtab), url(about:home), url(about:privatebrowsing) {
+    body:not([lwt-newtab]),
+    body[lwt-newtab],
+    body[lwt-newtab][lwt-newtab-brighttext] {
+      /* specify both jpg and png file extensions, but jpg images will always
+      have a higher priority */
+      --bg-0: url(../background-0.jpg), url(../background-0.png);
+      --bg-1: url(../background-1.jpg), url(../background-1.png);
+      --newtab-element-hover-color: rgba(239, 239, 239, 0.3) !important;
+      --newtab-element-active-color: rgba(239, 239, 239, 0.45) !important;
+      background-color: #252525 !important;
+      background-image: var(--bg-0) !important;
+      background-position: center !important;
+      background-size: cover !important;
+      background-attachment: fixed !important;
+      transition: background 0.25s ease !important;
+    }
+
+    body[lwt-newtab][lwt-newtab-brighttext] {
+      background-image: var(--bg-1), var(--bg-0) !important;
+      --newtab-element-hover-color: rgba(66, 66, 66, 0.4) !important;
+      --newtab-element-active-color: rgba(66, 66, 66, 0.55) !important;
+    }
+
+    .wordmark,
+    .icon-settings,
+    .top-site-outer .context-menu-button {
+      color: #fff !important;
+      fill: currentColor !important;
+      filter: drop-shadow(0 0.3px 0.6px #000) !important;
+    }
+
+    .top-site-outer .title,
+    .ds-header, .ds-layout .section-title span,
+    .ds-navigation {
+      color: #fff !important;
+      text-shadow: 0 1px 2px #000 !important;
+      -moz-osx-font-smoothing: auto !important;
+    }
+
+    .section-top-bar .learn-more-link a,
+    .ds-navigation a {
+      color: #b3d4ff !important;
+      text-shadow: 0 1px 2px #000 !important;
+      -moz-osx-font-smoothing: auto !important;
+    }
+
+    .top-site-outer .title .sponsored-label {
+      color: #fffc !important;
+    }
+
+    body:not(.inline-onboarding) .fixed-search .search-wrapper {
+      border-bottom: 0 !important;
+      background: transparent linear-gradient(#0004 , transparent) !important;
+    }
   }
 }
