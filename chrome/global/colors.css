@@ -65,6 +65,8 @@
   --uc-private-browding-indicator-hover: var(--button-primary-hover-bgcolor);
   --uc-private-browding-indicator-active: var(--button-primary-active-bgcolor);
   --uc-private-browding-indicator-text: var(--button-primary-color);
+  --tab-icon-overlay-stroke: #fff !important;
+  --tab-icon-overlay-fill: #252525 !important;
 }
 
 /* dark */
@@ -131,6 +133,8 @@
   --uc-private-browding-indicator-hover: var(--button-primary-hover-bgcolor);
   --uc-private-browding-indicator-active: var(--button-primary-active-bgcolor);
   --uc-private-browding-indicator-text: var(--button-primary-color);
+  --tab-icon-overlay-stroke: #4b4b4b !important;
+  --tab-icon-overlay-fill: #fff !important;
 }
 
 #urlbar {

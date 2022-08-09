@@ -230,7 +230,6 @@
       background-position: center !important;
       background-size: cover !important;
       background-attachment: fixed !important;
-      transition: background 0.25s ease !important;
     }
 
     body[lwt-newtab][lwt-newtab-brighttext] {

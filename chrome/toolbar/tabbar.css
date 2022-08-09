@@ -92,13 +92,13 @@
   --uc-tab-corner-bg: var(--tab-selected-bgcolor, var(--toolbar-bgcolor));
 }
 
-.tabbrowser-tab:hover > .tab-stack > .tab-background:not([selected="true"], [multiselected]) {
+.tabbrowser-tab:hover>.tab-stack>.tab-background:not([selected="true"], [multiselected]) {
   background-color: color-mix(in srgb, currentColor 8%, transparent) !important;
   --uc-tab-corner-bg: color-mix(in srgb, currentColor 8%, transparent) !important;
 }
 
 @supports not -moz-bool-pref("uc.tweak.floating-tabs") {
-  :root:not([lwtheme-brighttext="true"]) .tabbrowser-tab:hover > .tab-stack > .tab-background:not([selected="true"], [multiselected]) {
+  :root:not([lwtheme-brighttext="true"]) .tabbrowser-tab:hover>.tab-stack>.tab-background:not([selected="true"], [multiselected]) {
     background-color: color-mix(in srgb, white 30%, transparent) !important;
     --uc-tab-corner-bg: color-mix(in srgb, white 30%, transparent) !important;
   }
@@ -182,7 +182,7 @@
   opacity: 1 !important;
 }
 
-.tab-icon-overlay:not([pinned]) {
+#tabbrowser-tabs:not([closebuttons="activetab"]) .tab-icon-overlay:not([pinned]) {
   margin-inline: 22px 6px !important;
 }
 
@@ -190,10 +190,52 @@
   margin-inline: 0px 6px !important;
 }
 
+/* move sound playing icon on top of favicon when there isn't enough space */
+.tab-icon-overlay:not([crashed]):is([pinned], [sharing]),
+#tabbrowser-tabs[closebuttons="activetab"] .tab-icon-overlay:not([crashed]) {
+  top: -5.5px !important;
+  inset-inline-end: -6px !important;
+}
+
+#tabbrowser-tabs[closebuttons="activetab"] :is(
+  .tab-icon-overlay[soundplaying]:not([crashed]),
+  .tab-icon-overlay[muted]:not([crashed]),
+  .tab-icon-overlay[activemedia-blocked]:not([crashed])
+) {
+  stroke: var(--tab-icon-overlay-stroke, white) !important;
+  color: var(--tab-icon-overlay-fill, black) !important;
+  fill-opacity: 1 !important;
+}
+
+#TabsToolbar[brighttext] #tabbrowser-tabs[closebuttons="activetab"] :is(
+  .tab-icon-overlay[soundplaying]:not([crashed]),
+  .tab-icon-overlay[muted]:not([crashed]),
+  .tab-icon-overlay[activemedia-blocked]:not([crashed])
+) {
+  stroke: var(--tab-icon-overlay-stroke, black) !important;
+  color: var(--tab-icon-overlay-fill, white) !important;
+}
+
+#tabbrowser-tabs[closebuttons="activetab"] :is(
+  .tab-icon-overlay:not([crashed])[soundplaying]:hover,
+  .tab-icon-overlay:not([crashed])[muted]:hover,
+  .tab-icon-overlay:not([crashed])[activemedia-blocked]:hover
+) {
+  background-color: var(--tab-icon-overlay-stroke, white) !important;
+}
+
+#TabsToolbar[brighttext] #tabbrowser-tabs[closebuttons="activetab"] :is(
+  .tab-icon-overlay:not([crashed])[soundplaying]:hover,
+  .tab-icon-overlay:not([crashed])[muted]:hover,
+  .tab-icon-overlay:not([crashed])[activemedia-blocked]:hover
+) {
+  background-color: var(--tab-icon-overlay-stroke, black) !important;
+}
+
 .tab-icon-overlay[soundplaying]:not([crashed]),
 .tab-icon-overlay[muted]:not([crashed]),
 .tab-icon-overlay[activemedia-blocked]:not([crashed]) {
-  border-radius: 2px !important;
+  border-radius: 4px !important;
   padding: 0 !important;
 }
 
@@ -216,7 +258,7 @@
 
 #TabsToolbar #tabs-newtab-button>.toolbarbutton-icon,
 #TabsToolbar #alltabs-button>.toolbarbutton-badge-stack,
-#TabsToolbar #tabbrowser-tabs[hasadjacentnewtabbutton][overflow="true"] ~ #new-tab-button>.toolbarbutton-icon {
+#TabsToolbar #tabbrowser-tabs[hasadjacentnewtabbutton][overflow="true"]~#new-tab-button>.toolbarbutton-icon {
   padding: var(--uc-toolbarbutton-inner-padding) !important;
   width: calc(2 * var(--uc-toolbarbutton-inner-padding) + 16px) !important;
 }
@@ -325,11 +367,11 @@ toolbarbutton[part="scrollbutton-down"] {
   padding-inline-start: 6px !important;
 }
 
-#tabbrowser-tabs[positionpinnedtabs] > #tabbrowser-arrowscrollbox {
+#tabbrowser-tabs[positionpinnedtabs]>#tabbrowser-arrowscrollbox {
   margin-inline-start: 8px !important;
 }
 
-#tabbrowser-tabs[positionpinnedtabs] > #tabbrowser-arrowscrollbox > .tabbrowser-tab[pinned] {
+#tabbrowser-tabs[positionpinnedtabs]>#tabbrowser-arrowscrollbox>.tabbrowser-tab[pinned] {
   clip-path: inset(-4px -4px 0) !important;
 }
 

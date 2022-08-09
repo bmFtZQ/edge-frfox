@@ -42,7 +42,7 @@
 /* app menu */
 .addon-banner-item,
 .panel-banner-item {
-  margin: 0 4px 4px !important;
+  margin: 2px 4px 2px !important;
   padding-inline: 4px 12px !important;
   padding-block: var(--arrowpanel-menuitem-padding-block) !important;
   border-radius: var(--arrowpanel-menuitem-border-radius) !important;
