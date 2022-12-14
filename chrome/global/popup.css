@@ -54,13 +54,13 @@
 }
 
 .widget-overflow-list .toolbarbutton-1:not(.toolbarbutton-combined)>.toolbarbutton-text,
-.subviewbutton:not(#appMenu-zoom-controls2 > .subviewbutton)>.toolbarbutton-icon+.toolbarbutton-text,
+.subviewbutton:not(#appMenu-zoom-controls > .subviewbutton)>.toolbarbutton-icon+.toolbarbutton-text,
 #appMenu-fxa-label2>vbox {
   padding-inline-start: var(--uc-arrowpanel-menuicon-margin-inline) !important;
 }
 
 /* special case menuitems with no icons */
-#appMenu-zoom-controls2>.toolbarbutton-text,
+#appMenu-zoom-controls>.toolbarbutton-text,
 #fxa-manage-account-button>vbox,
 #PanelUI-fxa-menu-syncnow-button>hbox {
   padding-inline-start: calc(16px + var(--uc-arrowpanel-menuicon-margin-inline)) !important;
@@ -95,28 +95,28 @@
 }
 
 /* zoom controls */
-#appMenu-zoom-controls2 {
+#appMenu-zoom-controls {
   border-top: 1px solid var(--panel-separator-color) !important;
   padding-inline: calc(var(--arrowpanel-menuitem-padding-inline) + var(--uc-arrowpanel-menuitem-margin-inline)) var(--uc-arrowpanel-menuitem-margin-inline) !important;
   padding-block: var(--uc-panel-zoom-padding-block) !important;
   margin: var(--panel-separator-margin-vertical) 0 calc(var(--panel-separator-margin-vertical) * -1) !important;
 }
 
-#appMenu-zoom-controls2>.subviewbutton {
+#appMenu-zoom-controls>.subviewbutton {
   padding: var(--uc-panel-zoom-button-padding) var(--uc-panel-zoom-button-inline-padding) !important;
   margin: 0 !important;
 }
 
-#appMenu-zoom-controls2>#appMenu-zoomReset-button2 {
+#appMenu-zoom-controls>#appMenu-zoomReset-button2 {
   padding: var(--uc-panel-zoom-button-padding) calc(var(--uc-panel-zoom-button-padding) / 2) !important;
 }
 
 /* #appMenu-zoomReduce-button2, */
-#appMenu-zoom-controls2>#appMenu-fullscreen-button2 {
+#appMenu-zoom-controls>#appMenu-fullscreen-button2 {
   margin-left: calc((var(--panel-separator-margin-vertical) + var(--uc-arrowpanel-menuitem-margin-block)) * 2 + 1px) !important;
 }
 
-#appMenu-zoom-controls2>#appMenu-fullscreen-button2::before {
+#appMenu-zoom-controls>#appMenu-fullscreen-button2::before {
   content: "";
   border-inline-start: 1px solid var(--panel-separator-color);
   display: block;
@@ -231,14 +231,14 @@
   margin-inline-start: var(--uc-arrowpanel-menuicon-margin-inline) !important;
 }
 
-#editBookmarkPanel > #editBookmarkHeaderSeparator,
-#editBookmarkPanel > .panel-subview-body > #editBookmarkSeparator {
+#editBookmarkPanel>#editBookmarkHeaderSeparator,
+#editBookmarkPanel>.panel-subview-body>#editBookmarkSeparator {
   margin-inline: 0 !important;
 }
 
 /* subview */
 .panel-header {
-  padding: 4px;
+  padding: 4px !important;
   padding-top: 4px !important;
 }
 
@@ -394,7 +394,7 @@ panelview .toolbarbutton-1,
   menupopup:not(.PanelUI-subView) menu,
   menupopup:not(.PanelUI-subView) menuseparator,
   panel {
-    -moz-appearance: none !important;
+    appearance: none !important;
   }
 
   menupopup:not(.PanelUI-subView),
