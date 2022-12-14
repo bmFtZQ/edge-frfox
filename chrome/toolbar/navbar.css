@@ -52,48 +52,6 @@
   scale: 1.5 !important;
 }
 
-:root[privatebrowsingmode] #fxa-toolbar-menu-button::before {
-  content: "Private" !important;
-  display: -moz-box !important;
-  font-size: 12px !important;
-}
-
-:root[privatebrowsingmode] #fxa-toolbar-menu-button {
-  background: var(--uc-private-browsing-indicator, var(--lwt-toolbarbutton-icon-fill-attention, var(--toolbarbutton-icon-fill-attention))) !important;
-  margin: 4px !important;
-  padding-inline: 8px 0 !important;
-  color: var(--uc-private-browding-indicator-text, var(--toolbar-bgcolor)) !important;
-  fill: currentColor !important;
-}
-
-:root[privatebrowsingmode] #fxa-toolbar-menu-button:hover {
-  background: var(--uc-private-browding-indicator-hover, color-mix(in srgb, var(--lwt-toolbarbutton-icon-fill-attention, var(--toolbarbutton-icon-fill-attention)) 90%, transparent)) !important;
-}
-
-:root[privatebrowsingmode] #fxa-toolbar-menu-button:not([disabled=true]):is([open], [checked], :hover:active) {
-  background: var(--uc-private-browding-indicator-active, color-mix(in srgb, var(--lwt-toolbarbutton-icon-fill-attention, var(--toolbarbutton-icon-fill-attention)) 70%, transparent)) !important;
-}
-
-@media (-moz-gtk-csd-available) {
-  :root[privatebrowsingmode] #fxa-toolbar-menu-button:not(:-moz-lwtheme) {
-    background: -moz-accent-color !important;
-    color: -moz-accent-color-foreground !important;
-  }
-  
-  :root[privatebrowsingmode] #fxa-toolbar-menu-button:not(:-moz-lwtheme):hover {
-    background:color-mix(in srgb, black 8%, -moz-accent-color) !important;
-  }
-  
-  :root[privatebrowsingmode] #fxa-toolbar-menu-button:not(:-moz-lwtheme):not([disabled=true]):is([open], [checked], :hover:active) {
-    background: color-mix(in srgb, black 16%, -moz-accent-color) !important;
-  }
-}
-
-:root[privatebrowsingmode] #nav-bar #fxa-toolbar-menu-button>.toolbarbutton-badge-stack {
-  background: transparent !important;
-  margin-inline: 0 !important;
-}
-
 /* button background transition */
 @media not (prefers-reduced-motion) {
   .toolbarbutton-1>.toolbarbutton-icon,
@@ -103,23 +61,21 @@
   .urlbar-page-action,
   .identity-box-button,
   #tracking-protection-icon-container,
-  #fxa-toolbar-menu-button,
   panel button,
   panel menulist,
   .titlebar-button {
     transition: background-color 0.25s ease !important;
   }
 
-  .toolbarbutton-1:not([disabled=true]):is([open],[checked],:hover:active)>.toolbarbutton-icon,
-  .toolbarbutton-1:not([disabled=true]):is([open],[checked],:hover:active)>.toolbarbutton-text,
-  .toolbarbutton-1:not([disabled=true]):is([open],[checked],:hover:active)>.toolbarbutton-badge-stack,
-  :not(.panel-subview-body>toolbaritem)>.bookmark-item:not(menu, menuitem):not([disabled=true]):is([open],[checked],:hover:active),
-  .urlbar-page-action:not([disabled=true]):is([open],[checked],:hover:active),
-  .identity-box-button:not([disabled=true]):is([open],[checked],:hover:active),
-  #tracking-protection-icon-container:not([disabled=true]):is([open],[checked],:hover:active),
-  #fxa-toolbar-menu-button:not([disabled=true]):is([open],[checked],:hover:active),
-  panel button:not([disabled=true]):is([open],[checked],:hover:active),
-  panel menulist:not([disabled=true]):is([open],[checked],:hover:active),
+  .toolbarbutton-1:not([disabled=true]):is([open], [checked], :hover:active)>.toolbarbutton-icon,
+  .toolbarbutton-1:not([disabled=true]):is([open], [checked], :hover:active)>.toolbarbutton-text,
+  .toolbarbutton-1:not([disabled=true]):is([open], [checked], :hover:active)>.toolbarbutton-badge-stack,
+  :not(.panel-subview-body>toolbaritem)>.bookmark-item:not(menu, menuitem):not([disabled=true]):is([open], [checked], :hover:active),
+  .urlbar-page-action:not([disabled=true]):is([open], [checked], :hover:active),
+  .identity-box-button:not([disabled=true]):is([open], [checked], :hover:active),
+  #tracking-protection-icon-container:not([disabled=true]):is([open], [checked], :hover:active),
+  panel button:not([disabled=true]):is([open], [checked], :hover:active),
+  panel menulist:not([disabled=true]):is([open], [checked], :hover:active),
   .titlebar-button:not([disabled=true]):hover:active {
     transition-duration: 0s !important;
   }

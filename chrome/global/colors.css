@@ -62,9 +62,7 @@
   --toolbarbutton-hover-background: rgba(0, 0, 0, 0.08) !important;
   --toolbarbutton-active-background: rgba(0, 0, 0, 0.12) !important;
   --uc-private-browsing-indicator: var(--button-primary-bgcolor);
-  --uc-private-browding-indicator-hover: var(--button-primary-hover-bgcolor);
-  --uc-private-browding-indicator-active: var(--button-primary-active-bgcolor);
-  --uc-private-browding-indicator-text: var(--button-primary-color);
+  --uc-private-browsing-indicator-text: var(--button-primary-color);
   --tab-icon-overlay-stroke: #fff !important;
   --tab-icon-overlay-fill: #252525 !important;
 }
@@ -130,9 +128,7 @@
   --toolbarbutton-hover-background: rgba(255, 255, 255, 0.1) !important;
   --toolbarbutton-active-background: rgba(255, 255, 255, 0.16) !important;
   --uc-private-browsing-indicator: var(--button-primary-bgcolor);
-  --uc-private-browding-indicator-hover: var(--button-primary-hover-bgcolor);
-  --uc-private-browding-indicator-active: var(--button-primary-active-bgcolor);
-  --uc-private-browding-indicator-text: var(--button-primary-color);
+  --uc-private-browsing-indicator-text: var(--button-primary-color);
   --tab-icon-overlay-stroke: #4b4b4b !important;
   --tab-icon-overlay-fill: #fff !important;
 }
@@ -197,11 +193,11 @@
     stroke: white !important;
     background-color: #e81123 !important;
   }
-  
+
   .titlebar-close:hover:active {
     background-color: #EF6B76 !important;
   }
-  
+
   toolbar[brighttext] .titlebar-close:hover:active {
     background-color: #9C1420 !important;
   }
@@ -299,10 +295,10 @@
   color: #000 !important;
 }
 
-@-moz-document url(chrome://browser/content/syncedtabs/sidebar.xhtml) {
-  body {
-    background: transparent !important;
-  }
+@-moz-document url(chrome://browser/content/syncedtabs/sidebar.xhtml){
+body {
+  background: transparent !important;
+}
 }
 
 .sidebar-panel[lwt-sidebar-brighttext][style*="--lwt-sidebar-background-color: rgb(56, 56, 61)"],
@@ -389,14 +385,12 @@ body[lwt-sidebar-brighttext][style*="--lwt-sidebar-background-color: rgb(56, 56,
     --panel-banner-item-update-supported-bgcolor: #1bba6b !important;
     --focus-outline-color: -moz-accent-color !important;
     --uc-private-browsing-indicator: -moz-accent-color !important;
-    --uc-private-browding-indicator-hover: var(--button-primary-hover-bgcolor);
-    --uc-private-browding-indicator-active: var(--button-primary-active-bgcolor);
-    --uc-private-browding-indicator-text: var(--button-primary-color);
+    --uc-private-browsing-indicator-text: var(--button-primary-color);
   }
 
   #sidebar-box:not([lwt-sidebar]) {
     --sidebar-background-color: -moz-dialog !important;
-    --sidebar-text-color:  -moz-dialog-text !important;
+    --sidebar-text-color: -moz-dialog-text !important;
   }
 
   #browser:not([style*="--sidebar-border-color"]) {
