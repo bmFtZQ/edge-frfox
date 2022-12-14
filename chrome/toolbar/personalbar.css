@@ -12,6 +12,10 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
   font-size: 12px !important;
 }
 
+#PersonalToolbar .toolbarbutton-1 {
+  padding: 0 !important;
+}
+
 #PlacesToolbarItems>toolbarseparator::before {
   content: "";
   display: block;
@@ -21,7 +25,7 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
 }
 
 #PersonalToolbar {
-  padding-inline: calc(var(--toolbar-start-end-padding) - 2px) calc(var(--toolbar-start-end-padding) + 4px) !important;
+  padding-inline: calc(var(--toolbar-start-end-padding) - 2px) calc(var(--toolbar-start-end-padding) + 6px) !important;
 }
 
 #managed-bookmarks>.toolbarbutton-icon,
@@ -29,4 +33,10 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
 #PlacesToolbarItems>.bookmark-item>.toolbarbutton-icon[label]:not([label=""]),
 #OtherBookmarks.bookmark-item[container]>.toolbarbutton-icon {
   margin-inline-end: 6px !important;
+}
+
+#PersonalToolbar .toolbarbutton-1>.toolbarbutton-icon {
+  width: calc(2 * var(--bookmark-block-padding) + 16px) !important;
+  height: calc(2 * var(--bookmark-block-padding) + 16px) !important;
+  padding: var(--bookmark-block-padding) !important;
 }
