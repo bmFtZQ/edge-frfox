@@ -1,7 +1,9 @@
 /* EdgeFr-Fox by bmFtZQ - content/newtab.css */
 
 /* colours */
-@-moz-document url-prefix("about:newtab"), url-prefix("about:home") {
+@-moz-document url-prefix("about:newtab"),
+url-prefix("about:home"),
+url-prefix("about:firefoxview") {
   body:not([lwt-newtab], [lwt-newtab-brighttext]),
   body[style*="--newtab-background-color: rgb(249, 249, 251)"] {
     --newtab-background-color: #F7F7F7 !important;
@@ -49,7 +51,8 @@
   }
 }
 
-@-moz-document url-prefix("about:newtab"), url-prefix("about:home") {
+@-moz-document url-prefix("about:newtab"),
+url-prefix("about:home") {
   /* hide pin */
   .icon.icon-pin-small {
     display: none !important;
@@ -160,14 +163,24 @@
 /* private browsing newtab */
 @-moz-document url-prefix(about:privatebrowsing) {
   :root {
-    --uc-wordmark-color: #737373 !important;
-    --uc-background-color-secondary: #fff !important;
+    --uc-wordmark-color: #737373;
+    --uc-background-color-secondary: #fff;
   }
 
   @media (prefers-color-scheme: dark) {
     :root {
-      --uc-wordmark-color: #fff !important;
+      --uc-wordmark-color: #fff;
+      --uc-background-color-secondary: #4a4a4a;
+    }
+  }
+
+  @supports -moz-bool-pref("browser.theme.dark-private-windows") {
+    html.private {
+      --in-content-page-color: white !important;
+      --in-content-page-background: #252525 !important;
+      --in-content-focus-outline-color: #63ADE5 !important;
       --uc-background-color-secondary: #4a4a4a !important;
+      --uc-wordmark-color: #fff !important;
     }
   }
 
@@ -211,11 +224,27 @@
 
   .info {
     background-color: var(--uc-background-color-secondary) !important;
+    background-image: none !important;
+    position: relative !important;
+  }
+
+  .info::before {
+    content: "";
+    position: absolute;
+    left: 32px;
+    top: 20px;
+    height: 32px;
+    aspect-ratio: 1 / 1;
+    background: center / contain url("../icons/account-private.svg");
+    border-radius: 99px;
   }
 }
 
 @supports -moz-bool-pref("uc.tweak.newtab-background") {
-  @-moz-document url(about:newtab), url(about:home), url(about:privatebrowsing) {
+  @-moz-document url(about:newtab),
+  url(about:home),
+  url(about:privatebrowsing),
+  url-prefix("about:firefoxview") {
     body:not([lwt-newtab]),
     body[lwt-newtab],
     body[lwt-newtab][lwt-newtab-brighttext] {
@@ -225,6 +254,8 @@
       --bg-1: url(../background-1.jpg), url(../background-1.png);
       --newtab-element-hover-color: rgba(239, 239, 239, 0.3) !important;
       --newtab-element-active-color: rgba(239, 239, 239, 0.45) !important;
+      --text-shadow: 0 1px 2px #000;
+      --icon-shadow: drop-shadow(0 0.3px 0.6px #000);
       background-color: #252525 !important;
       background-image: var(--bg-0) !important;
       background-position: center !important;
@@ -232,42 +263,71 @@
       background-attachment: fixed !important;
     }
 
-    body[lwt-newtab][lwt-newtab-brighttext] {
+    body[lwt-newtab][lwt-newtab-brighttext],
+    :root.private body {
       background-image: var(--bg-1), var(--bg-0) !important;
       --newtab-element-hover-color: rgba(66, 66, 66, 0.4) !important;
       --newtab-element-active-color: rgba(66, 66, 66, 0.55) !important;
     }
 
-    .wordmark,
-    .icon-settings,
-    .top-site-outer .context-menu-button {
-      color: #fff !important;
-      fill: currentColor !important;
-      filter: drop-shadow(0 0.3px 0.6px #000) !important;
+    @supports not -moz-bool-pref("browser.theme.dark-private-windows") {
+      :root.private body {
+        background-image: var(--bg-0) !important;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root.private body {
+          background-image: var(--bg-1), var(--bg-0) !important;
+        }
+      }
     }
 
     .top-site-outer .title,
-    .ds-header, .ds-layout .section-title span,
-    .ds-navigation {
+    .ds-header,
+    .ds-layout .section-title span,
+    .ds-navigation,
+    .page-section-header>h1,
+    .page-section-header>.section-description,
+    .closed-tab-li-main:not(:hover, :active),
+    .closed-tab-li-dismiss,
+    .brand-logo>.brand-feature-name,
+    #colorways-collection-title,
+    #colorways-collection-description,
+    .synced-tabs-container>.loading-content {
+      text-shadow: var(--text-shadow) !important;
       color: #fff !important;
-      text-shadow: 0 1px 2px #000 !important;
       -moz-osx-font-smoothing: auto !important;
+    }
+
+    .wordmark,
+    .icon-settings,
+    .top-site-outer .context-menu-button,
+    .closed-tab-li-main:not(:hover, :active) .favicon,
+    .page-section-header:not(:hover)>.twisty,
+    .synced-tab-li-favicon,
+    .page-section-header:not(:hover)>.twisty,
+    .closed-tab-li-dismiss:not(:hover),
+    .synced-tabs-container>.loading-content .sync {
+      filter: var(--icon-shadow) !important;
+      color: #fff !important;
+      fill: currentColor !important
     }
 
     .section-top-bar .learn-more-link a,
     .ds-navigation a {
       color: #b3d4ff !important;
-      text-shadow: 0 1px 2px #000 !important;
+      text-shadow: var(--text-shadow) !important;
       -moz-osx-font-smoothing: auto !important;
     }
 
-    .top-site-outer .title .sponsored-label {
-      color: #fffc !important;
+    .top-site-outer .title .sponsored-label,
+    .closed-tab-li-main:not(:hover, :active) :is(.closed-tab-li-url, .closed-tab-li-time) {
+      color: #eee !important;
     }
 
-    body:not(.inline-onboarding) .fixed-search .search-wrapper {
+    .fixed-search .search-wrapper {
       border-bottom: 0 !important;
-      background: transparent linear-gradient(#0004 , transparent) !important;
+      background: transparent linear-gradient(#0004, transparent) !important;
     }
   }
 }
