@@ -54,6 +54,20 @@ bugs with certain themes eg. dark text on dark background.) */
     }
   }
 
+  .tabbrowser-tab,
+  #tabbrowser-arrowscrollbox-periphery #tabs-newtab-button,
+  #TabsToolbar #TabsToolbar-customization-target> :not(#tabbrowser-tabs) {
+    padding-top: 4px !important;
+  }
+
+  #tabbrowser-tabs {
+    margin-top: calc(var(--tab-block-margin) - 4px) !important;
+  }
+
+  #TabsToolbar #TabsToolbar-customization-target> :not(#tabbrowser-tabs) {
+    margin-top: calc(var(--tab-block-margin) - 2px) !important;
+  }
+
   /* remove toolbar bg */
   #nav-bar,
   #PersonalToolbar {
