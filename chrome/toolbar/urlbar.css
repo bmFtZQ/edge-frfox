@@ -1,7 +1,7 @@
 /* EdgeFr-Fox by bmFtZQ - urlbar.css */
 
 :root {
-  --urlbar-min-height: 32px !important;
+  --urlbar-min-height: 30px !important;
   --urlbarView-item-inline-padding: 14px !important;
   --urlbar-icon-border-radius: var(--toolbarbutton-border-radius) !important;
   --urlbar-icon-padding: calc(var(--toolbarbutton-inner-padding) - 2px) !important;
