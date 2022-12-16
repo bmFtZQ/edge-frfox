@@ -308,7 +308,7 @@ and 11 so applied to both) */
 
 /* security */
 .identity-popup-security-connection {
-  background-image: url("security-broken.svg") !important;
+  list-style-image: url("security-broken.svg") !important;
 }
 
 #identity-box[pageproxystate="valid"].notSecure #identity-icon,
@@ -318,30 +318,30 @@ and 11 so applied to both) */
 }
 
 #identity-popup[connection=chrome] .identity-popup-security-connection {
-  background-image: url("firefox.svg") !important;
+  list-style-image: url("firefox.svg") !important;
 }
 
 #identity-popup[connection="file"] .identity-popup-security-connection {
-  background-image: url("page-portrait.svg") !important;
+  list-style-image: url("page-portrait.svg") !important;
 }
 
 #identity-popup[connection^=secure] .identity-popup-security-connection {
-  background-image: url("security.svg") !important;
+  list-style-image: url("security.svg") !important;
 }
 
 #identity-popup[ciphers=weak] .identity-popup-security-connection,
 #identity-popup[mixedcontent~=passive-loaded][isbroken] .identity-popup-security-connection,
 #identity-popup[connection=secure-cert-user-overridden] .identity-popup-security-connection,
 #identity-popup[connection=cert-error-page] .identity-popup-security-connection {
-  background-image: url("security-warning.svg") !important;
+  list-style-image: url("security-warning.svg") !important;
 }
 
 #identity-popup[connection=net-error-page] .identity-popup-security-connection {
-  background-image: url("info.svg") !important;
+  list-style-image: url("info.svg") !important;
 }
 
 #identity-popup[connection=extension] .identity-popup-security-connection {
-  background-image: url("extension.svg") !important;
+  list-style-image: url("extension.svg") !important;
 }
 
 #appMenu-new-tab-button2 {

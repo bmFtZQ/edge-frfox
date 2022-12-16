@@ -189,14 +189,6 @@
   border-radius: 2px !important;
 }
 
-#identity-popup-security-button {
-  padding-inline: calc(var(--arrowpanel-menuitem-padding-inline) - 4px) !important;
-}
-
-.identity-popup-security-connection>hbox {
-  margin-inline-start: calc(20px + var(--uc-arrowpanel-menuicon-margin-inline)) !important;
-}
-
 .identity-popup-security-connection>hbox>description {
   margin-inline-start: 0 !important;
 }
