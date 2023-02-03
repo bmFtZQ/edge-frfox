@@ -7,7 +7,7 @@ A Firefox userChrome.css theme that aims to recreate the look and feel of the Ch
 ## How to install
 1. Go to `about:support` and click the "Open Folder/Show in Finder" button for the root directory of your browser profile/s.
 2. Download and copy the `chrome` folder into the profile folder.
-3. Go to about:config and change these preferences:
+3. Go to `about:config` and change these preferences:
 
    ### For all operating systems:
    1. `toolkit.legacyUserProfileCustomizations.stylesheets` = `true`
