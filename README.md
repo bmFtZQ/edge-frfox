@@ -102,6 +102,13 @@ To disable a tweak, set the key to `false` or delete it, then restart the browse
 3. Enable tweak in `about:config`: `uc.tweak.win11-mica`
 4. Restart Firefox.
 
+## Themes
+Additional community themes based on Edge-Frfox.
+
+| Theme                                                          | Preview                 | Author                                            |
+| -------------------------------------------------------------- | ----------------------- | ------------------------------------------------- |
+| [Dracula](https://github.com/jannikbuscha/firefox-dracula)     | ![dracula][p-dracula]   | [@jannikbuscha](https://github.com/jannikbuscha)  |
+
 ## Acknowledgements
 [muckSponge](https://github.com/muckSponge) - [MaterialFox](https://github.com/muckSponge/MaterialFox)
 
@@ -127,3 +134,6 @@ To disable a tweak, set the key to `false` or delete it, then restart the browse
 [s-dm]: screenshots/dark-mica.png
 [s-dmf]: screenshots/dark-mica-floating-tabs.png
 [s-dgtk]: screenshots/gtk-dark.png
+
+<!-- theme preview links -->
+[p-dracula]: https://raw.githubusercontent.com/jannikbuscha/firefox-dracula/main/screenshots/thumbnail.png
