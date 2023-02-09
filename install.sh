@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# VARIABLES, CHANGE AS NEEDED
+GITHUB_REPO="https://github.com/bmFtZQ/edge-frfox.git"
+PROFILE_ROOTDIR=$(find ~/.mozilla/firefox -type d -iname "*.default-release");
+
+
+
 echo "Detecting if firefox is installed on your system..."
 if [ ! -f /usr/bin/firefox ] || { [ ! -f /usr/lib/firefox/firefox ]; }; then
   echo "ERROR: firefox not found..."
@@ -19,8 +25,6 @@ if [ ! $? -eq 0 ]; then
   exit 0;
 fi
 
-# Finding profile root directory
-PROFILE_ROOTDIR=$(find ~/.mozilla/firefox -type d -iname "*.default-release");
 
 # Prompting for correct install directory
 read -e -i "$PROFILE_ROOTDIR" -p "Enter profile root directory: " newdir
@@ -40,7 +44,7 @@ fi
 
 echo "cloning repository";
 if [ ! -d ~/github/firefox-dracula ]; then
-  if ! git clone https://github.com/jannikbuscha/firefox-dracula.git ~/github/firefox-dracula; then
+  if ! git clone $GITHUB_REPO ~/github/firefox-dracula; then
     echo "Error while cloning repository into ~/github/firefox-dracula..."
     exit 0;
   fi
