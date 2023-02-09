@@ -4,6 +4,17 @@
 GITHUB_REPO="https://github.com/bmFtZQ/edge-frfox.git"
 PROFILE_ROOTDIR=~/.mozilla/firefox/$(grep Default= ~/.mozilla/firefox/installs.ini | tail -1 | cut -c 9-);
 
+# Check if issued `./installer.sh uninstall`
+if [[ $1 == "uninstall" ]]; then
+  rm -rfi $PROFILE_ROOTDIR/chrome;
+  echo "uninstalling...";
+  echo "user_pref(\"toolkit.legacyUserProfileCustomizations.stylesheets\", false);" >> $PROFILE_ROOTDIR/prefs.js;
+  echo "user_pref(\"svg.context-properties.content.enabled\", false);" >> $PROFILE_ROOTDIR/prefs.js;
+  echo "user_pref(\"layout.css.color-mix.enabled\", false);" >> $PROFILE_ROOTDIR/prefs.js;
+
+  exit 0;
+fi
+
 echo "Detecting if firefox is installed on your system..."
 if [ ! -f /usr/bin/firefox ] || { [ ! -f /usr/lib/firefox/firefox ]; }; then
   echo "ERROR: firefox not found..."
