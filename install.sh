@@ -2,9 +2,7 @@
 
 # VARIABLES, CHANGE AS NEEDED
 GITHUB_REPO="https://github.com/bmFtZQ/edge-frfox.git"
-PROFILE_ROOTDIR=$(find ~/.mozilla/firefox -type d -iname "*.default-release");
-
-
+PROFILE_ROOTDIR=~/.mozilla/firefox/$(grep Default= ~/.mozilla/firefox/installs.ini | tail -1 | cut -c 9-);
 
 echo "Detecting if firefox is installed on your system..."
 if [ ! -f /usr/bin/firefox ] || { [ ! -f /usr/lib/firefox/firefox ]; }; then
@@ -25,7 +23,6 @@ if [ ! $? -eq 0 ]; then
   exit 0;
 fi
 
-
 # Prompting for correct install directory
 read -e -i "$PROFILE_ROOTDIR" -p "Enter profile root directory: " newdir
 PROFILE_ROOTDIR="${newdir:-$PROFILE_ROOTDIR}"
@@ -34,7 +31,7 @@ if [ ! -d "$PROFILE_ROOTDIR" ]; then
   echo "ERROR: firefox profile directory could not be found"
 
   while [ ! -d "$PROFILE_ROOTDIR" ]; do
-    read -p "Enter active root directory found in about:profiles here: " PROFILE_ROOTDIR;
+    read -p "Enter active root directory found in \"about:profiles\" here: " PROFILE_ROOTDIR;
 
     if [ ! -d "$PROFILE_ROOTDIR" ]; then
       echo "invalid directory: specified location does not exist. Try again..."
