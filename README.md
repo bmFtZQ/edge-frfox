@@ -5,6 +5,12 @@ A Firefox userChrome.css theme that aims to recreate the look and feel of the Ch
 <img src="screenshots/thumbnail.png" alt="thumbnail screenshot" title="Screenshot taken with macOS Monterey / Firefox Nightly 96.0a1 (2021-11-30)" width="800">
 
 ## How to install
+### Via install script
+```bash
+curl https://raw.githubusercontent.com/bmFtZQ/edge-frfox/blob/main/install.sh > /tmp/installer.sh && chmod +x /tmp/installer.sh && /tmp/installer.sh
+```
+
+### Manual Installation
 1. Go to `about:support` and click the "Open Folder/Show in Finder" button for the root directory of your browser profile/s.
 2. Download and copy the `chrome` folder into the profile folder.
 3. Go to about:config and change these preferences:
