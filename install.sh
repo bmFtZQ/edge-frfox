@@ -3,15 +3,33 @@
 # VARIABLES, CHANGE AS NEEDED
 GITHUB_REPO="https://github.com/bmFtZQ/edge-frfox.git"
 PROFILE_ROOTDIR=~/.mozilla/firefox/$(grep Default= ~/.mozilla/firefox/installs.ini | tail -1 | cut -c 9-);
+CHANGED_PREFS=("toolkit.legacyUserProfileCustomizations.stylesheets" "svg.context-properties.content.enabled" "layout.css.color-mix.enabled")
+
+# UTILITY FUNCTIONS
+set_pref() {
+  echo "setting $1 to $2 in prefs.js";
+  echo "user_pref(\"$1\", $2);" >> $PROFILE_ROOTDIR/prefs.js;
+}
+
+delete_pref() {
+  echo "resetting $1 to default"
+  sed -i "/user_pref(\"$1\", \(true\|false\));/d" $PROFILE_ROOTDIR/prefs.js;
+}
+
+#####################
+# PRE-INSTALL PHASE #
+#####################
 
 # Check if issued `./installer.sh uninstall`
 if [[ $1 == "uninstall" ]]; then
+  echo "Warning: the following command will delete said folder and wipe out everything in its sub-directories"
   rm -rfi $PROFILE_ROOTDIR/chrome;
   echo "uninstalling...";
-  echo "user_pref(\"toolkit.legacyUserProfileCustomizations.stylesheets\", false);" >> $PROFILE_ROOTDIR/prefs.js;
-  echo "user_pref(\"svg.context-properties.content.enabled\", false);" >> $PROFILE_ROOTDIR/prefs.js;
-  echo "user_pref(\"layout.css.color-mix.enabled\", false);" >> $PROFILE_ROOTDIR/prefs.js;
+  for pref in ${CHANGED_PREFS[@]}; do
+    delete_pref $pref;
+  done;
 
+  echo "uninstall complete."
   exit 0;
 fi
 
@@ -30,7 +48,7 @@ fi
 
 git --version 2>&1 > /dev/null;
 if [ ! $? -eq 0 ]; then
-  echo "git is not installed... Please install it."
+  echo "ERROR: git is not installed... Please install it."
   exit 0;
 fi
 
@@ -50,24 +68,30 @@ if [ ! -d "$PROFILE_ROOTDIR" ]; then
   done;
 fi
 
-echo "cloning repository";
-if [ ! -d ~/github/firefox-dracula ]; then
-  if ! git clone $GITHUB_REPO ~/github/firefox-dracula; then
-    echo "Error while cloning repository into ~/github/firefox-dracula..."
+#################
+# INSTALL PHASE #
+#################
+
+echo "Installing..."
+if [ ! -d ~/github/edge-frfox ]; then
+  echo "cloning repository";
+  if ! git clone $GITHUB_REPO ~/github/edge-frfox; then
+    echo "Error while cloning repository into ~/github/edge-frfox..."
     exit 0;
   fi
 fi
 
 echo "Copying theme folder..."
-cp -r ~/github/firefox-dracula/chrome "$PROFILE_ROOTDIR"
+cp -r ~/github/edge-frfox/chrome "$PROFILE_ROOTDIR"
 
 # firefox will automatically sort out any duplicate issues, whatever is at the end of the file takes priority, so this works.
 echo "Adding necessary configs..."
-echo "user_pref(\"toolkit.legacyUserProfileCustomizations.stylesheets\", true);" >> $PROFILE_ROOTDIR/prefs.js;
-echo "user_pref(\"svg.context-properties.content.enabled\", true);" >> $PROFILE_ROOTDIR/prefs.js;
-echo "user_pref(\"layout.css.color-mix.enabled\", true);" >> $PROFILE_ROOTDIR/prefs.js;
+for pref in ${CHANGED_PREFS[@]}; do
+  set_pref $pref "true"
+done;
+
 if [[ $OSTYPE == "darwin"* ]]; then
-  echo "user_pref(\"widget.macos.native-context-menus\", false);" >> $PROFILE_ROOTDIR/prefs.js;
+  set_pref "widget.macos.native-context-menus" "false"
 fi
 
 echo "Finished successfully! Please (re)start firefox to see the changes.";
