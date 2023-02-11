@@ -33,6 +33,13 @@ if [[ $1 == "uninstall" ]]; then
   exit 0;
 fi
 
+firefox_proc=$(pgrep firefox);
+if [ ! -z $firefox_proc ]; then
+  echo "Before installing, please make sure firefox is not running."
+  echo "Otherwise, changes cannot be made to prefs.js"
+  exit 0;
+fi
+
 echo "Detecting if firefox is installed on your system..."
 if [ ! -f /usr/bin/firefox ] || { [ ! -f /usr/lib/firefox/firefox ]; }; then
   echo "ERROR: firefox not found..."
@@ -94,4 +101,4 @@ if [[ $OSTYPE == "darwin"* ]]; then
   set_pref "widget.macos.native-context-menus" "false"
 fi
 
-echo "Finished successfully! Please (re)start firefox to see the changes.";
+echo "Finished successfully! Please start firefox to see the changes.";
