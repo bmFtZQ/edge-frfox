@@ -41,7 +41,7 @@ if [ ! -z $firefox_proc ]; then
 fi
 
 echo "Detecting if firefox is installed on your system..."
-if [ ! -f /usr/bin/firefox ] || { [ ! -f /usr/lib/firefox/firefox ]; }; then
+if [ ! -f /usr/bin/firefox ] && { [ ! -f /usr/lib/firefox/firefox ] && [ ! -f /usr/lib/firefox-developer-edition/firefox ]; }; then
   echo "ERROR: firefox not found..."
 
   ans="y"
