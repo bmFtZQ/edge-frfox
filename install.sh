@@ -20,6 +20,13 @@ delete_pref() {
 # PRE-INSTALL PHASE #
 #####################
 
+firefox_proc=$(pgrep firefox);
+if [ ! -z $firefox_proc ]; then
+  echo "Before installing, please make sure firefox is not running."
+  echo "Otherwise, changes cannot be made to prefs.js"
+  exit 0;
+fi
+
 # Check if issued `./installer.sh uninstall`
 if [[ $1 == "uninstall" ]]; then
   echo "Warning: the following command will delete said folder and wipe out everything in its sub-directories"
@@ -30,13 +37,6 @@ if [[ $1 == "uninstall" ]]; then
   done;
 
   echo "uninstall complete."
-  exit 0;
-fi
-
-firefox_proc=$(pgrep firefox);
-if [ ! -z $firefox_proc ]; then
-  echo "Before installing, please make sure firefox is not running."
-  echo "Otherwise, changes cannot be made to prefs.js"
   exit 0;
 fi
 
