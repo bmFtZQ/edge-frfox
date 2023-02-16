@@ -4,7 +4,7 @@
 $GITHUB_REPO="https://github.com/bmFtZQ/edge-frfox.git"
 $PROJECT_NAME=$($GITHUB_REPO.Split("/")[-1] -replace ".git", "")
 $FIREFOX_DIR="$env:APPDATA\Mozilla\Firefox";
-$PROFILE_ROOTDIR="$($FIREFOX_DIR)\Profiles\$((Select-String -Path "$($FIREFOX_DIR)\installs.ini" -Pattern "Default=" | Select-Object -Last 1).Line.Substring(17))";
+$PROFILE_ROOTDIR="$($FIREFOX_DIR)\Profiles\$((Select-String -Path "$($FIREFOX_DIR)\profiles.ini" -Pattern "Path=.*\.(dev-edition-default|default-.*)" | Select-Object -Last 1).Line.Substring(14))";
 $CHANGED_PREFS=@("toolkit.legacyUserProfileCustomizations.stylesheets", "svg.context-properties.content.enabled", "layout.css.color-mix.enabled");
 
 # UTILITY FUNCTIONS
@@ -37,7 +37,7 @@ function delete_pref {
 
 $firefox_proc=Get-Process firefox -ErrorAction SilentlyContinue;
 if ($firefox_proc) {
-  Write-Output "ERROR: Before installing, please make sure firefox is not running.`nOtherwise, changes cannot be made to prefs.js";
+  Write-Host "ERROR: Before installing, please make sure firefox is not running.`nOtherwise, changes cannot be made to prefs.js" -ForegroundColor Red;
   exit 0;
 }
 
@@ -45,9 +45,9 @@ if ($firefox_proc) {
 Write-Output "
 Please enter the path to your firefox profile directory.
 This can be found by opening about:support in firefox and looking for the Profile root directory.
-Press CTRL+C to abort installation now.
-Automatically detected: $PROFILE_ROOTDIR
-Press ENTER to use this directory, or type in a new one.";
+Press CTRL+C to abort installation now."
+Write-Host "Automatically detected: $PROFILE_ROOTDIR" -ForegroundColor Cyan;
+Write-Output "Press ENTER to use this directory, or type in a new one.";
 $ans=Read-Host "Path";
 $PROFILE_ROOTDIR=($PROFILE_ROOTDIR,$ans)[[bool]$ans];
 
@@ -66,13 +66,13 @@ if ($args[0] -eq "uninstall") {
 
 Write-Output "Checking if git is installed...";
 if (!(Get-Command git -ErrorAction SilentlyContinue)) {
-  Write-Output "ERROR: git not found... Please install git and try again.";
+  Write-Host "ERROR: git not found... Please install git and try again." -ForegroundColor Red;
   exit 0;
 }
 
 Write-Output "Detecting if firefox is installed on your system..."
 if (!(Test-Path $FIREFOX_DIR)) {
-  Write-Output "ERROR: firefox not found...";
+  Write-Host "ERROR: firefox not found..." -ForegroundColor Red;
   
   Write-Output "Do you want to continue anyway?";
   $continue=Read-Host -Prompt "y/n";
@@ -98,7 +98,7 @@ if (!(Test-Path "$PROFILE_ROOTDIR")) {
 # INSTALL PHASE #
 #################
 
-Write-Host "Installing..." -ForegroundColor Green;
+Write-Output "Installing...";
 if (!(Test-Path "$("$env:temp\$PROJECT_NAME")")) {
 	Write-Output "Cloning $GITHUB_REPO into $env:temp\$PROJECT_NAME...";
 
@@ -115,4 +115,4 @@ foreach ($pref in $CHANGED_PREFS) {
 	set_pref $pref "true";
 }
 
-Write-Host "Installation complete! Please start firefox to see the changes.`n`n" -ForegroundColor Green;
+Write-Host "Installation complete! Please start firefox to see the changes.`n" -ForegroundColor Green;
