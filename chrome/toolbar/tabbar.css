@@ -347,7 +347,7 @@ toolbarbutton[part="scrollbutton-down"] {
   margin-top: calc(2px + var(--tab-block-margin)) !important;
 }
 
-#tabbrowser-tabs:not([overflow="true"]) .tabbrowser-tab[first-visible-tab] {
+#tabbrowser-tabs:not([overflow="true"]) .tabbrowser-tab:first-of-type {
   margin-inline-start: 8px !important;
 }
 
