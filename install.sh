@@ -27,38 +27,6 @@ if [ ! -z $firefox_proc ]; then
   exit 0;
 fi
 
-# Check if issued `./installer.sh uninstall`
-if [[ $1 == "uninstall" ]]; then
-  echo "Warning: the following command will delete said folder and wipe out everything in its sub-directories"
-  rm -rfi $PROFILE_ROOTDIR/chrome;
-  echo "uninstalling...";
-  for pref in ${CHANGED_PREFS[@]}; do
-    delete_pref $pref;
-  done;
-
-  echo "uninstall complete."
-  exit 0;
-fi
-
-echo "Detecting if firefox is installed on your system..."
-if [ ! -f /usr/bin/firefox ] && { [ ! -f /usr/lib/firefox/firefox ] && [ ! -f /usr/lib/firefox-developer-edition/firefox ]; }; then
-  echo "ERROR: firefox not found..."
-
-  ans="y"
-  read -e -i "$ans" -p "Do you want to continue anyway? (y/n): " in
-  ans="${in:-$ans}";
-
-  if [[ ! ${ans,,} =~ ^(yes|y)$ ]]; then
-    exit 0;
-  fi
-fi
-
-git --version 2>&1 > /dev/null;
-if [ ! $? -eq 0 ]; then
-  echo "ERROR: git is not installed... Please install it."
-  exit 0;
-fi
-
 # Prompting for correct install directory
 read -e -i "$PROFILE_ROOTDIR" -p "Enter profile root directory: " newdir
 PROFILE_ROOTDIR="${newdir:-$PROFILE_ROOTDIR}"
@@ -73,6 +41,38 @@ if [ ! -d "$PROFILE_ROOTDIR" ]; then
       echo "invalid directory: specified location does not exist. Try again..."
     fi
   done;
+fi
+
+# Check if issued `./installer.sh uninstall`
+if [[ $1 == "uninstall" ]]; then
+  echo "Warning: the following command will delete said folder and wipe out everything in its sub-directories"
+  rm -rfi $PROFILE_ROOTDIR/chrome;
+  echo "uninstalling...";
+  for pref in ${CHANGED_PREFS[@]}; do
+    delete_pref $pref;
+  done;
+
+  echo "uninstall complete."
+  exit 0;
+fi
+
+git --version 2>&1 > /dev/null;
+if [ ! $? -eq 0 ]; then
+  echo "ERROR: git is not installed... Please install it."
+  exit 0;
+fi
+
+echo "Detecting if firefox is installed on your system..."
+if [ ! -f /usr/bin/firefox ] && { [ ! -f /usr/lib/firefox/firefox ] && [ ! -f /usr/lib/firefox-developer-edition/firefox ]; }; then
+  echo "ERROR: firefox not found..."
+
+  ans="y"
+  read -e -i "$ans" -p "Do you want to continue anyway? (y/n): " in
+  ans="${in:-$ans}";
+
+  if [[ ! ${ans,,} =~ ^(yes|y)$ ]]; then
+    exit 0;
+  fi
 fi
 
 #################
