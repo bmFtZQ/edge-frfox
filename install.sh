@@ -2,8 +2,23 @@
 
 # VARIABLES, CHANGE AS NEEDED
 GITHUB_REPO="https://github.com/bmFtZQ/edge-frfox.git"
-PROFILE_ROOTDIR=~/.mozilla/firefox/$(grep Default= ~/.mozilla/firefox/installs.ini | tail -1 | cut -c 9-);
+PROJECT_NAME=$(basename $GITHUB_REPO | cut -d '.' -f 1)
+TMP_DIR="${TMPDIR:-$(dirname $(mktemp))}"
+
+if [[ $OSTYPE == "darwin"* ]]; then
+  FIREFOX_DIR=$HOME/Library/Application\ Support/Firefox/Profiles
+else
+  FIREFOX_DIR=$HOME/.mozilla/firefox
+fi;
+
+PROFILE_ROOTDIR=$FIREFOX_DIR/$(grep -E "Path=.*\.(dev-edition-default|default-.*)" $FIREFOX_DIR/profiles.ini | tail -1 | cut -c 6-);
 CHANGED_PREFS=("toolkit.legacyUserProfileCustomizations.stylesheets" "svg.context-properties.content.enabled" "layout.css.color-mix.enabled")
+
+# COLORS
+GREEN='\033[0;32m'
+YELLOW='\033[0;93m'
+NC='\033[0m'
+CYAN='\033[0;36m'
 
 # UTILITY FUNCTIONS
 set_pref() {
@@ -22,13 +37,14 @@ delete_pref() {
 
 firefox_proc=$(pgrep firefox);
 if [ ! -z $firefox_proc ]; then
-  echo "Before installing, please make sure firefox is not running."
+  echo "Before (un)installing, please make sure firefox is not running."
   echo "Otherwise, changes cannot be made to prefs.js"
   exit 0;
 fi
 
 # Prompting for correct install directory
-read -e -i "$PROFILE_ROOTDIR" -p "Enter profile root directory: " newdir
+read -e -i "$PROFILE_ROOTDIR" -p $'Enter profile root directory: \e[36m' newdir
+echo -e -n "${NC}"
 PROFILE_ROOTDIR="${newdir:-$PROFILE_ROOTDIR}"
 
 if [ ! -d "$PROFILE_ROOTDIR" ]; then
@@ -44,9 +60,16 @@ if [ ! -d "$PROFILE_ROOTDIR" ]; then
 fi
 
 # Check if issued `./installer.sh uninstall`
-if [[ $1 == "uninstall" ]]; then
-  echo "Warning: the following command will delete said folder and wipe out everything in its sub-directories"
-  rm -rfi $PROFILE_ROOTDIR/chrome;
+if [[ $1 == "uninstall" ]]; then  
+  echo -e "${YELLOW}NOTE: This is the final opportunity to abort uninstallation by pressing Ctrl+C${NC}";
+  ans="n"
+  read -e -i "$ans" -p "Do you want to delete $PROFILE_ROOTDIR/chrome? (y/n): " in
+  ans="${in:-$ans}";
+
+  if [[ ${ans,,} =~ ^(yes|y)$ ]]; then
+    rm -rf $PROFILE_ROOTDIR/chrome;
+  fi
+
   echo "uninstalling...";
   for pref in ${CHANGED_PREFS[@]}; do
     delete_pref $pref;
@@ -80,16 +103,16 @@ fi
 #################
 
 echo "Installing..."
-if [ ! -d ~/github/edge-frfox ]; then
+if [ ! -d $TMP_DIR/$PROJECT_NAME ]; then
   echo "cloning repository";
-  if ! git clone $GITHUB_REPO ~/github/edge-frfox; then
-    echo "Error while cloning repository into ~/github/edge-frfox..."
+  if ! git clone $GITHUB_REPO $TMP_DIR/$PROJECT_NAME; then
+    echo "Error while cloning repository into $TMP_DIR/$PROJECT_NAME..."
     exit 0;
   fi
 fi
 
 echo "Copying theme folder..."
-cp -r ~/github/edge-frfox/chrome "$PROFILE_ROOTDIR"
+cp -r $TMP_DIR/$PROJECT_NAME/chrome "$PROFILE_ROOTDIR"
 
 # firefox will automatically sort out any duplicate issues, whatever is at the end of the file takes priority, so this works.
 echo "Adding necessary configs..."
@@ -101,4 +124,4 @@ if [[ $OSTYPE == "darwin"* ]]; then
   set_pref "widget.macos.native-context-menus" "false"
 fi
 
-echo "Finished successfully! Please start firefox to see the changes.";
+echo -e "${GREEN}Finished successfully! Please start firefox to see the changes.";
