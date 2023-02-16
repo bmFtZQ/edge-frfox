@@ -78,7 +78,8 @@
 }
 
 /* preferences */
-@-moz-document url-prefix(about:preferences), url-prefix(about:addons) {
+@-moz-document url-prefix(about:preferences),
+url-prefix(about:addons) {
   .category[selected] {
     position: relative !important;
     border-radius: 4px !important;
@@ -96,8 +97,9 @@
     background-color: var(--in-content-accent-color);
     border-radius: 3px;
     position: absolute;
-    left: 0;
-    top: 12px;
+    left: 2px;
+    top: 50%;
+    translate: 0 -50%;
   }
 
   button.tab-button:hover {
