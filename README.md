@@ -9,12 +9,23 @@ A Firefox userChrome.css theme that aims to recreate the look and feel of the Ch
 Paste this into your terminal emulator:
 ```sh
 # Linux may not have $TMPDIR set by default
-if [ -z $TMPDIR ]; then TMPDIR=/tmp; fi;
+TMP_DIR="${TMPDIR:-$(dirname $(mktemp))}"
 
-curl https://raw.githubusercontent.com/bmFtZQ/edge-frfox/blob/main/install.sh > $TMPDIR/installer.sh && chmod +x $TMPDIR/installer.sh && sh $TMPDIR/installer.sh
+curl https://raw.githubusercontent.com/bmFtZQ/edge-frfox/create-install-script/install.sh > $TMP_DIR/installer.sh && chmod +x $TMP_DIR/installer.sh && sh $TMP_DIR/installer.sh
 ```
 
-Uninstallation can be done by just writing `uninstall` at the end of the script above
+### Via Windows Powershell script
+**NOTE**: You may need to `Set-ExecutionPolicy RemoteSigned` for this to work, by default, windows will use `Restricted`.
+1. Open Powershell as Administrator
+2. Type `Set-ExecutionPolicy RemoteSigned`
+3. It might ask you to confirm, you should read the contents of [install.ps1](https://raw.githubusercontent.com/bmFtZQ/edge-frfox/create-install-script/install.ps1) and the script below to verify it for yourself.
+4. Close out of Powershell and start a new normal instance of Powershell (good practice)
+5. Paste the following into powershell and hit enter:
+```ps
+(curl -Uri https://raw.githubusercontent.com/bmFtZQ/edge-frfox/create-install-script/install.ps1 -UseBasicParsing).Content > $env:temp/installer.ps1; powershell $env:temp\installer.ps1
+```
+
+Uninstallation can be done by just writing `uninstall` as a parameter above, so `.../installer.sh uninstall` or `...\installer.ps1 uninstall` for macos/linux and windows respectively
 
 ### Manual Installation
 1. Go to `about:support` and click the "Open Folder/Show in Finder" button for the root directory of your browser profile/s.
