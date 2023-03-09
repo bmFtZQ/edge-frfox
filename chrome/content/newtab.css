@@ -4,8 +4,8 @@
 @-moz-document url-prefix("about:newtab"),
 url-prefix("about:home"),
 url-prefix("about:firefoxview") {
-  body:not([lwt-newtab], [lwt-newtab-brighttext]),
-  body[style*="--newtab-background-color: rgb(249, 249, 251)"] {
+  :root:not([lwt-newtab]) > body:not([lwt-newtab]),
+  :is(:root, body)[style*="--newtab-background-color: rgb(249, 249, 251)"] {
     --newtab-background-color: #F7F7F7 !important;
     --newtab-background-color-secondary: #fff !important;
     --newtab-text-primary-color: #252525 !important;
@@ -33,8 +33,8 @@ url-prefix("about:firefoxview") {
     --newtab-button-secondary-color: inherit !important;
   }
 
-  body[style*="--newtab-background-color: rgb(43, 42, 51)"][lwt-newtab-brighttext],
-  body:not([style*="color"])[lwt-newtab-brighttext] {
+  :is(:root, body)[style*="--newtab-background-color: rgb(43, 42, 51)"][lwt-newtab-brighttext],
+  :is(:root, body):not([style*="color"])[lwt-newtab-brighttext] {
     --newtab-background-color: #252525 !important;
     --newtab-background-color-secondary: #4A4A4A !important;
     --newtab-text-primary-color: #fff !important;
@@ -245,9 +245,7 @@ url-prefix("about:home") {
   url(about:home),
   url(about:privatebrowsing),
   url-prefix("about:firefoxview") {
-    body:not([lwt-newtab]),
-    body[lwt-newtab],
-    body[lwt-newtab][lwt-newtab-brighttext] {
+    :root body {
       /* specify both jpg and png file extensions, but jpg images will always
       have a higher priority */
       --bg-0: url(../background-0.jpg), url(../background-0.png);
@@ -264,6 +262,7 @@ url-prefix("about:home") {
     }
 
     body[lwt-newtab][lwt-newtab-brighttext],
+    :root[lwt-newtab][lwt-newtab-brighttext] body,
     :root.private body {
       background-image: var(--bg-1), var(--bg-0) !important;
       --newtab-element-hover-color: rgba(66, 66, 66, 0.4) !important;
