@@ -123,6 +123,7 @@
 #tracking-protection-icon-container,
 #page-action-buttons {
   -moz-box-ordinal-group: 2 !important;
+  order: 2 !important;
 }
 
 #urlbar-container:not(:hover) #tracking-protection-icon-container:not([open]) {

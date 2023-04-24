@@ -217,11 +217,12 @@ bugs with certain themes eg. dark text on dark background.) */
       }
 
       #context-navigation>.menuitem-iconic {
+        justify-content: start !important;
         -moz-box-pack: start !important;
       }
 
       #context-navigation .menu-iconic-text {
-        display: -moz-box !important;
+        display: flex !important;
       }
 
       :root,
@@ -280,6 +281,6 @@ bugs with certain themes eg. dark text on dark background.) */
 
 @supports -moz-bool-pref("uc.tweak.show-tab-close-button-on-hover") {
   #tabbrowser-tabs[closebuttons="activetab"] .tabbrowser-tab:not([pinned], [selected]):hover .tab-close-button {
-    display: -moz-box !important;
+    display: flex !important;
   }
 }

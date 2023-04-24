@@ -273,7 +273,7 @@
 }
 
 .titlebar-spacer[type="post-tabs"] {
-  display: -moz-box !important;
+  display: flex !important;
 }
 
 .titlebar-spacer[type="pre-tabs"],

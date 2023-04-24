@@ -41,6 +41,7 @@
 }
 
 #fxa-toolbar-menu-button {
+  display: flex !important;
   display: -moz-box !important;
 }
 

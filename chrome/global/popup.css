@@ -73,7 +73,7 @@
 /* firefox profile avatar in appmenu */
 #appMenu-fxa-label2::before {
   content: "";
-  display: -moz-box;
+  display: flex;
   height: 16px;
   width: 16px;
   background: var(--avatar-image-url) 0/16px;
@@ -311,6 +311,7 @@
 }
 
 #PopupAutoComplete .autocomplete-richlistitem[originaltype="loginsFooter"] {
+  justify-content: start !important;
   -moz-box-pack: start !important;
   color: inherit !important;
   background-color: transparent !important;
@@ -571,7 +572,7 @@ panelview .toolbarbutton-1,
   }
 
   menuitem:is([type="checkbox"], [checked="true"], [type="radio"])>.menu-iconic-left>.menu-iconic-icon {
-    display: -moz-box !important;
+    display: flex !important;
   }
 
   menuitem[checked="true"]>.menu-iconic-left,
@@ -597,6 +598,7 @@ panelview .toolbarbutton-1,
   }
 
   #context-navigation>.menuitem-iconic {
+    justify-content: center !important;
     -moz-box-pack: center !important;
   }
 
