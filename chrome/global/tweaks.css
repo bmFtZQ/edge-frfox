@@ -157,7 +157,7 @@ bugs with certain themes eg. dark text on dark background.) */
     /* enable mica appearance */
     #main-window:not([inFullscreen]):not(:-moz-lwtheme),
     #main-window:not([inFullscreen])[lwt-default-theme-in-dark-mode="true"] {
-      appearance: -moz-win-glass !important;
+      appearance: -moz-win-borderless-glass !important;
       background: transparent !important;
     }
 
