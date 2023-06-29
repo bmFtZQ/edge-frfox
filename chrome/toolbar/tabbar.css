@@ -1,10 +1,21 @@
 /* EdgeFr-Fox 2 - tabbar */
 
+@supports -moz-bool-pref("uc.tweak.floating-tabs.equal-margin") and -moz-bool-pref("uc.tweak.floating-tabs") {
+  :root #titlebar {
+    --tab-block-margin: 5px !important;
+  }
+}
+
+@supports (not -moz-bool-pref("uc.tweak.floating-tabs.equal-margin")) or (not -moz-bool-pref("uc.tweak.floating-tabs")) {
+  :root #titlebar {
+    --tab-block-margin: 8px !important;
+  }
+}
+
 :root #titlebar {
   --tab-min-height: 32px !important;
   --inline-tab-padding: 11px !important;
-  --tab-border-radius: 4px !important;
-  --tab-block-margin: 8px !important;
+  --tab-border-radius: 8px !important;
 
   --uc-toolbarbutton-inner-padding: 6px !important;
   --toolbarbutton-border-radius: 2px !important;
@@ -234,7 +245,7 @@
 .tabbrowser-tab {
   font-size: 12px !important;
   padding-inline: 0 !important;
-  overflow-clip-margin: 4px !important;
+  overflow-clip-margin: 8px !important;
 }
 
 #TabsToolbar .toolbarbutton-1>.toolbarbutton-icon,

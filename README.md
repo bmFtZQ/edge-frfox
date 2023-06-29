@@ -56,9 +56,11 @@ To disable a tweak, set the key to `false` or delete it, then restart the browse
 | ----------------------------- |
 | `uc.tweak.disable-drag-space` |
 
-| enable Edge style floating tabs |
-| ------------------------------- |
-| `uc.tweak.floating-tabs`        |
+| enable Edge style floating tabs                                |
+| -------------------------------------------------------------- |
+| `uc.tweak.floating-tabs`                                       |
+| **OPTIONAL: Make the top and bottom margins of the tab equal** |
+| `uc.tweak.floating-tabs.equal-margin`                          |
 
 | enable Mica toolbar background *(Windows 11 only)*                  |
 | ------------------------------------------------------------------- |
