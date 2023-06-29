@@ -131,6 +131,10 @@
   order: 2 !important;
 }
 
+#urlbar, #searchbar {
+  padding: 0 4px !important;
+}
+
 #urlbar-container:not(:hover) #tracking-protection-icon-container:not([open]) {
   visibility: collapse !important;
 }
