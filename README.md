@@ -56,6 +56,10 @@ To disable a tweak, set the key to `false` or delete it, then restart the browse
 | ----------------------------- |
 | `uc.tweak.disable-drag-space` |
 
+| disable rounded corners            |
+| ---------------------------------- |
+| `uc.tweak.disable-rounded-corners` |
+
 | enable Edge style floating tabs                                |
 | -------------------------------------------------------------- |
 | `uc.tweak.floating-tabs`                                       |
