@@ -2,7 +2,7 @@
 
 @supports (not -moz-bool-pref("uc.tweak.disable-rounded-corners")) {
   :root #browser>#appcontent {
-    margin: 0px 4px 4px 4px;
+    margin: 1px 3px 3px 3px;
     border-radius: 8px;
     overflow: hidden;
     border: 1.25px solid rgba(0, 0, 0, 0.1);
