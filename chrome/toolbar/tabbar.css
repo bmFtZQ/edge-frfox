@@ -369,7 +369,7 @@ toolbarbutton[part="scrollbutton-down"] {
 }
 
 #tabbrowser-tabs:not([overflow="true"]) .tabbrowser-tab:first-of-type {
-  margin-inline-start: 12px !important;
+  margin-inline-start: 14px !important;
 }
 #tabbrowser-tabs:not([overflow="true"]) .tabbrowser-tab:last-of-type {
   margin-inline-end: 6px !important;
