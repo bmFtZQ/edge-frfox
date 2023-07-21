@@ -18,7 +18,8 @@
   --tab-border-radius: 8px !important;
 
   --uc-toolbarbutton-inner-padding: 6px !important;
-  --toolbarbutton-border-radius: 2px !important;
+  --toolbarbutton-border-radius: 4px !important;
+  --toolbarbutton-tabsline-border-radius: 8px !important;
   --tabs-navbar-shadow-size: 0 !important;
   --tab-shadow-max-size: 0 !important;
 }
@@ -164,6 +165,10 @@
   color: var(--lwt-tab-text, var(--toolbar-color)) !important;
 }
 
+.tabbrowser-tab:is([selected], [multiselected]):-moz-lwtheme {
+  z-index: 1;
+}
+
 .tab-close-button {
   margin-inline-end: 8px !important;
   width: 17px !important;
@@ -252,6 +257,11 @@
 #TabsToolbar .toolbarbutton-1>.toolbarbutton-badge-stack {
   border-radius: var(--toolbarbutton-border-radius) !important;
   padding: var(--uc-toolbarbutton-inner-padding) calc(var(--uc-toolbarbutton-inner-padding) + 2px) !important;
+}
+
+#tabbrowser-tabs .toolbarbutton-1>.toolbarbutton-icon,
+#tabbrowser-tabs .toolbarbutton-1>.toolbarbutton-badge-stack {
+  border-radius: var(--toolbarbutton-tabsline-border-radius) !important;
 }
 
 #TabsToolbar .toolbarbutton-1>.toolbarbutton-icon {
@@ -359,7 +369,10 @@ toolbarbutton[part="scrollbutton-down"] {
 }
 
 #tabbrowser-tabs:not([overflow="true"]) .tabbrowser-tab:first-of-type {
-  margin-inline-start: 8px !important;
+  margin-inline-start: 12px !important;
+}
+#tabbrowser-tabs:not([overflow="true"]) .tabbrowser-tab:last-of-type {
+  margin-inline-end: 6px !important;
 }
 
 #tabbrowser-tabs {
@@ -383,7 +396,7 @@ toolbarbutton[part="scrollbutton-down"] {
   --uc-titlebar-shadow: 0 -3px 2px -3px rgba(0, 0, 0, 0.2) inset;
   --uc-tab-shadow:
     0 0 0 1px var(--lwt-tab-line-color, var(--lwt-tabs-border-color, transparent)),
-    0 2px 4px rgba(0, 0, 0, 0.3), 0 0px 2px rgba(0, 0, 0, 0.2);
+    0px 2px 4px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 :root[lwtheme-brighttext="true"] {
