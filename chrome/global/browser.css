@@ -1,8 +1,20 @@
 /* EdgeFr-Fox 2 - browser */
 
+@supports (-moz-bool-pref("uc.tweak.floating-tabs")) {
+  :root {
+    --browser-frame-bgcolor: transparent;
+  }
+}
+
+@supports (not -moz-bool-pref("uc.tweak.floating-tabs")) {
+  :root {
+    --browser-frame-bgcolor: var(--toolbar-bgcolor);
+  }
+}
+
 @supports (not -moz-bool-pref("uc.tweak.disable-rounded-corners")) {
   :root #browser>#appcontent {
-    margin: 1px 3px 3px 3px;
+    margin: 0px 3px 3px 3px;
     border-radius: 8px;
     overflow: hidden;
     border: 1.25px solid rgba(0, 0, 0, 0.05);
@@ -10,6 +22,6 @@
   }
   
   :root #browser {
-    background-color: var(--toolbar-bgcolor);
+    background-color: var(--browser-frame-bgcolor);
   }
 }
