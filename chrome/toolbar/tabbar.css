@@ -492,3 +492,7 @@ toolbarbutton[part="scrollbutton-down"] {
   margin-block: 1px 2px;
   margin-inline: 6px 5px;
 }
+
+#tabbrowser-tabs[secondarytext-unsupported] .tab-icon-stack[indicator-replaces-favicon] > :not(.tab-icon-overlay) {
+  opacity: 1 !important;
+}
