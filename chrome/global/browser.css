@@ -2,7 +2,7 @@
 
 @supports (-moz-bool-pref("uc.tweak.floating-tabs")) {
   :root {
-    --browser-frame-bgcolor: transparent;
+    --browser-frame-bgcolor: var(--lwt-accent-color);
   }
 }
 
@@ -12,7 +12,7 @@
   }
 }
 
-@supports (not -moz-bool-pref("uc.tweak.disable-rounded-corners")) {
+@supports (-moz-bool-pref("uc.tweak.rounded-corners")) {
   :root #browser>#appcontent {
     margin: 0px 3px 3px 3px;
     border-radius: 8px;

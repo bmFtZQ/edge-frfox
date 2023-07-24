@@ -27,7 +27,7 @@
   padding: var(--toolbarbutton-inner-padding) var(--uc-toolbarbutton-inner-inline-padding) !important;
 }
 
-@supports (not -moz-bool-pref("uc.tweak.disable-rounded-corners")) {
+@supports (-moz-bool-pref("uc.tweak.rounded-corners")) {
   #navigator-toolbox {
     border-bottom: none !important;
   }

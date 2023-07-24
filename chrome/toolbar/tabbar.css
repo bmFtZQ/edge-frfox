@@ -315,7 +315,7 @@ toolbarbutton[part="scrollbutton-down"] {
 
 /* tab separators */
 .tabbrowser-tab:not([last-visible-tab="true"]) {
-  margin-inline-end: -1px !important;
+  margin-inline-end: 3px !important;
 }
 
 .tabbrowser-tab:not([selected="true"], :hover, [beforeselected-visible], [beforehovered]) .tab-stack::after {
@@ -323,9 +323,14 @@ toolbarbutton[part="scrollbutton-down"] {
   position: absolute;
   display: block;
   height: 20px;
-  right: 0;
+  right: -1px;
   top: 6px;
   border-right: 1px solid color-mix(in srgb, currentColor 34%, transparent);
+}
+
+/* need layout.css.has-selector.enabled */
+.tabbrowser-tab:has(+ .tabbrowser-tab:is([selected="true"], :hover, [beforeselected-visible], [beforehovered])) .tab-stack::after {
+  display: none;
 }
 
 #tabbrowser-tabs[haspinnedtabs]:not([positionpinnedtabs])>#tabbrowser-arrowscrollbox>.tabbrowser-tab[first-visible-unpinned-tab] {

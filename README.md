@@ -56,15 +56,17 @@ To disable a tweak, set the key to `false` or delete it, then restart the browse
 | ----------------------------- |
 | `uc.tweak.disable-drag-space` |
 
-| disable rounded corners            |
-| ---------------------------------- |
-| `uc.tweak.disable-rounded-corners` |
+| enable rounded corners     |
+| -------------------------- |
+| `uc.tweak.rounded-corners` |
 
-| enable Edge style floating tabs                                |
-| -------------------------------------------------------------- |
-| `uc.tweak.floating-tabs`                                       |
-| **OPTIONAL: Make the top and bottom margins of the tab equal** |
-| `uc.tweak.floating-tabs.equal-margin`                          |
+| enable Edge style floating tabs                                                                                  |
+| ---------------------------------------------------------------------------------------------------------------- |
+| `uc.tweak.floating-tabs`                                                                                         |
+| **OPTIONAL1: Make the top and bottom margins of the tab equal**                                                  |
+| `uc.tweak.floating-tabs.equal-margin`                                                                            |
+| **OPTIONAL2: Hide the separator of adjacent tabs (need to wait for Firefox support, or forced enable with bug)** |
+| `layout.css.has-selector.enabled`                                                                                |
 
 | enable Mica toolbar background *(Windows 11 only)*                  |
 | ------------------------------------------------------------------- |
