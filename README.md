@@ -20,6 +20,11 @@ A Firefox userChrome.css theme that aims to recreate the look and feel of the Ch
    ### Recommended:
    1. `browser.tabs.tabMinWidth` = `66`
    2. `browser.tabs.tabClipWidth` = `86`
+   3. `general.smoothScroll.currentVelocityWeighting` = `0`
+   4. `general.smoothScroll.mouseWheel.durationMaxMS` = `250`
+   5. `general.smoothScroll.stopDecelerationWeighting` = `0.28`
+   6. `mousewheel.min_line_scroll_amount` = `25`
+   7. `general.smoothScroll.msdPhysics.enabled` = `true`
 
    ### Optional:
    1. To use the light theme in private browsing mode set `browser.theme.dark-private-windows` = `false`
