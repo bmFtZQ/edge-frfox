@@ -21,6 +21,7 @@
   --toolbar-field-focus-background-color: var(--toolbar-field-background-color) !important;
   --toolbar-field-focus-color: var(--toolbar-field-color) !important;
   --toolbar-field-focus-border-color: #0055D7 !important;
+  --urlbar-hover-highlight-color: rgba(192, 192, 192, 0.5) !important;
   --urlbar-box-bgcolor: rgba(0, 0, 0, 0.09) !important;
   --urlbar-box-hover-bgcolor: rgba(0, 0, 0, 0.09) !important;
   --urlbar-box-focus-bgcolor: rgba(0, 0, 0, 0.22) !important;
@@ -88,6 +89,7 @@
   --toolbar-field-focus-background-color: var(--toolbar-field-background-color) !important;
   --toolbar-field-focus-color: var(--toolbar-field-color) !important;
   --toolbar-field-focus-border-color: #63ADE5 !important;
+  --urlbar-hover-highlight-color: rgba(128, 128, 128, 0.5) !important;
   --urlbar-box-bgcolor: rgba(255, 255, 255, 0.11) !important;
   --urlbar-box-hover-bgcolor: rgba(255, 255, 255, 0.11) !important;
   --urlbar-box-focus-bgcolor: rgba(255, 255, 255, 0.28) !important;

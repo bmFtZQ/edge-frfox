@@ -1,13 +1,25 @@
 /* EdgeFr-Fox 2 - tabbar */
 
+@supports -moz-bool-pref("uc.tweak.floating-tabs.equal-margin") and -moz-bool-pref("uc.tweak.floating-tabs") {
+  :root #titlebar {
+    --tab-block-margin: 5px !important;
+  }
+}
+
+@supports (not -moz-bool-pref("uc.tweak.floating-tabs.equal-margin")) or (not -moz-bool-pref("uc.tweak.floating-tabs")) {
+  :root #titlebar {
+    --tab-block-margin: 8px !important;
+  }
+}
+
 :root #titlebar {
   --tab-min-height: 32px !important;
   --inline-tab-padding: 11px !important;
-  --tab-border-radius: 4px !important;
-  --tab-block-margin: 8px !important;
+  --tab-border-radius: 8px !important;
 
   --uc-toolbarbutton-inner-padding: 6px !important;
-  --toolbarbutton-border-radius: 2px !important;
+  --toolbarbutton-border-radius: 4px !important;
+  --toolbarbutton-tabsline-border-radius: 8px !important;
   --tabs-navbar-shadow-size: 0 !important;
   --tab-shadow-max-size: 0 !important;
 }
@@ -153,6 +165,10 @@
   color: var(--lwt-tab-text, var(--toolbar-color)) !important;
 }
 
+.tabbrowser-tab:is([selected], [multiselected]):-moz-lwtheme {
+  z-index: 1;
+}
+
 .tab-close-button {
   margin-inline-end: 8px !important;
   width: 17px !important;
@@ -234,13 +250,18 @@
 .tabbrowser-tab {
   font-size: 12px !important;
   padding-inline: 0 !important;
-  overflow-clip-margin: 4px !important;
+  overflow-clip-margin: 8px !important;
 }
 
 #TabsToolbar .toolbarbutton-1>.toolbarbutton-icon,
 #TabsToolbar .toolbarbutton-1>.toolbarbutton-badge-stack {
   border-radius: var(--toolbarbutton-border-radius) !important;
   padding: var(--uc-toolbarbutton-inner-padding) calc(var(--uc-toolbarbutton-inner-padding) + 2px) !important;
+}
+
+#tabbrowser-tabs .toolbarbutton-1>.toolbarbutton-icon,
+#tabbrowser-tabs .toolbarbutton-1>.toolbarbutton-badge-stack {
+  border-radius: var(--toolbarbutton-tabsline-border-radius) !important;
 }
 
 #TabsToolbar .toolbarbutton-1>.toolbarbutton-icon {
@@ -294,7 +315,7 @@ toolbarbutton[part="scrollbutton-down"] {
 
 /* tab separators */
 .tabbrowser-tab:not([last-visible-tab="true"]) {
-  margin-inline-end: -1px !important;
+  margin-inline-end: 3px !important;
 }
 
 .tabbrowser-tab:not([selected="true"], :hover, [beforeselected-visible], [beforehovered]) .tab-stack::after {
@@ -302,9 +323,14 @@ toolbarbutton[part="scrollbutton-down"] {
   position: absolute;
   display: block;
   height: 20px;
-  right: 0;
+  right: -1px;
   top: 6px;
   border-right: 1px solid color-mix(in srgb, currentColor 34%, transparent);
+}
+
+/* need layout.css.has-selector.enabled */
+.tabbrowser-tab:has(+ .tabbrowser-tab:is([selected="true"], :hover, [beforeselected-visible], [beforehovered])) .tab-stack::after {
+  display: none;
 }
 
 #tabbrowser-tabs[haspinnedtabs]:not([positionpinnedtabs])>#tabbrowser-arrowscrollbox>.tabbrowser-tab[first-visible-unpinned-tab] {
@@ -348,7 +374,10 @@ toolbarbutton[part="scrollbutton-down"] {
 }
 
 #tabbrowser-tabs:not([overflow="true"]) .tabbrowser-tab:first-of-type {
-  margin-inline-start: 8px !important;
+  margin-inline-start: 14px !important;
+}
+#tabbrowser-tabs:not([overflow="true"]) .tabbrowser-tab:last-of-type {
+  margin-inline-end: 6px !important;
 }
 
 #tabbrowser-tabs {
@@ -372,7 +401,7 @@ toolbarbutton[part="scrollbutton-down"] {
   --uc-titlebar-shadow: 0 -3px 2px -3px rgba(0, 0, 0, 0.2) inset;
   --uc-tab-shadow:
     0 0 0 1px var(--lwt-tab-line-color, var(--lwt-tabs-border-color, transparent)),
-    0 2px 4px rgba(0, 0, 0, 0.3), 0 0px 2px rgba(0, 0, 0, 0.2);
+    0px 2px 4px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 :root[lwtheme-brighttext="true"] {
@@ -462,4 +491,8 @@ toolbarbutton[part="scrollbutton-down"] {
   content: var(--uc-string-private);
   margin-block: 1px 2px;
   margin-inline: 6px 5px;
+}
+
+#tabbrowser-tabs[secondarytext-unsupported] .tab-icon-stack[indicator-replaces-favicon] > :not(.tab-icon-overlay) {
+  opacity: 1 !important;
 }

@@ -89,16 +89,6 @@ bugs with certain themes eg. dark text on dark background.) */
     outline-offset: -1px !important;
   }
 
-  .tabbrowser-tab[selected] .tab-label {
-    font-weight: 500 !important;
-  }
-
-  @media (-moz-platform: windows) {
-    .tabbrowser-tab[selected] .tab-label {
-      font-weight: 600 !important;
-    }
-  }
-
   /* adjust spacing of area above tabs */
   @media not (-moz-platform: macos) {
     :root[sizemode="maximized"] #titlebar {

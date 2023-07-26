@@ -3,7 +3,7 @@
 :root {
   --urlbar-min-height: 30px !important;
   --urlbarView-item-inline-padding: 14px !important;
-  --urlbar-icon-border-radius: var(--toolbarbutton-border-radius) !important;
+  --urlbar-icon-border-radius: calc(var(--toolbarbutton-border-radius) + 14px) !important;
   --urlbar-icon-padding: calc(var(--toolbarbutton-inner-padding) - 2px) !important;
   --uc-urlbar-icon-inline-padding: calc(var(--uc-toolbarbutton-inner-inline-padding) - 2px) !important;
   --identity-box-margin-inline: 2px !important;
@@ -116,7 +116,12 @@
 
 #urlbar-background,
 #searchbar {
-  border-radius: calc(var(--toolbarbutton-border-radius) + 2px) !important;
+  border-radius: var(--urlbar-icon-border-radius) !important;
+}
+
+#urlbar:hover:not([suppress-focus-border])>#urlbar-background,
+#searchbar:hover {
+  outline: 1.5px solid var(--urlbar-hover-highlight-color);
 }
 
 /* move tracking protection button */
@@ -124,6 +129,10 @@
 #page-action-buttons {
   -moz-box-ordinal-group: 2 !important;
   order: 2 !important;
+}
+
+#urlbar, #searchbar {
+  padding: 0 4px !important;
 }
 
 #urlbar-container:not(:hover) #tracking-protection-icon-container:not([open]) {
