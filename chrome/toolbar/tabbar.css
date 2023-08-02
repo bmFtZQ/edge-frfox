@@ -15,7 +15,7 @@
 :root #titlebar {
   --tab-min-height: 32px !important;
   --inline-tab-padding: 11px !important;
-  --tab-border-radius: 8px !important;
+  --tab-border-radius: 4px !important;
 
   --uc-toolbarbutton-inner-padding: 6px !important;
   --toolbarbutton-border-radius: 4px !important;
@@ -65,9 +65,9 @@
   content: "" !important;
   display: block !important;
   position: absolute !important;
-  width: 8px !important;
-  height: 8px !important;
-  bottom: 0 !important;
+  width: 6px !important;
+  height: 6px !important;
+  bottom: -1px !important;
   pointer-events: none !important;
   clip-path: inset(0);
 }
@@ -75,14 +75,14 @@
 .tab-background::before {
   border-bottom-right-radius: var(--tab-border-radius) !important;
   left: 0 !important;
-  transform: translateX(-8px) !important;
+  transform: translateX(-6px) !important;
   box-shadow: 4px 4px 0 4px var(--uc-tab-corner-bg) !important;
 }
 
 .tab-background::after {
   border-bottom-left-radius: var(--tab-border-radius) !important;
   right: 0 !important;
-  transform: translateX(8px) !important;
+  transform: translateX(6px) !important;
   box-shadow: -4px 4px 0 4px var(--uc-tab-corner-bg) !important;
 }
 
