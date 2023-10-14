@@ -29,17 +29,16 @@ bugs with certain themes eg. dark text on dark background.) */
 @supports -moz-bool-pref("uc.tweak.floating-tabs") {
   :root:not(:-moz-lwtheme),
   :root[style*="--lwt-accent-color: rgb(240, 240, 244)"] {
-    --lwt-accent-color: #f3f3f3 !important;
+    --lwt-accent-color: #e6e8eb !important;
     --lwt-accent-color-inactive: unset !important;
     --toolbar-bgcolor: #fff !important;
     --lwt-tab-text: #262626 !important;
-    --uc-urlbar-shadow: none !important;
   }
 
   :root[lwt-default-theme-in-dark-mode="true"],
   :root[style*="--lwt-accent-color: rgb(28, 27, 34)"] {
     --lwt-accent-color: #202020 !important;
-    --toolbar-bgcolor: #4D4D4D !important;
+    --toolbar-bgcolor: #3f3f3f !important;
     --lwt-accent-color-inactive: unset !important;
     --chrome-content-separator-color: #535353 !important;
     --uc-tab-border-color: #ffffff0f !important;

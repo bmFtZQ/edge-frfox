@@ -19,7 +19,7 @@
 
   --uc-toolbarbutton-inner-padding: 6px !important;
   --toolbarbutton-border-radius: 4px !important;
-  --toolbarbutton-tabsline-border-radius: 8px !important;
+  --toolbarbutton-tabsline-border-radius: 4px !important;
   --tabs-navbar-shadow-size: 0 !important;
   --tab-shadow-max-size: 0 !important;
 }
@@ -374,10 +374,10 @@ toolbarbutton[part="scrollbutton-down"] {
 }
 
 #tabbrowser-tabs:not([overflow="true"]) .tabbrowser-tab:first-of-type {
-  margin-inline-start: 14px !important;
+  margin-inline-start: 10px !important;
 }
 #tabbrowser-tabs:not([overflow="true"]) .tabbrowser-tab:last-of-type {
-  margin-inline-end: 6px !important;
+  margin-inline-end: 2px !important;
 }
 
 #tabbrowser-tabs {
