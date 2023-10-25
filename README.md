@@ -73,6 +73,7 @@ To disable a tweak, set the key to `false` or delete it, then restart the browse
 
 | enable Mica toolbar background *(Windows 11 only)*                  |
 | ------------------------------------------------------------------- |
+| **BROKEN ON NEWER VERSIONS OF FIREFOX**                             |
 | **See [Mica Tweak Instructions][3] for installation instructions.** |
 | **NOTE: Only works on default theme: 'System theme - auto'**        |
 | `uc.tweak.win11-mica`                                               |
@@ -105,6 +106,7 @@ To disable a tweak, set the key to `false` or delete it, then restart the browse
 | `uc.tweak.show-tab-close-button-on-hover`                         |
 
 ## Mica Tweak Instructions (Windows 11 Only)
+NOTE: Broken on newer versions of Firefox.
 1. Download and install [Mica For Everyone][2].
 2. Create a custom process rule with the following:
    1. Name: `firefox`

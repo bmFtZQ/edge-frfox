@@ -142,6 +142,7 @@ bugs with certain themes eg. dark text on dark background.) */
   }
 }
 
+/* Mica broken on newer versions of Firefox */
 @media (-moz-windows-compositor) {
   @supports -moz-bool-pref("uc.tweak.win11-mica") {
     /* enable mica appearance */
