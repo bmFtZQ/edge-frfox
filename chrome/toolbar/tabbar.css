@@ -86,15 +86,6 @@
   box-shadow: -4px 4px 0 4px var(--uc-tab-corner-bg) !important;
 }
 
-#tabbrowser-tabs:not([movingtab]) > #tabbrowser-arrowscrollbox > .tabbrowser-tab > .tab-stack > .tab-background:is([selected], [multiselected]):-moz-lwtheme {
-	background-attachment: scroll, scroll, fixed;
-	background-color: transparent;
-	background-image: linear-gradient(var(--lwt-selected-tab-background-color, transparent), var(--lwt-selected-tab-background-color, transparent)), linear-gradient(var(--toolbar-bgcolor), var(--toolbar-bgcolor)), var(--lwt-header-image, none);
-	background-position: 0 0, 0 0, right top;
-	background-repeat: repeat-x, repeat-x, no-repeat;
-	background-size: auto 100%, auto 100%, auto auto;
-}
-
 .tab-background:is([selected], [multiselected]) {
   --uc-tab-corner-bg: var(--tab-selected-bgcolor, var(--lwt-selected-tab-background-color, var(--toolbar-bgcolor)));
 }
