@@ -143,7 +143,7 @@ bugs with certain themes eg. dark text on dark background.) */
 }
 
 /* Mica broken on newer versions of Firefox */
-/* Uncomment to enable, only works for Firefox versions lower than 115 */
+/* Uncomment to enable, only works for Firefox versions lower than 117 */
 /* @media (-moz-platform: windows) {
   @supports -moz-bool-pref("uc.tweak.win11-mica") {
     #main-window:not([inFullscreen]):not(:-moz-lwtheme),
@@ -175,7 +175,6 @@ bugs with certain themes eg. dark text on dark background.) */
       }
     }
 
-    /* line up buttons with duplicate icons from -moz-win-glass */
     :root:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode="true"]) .titlebar-buttonbox-container {
       --uc-titlebar-button-size: 30px;
       --uc-titlebar-size: calc(var(--tab-min-height) + var(--tab-block-margin));
