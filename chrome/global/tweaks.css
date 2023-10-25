@@ -143,9 +143,9 @@ bugs with certain themes eg. dark text on dark background.) */
 }
 
 /* Mica broken on newer versions of Firefox */
-@media (-moz-windows-compositor) {
+/* Uncomment to enable, only works for Firefox versions lower than 115 */
+/* @media (-moz-platform: windows) {
   @supports -moz-bool-pref("uc.tweak.win11-mica") {
-    /* enable mica appearance */
     #main-window:not([inFullscreen]):not(:-moz-lwtheme),
     #main-window:not([inFullscreen])[lwt-default-theme-in-dark-mode="true"] {
       appearance: -moz-win-borderless-glass !important;
@@ -156,12 +156,9 @@ bugs with certain themes eg. dark text on dark background.) */
       background: transparent !important;
     }
 
-    /* force tab color (for the tab transparency) */
     .tab-background:is([selected], [multiselected]) {
       background: var(--toolbar-bgcolor) !important;
     }
-
-    /* color adjustments */
     :root:not([inFullscreen]):not(:-moz-lwtheme):not(:-moz-window-inactive) {
       --lwt-accent-color: #00000020 !important;
     }
@@ -197,7 +194,7 @@ bugs with certain themes eg. dark text on dark background.) */
       padding-right: 19px !important;
     }
   }
-}
+} */
 
 @media not (-moz-platform: macos) {
   @supports not -moz-bool-pref("uc.tweak.revert-context-menu") {
