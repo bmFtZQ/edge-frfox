@@ -86,31 +86,26 @@
   box-shadow: -4px 4px 0 4px var(--uc-tab-corner-bg) !important;
 }
 
-.tabbrowser-tab[selected="true"] .tab-background {
-  --uc-tab-corner-bg: var(--lwt-selected-tab-background-color, var(--toolbar-bgcolor));
+#tabbrowser-tabs:not([movingtab]) > #tabbrowser-arrowscrollbox > .tabbrowser-tab > .tab-stack > .tab-background:is([selected], [multiselected]):-moz-lwtheme {
+	background-attachment: scroll, scroll, fixed;
+	background-color: transparent;
+	background-image: linear-gradient(var(--lwt-selected-tab-background-color, transparent), var(--lwt-selected-tab-background-color, transparent)), linear-gradient(var(--toolbar-bgcolor), var(--toolbar-bgcolor)), var(--lwt-header-image, none);
+	background-position: 0 0, 0 0, right top;
+	background-repeat: repeat-x, repeat-x, no-repeat;
+	background-size: auto 100%, auto 100%, auto auto;
 }
 
 .tab-background:is([selected], [multiselected]) {
-  --uc-tab-corner-bg: var(--tab-selected-bgcolor, var(--toolbar-bgcolor));
+  --uc-tab-corner-bg: var(--tab-selected-bgcolor, var(--lwt-selected-tab-background-color, var(--toolbar-bgcolor)));
 }
 
-#tabbrowser-tabs:not([movingtab])>#tabbrowser-arrowscrollbox>.tabbrowser-tab>.tab-stack>.tab-background[multiselected="true"]:-moz-lwtheme,
-#tabbrowser-tabs:not([movingtab])>#tabbrowser-arrowscrollbox>.tabbrowser-tab>.tab-stack>.tab-background[selected="true"]:-moz-lwtheme {
-  background-image: linear-gradient(var(--lwt-selected-tab-background-color, transparent), var(--lwt-selected-tab-background-color, transparent)), linear-gradient(var(--toolbar-bgcolor), var(--toolbar-bgcolor)), var(--lwt-header-image, none);
-  --uc-tab-corner-bg: var(--lwt-selected-tab-background-color, var(--toolbar-bgcolor));
-}
-
-.tabbrowser-tab .tab-background:is([selected], [multiselected]) {
-  --uc-tab-corner-bg: var(--tab-selected-bgcolor, var(--toolbar-bgcolor));
-}
-
-.tabbrowser-tab:hover>.tab-stack>.tab-background:not([selected="true"], [multiselected]) {
+.tabbrowser-tab:hover .tab-background:not([selected], [multiselected]) {
   background-color: color-mix(in srgb, currentColor 8%, transparent) !important;
   --uc-tab-corner-bg: color-mix(in srgb, currentColor 8%, transparent) !important;
 }
 
 @supports not -moz-bool-pref("uc.tweak.floating-tabs") {
-  :root:not([lwtheme-brighttext="true"]) .tabbrowser-tab:hover>.tab-stack>.tab-background:not([selected="true"], [multiselected]) {
+  #Tabstoolbar:not([brighttext]) .tabbrowser-tab:hover .tab-background:not([selected], [multiselected]) {
     background-color: color-mix(in srgb, white 30%, transparent) !important;
     --uc-tab-corner-bg: color-mix(in srgb, white 30%, transparent) !important;
   }
@@ -134,20 +129,15 @@
   margin: 0 !important;
 }
 
-/* fix colours */
+/* fix window background colours */
 @media not (-moz-gtk-csd-available) {
-  #navigator-toolbox:not(:-moz-lwtheme) {
+  :root:not(:-moz-lwtheme) #navigator-toolbox {
     background-color: var(--lwt-accent-color) !important;
     color: var(--lwt-text-color) !important;
   }
 
-  /* force inactive window on default theme */
-  @media not (-moz-platform: windows-win7) {
-    @media not (-moz-platform: windows-win8) {
-      #navigator-toolbox:-moz-window-inactive:not(:-moz-lwtheme) {
-        background-color: var(--lwt-accent-color-inactive, var(--lwt-accent-color)) !important;
-      }
-    }
+  :root:not(:-moz-lwtheme) #navigator-toolbox:-moz-window-inactive {
+    background-color: var(--lwt-accent-color-inactive, var(--lwt-accent-color)) !important;
   }
 }
 
