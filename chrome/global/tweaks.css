@@ -143,7 +143,7 @@ bugs with certain themes eg. dark text on dark background.) */
 }
 
 /* Mica broken on newer versions of Firefox */
-/* Uncomment to enable, only works for Firefox versions lower than 117 */
+/* Uncomment to enable, only works for Firefox versions lower than 115 */
 /* @media (-moz-platform: windows) {
   @supports -moz-bool-pref("uc.tweak.win11-mica") {
     #main-window:not([inFullscreen]):not(:-moz-lwtheme),

@@ -392,8 +392,8 @@ toolbarbutton[part="scrollbutton-down"] {
     0 2px 4px rgba(0, 0, 0, 0.45), 0 0px 2px rgba(0, 0, 0, 0.2);
 }
 
-.tabbrowser-tab:is([visuallyselected="true"], [multiselected])>.tab-stack>.tab-background,
-#TabsToolbar #firefox-view-button[open]>.toolbarbutton-icon {
+#tabbrowser-tabs .tab-background:is([selected], [multiselected]),
+#TabsToolbar #firefox-view-button[open] > .toolbarbutton-icon {
   box-shadow: var(--uc-tab-shadow) !important;
 }
 
