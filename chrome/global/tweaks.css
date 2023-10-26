@@ -1,4 +1,4 @@
-/* Edge-FrFox - tweaks.css */
+/* Edge-Frfox - tweaks.css */
 
 /* disable drag space above tabs */
 @supports -moz-bool-pref("uc.tweak.disable-drag-space") {
