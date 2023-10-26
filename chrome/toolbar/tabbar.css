@@ -2,20 +2,20 @@
 
 @supports -moz-bool-pref("uc.tweak.floating-tabs.equal-margin") and -moz-bool-pref("uc.tweak.floating-tabs") {
   :root #titlebar {
-    --tab-block-margin: 5px !important;
+    --tab-block-margin: 2px !important;
   }
 }
 
 @supports (not -moz-bool-pref("uc.tweak.floating-tabs.equal-margin")) or (not -moz-bool-pref("uc.tweak.floating-tabs")) {
   :root #titlebar {
-    --tab-block-margin: 8px !important;
+    --tab-block-margin: 2px !important;
   }
 }
 
 :root #titlebar {
-  --tab-min-height: 32px !important;
+  --tab-min-height: 28px !important;
   --inline-tab-padding: 11px !important;
-  --tab-border-radius: 8px !important;
+  --tab-border-radius: 4px !important;
 
   --uc-toolbarbutton-inner-padding: 6px !important;
   --toolbarbutton-border-radius: 4px !important;

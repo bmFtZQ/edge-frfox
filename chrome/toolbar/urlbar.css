@@ -3,6 +3,7 @@
 :root {
   --urlbar-min-height: 30px !important;
   --urlbarView-item-inline-padding: 14px !important;
+	--urlbar-border-radius: 8px !important;
   --urlbar-icon-border-radius: calc(var(--toolbarbutton-border-radius) + 14px) !important;
   --urlbar-icon-padding: calc(var(--toolbarbutton-inner-padding) - 2px) !important;
   --uc-urlbar-icon-inline-padding: calc(var(--uc-toolbarbutton-inner-inline-padding) - 2px) !important;
@@ -117,12 +118,16 @@
 
 #urlbar-background,
 #searchbar {
-  border-radius: var(--urlbar-icon-border-radius) !important;
+  border-radius: var(--urlbar-border-radius) !important;
 }
 
 #urlbar:hover:not([suppress-focus-border])>#urlbar-background,
 #searchbar:hover {
   outline: 1.5px solid var(--urlbar-hover-highlight-color);
+}
+
+#urlbar-background {
+	outline: 1px solid var(--urlbar-hover-highlight-color);
 }
 
 /* move tracking protection button */

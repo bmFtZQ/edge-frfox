@@ -51,11 +51,6 @@ url-prefix("about:firefoxview") {
 
 @-moz-document url-prefix("about:newtab"),
 url-prefix("about:home") {
-  /* hide pin */
-  .icon.icon-pin-small {
-    display: none !important;
-  }
-
   /* unpinned sites have lower opacity title */
   .top-site-button .title:not(.pinned) {
     opacity: 0.7 !important;
@@ -98,15 +93,15 @@ url-prefix("about:home") {
   /* top sites */
   .top-site-outer .tile {
     border-radius: 12px !important;
-    height: 44px !important;
-    width: 44px !important;
+    height: 56px !important;
+    width: 56px !important;
     box-shadow: none !important;
   }
 
   .top-site-outer .tile .icon-wrapper {
     border-radius: 4px !important;
-    width: 24px !important;
-    height: 24px !important;
+    width: 32px !important;
+    height: 32px !important;
   }
 
   .top-site-outer .default-icon,

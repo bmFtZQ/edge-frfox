@@ -4,6 +4,16 @@ A Firefox userChrome.css theme that aims to recreate the look and feel of the Ch
 <!-- use <img> element to set a maximum width -->
 <img src="screenshots/thumbnail.png" alt="thumbnail screenshot" title="Screenshot taken with macOS Monterey / Firefox Nightly 96.0a1 (2021-11-30)" width="800">
 
+## Status: experimental
+Differences between this fork and the upstream:
+
+- Smaller padding for tabbar
+- Less rounded tabbar and urlbar
+- Larger icons on newtab
+- Pins visible for pinned sites on newtab
+
+Everything else is untouched.
+
 ## How to install
 1. Go to `about:support` and click the "Open Folder/Show in Finder" button for the root directory of your browser profile/s.
 2. Download and copy the `chrome` folder into the profile folder.
