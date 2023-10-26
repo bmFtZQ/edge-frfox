@@ -1,4 +1,4 @@
-/* EdgeFr-Fox 2 - tabbar */
+/* Edge-FrFox - tabbar.css */
 
 @supports -moz-bool-pref("uc.tweak.floating-tabs.equal-margin") and -moz-bool-pref("uc.tweak.floating-tabs") {
   :root #titlebar {
@@ -354,12 +354,12 @@ toolbarbutton[part="scrollbutton-down"] {
   margin-top: calc(2px + var(--tab-block-margin)) !important;
 }
 
-#tabbrowser-tabs:not([overflow="true"]) .tabbrowser-tab:first-of-type {
+/* #tabbrowser-tabs:not([overflow="true"]) .tabbrowser-tab:first-of-type {
   margin-inline-start: 14px !important;
 }
 #tabbrowser-tabs:not([overflow="true"]) .tabbrowser-tab:last-of-type {
   margin-inline-end: 6px !important;
-}
+} */
 
 #tabbrowser-tabs {
   margin-inline-start: -6px !important;
