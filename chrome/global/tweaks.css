@@ -28,21 +28,14 @@ bugs with certain themes eg. dark text on dark background.) */
 
 @supports -moz-bool-pref("uc.tweak.floating-tabs") {
   :root:not(:-moz-lwtheme),
-  :root[style*="--lwt-accent-color: rgb(240, 240, 244)"] {
-    --lwt-accent-color: #f3f3f3 !important;
+  :root[privatebrowsingmode="temporary"][style*="--lwt-accent-color: rgb(28, 27, 34)"] {
+    --lwt-accent-color: light-dark(#f3f3f3, #202020) !important;
     --lwt-accent-color-inactive: unset !important;
-    --toolbar-bgcolor: #fff !important;
-    --lwt-tab-text: #262626 !important;
+    --toolbar-bgcolor: light-dark(#fff, #4D4D4D) !important;
+    --lwt-tab-text: light-dark(#262626, #fff) !important;
+    --chrome-content-separator-color: light-dark(#bfbfbf, #535353) !important;
     --uc-urlbar-shadow: none !important;
-  }
-
-  :root[lwt-default-theme-in-dark-mode="true"],
-  :root[style*="--lwt-accent-color: rgb(28, 27, 34)"] {
-    --lwt-accent-color: #202020 !important;
-    --toolbar-bgcolor: #4D4D4D !important;
-    --lwt-accent-color-inactive: unset !important;
-    --chrome-content-separator-color: #535353 !important;
-    --uc-tab-border-color: #ffffff0f !important;
+    --uc-tab-border-color: light-dark(#0000, #fff1) !important;
   }
 
   @media (-moz-gtk-csd-available) {

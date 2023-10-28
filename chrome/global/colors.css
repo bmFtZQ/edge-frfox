@@ -95,13 +95,7 @@
   background-color: var(--toolbar-field-focus-background-color) !important;
   color: var(--toolbar-field-focus-color) !important;
   border-color: transparent !important;
-  box-shadow: 0 2px 5px #0004, 0 0 0 1px #0002 !important;
-}
-
-@media (prefers-color-scheme: dark) {
-  #statuspanel-label {
-    box-shadow: 0 2px 5px #0004, 0 0 0 1px #0004 !important;
-  }
+  box-shadow: 0 2px 5px #0004, 0 0 0 1px light-dark(#0002, #0004) !important;
 }
 
 @media (-moz-platform: windows) {
