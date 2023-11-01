@@ -1,4 +1,4 @@
-/* EdgeFr-Fox by bmFtZQ - urlbar.css */
+/* Edge-Frfox - urlbar.css */
 
 :root {
   --urlbar-min-height: 30px !important;
@@ -17,7 +17,8 @@
 @media not (-moz-gtk-csd-available) {
   #urlbar[focused="true"]:not([suppress-focus-border])>#urlbar-background:not(:-moz-lwtheme),
   #searchbar:not(:-moz-lwtheme):focus-within {
-    outline-color: color-mix(in srgb, var(--toolbar-field-focus-border-color) 50%, transparent) !important;
+    --uc-outline-dimmed: color-mix(in srgb, var(--toolbar-field-focus-border-color) 50%, transparent);
+    outline-color: light-dark(var(--uc-outline-dimmed), var(--toolbar-field-focus-border-color)) !important;
   }
 }
 

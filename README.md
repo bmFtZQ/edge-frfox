@@ -10,19 +10,22 @@ A Firefox userChrome.css theme that aims to recreate the look and feel of the Ch
 3. Go to about:config and change these preferences:
 
    ### For all operating systems:
-   1. `toolkit.legacyUserProfileCustomizations.stylesheets` = `true`
-   2. `svg.context-properties.content.enabled` = `true`
-   3. `layout.css.color-mix.enabled` = `true`
+   * `toolkit.legacyUserProfileCustomizations.stylesheets` = `true`
+   * `svg.context-properties.content.enabled` = `true`
+   * `layout.css.color-mix.enabled` = `true`
+
+   ### Firefox 119.0 and above:
+   * `layout.css.light-dark.enabled` = `true`
 
    ### On macOS:
-   1. To use the Edge style context menu on macOS then set `widget.macos.native-context-menus` = `false`
+   * To use the Edge style context menu on macOS then set `widget.macos.native-context-menus` = `false`
 
    ### Recommended:
-   1. `browser.tabs.tabMinWidth` = `66`
-   2. `browser.tabs.tabClipWidth` = `86`
+   * `browser.tabs.tabMinWidth` = `66`
+   * `browser.tabs.tabClipWidth` = `86`
 
    ### Optional:
-   1. To use the light theme in private browsing mode set `browser.theme.dark-private-windows` = `false`
+   * To use the light theme in private browsing mode set `browser.theme.dark-private-windows` = `false`
 
    Additional tweaks can also be applied to the theme, such as Mica (Windows 11 Only), Floating Tabs and more. See [Tweaks](#tweaks).
 
@@ -70,6 +73,7 @@ To disable a tweak, set the key to `false` or delete it, then restart the browse
 
 | enable Mica toolbar background *(Windows 11 only)*                  |
 | ------------------------------------------------------------------- |
+| **BROKEN ON NEWER VERSIONS OF FIREFOX**                             |
 | **See [Mica Tweak Instructions][3] for installation instructions.** |
 | **NOTE: Only works on default theme: 'System theme - auto'**        |
 | `uc.tweak.win11-mica`                                               |
@@ -102,6 +106,7 @@ To disable a tweak, set the key to `false` or delete it, then restart the browse
 | `uc.tweak.show-tab-close-button-on-hover`                         |
 
 ## Mica Tweak Instructions (Windows 11 Only)
+NOTE: Broken on newer versions of Firefox.
 1. Download and install [Mica For Everyone][2].
 2. Create a custom process rule with the following:
    1. Name: `firefox`

@@ -1,8 +1,8 @@
-/* EdgeFr-Fox by bmFtZQ - icons.css */
+/* Edge-Frfox - icons.css */
 
 /* windows 11 style window controls (no known way to detect between windows 10
 and 11 so applied to both) */
-@media (-moz-windows-compositor),
+@media (-moz-platform: windows),
 (-moz-gtk-csd-available) {
   .titlebar-min {
     list-style-image: url("win11-minimize.svg") !important;
@@ -23,7 +23,7 @@ and 11 so applied to both) */
   /* darkmode icon that uses thicker strokes and is easier to see (only needed
   at 1x scale) */
   @media (max-resolution: 1dppx) {
-    :root[lwtheme-brighttext="true"] .titlebar-close,
+    toolbar[brighttext] .titlebar-close,
     .titlebar-close:hover {
       list-style-image: url("win11-close-dark.svg") !important;
     }

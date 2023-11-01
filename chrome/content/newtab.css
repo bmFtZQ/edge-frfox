@@ -1,11 +1,10 @@
-/* EdgeFr-Fox by bmFtZQ - content/newtab.css */
+/* Edge-Frfox - content/newtab.css */
 
 /* colours */
 @-moz-document url-prefix("about:newtab"),
 url-prefix("about:home"),
 url-prefix("about:firefoxview") {
-  :root:not([lwt-newtab]) > body:not([lwt-newtab]),
-  :is(:root, body)[style*="--newtab-background-color: rgb(249, 249, 251)"] {
+  :root:not([lwt-newtab], [lwt-newtab-brighttext]) {
     --newtab-background-color: #F7F7F7 !important;
     --newtab-background-color-secondary: #fff !important;
     --newtab-text-primary-color: #252525 !important;
@@ -33,8 +32,7 @@ url-prefix("about:firefoxview") {
     --newtab-button-secondary-color: inherit !important;
   }
 
-  :is(:root, body)[style*="--newtab-background-color: rgb(43, 42, 51)"][lwt-newtab-brighttext],
-  :is(:root, body):not([style*="color"])[lwt-newtab-brighttext] {
+  :root:not([style*="color"])[lwt-newtab-brighttext] {
     --newtab-background-color: #252525 !important;
     --newtab-background-color-secondary: #4A4A4A !important;
     --newtab-text-primary-color: #fff !important;

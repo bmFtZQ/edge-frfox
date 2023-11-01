@@ -1,4 +1,4 @@
-/* EdgeFr-Fox by bmFtZQ - tweaks.css */
+/* Edge-Frfox - tweaks.css */
 
 /* disable drag space above tabs */
 @supports -moz-bool-pref("uc.tweak.disable-drag-space") {
@@ -28,20 +28,14 @@ bugs with certain themes eg. dark text on dark background.) */
 
 @supports -moz-bool-pref("uc.tweak.floating-tabs") {
   :root:not(:-moz-lwtheme),
-  :root[style*="--lwt-accent-color: rgb(240, 240, 244)"] {
-    --lwt-accent-color: #e6e8eb !important;
+  :root[privatebrowsingmode="temporary"][style*="--lwt-accent-color: rgb(28, 27, 34)"] {
+    --lwt-accent-color: light-dark(#f3f3f3, #202020) !important;
     --lwt-accent-color-inactive: unset !important;
-    --toolbar-bgcolor: #fff !important;
-    --lwt-tab-text: #262626 !important;
-  }
-
-  :root[lwt-default-theme-in-dark-mode="true"],
-  :root[style*="--lwt-accent-color: rgb(28, 27, 34)"] {
-    --lwt-accent-color: #202020 !important;
-    --toolbar-bgcolor: #3f3f3f !important;
-    --lwt-accent-color-inactive: unset !important;
-    --chrome-content-separator-color: #535353 !important;
-    --uc-tab-border-color: #ffffff0f !important;
+    --toolbar-bgcolor: light-dark(#fff, #4D4D4D) !important;
+    --lwt-tab-text: light-dark(#262626, #fff) !important;
+    --chrome-content-separator-color: light-dark(#bfbfbf, #535353) !important;
+    --uc-urlbar-shadow: none !important;
+    --uc-tab-border-color: light-dark(#0000, #fff1) !important;
   }
 
   @media (-moz-gtk-csd-available) {
@@ -141,9 +135,10 @@ bugs with certain themes eg. dark text on dark background.) */
   }
 }
 
-@media (-moz-windows-compositor) {
+/* Mica broken on newer versions of Firefox */
+/* Uncomment to enable, only works for Firefox versions lower than 115 */
+/* @media (-moz-platform: windows) {
   @supports -moz-bool-pref("uc.tweak.win11-mica") {
-    /* enable mica appearance */
     #main-window:not([inFullscreen]):not(:-moz-lwtheme),
     #main-window:not([inFullscreen])[lwt-default-theme-in-dark-mode="true"] {
       appearance: -moz-win-borderless-glass !important;
@@ -154,12 +149,9 @@ bugs with certain themes eg. dark text on dark background.) */
       background: transparent !important;
     }
 
-    /* force tab color (for the tab transparency) */
     .tab-background:is([selected], [multiselected]) {
       background: var(--toolbar-bgcolor) !important;
     }
-
-    /* color adjustments */
     :root:not([inFullscreen]):not(:-moz-lwtheme):not(:-moz-window-inactive) {
       --lwt-accent-color: #00000020 !important;
     }
@@ -176,7 +168,6 @@ bugs with certain themes eg. dark text on dark background.) */
       }
     }
 
-    /* line up buttons with duplicate icons from -moz-win-glass */
     :root:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode="true"]) .titlebar-buttonbox-container {
       --uc-titlebar-button-size: 30px;
       --uc-titlebar-size: calc(var(--tab-min-height) + var(--tab-block-margin));
@@ -195,7 +186,7 @@ bugs with certain themes eg. dark text on dark background.) */
       padding-right: 19px !important;
     }
   }
-}
+} */
 
 @media not (-moz-platform: macos) {
   @supports not -moz-bool-pref("uc.tweak.revert-context-menu") {

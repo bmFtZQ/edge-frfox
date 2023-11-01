@@ -1,138 +1,78 @@
-/* EdgeFr-Fox by bmFtZQ - colors.css */
+/* Edge-Frfox - colors.css */
 
-/* light */
+/* default colours (light & dark) */
 :root:not(:-moz-lwtheme),
-:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] {
-  --lwt-accent-color: #cecece !important;
-  --lwt-accent-color-inactive: #e8e8e8 !important;
-  --lwt-text-color: #000 !important;
-  --toolbar-bgcolor: #f7f7f7 !important;
-  --toolbar-color: #000 !important;
-  --toolbarbutton-icon-fill: #000 !important;
-  --chrome-content-separator-color: #bfbfbf !important;
-  --lwt-toolbarbutton-icon-fill-attention: #0078D4 !important;
-  --toolbarbutton-icon-fill-attention: #0078D4 !important;
+:root[privatebrowsingmode="temporary"][style*="--lwt-accent-color: rgb(28, 27, 34)"] {
+  --lwt-accent-color: light-dark(#cecece, #1C1C1C) !important;
+  --lwt-accent-color-inactive: light-dark(#e8e8e8, #2e2e2e) !important;
+  --lwt-text-color: light-dark(#000, #E5E5E5) !important;
+  --toolbar-bgcolor: light-dark(#f7f7f7, #3B3B3B) !important;
+  --toolbar-color: light-dark(#000, #fff) !important;
+  --toolbarbutton-icon-fill: light-dark(#000, #fff) !important;
+  --chrome-content-separator-color: light-dark(#bfbfbf, #686868) !important;
+  --lwt-toolbarbutton-icon-fill-attention: light-dark(#0078D4, #4C98D1) !important;
+  --toolbarbutton-icon-fill-attention: light-dark(#0078D4, #4C98D1) !important;
   --lwt-tab-text: var(--toolbar-color) !important;
-  --lwt-selected-tab-background-color: var(--toolbar-bgcolor) !important;
-  --tab-selected-bgcolor: var(--toolbar-bgcolor) !important;
-  --toolbar-field-background-color: #fff !important;
-  --toolbar-field-color: #000 !important;
-  --toolbar-field-border-color: #0000 !important;
+  --lwt-selected-tab-background-color: unset !important;
+  --tab-selected-bgcolor: unset !important;
+  --toolbar-field-background-color: light-dark(#fff, #2B2B2B) !important;
+  --toolbar-field-color: light-dark(#000, #fff) !important;
+  --toolbar-field-border-color: light-dark(#0000, #0000) !important;
   --toolbar-field-focus-background-color: var(--toolbar-field-background-color) !important;
   --toolbar-field-focus-color: var(--toolbar-field-color) !important;
-  --toolbar-field-focus-border-color: #0055D7 !important;
-  --urlbar-hover-highlight-color: rgba(192, 192, 192, 0.5) !important;
-  --urlbar-box-bgcolor: rgba(0, 0, 0, 0.09) !important;
-  --urlbar-box-hover-bgcolor: rgba(0, 0, 0, 0.09) !important;
-  --urlbar-box-focus-bgcolor: rgba(0, 0, 0, 0.22) !important;
-  --urlbar-icon-fill-opacity: 0.6 !important;
-  --urlbar-popup-url-color: #0072C9 !important;
+  --toolbar-field-focus-border-color: light-dark(#0055D7, #63ADE5) !important;
+  --urlbar-hover-highlight-color: light-dark(rgba(192, 192, 192, 0.5), rgba(128, 128, 128, 0.5)) !important;
+  --urlbar-box-bgcolor: light-dark(rgba(0, 0, 0, 0.09), rgba(255, 255, 255, 0.11)) !important;
+  --urlbar-box-hover-bgcolor: light-dark(rgba(0, 0, 0, 0.09), rgba(255, 255, 255, 0.11)) !important;
+  --urlbar-box-focus-bgcolor: light-dark(rgba(0, 0, 0, 0.22), rgba(255, 255, 255, 0.28)) !important;
+  --urlbar-icon-fill-opacity: 1 !important;
+  --urlbar-popup-url-color: light-dark(#0072C9, #75B6E8) !important;
   --lwt-brighttext-url-color: var(--urlbar-popup-url-color) !important;
-  --autocomplete-popup-background: #fff !important;
-  --autocomplete-popup-color: #fff !important;
-  --autocomplete-popup-highlight-background: #f2f2f2 !important;
-  --autocomplete-popup-hover-background: #e5e5e5 !important;
-  --autocomplete-popup-separator-color: #dadada00 !important;
-  --button-bgcolor: #EDEDED !important;
-  --button-hover-bgcolor: #e5e5e5 !important;
-  --button-active-bgcolor: #d5d5d5 !important;
-  --button-primary-bgcolor: #0078D4 !important;
-  --button-primary-hover-bgcolor: #006CBE !important;
-  --button-primary-active-bgcolor: #1683D8 !important;
-  --button-primary-color: #fff !important;
-  --error-text-color: #FF9AA2 !important;
-  --input-bgcolor: #fff !important;
-  --input-color: #2b2b2b !important;
-  --input-border-color: #bebebe !important;
-  --input-error-border-color: #FF848A !important;
-  --zoom-controls-bgcolor: #4A4A4A !important;
-  --arrowpanel-background: #fff !important;
-  --arrowpanel-color: #1c1c1c !important;
-  --panel-description-color: #000a !important;
-  --panel-disabled-color: #9E9E9E !important;
-  --arrowpanel-dimmed: #565656 !important;
-  --arrowpanel-dimmed-further: #707070 !important;
-  --panel-item-hover-bgcolor: #eee !important;
-  --panel-item-active-bgcolor: #ddd !important;
-  --arrowpanel-border-color: #dadada !important;
-  --panel-separator-color: #dadada !important;
-  --panel-banner-item-update-supported-bgcolor: #188038 !important;
-  --focus-outline-color: #0055D7 !important;
+  --autocomplete-popup-background: light-dark(#fff, #4A4A4A) !important;
+  --autocomplete-popup-color: light-dark(#fff, #fff) !important;
+  --autocomplete-popup-highlight-background: light-dark(#f2f2f2, #383838) !important;
+  --autocomplete-popup-hover-background: light-dark(#e5e5e5, #444444) !important;
+  --autocomplete-popup-separator-color: light-dark(#dadada00, #63636300) !important;
+  --button-bgcolor: light-dark(#EDEDED, #5C5C5C) !important;
+  --button-hover-bgcolor: light-dark(#e5e5e5, #646464) !important;
+  --button-active-bgcolor: light-dark(#d5d5d5, #575757) !important;
+  --button-primary-bgcolor: light-dark(#0078D4, #006CBE) !important;
+  --button-primary-hover-bgcolor: light-dark(#006CBE, #0078D4) !important;
+  --button-primary-active-bgcolor: light-dark(#1683D8, #005CA3) !important;
+  --button-primary-color: light-dark(#fff, #fff) !important;
+  --error-text-color: light-dark(#FF9AA2, #FF9AA2) !important;
+  --input-bgcolor: light-dark(#fff, #4A4A4A) !important;
+  --input-color: light-dark(#2b2b2b, #fff) !important;
+  --input-border-color: light-dark(#bebebe, #8A8A8A) !important;
+  --input-error-border-color: light-dark(#FF848A, #FF848A) !important;
+  --zoom-controls-bgcolor: light-dark(#4A4A4A, #4A4A4A) !important;
+  --arrowpanel-background: light-dark(#fff, #4A4A4A) !important;
+  --arrowpanel-color: light-dark(#1c1c1c, #fff) !important;
+  --panel-description-color: light-dark(#000a, #fffb) !important;
+  --panel-disabled-color: light-dark(#9E9E9E, #ABABAA) !important;
+  --arrowpanel-dimmed: light-dark(#565656, #565656) !important;
+  --arrowpanel-dimmed-further: light-dark(#707070, #707070) !important;
+  --panel-item-hover-bgcolor: light-dark(#eee, #646464) !important;
+  --panel-item-active-bgcolor: light-dark(#ddd, #747474) !important;
+  --arrowpanel-border-color: light-dark(#dadada, #636363) !important;
+  --panel-separator-color: light-dark(#dadada, #636363) !important;
+  --panel-banner-item-update-supported-bgcolor: light-dark(#188038, #81C995) !important;
+  --focus-outline-color: light-dark(#0055D7, #63ADE5) !important;
   --panel-shortcut-color: inherit !important;
   --uc-urlbar-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
-  --toolbarbutton-hover-background: rgba(0, 0, 0, 0.08) !important;
-  --toolbarbutton-active-background: rgba(0, 0, 0, 0.12) !important;
+  --toolbarbutton-hover-background: light-dark(rgba(0, 0, 0, 0.08), rgba(255, 255, 255, 0.1)) !important;
+  --toolbarbutton-active-background: light-dark(rgba(0, 0, 0, 0.12), rgba(255, 255, 255, 0.16)) !important;
   --uc-private-browsing-indicator: var(--button-primary-bgcolor);
   --uc-private-browsing-indicator-text: var(--button-primary-color);
-  --tab-icon-overlay-stroke: #fff !important;
-  --tab-icon-overlay-fill: #252525 !important;
+  --tab-icon-overlay-stroke: light-dark(#fff, #4b4b4b) !important;
+  --tab-icon-overlay-fill: light-dark(#252525, #fff) !important;
 }
 
-/* dark */
-:root[lwt-default-theme-in-dark-mode="true"],
-:root[style*="--lwt-accent-color: rgb(28, 27, 34)"] {
-  --lwt-accent-color: #1C1C1C !important;
-  --lwt-accent-color-inactive: #2e2e2e !important;
-  --lwt-text-color: #E5E5E5 !important;
-  --toolbar-bgcolor: #3B3B3B !important;
-  --toolbar-color: #fff !important;
-  --toolbarbutton-icon-fill: #fff !important;
-  --chrome-content-separator-color: #686868 !important;
-  --lwt-toolbarbutton-icon-fill-attention: #4C98D1 !important;
-  --toolbarbutton-icon-fill-attention: #4C98D1 !important;
-  --lwt-tab-text: var(--toolbar-color) !important;
-  --lwt-selected-tab-background-color: var(--toolbar-bgcolor) !important;
-  --tab-selected-bgcolor: var(--toolbar-bgcolor) !important;
-  --toolbar-field-background-color: #2B2B2B !important;
-  --toolbar-field-color: #fff !important;
-  --toolbar-field-border-color: #0000 !important;
-  --toolbar-field-focus-background-color: var(--toolbar-field-background-color) !important;
-  --toolbar-field-focus-color: var(--toolbar-field-color) !important;
-  --toolbar-field-focus-border-color: #63ADE5 !important;
-  --urlbar-hover-highlight-color: rgba(128, 128, 128, 0.5) !important;
-  --urlbar-box-bgcolor: rgba(255, 255, 255, 0.11) !important;
-  --urlbar-box-hover-bgcolor: rgba(255, 255, 255, 0.11) !important;
-  --urlbar-box-focus-bgcolor: rgba(255, 255, 255, 0.28) !important;
-  --urlbar-icon-fill-opacity: 1 !important;
-  --urlbar-popup-url-color: #75B6E8 !important;
-  --lwt-brighttext-url-color: var(--urlbar-popup-url-color) !important;
-  --autocomplete-popup-background: #4A4A4A !important;
-  --autocomplete-popup-color: #fff !important;
-  --autocomplete-popup-highlight-background: #383838 !important;
-  --autocomplete-popup-hover-background: #444444 !important;
-  --autocomplete-popup-separator-color: #63636300 !important;
-  --button-bgcolor: #5C5C5C !important;
-  --button-hover-bgcolor: #646464 !important;
-  --button-active-bgcolor: #575757 !important;
-  --button-primary-bgcolor: #006CBE !important;
-  --button-primary-hover-bgcolor: #0078D4 !important;
-  --button-primary-active-bgcolor: #005CA3 !important;
-  --button-primary-color: #fff !important;
-  --error-text-color: #FF9AA2 !important;
-  --input-bgcolor: #4A4A4A !important;
-  --input-color: #fff !important;
-  --input-border-color: #8A8A8A !important;
-  --input-error-border-color: #FF848A !important;
-  --zoom-controls-bgcolor: #4A4A4A !important;
-  --arrowpanel-background: #4A4A4A !important;
-  --arrowpanel-color: #fff !important;
-  --panel-description-color: #fffb !important;
-  --panel-disabled-color: #ABABAA !important;
-  --arrowpanel-dimmed: #565656 !important;
-  --arrowpanel-dimmed-further: #707070 !important;
-  --panel-item-hover-bgcolor: #646464 !important;
-  --panel-item-active-bgcolor: #747474 !important;
-  --arrowpanel-border-color: #636363 !important;
-  --panel-separator-color: #636363 !important;
-  --panel-banner-item-update-supported-bgcolor: #81C995 !important;
-  --focus-outline-color: #63ADE5 !important;
-  --panel-shortcut-color: inherit !important;
-  --toolbarbutton-hover-background: rgba(255, 255, 255, 0.1) !important;
-  --toolbarbutton-active-background: rgba(255, 255, 255, 0.16) !important;
-  --uc-private-browsing-indicator: var(--button-primary-bgcolor);
-  --uc-private-browsing-indicator-text: var(--button-primary-color);
-  --tab-icon-overlay-stroke: #4b4b4b !important;
-  --tab-icon-overlay-fill: #fff !important;
+/* ensure that dark mode is enabled completely in private browsing mode. */
+:root[privatebrowsingmode="temporary"],
+:root[privatebrowsingmode="temporary"] #nav-bar,
+:root[privatebrowsingmode="temporary"] #PersonalToolbar {
+  color-scheme: dark !important;
 }
 
 #urlbar {
@@ -142,38 +82,20 @@
 }
 
 /* Change Colour of page when loading */
-:root:not(:-moz-lwtheme) #tabbrowser-tabpanels,
-:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] #tabbrowser-tabpanels {
-  background-color: #f7f7f7 !important;
-}
-
-:root[lwt-default-theme-in-dark-mode="true"] #tabbrowser-tabpanels,
-:root[style*="--lwt-accent-color: rgb(28, 27, 34)"] #tabbrowser-tabpanels {
-  background-color: #252525 !important;
+:root:not(:-moz-lwtheme) #tabbrowser-tabpanels {
+  background-color: light-dark(#f7f7f7, #252525) !important;
 }
 
 /* make the titlebar buttons black/white on default themes */
-:root:not(:-moz-lwtheme)[tabsintitlebar] .titlebar-buttonbox,
-:root[style*="--lwt-accent-color: rgb(240, 240, 244)"][tabsintitlebar] .titlebar-buttonbox {
-  color: #000 !important;
-}
-
-:root[lwt-default-theme-in-dark-mode="true"][tabsintitlebar] .titlebar-buttonbox,
-:root[style*="--lwt-accent-color: rgb(28, 27, 34)"][tabsintitlebar] .titlebar-buttonbox {
-  color: #fff !important;
+:root:not(:-moz-lwtheme)[tabsintitlebar] .titlebar-buttonbox {
+  color: light-dark(#000, #fff) !important;
 }
 
 #statuspanel-label {
   background-color: var(--toolbar-field-focus-background-color) !important;
   color: var(--toolbar-field-focus-color) !important;
   border-color: transparent !important;
-  box-shadow: 0 2px 5px #0004, 0 0 0 1px #0002 !important;
-}
-
-@media (prefers-color-scheme: dark) {
-  #statuspanel-label {
-    box-shadow: 0 2px 5px #0004, 0 0 0 1px #0004 !important;
-  }
+  box-shadow: 0 2px 5px #0004, 0 0 0 1px light-dark(#0002, #0004) !important;
 }
 
 @media (-moz-platform: windows) {
@@ -275,57 +197,33 @@
 
 /* side bar theme */
 #sidebar-box:not([lwt-sidebar]) {
-  --sidebar-background-color: #f7f7f7 !important;
-  --sidebar-text-color: #000 !important;
+  --sidebar-background-color: light-dark(#f7f7f7, #3b3b3b) !important;
+  --sidebar-text-color: light-dark(#000, #fff) !important;
   appearance: none !important;
 }
 
-#sidebar-box[style*="--sidebar-background-color: rgb(56, 56, 61"] {
-  --sidebar-background-color: #3B3B3B !important;
-  --sidebar-text-color: #fff !important;
-}
-
 #browser:not([style*="--sidebar-border-color"]) {
-  --sidebar-border-color: #bfbfbf !important;
-}
-
-#browser[style*="--sidebar-border-color: rgba(255, 255, 255"] {
-  --sidebar-border-color: #686868 !important;
+  --sidebar-border-color: light-dark(#bfbfbf, #686868) !important;
 }
 
 .sidebar-panel:not([lwt-sidebar]) {
-  color: #000 !important;
+  color: light-dark(#000, #fff) !important;
+  scrollbar-color: light-dark(#0006, #fff6) light-dark(#f7f7f740, #3b3b3b40) !important;
 }
 
 @-moz-document url(chrome://browser/content/syncedtabs/sidebar.xhtml){
-body {
-  background: transparent !important;
-}
-}
-
-.sidebar-panel[lwt-sidebar-brighttext][style*="--lwt-sidebar-background-color: rgb(56, 56, 61)"],
-body[lwt-sidebar-brighttext][style*="--lwt-sidebar-background-color: rgb(56, 56, 61)"] {
-  --lwt-sidebar-background-color: #3B3B3B !important;
-  --lwt-sidebar-text-color: #fff !important;
-  scrollbar-color: #fff6 #3B3B3B40 !important;
+  body {
+    background: transparent !important;
+  }
 }
 
 @media(-moz-platform: windows) {
   .sidebar-panel:not([lwt-sidebar]) #sidebar-search-container>#search-box,
   .sidebar-panel:not([lwt-sidebar]) #viewButton {
     appearance: none !important;
-    background-color: #fff !important;
+    background-color: light-dark(#fff, #2b2b2b) !important;
     color: inherit !important;
-    border: 1px solid #bfbfbf !important;
-    border-radius: 2px !important;
-  }
-
-  .sidebar-panel[lwt-sidebar-brighttext][style*="--lwt-sidebar-background-color: rgb(56, 56, 61)"] #sidebar-search-container>#search-box,
-  .sidebar-panel[lwt-sidebar-brighttext][style*="--lwt-sidebar-background-color: rgb(56, 56, 61)"] #viewButton {
-    appearance: none !important;
-    background-color: #2B2B2B !important;
-    color: inherit !important;
-    border: 1px solid #686868 !important;
+    border: 1px solid light-dark(#bfbfbf, #686868) !important;
     border-radius: 2px !important;
   }
 }
