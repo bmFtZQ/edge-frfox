@@ -190,7 +190,7 @@ bugs with certain themes eg. dark text on dark background.) */
 } */
 
 @media not (-moz-platform: macos) {
-  @media (-moz-bool-pref: "uc.tweak.revert-context-menu") {
+  @media not (-moz-bool-pref: "uc.tweak.revert-context-menu") {
     @media (-moz-bool-pref: "uc.tweak.vertical-context-navigation") {
       #context-navigation {
         flex-direction: column !important;
