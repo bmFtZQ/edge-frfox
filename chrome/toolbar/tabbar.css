@@ -1,12 +1,12 @@
 /* Edge-Frfox - tabbar.css */
 
-@supports -moz-bool-pref("uc.tweak.floating-tabs.equal-margin") and -moz-bool-pref("uc.tweak.floating-tabs") {
+@media (-moz-bool-pref: "uc.tweak.floating-tabs.equal-margin") and (-moz-bool-pref: "uc.tweak.floating-tabs") {
   :root #titlebar {
     --tab-block-margin: 5px !important;
   }
 }
 
-@supports (not -moz-bool-pref("uc.tweak.floating-tabs.equal-margin")) or (not -moz-bool-pref("uc.tweak.floating-tabs")) {
+@media (not (-moz-bool-pref: "uc.tweak.floating-tabs.equal-margin")) or (not (-moz-bool-pref: "uc.tweak.floating-tabs")) {
   :root #titlebar {
     --tab-block-margin: 8px !important;
   }
@@ -95,7 +95,7 @@
   --uc-tab-corner-bg: color-mix(in srgb, currentColor 8%, transparent) !important;
 }
 
-@supports not -moz-bool-pref("uc.tweak.floating-tabs") {
+@media not (-moz-bool-pref: "uc.tweak.floating-tabs") {
   #Tabstoolbar:not([brighttext]) .tabbrowser-tab:hover .tab-background:not([selected], [multiselected]) {
     background-color: color-mix(in srgb, white 30%, transparent) !important;
     --uc-tab-corner-bg: color-mix(in srgb, white 30%, transparent) !important;

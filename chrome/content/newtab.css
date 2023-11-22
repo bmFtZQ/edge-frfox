@@ -147,7 +147,7 @@ url-prefix("about:home") {
     padding: 30px !important;
   }
 
-  @supports -moz-bool-pref("uc.tweak.hide-newtab-logo") {
+  @media (-moz-bool-pref: "uc.tweak.hide-newtab-logo") {
     .logo-and-wordmark {
       display: none !important;
     }
@@ -172,7 +172,7 @@ url-prefix("about:home") {
     }
   }
 
-  @supports -moz-bool-pref("browser.theme.dark-private-windows") {
+  @media (-moz-bool-pref: "browser.theme.dark-private-windows") {
     html.private {
       --in-content-page-color: white !important;
       --in-content-page-background: #252525 !important;
@@ -238,7 +238,7 @@ url-prefix("about:home") {
   }
 }
 
-@supports -moz-bool-pref("uc.tweak.newtab-background") {
+@media (-moz-bool-pref: "uc.tweak.newtab-background") {
   @-moz-document url(about:newtab),
   url(about:home),
   url(about:privatebrowsing),
@@ -259,15 +259,14 @@ url-prefix("about:home") {
       background-attachment: fixed !important;
     }
 
-    body[lwt-newtab][lwt-newtab-brighttext],
-    :root[lwt-newtab][lwt-newtab-brighttext] body,
+    :root[lwt-newtab-brighttext] body,
     :root.private body {
       background-image: var(--bg-1), var(--bg-0) !important;
       --newtab-element-hover-color: rgba(66, 66, 66, 0.4) !important;
       --newtab-element-active-color: rgba(66, 66, 66, 0.55) !important;
     }
 
-    @supports not -moz-bool-pref("browser.theme.dark-private-windows") {
+    @media not (-moz-bool-pref: "browser.theme.dark-private-windows") {
       :root.private body {
         background-image: var(--bg-0) !important;
       }

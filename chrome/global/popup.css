@@ -380,7 +380,7 @@ panelview .toolbarbutton-1,
 }
 
 /* disable context menu when this tweak is applied */
-@supports not -moz-bool-pref("uc.tweak.revert-context-menu") {
+@media not (-moz-bool-pref: "uc.tweak.revert-context-menu") {
   /* Context Menu */
   menupopup:not(.PanelUI-subView),
   menupopup:not(.PanelUI-subView) menuitem,
@@ -619,7 +619,7 @@ panelview .toolbarbutton-1,
     fill: var(--lwt-toolbarbutton-icon-fill-attention, var(--toolbarbutton-icon-fill-attention, currentColor)) !important;
   }
 
-  @supports not -moz-bool-pref("uc.tweak.smaller-context-menu-text") {
+  @media not (-moz-bool-pref: "uc.tweak.smaller-context-menu-text") {
     @media (-moz-platform: windows) {
       .menu-text,
       .menu-iconic-text,
