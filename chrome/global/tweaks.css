@@ -17,12 +17,11 @@ bugs with certain themes eg. dark text on dark background.) */
 
 /* remove tab separators */
 @media (-moz-bool-pref: "uc.tweak.remove-tab-separators") {
-  .tabbrowser-tab:not([selected="true"], :hover, [beforeselected-visible], [beforehovered]) .tab-stack::after {
-    display: none !important;
-  }
-
-  .tabbrowser-tab:not([last-visible-tab="true"]) {
-    margin-inline-end: 0px !important;
+  .tabbrowser-tab .tab-stack {
+    &::before,
+    &::after {
+      content: initial !important;
+    }
   }
 }
 
