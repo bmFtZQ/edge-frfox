@@ -3,77 +3,47 @@
 /* colours */
 @-moz-document url-prefix(about:) {
   :root {
-    --in-content-page-color: #252525 !important;
-    --in-content-page-background: #f7f7f7 !important;
-    --in-content-deemphasized-text: #666 !important;
-    --in-content-box-background: #fff !important;
-    --in-content-box-background-odd: rgba(0, 0, 0, 0.05) !important;
-    --in-content-box-info-background: #f7f7f7 !important;
-    --in-content-icon-color: #666 !important;
-    --in-content-accent-color: #006CBE !important;
-    --in-content-accent-color-active: #1683D8 !important;
-    --in-content-border-hover: rgba(0, 0, 0, 0.5) !important;
+    --in-content-page-color: light-dark(#252525, #fff) !important;
+    --in-content-page-background: light-dark(#f7f7f7, #252525) !important;
+    --in-content-deemphasized-text: light-dark(#666, #bbb) !important;
+    --in-content-box-background: light-dark(#fff, #333) !important;
+    --in-content-box-background-odd: light-dark(rgb(0 0 0 / .05), rgb(255 255 255 / .05)) !important;
+    --in-content-box-info-background: light-dark(#f7f7f7, rgb(255 255 255 / 0.15)) !important;
+    --in-content-icon-color: light-dark(#666, #fff) !important;
+    --in-content-accent-color: light-dark(#006CBE, #75B6E8) !important;
+    --in-content-accent-color-active: light-dark(#1683D8, #4C98D1) !important;
+    --in-content-border-hover: light-dark(rgb(0 0 0 / .5), rgb(255 255 255 / .3)) !important;
     --in-content-border-invalid: var(--red-50) !important;
-    --in-content-border-color: #bebebe !important;
-    --in-content-error-text-color: #FF848A !important;
-    --in-content-link-color: #0078D4 !important;
-    --in-content-link-color-hover: #006CBE !important;
-    --in-content-link-color-active: #0749AC !important;
-    --in-content-link-color-visited: #0078D4 !important;
+    --in-content-border-color: light-dark(#bebebe, rgb(255 255 255 / .2)) !important;
+    --in-content-error-text-color: light-dark(#FF848A, #FF9AA2) !important;
+    --in-content-link-color: light-dark(#0078D4, #75B6E8) !important;
+    --in-content-link-color-hover: light-dark(#006CBE, #63ADE5) !important;
+    --in-content-link-color-active: light-dark(#0749AC, #4C98D1) !important;
+    --in-content-link-color-visited: light-dark(#0078D4, #75B6E8) !important;
+    --link-color: var(--in-content-link-color) !important;
+    --link-color-hover: var(--in-content-link-color-hover) !important;
+    --link-color-active: var(--in-content-link-color-active) !important;
+    --link-color-visited: var(--in-content-link-color-visited) !important;
     --in-content-button-text-color: var(--in-content-text-color) !important;
     --in-content-button-text-color-hover: var(--in-content-text-color) !important;
     --in-content-button-text-color-active: var(--in-content-button-text-color-hover) !important;
-    --in-content-button-background: #EDEDED !important;
-    --in-content-button-background-hover: #e5e5e5 !important;
-    --in-content-button-background-active: #d5d5d5 !important;
-    --in-content-primary-button-text-color: #fff !important;
-    --in-content-primary-button-background: #0061e0 !important;
-    --in-content-primary-button-background-hover: #0250bb !important;
-    --in-content-primary-button-background-active: #053e94 !important;
-    --in-content-danger-button-background: #DF4951 !important;
-    --in-content-danger-button-background-hover: #EA656C !important;
-    --in-content-danger-button-background-active: #BB353C !important;
-    --in-content-focus-outline-color: color-mix(in srgb, #0055D7 50%, transparent) !important;
-    --in-content-table-background: #f7f7f7 !important;
+    --in-content-button-background: light-dark(#EDEDED, #3B3B3B) !important;
+    --in-content-button-background-hover: light-dark(#e5e5e5, #545454) !important;
+    --in-content-button-background-active: light-dark(#d5d5d5, #606060) !important;
+    --in-content-primary-button-text-color: light-dark(#fff, #fff) !important;
+    --in-content-primary-button-background: light-dark(#0061e0, #006CBE) !important;
+    --in-content-primary-button-background-hover: light-dark(#0250bb, #0078D4) !important;
+    --in-content-primary-button-background-active: light-dark(#053e94, #005CA3) !important;
+    --in-content-danger-button-background: light-dark(#DF4951, #E12424) !important;
+    --in-content-danger-button-background-hover: light-dark(#EA656C, #F94343) !important;
+    --in-content-danger-button-background-active: light-dark(#BB353C, #AA1E1E) !important;
+    --in-content-focus-outline-color: light-dark(rgb(0 85 215 / .5), #63ADE5) !important;
+    --focus-outline-color: var(--in-content-focus-outline-color) !important;
+    --in-content-table-background: light-dark(#f7f7f7, #252525) !important;
     --in-content-text-color: var(--in-content-page-color) !important;
-    scrollbar-color: rgba(37, 37, 37, 0.4) #f7f7f7 !important;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --in-content-page-background: #252525 !important;
-      --in-content-page-color: #fff !important;
-      --in-content-deemphasized-text: #bbb !important;
-      --in-content-box-background: #333 !important;
-      --in-content-box-background-odd: rgba(255, 255, 255, 0.05) !important;
-      --in-content-box-info-background: rgba(255, 255, 255, 0.15) !important;
-      --in-content-border-color: rgba(255, 255, 255, 0.2) !important;
-      --in-content-border-hover: rgba(255, 255, 255, 0.3) !important;
-      --in-content-border-invalid: rgb(255, 132, 139) !important;
-      --in-content-error-text-color: #FF9AA2 !important;
-      --in-content-button-background: #3B3B3B !important;
-      --in-content-button-background-hover: #545454 !important;
-      --in-content-button-background-active: #606060 !important;
-      --in-content-icon-color: #fff !important;
-      --in-content-primary-button-text-color: #fff !important;
-      --in-content-primary-button-background: #006CBE !important;
-      --in-content-primary-button-background-hover: #0078D4 !important;
-      --in-content-primary-button-background-active: #005CA3 !important;
-      --in-content-danger-button-background: #E12424 !important;
-      --in-content-danger-button-background-hover: #F94343 !important;
-      --in-content-danger-button-background-active: #AA1E1E !important;
-      --in-content-focus-outline-color: #63ADE5 !important;
-      --in-content-table-background: #252525 !important;
-      --in-content-accent-color: #75B6E8 !important;
-      --in-content-accent-color-active: #4C98D1 !important;
-      --in-content-link-color: #75B6E8 !important;
-      --in-content-link-color-hover: #63ADE5 !important;
-      --in-content-link-color-active: #4C98D1 !important;
-      --in-content-link-color-visited: var(--in-content-link-color) !important;
-      --card-outline-color: #555 !important;
-      --dialog-warning-text-color: var(--red-40) !important;
-      scrollbar-color: rgba(255, 255, 255, .4) #252525 !important;
-    }
+    scrollbar-color:
+      light-dark(rgb(37 37 37 / .4), rgb(255 255 255 / .4))
+      light-dark(#f7f7f7, #252525) !important;
   }
 }
 

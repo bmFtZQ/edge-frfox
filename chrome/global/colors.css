@@ -15,17 +15,18 @@
   --toolbarbutton-icon-fill-attention: light-dark(#0078D4, #4C98D1) !important;
   --lwt-tab-text: var(--toolbar-color) !important;
   --lwt-selected-tab-background-color: unset !important;
-  --tab-selected-bgcolor: unset !important;
+  --tab-selected-bgcolor: var(--toolbar-bgcolor) !important;
   --toolbar-field-background-color: light-dark(#fff, #2B2B2B) !important;
   --toolbar-field-color: light-dark(#000, #fff) !important;
   --toolbar-field-border-color: light-dark(#0000, #0000) !important;
   --toolbar-field-focus-background-color: var(--toolbar-field-background-color) !important;
   --toolbar-field-focus-color: var(--toolbar-field-color) !important;
   --toolbar-field-focus-border-color: light-dark(#0055D7, #63ADE5) !important;
-  --urlbar-hover-highlight-color: light-dark(rgba(192, 192, 192, 0.5), rgba(128, 128, 128, 0.5)) !important;
-  --urlbar-box-bgcolor: light-dark(rgba(0, 0, 0, 0.09), rgba(255, 255, 255, 0.11)) !important;
-  --urlbar-box-hover-bgcolor: light-dark(rgba(0, 0, 0, 0.09), rgba(255, 255, 255, 0.11)) !important;
-  --urlbar-box-focus-bgcolor: light-dark(rgba(0, 0, 0, 0.22), rgba(255, 255, 255, 0.28)) !important;
+  --link-color: light-dark(#0078D4, #75B6E8) !important;
+  --urlbar-hover-highlight-color: light-dark(rgb(192 192 192 / .5), rgb(128 128 128 / .5)) !important;
+  --urlbar-box-bgcolor: light-dark(rgb(0 0 0 / .09), rgb(255 255 255 / .11)) !important;
+  --urlbar-box-hover-bgcolor: light-dark(rgb(0 0 0 / .09), rgb(255 255 255 / .11)) !important;
+  --urlbar-box-focus-bgcolor: light-dark(rgb(0 0 0 / .22), rgb(255 255 255 / .28)) !important;
   --urlbar-icon-fill-opacity: 1 !important;
   --urlbar-popup-url-color: light-dark(#0072C9, #75B6E8) !important;
   --lwt-brighttext-url-color: var(--urlbar-popup-url-color) !important;
@@ -60,9 +61,9 @@
   --panel-banner-item-update-supported-bgcolor: light-dark(#188038, #81C995) !important;
   --focus-outline-color: light-dark(#0055D7, #63ADE5) !important;
   --panel-shortcut-color: inherit !important;
-  --uc-urlbar-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
-  --toolbarbutton-hover-background: light-dark(rgba(0, 0, 0, 0.08), rgba(255, 255, 255, 0.1)) !important;
-  --toolbarbutton-active-background: light-dark(rgba(0, 0, 0, 0.12), rgba(255, 255, 255, 0.16)) !important;
+  --uc-urlbar-shadow: 0 0 4px rgb(0 0 0 / .1);
+  --toolbarbutton-hover-background: light-dark(rgb(0 0 0 / .08), rgb(255 255 255 / .1)) !important;
+  --toolbarbutton-active-background: light-dark(rgb(0 0 0 / .12), rgb(255 255 255 / .16)) !important;
   --uc-private-browsing-indicator: var(--button-primary-bgcolor);
   --uc-private-browsing-indicator-text: var(--button-primary-color);
   --tab-icon-overlay-stroke: light-dark(#fff, #4b4b4b) !important;
@@ -70,10 +71,12 @@
 }
 
 /* ensure that dark mode is enabled completely in private browsing mode. */
-:root[privatebrowsingmode="temporary"],
-:root[privatebrowsingmode="temporary"] #nav-bar,
-:root[privatebrowsingmode="temporary"] #PersonalToolbar {
-  color-scheme: dark !important;
+@media (-moz-bool-pref: "browser.theme.dark-private-windows") {
+  :root[privatebrowsingmode="temporary"],
+  :root[privatebrowsingmode="temporary"] #nav-bar,
+  :root[privatebrowsingmode="temporary"] #PersonalToolbar {
+    color-scheme: dark !important;
+  }
 }
 
 #urlbar {

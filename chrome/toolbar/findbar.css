@@ -32,11 +32,11 @@
 .close-icon:not([disabled]):hover,
 .findbar-find-previous:not([disabled]):hover,
 .findbar-find-next:not([disabled]):hover {
-  background: var(--toolbarbutton-hover-background, rgba(190,190,190,.2)) !important;
+  background: var(--toolbarbutton-hover-background, rgb(190 190 190 / .2)) !important;
 }
 
 .close-icon:not([disabled]):hover:active,
 .findbar-find-previous:not([disabled]):hover:active,
 .findbar-find-next:not([disabled]):hover:active {
-  background: var(--toolbarbutton-active-background, rgba(190,190,190,.4)) !important;
+  background: var(--toolbarbutton-active-background, rgb(190 190 190 / .4)) !important;
 }
