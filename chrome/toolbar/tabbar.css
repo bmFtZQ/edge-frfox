@@ -354,11 +354,20 @@ toolbarbutton[part="scrollbutton-down"] {
   margin-top: calc(2px + var(--tab-block-margin)) !important;
 }
 
-#tabbrowser-tabs:not([overflow="true"]) .tabbrowser-tab:first-of-type {
-  margin-inline-start: 14px !important;
+/* add margin to tabs if they are the first or last tab */
+#tabbrowser-arrowscrollbox:not([overflowing]) .tabbrowser-tab {
+  &:first-of-type {
+    margin-inline-start: 14px !important;
+  }
+
+  &:last-of-type {
+    margin-inline-end: 6px !important;
+  }
 }
-#tabbrowser-tabs:not([overflow="true"]) .tabbrowser-tab:last-of-type {
-  margin-inline-end: 6px !important;
+
+/* remove gap between pinned and unpinned tabs */
+#tabbrowser-tabs[haspinnedtabs]:not([positionpinnedtabs]) > #tabbrowser-arrowscrollbox > .tabbrowser-tab:nth-child(1 of :not([pinned], [hidden])) {
+  margin-inline-start: 0 !important;
 }
 
 #tabbrowser-tabs {
@@ -375,7 +384,7 @@ toolbarbutton[part="scrollbutton-down"] {
 }
 
 #tabbrowser-tabs[positionpinnedtabs]>#tabbrowser-arrowscrollbox>.tabbrowser-tab[pinned] {
-  clip-path: inset(-4px -4px 0) !important;
+  clip-path: inset(-8px -8px 0) !important;
 }
 
 :root {
