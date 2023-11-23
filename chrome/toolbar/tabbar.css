@@ -328,6 +328,11 @@ toolbarbutton[part="scrollbutton-down"] {
   border-color: transparent !important;
 }
 
+/* Hide first tab separator if there are no buttons before it (Such as Firefox View) */
+#TabsToolbar-customization-target > #tabbrowser-tabs:not(toolbarbutton:not(#fxa-toolbar-menu-button) + #tabbrowser-tabs) .tabbrowser-tab:first-of-type .tab-stack::before {
+  border-color: transparent !important;
+}
+
 /* .tabbrowser-tab:not([last-visible-tab="true"]) {
   margin-inline-end: -1px !important;
 } */
