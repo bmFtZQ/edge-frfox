@@ -27,7 +27,7 @@ A Firefox userChrome.css theme that aims to recreate the look and feel of the Ch
    ### Optional:
    * To use the light theme in private browsing mode set `browser.theme.dark-private-windows` = `false`
 
-   Additional tweaks can also be applied to the theme, such as Mica (Windows 11 Only), Floating Tabs and more. See [Tweaks](#tweaks).
+   Additional tweaks can also be applied to the theme, such as Floating Tabs, rounded browser corners and more. See [Tweaks](#tweaks).
 
 **Note: Most frequently tested on macOS**
 
@@ -36,8 +36,6 @@ A Firefox userChrome.css theme that aims to recreate the look and feel of the Ch
 | ----------------------------------- | --------------------------------------- | -------------------------------------- |
 | Default (Windows 11)                | ![Light][s-l]                           | ![Dark][s-d]                           |
 | Floating Tabs (Windows 11)          | ![Light, Floating Tabs][s-lf]           | ![Dark, Floating Tabs][s-df]           |
-| Mica (Windows 11)                   | ![Light, Mica][s-lm]                    | ![Dark, Mica][s-dm]                    |
-| Mica and Floating Tabs (Windows 11) | ![Light, Mica and Floating Tabs][s-lmf] | ![Dark, Mica and Floating Tabs][s-dmf] |
 | GTK (GNOME 42, [adw-gtk3][1] theme) | ![Light, GTK][s-lgtk]                   | ![Dark, GTK][s-dgtk]                   |
 
 ## Tweaks
@@ -71,13 +69,6 @@ To disable a tweak, set the key to `false` or delete it, then restart the browse
 | **OPTIONAL2: Hide the separator of adjacent tabs (need to wait for Firefox support, or forced enable with bug)** |
 | `layout.css.has-selector.enabled`                                                                                |
 
-| enable Mica toolbar background *(Windows 11 only)*                  |
-| ------------------------------------------------------------------- |
-| **BROKEN ON NEWER VERSIONS OF FIREFOX**                             |
-| **See [Mica Tweak Instructions][3] for installation instructions.** |
-| **NOTE: Only works on default theme: 'System theme - auto'**        |
-| `uc.tweak.win11-mica`                                               |
-
 | force tab background colour to the same colour as the navbar background (useful for Proton themes) |
 | -------------------------------------------------------------------------------------------------- |
 | **NOTE: can cause readability issues with some themes! (eg. white text on white bg)**              |
@@ -105,15 +96,12 @@ To disable a tweak, set the key to `false` or delete it, then restart the browse
 | ----------------------------------------------------------------- |
 | `uc.tweak.show-tab-close-button-on-hover`                         |
 
-## Mica Tweak Instructions (Windows 11 Only)
-NOTE: Broken on newer versions of Firefox.
-1. Download and install [Mica For Everyone][2].
-2. Create a custom process rule with the following:
-   1. Name: `firefox`
-   2. Titlebar Color: `System`
-   3. Backdrop Type: `Mica`
-3. Enable tweak in `about:config`: `uc.tweak.win11-mica`
-4. Restart Firefox.
+## Mica Tweak Notice
+Mica is broken due to changes made in the Firefox 115 update, Mica has now been
+removed from this theme.
+
+If you still have `uc.tweak.win11-mica` set in `about:config` you can safely
+delete it
 
 ## Acknowledgements
 [muckSponge](https://github.com/muckSponge) - [MaterialFox](https://github.com/muckSponge/MaterialFox)
@@ -124,19 +112,13 @@ NOTE: Broken on newer versions of Firefox.
 
 <!-- links -->
 [1]: https://github.com/lassekongo83/adw-gtk3
-[2]: https://github.com/MicaForEveryone/MicaForEveryone
-[3]: #mica-tweak-instructions-windows-11-only
 
 <!-- light mode screenshot links -->
 [s-l]: screenshots/light.png
 [s-lf]: screenshots/light-floating-tabs.png
-[s-lm]: screenshots/light-mica.png
-[s-lmf]: screenshots/light-mica-floating-tabs.png
 [s-lgtk]: screenshots/gtk-light.png
 
 <!-- dark mode screenshot links -->
 [s-d]: screenshots/dark.png
 [s-df]: screenshots/dark-floating-tabs.png
-[s-dm]: screenshots/dark-mica.png
-[s-dmf]: screenshots/dark-mica-floating-tabs.png
 [s-dgtk]: screenshots/gtk-dark.png
