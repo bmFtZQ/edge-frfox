@@ -13,15 +13,62 @@
 }
 
 @media (-moz-bool-pref: "uc.tweak.rounded-corners") {
-  :root #browser>#appcontent {
-    margin: 0px 3px 3px 3px;
-    border-radius: 8px;
+  /* Fix changes to the bookmarks bar made in Firefox 120 */
+  :root[BookmarksToolbarOverlapsBrowser] .newTabBrowserPanel {
+    padding-top: 0 !important;
+  }
+
+  :root[BookmarksToolbarOverlapsBrowser] #appcontent {
+    margin-top: var(--bookmarks-toolbar-overlapping-browser-height);
+  }
+
+  :root {
+    --uc-tweak-rounded-corners-padding: 3px;
+    --uc-tweak-rounded-corners-border: 1px;
+    --uc-tweak-rounded-corners-radius: 8px;
+
+    & #browser:not([style*="--sidebar-border-color"]) {
+      --sidebar-border-color: light-dark(#bfbfbf80, #595959) !important;
+    }
+  }
+
+  /* disable rounded corners in fullscreen, only if the toolbar is hidden */
+  :root[inFullscreen] #navigator-toolbox:where([style*="margin-top"], [fullscreenShouldAnimate]) + #browser {
+    --uc-tweak-rounded-corners-padding: 0;
+    --uc-tweak-rounded-corners-border: 0;
+    --uc-tweak-rounded-corners-radius: 0;
+  }
+
+  #appcontent {
+    margin-inline: var(--uc-tweak-rounded-corners-padding);
+    margin-block-end: var(--uc-tweak-rounded-corners-padding);
+    border-radius: var(--uc-tweak-rounded-corners-radius);
     overflow: hidden;
-    border: 1.25px solid rgb(0 0 0 / .05);
+    border: 1px solid rgb(0 0 0 / .1);
     box-shadow: 0px 1px 2px rgb(0 0 0 / .1);
   }
-  
-  :root #browser {
+
+
+  /* apply rounded corners to sidebar */
+  #sidebar-box {
+    margin-inline-start: var(--uc-tweak-rounded-corners-padding) !important;
+    margin-block-end: var(--uc-tweak-rounded-corners-padding) !important;
+    border-radius: var(--uc-tweak-rounded-corners-radius) !important;
+    overflow: hidden !important;
+    border: 1px solid rgb(0 0 0 / .1);
+    
+    &[positionend] {
+      margin-inline-start: 0 !important;
+      margin-inline-end: var(--uc-tweak-rounded-corners-padding) !important;
+    }
+  }
+
+  /* remove sidebar border */
+  #sidebar-splitter {
+    border-inline-width: 0 !important;
+  }
+
+  #browser {
     background-color: var(--browser-frame-bgcolor);
   }
 }

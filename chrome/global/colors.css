@@ -68,6 +68,7 @@
   --uc-private-browsing-indicator-text: var(--button-primary-color);
   --tab-icon-overlay-stroke: light-dark(#fff, #4b4b4b) !important;
   --tab-icon-overlay-fill: light-dark(#252525, #fff) !important;
+  --toolbarseparator-color: color-mix(in srgb, currentColor 40%, transparent) !important;
 }
 
 /* ensure that dark mode is enabled completely in private browsing mode. */

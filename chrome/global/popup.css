@@ -403,7 +403,7 @@ panelview .toolbarbutton-1,
   panel[type="autocomplete-richlistbox"]>.autocomplete-richlistbox,
   .menupopup-arrowscrollbox {
     background: var(--arrowpanel-background) !important;
-    border: 0 !important;
+    border: 1px solid var(--panel-separator-color) !important;
   }
 
   /* make room for menu shadow */
@@ -493,6 +493,10 @@ panelview .toolbarbutton-1,
     padding: 0 !important;
     background: none !important;
     border-top: 1px solid var(--panel-separator-color) !important;
+
+    &::before {
+      content: unset !important;
+    }
   }
 
   #PlacesToolbar menupopup[placespopup="true"] menuseparator::before {

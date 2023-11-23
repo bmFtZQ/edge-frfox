@@ -265,13 +265,15 @@
   padding: 0 12px !important;
 }
 
-.tabbrowser-tab[usercontextid]>.tab-stack>.tab-background>.tab-context-line {
-  height: 8px !important;
-  clip-path: inset(0 0 6px) !important;
-  border-radius: var(--tab-border-radius) !important;
-  border-bottom-left-radius: 0 !important;
-  border-bottom-right-radius: 0 !important;
-  margin: 0 !important;
+/* Tab container indicator */
+.tabbrowser-tab[usercontextid] .tab-background .tab-context-line {
+  height: 2px !important;
+  border-radius: 2px !important;
+  margin: 2px 7px 0 !important;
+}
+
+.tabbrowser-tab[selected][usercontextid] .tab-background .tab-context-line {
+  margin-inline: 9px !important;
 }
 
 .titlebar-spacer[type="post-tabs"] {
