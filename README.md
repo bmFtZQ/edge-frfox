@@ -32,67 +32,65 @@ A Firefox userChrome.css theme that aims to recreate the look and feel of the Ch
 **Note: Most frequently tested on macOS**
 
 ## Screenshots
-| Theme                               | Light                                   | Dark                                   |
-| ----------------------------------- | --------------------------------------- | -------------------------------------- |
-| Default (Windows 11)                | ![Light][s-l]                           | ![Dark][s-d]                           |
-| Floating Tabs (Windows 11)          | ![Light, Floating Tabs][s-lf]           | ![Dark, Floating Tabs][s-df]           |
-| GTK (GNOME 42, [adw-gtk3][1] theme) | ![Light, GTK][s-lgtk]                   | ![Dark, GTK][s-dgtk]                   |
+| Theme                               | Light                         | Dark                         |
+| ----------------------------------- | ----------------------------- | ---------------------------- |
+| Default (Windows 11)                | ![Light][s-l]                 | ![Dark][s-d]                 |
+| Floating Tabs (Windows 11)          | ![Light, Floating Tabs][s-lf] | ![Dark, Floating Tabs][s-df] |
+| GTK (GNOME 42, [adw-gtk3][1] theme) | ![Light, GTK][s-lgtk]         | ![Dark, GTK][s-dgtk]         |
 
 ## Tweaks
 Certain tweaks can be applied to the theme, to enable them navigate to `about:config` and create a boolean key for each tweak you want to use and set it to `true`, then restart the browser.
 
 To disable a tweak, set the key to `false` or delete it, then restart the browser.
 
-| use background image on newtab page                                                                |
+| Enable Edge style floating tabs                                 |
+| --------------------------------------------------------------- |
+| `uc.tweak.floating-tabs`                                        |
+| **OPTIONAL1: Make the top and bottom margins of the tab equal** |
+| `uc.tweak.floating-tabs.equal-margin`                           |
+
+| Enable rounded corners     |
+| -------------------------- |
+| `uc.tweak.rounded-corners` |
+
+| Use background image on newtab page                                                                |
 | -------------------------------------------------------------------------------------------------- |
 | **SETUP: Add an image named `background-0.(jpg/png)` to the `chrome` folder.**                     |
 | **OPTIONAL: Add a second image named `background-1.(jpg/png)` for seperate dark mode background.** |
 | `uc.tweak.newtab-background`                                                                       |
 
-| hide Firefox logo on newtab page |
+| Hide Firefox logo on newtab page |
 | -------------------------------- |
 | `uc.tweak.hide-newtab-logo`      |
 
-| disable drag space above tabs |
+| Disable drag space above tabs |
 | ----------------------------- |
 | `uc.tweak.disable-drag-space` |
 
-| enable rounded corners     |
-| -------------------------- |
-| `uc.tweak.rounded-corners` |
-
-| enable Edge style floating tabs                                                                                  |
-| ---------------------------------------------------------------------------------------------------------------- |
-| `uc.tweak.floating-tabs`                                                                                         |
-| **OPTIONAL1: Make the top and bottom margins of the tab equal**                                                  |
-| `uc.tweak.floating-tabs.equal-margin`                                                                            |
-| **OPTIONAL2: Hide the separator of adjacent tabs (need to wait for Firefox support, or forced enable with bug)** |
-| `layout.css.has-selector.enabled`                                                                                |
-
-| force tab background colour to the same colour as the navbar background (useful for Proton themes) |
+| Force tab background colour to the same colour as the navbar background (useful for Proton themes) |
 | -------------------------------------------------------------------------------------------------- |
 | **NOTE: can cause readability issues with some themes! (eg. white text on white bg)**              |
 | `uc.tweak.force-tab-colour`                                                                        |
 | ![force tab colour example](screenshots/force-tab-colour.svg) (Left: OFF, Right: ON)               |
 
-| Show context menu navigation buttons (Back, Forward, Reload, etc.) vertically |
-| ----------------------------------------------------------------------------- |
-| **NOTE: labels are only shown in the English language.**                      |
-| `uc.tweak.vertical-context-navigation`                                        |
+| Show context menu navigation buttons (Back, Forward, Reload, Bookmark) vertically |
+| --------------------------------------------------------------------------------- |
+| **NOTE: labels are only shown in the English language.**                          |
+| `uc.tweak.vertical-context-navigation`                                            |
 
-| remove tab separators            |
+| Remove tab separators            |
 | -------------------------------- |
 | `uc.tweak.remove-tab-separators` |
 
-| use Firefox's default context menu font-size (only applies to Windows) |
+| Use Firefox's default context menu font-size (only applies to Windows) |
 | ---------------------------------------------------------------------- |
 | `uc.tweak.smaller-context-menu-text`                                   |
 
-| disable custom context menus   |
+| Disable custom context menus   |
 | ------------------------------ |
 | `uc.tweak.revert-context-menu` |
 
-| if a tab's close button is hidden, show it when hovering over tab |
+| If a tab's close button is hidden, show it when hovering over tab |
 | ----------------------------------------------------------------- |
 | `uc.tweak.show-tab-close-button-on-hover`                         |
 

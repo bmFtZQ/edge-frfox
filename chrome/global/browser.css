@@ -14,11 +14,13 @@
 
 @media (-moz-bool-pref: "uc.tweak.rounded-corners") {
   /* Fix changes to the bookmarks bar made in Firefox 120 */
-  :root[BookmarksToolbarOverlapsBrowser] .newTabBrowserPanel {
+  :root[BookmarksToolbarOverlapsBrowser] .newTabBrowserPanel,
+  :root[BookmarksToolbarOverlapsBrowser] #sidebar-box {
     padding-top: 0 !important;
   }
 
-  :root[BookmarksToolbarOverlapsBrowser] #appcontent {
+  :root[BookmarksToolbarOverlapsBrowser] #appcontent,
+  :root[BookmarksToolbarOverlapsBrowser] #sidebar-box {
     margin-top: var(--bookmarks-toolbar-overlapping-browser-height);
   }
 
