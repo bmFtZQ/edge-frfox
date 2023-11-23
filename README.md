@@ -53,6 +53,13 @@ To disable a tweak, set the key to `false` or delete it, then restart the browse
 | -------------------------- |
 | `uc.tweak.rounded-corners` |
 
+| Hide Tabs Bar (Useful when using vertical tabs extensions such as Sidebery, Tree Style Tab, etc.) |
+| ------------------------------------------------------------------------------------------------- |
+| **NOTE: At the moment, this only supports macOS and Windows.**                                    |
+| `uc.tweak.hide-tabs-bar`                                                                          |
+| **OPTIONAL: Only enable in fullscreen mode (currently: macOS Only!)**                             |
+| `uc.tweak.hide-tabs-bar.only-when-maximised`                                                      |
+
 | Use background image on newtab page                                                                |
 | -------------------------------------------------------------------------------------------------- |
 | **SETUP: Add an image named `background-0.(jpg/png)` to the `chrome` folder.**                     |

@@ -2,7 +2,7 @@
 
 /* disable drag space above tabs */
 @media (-moz-bool-pref: "uc.tweak.disable-drag-space") {
-  :root #titlebar {
+  :root {
     --tab-block-margin: 0px !important;
   }
 }
@@ -85,17 +85,17 @@ bugs with certain themes eg. dark text on dark background.) */
 
   /* adjust spacing of area above tabs */
   @media not (-moz-platform: macos) {
-    :root[sizemode="maximized"] #titlebar {
+    :root[sizemode="maximized"] {
       --tab-block-margin: 4px !important;
     }
   }
 
-  :root:is([inFullscreen], :not([tabsintitlebar])) #titlebar {
+  :root:is([inFullscreen], :not([tabsintitlebar])) {
     --tab-block-margin: 4px !important;
   }
 
   @media (-moz-bool-pref: "uc.tweak.disable-drag-space") {
-    :root #titlebar {
+    :root {
       --tab-block-margin: 4px !important;
     }
   }
@@ -210,5 +210,94 @@ bugs with certain themes eg. dark text on dark background.) */
 @media (-moz-bool-pref: "uc.tweak.show-tab-close-button-on-hover") {
   #tabbrowser-tabs[closebuttons="activetab"] .tabbrowser-tab:not([pinned], [selected]):hover .tab-close-button {
     display: flex !important;
+  }
+}
+
+@media (-moz-bool-pref: "uc.tweak.hide-tabs-bar") {
+  :root:not([customizing]) {
+    /* Height of navbar, used for determining height and position of window controls */
+    --uc-navbar-height: 38px;
+    /* Drag space next to the window controls, allows you to move the window more easily */
+    --uc-titlebar-drag-space: 40px;
+
+    @media not (-moz-bool-pref: "uc.tweak.hide-tabs-bar.only-when-maximised") {
+      /* Set containing block for the window buttons */
+      & #titlebar {
+        position: relative !important;
+      }
+
+      /* Hide the tabs */
+      & #TabsToolbar {
+        visibility: collapse !important;
+        padding-inline-start: 0 !important;
+      }
+
+      /* Add some padding to the top of the navbar */
+      & #nav-bar {
+        padding-top: var(--tab-block-margin) !important;
+      }
+    }
+
+    /* macOS specific positioning */
+    @media (-moz-platform: macos) {
+      &[inFullscreen] {
+        /* Hide the tabs */
+        & #TabsToolbar {
+          visibility: collapse !important;
+          padding-inline-start: 0 !important;
+        }
+      }
+
+      @media not (-moz-bool-pref: "uc.tweak.hide-tabs-bar.only-when-maximised") {
+        /* Offset navbar contents to make space for the window controls */
+        &[tabsintitlebar] #nav-bar:not([inFullscreen]) {
+          padding-left: calc(84px + var(--uc-titlebar-drag-space));
+
+          /* Remove the padding from the side of the navbar */
+          & #nav-bar-customization-target > :is(toolbarbutton, toolbaritem):first-child {
+            padding-inline-start: 0 !important;
+          }
+        }
+
+        /* Positioning of the window controls */
+        #TabsToolbar .titlebar-buttonbox {
+          --uc-position: calc((var(--uc-navbar-height) + var(--tab-block-margin)) / 2 - 8px);
+          visibility: visible !important;
+          position: absolute;
+          top: var(--uc-position);
+          left: var(--uc-position);
+          margin: 0 !important;
+        }
+      }
+    }
+
+    /* Windows specific positioning */
+    @media (-moz-platform: windows) {
+      /* Offset navbar contents to make space for the window controls */
+      &:where([inFullscreen], [tabsintitlebar]) #nav-bar {
+        padding-right: calc(140px + var(--uc-titlebar-drag-space));
+
+        /* Remove the padding from the side of the navbar */
+        & #PanelUI-menu-button {
+          padding-inline-end: 0 !important;
+        }
+      }
+
+      /* Positioning of the window controls */
+      & #toolbar-menubar[inactive] + #TabsToolbar .titlebar-buttonbox {
+        visibility: visible !important;
+        position: absolute !important;
+        top: 0;
+        right: 0;
+        height: calc(var(--uc-navbar-height) + var(--tab-block-margin)) !important;
+      }
+        
+      /* Set background colour of the menu bar to maintain consistency with the navbar */
+      @media not (-moz-bool-pref: "uc.tweak.floating-tabs") {
+        #toolbar-menubar {
+          background-color: var(--toolbar-bgcolor) !important;
+        }
+      }
+    }
   }
 }
