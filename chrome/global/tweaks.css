@@ -300,3 +300,9 @@ bugs with certain themes eg. dark text on dark background.) */
     }
   }
 }
+
+@media (-moz-bool-pref: "uc.tweak.hide-forward-button") {
+  :root:not([customizing]) #forward-button[disabled] {
+    display: none !important;
+  }
+}

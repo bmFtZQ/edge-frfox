@@ -66,6 +66,10 @@ To disable a tweak, set the key to `false` or delete it, then restart the browse
 | **OPTIONAL: Add a second image named `background-1.(jpg/png)` for seperate dark mode background.** |
 | `uc.tweak.newtab-background`                                                                       |
 
+| Hide forward button when it's disabled (like in Edge)  |
+| ------------------------------------------------------ |
+| `uc.tweak.hide-forward-button`                         |
+
 | Hide Firefox logo on newtab page |
 | -------------------------------- |
 | `uc.tweak.hide-newtab-logo`      |
