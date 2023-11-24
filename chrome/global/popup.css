@@ -450,15 +450,6 @@ panelview .toolbarbutton-1,
     box-shadow: var(--uc-box-shadow) !important;
   }
 
-  .popup-internal-box,
-  .menupopup-arrowscrollbox {
-    margin: 0 !important;
-  }
-
-  .menupopup-arrowscrollbox {
-    margin: var(--uc-margin) !important;
-  }
-
   .popup-internal-box {
     margin: 0 !important;
   }
@@ -573,7 +564,9 @@ panelview .toolbarbutton-1,
     width: 16px !important;
   }
 
-  menulist>menupopup>menuitem:is([checked="true"], [selected="true"])::before {
+  menulist>menupopup>menuitem:is([checked="true"], [selected="true"])::before,
+  menupopup>menuitem::before,
+    menupopup>menuitem::after {
     display: none !important;
   }
 
