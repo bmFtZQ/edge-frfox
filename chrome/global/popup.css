@@ -566,7 +566,7 @@ panelview .toolbarbutton-1,
 
   menulist>menupopup>menuitem:is([checked="true"], [selected="true"])::before,
   menupopup>menuitem::before,
-    menupopup>menuitem::after {
+  menupopup>menuitem::after {
     display: none !important;
   }
 

@@ -133,6 +133,10 @@ and 11 so applied to both) */
   list-style-image: url("new-tab.svg") !important;
 }
 
+#firefox-view-button {
+  list-style-image: url("firefox-view.svg") !important;
+}
+
 #sync-button,
 .urlbarView-row[source="tabs"]>.urlbarView-row-inner>.urlbarView-no-wrap>.urlbarView-favicon,
 #urlbar-engine-one-off-item-tabs {
@@ -166,6 +170,11 @@ and 11 so applied to both) */
 #find-button,
 #appMenu-find-button2 {
   list-style-image: url("search-page.svg") !important;
+}
+
+#appMenu-translate-button,
+#translations-button-icon {
+  list-style-image: url("translate.svg") !important;
 }
 
 #open-file-button {
@@ -361,7 +370,9 @@ and 11 so applied to both) */
 .widget-overflow-list .subviewbutton-nav::after,
 .PanelUI-subView .subviewbutton-nav::after,
 .menu-right {
-  content: url("arrow-right.svg") !important;
+  content: url("arrow-filled-right.svg") !important;
+  opacity: 0.6 !important;
+  scale: 0.75 !important;
 }
 
 #PlacesChevron,
