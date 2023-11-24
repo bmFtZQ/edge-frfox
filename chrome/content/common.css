@@ -34,6 +34,9 @@
     --in-content-primary-button-background: light-dark(#0061e0, #006CBE) !important;
     --in-content-primary-button-background-hover: light-dark(#0250bb, #0078D4) !important;
     --in-content-primary-button-background-active: light-dark(#053e94, #005CA3) !important;
+    --color-accent-primary: light-dark(#0078D4, #006CBE) !important;
+    --color-accent-primary-hover: light-dark(#006CBE, #0078D4) !important;
+    --color-accent-primary-active: light-dark(#0749AC, #005CA3) !important;
     --in-content-danger-button-background: light-dark(#DF4951, #E12424) !important;
     --in-content-danger-button-background-hover: light-dark(#EA656C, #F94343) !important;
     --in-content-danger-button-background-active: light-dark(#BB353C, #AA1E1E) !important;
@@ -41,6 +44,7 @@
     --focus-outline-color: var(--in-content-focus-outline-color) !important;
     --in-content-table-background: light-dark(#f7f7f7, #252525) !important;
     --in-content-text-color: var(--in-content-page-color) !important;
+    --border-interactive-color: light-dark(#929292, #858585) !important;
     scrollbar-color:
       light-dark(rgb(37 37 37 / .4), rgb(255 255 255 / .4))
       light-dark(#f7f7f7, #252525) !important;
@@ -79,6 +83,16 @@ url-prefix(about:addons) {
   button.tab-button[selected],
   button.tab-button[selected]:hover {
     border-block-color: transparent currentColor !important;
+  }
+
+  .toggle-button {
+    --toggle-dot-margin: 4px !important;
+    --toggle-width: 40px !important;
+    --toggle-height: 20px !important;
+    --toggle-background-color: transparent !important;
+    --toggle-dot-background-color: var(--in-content-page-color) !important;
+    --toggle-dot-background-color-on-pressed: #fff !important;
+    --toggle-dot-transform-x: calc(var(--toggle-width) - 2 * var(--toggle-dot-margin) - 2 * var(--toggle-border-width) - var(--toggle-dot-width)) !important;
   }
 }
 

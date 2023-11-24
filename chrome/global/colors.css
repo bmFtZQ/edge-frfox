@@ -93,14 +93,19 @@
 
 /* make the titlebar buttons black/white on default themes */
 :root:not(:-moz-lwtheme)[tabsintitlebar] .titlebar-buttonbox {
-  color: light-dark(#000, #fff) !important;
+  color: var(--toolbar-color) !important;
 }
 
 #statuspanel-label {
   background-color: var(--toolbar-field-focus-background-color) !important;
   color: var(--toolbar-field-focus-color) !important;
   border-color: transparent !important;
-  box-shadow: 0 2px 5px #0004, 0 0 0 1px light-dark(#0002, #0004) !important;
+  box-shadow: 0 2px 5px #0002, 0 0 0 1px light-dark(#0001, #0002) !important;
+  border-radius: 0 4px 0 0 !important;
+
+  #statuspanel[mirror] & {
+    border-radius: 4px 0 0 0 !important;
+  }
 }
 
 @media (-moz-platform: windows) {
@@ -133,70 +138,38 @@
 
   /* library window theme */
   window#places {
-    --organizer-color: #000 !important;
-    --organizer-deemphasized-color: #666 !important;
-    --organizer-toolbar-background: #f7f7f7 !important;
-    --organizer-pane-background: #f7f7f7 !important;
-    --organizer-content-background: #f7f7f7 !important;
-    --organizer-hover-background: #00000025 !important;
-    --organizer-selected-background: #006CBE80 !important;
-    --organizer-outline-color: #0055D7a0 !important;
-    --organizer-toolbar-field-background: #fff !important;
-    --organizer-toolbar-field-background-focused: #fff !important;
-    --organizer-border-color: #bfbfbf !important;
-    scrollbar-color: #0006 #f7f7f740 !important;
+    --organizer-color: light-dark(#000, #fff) !important;
+    --organizer-deemphasized-color: light-dark(#666, #bbb) !important;
+    --organizer-toolbar-background: light-dark(#f7f7f7, #3B3B3B) !important;
+    --organizer-pane-background: light-dark(#f7f7f7, #2B2B2B) !important;
+    --organizer-content-background: light-dark(#f7f7f7, #1C1C1C) !important;
+    --organizer-hover-background: light-dark(#00000025, #ffffff25) !important;
+    --organizer-selected-background: light-dark(#006CBE80, #006CBE80) !important;
+    --organizer-outline-color: light-dark(#0055D7a0, #63ADE5) !important;
+    --organizer-toolbar-field-background: light-dark(#fff, #2B2B2B) !important;
+    --organizer-toolbar-field-background-focused: light-dark(#fff, #2B2B2B) !important;
+    --organizer-border-color: light-dark(#bfbfbf, #686868) !important;
+    scrollbar-color:
+      light-dark(#0006, #fff6)
+      light-dark(#f7f7f740, #2B2B2B40) !important;
   }
 
   #placesViewsBox #downloadsListBox richlistitem[selected="true"] {
-    background-color: #006CBE !important;
-    color: #fff !important;
+    background-color: light-dark(#006CBE, #006CBE) !important;
+    color: light-dark(#fff, #fff) !important;
   }
 
   #placeContentColumns :is(treecol, treecolpicker) {
-    background-color: #f7f7f7 !important;
-    color: #000 !important;
-    border-inline-start: 1px solid #bfbfbf !important;
-    box-shadow: inset 0 -1px #bfbfbf !important;
+    background-color: light-dark(#f7f7f7, #3B3B3B) !important;
+    color: light-dark(#000, #fff) !important;
+    border-inline-start: 1px solid light-dark(#bfbfbf, #686868) !important;
+    box-shadow: inset 0 -1px light-dark(#bfbfbf, #686868) !important;
     appearance: none !important;
   }
 
   #placeContentColumns :is(treecol, treecolpicker):where(:hover) {
-    background-color: #cecece !important;
-    color: #000 !important;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    window#places {
-      --organizer-color: #fff !important;
-      --organizer-deemphasized-color: #bbb !important;
-      --organizer-toolbar-background: #3B3B3B !important;
-      --organizer-pane-background: #2B2B2B !important;
-      --organizer-content-background: #1C1C1C !important;
-      --organizer-hover-background: #ffffff25 !important;
-      --organizer-selected-background: #006CBE80 !important;
-      --organizer-outline-color: #63ADE5 !important;
-      --organizer-toolbar-field-background: #2B2B2B !important;
-      --organizer-toolbar-field-background-focused: #2B2B2B !important;
-      --organizer-border-color: #686868 !important;
-      scrollbar-color: #fff6 #2B2B2B40 !important;
-    }
-
-    #placesViewsBox #downloadsListBox richlistitem[selected="true"] {
-      background-color: #006CBE !important;
-      color: #fff !important;
-    }
-
-    #placeContentColumns :is(treecol, treecolpicker) {
-      background-color: #3B3B3B !important;
-      color: #fff !important;
-      border-inline-start: 1px solid #686868 !important;
-      box-shadow: inset 0 -1px #686868 !important;
-    }
-
-    #placeContentColumns :is(treecol, treecolpicker):where(:hover) {
-      background-color: #4A4A4A !important;
-      color: #fff !important;
-    }
+    background-color: light-dark(#cecece, #4A4A4A ) !important;
+    color: light-dark(#000, #fff) !important;
   }
 }
 
@@ -214,22 +187,29 @@
 .sidebar-panel:not([lwt-sidebar]) {
   color: light-dark(#000, #fff) !important;
   scrollbar-color: light-dark(#0006, #fff6) light-dark(#f7f7f740, #3b3b3b40) !important;
+
+  /* Sidebar search box (Windows) */
+  @media(-moz-platform: windows) {
+    & #sidebar-search-container>#search-box,
+    & #viewButton {
+      appearance: none !important;
+      background-color: light-dark(#fff, #2b2b2b) !important;
+      color: inherit !important;
+      border: 1px solid light-dark(#bfbfbf, #686868) !important;
+      border-radius: 4px !important;
+      padding: 6px 8px !important;
+
+      &:focus {
+        border-width: 2px !important;
+        padding: 5px 7px !important;
+      }
+    }
+  }
 }
 
 @-moz-document url(chrome://browser/content/syncedtabs/sidebar.xhtml){
   body {
     background: transparent !important;
-  }
-}
-
-@media(-moz-platform: windows) {
-  .sidebar-panel:not([lwt-sidebar]) #sidebar-search-container>#search-box,
-  .sidebar-panel:not([lwt-sidebar]) #viewButton {
-    appearance: none !important;
-    background-color: light-dark(#fff, #2b2b2b) !important;
-    color: inherit !important;
-    border: 1px solid light-dark(#bfbfbf, #686868) !important;
-    border-radius: 2px !important;
   }
 }
 
