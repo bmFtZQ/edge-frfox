@@ -281,6 +281,8 @@
 #downloadsListBox,
 .downloadsPanelFooterButton {
   margin: var(--arrowpanel-menuitem-margin) !important;
+  width: auto !important;
+  min-width: auto !important;
 }
 
 #downloadsPanel-blockedSubview,
