@@ -82,6 +82,14 @@
   }
 }
 
+.tabbrowser-tab:where([selected], [multiselected], :hover) + .tabbrowser-tab:not([selected]) .tab-background {
+  border-bottom-left-radius: var(--tab-border-radius) !important;
+
+  &::before {
+    --uc-tab-corner-bg: transparent !important;
+  }
+}
+
 .tab-background:is([selected], [multiselected]) {
   --uc-tab-corner-bg: var(--tab-selected-bgcolor, var(--lwt-selected-tab-background-color, var(--toolbar-bgcolor)));
 }
