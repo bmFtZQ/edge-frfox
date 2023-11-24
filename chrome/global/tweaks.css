@@ -262,7 +262,7 @@ bugs with certain themes eg. dark text on dark background.) */
         #TabsToolbar .titlebar-buttonbox {
           --uc-position: calc((var(--uc-navbar-height) + var(--tab-block-margin)) / 2 - 8px);
           visibility: visible !important;
-          position: absolute;
+          position: absolute !important;
           top: var(--uc-position);
           left: var(--uc-position);
           margin: 0 !important;
