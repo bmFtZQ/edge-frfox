@@ -150,10 +150,6 @@
   #urlbar-container {
     min-width: 206px !important;
   }
-
-  #nav-bar-customization-target:not(:hover) #downloads-button:not([open]) {
-    visibility: collapse !important;
-  }
 }
 
 #urlbar[focused="true"]:not([suppress-focus-border])>#urlbar-background,

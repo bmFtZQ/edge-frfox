@@ -6,11 +6,11 @@
   & #titlebar {
     --tab-min-height: 32px !important;
     --inline-tab-padding: 11px !important;
-    --tab-border-radius: 8px !important;
+    --tab-border-radius: 4px !important;
     
     --uc-toolbarbutton-inner-padding: 6px !important;
+    --uc-toolbarbutton-inline-inner-padding: 8px !important;
     --toolbarbutton-border-radius: 4px !important;
-    --toolbarbutton-tabsline-border-radius: 8px !important;
     --tabs-navbar-shadow-size: 0 !important;
     --tab-shadow-max-size: 0 !important;
   }
@@ -60,8 +60,8 @@
     content: "" !important;
     display: block !important;
     position: absolute !important;
-    width: 8px !important;
-    height: 8px !important;
+    width: var(--tab-border-radius) !important;
+    aspect-ratio: 1/1;
     bottom: 0 !important;
     pointer-events: none !important;
     clip-path: inset(0);
@@ -70,14 +70,14 @@
   &::before {
     border-bottom-right-radius: var(--tab-border-radius) !important;
     left: 0 !important;
-    transform: translateX(-8px) !important;
+    transform: translateX(calc(var(--tab-border-radius) * -1)) !important;
     box-shadow: 4px 4px 0 4px var(--uc-tab-corner-bg) !important;
   }
 
   &::after {
     border-bottom-left-radius: var(--tab-border-radius) !important;
     right: 0 !important;
-    transform: translateX(8px) !important;
+    transform: translateX(var(--tab-border-radius)) !important;
     box-shadow: -4px 4px 0 4px var(--uc-tab-corner-bg) !important;
   }
 }
@@ -238,24 +238,19 @@
   overflow-clip-margin: 8px !important;
 }
 
-#TabsToolbar .toolbarbutton-1>.toolbarbutton-icon,
-#TabsToolbar .toolbarbutton-1>.toolbarbutton-badge-stack {
+#TabsToolbar .toolbarbutton-1 > .toolbarbutton-icon,
+#TabsToolbar .toolbarbutton-1 > .toolbarbutton-badge-stack {
   border-radius: var(--toolbarbutton-border-radius) !important;
-  padding: var(--uc-toolbarbutton-inner-padding) calc(var(--uc-toolbarbutton-inner-padding) + 2px) !important;
+  padding: var(--uc-toolbarbutton-inner-padding) var(--uc-toolbarbutton-inline-inner-padding) !important;
 }
 
-#tabbrowser-tabs .toolbarbutton-1>.toolbarbutton-icon,
-#tabbrowser-tabs .toolbarbutton-1>.toolbarbutton-badge-stack {
-  border-radius: var(--toolbarbutton-tabsline-border-radius) !important;
-}
-
-#TabsToolbar .toolbarbutton-1>.toolbarbutton-icon {
-  width: calc(2 * (var(--uc-toolbarbutton-inner-padding) + 2px) + 16px) !important;
+#TabsToolbar .toolbarbutton-1 > .toolbarbutton-icon {
+  width: calc(2 * var(--uc-toolbarbutton-inline-inner-padding) + 16px) !important;
   height: calc(2 * var(--uc-toolbarbutton-inner-padding) + 16px) !important;
 }
 
 #TabsToolbar #tabs-newtab-button>.toolbarbutton-icon,
-#TabsToolbar #alltabs-button>.toolbarbutton-badge-stack,
+#TabsToolbar #alltabs-button > .toolbarbutton-badge-stack,
 #TabsToolbar #tabbrowser-tabs[hasadjacentnewtabbutton][overflow="true"]~#new-tab-button>.toolbarbutton-icon {
   padding: var(--uc-toolbarbutton-inner-padding) !important;
   width: calc(2 * var(--uc-toolbarbutton-inner-padding) + 16px) !important;
@@ -292,7 +287,7 @@
 toolbarbutton[part="scrollbutton-up"],
 toolbarbutton[part="scrollbutton-down"] {
   border-width: 2px !important;
-  border-radius: calc(var(--toolbarbutton-border-radius) + 2px) !important;
+  border-radius: var(--toolbarbutton-border-radius) !important;
   margin-inline: 2px !important;
 }
 
@@ -339,10 +334,6 @@ toolbarbutton[part="scrollbutton-down"] {
   border-color: transparent !important;
 }
 
-/* .tabbrowser-tab:not([last-visible-tab="true"]) {
-  margin-inline-end: -1px !important;
-} */
-
 #tabbrowser-tabs[haspinnedtabs]:not([positionpinnedtabs])>#tabbrowser-arrowscrollbox>.tabbrowser-tab[first-visible-unpinned-tab] {
   margin-inline-start: 0 !important;
 }
@@ -386,11 +377,7 @@ toolbarbutton[part="scrollbutton-down"] {
 /* add margin to tabs if they are the first or last tab */
 #tabbrowser-arrowscrollbox:not([overflowing]) .tabbrowser-tab {
   &:first-of-type {
-    margin-inline-start: 14px !important;
-  }
-
-  &:last-of-type {
-    margin-inline-end: 6px !important;
+    margin-inline-start: 7px !important;
   }
 }
 

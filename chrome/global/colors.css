@@ -174,13 +174,13 @@
 }
 
 /* side bar theme */
-#sidebar-box:not([lwt-sidebar]) {
+#sidebar-box:not(:-moz-lwtheme) {
   --sidebar-background-color: light-dark(#f7f7f7, #3b3b3b) !important;
   --sidebar-text-color: light-dark(#000, #fff) !important;
   appearance: none !important;
 }
 
-#browser:not([style*="--sidebar-border-color"]) {
+#browser:not(:-moz-lwtheme) {
   --sidebar-border-color: light-dark(#bfbfbf, #686868) !important;
 }
 
