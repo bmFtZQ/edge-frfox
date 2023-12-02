@@ -2,8 +2,7 @@
 
 /* windows 11 style window controls (no known way to detect between windows 10
 and 11 so applied to both) */
-@media (-moz-platform: windows),
-(-moz-gtk-csd-available) {
+@media (-moz-platform: windows) {
   .titlebar-min {
     list-style-image: url("win11-minimize.svg") !important;
   }
@@ -642,6 +641,11 @@ and 11 so applied to both) */
     --menu-image: url("edit-copy.svg");
   }
 
+  #context-stripOnShareLink,
+  #strip-on-share {
+    --menu-image: url("edit-copy-without-tracking.svg");
+  }
+
   #context-paste,
   .textbox-contextmenu menuitem[cmd*="paste"],
   #placesContext_paste_group {
@@ -746,7 +750,8 @@ and 11 so applied to both) */
 
   #context-sendlinktodevice,
   #context_sendTabToDevice,
-  #context-sendpagetodevice {
+  #context-sendpagetodevice,
+  #sidebar-switcher-tabs {
     --menu-image: url("send-to-device.svg");
   }
 
@@ -850,7 +855,8 @@ and 11 so applied to both) */
   #toggle_PersonalToolbar,
   #context-bookmarklink,
   #toolbar-context-bookmarkSelectedTab,
-  #toolbar-context-bookmarkSelectedTabs {
+  #toolbar-context-bookmarkSelectedTabs,
+  #sidebar-switcher-bookmarks {
     --menu-image: url("bookmark-hollow.svg");
   }
 
@@ -898,6 +904,10 @@ and 11 so applied to both) */
   .customize-context-reportExtension,
   .unified-extensions-context-menu-report-extension {
     --menu-image: url("report.svg");
+  }
+
+  #sidebar-switcher-history {
+    --menu-image: url("history.svg");
   }
 }
 
