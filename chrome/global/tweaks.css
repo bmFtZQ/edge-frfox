@@ -47,18 +47,17 @@ bugs with certain themes eg. dark text on dark background.) */
     }
   }
 
-  .tabbrowser-tab,
-  #tabbrowser-arrowscrollbox-periphery #tabs-newtab-button,
-  #TabsToolbar #TabsToolbar-customization-target> :not(#tabbrowser-tabs) {
-    padding-top: 4px !important;
-  }
+  /* Shadow for navbar and tabs */
+  :root {
+    --uc-titlebar-shadow: none;
+    --uc-tab-shadow:
+      0 3.3px 3px rgb(0 0 0 / .06),
+      0 0 0 1px rgb(0 0 0 / .11);
 
-  #tabbrowser-tabs {
-    margin-top: calc(var(--tab-block-margin) - 4px) !important;
-  }
-
-  #TabsToolbar #TabsToolbar-customization-target> :not(#tabbrowser-tabs) {
-    margin-top: calc(var(--tab-block-margin) - 2px) !important;
+    & [brighttext] {
+      --uc-titlebar-shadow: none;
+      --uc-tab-shadow: 0 1px 2px rgb(0 0 0 / .08);
+    }
   }
 
   /* remove toolbar bg */
@@ -110,28 +109,15 @@ bugs with certain themes eg. dark text on dark background.) */
     overflow-clip-margin: 8px !important;
   }
 
-  .tabbrowser-tab,
-  #TabsToolbar #tabs-newtab-button,
-  /* no ::part workaround - may have side effects */
-  #scrollbutton-up[part="scrollbutton-up"]:not(.menupopup-scrollbutton),
-  #scrollbutton-down[part="scrollbutton-down"]:not(.menupopup-scrollbutton) {
+  #tabbrowser-arrowscrollbox > *,
+  #scrollbutton-up:not(.menupopup-scrollbutton),
+  #scrollbutton-up:not(.menupopup-scrollbutton) ~ spacer,
+  #scrollbutton-down:not(.menupopup-scrollbutton) {
     margin-bottom: 8px !important;
   }
 
   #tabbrowser-arrowscrollbox {
     margin-bottom: -8px !important;
-  }
-
-  :root {
-    --uc-titlebar-shadow: none;
-    --uc-tab-shadow:
-      0 3.3px 3px rgb(0 0 0 / .06),
-      0 0 0 1px rgb(0 0 0 / .11);
-  }
-
-  :root[lwtheme-brighttext="true"] {
-    --uc-titlebar-shadow: none;
-    --uc-tab-shadow: 0 1px 2px rgb(0 0 0 / .08);
   }
 }
 
