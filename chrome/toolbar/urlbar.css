@@ -22,8 +22,10 @@
   }
 }
 
-:root:not([lwtheme-brighttext="true"]) #urlbar-background {
+#nav-bar:not([brighttext]) #urlbar-background,
+#nav-bar:not([brighttext]) #searchbar {
   box-shadow: var(--uc-urlbar-shadow, none);
+
 }
 
 #urlbar[open]>#urlbar-background {
