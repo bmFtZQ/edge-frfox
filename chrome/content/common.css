@@ -49,6 +49,11 @@
       light-dark(rgb(37 37 37 / .4), rgb(255 255 255 / .4))
       light-dark(#f7f7f7, #252525) !important;
   }
+  
+  ::selection {
+    background-color: light-dark(#0078D4, #93B8E7);
+    color: light-dark(#fff, #000);
+  }
 }
 
 /* preferences */

@@ -856,9 +856,12 @@ and 11 so applied to both) */
   #toggle_PersonalToolbar,
   #context-bookmarklink,
   #toolbar-context-bookmarkSelectedTab,
-  #toolbar-context-bookmarkSelectedTabs,
-  #sidebar-switcher-bookmarks {
+  #toolbar-context-bookmarkSelectedTabs {
     --menu-image: url("bookmark-hollow.svg");
+  }
+  
+  #sidebar-switcher-bookmarks {
+    --menu-image: url("bookmark-star-on-tray.svg");
   }
 
   menuitem[id="placesContext_show_bookmark:info"],

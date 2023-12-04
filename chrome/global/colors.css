@@ -18,17 +18,22 @@
   --tab-selected-bgcolor: var(--toolbar-bgcolor) !important;
   --toolbar-field-background-color: light-dark(#fff, #2B2B2B) !important;
   --toolbar-field-color: light-dark(#000, #fff) !important;
-  --toolbar-field-border-color: light-dark(#0000, #0000) !important;
+  --toolbar-field-border-color: transparent !important;
   --toolbar-field-focus-background-color: var(--toolbar-field-background-color) !important;
   --toolbar-field-focus-color: var(--toolbar-field-color) !important;
-  --toolbar-field-focus-border-color: light-dark(#0055D7, #63ADE5) !important;
+  --toolbar-field-focus-border-color: light-dark(#0055D780, #63ADE5) !important;
   --link-color: light-dark(#0078D4, #75B6E8) !important;
   --urlbar-hover-highlight-color: light-dark(rgb(192 192 192 / .5), rgb(128 128 128 / .5)) !important;
   --urlbar-box-bgcolor: light-dark(rgb(0 0 0 / .09), rgb(255 255 255 / .11)) !important;
   --urlbar-box-hover-bgcolor: light-dark(rgb(0 0 0 / .09), rgb(255 255 255 / .11)) !important;
   --urlbar-box-focus-bgcolor: light-dark(rgb(0 0 0 / .22), rgb(255 255 255 / .28)) !important;
-  --urlbar-icon-fill-opacity: 1 !important;
+  --urlbar-icon-fill-opacity: 0.58 !important;
   --urlbar-popup-url-color: light-dark(#0072C9, #75B6E8) !important;
+  --urlbarView-highlight-background: light-dark(#F2F2F2, #383838) !important;
+  --urlbarView-highlight-color: light-dark(#000, #fff) !important;
+  --urlbarView-hover-background: light-dark(#e5e5e5, #444444) !important;
+  --urlbarView-separator-color: light-dark(#EFEFEF, #5F5F5F) !important;
+  --uc-urlbarView-accent-color: light-dark(#1A6397, #75B6E8) !important;
   --lwt-brighttext-url-color: var(--urlbar-popup-url-color) !important;
   --autocomplete-popup-background: light-dark(#fff, #4A4A4A) !important;
   --autocomplete-popup-color: light-dark(#fff, #fff) !important;
@@ -61,7 +66,6 @@
   --panel-banner-item-update-supported-bgcolor: light-dark(#188038, #81C995) !important;
   --focus-outline-color: light-dark(#0055D7, #63ADE5) !important;
   --panel-shortcut-color: inherit !important;
-  --uc-urlbar-shadow: 0 0 4px rgb(0 0 0 / .1);
   --toolbarbutton-hover-background: light-dark(rgb(0 0 0 / .08), rgb(255 255 255 / .1)) !important;
   --toolbarbutton-active-background: light-dark(rgb(0 0 0 / .12), rgb(255 255 255 / .16)) !important;
   --uc-private-browsing-indicator: var(--button-primary-bgcolor);
@@ -71,7 +75,7 @@
   --toolbarseparator-color: color-mix(in srgb, currentColor 40%, transparent) !important;
 }
 
-/* ensure that dark mode is enabled completely in private browsing mode. */
+/* Ensure that dark mode is enabled completely in private browsing mode. */
 @media (-moz-bool-pref: "browser.theme.dark-private-windows") {
   :root[privatebrowsingmode="temporary"],
   :root[privatebrowsingmode="temporary"] #nav-bar,
@@ -109,6 +113,11 @@
 }
 
 @media (-moz-platform: windows) {
+  ::selection {
+    background-color: light-dark(#0078D4, #93B8E7) !important;
+    color: light-dark(#fff, #000) !important;
+  }
+
   tooltip {
     background-color: var(--arrowpanel-background) !important;
     color: var(--arrowpanel-color) !important;
@@ -190,7 +199,7 @@
 
   /* Sidebar search box (Windows) */
   @media(-moz-platform: windows) {
-    & #sidebar-search-container>#search-box,
+    & #sidebar-search-container > #search-box,
     & #viewButton {
       appearance: none !important;
       background-color: light-dark(#fff, #2b2b2b) !important;
@@ -238,7 +247,7 @@
     --urlbar-box-active-bgcolor: var(--button-active-bgcolor) !important;
     --urlbar-box-text-color: inherit !important;
     --urlbar-box-hover-text-color: var(--urlbar-box-text-color) !important;
-    --urlbar-icon-fill-opacity: 0.9 !important;
+    --urlbar-icon-fill-opacity: 0.58 !important;
     --urlbar-popup-url-color: -moz-nativehyperlinktext !important;
     --lwt-brighttext-url-color: #00ddff !important;
     --toolbarbutton-icon-fill-attention: -moz-nativehyperlinktext !important;
@@ -259,7 +268,6 @@
     --toolbar-field-focus-border-color: -moz-accent-color !important;
     --toolbarbutton-hover-background: color-mix(in srgb, -moz-dialogtext 14%, transparent) !important;
     --toolbarbutton-active-background: color-mix(in srgb, -moz-dialogtext 20%, transparent) !important;
-    --uc-urlbar-shadow: none;
     --autocomplete-popup-highlight-color: FieldText !important;
     --autocomplete-popup-highlight-background: color-mix(in srgb, currentColor 8%, transparent) !important;
     --autocomplete-popup-hover-background: color-mix(in srgb, currentColor 12%, transparent) !important;
