@@ -30,7 +30,7 @@ bugs with certain themes eg. dark text on dark background.) */
   :root[privatebrowsingmode="temporary"][style*="--lwt-accent-color: rgb(28, 27, 34)"] {
     --lwt-accent-color: light-dark(#f3f3f3, #202020) !important;
     --lwt-accent-color-inactive: unset !important;
-    --toolbar-bgcolor: light-dark(#fff, #4D4D4D) !important;
+    --toolbar-bgcolor: light-dark(#fff, #3F3F3F) !important;
     --lwt-tab-text: light-dark(#262626, #fff) !important;
     --chrome-content-separator-color: light-dark(#bfbfbf, #535353) !important;
     --uc-urlbar-shadow: none !important;
@@ -57,6 +57,10 @@ bugs with certain themes eg. dark text on dark background.) */
     & [brighttext] {
       --uc-titlebar-shadow: none;
       --uc-tab-shadow: 0 1px 2px rgb(0 0 0 / .08);
+    }
+
+    & #titlebar {
+      --tab-border-radius: 8px !important;
     }
   }
 
@@ -95,6 +99,26 @@ bugs with certain themes eg. dark text on dark background.) */
   @media (-moz-bool-pref: "uc.tweak.disable-drag-space") {
     :root {
       --tab-block-margin: 4px !important;
+    }
+  }
+
+  /* IMPORTANT: Adds padding and removes margin on top of tabs to allow user to
+  select it from the top edge of the window */
+  #tabbrowser-tabs {
+    margin-top: calc(var(--tab-block-margin) - 4px) !important;
+
+    & .tabbrowser-tab,
+    & #tabs-newtab-button {
+      padding-top: 4px !important;
+    }
+  }
+
+  #scrollbutton-up[part="scrollbutton-up"]:not(.menupopup-scrollbutton),
+  #scrollbutton-down[part="scrollbutton-down"]:not(.menupopup-scrollbutton) {
+    margin-top: 6px !important;
+
+    & ~ spacer {
+      margin-top: 6px !important;
     }
   }
 
