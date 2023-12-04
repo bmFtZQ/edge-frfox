@@ -670,7 +670,8 @@ and 11 so applied to both) */
     --menu-image: url("edit-delete.svg");
   }
 
-  #paste-and-go {
+  #paste-and-go,
+  .searchbar-paste-and-search {
     --menu-image: url("paste-and-go.svg");
   }
 
