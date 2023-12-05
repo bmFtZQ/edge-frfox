@@ -386,9 +386,13 @@ panelview .toolbarbutton-1,
 
   & .autocomplete-richlistitem,
   & .search-panel-header {
-    padding-block: 4px !important;
+    padding-block: 2px !important;
     margin: 0 var(--uc-arrowpanel-menuitem-margin-inline) !important;
     border-radius: var(--arrowpanel-menuitem-border-radius) !important;
+  }
+
+  & .search-one-offs {
+    padding-block-start: 0 !important;
   }
 }
 
@@ -493,7 +497,8 @@ panelview .toolbarbutton-1,
   }
 
   menupopup menuseparator,
-  panel menuseparator {
+  panel menuseparator,
+  #PopupSearchAutoComplete .searchbar-separator {
     margin: var(--uc-contextmenu-separator-vertical) 0 !important;
     padding: 0 !important;
     background: none !important;
@@ -511,7 +516,8 @@ panelview .toolbarbutton-1,
   menupopup menu,
   menupopup menuitem,
   menupopup menucaption,
-  #PopupAutoComplete>richlistbox>richlistitem {
+  #PopupAutoComplete>richlistbox>richlistitem,
+  #PopupSearchAutoComplete .autocomplete-richlistitem {
     padding: var(--uc-contextmenu-menuitem-padding-block) var(--uc-contextmenu-menuitem-padding-inline) !important;
     margin: var(--uc-contextmenu-menuitem-margin) !important;
     border-radius: var(--uc-contextmenu-menuitem-border-radius) !important;
@@ -610,7 +616,6 @@ panelview .toolbarbutton-1,
 
   #context-navigation>.menuitem-iconic {
     justify-content: center !important;
-    -moz-box-pack: center !important;
   }
 
   #context-navigation>.menuitem-iconic {
@@ -644,8 +649,10 @@ panelview .toolbarbutton-1,
       .menu-iconic-text,
       panel .toolbarbutton-text,
       #appMenu-fxa-status2,
-      .panel-header {
+      .panel-header,
+      #PopupSearchAutoComplete {
         font-size: 13.6px !important;
+        line-height: 1 !important;
       }
     }
   }
