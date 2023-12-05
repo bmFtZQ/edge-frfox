@@ -43,11 +43,11 @@ Certain tweaks can be applied to the theme, to enable them navigate to `about:co
 
 To disable a tweak, set the key to `false` or delete it, then restart the browser.
 
-| Enable Edge style floating tabs                                 |
-| --------------------------------------------------------------- |
-| `uc.tweak.floating-tabs`                                        |
-| **OPTIONAL1: Make the top and bottom margins of the tab equal** |
-| `uc.tweak.floating-tabs.equal-margin`                           |
+| Enable Edge style floating tabs                                |
+| -------------------------------------------------------------- |
+| `uc.tweak.floating-tabs`                                       |
+| **OPTIONAL: Make the top and bottom margins of the tab equal** |
+| `uc.tweak.disable-drag-space`                                  |
 
 | Enable rounded corners     |
 | -------------------------- |
@@ -66,17 +66,17 @@ To disable a tweak, set the key to `false` or delete it, then restart the browse
 | **OPTIONAL: Add a second image named `background-1.(jpg/png)` for seperate dark mode background.** |
 | `uc.tweak.newtab-background`                                                                       |
 
-| Hide forward button when it's disabled (like in Edge)  |
-| ------------------------------------------------------ |
-| `uc.tweak.hide-forward-button`                         |
+| Hide forward button when it's disabled (like in Edge) |
+| ----------------------------------------------------- |
+| `uc.tweak.hide-forward-button`                        |
 
 | Hide Firefox logo on newtab page |
 | -------------------------------- |
 | `uc.tweak.hide-newtab-logo`      |
 
-| Disable drag space above tabs |
-| ----------------------------- |
-| `uc.tweak.disable-drag-space` |
+| Remove extra space above the tabs |
+| --------------------------------- |
+| `uc.tweak.disable-drag-space`     |
 
 | Force tab background colour to the same colour as the navbar background (useful for Proton themes) |
 | -------------------------------------------------------------------------------------------------- |
@@ -89,7 +89,7 @@ To disable a tweak, set the key to `false` or delete it, then restart the browse
 | **NOTE: labels are only shown in the English language.**                          |
 | `uc.tweak.vertical-context-navigation`                                            |
 
-| Remove tab separators            |
+| Remove separators between tabs   |
 | -------------------------------- |
 | `uc.tweak.remove-tab-separators` |
 
@@ -101,16 +101,16 @@ To disable a tweak, set the key to `false` or delete it, then restart the browse
 | ------------------------------ |
 | `uc.tweak.revert-context-menu` |
 
-| If a tab's close button is hidden, show it when hovering over tab |
-| ----------------------------------------------------------------- |
-| `uc.tweak.show-tab-close-button-on-hover`                         |
+| If a tab's close button is hidden, show it when hovering over the tab |
+| --------------------------------------------------------------------- |
+| `uc.tweak.show-tab-close-button-on-hover`                             |
 
 ## Mica Tweak Notice
 Mica is broken due to changes made in the Firefox 115 update, Mica has now been
 removed from this theme.
 
 If you still have `uc.tweak.win11-mica` set in `about:config` you can safely
-delete it
+delete it.
 
 ## Acknowledgements
 [muckSponge](https://github.com/muckSponge) - [MaterialFox](https://github.com/muckSponge/MaterialFox)

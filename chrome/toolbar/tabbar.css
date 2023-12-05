@@ -14,10 +14,6 @@
     --tabs-navbar-shadow-size: 0 !important;
     --tab-shadow-max-size: 0 !important;
   }
-
-  @media (-moz-bool-pref: "uc.tweak.floating-tabs.equal-margin") and (-moz-bool-pref: "uc.tweak.floating-tabs") {
-    --tab-block-margin: 5px !important;
-  }
 }
 
 /* tab open/close transition */
