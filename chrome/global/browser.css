@@ -7,66 +7,83 @@
   }
 }
 
-@media (-moz-bool-pref: "uc.tweak.floating-tabs") {
-  :root {
-    --browser-frame-bgcolor: var(--lwt-accent-color);
-  }
+/* Add a shadow when the toolbars move over content, eg. in macOS hovering over
+the menu bar. */
+#navigator-toolbox[style*="transform"] {
+  box-shadow: 0 -3px 5px 3px light-dark(rgb(0 0 0 / .3), rgb(0 0 0 / .6)) !important;
 }
 
-@media not (-moz-bool-pref: "uc.tweak.floating-tabs") {
-  :root {
-    --browser-frame-bgcolor: var(--toolbar-bgcolor);
-  }
-}
-
+/* Rounded Corners Tweak */
 @media (-moz-bool-pref: "uc.tweak.rounded-corners") {
-  /* Fix changes to the bookmarks bar made in Firefox 120 */
+  /* Since Firefox 120, when the bookmarks bar is set to only open on new tabs,
+  the bookmarks bar overlaps the #browser element. */
+
+  /* Change the element that shifts the browser content to the correct position. */
   :root[BookmarksToolbarOverlapsBrowser] .newTabBrowserPanel,
   :root[BookmarksToolbarOverlapsBrowser] #sidebar-box {
     padding-top: 0 !important;
   }
 
-  :root[BookmarksToolbarOverlapsBrowser] #appcontent,
-  :root[BookmarksToolbarOverlapsBrowser] #sidebar-box {
+  :root[BookmarksToolbarOverlapsBrowser] #browser {
     margin-top: var(--bookmarks-toolbar-overlapping-browser-height);
   }
 
-  :root {
-    --uc-tweak-rounded-corners-padding: 3px;
-    --uc-tweak-rounded-corners-border: 1px solid rgb(0 0 0 / .05);
-    --uc-tweak-rounded-corners-radius: 8px;
-    --uc-tweak-rounded-corners-shadow: 0px 1px 1px rgb(0 0 0 / .1);
+  /* Make sure that the toolbars are not positioned infront of the browser
+  element. */
+  :root[BookmarksToolbarOverlapsBrowser] #navigator-toolbox:not([style*="z-index"]) {
+    z-index: auto !important;
+  }
 
-    & #browser:not([style*="--sidebar-border-color"]) {
-      --sidebar-border-color: light-dark(#bfbfbf80, #595959) !important;
+  /* Move the browser element infront of the toolbars when on the new tab page. */
+  :root:not([BookmarksToolbarOverlapsBrowser]) #browser {
+    z-index: 1 !important;
+  }
+
+  /* Variables used for the rounded corners. */
+  :root {
+    --uc-tweak-rounded-corners-padding: 4px;
+    --uc-tweak-rounded-corners-radius: 8px;
+    --uc-tweak-rounded-corners-shadow:
+      0 -.8px 0 0 rgb(0 0 0 / 0.02),
+      0 0.5px 1px 1px rgb(0 0 0 / 0.06),
+      0 1px 1px rgb(0 0 0 / 0.1);
+    --browser-frame-bgcolor: var(--toolbar-bgcolor);
+
+    /* Different shadow for higher resolution displays. */
+    @media (min-resolution: 1.8dppx) {
+      --uc-tweak-rounded-corners-shadow:
+        0 0 0.5px 0.5px rgb(0 0 0 / 0.06),
+        0 0.5px 1.5px rgb(0 0 0 / 0.1);
+    }
+
+    @media (-moz-bool-pref: "uc.tweak.floating-tabs") {
+      --browser-frame-bgcolor: var(--lwt-accent-color);
     }
   }
 
-  /* disable rounded corners in fullscreen, only if the toolbar is hidden */
-  :root[inFullscreen] #navigator-toolbox:where([style*="margin-top"], [fullscreenShouldAnimate]) + #browser,
+  /* Disable rounded corners in fullscreen, only if the toolbar is hidden. */
+  :root[inFullscreen] #navigator-toolbox[style*="margin-top"] + #browser,
   :root[inDOMFullscreen] #browser {
     --uc-tweak-rounded-corners-padding: 0;
-    --uc-tweak-rounded-corners-border: none;
     --uc-tweak-rounded-corners-radius: 0;
     --uc-tweak-rounded-corners-shadow: none;
   }
 
+  /* Apply rounded corners to the browser window. */
   #appcontent {
     margin-inline: var(--uc-tweak-rounded-corners-padding) !important;
     margin-block-end: var(--uc-tweak-rounded-corners-padding) !important;
     border-radius: var(--uc-tweak-rounded-corners-radius) !important;
     overflow: hidden !important;
-    border: var(--uc-tweak-rounded-corners-border) !important;
     box-shadow: var(--uc-tweak-rounded-corners-shadow) !important;
   }
   
-  /* apply rounded corners to sidebar */
+  /* Apply rounded corners to sidebar. */
   #sidebar-box {
     margin-inline-start: var(--uc-tweak-rounded-corners-padding) !important;
     margin-block-end: var(--uc-tweak-rounded-corners-padding) !important;
     border-radius: var(--uc-tweak-rounded-corners-radius) !important;
     overflow: hidden !important;
-    border: var(--uc-tweak-rounded-corners-border) !important;
     box-shadow: var(--uc-tweak-rounded-corners-shadow) !important;
     
     &[positionend] {
@@ -75,11 +92,12 @@
     }
   }
 
-  /* remove sidebar border */
-  #sidebar-splitter {
+  /* Remove sidebar border when not in full screen. */
+  :not(:root[inFullscreen] #navigator-toolbox[style*="margin-top"]) + #browser #sidebar-splitter {
     border-inline-width: 0 !important;
   }
 
+  /* Apply colour to the frame around the browser window. */
   #browser {
     background-color: var(--browser-frame-bgcolor);
   }
