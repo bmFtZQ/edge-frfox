@@ -28,13 +28,13 @@ the menu bar. */
     margin-top: var(--bookmarks-toolbar-overlapping-browser-height);
   }
 
-  /* Make sure that the toolbars are not positioned infront of the browser
+  /* Make sure that the toolbars are not positioned in-front of the browser
   element. */
   :root[BookmarksToolbarOverlapsBrowser] #navigator-toolbox:not([style*="z-index"]) {
     z-index: auto !important;
   }
 
-  /* Move the browser element infront of the toolbars when on the new tab page. */
+  /* Move the browser element in-front of the toolbars when on the new tab page. */
   :root:not([BookmarksToolbarOverlapsBrowser]) #browser {
     z-index: 1 !important;
   }
