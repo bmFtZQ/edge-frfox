@@ -1,8 +1,10 @@
 /* Edge-Frfox - browser.css */
 
 /* Windows has 1px missing space on top of window. */
-:root[sizemode="normal"][tabsintitlebar]:not([inFullscreen]) #navigator-toolbox {
-  padding-top: 1px !important;
+@media (-moz-platform: windows) {
+  :root[sizemode="normal"][tabsintitlebar]:not([inFullscreen]) #navigator-toolbox {
+    padding-top: 1px !important;
+  }
 }
 
 @media (-moz-bool-pref: "uc.tweak.floating-tabs") {
