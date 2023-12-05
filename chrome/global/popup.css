@@ -639,7 +639,8 @@ panelview .toolbarbutton-1,
     @media (-moz-platform: windows) {
       .menu-text,
       .menu-iconic-text,
-      panel .toolbarbutton-text {
+      panel .toolbarbutton-text,
+      #PopupSearchAutoComplete .ac-title {
         margin-inline-start: 0 !important;
         margin-block: -3px -1px !important;
         padding-block: 0 !important;
@@ -652,7 +653,6 @@ panelview .toolbarbutton-1,
       .panel-header,
       #PopupSearchAutoComplete {
         font-size: 13.6px !important;
-        line-height: 1 !important;
       }
     }
   }
