@@ -47,7 +47,6 @@
 
 #fxa-toolbar-menu-button {
   display: flex !important;
-  display: -moz-box !important;
 }
 
 #widget-overflow-list>#fxa-toolbar-menu-button #fxa-avatar-image {

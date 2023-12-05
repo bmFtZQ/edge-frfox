@@ -150,12 +150,10 @@ bugs with certain themes eg. dark text on dark background.) */
     @media (-moz-bool-pref: "uc.tweak.vertical-context-navigation") {
       #context-navigation {
         flex-direction: column !important;
-        -moz-box-orient: vertical !important;
       }
 
       #context-navigation>.menuitem-iconic {
         justify-content: start !important;
-        -moz-box-pack: start !important;
       }
 
       #context-navigation .menu-iconic-text {
