@@ -112,6 +112,13 @@ removed from this theme.
 If you still have `uc.tweak.win11-mica` set in `about:config` you can safely
 delete it.
 
+## Themes
+Additional community themes based on Edge-Frfox.
+
+| Theme                                                          | Preview                 | Author                                            |
+| -------------------------------------------------------------- | ----------------------- | ------------------------------------------------- |
+| [Dracula](https://github.com/jannikbuscha/firefox-dracula)     | ![dracula][p-dracula]   | [@jannikbuscha](https://github.com/jannikbuscha)  |
+
 ## Acknowledgements
 [muckSponge](https://github.com/muckSponge) - [MaterialFox](https://github.com/muckSponge/MaterialFox)
 
@@ -131,3 +138,6 @@ delete it.
 [s-d]: screenshots/dark.png
 [s-df]: screenshots/dark-floating-tabs.png
 [s-dgtk]: screenshots/gtk-dark.png
+
+<!-- theme preview links -->
+[p-dracula]: https://raw.githubusercontent.com/jannikbuscha/firefox-dracula/main/screenshots/thumbnail.png
