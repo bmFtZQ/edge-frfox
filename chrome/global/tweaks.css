@@ -33,8 +33,7 @@ bugs with certain themes eg. dark text on dark background.) */
     --toolbar-bgcolor: light-dark(#fff, #3F3F3F) !important;
     --lwt-tab-text: light-dark(#262626, #fff) !important;
     --chrome-content-separator-color: light-dark(#bfbfbf, #535353) !important;
-    --uc-urlbar-shadow: none !important;
-    --uc-tab-border-color: light-dark(#0000, #fff1) !important;
+    --lwt-tab-line-color: light-dark(transparent, rgb(255 255 255 / 0.06)) !important;
     --toolbar-non-lwt-bgcolor: var(--lwt-accent-color) !important;
   }
 
@@ -43,20 +42,20 @@ bugs with certain themes eg. dark text on dark background.) */
       --toolbar-bgcolor: color-mix(in srgb, -moz-dialog 80%, #fff) !important;
       --toolbar-field-background-color: Field !important;
       --lwt-tab-text: -moz-dialogtext !important;
-      --uc-tab-border-color: #ffffff0f !important;
+      --lwt-tab-line-color: rgb(255 255 255 / 0.06) !important;
     }
   }
 
   /* Shadow for navbar and tabs */
   :root {
     --uc-titlebar-shadow: none;
-    --uc-tab-shadow:
-      0 3.3px 3px rgb(0 0 0 / .06),
-      0 0 0 1px rgb(0 0 0 / .11);
+    --uc-tab-shadow-outline: rgb(0 0 0 / .11);
+    --uc-tab-shadow: 0 2.5px 3px 1px rgb(0 0 0 / .08);
 
     & [brighttext] {
       --uc-titlebar-shadow: none;
-      --uc-tab-shadow: 0 1px 2px rgb(0 0 0 / .08);
+      --uc-tab-shadow-outline: transparent;
+      --uc-tab-shadow: 0 2px 3px rgb(0 0 0 / .12);
     }
 
     & #titlebar {
@@ -71,18 +70,23 @@ bugs with certain themes eg. dark text on dark background.) */
   }
 
   /* invert bottom corner radius for tabs */
-  .tab-background::before,
-  .tab-background::after {
-    display: none !important;
-  }
-
   .tab-background {
     border-radius: var(--tab-border-radius) !important;
+
+    &::before,
+    &::after {
+      display: none !important;
+    }
   }
 
   .tab-background[selected] {
-    outline: 1px solid var(--uc-tab-border-color, var(--lwt-tab-line-color, var(--lwt-tabs-border-color, transparent))) !important;
-    outline-offset: -1px !important;
+    border: 1px solid var(--lwt-tab-line-color, var(--lwt-tabs-border-color, transparent)) !important;
+    outline: 1px solid var(--uc-tab-shadow-outline) !important;
+
+    /* Fractional scaling adjustments (150%, 175%, etc.) */
+    @media (1dppx < resolution < 2dppx) {
+      outline-width: 1.5px !important;
+    }
   }
 
   /* adjust spacing of area above tabs */
@@ -151,7 +155,7 @@ bugs with certain themes eg. dark text on dark background.) */
         flex-direction: column !important;
       }
 
-      #context-navigation>.menuitem-iconic {
+      #context-navigation > .menuitem-iconic {
         justify-content: start !important;
       }
 
@@ -169,27 +173,27 @@ bugs with certain themes eg. dark text on dark background.) */
         --uc-string-edit-bookmark: "Edit Bookmark";
       }
 
-      #context-navigation>#context-back .menu-iconic-text::before {
+      #context-navigation > #context-back .menu-iconic-text::before {
         content: var(--uc-string-back) !important;
       }
 
-      #context-navigation>#context-forward .menu-iconic-text::before {
+      #context-navigation > #context-forward .menu-iconic-text::before {
         content: var(--uc-string-forward) !important;
       }
 
-      #context-navigation>#context-reload .menu-iconic-text::before {
+      #context-navigation > #context-reload .menu-iconic-text::before {
         content: var(--uc-string-reload) !important;
       }
 
-      #context-navigation>#context-stop .menu-iconic-text::before {
+      #context-navigation > #context-stop .menu-iconic-text::before {
         content: var(--uc-string-stop) !important;
       }
 
-      #context-navigation>#context-bookmarkpage .menu-iconic-text::before {
+      #context-navigation > #context-bookmarkpage .menu-iconic-text::before {
         content: var(--uc-string-bookmark-page) !important;
       }
 
-      #context-navigation>#context-bookmarkpage[starred] .menu-iconic-text::before {
+      #context-navigation > #context-bookmarkpage[starred] .menu-iconic-text::before {
         content: var(--uc-string-edit-bookmark) !important;
       }
     }
@@ -296,8 +300,9 @@ bugs with certain themes eg. dark text on dark background.) */
         top: 0;
         right: 0;
         height: calc(var(--uc-navbar-height) + var(--tab-block-margin)) !important;
+        z-index: 3 !important;
       }
-        
+
       /* Set background colour of the menu bar to maintain consistency with the navbar */
       @media not (-moz-bool-pref: "uc.tweak.floating-tabs") {
         #toolbar-menubar {

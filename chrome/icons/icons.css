@@ -1,10 +1,13 @@
 /* Edge-Frfox - icons.css */
 
-/* windows 11 style window controls (no known way to detect between windows 10
-and 11 so applied to both) */
+/* Windows 11 style window control icons. */
 @media (-moz-platform: windows) {
   .titlebar-min {
     list-style-image: url("win11-minimize.svg") !important;
+
+    @media (resolution > 1.25dppx) {
+      list-style-image: url("win11-minimize.svg#high-dpi") !important;
+    }
   }
 
   .titlebar-max {
@@ -17,14 +20,15 @@ and 11 so applied to both) */
 
   .titlebar-close {
     list-style-image: url("win11-close.svg") !important;
-  }
 
-  /* darkmode icon that uses thicker strokes and is easier to see (only needed
-  at 1x scale) */
-  @media (max-resolution: 1dppx) {
-    toolbar[brighttext] .titlebar-close,
-    .titlebar-close:hover {
-      list-style-image: url("win11-close-dark.svg") !important;
+    /* Alternative icon that uses a thicker stroke, making it easier to see when
+     * displayed on a dark background, only needed at 100% UI scale.
+     */
+    @media (resolution = 1dppx) {
+      toolbar[brighttext] &,
+      &:hover {
+        list-style-image: url("win11-close-dark.svg") !important;
+      }
     }
   }
 }

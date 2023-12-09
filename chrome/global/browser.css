@@ -50,7 +50,7 @@ the menu bar. */
     --browser-frame-bgcolor: var(--toolbar-bgcolor);
 
     /* Different shadow for higher resolution displays. */
-    @media (min-resolution: 1.8dppx) {
+    @media (resolution > 1.8dppx) {
       --uc-tweak-rounded-corners-shadow:
         0 0 0.5px 0.5px rgb(0 0 0 / 0.06),
         0 0.5px 1.5px rgb(0 0 0 / 0.1);

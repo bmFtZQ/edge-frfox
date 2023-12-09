@@ -7,7 +7,7 @@
   --lwt-accent-color-inactive: light-dark(#e8e8e8, #2e2e2e) !important;
   --lwt-text-color: light-dark(#000, #FFF) !important;
   --lwt-text-color-inactive: light-dark(#3A3A3A, #CBCBCB) !important;
-  --lwt-text-color: light-dark(#000, #E5E5E5) !important;
+  --lwt-text-color: light-dark(#000, #FFF) !important;
   --toolbar-bgcolor: light-dark(#f7f7f7, #3B3B3B) !important;
   --toolbar-non-lwt-bgcolor: var(--toolbar-bgcolor) !important;
   --toolbar-color: light-dark(#000, #fff) !important;

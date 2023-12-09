@@ -395,10 +395,13 @@
     --uc-tab-corner-bg: color-mix(in srgb, currentColor 8%, transparent) !important;
 
     /* When in light mode, the hover colour should be white. */
-    @media not (-moz-bool-pref: "uc.tweak.floating-tabs") {
-      #TabsToolbar:not([brighttext]) & {
-        background-color: rgb(255 255 255 / .3) !important;
-        --uc-tab-corner-bg: rgb(255 255 255 / .3) !important;
+    #TabsToolbar:not([brighttext]) & {
+      background-color: rgb(255 255 255 / .3) !important;
+      --uc-tab-corner-bg: rgb(255 255 255 / .3) !important;
+
+      @media (-moz-bool-pref: "uc.tweak.floating-tabs") {
+        background-color: rgb(255 255 255) !important;
+        --uc-tab-corner-bg: rgb(255 255 255) !important;
       }
     }
   }
@@ -446,6 +449,15 @@
     inset-block: 0;
     margin-block: auto;
     border-left: 1px solid transparent;
+
+  }
+
+  /* Fractional scaling adjustments (150%, 175%, etc.) */
+  @media (1dppx < resolution < 2dppx) {
+    &::before,
+    &::after {
+      border-left-width: 1.5px !important;
+    }
   }
 
   /* Left side separators. */
@@ -564,8 +576,8 @@
 
 :root[privatebrowsingmode="temporary"] {
   /* Move the other content in the Tabs Toolbar in-front of the indicator. */
-  & TabsToolbar .toolbar-items,
-  & TabsToolbar .titlebar-buttonbox-container {
+  & #TabsToolbar .toolbar-items,
+  & #TabsToolbar .titlebar-buttonbox-container {
     position: relative;
     z-index: 1;
   }

@@ -35,6 +35,14 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
     border-inline-start: 1px solid var(--toolbarseparator-color) !important;
     margin-block: 8px 10px !important;
     border-image-source: none !important;
+
+  }
+
+  /* Fractional scaling adjustments (150%, 175%, etc.) */
+  @media (1dppx < resolution < 2dppx) {
+    &::before {
+      border-inline-start-width: 1.5px !important;
+    }
   }
 }
 

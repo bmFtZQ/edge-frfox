@@ -212,6 +212,13 @@
     opacity: 0;
   }
 
+  /* Fractional scaling adjustments (150%, 175%, etc.) */
+  @media (1dppx < resolution < 2dppx) {
+    &::after {
+      border-right-width: 1.5px !important;
+    }
+  }
+
   /* Remove background from urlbar box. */
   &:not(:hover, [open]) {
     background-color: transparent !important;
