@@ -2,7 +2,7 @@
 
 .findbar-find-previous,
 .findbar-find-next,
-.close-icon {
+findbar .close-icon {
   border-radius: var(--toolbarbutton-border-radius) !important;
 }
 

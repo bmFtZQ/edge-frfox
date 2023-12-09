@@ -5,6 +5,8 @@
 :root[privatebrowsingmode="temporary"][style*="--lwt-accent-color: rgb(28, 27, 34)"] {
   --lwt-accent-color: light-dark(#cecece, #1C1C1C) !important;
   --lwt-accent-color-inactive: light-dark(#e8e8e8, #2e2e2e) !important;
+  --lwt-text-color: light-dark(#000, #FFF) !important;
+  --lwt-text-color-inactive: light-dark(#3A3A3A, #CBCBCB) !important;
   --lwt-text-color: light-dark(#000, #E5E5E5) !important;
   --toolbar-bgcolor: light-dark(#f7f7f7, #3B3B3B) !important;
   --toolbar-non-lwt-bgcolor: var(--toolbar-bgcolor) !important;
@@ -15,6 +17,8 @@
   --toolbarbutton-icon-fill-attention: light-dark(#0078D4, #4C98D1) !important;
   --lwt-tab-text: var(--toolbar-color) !important;
   --lwt-selected-tab-background-color: unset !important;
+  --tab-selected-textcolor: light-dark(#000, #fff) !important;
+  --tab-selected-textcolor-inactive: light-dark(#3E3E3E, #CBCBCB) !important;
   --tab-selected-bgcolor: var(--toolbar-bgcolor) !important;
   --toolbar-field-background-color: light-dark(#fff, #2B2B2B) !important;
   --toolbar-field-color: light-dark(#000, #fff) !important;
@@ -183,15 +187,17 @@
 }
 
 /* side bar theme */
-#sidebar-box:not(:-moz-lwtheme) {
+#sidebar-box:not(:-moz-lwtheme),
+:root[privatebrowsingmode="temporary"][style*="--lwt-accent-color: rgb(28, 27, 34)"] #sidebar-box {
   --sidebar-background-color: light-dark(#f7f7f7, #3b3b3b) !important;
   --sidebar-text-color: light-dark(#000, #fff) !important;
   appearance: none !important;
+
+  & ~ #browser:not(:-moz-lwtheme) {
+    --sidebar-border-color: light-dark(#bfbfbf, #686868) !important;
+  }
 }
 
-#browser:not(:-moz-lwtheme) {
-  --sidebar-border-color: light-dark(#bfbfbf, #686868) !important;
-}
 
 .sidebar-panel:not([lwt-sidebar]) {
   color: light-dark(#000, #fff) !important;

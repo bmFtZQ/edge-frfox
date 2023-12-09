@@ -113,12 +113,11 @@ bugs with certain themes eg. dark text on dark background.) */
     }
   }
 
-  #scrollbutton-up[part="scrollbutton-up"]:not(.menupopup-scrollbutton),
-  #scrollbutton-down[part="scrollbutton-down"]:not(.menupopup-scrollbutton) {
-    margin-top: 6px !important;
-
+  #scrollbutton-up:not(.menupopup-scrollbutton),
+  #scrollbutton-down:not(.menupopup-scrollbutton) {
+    &,
     & ~ spacer {
-      margin-top: 6px !important;
+      margin-top: 4px !important;
     }
   }
 
