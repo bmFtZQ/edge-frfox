@@ -1,8 +1,10 @@
 # Edge-Frfox
-A Firefox userChrome.css theme that aims to recreate the look and feel of the Chromium version of Microsoft Edge.
+A Firefox userChrome.css theme that aims to recreate the look and feel of Microsoft Edge.
 
-<!-- use <img> element to set a maximum width -->
-<img src="screenshots/thumbnail.png" alt="thumbnail screenshot" title="Screenshot taken with macOS Monterey / Firefox Nightly 96.0a1 (2021-11-30)" width="800">
+<!-- Use <img> element to set a maximum width. -->
+<img src="screenshots/thumbnail.png" alt="Edge-Frfox theme thumbail screenshot." width="800">
+
+Screenshot: macOS / Firefox 120 / Tweaks: rounded corners, hide forward button.
 
 ## How to install
 1. Go to `about:support` and click the "Open Folder/Show in Finder" button for the root directory of your browser profile/s.
@@ -27,16 +29,16 @@ A Firefox userChrome.css theme that aims to recreate the look and feel of the Ch
    ### Optional:
    * To use the light theme in private browsing mode set `browser.theme.dark-private-windows` = `false`
 
-   Additional tweaks can also be applied to the theme, such as Floating Tabs, rounded browser corners and more. See [Tweaks](#tweaks).
+   Additional tweaks can also be applied to the theme, such as Floating tabs, Rounded browser corners and more. See [Tweaks](#tweaks).
 
 **Note: Most frequently tested on macOS**
 
 ## Screenshots
-| Theme                               | Light                         | Dark                         |
-| ----------------------------------- | ----------------------------- | ---------------------------- |
-| Default (Windows 11)                | ![Light][s-l]                 | ![Dark][s-d]                 |
-| Floating Tabs (Windows 11)          | ![Light, Floating Tabs][s-lf] | ![Dark, Floating Tabs][s-df] |
-| GTK (GNOME 42, [adw-gtk3][1] theme) | ![Light, GTK][s-lgtk]         | ![Dark, GTK][s-dgtk]         |
+| Theme                                        | Light                                    | Dark                                   |
+| -------------------------------------------- | ---------------------------------------- | -------------------------------------- |
+| Default (Windows 11)                         | ![Light][s-light]                        | ![Dark][s-dark]                        |
+| Floating Tabs + Rounded Corners (Windows 11) | ![Light, Floating Tabs][s-light-ft]      | ![Dark, Floating Tabs][s-dark-ft]      |
+| Hide Tabs Bar + Rounded Corners (macOS)      | ![Light, Hide Tabs Bar][s-light-mac-htb] | ![Dark, Hide Tabs Bar][s-dark-mac-htb] |
 
 ## Tweaks
 Certain tweaks can be applied to the theme, to enable them navigate to `about:config` and create a boolean key for each tweak you want to use and set it to `true`, then restart the browser.
@@ -123,11 +125,11 @@ delete it.
 [1]: https://github.com/lassekongo83/adw-gtk3
 
 <!-- light mode screenshot links -->
-[s-l]: screenshots/light.png
-[s-lf]: screenshots/light-floating-tabs.png
-[s-lgtk]: screenshots/gtk-light.png
+[s-light]: screenshots/Windows_default_light.png
+[s-light-ft]: screenshots/Windows_floating-tabs_light.png
+[s-light-mac-htb]: screenshots/macOS_hide-tabs-bar_light.png
 
 <!-- dark mode screenshot links -->
-[s-d]: screenshots/dark.png
-[s-df]: screenshots/dark-floating-tabs.png
-[s-dgtk]: screenshots/gtk-dark.png
+[s-dark]: screenshots/Windows_default_dark.png
+[s-dark-ft]: screenshots/Windows_floating-tabs_dark.png
+[s-dark-mac-htb]: screenshots/macOS_hide-tabs-bar_dark.png
