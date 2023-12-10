@@ -27,14 +27,17 @@ bugs with certain themes eg. dark text on dark background.) */
 
 @media (-moz-bool-pref: "uc.tweak.floating-tabs") {
   :root:not(:-moz-lwtheme),
-  :root[privatebrowsingmode="temporary"][style*="--lwt-accent-color: rgb(28, 27, 34)"] {
+  /* `--newtab-background-color-secondary used` to differentiate between a dark
+  * private window and private window with the 'Dark' theme enabled.
+  * May not be the most reliable method, but works for now up to FF 123.
+  */
+  :root[privatebrowsingmode="temporary"][style*="--lwt-accent-color: rgb(28, 27, 34)"]:not([style*="--newtab-background-color-secondary: rgb(66, 65, 77)"]) {
     --lwt-accent-color: light-dark(#f3f3f3, #202020) !important;
     --lwt-accent-color-inactive: unset !important;
     --toolbar-bgcolor: light-dark(#fff, #3F3F3F) !important;
     --lwt-tab-text: light-dark(#262626, #fff) !important;
     --chrome-content-separator-color: light-dark(#bfbfbf, #535353) !important;
     --lwt-tab-line-color: light-dark(transparent, rgb(255 255 255 / 0.06)) !important;
-    --toolbar-non-lwt-bgcolor: var(--lwt-accent-color) !important;
   }
 
   @media (-moz-gtk-csd-available) {
@@ -43,6 +46,11 @@ bugs with certain themes eg. dark text on dark background.) */
       --toolbar-field-background-color: Field !important;
       --lwt-tab-text: -moz-dialogtext !important;
       --lwt-tab-line-color: rgb(255 255 255 / 0.06) !important;
+      --lwt-accent-color: var(--toolbox-non-lwt-bgcolor) !important;
+
+      &:-moz-window-inactive {
+        --lwt-accent-color: var(--toolbox-non-lwt-bgcolor-inactive) !important;
+      }
     }
   }
 
