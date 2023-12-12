@@ -4,39 +4,68 @@
   --bookmark-block-padding: 6px !important;
 }
 
+/* Bookmarks bar item sizing */
 #personal-toolbar-empty-description,
 #PersonalToolbar .toolbarbutton-1,
 toolbarbutton.bookmark-item:not(.subviewbutton) {
-  margin-block: 0 4px !important;
-  padding: var(--bookmark-block-padding) 6px !important;
+  margin-block: 2px 4px !important;
+  padding-block: var(--bookmark-block-padding) !important;
+  padding-inline: 6px !important;
   font-size: 12px !important;
+
+  /* Adjust vertical label position on Windows */
+  @media (-moz-platform: windows) {
+    & .toolbarbutton-text {
+      margin-block: -1px 0 !important;
+    }
+  }
 }
 
 #PersonalToolbar .toolbarbutton-1 {
   padding: 0 !important;
 }
 
-#PlacesToolbarItems>toolbarseparator::before {
-  content: "";
-  display: block;
-  border-inline-start: 1px solid var(--toolbarseparator-color) !important;
-  margin-block: 6px 10px !important;
-  border-image-source: none !important;
+/* Bookmarks bar separators */
+#PlacesToolbarItems > toolbarseparator {
+  padding-inline: 1px !important;
+
+  &::before {
+    content: "";
+    display: block;
+    border-inline-start: 1px solid var(--toolbarseparator-color) !important;
+    margin-block: 8px 10px !important;
+    border-image-source: none !important;
+
+  }
+
+  /* Fractional scaling adjustments (150%, 175%, etc.) */
+  @media (1dppx < resolution < 2dppx) {
+    &::before {
+      border-inline-start-width: 1.5px !important;
+    }
+  }
 }
 
+/* Left and Right padding of bookmarks bar */
 #PersonalToolbar {
   padding-inline: calc(var(--toolbar-start-end-padding) - 2px) calc(var(--toolbar-start-end-padding) + 6px) !important;
 }
 
+/* Spacing between icon and label for bookmarks bar items */
 #managed-bookmarks>.toolbarbutton-icon,
 #bookmarks-toolbar-placeholder>.toolbarbutton-icon,
 #PlacesToolbarItems>.bookmark-item>.toolbarbutton-icon[label]:not([label=""]),
 #OtherBookmarks.bookmark-item[container]>.toolbarbutton-icon {
-  margin-inline-end: 6px !important;
+  margin-inline-end: 8px !important;
 }
 
+/* Sizing for bookmarks bar icons */
 #PersonalToolbar .toolbarbutton-1>.toolbarbutton-icon {
   width: calc(2 * var(--bookmark-block-padding) + 16px) !important;
   height: calc(2 * var(--bookmark-block-padding) + 16px) !important;
   padding: var(--bookmark-block-padding) !important;
+}
+
+:root {
+  --bookmarks-toolbar-overlapping-browser-height: 34px !important;
 }

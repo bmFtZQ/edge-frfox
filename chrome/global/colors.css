@@ -2,11 +2,18 @@
 
 /* default colours (light & dark) */
 :root:not(:-moz-lwtheme),
-:root[privatebrowsingmode="temporary"][style*="--lwt-accent-color: rgb(28, 27, 34)"] {
+/* `--newtab-background-color-secondary used` to differentiate between a dark
+ * private window and private window with the 'Dark' theme enabled.
+ * May not be the most reliable method, but works for now up to FF 123.
+ */
+:root[privatebrowsingmode="temporary"][style*="--lwt-accent-color: rgb(28, 27, 34)"]:not([style*="--newtab-background-color-secondary: rgb(66, 65, 77)"]) {
   --lwt-accent-color: light-dark(#cecece, #1C1C1C) !important;
   --lwt-accent-color-inactive: light-dark(#e8e8e8, #2e2e2e) !important;
-  --lwt-text-color: light-dark(#000, #E5E5E5) !important;
+  --lwt-text-color: light-dark(#000, #FFF) !important;
+  --lwt-text-color-inactive: light-dark(#3A3A3A, #CBCBCB) !important;
+  --lwt-text-color: light-dark(#000, #FFF) !important;
   --toolbar-bgcolor: light-dark(#f7f7f7, #3B3B3B) !important;
+  --toolbar-non-lwt-bgcolor: var(--toolbar-bgcolor) !important;
   --toolbar-color: light-dark(#000, #fff) !important;
   --toolbarbutton-icon-fill: light-dark(#000, #fff) !important;
   --chrome-content-separator-color: light-dark(#bfbfbf, #686868) !important;
@@ -14,19 +21,27 @@
   --toolbarbutton-icon-fill-attention: light-dark(#0078D4, #4C98D1) !important;
   --lwt-tab-text: var(--toolbar-color) !important;
   --lwt-selected-tab-background-color: unset !important;
-  --tab-selected-bgcolor: unset !important;
+  --tab-selected-textcolor: light-dark(#000, #fff) !important;
+  --tab-selected-textcolor-inactive: light-dark(#3E3E3E, #CBCBCB) !important;
+  --tab-selected-bgcolor: var(--toolbar-bgcolor) !important;
   --toolbar-field-background-color: light-dark(#fff, #2B2B2B) !important;
   --toolbar-field-color: light-dark(#000, #fff) !important;
-  --toolbar-field-border-color: light-dark(#0000, #0000) !important;
+  --toolbar-field-border-color: transparent !important;
   --toolbar-field-focus-background-color: var(--toolbar-field-background-color) !important;
   --toolbar-field-focus-color: var(--toolbar-field-color) !important;
-  --toolbar-field-focus-border-color: light-dark(#0055D7, #63ADE5) !important;
-  --urlbar-hover-highlight-color: light-dark(rgba(192, 192, 192, 0.5), rgba(128, 128, 128, 0.5)) !important;
-  --urlbar-box-bgcolor: light-dark(rgba(0, 0, 0, 0.09), rgba(255, 255, 255, 0.11)) !important;
-  --urlbar-box-hover-bgcolor: light-dark(rgba(0, 0, 0, 0.09), rgba(255, 255, 255, 0.11)) !important;
-  --urlbar-box-focus-bgcolor: light-dark(rgba(0, 0, 0, 0.22), rgba(255, 255, 255, 0.28)) !important;
-  --urlbar-icon-fill-opacity: 1 !important;
+  --toolbar-field-focus-border-color: light-dark(#0055D780, #63ADE5) !important;
+  --link-color: light-dark(#0078D4, #75B6E8) !important;
+  --urlbar-hover-highlight-color: light-dark(rgb(192 192 192 / .5), rgb(128 128 128 / .5)) !important;
+  --urlbar-box-bgcolor: light-dark(rgb(0 0 0 / .09), rgb(255 255 255 / .11)) !important;
+  --urlbar-box-hover-bgcolor: light-dark(rgb(0 0 0 / .09), rgb(255 255 255 / .11)) !important;
+  --urlbar-box-focus-bgcolor: light-dark(rgb(0 0 0 / .22), rgb(255 255 255 / .28)) !important;
+  --urlbar-icon-fill-opacity: 0.58 !important;
   --urlbar-popup-url-color: light-dark(#0072C9, #75B6E8) !important;
+  --urlbarView-highlight-background: light-dark(#F2F2F2, #383838) !important;
+  --urlbarView-highlight-color: light-dark(#000, #fff) !important;
+  --urlbarView-hover-background: light-dark(#e5e5e5, #444444) !important;
+  --urlbarView-separator-color: light-dark(#EFEFEF, #5F5F5F) !important;
+  --uc-urlbarView-accent-color: light-dark(#1A6397, #75B6E8) !important;
   --lwt-brighttext-url-color: var(--urlbar-popup-url-color) !important;
   --autocomplete-popup-background: light-dark(#fff, #4A4A4A) !important;
   --autocomplete-popup-color: light-dark(#fff, #fff) !important;
@@ -59,20 +74,22 @@
   --panel-banner-item-update-supported-bgcolor: light-dark(#188038, #81C995) !important;
   --focus-outline-color: light-dark(#0055D7, #63ADE5) !important;
   --panel-shortcut-color: inherit !important;
-  --uc-urlbar-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
-  --toolbarbutton-hover-background: light-dark(rgba(0, 0, 0, 0.08), rgba(255, 255, 255, 0.1)) !important;
-  --toolbarbutton-active-background: light-dark(rgba(0, 0, 0, 0.12), rgba(255, 255, 255, 0.16)) !important;
+  --toolbarbutton-hover-background: light-dark(rgb(0 0 0 / .08), rgb(255 255 255 / .1)) !important;
+  --toolbarbutton-active-background: light-dark(rgb(0 0 0 / .12), rgb(255 255 255 / .16)) !important;
   --uc-private-browsing-indicator: var(--button-primary-bgcolor);
   --uc-private-browsing-indicator-text: var(--button-primary-color);
   --tab-icon-overlay-stroke: light-dark(#fff, #4b4b4b) !important;
   --tab-icon-overlay-fill: light-dark(#252525, #fff) !important;
+  --toolbarseparator-color: color-mix(in srgb, currentColor 40%, transparent) !important;
 }
 
-/* ensure that dark mode is enabled completely in private browsing mode. */
-:root[privatebrowsingmode="temporary"],
-:root[privatebrowsingmode="temporary"] #nav-bar,
-:root[privatebrowsingmode="temporary"] #PersonalToolbar {
-  color-scheme: dark !important;
+/* Ensure that dark mode is enabled completely in private browsing mode. */
+@media (-moz-bool-pref: "browser.theme.dark-private-windows") {
+  :root[privatebrowsingmode="temporary"],
+  :root[privatebrowsingmode="temporary"] #nav-bar,
+  :root[privatebrowsingmode="temporary"] #PersonalToolbar {
+    color-scheme: dark !important;
+  }
 }
 
 #urlbar {
@@ -88,17 +105,27 @@
 
 /* make the titlebar buttons black/white on default themes */
 :root:not(:-moz-lwtheme)[tabsintitlebar] .titlebar-buttonbox {
-  color: light-dark(#000, #fff) !important;
+  color: var(--toolbar-color) !important;
 }
 
 #statuspanel-label {
   background-color: var(--toolbar-field-focus-background-color) !important;
   color: var(--toolbar-field-focus-color) !important;
   border-color: transparent !important;
-  box-shadow: 0 2px 5px #0004, 0 0 0 1px light-dark(#0002, #0004) !important;
+  box-shadow: 0 2px 5px #0002, 0 0 0 1px light-dark(#0001, #0002) !important;
+  border-radius: 0 4px 0 0 !important;
+
+  #statuspanel[mirror] & {
+    border-radius: 4px 0 0 0 !important;
+  }
 }
 
 @media (-moz-platform: windows) {
+  ::selection {
+    background-color: light-dark(#0078D4, #93B8E7) !important;
+    color: light-dark(#fff, #000) !important;
+  }
+
   tooltip {
     background-color: var(--arrowpanel-background) !important;
     color: var(--arrowpanel-color) !important;
@@ -128,103 +155,80 @@
 
   /* library window theme */
   window#places {
-    --organizer-color: #000 !important;
-    --organizer-deemphasized-color: #666 !important;
-    --organizer-toolbar-background: #f7f7f7 !important;
-    --organizer-pane-background: #f7f7f7 !important;
-    --organizer-content-background: #f7f7f7 !important;
-    --organizer-hover-background: #00000025 !important;
-    --organizer-selected-background: #006CBE80 !important;
-    --organizer-outline-color: #0055D7a0 !important;
-    --organizer-toolbar-field-background: #fff !important;
-    --organizer-toolbar-field-background-focused: #fff !important;
-    --organizer-border-color: #bfbfbf !important;
-    scrollbar-color: #0006 #f7f7f740 !important;
+    --organizer-color: light-dark(#000, #fff) !important;
+    --organizer-deemphasized-color: light-dark(#666, #bbb) !important;
+    --organizer-toolbar-background: light-dark(#f7f7f7, #3B3B3B) !important;
+    --organizer-pane-background: light-dark(#f7f7f7, #2B2B2B) !important;
+    --organizer-content-background: light-dark(#f7f7f7, #1C1C1C) !important;
+    --organizer-hover-background: light-dark(#00000025, #ffffff25) !important;
+    --organizer-selected-background: light-dark(#006CBE80, #006CBE80) !important;
+    --organizer-outline-color: light-dark(#0055D7a0, #63ADE5) !important;
+    --organizer-toolbar-field-background: light-dark(#fff, #2B2B2B) !important;
+    --organizer-toolbar-field-background-focused: light-dark(#fff, #2B2B2B) !important;
+    --organizer-border-color: light-dark(#bfbfbf, #686868) !important;
+    scrollbar-color:
+      light-dark(#0006, #fff6)
+      light-dark(#f7f7f740, #2B2B2B40) !important;
   }
 
   #placesViewsBox #downloadsListBox richlistitem[selected="true"] {
-    background-color: #006CBE !important;
-    color: #fff !important;
+    background-color: light-dark(#006CBE, #006CBE) !important;
+    color: light-dark(#fff, #fff) !important;
   }
 
   #placeContentColumns :is(treecol, treecolpicker) {
-    background-color: #f7f7f7 !important;
-    color: #000 !important;
-    border-inline-start: 1px solid #bfbfbf !important;
-    box-shadow: inset 0 -1px #bfbfbf !important;
+    background-color: light-dark(#f7f7f7, #3B3B3B) !important;
+    color: light-dark(#000, #fff) !important;
+    border-inline-start: 1px solid light-dark(#bfbfbf, #686868) !important;
+    box-shadow: inset 0 -1px light-dark(#bfbfbf, #686868) !important;
     appearance: none !important;
   }
 
   #placeContentColumns :is(treecol, treecolpicker):where(:hover) {
-    background-color: #cecece !important;
-    color: #000 !important;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    window#places {
-      --organizer-color: #fff !important;
-      --organizer-deemphasized-color: #bbb !important;
-      --organizer-toolbar-background: #3B3B3B !important;
-      --organizer-pane-background: #2B2B2B !important;
-      --organizer-content-background: #1C1C1C !important;
-      --organizer-hover-background: #ffffff25 !important;
-      --organizer-selected-background: #006CBE80 !important;
-      --organizer-outline-color: #63ADE5 !important;
-      --organizer-toolbar-field-background: #2B2B2B !important;
-      --organizer-toolbar-field-background-focused: #2B2B2B !important;
-      --organizer-border-color: #686868 !important;
-      scrollbar-color: #fff6 #2B2B2B40 !important;
-    }
-
-    #placesViewsBox #downloadsListBox richlistitem[selected="true"] {
-      background-color: #006CBE !important;
-      color: #fff !important;
-    }
-
-    #placeContentColumns :is(treecol, treecolpicker) {
-      background-color: #3B3B3B !important;
-      color: #fff !important;
-      border-inline-start: 1px solid #686868 !important;
-      box-shadow: inset 0 -1px #686868 !important;
-    }
-
-    #placeContentColumns :is(treecol, treecolpicker):where(:hover) {
-      background-color: #4A4A4A !important;
-      color: #fff !important;
-    }
+    background-color: light-dark(#cecece, #4A4A4A ) !important;
+    color: light-dark(#000, #fff) !important;
   }
 }
 
 /* side bar theme */
-#sidebar-box:not([lwt-sidebar]) {
+#sidebar-box:not(:-moz-lwtheme),
+:root[privatebrowsingmode="temporary"][style*="--lwt-accent-color: rgb(28, 27, 34)"] #sidebar-box {
   --sidebar-background-color: light-dark(#f7f7f7, #3b3b3b) !important;
   --sidebar-text-color: light-dark(#000, #fff) !important;
   appearance: none !important;
+
+  & ~ #browser:not(:-moz-lwtheme) {
+    --sidebar-border-color: light-dark(#bfbfbf, #686868) !important;
+  }
 }
 
-#browser:not([style*="--sidebar-border-color"]) {
-  --sidebar-border-color: light-dark(#bfbfbf, #686868) !important;
-}
 
 .sidebar-panel:not([lwt-sidebar]) {
   color: light-dark(#000, #fff) !important;
   scrollbar-color: light-dark(#0006, #fff6) light-dark(#f7f7f740, #3b3b3b40) !important;
+
+  /* Sidebar search box (Windows) */
+  @media(-moz-platform: windows) {
+    & #sidebar-search-container > #search-box,
+    & #viewButton {
+      appearance: none !important;
+      background-color: light-dark(#fff, #2b2b2b) !important;
+      color: inherit !important;
+      border: 1px solid light-dark(#bfbfbf, #686868) !important;
+      border-radius: 4px !important;
+      padding: 6px 8px !important;
+
+      &:focus {
+        border-width: 2px !important;
+        padding: 5px 7px !important;
+      }
+    }
+  }
 }
 
 @-moz-document url(chrome://browser/content/syncedtabs/sidebar.xhtml){
   body {
     background: transparent !important;
-  }
-}
-
-@media(-moz-platform: windows) {
-  .sidebar-panel:not([lwt-sidebar]) #sidebar-search-container>#search-box,
-  .sidebar-panel:not([lwt-sidebar]) #viewButton {
-    appearance: none !important;
-    background-color: light-dark(#fff, #2b2b2b) !important;
-    color: inherit !important;
-    border: 1px solid light-dark(#bfbfbf, #686868) !important;
-    border-radius: 2px !important;
   }
 }
 
@@ -253,7 +257,7 @@
     --urlbar-box-active-bgcolor: var(--button-active-bgcolor) !important;
     --urlbar-box-text-color: inherit !important;
     --urlbar-box-hover-text-color: var(--urlbar-box-text-color) !important;
-    --urlbar-icon-fill-opacity: 0.9 !important;
+    --urlbar-icon-fill-opacity: 0.58 !important;
     --urlbar-popup-url-color: -moz-nativehyperlinktext !important;
     --lwt-brighttext-url-color: #00ddff !important;
     --toolbarbutton-icon-fill-attention: -moz-nativehyperlinktext !important;
@@ -274,7 +278,6 @@
     --toolbar-field-focus-border-color: -moz-accent-color !important;
     --toolbarbutton-hover-background: color-mix(in srgb, -moz-dialogtext 14%, transparent) !important;
     --toolbarbutton-active-background: color-mix(in srgb, -moz-dialogtext 20%, transparent) !important;
-    --uc-urlbar-shadow: none;
     --autocomplete-popup-highlight-color: FieldText !important;
     --autocomplete-popup-highlight-background: color-mix(in srgb, currentColor 8%, transparent) !important;
     --autocomplete-popup-hover-background: color-mix(in srgb, currentColor 12%, transparent) !important;

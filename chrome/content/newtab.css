@@ -23,7 +23,7 @@ url-prefix("about:firefoxview") {
     --newtab-wordmark-color: #737373 !important;
     --newtab-status-success: #50B080 !important;
     --newtab-status-error: #FF848A !important;
-    --newtab-inner-box-shadow-color: rgba(0, 0, 0, 0.1) !important;
+    --newtab-inner-box-shadow-color: rgb(0 0 0 / .1) !important;
     --newtab-overlay-color: color-mix(in srgb, var(--newtab-background-color) 85%, transparent) !important;
     --newtab-text-emphasis-background: #FFED32 !important;
     --newtab-text-emphasis-text-color: #000 !important;
@@ -73,7 +73,7 @@ url-prefix("about:home") {
     white-space: nowrap !important;
     text-overflow: ellipsis !important;
     --elevation: 4;
-    box-shadow: 0 0 calc((var(--elevation) * 0.225px) + 2px) rgba(0, 0, 0, 0.11), 0 calc(var(--elevation) * 0.4px) calc((var(--elevation) * 0.9px)) rgba(0, 0, 0, 0.13) !important;
+    box-shadow: 0 0 calc((var(--elevation) * 0.225px) + 2px) rgb(0 0 0 / .11), 0 calc(var(--elevation) * 0.4px) calc((var(--elevation) * 0.9px)) rgb(0 0 0 / .13) !important;
   }
 
   .search-handoff-button:hover {
@@ -129,7 +129,7 @@ url-prefix("about:home") {
 
   .card-outer .card,
   .ds-card-grid.ds-card-grid-border .ds-card:not(.placeholder) {
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3) !important;
+    box-shadow: 0 1px 4px rgb(0 0 0 / .3) !important;
   }
 
   .card-outer .card-preview-image-outer,
@@ -147,7 +147,7 @@ url-prefix("about:home") {
     padding: 30px !important;
   }
 
-  @supports -moz-bool-pref("uc.tweak.hide-newtab-logo") {
+  @media (-moz-bool-pref: "uc.tweak.hide-newtab-logo") {
     .logo-and-wordmark {
       display: none !important;
     }
@@ -161,24 +161,11 @@ url-prefix("about:home") {
 /* private browsing newtab */
 @-moz-document url-prefix(about:privatebrowsing) {
   :root {
-    --uc-wordmark-color: #737373;
-    --uc-background-color-secondary: #fff;
-  }
+    --uc-wordmark-color: light-dark(#737373, #fff);
+    --uc-background-color-secondary: light-dark(#fff, #4a4a4a);
 
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --uc-wordmark-color: #fff;
-      --uc-background-color-secondary: #4a4a4a;
-    }
-  }
-
-  @supports -moz-bool-pref("browser.theme.dark-private-windows") {
-    html.private {
-      --in-content-page-color: white !important;
-      --in-content-page-background: #252525 !important;
-      --in-content-focus-outline-color: #63ADE5 !important;
-      --uc-background-color-secondary: #4a4a4a !important;
-      --uc-wordmark-color: #fff !important;
+    @media (-moz-bool-pref: "browser.theme.dark-private-windows") {
+      color-scheme: dark !important;
     }
   }
 
@@ -195,7 +182,7 @@ url-prefix("about:home") {
     border-radius: 99px !important;
     padding-inline-start: 48px !important;
     --elevation: 4;
-    box-shadow: 0 0 calc((var(--elevation) * 0.225px) + 2px) rgba(0, 0, 0, 0.11), 0 calc(var(--elevation) * 0.4px) calc((var(--elevation) * 0.9px)) rgba(0, 0, 0, 0.13) !important;
+    box-shadow: 0 0 calc((var(--elevation) * 0.225px) + 2px) rgb(0 0 0 / .11), 0 calc(var(--elevation) * 0.4px) calc((var(--elevation) * 0.9px)) rgb(0 0 0 / .13) !important;
   }
 
   .search-handoff-button:hover {
@@ -238,7 +225,7 @@ url-prefix("about:home") {
   }
 }
 
-@supports -moz-bool-pref("uc.tweak.newtab-background") {
+@media (-moz-bool-pref: "uc.tweak.newtab-background") {
   @-moz-document url(about:newtab),
   url(about:home),
   url(about:privatebrowsing),
@@ -248,8 +235,8 @@ url-prefix("about:home") {
       have a higher priority */
       --bg-0: url(../background-0.jpg), url(../background-0.png);
       --bg-1: url(../background-1.jpg), url(../background-1.png);
-      --newtab-element-hover-color: rgba(239, 239, 239, 0.3) !important;
-      --newtab-element-active-color: rgba(239, 239, 239, 0.45) !important;
+      --newtab-element-hover-color: rgb(239 239 239 / .3) !important;
+      --newtab-element-active-color: rgb(239 239 239 / .45) !important;
       --text-shadow: 0 1px 2px #000;
       --icon-shadow: drop-shadow(0 0.3px 0.6px #000);
       background-color: #252525 !important;
@@ -259,15 +246,14 @@ url-prefix("about:home") {
       background-attachment: fixed !important;
     }
 
-    body[lwt-newtab][lwt-newtab-brighttext],
-    :root[lwt-newtab][lwt-newtab-brighttext] body,
+    :root[lwt-newtab-brighttext] body,
     :root.private body {
       background-image: var(--bg-1), var(--bg-0) !important;
-      --newtab-element-hover-color: rgba(66, 66, 66, 0.4) !important;
-      --newtab-element-active-color: rgba(66, 66, 66, 0.55) !important;
+      --newtab-element-hover-color: rgb(66 66 66 / .4) !important;
+      --newtab-element-active-color: rgb(66 66 66 / .55) !important;
     }
 
-    @supports not -moz-bool-pref("browser.theme.dark-private-windows") {
+    @media not (-moz-bool-pref: "browser.theme.dark-private-windows") {
       :root.private body {
         background-image: var(--bg-0) !important;
       }

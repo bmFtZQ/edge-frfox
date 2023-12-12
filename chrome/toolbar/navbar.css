@@ -27,7 +27,7 @@
   padding: var(--toolbarbutton-inner-padding) var(--uc-toolbarbutton-inner-inline-padding) !important;
 }
 
-@supports (-moz-bool-pref("uc.tweak.rounded-corners")) {
+@media (-moz-bool-pref: "uc.tweak.rounded-corners") {
   #navigator-toolbox {
     border-bottom: none !important;
   }
@@ -47,7 +47,6 @@
 
 #fxa-toolbar-menu-button {
   display: flex !important;
-  display: -moz-box !important;
 }
 
 #widget-overflow-list>#fxa-toolbar-menu-button #fxa-avatar-image {
