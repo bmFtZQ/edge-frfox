@@ -95,6 +95,7 @@ the menu bar. */
   /* Remove sidebar border when not in full screen. */
   :not(:root[inFullscreen] #navigator-toolbox[style*="margin-top"]) + #browser #sidebar-splitter {
     border-inline-width: 0 !important;
+    min-width: 6px !important;
   }
 
   /* Apply colour to the frame around the browser window. */
