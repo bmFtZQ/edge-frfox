@@ -49,7 +49,7 @@
       light-dark(rgb(37 37 37 / .4), rgb(255 255 255 / .4))
       light-dark(#f7f7f7, #252525) !important;
   }
-  
+
   ::selection {
     background-color: light-dark(#0078D4, #93B8E7);
     color: light-dark(#fff, #000);
@@ -70,15 +70,14 @@ url-prefix(about:addons) {
 
   .category[selected]::before {
     content: "";
-    display: block;
+    position: absolute;
+    inset-block: 0;
+    margin-block: auto;
     height: 24px;
     width: 3px;
+    left: 2px;
     background-color: var(--in-content-accent-color);
     border-radius: 3px;
-    position: absolute;
-    left: 2px;
-    top: 50%;
-    translate: 0 -50%;
   }
 
   button.tab-button:hover {

@@ -47,7 +47,7 @@ the menu bar. */
       0 -.8px 0 0 rgb(0 0 0 / 0.02),
       0 0.5px 1px 1px rgb(0 0 0 / 0.06),
       0 1px 1px rgb(0 0 0 / 0.1);
-    --browser-frame-bgcolor: var(--toolbar-bgcolor);
+    --browser-frame-bgcolor: var(--toolbar-bgcolor, var(--lwt-accent-color));
 
     /* Different shadow for higher resolution displays. */
     @media (resolution > 1.8dppx) {

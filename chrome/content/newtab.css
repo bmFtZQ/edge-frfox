@@ -47,6 +47,28 @@ url-prefix("about:firefoxview") {
     --newtab-wordmark-color: #fff !important;
     --newtab-status-success: #50B080 !important;
   }
+
+  /* Adjustments for themes. */
+  :root[style*="--newtab-background-color"] {
+    /* Make the Firefox logo workmark follow text colour. */
+    --newtab-wordmark-color: color-mix(in srgb, var(--newtab-text-primary-color) 60%, var(--newtab-background-color)) !important;
+
+    /* If there is no secondary background, create one from other colours. */
+    &:not([style*="--newtab-background-color-secondary"]) {
+      --newtab-background-color-secondary: color-mix(in srgb, var(--newtab-background-color) 15%, white) !important;
+    }
+
+    /* Dark adjustments for themes. */
+    &[lwt-newtab-brighttext] {
+      /* Make the Firefox logo workmark follow text colour. */
+      --newtab-wordmark-color: var(--newtab-text-primary-color) !important;
+
+      /* If there is no secondary background, create one from other colours. */
+      &:not([style*="--newtab-background-color-secondary"]) {
+        --newtab-background-color-secondary: color-mix(in srgb, var(--newtab-text-primary-color) 15%, var(--newtab-background-color)) !important;
+      }
+    }
+  }
 }
 
 @-moz-document url-prefix("about:newtab"),
@@ -231,8 +253,9 @@ url-prefix("about:home") {
   url(about:privatebrowsing),
   url-prefix("about:firefoxview") {
     :root body {
-      /* specify both jpg and png file extensions, but jpg images will always
-      have a higher priority */
+      /* Specify both jpg and png file extensions, but jpg images will always
+       * have a higher priority.
+       */
       --bg-0: url(../background-0.jpg), url(../background-0.png);
       --bg-1: url(../background-1.jpg), url(../background-1.png);
       --newtab-element-hover-color: rgb(239 239 239 / .3) !important;
@@ -269,14 +292,14 @@ url-prefix("about:home") {
     .ds-header,
     .ds-layout .section-title span,
     .ds-navigation,
-    .page-section-header>h1,
-    .page-section-header>.section-description,
+    .page-section-header > h1,
+    .page-section-header > .section-description,
     .closed-tab-li-main:not(:hover, :active),
     .closed-tab-li-dismiss,
-    .brand-logo>.brand-feature-name,
+    .brand-logo > .brand-feature-name,
     #colorways-collection-title,
     #colorways-collection-description,
-    .synced-tabs-container>.loading-content {
+    .synced-tabs-container > .loading-content {
       text-shadow: var(--text-shadow) !important;
       color: #fff !important;
       -moz-osx-font-smoothing: auto !important;
@@ -286,11 +309,11 @@ url-prefix("about:home") {
     .icon-settings,
     .top-site-outer .context-menu-button,
     .closed-tab-li-main:not(:hover, :active) .favicon,
-    .page-section-header:not(:hover)>.twisty,
+    .page-section-header:not(:hover) > .twisty,
     .synced-tab-li-favicon,
-    .page-section-header:not(:hover)>.twisty,
+    .page-section-header:not(:hover) > .twisty,
     .closed-tab-li-dismiss:not(:hover),
-    .synced-tabs-container>.loading-content .sync {
+    .synced-tabs-container > .loading-content .sync {
       filter: var(--icon-shadow) !important;
       color: #fff !important;
       fill: currentColor !important

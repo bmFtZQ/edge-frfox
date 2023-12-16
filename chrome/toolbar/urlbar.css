@@ -26,18 +26,22 @@
 #urlbar-background,
 #searchbar {
   border-radius: calc(var(--urlbar-icon-border-radius) + 2px) !important;
-  
+
   /* Shadow for URL bar, only appears in light mode. */
   :root:not(:-moz-lwtheme) #nav-bar:not([brighttext]) & {
     box-shadow: var(--uc-urlbar-shadow, none);
   }
-  
+
   /* Appearance when the URL bar is expanded. */
   #urlbar[open] & {
     border-radius: 8px !important;
     border-color: transparent !important;
     box-shadow: 0 10px 16px rgb(0 0 0 / 0.18), 0 3px 5px rgb(0 0 0 / 0.33) !important;
     outline: 1px solid var(--arrowpanel-border-color) !important;
+
+    &:not(:-moz-lwtheme) {
+      outline-color: var(--panel-separator-color) !important;
+    }
   }
 }
 
@@ -77,7 +81,7 @@
 }
 
 /* Add highlighted marker to the left of selected URL bar items. */
-.urlbarView-row:not([type="tip"], [type="dynamic"])[selected]>.urlbarView-row-inner,
+.urlbarView-row:not([type="tip"], [type="dynamic"])[selected] > .urlbarView-row-inner,
 .urlbarView-row-inner[selected] {
   box-shadow: 3px 0 var(--uc-urlbarView-accent-color, var(--toolbar-field-focus-border-color)) inset !important;
 }
@@ -118,7 +122,7 @@
 }
 
 /* Remove border between URL bar input and suggestions. */
-#urlbar[open]>.urlbarView>.urlbarView-body-outer>.urlbarView-body-inner {
+#urlbar[open] > .urlbarView > .urlbarView-body-outer > .urlbarView-body-inner {
   border-top: 0 !important;
 }
 
@@ -165,7 +169,7 @@
 }
 
 /* Focus border for URL bar. */
-#urlbar[focused="true"]:not([suppress-focus-border])>#urlbar-background,
+#urlbar[focused="true"]:not([suppress-focus-border]) > #urlbar-background,
 #searchbar:focus-within {
   outline-offset: calc(var(--focus-outline-width) * -1 + 1px) !important;
 }

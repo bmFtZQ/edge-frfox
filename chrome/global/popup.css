@@ -420,7 +420,7 @@ panelview .toolbarbutton-1,
   #PopupAutoComplete > .autocomplete-richlistbox,
   .menupopup-arrowscrollbox {
     background: var(--arrowpanel-background) !important;
-    border: 1px solid light-dark(transparent, var(--panel-separator-color)) !important;
+    border: 1px solid var(--arrowpanel-border-color) !important;
   }
 
   /* make room for menu shadow */

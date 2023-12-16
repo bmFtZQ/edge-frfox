@@ -69,7 +69,7 @@
   --arrowpanel-dimmed-further: light-dark(#707070, #707070) !important;
   --panel-item-hover-bgcolor: light-dark(#eee, #646464) !important;
   --panel-item-active-bgcolor: light-dark(#ddd, #747474) !important;
-  --arrowpanel-border-color: light-dark(#dadada, #636363) !important;
+  --arrowpanel-border-color: light-dark(#fff, #636363) !important;
   --panel-separator-color: light-dark(#dadada, #636363) !important;
   --panel-banner-item-update-supported-bgcolor: light-dark(#188038, #81C995) !important;
   --focus-outline-color: light-dark(#0055D7, #63ADE5) !important;
@@ -81,6 +81,11 @@
   --tab-icon-overlay-stroke: light-dark(#fff, #4b4b4b) !important;
   --tab-icon-overlay-fill: light-dark(#252525, #fff) !important;
   --toolbarseparator-color: color-mix(in srgb, currentColor 40%, transparent) !important;
+
+  /* Side bar theme colours. */
+  --sidebar-background-color: light-dark(#f7f7f7, #3b3b3b) !important;
+  --sidebar-text-color: light-dark(#000, #fff) !important;
+  --sidebar-border-color: light-dark(#bfbfbf, #686868) !important;
 }
 
 /* Ensure that dark mode is enabled completely in private browsing mode. */
@@ -185,23 +190,14 @@
   }
 
   #placeContentColumns :is(treecol, treecolpicker):where(:hover) {
-    background-color: light-dark(#cecece, #4A4A4A ) !important;
+    background-color: light-dark(#cecece, #4A4A4A) !important;
     color: light-dark(#000, #fff) !important;
   }
 }
 
-/* side bar theme */
-#sidebar-box:not(:-moz-lwtheme),
-:root[privatebrowsingmode="temporary"][style*="--lwt-accent-color: rgb(28, 27, 34)"] #sidebar-box {
-  --sidebar-background-color: light-dark(#f7f7f7, #3b3b3b) !important;
-  --sidebar-text-color: light-dark(#000, #fff) !important;
+#sidebar-box {
   appearance: none !important;
-
-  & ~ #browser:not(:-moz-lwtheme) {
-    --sidebar-border-color: light-dark(#bfbfbf, #686868) !important;
-  }
 }
-
 
 .sidebar-panel:not([lwt-sidebar]) {
   color: light-dark(#000, #fff) !important;
@@ -226,7 +222,7 @@
   }
 }
 
-@-moz-document url(chrome://browser/content/syncedtabs/sidebar.xhtml){
+@-moz-document url(chrome://browser/content/syncedtabs/sidebar.xhtml) {
   body {
     background: transparent !important;
   }
