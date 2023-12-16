@@ -549,6 +549,7 @@
 #tabbrowser-tabs {
   &:not([overflow]) {
     margin-inline-start: -8px !important;
+    margin-inline-end: calc(-1 * var(--tab-border-radius)) !important;
 
     #tabbrowser-arrowscrollbox .tabbrowser-tab:nth-child(1 of .tabbrowser-tab:not([hidden])) {
       margin-inline-start: 8px !important;

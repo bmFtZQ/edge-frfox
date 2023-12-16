@@ -283,7 +283,7 @@ bugs with certain themes eg. dark text on dark background.) */
         #TabsToolbar .titlebar-buttonbox {
           --uc-position: calc((var(--uc-navbar-height) + var(--tab-block-margin)) / 2 - 8px);
           visibility: visible !important;
-          position: absolute !important;
+          position: fixed !important;
           top: var(--uc-position);
           left: var(--uc-position);
           margin: 0 !important;
@@ -306,7 +306,7 @@ bugs with certain themes eg. dark text on dark background.) */
       /* Positioning of the window controls */
       & #toolbar-menubar[inactive] + #TabsToolbar .titlebar-buttonbox {
         visibility: visible !important;
-        position: absolute !important;
+        position: fixed !important;
         top: 0;
         right: 0;
         height: calc(var(--uc-navbar-height) + var(--tab-block-margin)) !important;
