@@ -226,11 +226,6 @@
 .tab-content {
   padding-inline: var(--inline-tab-padding) 0 !important;
 
-  /* Reduce padding of tab contents when space is limited. */
-  #tabbrowser-tabs[closebuttons="activetab"] .tabbrowser-tab:not([pinned]) & {
-    padding-inline: calc(var(--inline-tab-padding) - 4px) 0 !important;
-  }
-
   /* Pinned tab padding. */
   &[pinned] {
     padding: 0 12px !important;
@@ -375,13 +370,6 @@
     box-shadow: -4px 4px 0 4px var(--uc-tab-corner-bg) !important;
   }
 
-  /* Fix overflow issues by removing the bottom-right corner of the last tab.
-   * Disabled when customising the browser to prevent a glitch.
-   */
-  :root:not([customizing]) #tabbrowser-arrowscrollbox[overflowing] > tab:nth-last-child(1 of .tabbrowser-tab:not([hidden])) &::after {
-    content: initial !important;
-  }
-
   /* Make sure that the bottom corners have the same background colour. */
   &:is([selected], [multiselected]) {
     --uc-tab-corner-bg: var(--tab-selected-bgcolor, var(--lwt-selected-tab-background-color, var(--toolbar-bgcolor)));
@@ -518,7 +506,8 @@
 /* #region */
 
 /* Tab and toolbar shadows. */
-:root {
+:root,
+:root  .tabbrowser-tab {
   /* Light mode shadows. */
   --uc-titlebar-shadow: 0 -3px 2px -3px rgb(0 0 0 / .2) inset;
   --uc-tab-shadow:
@@ -526,7 +515,8 @@
     0 4px 5px rgb(0 0 0 / .21),
     0 0px 2px rgb(0 0 0 / .18);
 
-  & [brighttext] {
+  & [brighttext],
+  & [brighttext] .tabbrowser-tab {
     /* Dark mode shadows. */
     --uc-titlebar-shadow: 0 -3px 2px -3px rgb(0 0 0 / .7) inset;
     --uc-tab-shadow:
@@ -551,6 +541,8 @@
 #scrollbutton-up:not(.menupopup-scrollbutton) ~ .scrollbox-clip > scrollbox {
   padding-top: 4px !important;
   margin-top: -4px !important;
+  /* Used to fix tab overflow issue with rounded corners. */
+  padding-inline-end: var(--tab-border-radius) !important;
 }
 
 /* Add some room horizontally for the tab shadows and rounded corners. */

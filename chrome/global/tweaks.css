@@ -55,12 +55,14 @@ bugs with certain themes eg. dark text on dark background.) */
   }
 
   /* Shadow for navbar and tabs */
-  :root {
+  :root,
+  :root .tabbrowser-tab {
     --uc-titlebar-shadow: none;
     --uc-tab-shadow-outline: rgb(0 0 0 / .11);
     --uc-tab-shadow: 0 2.5px 3px 1px rgb(0 0 0 / .08);
 
-    & [brighttext] {
+    & [brighttext],
+    & [brighttext] .tabbrowser-tab {
       --uc-titlebar-shadow: none;
       --uc-tab-shadow-outline: transparent;
       --uc-tab-shadow: 0 2px 3px rgb(0 0 0 / .12);
@@ -309,12 +311,14 @@ bugs with certain themes eg. dark text on dark background.) */
         right: 0;
         height: calc(var(--uc-navbar-height) + var(--tab-block-margin)) !important;
         z-index: 3 !important;
+        color: var(--toolbar-color) !important;
       }
 
       /* Set background colour of the menu bar to maintain consistency with the navbar */
       @media not (-moz-bool-pref: "uc.tweak.floating-tabs") {
         #toolbar-menubar {
           background-color: var(--toolbar-bgcolor) !important;
+          color: var(--toolbar-color) !important;
         }
       }
     }
