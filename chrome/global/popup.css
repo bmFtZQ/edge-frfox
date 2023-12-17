@@ -387,13 +387,19 @@ panelview .toolbarbutton-1,
   & .autocomplete-richlistitem,
   & .search-panel-header {
     padding-block: 2px !important;
+    padding-inline: var(--uc-contextmenu-menuitem-padding-inline) !important;
     margin: 0 var(--uc-arrowpanel-menuitem-margin-inline) !important;
     border-radius: var(--arrowpanel-menuitem-border-radius) !important;
+
+    & > .ac-type-icon {
+      margin-inline-start: 0 !important;
+    }
   }
 
   & .search-one-offs {
     padding-block-start: 0 !important;
   }
+
 }
 
 /* disable context menu when this tweak is applied */
