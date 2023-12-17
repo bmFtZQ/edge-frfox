@@ -537,12 +537,19 @@
   box-shadow: var(--uc-titlebar-shadow) !important;
 }
 
+/* Prevent interference with context menu arrowscrollbox. */
+#tabbrowser-arrowscrollbox {
+  --uc-padding-top: 4px;
+  --uc-margin-top: -4px;
+  --uc-padding-inline-end: var(--tab-border-radius)
+}
+
 /* Make room for the tab shadows so they aren't clipped at the top. */
-#scrollbutton-up:not(.menupopup-scrollbutton) ~ .scrollbox-clip > scrollbox {
-  padding-top: 4px !important;
-  margin-top: -4px !important;
+.scrollbox-clip > scrollbox {
+  padding-top: var(--uc-padding-top, 0) !important;
+  margin-top: var(--uc-margin-top, 0) !important;
   /* Used to fix tab overflow issue with rounded corners. */
-  padding-inline-end: var(--tab-border-radius) !important;
+  padding-inline-end: var(--uc-padding-inline-end, 0) !important;
 }
 
 /* Add some room horizontally for the tab shadows and rounded corners. */
