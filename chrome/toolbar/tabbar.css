@@ -132,7 +132,7 @@
 #tabbrowser-tabs {
   /* Remove the border from the left of the tab bar. */
   border-inline: none !important;
-  padding-inline-start: 0 !important;
+  padding-inline-start: var(--tab-overflow-pinned-tabs-width) !important;
 
   /* Add space above the tabs. */
   margin-top: var(--tab-block-margin) !important;
