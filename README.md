@@ -34,67 +34,123 @@ Certain tweaks can be applied to the theme, to enable them navigate to `about:co
 
 To disable a tweak, set the key to `false` or delete it.
 
-| Enable Edge style floating tabs                                |
-| -------------------------------------------------------------- |
-| `uc.tweak.floating-tabs`                                       |
-| **OPTIONAL: Make the top and bottom margins of the tab equal** |
-| `uc.tweak.disable-drag-space`                                  |
+---
 
-| Enable rounded corners     |
-| -------------------------- |
-| `uc.tweak.rounded-corners` |
+### Floating/rounded tabs
+Emulate the look of the rounded tabs feature available in Edge.
 
-| Hide Tabs Bar (Useful when using vertical tabs extensions such as Sidebery, Tree Style Tab, etc.) |
-| ------------------------------------------------------------------------------------------------- |
-| **NOTE: At the moment, this only supports macOS and Windows.**                                    |
-| `uc.tweak.hide-tabs-bar`                                                                          |
-| **OPTIONAL: Only enable in fullscreen mode (currently: macOS Only!)**                             |
-| `uc.tweak.hide-tabs-bar.only-when-maximised`                                                      |
+`uc.tweak.floating-tabs`
 
-| Use background image on newtab page                                                                |
-| -------------------------------------------------------------------------------------------------- |
-| **SETUP: Add an image named `background-0.(jpg/png)` to the `chrome` folder.**                     |
-| **OPTIONAL: Add a second image named `background-1.(jpg/png)` for seperate dark mode background.** |
-| `uc.tweak.newtab-background`                                                                       |
+---
 
-| Hide forward button when it's disabled (like in Edge) |
-| ----------------------------------------------------- |
-| `uc.tweak.hide-forward-button`                        |
+### Rounded browser corners
+Add padding and rounded corners around the browser window, as seen in the newest
+redesign of Edge.
 
-| Hide Firefox logo on newtab page |
-| -------------------------------- |
-| `uc.tweak.hide-newtab-logo`      |
+`uc.tweak.rounded-corners`
 
-| Remove extra space above the tabs |
-| --------------------------------- |
-| `uc.tweak.disable-drag-space`     |
+---
 
-| Force tab background colour to the same colour as the navbar background (useful for Proton themes) |
-| -------------------------------------------------------------------------------------------------- |
-| **NOTE: can cause readability issues with some themes! (eg. white text on white bg)**              |
-| `uc.tweak.force-tab-colour`                                                                        |
-| ![force tab colour example](screenshots/force-tab-colour.svg) (Left: OFF, Right: ON)               |
+### Hide tabs toolbar
+This hides the tabs toolbar and is useful when using vertical tab addons such as
+Sidebery, Tree Style Tab or Tab Center Reborn.
 
-| Show context menu navigation buttons (Back, Forward, Reload, Bookmark) vertically |
-| --------------------------------------------------------------------------------- |
-| **NOTE: labels are only shown in the English language.**                          |
-| `uc.tweak.vertical-context-navigation`                                            |
+**Note: Only works on Windows or macOS.**
 
-| Remove separators between tabs   |
-| -------------------------------- |
-| `uc.tweak.remove-tab-separators` |
+`uc.tweak.hide-tabs-bar`
 
-| Use Firefox's default context menu font-size (only applies to Windows) |
-| ---------------------------------------------------------------------- |
-| `uc.tweak.smaller-context-menu-text`                                   |
+**Optional: Only enable when in fullscreen mode (macOS only).**
 
-| Disable custom context menus   |
-| ------------------------------ |
-| `uc.tweak.revert-context-menu` |
+`uc.tweak.hide-tabs-bar.only-when-maximised`
 
-| If a tab's close button is hidden, show it when hovering over the tab |
-| --------------------------------------------------------------------- |
-| `uc.tweak.show-tab-close-button-on-hover`                             |
+---
+
+### Remove extra space at the top of the window
+Removes the extra space at the top of the window when not maximised.
+
+`uc.tweak.disable-drag-space`
+
+---
+
+### New tab page background image
+Adds a custom background image to the new tab page.
+
+#### Required setup:
+* In your `chrome` folder, add an image with a filename of
+  `background-0.(jpg/png)`.
+* Optionally, add a second image named `background-1.(jpg/png)` this will be
+  selected when the dark theme is enabled.
+
+`uc.tweak.newtab-background`
+
+---
+
+### Hide forward button
+Hides the forward button when it is not needed, as seen in Edge.
+
+`uc.tweak.hide-forward-button`
+
+---
+
+### Hide Firefox logo on New tab page
+Hide the Firefox logo + wordmark when on the new tab page.
+
+`uc.tweak.hide-newtab-logo`
+
+---
+
+### Force tab colour to match the toolbar colour
+Removes the ability for custom themes to change the colour of the selected tabs,
+instead forcing them to match the toolbar colour. This can be useful when using
+themes designed for the Firefox's default Proton style.
+
+![tab colour example](screenshots/force-tab-colour.svg) (Left: OFF, Right: ON)
+
+`uc.tweak.force-tab-colour`
+
+---
+
+### Show context menu navigation buttons vertically
+Displays the navigation buttons (Back, Forward, Reload, Bookmark) in the
+right-click menu vertically like all the other menu items.
+
+**Note: Labels are only shown in English.**
+
+`uc.tweak.vertical-context-navigation`
+
+---
+
+### Remove separators between tabs
+Removes the vertical separating lines between the tabs, resulting in a cleaner
+look.
+
+`uc.tweak.remove-tab-separators`
+
+---
+
+### Always show tab close buttons when hovering over them
+When the tabs become too small, Firefox will hide the close buttons for
+non-active tabs to save space. This tweak will always display the close buttons
+when hovering over a tab.
+
+`uc.tweak.show-tab-close-button-on-hover`
+
+---
+
+### Use Firefox's default context menu font-size
+This reverts the custom font-size set on the context menu, only applies to
+Windows users.
+
+`uc.tweak.smaller-context-menu-text`
+
+---
+
+### Disable custom context menu
+Disable the custom Edge-themed context menu and use the default Firefox menus.
+
+`uc.tweak.revert-context-menu`
+
+---
 
 ## Mica Tweak Notice
 Mica is broken due to changes made in the Firefox 115 update, Mica has now been
