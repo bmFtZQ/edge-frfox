@@ -7,29 +7,18 @@ A Firefox userChrome.css theme that aims to recreate the look and feel of Micros
 Screenshot: macOS / Firefox 120 / Tweaks: rounded corners, hide forward button.
 
 ## How to install
-1. Go to `about:support` and click the "Open Folder/Show in Finder" button for the root directory of your browser profile/s.
-2. Download and copy the `chrome` folder into the profile folder.
-3. Go to `about:config` and change these preferences:
+1. Go to `about:support` and click the "Open Folder/Show in Finder" button for the root directory of your browser profile.
+2. Download the repository and extract the files.
+3. From the repository folder, copy the `chrome` folder and `user.js` file into your Firefox profile folder.
+4. Close and restart Firefox, if performed correctly, the theme should now be installed.
+5. Optionally, listed below are some settings that can be changed using `about:config`:
 
-   ### For all operating systems:
-   * `toolkit.legacyUserProfileCustomizations.stylesheets` = `true`
-   * `svg.context-properties.content.enabled` = `true`
-   * `layout.css.color-mix.enabled` = `true`
+   | Description                              | Preference Name                      | Value   |
+   | ---------------------------------------- | ------------------------------------ | ------- |
+   | Use Edge-themed context menu on macOS    | `widget.macos.native-context-menus`  | `false` |
+   | Use light theme in private browsing mode | `browser.theme.dark-private-windows` | `false` |
 
-   ### Firefox 119.0 and above:
-   * `layout.css.light-dark.enabled` = `true`
-
-   ### On macOS:
-   * To use the Edge style context menu on macOS then set `widget.macos.native-context-menus` = `false`
-
-   ### Recommended:
-   * `browser.tabs.tabMinWidth` = `66`
-   * `browser.tabs.tabClipWidth` = `86`
-
-   ### Optional:
-   * To use the light theme in private browsing mode set `browser.theme.dark-private-windows` = `false`
-
-   Additional tweaks can also be applied to the theme, such as Floating tabs, Rounded browser corners and more. See [Tweaks](#tweaks).
+   Additional tweaks can also be applied to the theme such as Floating tabs, Rounded browser corners and more. See [Tweaks](#tweaks).
 
 **Note: Most frequently tested on macOS**
 
@@ -41,9 +30,9 @@ Screenshot: macOS / Firefox 120 / Tweaks: rounded corners, hide forward button.
 | Hide Tabs Bar + Rounded Corners (macOS)      | ![Light, Hide Tabs Bar][s-light-mac-htb] | ![Dark, Hide Tabs Bar][s-dark-mac-htb] |
 
 ## Tweaks
-Certain tweaks can be applied to the theme, to enable them navigate to `about:config` and create a boolean key for each tweak you want to use and set it to `true`, then restart the browser.
+Certain tweaks can be applied to the theme, to enable them navigate to `about:config` and create a boolean key for each tweak you want to use and set it to `true`.
 
-To disable a tweak, set the key to `false` or delete it, then restart the browser.
+To disable a tweak, set the key to `false` or delete it.
 
 | Enable Edge style floating tabs                                |
 | -------------------------------------------------------------- |
