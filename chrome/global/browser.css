@@ -61,6 +61,11 @@ the menu bar. */
     }
   }
 
+  /* Remove separator between toolbars and the browser window. */
+  #navigator-toolbox {
+    border-bottom: none !important;
+  }
+
   /* Disable rounded corners in fullscreen, only if the toolbar is hidden. */
   :root[inFullscreen] #navigator-toolbox[style*="margin-top"] + #browser,
   :root[inDOMFullscreen] #browser {

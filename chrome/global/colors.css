@@ -48,12 +48,13 @@
   --autocomplete-popup-highlight-background: light-dark(#f2f2f2, #383838) !important;
   --autocomplete-popup-hover-background: light-dark(#e5e5e5, #444444) !important;
   --autocomplete-popup-separator-color: light-dark(#dadada00, #63636300) !important;
-  --button-bgcolor: light-dark(#EDEDED, #5C5C5C) !important;
-  --button-hover-bgcolor: light-dark(#e5e5e5, #646464) !important;
-  --button-active-bgcolor: light-dark(#d5d5d5, #575757) !important;
+  --button-color: light-dark(#000, #fff) !important;
+  --button-bgcolor: light-dark(#EFEFEF, #5C5C5C) !important;
+  --button-hover-bgcolor: light-dark(#D5D5D5, #6E6E6E) !important;
+  --button-active-bgcolor: light-dark(#C0C0C0, #7C7C7C) !important;
   --button-primary-bgcolor: light-dark(#0078D4, #006CBE) !important;
-  --button-primary-hover-bgcolor: light-dark(#006CBE, #0078D4) !important;
-  --button-primary-active-bgcolor: light-dark(#1683D8, #005CA3) !important;
+  --button-primary-hover-bgcolor: light-dark(#006BBD, #1C7CC5) !important;
+  --button-primary-active-bgcolor: light-dark(#0060AA, #3289CB) !important;
   --button-primary-color: light-dark(#fff, #fff) !important;
   --error-text-color: light-dark(#FF9AA2, #FF9AA2) !important;
   --input-bgcolor: light-dark(#fff, #4A4A4A) !important;
@@ -86,6 +87,28 @@
   --sidebar-background-color: light-dark(#f7f7f7, #3b3b3b) !important;
   --sidebar-text-color: light-dark(#000, #fff) !important;
   --sidebar-border-color: light-dark(#bfbfbf, #686868) !important;
+
+  /* Dialog theme */
+  & #window-modal-dialog::backdrop {
+    background-color: rgb(20 20 20 / .2) !important;
+  }
+
+  &[dialogroot] {
+    --in-content-page-background: var(--arrowpanel-background) !important;
+    --in-content-page-color: var(--arrowpanel-color) !important;
+    --in-content-primary-button-text-color: var(--button-primary-color) !important;
+    --in-content-primary-button-background: var(--button-primary-bgcolor) !important;
+    --in-content-primary-button-background-hover: var(--button-primary-hover-bgcolor) !important;
+    --in-content-primary-button-background-active: var(--button-primary-active-bgcolor) !important;
+
+    --in-content-button-text-color: var(--button-color) !important;
+    --in-content-button-background: var(--button-bgcolor) !important;
+    --in-content-button-background-hover: var(--button-hover-bgcolor) !important;
+    --in-content-button-background-active: var(--button-active-bgcolor) !important;
+
+    --in-content-box-background: var(--input-bgcolor) !important;
+    --in-content-box-border-color: var(--input-border-color) !important;
+  }
 }
 
 /* Ensure that dark mode is enabled completely in private browsing mode. */
@@ -215,8 +238,9 @@
       padding: 6px 8px !important;
 
       &:focus {
-        border-width: 2px !important;
-        padding: 5px 7px !important;
+        outline: 2px solid light-dark(#bfbfbf, #686868) !important;
+        outline-offset: -2px !important;
+        border-color: transparent !important;
       }
     }
   }

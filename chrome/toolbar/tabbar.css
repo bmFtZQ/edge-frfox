@@ -3,14 +3,14 @@
 /* Variables */
 :root {
   /* Extra space at the top of the window. */
-  --tab-block-margin: 8px !important;
+  --uc-tab-top-margin: 8px !important;
 
   /* Remove extra space at the top of the window when in fullscreen or when
    * title bars are enabled.
    */
   &[inFullscreen],
   &:not([tabsintitlebar]) {
-    --tab-block-margin: 0px !important;
+    --uc-tab-top-margin: 0px !important;
   }
 
   /* Remove extra space at the top when the window is maximised or the menu bar
@@ -18,8 +18,9 @@
    */
   @media not (-moz-platform: macos) {
     &[sizemode="maximized"],
-    & #toolbar-menubar:not([inactive]) + #TabsToolbar {
-      --tab-block-margin: 0px !important;
+    & #toolbar-menubar:not([inactive]) + #TabsToolbar,
+    &:has(#toolbar-menubar:not([inactive])) {
+      --uc-tab-top-margin: 0px !important;
     }
   }
 
@@ -45,7 +46,7 @@
   /* Inactive window background colours. */
   :root:not(:-moz-lwtheme) #navigator-toolbox:-moz-window-inactive {
     background-color: var(--lwt-accent-color-inactive, var(--lwt-accent-color)) !important;
-    color: var(--lwt-text-color-inactive) !important;
+    color: var(--lwt-text-color-inactive, var(--lwt-text-color)) !important;
   }
 }
 
@@ -135,7 +136,7 @@
   padding-inline-start: var(--tab-overflow-pinned-tabs-width) !important;
 
   /* Add space above the tabs. */
-  margin-top: var(--tab-block-margin) !important;
+  margin-top: var(--uc-tab-top-margin) !important;
 
   /* Pull tabs closer to toolbar buttons when overflowed. */
   &[overflow] {
@@ -191,7 +192,7 @@
 
     /* Make sure that titlebar buttons have equal spacing on all sides. */
     & .titlebar-buttonbox {
-      margin-inline: calc((var(--tab-min-height) + var(--tab-block-margin) - 14px) / 2) !important;
+      margin-inline: calc((var(--tab-min-height) + var(--uc-tab-top-margin) - 14px) / 2) !important;
     }
   }
 }

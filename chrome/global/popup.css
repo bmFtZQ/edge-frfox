@@ -664,3 +664,43 @@ panelview .toolbarbutton-1,
     }
   }
 }
+
+/* ::::: Dialog theme ::::: */
+
+/* Dialog shadow and outline adjustments. */
+.dialogBox:not(.spotlightBox) {
+  border-radius: 8px !important;
+  outline: 0.5px solid var(--panel-separator-color) !important;
+  box-shadow:
+    0 20px 38px rgb(0 0 0 / 0.23),
+    0 5px 9px rgb(0 0 0 / 0.22) !important;
+}
+
+dialog {
+  /* Dialog title. */
+  & #titleContainer {
+    /* Add larger gap between icon and title text. */
+    & .titleIcon {
+      padding-inline-end: 8px !important;
+    }
+
+    /* Match font style in Edge. */
+    & #titleText {
+      font-size: 1.18em !important;
+      font-weight: 700 !important;
+    }
+
+    /* Adjust vertical alignment of title text. */
+    @media (-moz-platform: macOS) {
+      &:not([noicon]) > #titleCropper {
+        translate: 0 calc(-1px - max(.55 * var(--icon-size) - .6em, 0px)) !important;
+      }
+    }
+  }
+
+  /* Input focus style. */
+  & input:where([type="email"], [type="tel"], [type="text"], [type="password"], [type="url"], [type="number"]):focus {
+    outline: 2px solid var(--in-content-box-border-color) !important;
+    outline-offset: -2px !important;
+  }
+}

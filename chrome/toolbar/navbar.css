@@ -27,12 +27,6 @@
   padding: var(--toolbarbutton-inner-padding) var(--uc-toolbarbutton-inner-inline-padding) !important;
 }
 
-@media (-moz-bool-pref: "uc.tweak.rounded-corners") {
-  #navigator-toolbox {
-    border-bottom: none !important;
-  }
-}
-
 /* account button */
 #navigator-toolbox>toolbar #fxa-toolbar-menu-button,
 #navigator-toolbox>toolbar #fxa-toolbar-menu-button>.toolbarbutton-badge-stack,

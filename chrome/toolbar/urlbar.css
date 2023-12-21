@@ -37,7 +37,7 @@
     border-radius: 8px !important;
     border-color: transparent !important;
     box-shadow: 0 10px 16px rgb(0 0 0 / 0.18), 0 3px 5px rgb(0 0 0 / 0.33) !important;
-    outline: 1px solid var(--arrowpanel-border-color) !important;
+    outline: 0.5px solid var(--arrowpanel-border-color) !important;
 
     &:not(:-moz-lwtheme) {
       outline-color: var(--panel-separator-color) !important;

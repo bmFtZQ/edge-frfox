@@ -3,15 +3,16 @@
 /* disable drag space above tabs */
 @media (-moz-bool-pref: "uc.tweak.disable-drag-space") {
   :root {
-    --tab-block-margin: 0px !important;
+    --uc-tab-top-margin: 0px !important;
   }
 }
 
 /* force tabs to toolbar bg (useful for proton themes) (might experience some
 bugs with certain themes eg. dark text on dark background.) */
 @media (-moz-bool-pref: "uc.tweak.force-tab-colour") {
-  :root {
-    --lwt-selected-tab-background-color: unset !important;
+  :root:-moz-lwtheme {
+    --tab-selected-bgcolor: var(--toolbar-bgcolor) !important;
+    --tab-selected-textcolor: var(--toolbar-color) !important;
   }
 }
 
@@ -102,24 +103,24 @@ bugs with certain themes eg. dark text on dark background.) */
   /* adjust spacing of area above tabs */
   @media not (-moz-platform: macos) {
     :root[sizemode="maximized"] {
-      --tab-block-margin: 4px !important;
+      --uc-tab-top-margin: 4px !important;
     }
   }
 
   :root:is([inFullscreen], :not([tabsintitlebar])) {
-    --tab-block-margin: 4px !important;
+    --uc-tab-top-margin: 4px !important;
   }
 
   @media (-moz-bool-pref: "uc.tweak.disable-drag-space") {
     :root {
-      --tab-block-margin: 4px !important;
+      --uc-tab-top-margin: 4px !important;
     }
   }
 
   /* IMPORTANT: Adds padding and removes margin on top of tabs to allow user to
   select it from the top edge of the window */
   #tabbrowser-tabs {
-    margin-top: calc(var(--tab-block-margin) - 4px) !important;
+    margin-top: calc(var(--uc-tab-top-margin) - 4px) !important;
 
     & .tabbrowser-tab,
     & #tabs-newtab-button {
@@ -249,12 +250,11 @@ bugs with certain themes eg. dark text on dark background.) */
       /* Hide the tabs */
       & #TabsToolbar {
         visibility: collapse !important;
-        padding-inline-start: 0 !important;
       }
 
       /* Add some padding to the top of the navbar */
-      & #nav-bar {
-        padding-top: var(--tab-block-margin) !important;
+      &[tabsintitlebar] #nav-bar {
+        padding-top: var(--uc-tab-top-margin, 0) !important;
       }
     }
 
@@ -264,14 +264,13 @@ bugs with certain themes eg. dark text on dark background.) */
         /* Hide the tabs */
         & #TabsToolbar {
           visibility: collapse !important;
-          padding-inline-start: 0 !important;
         }
       }
 
       @media not (-moz-bool-pref: "uc.tweak.hide-tabs-bar.only-when-maximised") {
         /* Offset navbar contents to make space for the window controls */
         &[tabsintitlebar] #nav-bar:not([inFullscreen]) {
-          padding-left: calc(84px + var(--uc-titlebar-drag-space));
+          padding-left: calc(70px + var(--uc-titlebar-drag-space)) !important;
 
           /* Remove the padding from the side of the navbar */
           & #nav-bar-customization-target > :is(toolbarbutton, toolbaritem):first-child {
@@ -280,13 +279,17 @@ bugs with certain themes eg. dark text on dark background.) */
         }
 
         /* Positioning of the window controls */
-        #TabsToolbar .titlebar-buttonbox {
-          --uc-position: calc((var(--uc-navbar-height) + var(--tab-block-margin)) / 2 - 8px);
+        #TabsToolbar .titlebar-buttonbox-container {
           visibility: visible !important;
           position: fixed !important;
-          top: var(--uc-position);
-          left: var(--uc-position);
+          height: calc(var(--uc-navbar-height) + var(--uc-tab-top-margin, 0px));
           margin: 0 !important;
+          top: 0;
+          left: 0;
+
+          & .titlebar-buttonbox {
+            margin-inline: calc((var(--uc-navbar-height) + var(--uc-tab-top-margin, 0px) - 14px) / 2) !important;
+          }
         }
       }
     }
@@ -295,7 +298,7 @@ bugs with certain themes eg. dark text on dark background.) */
     @media (-moz-platform: windows) {
       /* Offset navbar contents to make space for the window controls */
       &:where([inFullscreen], [tabsintitlebar]) #nav-bar {
-        padding-right: calc(140px + var(--uc-titlebar-drag-space));
+        padding-right: calc(140px + var(--uc-titlebar-drag-space)) !important;
 
         /* Remove the padding from the side of the navbar */
         & #PanelUI-menu-button {
@@ -309,7 +312,7 @@ bugs with certain themes eg. dark text on dark background.) */
         position: fixed !important;
         top: 0;
         right: 0;
-        height: calc(var(--uc-navbar-height) + var(--tab-block-margin)) !important;
+        height: calc(var(--uc-navbar-height) + var(--uc-tab-top-margin, 0)) !important;
         z-index: 3 !important;
         color: var(--toolbar-color) !important;
       }
