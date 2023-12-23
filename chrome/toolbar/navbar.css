@@ -1,7 +1,7 @@
-/* EdgeFr-Fox by bmFtZQ - navbar.css */
+/* Edge-Frfox - navbar.css */
 
 :root {
-  --toolbarbutton-border-radius: 2px !important;
+  --toolbarbutton-border-radius: 4px !important;
   --toolbarbutton-inner-padding: 7px !important;
   --uc-toolbarbutton-inner-inline-padding: 12px !important;
   --tabs-navbar-shadow-size: 0 !important;
@@ -21,7 +21,6 @@
 #reload-button>.toolbarbutton-animatable-box,
 #stop-button>.toolbarbutton-animatable-box {
   top: calc(50% - 10px) !important;
-  margin-inline-start: calc((16px + 2 * var(--uc-toolbarbutton-inner-inline-padding) - 20px) / 2) !important;
 }
 
 #nav-bar-customization-target :where(#reload-button, #stop-button)>.toolbarbutton-icon {
@@ -41,7 +40,7 @@
 }
 
 #fxa-toolbar-menu-button {
-  display: -moz-box !important;
+  display: flex !important;
 }
 
 #widget-overflow-list>#fxa-toolbar-menu-button #fxa-avatar-image {

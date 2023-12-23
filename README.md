@@ -1,8 +1,10 @@
 # Edge-Frfox
-A Firefox userChrome.css theme that aims to recreate the look and feel of the Chromium version of Microsoft Edge.
+A Firefox userChrome.css theme that aims to recreate the look and feel of Microsoft Edge.
 
-<!-- use <img> element to set a maximum width -->
-<img src="screenshots/thumbnail.png" alt="thumbnail screenshot" title="Screenshot taken with macOS Monterey / Firefox Nightly 96.0a1 (2021-11-30)" width="800">
+<!-- Use <img> element to set a maximum width. -->
+<img src="screenshots/thumbnail.png" alt="Edge-Frfox theme thumbail screenshot." width="800">
+
+Screenshot: macOS / Firefox 120 / Tweaks: rounded corners, hide forward button.
 
 ## How to install
 ### Via Linux and MacOS shell script
@@ -28,102 +30,157 @@ curl https://raw.githubusercontent.com/bmFtZQ/edge-frfox/create-install-script/i
 Uninstallation can be done by just writing `uninstall` as a parameter above, so `.../installer.sh uninstall` or `...\installer.ps1 uninstall` for macos/linux and windows respectively
 
 ### Manual Installation
-1. Go to `about:support` and click the "Open Folder/Show in Finder" button for the root directory of your browser profile/s.
-2. Download and copy the `chrome` folder into the profile folder.
-3. Go to about:config and change these preferences:
+1. Go to `about:support` and click the "Open Folder/Show in Finder" button for the root directory of your browser profile.
+2. Download the repository and extract the files.
+3. From the repository folder, copy the `chrome` folder and `user.js` file into your Firefox profile folder.
+4. Close and restart Firefox, if performed correctly, the theme should now be installed.
+5. Optionally, listed below are some settings that can be changed using `about:config`:
 
-   ### For all operating systems:
-   1. `toolkit.legacyUserProfileCustomizations.stylesheets` = `true`
-   2. `svg.context-properties.content.enabled` = `true`
-   3. `layout.css.color-mix.enabled` = `true`
+   | Description                              | Preference Name                      | Value   |
+   | ---------------------------------------- | ------------------------------------ | ------- |
+   | Use Edge-themed context menu on macOS    | `widget.macos.native-context-menus`  | `false` |
+   | Use light theme in private browsing mode | `browser.theme.dark-private-windows` | `false` |
 
-   ### On macOS:
-   1. To use the Edge style context menu on macOS then set `widget.macos.native-context-menus` = `false`
-
-   ### Recommended:
-   1. `browser.tabs.tabMinWidth` = `66`
-   2. `browser.tabs.tabClipWidth` = `86`
-
-   ### Optional:
-   1. To use the light theme in private browsing mode set `browser.theme.dark-private-windows` = `false`
-
-   Additional tweaks can also be applied to the theme, such as Mica (Windows 11 Only), Floating Tabs and more. See [Tweaks](#tweaks).
+   Additional tweaks can also be applied to the theme such as Floating tabs, Rounded browser corners and more. See [Tweaks](#tweaks).
 
 **Note: Most frequently tested on macOS**
 
 ## Screenshots
-| Theme                               | Light                                   | Dark                                   |
-| ----------------------------------- | --------------------------------------- | -------------------------------------- |
-| Default (Windows 11)                | ![Light][s-l]                           | ![Dark][s-d]                           |
-| Floating Tabs (Windows 11)          | ![Light, Floating Tabs][s-lf]           | ![Dark, Floating Tabs][s-df]           |
-| Mica (Windows 11)                   | ![Light, Mica][s-lm]                    | ![Dark, Mica][s-dm]                    |
-| Mica and Floating Tabs (Windows 11) | ![Light, Mica and Floating Tabs][s-lmf] | ![Dark, Mica and Floating Tabs][s-dmf] |
-| GTK (GNOME 42, [adw-gtk3][1] theme) | ![Light, GTK][s-lgtk]                   | ![Dark, GTK][s-dgtk]                   |
+| Theme                                        | Light                                    | Dark                                   |
+| -------------------------------------------- | ---------------------------------------- | -------------------------------------- |
+| Default (Windows 11)                         | ![Light][s-light]                        | ![Dark][s-dark]                        |
+| Floating Tabs + Rounded Corners (Windows 11) | ![Light, Floating Tabs][s-light-ft]      | ![Dark, Floating Tabs][s-dark-ft]      |
+| Hide Tabs Bar + Rounded Corners (macOS)      | ![Light, Hide Tabs Bar][s-light-mac-htb] | ![Dark, Hide Tabs Bar][s-dark-mac-htb] |
 
 ## Tweaks
-Certain tweaks can be applied to the theme, to enable them navigate to `about:config` and create a boolean key for each tweak you want to use and set it to `true`, then restart the browser.
+Certain tweaks can be applied to the theme, to enable them navigate to `about:config` and create a boolean key for each tweak you want to use and set it to `true`.
 
-To disable a tweak, set the key to `false` or delete it, then restart the browser.
+To disable a tweak, set the key to `false` or delete it.
 
-| use background image on newtab page                                                                |
-| -------------------------------------------------------------------------------------------------- |
-| **SETUP: Add an image named `background-0.(jpg/png)` to the `chrome` folder.**                     |
-| **OPTIONAL: Add a second image named `background-1.(jpg/png)` for seperate dark mode background.** |
-| `uc.tweak.newtab-background`                                                                       |
+---
 
-| hide Firefox logo on newtab page |
-| -------------------------------- |
-| `uc.tweak.hide-newtab-logo`      |
+### Floating/rounded tabs
+Emulate the look of the rounded tabs feature available in Edge.
 
-| disable drag space above tabs |
-| ----------------------------- |
-| `uc.tweak.disable-drag-space` |
+`uc.tweak.floating-tabs`
 
-| enable Edge style floating tabs |
-| ------------------------------- |
-| `uc.tweak.floating-tabs`        |
+---
 
-| enable Mica toolbar background *(Windows 11 only)*                  |
-| ------------------------------------------------------------------- |
-| **See [Mica Tweak Instructions][3] for installation instructions.** |
-| **NOTE: Only works on default theme: 'System theme - auto'**        |
-| `uc.tweak.win11-mica`                                               |
+### Rounded browser corners
+Add padding and rounded corners around the browser window, as seen in the newest
+redesign of Edge.
 
-| force tab background colour to the same colour as the navbar background (useful for Proton themes) |
-| -------------------------------------------------------------------------------------------------- |
-| **NOTE: can cause readability issues with some themes! (eg. white text on white bg)**              |
-| `uc.tweak.force-tab-colour`                                                                        |
-| ![force tab colour example](screenshots/force-tab-colour.svg) (Left: OFF, Right: ON)               |
+`uc.tweak.rounded-corners`
 
-| Show context menu navigation buttons (Back, Forward, Reload, etc.) vertically |
-| ----------------------------------------------------------------------------- |
-| **NOTE: labels are only shown in the English language.**                      |
-| `uc.tweak.vertical-context-navigation`                                        |
+---
 
-| remove tab separators            |
-| -------------------------------- |
-| `uc.tweak.remove-tab-separators` |
+### Hide tabs toolbar
+This hides the tabs toolbar and is useful when using vertical tab addons such as
+Sidebery, Tree Style Tab or Tab Center Reborn.
 
-| use Firefox's default context menu font-size (only applies to Windows) |
-| ---------------------------------------------------------------------- |
-| `uc.tweak.smaller-context-menu-text`                                   |
+**Note: Only works on Windows or macOS.**
 
-| disable custom context menus   |
-| ------------------------------ |
-| `uc.tweak.revert-context-menu` |
+`uc.tweak.hide-tabs-bar`
 
-| if a tab's close button is hidden, show it when hovering over tab |
-| ----------------------------------------------------------------- |
-| `uc.tweak.show-tab-close-button-on-hover`                         |
+**Optional: Only enable when in fullscreen mode (macOS only).**
 
-## Mica Tweak Instructions (Windows 11 Only)
-1. Download and install [Mica For Everyone][2].
-2. Create a custom process rule with the following:
-   1. Name: `firefox`
-   2. Titlebar Color: `System`
-   3. Backdrop Type: `Mica`
-3. Enable tweak in `about:config`: `uc.tweak.win11-mica`
-4. Restart Firefox.
+`uc.tweak.hide-tabs-bar.only-when-maximised`
+
+---
+
+### Remove extra space at the top of the window
+Removes the extra space at the top of the window when not maximised.
+
+`uc.tweak.disable-drag-space`
+
+---
+
+### New tab page background image
+Adds a custom background image to the new tab page.
+
+#### Required setup:
+* In your `chrome` folder, add an image with a filename of
+  `background-0.(jpg/png)`.
+* Optionally, add a second image named `background-1.(jpg/png)` this will be
+  selected when the dark theme is enabled.
+
+`uc.tweak.newtab-background`
+
+---
+
+### Hide forward button
+Hides the forward button when it is not needed, as seen in Edge.
+
+`uc.tweak.hide-forward-button`
+
+---
+
+### Hide Firefox logo on New tab page
+Hide the Firefox logo + wordmark when on the new tab page.
+
+`uc.tweak.hide-newtab-logo`
+
+---
+
+### Force tab colour to match the toolbar colour
+Removes the ability for custom themes to change the colour of the selected tabs,
+instead forcing them to match the toolbar colour. This can be useful when using
+themes designed for the Firefox's default Proton style.
+
+![tab colour example](screenshots/force-tab-colour.svg) (Left: OFF, Right: ON)
+
+`uc.tweak.force-tab-colour`
+
+---
+
+### Show context menu navigation buttons vertically
+Displays the navigation buttons (Back, Forward, Reload, Bookmark) in the
+right-click menu vertically like all the other menu items.
+
+**Note: Labels are only shown in English.**
+
+`uc.tweak.vertical-context-navigation`
+
+---
+
+### Remove separators between tabs
+Removes the vertical separating lines between the tabs, resulting in a cleaner
+look.
+
+`uc.tweak.remove-tab-separators`
+
+---
+
+### Always show tab close buttons when hovering over them
+When the tabs become too small, Firefox will hide the close buttons for
+non-active tabs to save space. This tweak will always display the close buttons
+when hovering over a tab.
+
+`uc.tweak.show-tab-close-button-on-hover`
+
+---
+
+### Use Firefox's default context menu font-size
+This reverts the custom font-size set on the context menu, only applies to
+Windows users.
+
+`uc.tweak.smaller-context-menu-text`
+
+---
+
+### Disable custom context menu
+Disable the custom Edge-themed context menu and use the default Firefox menus.
+
+`uc.tweak.revert-context-menu`
+
+---
+
+## Mica Tweak Notice
+Mica is broken due to changes made in the Firefox 115 update, Mica has now been
+removed from this theme.
+
+If you still have `uc.tweak.win11-mica` set in `about:config` you can safely
+delete it.
 
 ## Acknowledgements
 [muckSponge](https://github.com/muckSponge) - [MaterialFox](https://github.com/muckSponge/MaterialFox)
@@ -134,19 +191,13 @@ To disable a tweak, set the key to `false` or delete it, then restart the browse
 
 <!-- links -->
 [1]: https://github.com/lassekongo83/adw-gtk3
-[2]: https://github.com/MicaForEveryone/MicaForEveryone
-[3]: #mica-tweak-instructions-windows-11-only
 
 <!-- light mode screenshot links -->
-[s-l]: screenshots/light.png
-[s-lf]: screenshots/light-floating-tabs.png
-[s-lm]: screenshots/light-mica.png
-[s-lmf]: screenshots/light-mica-floating-tabs.png
-[s-lgtk]: screenshots/gtk-light.png
+[s-light]: screenshots/Windows_default_light.png
+[s-light-ft]: screenshots/Windows_floating-tabs_light.png
+[s-light-mac-htb]: screenshots/macOS_hide-tabs-bar_light.png
 
 <!-- dark mode screenshot links -->
-[s-d]: screenshots/dark.png
-[s-df]: screenshots/dark-floating-tabs.png
-[s-dm]: screenshots/dark-mica.png
-[s-dmf]: screenshots/dark-mica-floating-tabs.png
-[s-dgtk]: screenshots/gtk-dark.png
+[s-dark]: screenshots/Windows_default_dark.png
+[s-dark-ft]: screenshots/Windows_floating-tabs_dark.png
+[s-dark-mac-htb]: screenshots/macOS_hide-tabs-bar_dark.png
