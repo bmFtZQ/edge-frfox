@@ -123,7 +123,9 @@ Removes the underlining or highlighting of certain characters in the context
 menu. These underlines correspond to the key that when pressed, activates the
 item.
 
-For example, "<u>U</u>ndo" becomes "Undo" and "Inspect (Q)" becomes "Inspect".
+<!-- Using <ins> for underline as GitHub does not support <u>. -->
+For example, "<ins>U</ins>ndo" becomes "Undo" and "Inspect (Q)" becomes
+"Inspect".
 
 `uc.tweak.context-menu.hide-access-key`
 
