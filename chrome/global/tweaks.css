@@ -159,71 +159,32 @@ bugs with certain themes eg. dark text on dark background.) */
   }
 }
 
-@media not (-moz-platform: macos) {
-  @media not (-moz-bool-pref: "uc.tweak.revert-context-menu") {
-    @media (-moz-bool-pref: "uc.tweak.vertical-context-navigation") {
-      #context-navigation {
-        flex-direction: column !important;
-      }
+@media (not (-moz-platform: macos)) and (not (-moz-bool-pref: "uc.tweak.revert-context-menu")) {
+  @media (-moz-bool-pref: "uc.tweak.vertical-context-navigation") {
+    #context-navigation {
+      /* Stack menu items vertically. */
+      flex-direction: column !important;
 
-      #context-navigation > .menuitem-iconic {
+      /* Align the image and label to the left edge. */
+      & > .menuitem-iconic {
         justify-content: start !important;
-      }
 
-      #context-navigation .menu-iconic-text {
-        display: flex !important;
-      }
-
-      :root,
-      :root[lang^="en"] {
-        --uc-string-back: "Back";
-        --uc-string-forward: "Forward";
-        --uc-string-reload: "Reload";
-        --uc-string-stop: "Stop";
-        --uc-string-bookmark-page: "Bookmark Page";
-        --uc-string-edit-bookmark: "Edit Bookmark";
-      }
-
-      #context-navigation > #context-back .menu-iconic-text::before {
-        content: var(--uc-string-back) !important;
-      }
-
-      #context-navigation > #context-forward .menu-iconic-text::before {
-        content: var(--uc-string-forward) !important;
-      }
-
-      #context-navigation > #context-reload .menu-iconic-text::before {
-        content: var(--uc-string-reload) !important;
-      }
-
-      #context-navigation > #context-stop .menu-iconic-text::before {
-        content: var(--uc-string-stop) !important;
-      }
-
-      #context-navigation > #context-bookmarkpage .menu-iconic-text::before {
-        content: var(--uc-string-bookmark-page) !important;
-      }
-
-      #context-navigation > #context-bookmarkpage[starred] .menu-iconic-text::before {
-        content: var(--uc-string-edit-bookmark) !important;
+        &::after {
+          /* Get the menuitem label from the aria-label attribute. */
+          content: attr(aria-label);
+        }
       }
     }
   }
 }
 
-@media (-moz-windows-compositor) {
-  @media (-moz-bool-pref: "uc.tweak.revert-context-menu") {
-    menupopup {
-      --panel-color: var(--arrowpanel-color) !important;
-      --panel-border-radius: 4px !important;
-      --panel-border-color: var(--arrowpanel-border-color) !important;
-      --panel-background: var(--arrowpanel-background) !important;
-      --menuitem-hover-background-color: var(--panel-item-hover-bgcolor) !important;
-      --menu-background-color: var(--arrowpanel-background) !important;
-      --menu-color: var(--arrowpanel-color) !important;
-      --menuitem-disabled-hover-background-color: #0000 !important;
-      --menu-disabled-color: var(--panel-disabled-color) !important;
-      --menu-border-color: var(--panel-separator-color) !important;
+@media (-moz-bool-pref: "uc.tweak.context-menu.hide-access-key") {
+  :where(menuitem, menu) > :is(.menu-text, .menu-iconic-text)[value]:not([value=""]) {
+    &::before {
+      /* The default value is -moz-label-content, which takes the data from the
+       * value attribute and highlights the character found in the accesskey
+       * attribute. This skips that and uses the value attribute directly. */
+      content: attr(value) !important;
     }
   }
 }

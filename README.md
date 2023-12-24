@@ -114,9 +114,18 @@ themes designed for the Firefox's default Proton style.
 Displays the navigation buttons (Back, Forward, Reload, Bookmark) in the
 right-click menu vertically like all the other menu items.
 
-**Note: Labels are only shown in English.**
-
 `uc.tweak.vertical-context-navigation`
+
+---
+
+### Hide access keys in context menu
+Removes the underlining or highlighting of certain characters in the context
+menu. These underlines correspond to the key that when pressed, activates the
+item.
+
+For example, "<u>U</u>ndo" becomes "Undo" and "Inspect (Q)" becomes "Inspect".
+
+`uc.tweak.context-menu.hide-access-key`
 
 ---
 

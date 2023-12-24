@@ -546,7 +546,9 @@ panelview .toolbarbutton-1,
   }
 
   menu > .menu-iconic-text,
-  menuitem > .menu-iconic-text {
+  menuitem > .menu-iconic-text,
+  /* Used for vertical context navigation tweak. */
+  #context-navigation > .menuitem-iconic::after {
     padding-inline-start: var(--uc-contextmenu-menuicon-margin-inline) !important;
   }
 
@@ -642,25 +644,27 @@ panelview .toolbarbutton-1,
     fill: var(--lwt-toolbarbutton-icon-fill-attention, var(--toolbarbutton-icon-fill-attention, currentColor)) !important;
   }
 
-  @media not (-moz-bool-pref: "uc.tweak.smaller-context-menu-text") {
-    @media (-moz-platform: windows) {
-      .menu-text,
-      .menu-iconic-text,
-      panel .toolbarbutton-text,
-      #PopupSearchAutoComplete .ac-title {
-        margin-inline-start: 0 !important;
-        margin-block: -3px -1px !important;
-        padding-block: 0 !important;
-      }
+  @media (not (-moz-bool-pref: "uc.tweak.smaller-context-menu-text")) and (-moz-platform: windows) {
+    .menu-text,
+    .menu-iconic-text,
+    panel .toolbarbutton-text,
+    #PopupSearchAutoComplete .ac-title,
+    /* Used for vertical context navigation tweak. */
+    #context-navigation > .menuitem-iconic::after {
+      margin-inline-start: 0 !important;
+      margin-block: -3px -1px !important;
+      padding-block: 0 !important;
+    }
 
-      .menu-text,
-      .menu-iconic-text,
-      panel .toolbarbutton-text,
-      #appMenu-fxa-status2,
-      .panel-header,
-      #PopupSearchAutoComplete {
-        font-size: 13.6px !important;
-      }
+    .menu-text,
+    .menu-iconic-text,
+    panel .toolbarbutton-text,
+    #appMenu-fxa-status2,
+    .panel-header,
+    #PopupSearchAutoComplete,
+    /* Used for vertical context navigation tweak. */
+    #context-navigation > .menuitem-iconic::after {
+      font-size: 13.6px !important;
     }
   }
 }
