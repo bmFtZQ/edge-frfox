@@ -1,11 +1,11 @@
-/* Edge-Frfox - colors.css */
+/* Edge-Frfox - colors.css
+ * https://github.com/bmFtZQ/edge-frfox */
 
 /* default colours (light & dark) */
 :root:not(:-moz-lwtheme),
 /* `--newtab-background-color-secondary used` to differentiate between a dark
  * private window and private window with the 'Dark' theme enabled.
- * May not be the most reliable method, but works for now up to FF 123.
- */
+ * May not be the most reliable method, but works for now up to FF 123. */
 :root[privatebrowsingmode="temporary"][style*="--lwt-accent-color: rgb(28, 27, 34)"]:not([style*="--newtab-background-color-secondary: rgb(66, 65, 77)"]) {
   --lwt-accent-color: light-dark(#cecece, #1C1C1C) !important;
   --lwt-accent-color-inactive: light-dark(#e8e8e8, #2e2e2e) !important;
@@ -81,7 +81,7 @@
   --uc-private-browsing-indicator-text: var(--button-primary-color);
   --tab-icon-overlay-stroke: light-dark(#fff, #4b4b4b) !important;
   --tab-icon-overlay-fill: light-dark(#252525, #fff) !important;
-  --toolbarseparator-color: color-mix(in srgb, currentColor 40%, transparent) !important;
+  --toolbarseparator-color: color-mix(in srgb, currentColor 25%, transparent) !important;
 
   /* Side bar theme colours. */
   --sidebar-background-color: light-dark(#f7f7f7, #3b3b3b) !important;
@@ -116,6 +116,8 @@
   :root[privatebrowsingmode="temporary"],
   :root[privatebrowsingmode="temporary"] #nav-bar,
   :root[privatebrowsingmode="temporary"] #PersonalToolbar {
+    --toolbar-color-scheme: dark !important;
+    --tab-selected-color-scheme: dark !important;
     color-scheme: dark !important;
   }
 }
