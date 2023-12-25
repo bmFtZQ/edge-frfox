@@ -7,13 +7,12 @@ A Firefox userChrome.css theme that aims to recreate the look and feel of Micros
 Screenshot: macOS / Firefox 120 / Tweaks: rounded corners, hide forward button.
 
 ## How to install
-### Via Linux and MacOS shell script
+### Via Linux and macOS shell script
 Paste this into your terminal emulator:
 ```sh
-# Linux may not have $TMPDIR set by default
-TMP_DIR="${TMPDIR:-$(dirname $(mktemp))}"
+# Attach '-s uninstall' at the end of this command to uninstall
 
-curl https://raw.githubusercontent.com/bmFtZQ/edge-frfox/create-install-script/install.sh > $TMP_DIR/installer.sh && chmod +x $TMP_DIR/installer.sh && sh $TMP_DIR/installer.sh
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/bmFtZQ/edge-frfox/HEAD/install.sh)"
 ```
 
 ### Via Windows Powershell script
@@ -27,7 +26,7 @@ curl https://raw.githubusercontent.com/bmFtZQ/edge-frfox/create-install-script/i
 (curl -Uri https://raw.githubusercontent.com/bmFtZQ/edge-frfox/create-install-script/install.ps1 -UseBasicParsing).Content > $env:temp/installer.ps1; powershell $env:temp\installer.ps1
 ```
 
-Uninstallation can be done by just writing `uninstall` as a parameter above, so `.../installer.sh uninstall` or `...\installer.ps1 uninstall` for macos/linux and windows respectively
+Uninstallation for Windows is done by attaching 'uninstall' to the end of the above powershell command. So, `...\installer.ps1 uninstall`
 
 ### Manual Installation
 1. Go to `about:support` and click the "Open Folder/Show in Finder" button for the root directory of your browser profile.
