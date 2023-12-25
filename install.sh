@@ -98,7 +98,7 @@ fi
 
 echo "Copying theme folder...";
 cp -r $TMP_DIR/$PROJECT_NAME/chrome $PROFILE_ROOTDIR;
-cp $TMP_DIR/$PROJECT_NAME/user.js $PROFILE_ROOTDIR;
+cat $TMP_DIR/$PROJECT_NAME/user.js | tee -a $PROFILE_ROOTDIR/user.js >/dev/null;
 
 #####################
 # OPTIONAL SETTINGS #
