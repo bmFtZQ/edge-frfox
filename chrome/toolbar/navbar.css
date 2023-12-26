@@ -1,9 +1,11 @@
-/* Edge-Frfox - navbar.css */
+/* Edge-Frfox - navbar.css
+ * https://github.com/bmFtZQ/edge-frfox */
 
 :root {
   --toolbarbutton-border-radius: 4px !important;
   --toolbarbutton-inner-padding: 7px !important;
   --uc-toolbarbutton-inner-inline-padding: 12px !important;
+  --toolbarbutton-outer-padding: 2px !important;
   --tabs-navbar-shadow-size: 0 !important;
 }
 
@@ -25,6 +27,10 @@
 
 #nav-bar-customization-target :where(#reload-button, #stop-button)>.toolbarbutton-icon {
   padding: var(--toolbarbutton-inner-padding) var(--uc-toolbarbutton-inner-inline-padding) !important;
+}
+
+toolbar .toolbaritem-combined-buttons {
+  margin-inline: var(--toolbarbutton-outer-padding) !important;
 }
 
 /* account button */

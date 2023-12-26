@@ -82,6 +82,7 @@
   --tab-icon-overlay-stroke: light-dark(#fff, #4b4b4b) !important;
   --tab-icon-overlay-fill: light-dark(#252525, #fff) !important;
   --toolbarseparator-color: color-mix(in srgb, currentColor 25%, transparent) !important;
+  --tabpanel-background-color: light-dark(#f7f7f7, #252525) !important;
 
   /* Side bar theme colours. */
   --sidebar-background-color: light-dark(#f7f7f7, #3b3b3b) !important;
@@ -126,11 +127,6 @@
   --urlbar-box-bgcolor: inherit !important;
   --urlbar-box-hover-bgcolor: inherit !important;
   --urlbar-box-focus-bgcolor: inherit !important;
-}
-
-/* Change Colour of page when loading */
-:root:not(:-moz-lwtheme) #tabbrowser-tabpanels {
-  background-color: light-dark(#f7f7f7, #252525) !important;
 }
 
 /* make the titlebar buttons black/white on default themes */
