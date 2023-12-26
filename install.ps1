@@ -18,7 +18,7 @@ function set_pref {
   )
 
   Write-Output "setting $pref to $bool in user.js";
-	"user_pref(`"$pref`", $bool);" | out-file "$PROFILE_ROOTDIR\user.js" -append
+	Write-Output "user_pref(`"$pref`", $bool);" | % { $_ -replace ' +$','' } | out-file "$PROFILE_ROOTDIR\user.js" -append -Encoding UTF8
 }
 
 function delete_pref {
@@ -114,7 +114,7 @@ if (!($?)) {
 
 echo "Copying theme folder..."
 Copy-Item -Recurse -Path "$env:temp\$PROJECT_NAME-main\chrome" -Destination $PROFILE_ROOTDIR
-Get-Content "$env:temp\$PROJECT_NAME-main\user.js" | Tee-Object -Append "$PROFILE_ROOTDIR\user.js" | Out-Null
+Get-Content "$env:temp\$PROJECT_NAME-main\user.js" | Out-File "$PROFILE_ROOTDIR\user.js" -append -Encoding UTF8 | Out-Null
 
 # firefox will automatically sort out any duplicate issues, whatever is at the end of the file takes priority, so this works.
 Write-Output "Setting preferences...";
