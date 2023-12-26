@@ -13,8 +13,8 @@ fi;
 
 PROFILE_ROOTDIR=$FIREFOX_DIR/$(grep -E "Path=.*\.(dev-edition-default|default-.*)" "$FIREFOX_DIR/profiles.ini" | tail -1 | cut -c 6-);
 OPTIONALS=(
-  "widget.macos.native-context-menus" "true"
-  "browser.theme.dark-private-windows" "true"
+  "widget.macos.native-context-menus" "false"
+  "browser.theme.dark-private-windows" "false"
 )
 
 # COLORS
@@ -32,7 +32,9 @@ set_pref() {
 
 delete_pref() {
   echo "resetting $1 to default"
-  sed -i "/user_pref(\"$1\", \(true\|false\));/d" $PROFILE_ROOTDIR/user.js;
+  Userjs=$PROFILE_ROOTDIR/user.js
+  grep -v $1 $Userjs > "$Userjs.tmp"
+  mv "$Userjs.tmp" $Userjs
 }
 
 #####################
@@ -78,9 +80,19 @@ if [[ $1 == "uninstall" ]]; then
     rm -rf $PROFILE_ROOTDIR/chrome;
   fi
 
-  echo "uninstalling...";
+  # Download changed user.js from online
+  FETCHED_PREFS=();
+  if ping -c 1 raw.githubusercontent.com &> /dev/null; then
+    while read l;
+      do FETCHED_PREFS+=("$l");
+    done < <(curl -s "https://raw.githubusercontent.com/bmFtZQ/edge-frfox/main/user.js" | grep -E "user_pref\(\"([a-zA-Z0-9.-]+)\",\s*(true|false)\);")
+  else
+    echo -e "${YELLOW}WARNING: Failed to retrieve online user.js prefs. Continuing...${NC}"
+  fi;
 
-  rm -rf $PROFILE_ROOTDIR/user.js
+  for ((i = 0; i < ${#FETCHED_PREFS[@]}; i++)); do
+    delete_pref ${FETCHED_PREFS[i]};
+  done;
 
   echo "uninstall complete."
   exit 0;
