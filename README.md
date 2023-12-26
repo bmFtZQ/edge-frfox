@@ -16,17 +16,12 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/bmFtZQ/edge-frfox/HEAD/i
 ```
 
 ### Via Windows Powershell script
-**NOTE**: You may need to `Set-ExecutionPolicy RemoteSigned` for this to work, by default, windows will use `Restricted`.
-1. Open Powershell as Administrator
-2. Type `Set-ExecutionPolicy RemoteSigned`
-3. It might ask you to confirm, you should read the contents of [install.ps1](https://raw.githubusercontent.com/bmFtZQ/edge-frfox/create-install-script/install.ps1) and the script below to verify it for yourself.
-4. Close out of Powershell and start a new normal instance of Powershell (good practice)
-5. Paste the following into powershell and hit enter:
+Paste this into powershell:
 ```ps
-(curl -Uri https://raw.githubusercontent.com/bmFtZQ/edge-frfox/create-install-script/install.ps1 -UseBasicParsing).Content > $env:temp/installer.ps1; powershell $env:temp\installer.ps1
-```
+# Attach "-ArgumentList $('uninstall')" inside the string at the end to uninstall.
 
-Uninstallation for Windows is done by attaching 'uninstall' to the end of the above powershell command. So, `...\installer.ps1 uninstall`
+powershell -nop -ExecutionPolicy Bypass -c "Invoke-Command -ScriptBlock ([scriptblock]::Create([System.Text.Encoding]::UTF8.GetString((New-Object Net.WebClient).DownloadData('https://raw.githubusercontent.com/bmFtZQ/edge-frfox/HEAD/install.ps1'))))"
+```
 
 ### Manual Installation
 1. Go to `about:support` and click the "Open Folder/Show in Finder" button for the root directory of your browser profile.
