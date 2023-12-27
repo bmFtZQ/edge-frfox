@@ -87,6 +87,24 @@ if ($args[0] -eq "uninstall") {
     }
   } 
 
+  $ans = "n"
+  Write-Host "NOTE: etner 'a' to answer 'yes' to all questions." -ForegroundColor Cyan
+  foreach ($key in $OPTIONALS.Keys) {
+    $setting = "user_pref(`"${key}`", $($OPTIONALS[$key]));"
+
+    if (-not ($ans.ToLower() -match "^(all|a)$")) {
+        $ans = "n"
+        $in = Read-Host -Prompt "Remove setting $setting from user.js? [y/a/N]"
+        $ans = if ($in) { $in.ToLower() } else { $ans }
+
+        if (-not ($ans -match "^(yes|y|all|a)$")) {
+            continue
+        }
+    }
+
+    delete_pref $setting;
+  }
+
   Write-Output "uninstall complete.";
   exit 0;
 }
