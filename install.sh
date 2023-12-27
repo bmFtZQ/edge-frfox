@@ -31,7 +31,7 @@ set_pref() {
 }
 
 delete_pref() {
-  echo "resetting $1 to default"
+  echo "resetting $(echo $1 | cut -d '"' -f 2) to default";
   Userjs=$PROFILE_ROOTDIR/user.js
   grep -v $1 $Userjs > "$Userjs.tmp"
   mv "$Userjs.tmp" $Userjs
@@ -92,6 +92,25 @@ if [[ $1 == "uninstall" ]]; then
 
   for ((i = 0; i < ${#FETCHED_PREFS[@]}; i++)); do
     delete_pref ${FETCHED_PREFS[i]};
+  done;
+
+  ans="n"
+  echo -e "${CYAN}NOTE: enter 'a' to answer 'yes' to all questions.${NC}";
+  for ((i = 0; i < ${#OPTIONALS[@]}; i+=2)); do
+    setting="user_pref(\"${OPTIONALS[i]}\", ${OPTIONALS[i+1]});";
+
+    if [[ ! ${ans,,} =~ ^(all|a)$ ]]; then
+      ans="n"
+      read -e -p "Remove setting $setting from user.js? [y/a/N]: " in
+      ans="${in:-$ans}";
+
+      
+      if [[ ! ${ans,,} =~ ^(yes|y|all|a)$ ]]; then
+        continue;
+      fi
+    fi;
+
+    delete_pref $setting;
   done;
 
   echo "uninstall complete."
