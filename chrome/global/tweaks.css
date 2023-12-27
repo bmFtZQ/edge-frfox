@@ -3,15 +3,16 @@
 /* disable drag space above tabs */
 @media (-moz-bool-pref: "uc.tweak.disable-drag-space") {
   :root {
-    --tab-block-margin: 0px !important;
+    --uc-tab-top-margin: 0px !important;
   }
 }
 
 /* force tabs to toolbar bg (useful for proton themes) (might experience some
 bugs with certain themes eg. dark text on dark background.) */
 @media (-moz-bool-pref: "uc.tweak.force-tab-colour") {
-  :root {
-    --lwt-selected-tab-background-color: unset !important;
+  :root:-moz-lwtheme {
+    --tab-selected-bgcolor: var(--toolbar-bgcolor) !important;
+    --tab-selected-textcolor: var(--toolbar-color) !important;
   }
 }
 
@@ -56,12 +57,14 @@ bugs with certain themes eg. dark text on dark background.) */
   }
 
   /* Shadow for navbar and tabs */
-  :root {
+  :root,
+  :root .tabbrowser-tab {
     --uc-titlebar-shadow: none;
     --uc-tab-shadow-outline: rgb(0 0 0 / .11);
     --uc-tab-shadow: 0 2.5px 3px 1px rgb(0 0 0 / .08);
 
-    & [brighttext] {
+    & [brighttext],
+    & [brighttext] .tabbrowser-tab {
       --uc-titlebar-shadow: none;
       --uc-tab-shadow-outline: transparent;
       --uc-tab-shadow: 0 2px 3px rgb(0 0 0 / .12);
@@ -101,24 +104,24 @@ bugs with certain themes eg. dark text on dark background.) */
   /* adjust spacing of area above tabs */
   @media not (-moz-platform: macos) {
     :root[sizemode="maximized"] {
-      --tab-block-margin: 4px !important;
+      --uc-tab-top-margin: 4px !important;
     }
   }
 
   :root:is([inFullscreen], :not([tabsintitlebar])) {
-    --tab-block-margin: 4px !important;
+    --uc-tab-top-margin: 4px !important;
   }
 
   @media (-moz-bool-pref: "uc.tweak.disable-drag-space") {
     :root {
-      --tab-block-margin: 4px !important;
+      --uc-tab-top-margin: 4px !important;
     }
   }
 
   /* IMPORTANT: Adds padding and removes margin on top of tabs to allow user to
   select it from the top edge of the window */
   #tabbrowser-tabs {
-    margin-top: calc(var(--tab-block-margin) - 4px) !important;
+    margin-top: calc(var(--uc-tab-top-margin) - 4px) !important;
 
     & .tabbrowser-tab,
     & #tabs-newtab-button {
@@ -157,71 +160,32 @@ bugs with certain themes eg. dark text on dark background.) */
   }
 }
 
-@media not (-moz-platform: macos) {
-  @media not (-moz-bool-pref: "uc.tweak.revert-context-menu") {
-    @media (-moz-bool-pref: "uc.tweak.vertical-context-navigation") {
-      #context-navigation {
-        flex-direction: column !important;
-      }
+@media (not (-moz-platform: macos)) and (not (-moz-bool-pref: "uc.tweak.revert-context-menu")) {
+  @media (-moz-bool-pref: "uc.tweak.vertical-context-navigation") {
+    #context-navigation {
+      /* Stack menu items vertically. */
+      flex-direction: column !important;
 
-      #context-navigation > .menuitem-iconic {
+      /* Align the image and label to the left edge. */
+      & > .menuitem-iconic {
         justify-content: start !important;
-      }
 
-      #context-navigation .menu-iconic-text {
-        display: flex !important;
-      }
-
-      :root,
-      :root[lang^="en"] {
-        --uc-string-back: "Back";
-        --uc-string-forward: "Forward";
-        --uc-string-reload: "Reload";
-        --uc-string-stop: "Stop";
-        --uc-string-bookmark-page: "Bookmark Page";
-        --uc-string-edit-bookmark: "Edit Bookmark";
-      }
-
-      #context-navigation > #context-back .menu-iconic-text::before {
-        content: var(--uc-string-back) !important;
-      }
-
-      #context-navigation > #context-forward .menu-iconic-text::before {
-        content: var(--uc-string-forward) !important;
-      }
-
-      #context-navigation > #context-reload .menu-iconic-text::before {
-        content: var(--uc-string-reload) !important;
-      }
-
-      #context-navigation > #context-stop .menu-iconic-text::before {
-        content: var(--uc-string-stop) !important;
-      }
-
-      #context-navigation > #context-bookmarkpage .menu-iconic-text::before {
-        content: var(--uc-string-bookmark-page) !important;
-      }
-
-      #context-navigation > #context-bookmarkpage[starred] .menu-iconic-text::before {
-        content: var(--uc-string-edit-bookmark) !important;
+        &::after {
+          /* Get the menuitem label from the aria-label attribute. */
+          content: attr(aria-label);
+        }
       }
     }
   }
 }
 
-@media (-moz-windows-compositor) {
-  @media (-moz-bool-pref: "uc.tweak.revert-context-menu") {
-    menupopup {
-      --panel-color: var(--arrowpanel-color) !important;
-      --panel-border-radius: 4px !important;
-      --panel-border-color: var(--arrowpanel-border-color) !important;
-      --panel-background: var(--arrowpanel-background) !important;
-      --menuitem-hover-background-color: var(--panel-item-hover-bgcolor) !important;
-      --menu-background-color: var(--arrowpanel-background) !important;
-      --menu-color: var(--arrowpanel-color) !important;
-      --menuitem-disabled-hover-background-color: #0000 !important;
-      --menu-disabled-color: var(--panel-disabled-color) !important;
-      --menu-border-color: var(--panel-separator-color) !important;
+@media (-moz-bool-pref: "uc.tweak.context-menu.hide-access-key") {
+  :where(menuitem, menu) > :is(.menu-text, .menu-iconic-text)[value]:not([value=""]) {
+    &::before {
+      /* The default value is -moz-label-content, which takes the data from the
+       * value attribute and highlights the character found in the accesskey
+       * attribute. This skips that and uses the value attribute directly. */
+      content: attr(value) !important;
     }
   }
 }
@@ -248,12 +212,11 @@ bugs with certain themes eg. dark text on dark background.) */
       /* Hide the tabs */
       & #TabsToolbar {
         visibility: collapse !important;
-        padding-inline-start: 0 !important;
       }
 
       /* Add some padding to the top of the navbar */
-      & #nav-bar {
-        padding-top: var(--tab-block-margin) !important;
+      &[tabsintitlebar] #nav-bar {
+        padding-top: var(--uc-tab-top-margin, 0) !important;
       }
     }
 
@@ -263,14 +226,13 @@ bugs with certain themes eg. dark text on dark background.) */
         /* Hide the tabs */
         & #TabsToolbar {
           visibility: collapse !important;
-          padding-inline-start: 0 !important;
         }
       }
 
       @media not (-moz-bool-pref: "uc.tweak.hide-tabs-bar.only-when-maximised") {
         /* Offset navbar contents to make space for the window controls */
         &[tabsintitlebar] #nav-bar:not([inFullscreen]) {
-          padding-left: calc(84px + var(--uc-titlebar-drag-space));
+          padding-left: calc(70px + var(--uc-titlebar-drag-space)) !important;
 
           /* Remove the padding from the side of the navbar */
           & #nav-bar-customization-target > :is(toolbarbutton, toolbaritem):first-child {
@@ -279,13 +241,17 @@ bugs with certain themes eg. dark text on dark background.) */
         }
 
         /* Positioning of the window controls */
-        #TabsToolbar .titlebar-buttonbox {
-          --uc-position: calc((var(--uc-navbar-height) + var(--tab-block-margin)) / 2 - 8px);
+        #TabsToolbar .titlebar-buttonbox-container {
           visibility: visible !important;
-          position: absolute !important;
-          top: var(--uc-position);
-          left: var(--uc-position);
+          position: fixed !important;
+          height: calc(var(--uc-navbar-height) + var(--uc-tab-top-margin, 0px));
           margin: 0 !important;
+          top: 0;
+          left: 0;
+
+          & .titlebar-buttonbox {
+            margin-inline: calc((var(--uc-navbar-height) + var(--uc-tab-top-margin, 0px) - 14px) / 2) !important;
+          }
         }
       }
     }
@@ -294,7 +260,7 @@ bugs with certain themes eg. dark text on dark background.) */
     @media (-moz-platform: windows) {
       /* Offset navbar contents to make space for the window controls */
       &:where([inFullscreen], [tabsintitlebar]) #nav-bar {
-        padding-right: calc(140px + var(--uc-titlebar-drag-space));
+        padding-right: calc(140px + var(--uc-titlebar-drag-space)) !important;
 
         /* Remove the padding from the side of the navbar */
         & #PanelUI-menu-button {
@@ -305,17 +271,19 @@ bugs with certain themes eg. dark text on dark background.) */
       /* Positioning of the window controls */
       & #toolbar-menubar[inactive] + #TabsToolbar .titlebar-buttonbox {
         visibility: visible !important;
-        position: absolute !important;
+        position: fixed !important;
         top: 0;
         right: 0;
-        height: calc(var(--uc-navbar-height) + var(--tab-block-margin)) !important;
+        height: calc(var(--uc-navbar-height) + var(--uc-tab-top-margin, 0)) !important;
         z-index: 3 !important;
+        color: var(--toolbar-color) !important;
       }
 
       /* Set background colour of the menu bar to maintain consistency with the navbar */
       @media not (-moz-bool-pref: "uc.tweak.floating-tabs") {
         #toolbar-menubar {
           background-color: var(--toolbar-bgcolor) !important;
+          color: var(--toolbar-color) !important;
         }
       }
     }

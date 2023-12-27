@@ -687,7 +687,8 @@
     --menu-image: url("screenshot.svg");
   }
 
-  #context-viewsource {
+  #context-viewsource,
+  #context-viewpartialsource-selection {
     --menu-image: url("source-code.svg");
   }
 

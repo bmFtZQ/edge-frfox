@@ -1,11 +1,11 @@
-/* Edge-Frfox - colors.css */
+/* Edge-Frfox - colors.css
+ * https://github.com/bmFtZQ/edge-frfox */
 
 /* default colours (light & dark) */
 :root:not(:-moz-lwtheme),
 /* `--newtab-background-color-secondary used` to differentiate between a dark
  * private window and private window with the 'Dark' theme enabled.
- * May not be the most reliable method, but works for now up to FF 123.
- */
+ * May not be the most reliable method, but works for now up to FF 123. */
 :root[privatebrowsingmode="temporary"][style*="--lwt-accent-color: rgb(28, 27, 34)"]:not([style*="--newtab-background-color-secondary: rgb(66, 65, 77)"]) {
   --lwt-accent-color: light-dark(#cecece, #1C1C1C) !important;
   --lwt-accent-color-inactive: light-dark(#e8e8e8, #2e2e2e) !important;
@@ -48,12 +48,13 @@
   --autocomplete-popup-highlight-background: light-dark(#f2f2f2, #383838) !important;
   --autocomplete-popup-hover-background: light-dark(#e5e5e5, #444444) !important;
   --autocomplete-popup-separator-color: light-dark(#dadada00, #63636300) !important;
-  --button-bgcolor: light-dark(#EDEDED, #5C5C5C) !important;
-  --button-hover-bgcolor: light-dark(#e5e5e5, #646464) !important;
-  --button-active-bgcolor: light-dark(#d5d5d5, #575757) !important;
+  --button-color: light-dark(#000, #fff) !important;
+  --button-bgcolor: light-dark(#EFEFEF, #5C5C5C) !important;
+  --button-hover-bgcolor: light-dark(#D5D5D5, #6E6E6E) !important;
+  --button-active-bgcolor: light-dark(#C0C0C0, #7C7C7C) !important;
   --button-primary-bgcolor: light-dark(#0078D4, #006CBE) !important;
-  --button-primary-hover-bgcolor: light-dark(#006CBE, #0078D4) !important;
-  --button-primary-active-bgcolor: light-dark(#1683D8, #005CA3) !important;
+  --button-primary-hover-bgcolor: light-dark(#006BBD, #1C7CC5) !important;
+  --button-primary-active-bgcolor: light-dark(#0060AA, #3289CB) !important;
   --button-primary-color: light-dark(#fff, #fff) !important;
   --error-text-color: light-dark(#FF9AA2, #FF9AA2) !important;
   --input-bgcolor: light-dark(#fff, #4A4A4A) !important;
@@ -69,7 +70,7 @@
   --arrowpanel-dimmed-further: light-dark(#707070, #707070) !important;
   --panel-item-hover-bgcolor: light-dark(#eee, #646464) !important;
   --panel-item-active-bgcolor: light-dark(#ddd, #747474) !important;
-  --arrowpanel-border-color: light-dark(#dadada, #636363) !important;
+  --arrowpanel-border-color: light-dark(#fff, #636363) !important;
   --panel-separator-color: light-dark(#dadada, #636363) !important;
   --panel-banner-item-update-supported-bgcolor: light-dark(#188038, #81C995) !important;
   --focus-outline-color: light-dark(#0055D7, #63ADE5) !important;
@@ -80,7 +81,35 @@
   --uc-private-browsing-indicator-text: var(--button-primary-color);
   --tab-icon-overlay-stroke: light-dark(#fff, #4b4b4b) !important;
   --tab-icon-overlay-fill: light-dark(#252525, #fff) !important;
-  --toolbarseparator-color: color-mix(in srgb, currentColor 40%, transparent) !important;
+  --toolbarseparator-color: color-mix(in srgb, currentColor 25%, transparent) !important;
+  --tabpanel-background-color: light-dark(#f7f7f7, #252525) !important;
+
+  /* Side bar theme colours. */
+  --sidebar-background-color: light-dark(#f7f7f7, #3b3b3b) !important;
+  --sidebar-text-color: light-dark(#000, #fff) !important;
+  --sidebar-border-color: light-dark(#bfbfbf, #686868) !important;
+
+  /* Dialog theme */
+  & #window-modal-dialog::backdrop {
+    background-color: rgb(20 20 20 / .2) !important;
+  }
+
+  &[dialogroot] {
+    --in-content-page-background: var(--arrowpanel-background) !important;
+    --in-content-page-color: var(--arrowpanel-color) !important;
+    --in-content-primary-button-text-color: var(--button-primary-color) !important;
+    --in-content-primary-button-background: var(--button-primary-bgcolor) !important;
+    --in-content-primary-button-background-hover: var(--button-primary-hover-bgcolor) !important;
+    --in-content-primary-button-background-active: var(--button-primary-active-bgcolor) !important;
+
+    --in-content-button-text-color: var(--button-color) !important;
+    --in-content-button-background: var(--button-bgcolor) !important;
+    --in-content-button-background-hover: var(--button-hover-bgcolor) !important;
+    --in-content-button-background-active: var(--button-active-bgcolor) !important;
+
+    --in-content-box-background: var(--input-bgcolor) !important;
+    --in-content-box-border-color: var(--input-border-color) !important;
+  }
 }
 
 /* Ensure that dark mode is enabled completely in private browsing mode. */
@@ -88,6 +117,8 @@
   :root[privatebrowsingmode="temporary"],
   :root[privatebrowsingmode="temporary"] #nav-bar,
   :root[privatebrowsingmode="temporary"] #PersonalToolbar {
+    --toolbar-color-scheme: dark !important;
+    --tab-selected-color-scheme: dark !important;
     color-scheme: dark !important;
   }
 }
@@ -185,23 +216,14 @@
   }
 
   #placeContentColumns :is(treecol, treecolpicker):where(:hover) {
-    background-color: light-dark(#cecece, #4A4A4A ) !important;
+    background-color: light-dark(#cecece, #4A4A4A) !important;
     color: light-dark(#000, #fff) !important;
   }
 }
 
-/* side bar theme */
-#sidebar-box:not(:-moz-lwtheme),
-:root[privatebrowsingmode="temporary"][style*="--lwt-accent-color: rgb(28, 27, 34)"] #sidebar-box {
-  --sidebar-background-color: light-dark(#f7f7f7, #3b3b3b) !important;
-  --sidebar-text-color: light-dark(#000, #fff) !important;
+#sidebar-box {
   appearance: none !important;
-
-  & ~ #browser:not(:-moz-lwtheme) {
-    --sidebar-border-color: light-dark(#bfbfbf, #686868) !important;
-  }
 }
-
 
 .sidebar-panel:not([lwt-sidebar]) {
   color: light-dark(#000, #fff) !important;
@@ -219,14 +241,15 @@
       padding: 6px 8px !important;
 
       &:focus {
-        border-width: 2px !important;
-        padding: 5px 7px !important;
+        outline: 2px solid light-dark(#bfbfbf, #686868) !important;
+        outline-offset: -2px !important;
+        border-color: transparent !important;
       }
     }
   }
 }
 
-@-moz-document url(chrome://browser/content/syncedtabs/sidebar.xhtml){
+@-moz-document url(chrome://browser/content/syncedtabs/sidebar.xhtml) {
   body {
     background: transparent !important;
   }

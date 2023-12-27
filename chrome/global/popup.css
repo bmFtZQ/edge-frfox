@@ -387,13 +387,19 @@ panelview .toolbarbutton-1,
   & .autocomplete-richlistitem,
   & .search-panel-header {
     padding-block: 2px !important;
+    padding-inline: var(--uc-contextmenu-menuitem-padding-inline) !important;
     margin: 0 var(--uc-arrowpanel-menuitem-margin-inline) !important;
     border-radius: var(--arrowpanel-menuitem-border-radius) !important;
+
+    & > .ac-type-icon {
+      margin-inline-start: 0 !important;
+    }
   }
 
   & .search-one-offs {
     padding-block-start: 0 !important;
   }
+
 }
 
 /* disable context menu when this tweak is applied */
@@ -420,7 +426,7 @@ panelview .toolbarbutton-1,
   #PopupAutoComplete > .autocomplete-richlistbox,
   .menupopup-arrowscrollbox {
     background: var(--arrowpanel-background) !important;
-    border: 1px solid light-dark(transparent, var(--panel-separator-color)) !important;
+    border: 1px solid var(--arrowpanel-border-color) !important;
   }
 
   /* make room for menu shadow */
@@ -540,7 +546,9 @@ panelview .toolbarbutton-1,
   }
 
   menu > .menu-iconic-text,
-  menuitem > .menu-iconic-text {
+  menuitem > .menu-iconic-text,
+  /* Used for vertical context navigation tweak. */
+  #context-navigation > .menuitem-iconic::after {
     padding-inline-start: var(--uc-contextmenu-menuicon-margin-inline) !important;
   }
 
@@ -636,25 +644,67 @@ panelview .toolbarbutton-1,
     fill: var(--lwt-toolbarbutton-icon-fill-attention, var(--toolbarbutton-icon-fill-attention, currentColor)) !important;
   }
 
-  @media not (-moz-bool-pref: "uc.tweak.smaller-context-menu-text") {
-    @media (-moz-platform: windows) {
-      .menu-text,
-      .menu-iconic-text,
-      panel .toolbarbutton-text,
-      #PopupSearchAutoComplete .ac-title {
-        margin-inline-start: 0 !important;
-        margin-block: -3px -1px !important;
-        padding-block: 0 !important;
-      }
+  @media (not (-moz-bool-pref: "uc.tweak.smaller-context-menu-text")) and (-moz-platform: windows) {
+    .menu-text,
+    .menu-iconic-text,
+    panel .toolbarbutton-text,
+    #PopupSearchAutoComplete .ac-title,
+    /* Used for vertical context navigation tweak. */
+    #context-navigation > .menuitem-iconic::after {
+      margin-inline-start: 0 !important;
+      margin-block: -3px -1px !important;
+      padding-block: 0 !important;
+    }
 
-      .menu-text,
-      .menu-iconic-text,
-      panel .toolbarbutton-text,
-      #appMenu-fxa-status2,
-      .panel-header,
-      #PopupSearchAutoComplete {
-        font-size: 13.6px !important;
+    .menu-text,
+    .menu-iconic-text,
+    panel .toolbarbutton-text,
+    #appMenu-fxa-status2,
+    .panel-header,
+    #PopupSearchAutoComplete,
+    /* Used for vertical context navigation tweak. */
+    #context-navigation > .menuitem-iconic::after {
+      font-size: 13.6px !important;
+    }
+  }
+}
+
+/* ::::: Dialog theme ::::: */
+
+/* Dialog shadow and outline adjustments. */
+.dialogBox:not(.spotlightBox) {
+  border-radius: 8px !important;
+  outline: 0.5px solid var(--panel-separator-color) !important;
+  box-shadow:
+    0 20px 38px rgb(0 0 0 / 0.23),
+    0 5px 9px rgb(0 0 0 / 0.22) !important;
+}
+
+dialog {
+  /* Dialog title. */
+  & #titleContainer {
+    /* Add larger gap between icon and title text. */
+    & .titleIcon {
+      padding-inline-end: 8px !important;
+    }
+
+    /* Match font style in Edge. */
+    & #titleText {
+      font-size: 1.18em !important;
+      font-weight: 700 !important;
+    }
+
+    /* Adjust vertical alignment of title text. */
+    @media (-moz-platform: macOS) {
+      &:not([noicon]) > #titleCropper {
+        translate: 0 calc(-1px - max(.55 * var(--icon-size) - .6em, 0px)) !important;
       }
     }
+  }
+
+  /* Input focus style. */
+  & input:where([type="email"], [type="tel"], [type="text"], [type="password"], [type="url"], [type="number"]):focus {
+    outline: 2px solid var(--in-content-box-border-color) !important;
+    outline-offset: -2px !important;
   }
 }

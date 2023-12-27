@@ -47,7 +47,7 @@ the menu bar. */
       0 -.8px 0 0 rgb(0 0 0 / 0.02),
       0 0.5px 1px 1px rgb(0 0 0 / 0.06),
       0 1px 1px rgb(0 0 0 / 0.1);
-    --browser-frame-bgcolor: var(--toolbar-bgcolor);
+    --browser-frame-bgcolor: var(--toolbar-bgcolor, var(--lwt-accent-color));
 
     /* Different shadow for higher resolution displays. */
     @media (resolution > 1.8dppx) {
@@ -59,6 +59,11 @@ the menu bar. */
     @media (-moz-bool-pref: "uc.tweak.floating-tabs") {
       --browser-frame-bgcolor: var(--lwt-accent-color);
     }
+  }
+
+  /* Remove separator between toolbars and the browser window. */
+  #navigator-toolbox {
+    border-bottom: none !important;
   }
 
   /* Disable rounded corners in fullscreen, only if the toolbar is hidden. */

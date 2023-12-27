@@ -1,16 +1,17 @@
-/* Edge-Frfox - tabbar.css */
+/* Edge-Frfox - tabbar.css
+ * https://github.com/bmFtZQ/edge-frfox */
 
 /* Variables */
 :root {
   /* Extra space at the top of the window. */
-  --tab-block-margin: 8px !important;
+  --uc-tab-top-margin: 8px !important;
 
   /* Remove extra space at the top of the window when in fullscreen or when
    * title bars are enabled.
    */
   &[inFullscreen],
   &:not([tabsintitlebar]) {
-    --tab-block-margin: 0px !important;
+    --uc-tab-top-margin: 0px !important;
   }
 
   /* Remove extra space at the top when the window is maximised or the menu bar
@@ -18,20 +19,24 @@
    */
   @media not (-moz-platform: macos) {
     &[sizemode="maximized"],
-    & #toolbar-menubar:not([inactive]) + #TabsToolbar {
-      --tab-block-margin: 0px !important;
+    & #toolbar-menubar:not([inactive]) + #TabsToolbar,
+    &:has(#toolbar-menubar:not([inactive])) {
+      --uc-tab-top-margin: 0px !important;
     }
   }
 
   & #titlebar {
     --tab-min-height: 32px !important;
     --inline-tab-padding: 11px !important;
+    --uc-inline-pinned-tab-padding: 12px !important;
     --tab-border-radius: 4px !important;
     --uc-toolbarbutton-inner-padding: 6px !important;
     --uc-toolbarbutton-inline-inner-padding: 8px !important;
     --toolbarbutton-border-radius: 4px !important;
     --tabs-navbar-shadow-size: 0 !important;
     --tab-shadow-max-size: 0 !important;
+    --uc-tab-separator-height: 20px;
+    --uc-toolbarbutton-block-margin: 2px;
   }
 }
 
@@ -45,8 +50,14 @@
   /* Inactive window background colours. */
   :root:not(:-moz-lwtheme) #navigator-toolbox:-moz-window-inactive {
     background-color: var(--lwt-accent-color-inactive, var(--lwt-accent-color)) !important;
-    color: var(--lwt-text-color-inactive) !important;
+    color: var(--lwt-text-color-inactive, var(--lwt-text-color)) !important;
   }
+}
+
+/* Make sure that the tab toolbar opacity is always 1, inactive window colours
+ * are already supplied by this theme. */
+:root[tabsintitlebar] #titlebar:-moz-window-inactive {
+  opacity: 1 !important;
 }
 
 /* ::::: Tab transitions ::::: */
@@ -82,8 +93,8 @@
   & .toolbarbutton-1 > .toolbarbutton-badge-stack {
     border-radius: var(--toolbarbutton-border-radius) !important;
     padding: var(--uc-toolbarbutton-inner-padding) var(--uc-toolbarbutton-inline-inner-padding) !important;
-    /* Add 2px margin-block to buttons so they are positioned correctly. */
-    margin: 2px 0 !important;
+    /* Add margin-block to buttons so they are positioned correctly. */
+    margin: var(--uc-toolbarbutton-block-margin) 0 !important;
   }
 
   & .toolbarbutton-1 > .toolbarbutton-icon {
@@ -132,13 +143,13 @@
 #tabbrowser-tabs {
   /* Remove the border from the left of the tab bar. */
   border-inline: none !important;
-  padding-inline-start: 0 !important;
+  padding-inline-start: var(--tab-overflow-pinned-tabs-width) !important;
 
   /* Add space above the tabs. */
-  margin-top: var(--tab-block-margin) !important;
+  margin-top: var(--uc-tab-top-margin) !important;
 
   /* Pull tabs closer to toolbar buttons when overflowed. */
-  &[overflow] {
+  &[overflow]:not([haspinnedtabs]) {
     margin-inline-start: -2px !important;
   }
 
@@ -191,7 +202,7 @@
 
     /* Make sure that titlebar buttons have equal spacing on all sides. */
     & .titlebar-buttonbox {
-      margin-inline: calc((var(--tab-min-height) + var(--tab-block-margin) - 14px) / 2) !important;
+      margin-inline: calc((var(--tab-min-height) + var(--uc-tab-top-margin) - 14px) / 2) !important;
     }
   }
 }
@@ -226,14 +237,9 @@
 .tab-content {
   padding-inline: var(--inline-tab-padding) 0 !important;
 
-  /* Reduce padding of tab contents when space is limited. */
-  #tabbrowser-tabs[closebuttons="activetab"] .tabbrowser-tab:not([pinned]) & {
-    padding-inline: calc(var(--inline-tab-padding) - 4px) 0 !important;
-  }
-
   /* Pinned tab padding. */
   &[pinned] {
-    padding: 0 12px !important;
+    padding: 0 var(--uc-inline-pinned-tab-padding) !important;
   }
 }
 
@@ -242,7 +248,7 @@
 .tab-icon-pending:not([pinned]),
 .tab-icon-image:not([pinned]),
 .tab-sharing-icon-overlay:not([pinned]) {
-  margin-inline-end: 10px !important;
+  margin-inline-end: calc(var(--inline-tab-padding) - 1px) !important;
 }
 
 /* Make sure that the tabs are the correct height. */
@@ -346,6 +352,7 @@
   border: 0 !important;
   position: relative !important;
   --uc-tab-corner-bg: transparent;
+  --uc-tab-corner-outline: transparent;
 
   /* Both rounded bottom corners. */
   &::before,
@@ -353,7 +360,7 @@
     content: "" !important;
     position: absolute !important;
     width: var(--tab-border-radius) !important;
-    aspect-ratio: 1/1;
+    aspect-ratio: 1 / 1;
     bottom: 0 !important;
     pointer-events: none !important;
     clip-path: inset(0);
@@ -363,28 +370,30 @@
   &::before {
     border-bottom-right-radius: var(--tab-border-radius) !important;
     left: 0 !important;
-    transform: translateX(calc(var(--tab-border-radius) * -1)) !important;
-    box-shadow: 4px 4px 0 4px var(--uc-tab-corner-bg) !important;
+    translate: calc(-1 * var(--tab-border-radius)) 0 !important;
+    box-shadow:
+      /* First shadow is a 1px outline for better theming support. */
+      -1px -1px var(--uc-tab-corner-outline) inset,
+      /* Second shadow is to add the background colour to the corner. */
+      0 0 0 var(--tab-border-radius) var(--uc-tab-corner-bg) !important;
   }
 
   /* Bottom right corner. */
   &::after {
     border-bottom-left-radius: var(--tab-border-radius) !important;
     right: 0 !important;
-    transform: translateX(var(--tab-border-radius)) !important;
-    box-shadow: -4px 4px 0 4px var(--uc-tab-corner-bg) !important;
-  }
-
-  /* Fix overflow issues by removing the bottom-right corner of the last tab.
-   * Disabled when customising the browser to prevent a glitch.
-   */
-  :root:not([customizing]) #tabbrowser-arrowscrollbox[overflowing] > tab:nth-last-child(1 of .tabbrowser-tab:not([hidden])) &::after {
-    content: initial !important;
+    translate: var(--tab-border-radius) 0 !important;
+    box-shadow:
+      /* First shadow is a 1px outline for better theming support. */
+      1px -1px var(--uc-tab-corner-outline) inset,
+      /* Second shadow is to add the background colour to the corner. */
+      0 0 0 var(--tab-border-radius) var(--uc-tab-corner-bg) !important;
   }
 
   /* Make sure that the bottom corners have the same background colour. */
   &:is([selected], [multiselected]) {
     --uc-tab-corner-bg: var(--tab-selected-bgcolor, var(--lwt-selected-tab-background-color, var(--toolbar-bgcolor)));
+    --uc-tab-corner-outline: var(--lwt-tab-line-color, transparent);
     /* Disable tab outlines when selected. */
     outline: none !important;
   }
@@ -445,7 +454,7 @@
   &::after {
     content: "";
     position: absolute;
-    height: 20px;
+    height: var(--uc-tab-separator-height);
     inset-block: 0;
     margin-block: auto;
     border-left: 1px solid transparent;
@@ -473,8 +482,12 @@
 
 /* Set separator color and add separator for last visible tab. */
 .tabbrowser-tab:not([selected], [multiselected], :hover) {
+  /* All tabs. */
   & .tab-stack::before,
-  &:nth-last-child(1 of .tabbrowser-tab:not([hidden])) .tab-stack::after {
+  /* Last visible tab. */
+  &:nth-last-child(1 of .tabbrowser-tab:not([hidden])) .tab-stack::after,
+  /* Last visible pinned tab when overflowed. */
+  #tabbrowser-tabs[overflow] &:nth-last-child(1 of .tabbrowser-tab[pinned]:not([hidden])) .tab-stack::after {
     border-color: color-mix(in srgb, currentColor 34%, transparent);
   }
 }
@@ -518,19 +531,25 @@
 /* #region */
 
 /* Tab and toolbar shadows. */
-:root {
+:root,
+:root  .tabbrowser-tab {
   /* Light mode shadows. */
-  --uc-titlebar-shadow: 0 -3px 2px -3px rgb(0 0 0 / .2) inset;
+  --uc-titlebar-shadow:
+    0 -1px var(--tabs-navbar-shadow-color, transparent) inset,
+    0 -3px 2px -3px rgb(0 0 0 / .2) inset;
   --uc-tab-shadow:
-    0 0 0 1px var(--lwt-tab-line-color, var(--lwt-tabs-border-color, transparent)),
+    0 0 0 1px var(--lwt-tab-line-color, transparent),
     0 4px 5px rgb(0 0 0 / .21),
     0 0px 2px rgb(0 0 0 / .18);
 
-  & [brighttext] {
+  & [brighttext],
+  & [brighttext] .tabbrowser-tab {
     /* Dark mode shadows. */
-    --uc-titlebar-shadow: 0 -3px 2px -3px rgb(0 0 0 / .7) inset;
+    --uc-titlebar-shadow:
+      0 -1px var(--tabs-navbar-shadow-color, transparent) inset,
+      0 -3px 2px -3px rgb(0 0 0 / .7) inset;
     --uc-tab-shadow:
-      0 0 0 1px var(--lwt-tab-line-color, var(--lwt-tabs-border-color, transparent)),
+      0 0 0 1px var(--lwt-tab-line-color, transparent),
       0 5px 7px rgb(0 0 0 / .44),
       0 0px 2px rgb(0 0 0 / .7);
   }
@@ -547,16 +566,26 @@
   box-shadow: var(--uc-titlebar-shadow) !important;
 }
 
+/* Prevent interference with context menu arrowscrollbox. */
+#tabbrowser-arrowscrollbox {
+  --uc-padding-top: 4px;
+  --uc-margin-top: -4px;
+  --uc-padding-inline-end: var(--tab-border-radius)
+}
+
 /* Make room for the tab shadows so they aren't clipped at the top. */
-#scrollbutton-up:not(.menupopup-scrollbutton) ~ .scrollbox-clip > scrollbox {
-  padding-top: 4px !important;
-  margin-top: -4px !important;
+.scrollbox-clip > scrollbox {
+  padding-top: var(--uc-padding-top, 0) !important;
+  margin-top: var(--uc-margin-top, 0) !important;
+  /* Used to fix tab overflow issue with rounded corners. */
+  padding-inline-end: var(--uc-padding-inline-end, 0) !important;
 }
 
 /* Add some room horizontally for the tab shadows and rounded corners. */
 #tabbrowser-tabs {
   &:not([overflow]) {
     margin-inline-start: -8px !important;
+    margin-inline-end: calc(-1 * var(--tab-border-radius)) !important;
 
     #tabbrowser-arrowscrollbox .tabbrowser-tab:nth-child(1 of .tabbrowser-tab:not([hidden])) {
       margin-inline-start: 8px !important;
