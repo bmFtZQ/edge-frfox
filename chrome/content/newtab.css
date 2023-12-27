@@ -100,7 +100,7 @@ url-prefix("about:home") {
     border-radius: 12px !important;
     height: 44px !important;
     width: 44px !important;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px !important;
+    box-shadow: rgb(0 0 0 / 0.1) !important;
   }
 
   .top-site-outer .tile .icon-wrapper {

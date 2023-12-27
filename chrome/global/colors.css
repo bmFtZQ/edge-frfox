@@ -100,7 +100,7 @@
 
 /* Change Colour of page when loading */
 :root:not(:-moz-lwtheme) #tabbrowser-tabpanels {
-  background-color: light-dark(#f7f7f7, #252525) !important;
+  background-color: transparent !important;
 }
 
 /* make the titlebar buttons black/white on default themes */
