@@ -3,7 +3,6 @@
 # VARIABLES, CHANGE AS NEEDED
 GITHUB_REPO="https://github.com/bmFtZQ/edge-frfox.git"
 PROJECT_NAME=$(basename $GITHUB_REPO | cut -d '.' -f 1)
-TMP_DIR="${TMPDIR:-$(dirname $(mktemp))}"
 
 if [[ $OSTYPE == "darwin"* ]]; then
   FIREFOX_DIR="$HOME/Library/Application Support/Firefox"
@@ -70,7 +69,7 @@ if [ ! -d "$PROFILE_ROOTDIR" ]; then
 fi
 
 # Check if issued `./installer.sh uninstall`
-if [[ $1 == "uninstall" ]]; then  
+if [[ $1 == "uninstall" ]]; then
   echo -e "${YELLOW}NOTE: This is the final opportunity to abort uninstallation by pressing Ctrl+C${NC}";
   ans="n"
   read -e -p "Do you want to delete $PROFILE_ROOTDIR/chrome? [y/N]: " in
@@ -122,14 +121,15 @@ fi
 #################
 
 echo "Installing..."
-if ! curl -L "https://github.com/bmFtZQ/edge-frfox/archive/refs/heads/main.tar.gz" | tar xz -C $TMP_DIR --strip-components=1 --one-top-level=$PROJECT_NAME; then
+TMP_DIR=$(mktemp -d -t "$PROJECT_NAME.XXXXXX");
+if ! curl -L "https://github.com/bmFtZQ/edge-frfox/archive/refs/heads/main.tar.gz" | tar xz -C $TMP_DIR --strip-components=1; then
   echo -e "${RED}Installation failed: ${NC}Failed to get github repo tarball and extract it";
   exit 0;
 fi
 
 echo "Copying theme folder...";
-cp -r $TMP_DIR/$PROJECT_NAME/chrome $PROFILE_ROOTDIR;
-cat $TMP_DIR/$PROJECT_NAME/user.js | tee -a $PROFILE_ROOTDIR/user.js >/dev/null;
+cp -r $TMP_DIR/chrome $PROFILE_ROOTDIR;
+cat $TMP_DIR/user.js | tee -a $PROFILE_ROOTDIR/user.js >/dev/null;
 
 #####################
 # OPTIONAL SETTINGS #
