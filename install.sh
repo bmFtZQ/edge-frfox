@@ -6,7 +6,7 @@ PROJECT_NAME=$(basename $GITHUB_REPO | cut -d '.' -f 1)
 TMP_DIR="${TMPDIR:-$(dirname $(mktemp))}"
 
 if [[ $OSTYPE == "darwin"* ]]; then
-  FIREFOX_DIR=$HOME/Library/Application\ Support/Firefox
+  FIREFOX_DIR="$HOME/Library/Application Support/Firefox"
 else
   FIREFOX_DIR=$HOME/.mozilla/firefox
 fi;
