@@ -68,7 +68,7 @@ if (!(Test-Path "$PROFILE_ROOTDIR")) {
 # Check if issued `...\installer.sh uninstall`
 if ($args[0] -eq "uninstall") {
   Write-Host "NOTE: This is the final opportunity to abort uninstallation by pressing Ctrl+C" -ForegroundColor Yellow;
-  Remove-Item "$PROFILE_ROOTDIR\chrome" -Recurse -Confirm:$true;
+  Remove-Item "$PROFILE_ROOTDIR\chrome" -Recurse -Confirm:$true -Force -ErrorAction SilentlyContinue;
 
   # Download changed user.js from online
   $fail=$false
@@ -130,8 +130,8 @@ if (!($?)) {
   exit 0;
 }
 
-echo "Copying theme folder..."
-Copy-Item -Recurse -Path "$env:temp\$PROJECT_NAME-main\chrome" -Destination $PROFILE_ROOTDIR
+Write-Host "Copying theme folder..."
+Copy-Item -Recurse -Path "$env:temp\$PROJECT_NAME-main\chrome" -Destination $PROFILE_ROOTDIR -Force
 Get-Content "$env:temp\$PROJECT_NAME-main\user.js" | Out-File "$PROFILE_ROOTDIR\user.js" -append -Encoding UTF8 | Out-Null
 
 # firefox will automatically sort out any duplicate issues, whatever is at the end of the file takes priority, so this works.
