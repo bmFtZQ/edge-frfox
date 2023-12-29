@@ -98,14 +98,14 @@ if [[ $1 == "uninstall" ]]; then
     delete_pref ${FETCHED_PREFS[i]};
   done;
 
-  ans="n"
+  ans="y"
   echo -e "${CYAN}NOTE: enter 'a' to answer 'yes' to all questions.${NC}";
   for ((i = 0; i < ${#OPTIONALS[@]}; i+=2)); do
     setting="user_pref(\"${OPTIONALS[i]}\", ${OPTIONALS[i+1]});";
 
     if [[ ! ${ans,,} =~ ^(all|a)$ ]]; then
-      ans="n"
-      read -e -p "Remove setting $setting from user.js? [y/a/N]: " in
+      ans="y"
+      read -e -p "Remove setting $setting from user.js? [Y/a/n]: " in
       ans="${in:-$ans}";
 
       
