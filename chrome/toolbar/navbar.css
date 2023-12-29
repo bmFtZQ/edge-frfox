@@ -34,13 +34,13 @@ toolbar .toolbaritem-combined-buttons {
 }
 
 /* account button */
-#navigator-toolbox>toolbar #fxa-toolbar-menu-button,
-#navigator-toolbox>toolbar #fxa-toolbar-menu-button>.toolbarbutton-badge-stack,
+.browser-toolbar #fxa-toolbar-menu-button,
+.browser-toolbar #fxa-toolbar-menu-button>.toolbarbutton-badge-stack,
 #fxa-avatar-image {
   border-radius: 99px !important;
 }
 
-#nav-bar #fxa-toolbar-menu-button>.toolbarbutton-badge-stack {
+.browser-toolbar #fxa-toolbar-menu-button>.toolbarbutton-badge-stack {
   padding: var(--toolbarbutton-inner-padding) !important;
   margin-inline: calc(var(--uc-toolbarbutton-inner-inline-padding) - var(--toolbarbutton-inner-padding)) !important;
 }
@@ -53,7 +53,7 @@ toolbar .toolbaritem-combined-buttons {
   scale: 1.25 !important;
 }
 
-#nav-bar-customization-target>#fxa-toolbar-menu-button #fxa-avatar-image {
+.customization-target>#fxa-toolbar-menu-button #fxa-avatar-image {
   scale: 1.5 !important;
 }
 

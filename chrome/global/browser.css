@@ -17,7 +17,7 @@ the menu bar. */
 @media (-moz-bool-pref: "uc.tweak.rounded-corners") {
   /* Since Firefox 120, when the bookmarks bar is set to only open on new tabs,
   the bookmarks bar overlaps the #browser element. */
-
+  
   /* Change the element that shifts the browser content to the correct position. */
   :root[BookmarksToolbarOverlapsBrowser] .newTabBrowserPanel,
   :root[BookmarksToolbarOverlapsBrowser] #sidebar-box {
@@ -67,22 +67,22 @@ the menu bar. */
   }
 
   /* Disable rounded corners in fullscreen, only if the toolbar is hidden. */
-  :root[inFullscreen] #navigator-toolbox[style*="margin-top"] + #browser,
+  :root[inFullscreen] #navigator-toolbox[style*="margin-top"]+#browser,
   :root[inDOMFullscreen] #browser {
     --uc-tweak-rounded-corners-padding: 0;
     --uc-tweak-rounded-corners-radius: 0;
     --uc-tweak-rounded-corners-shadow: none;
   }
 
-  /* Apply rounded corners to the browser window. */
-  #appcontent {
+  /* Apply rounded corners to the browser container. */
+  #appcontent .browserContainer {
     margin-inline: var(--uc-tweak-rounded-corners-padding) !important;
     margin-block-end: var(--uc-tweak-rounded-corners-padding) !important;
     border-radius: var(--uc-tweak-rounded-corners-radius) !important;
     overflow: hidden !important;
     box-shadow: var(--uc-tweak-rounded-corners-shadow) !important;
   }
-  
+
   /* Apply rounded corners to sidebar. */
   #sidebar-box {
     margin-inline-start: var(--uc-tweak-rounded-corners-padding) !important;
@@ -105,5 +105,10 @@ the menu bar. */
   /* Apply colour to the frame around the browser window. */
   #browser {
     background-color: var(--browser-frame-bgcolor);
+  }
+
+  /* Change colour of page when loading */
+  #tabbrowser-tabpanels {
+    background-color: transparent !important;
   }
 }
