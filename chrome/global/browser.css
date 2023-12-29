@@ -8,7 +8,7 @@
 }
 
 /* Add a shadow when the toolbars move over content, eg. in macOS hovering over
-the menu bar. */
+ * the menu bar in fullscreen mode. */
 #navigator-toolbox[style*="transform"] {
   box-shadow: 0 -3px 5px 3px light-dark(rgb(0 0 0 / .3), rgb(0 0 0 / .6)) !important;
 }
@@ -71,18 +71,19 @@ the menu bar. */
   :root[inDOMFullscreen] #browser {
     --uc-tweak-rounded-corners-padding: 0;
     --uc-tweak-rounded-corners-radius: 0;
-    --uc-tweak-rounded-corners-shadow: none;
+    --uc-tweak-rounded-corners-shadow: unset;
   }
 
-  /* Apply rounded corners to the browser window. */
-  #appcontent {
+  /* Apply rounded corners to the browser container. */
+  #appcontent .browserContainer {
     margin-inline: var(--uc-tweak-rounded-corners-padding) !important;
     margin-block-end: var(--uc-tweak-rounded-corners-padding) !important;
     border-radius: var(--uc-tweak-rounded-corners-radius) !important;
     overflow: hidden !important;
     box-shadow: var(--uc-tweak-rounded-corners-shadow) !important;
+    background-color: var(--tabpanel-background-color) !important;
   }
-  
+
   /* Apply rounded corners to sidebar. */
   #sidebar-box {
     margin-inline-start: var(--uc-tweak-rounded-corners-padding) !important;
@@ -90,7 +91,7 @@ the menu bar. */
     border-radius: var(--uc-tweak-rounded-corners-radius) !important;
     overflow: hidden !important;
     box-shadow: var(--uc-tweak-rounded-corners-shadow) !important;
-    
+
     &[positionend] {
       margin-inline-start: 0 !important;
       margin-inline-end: var(--uc-tweak-rounded-corners-padding) !important;
@@ -105,5 +106,10 @@ the menu bar. */
   /* Apply colour to the frame around the browser window. */
   #browser {
     background-color: var(--browser-frame-bgcolor);
+  }
+
+  /* Change colour of page when loading */
+  #tabbrowser-tabpanels {
+    background-color: transparent !important;
   }
 }

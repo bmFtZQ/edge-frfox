@@ -28,6 +28,7 @@ bugs with certain themes eg. dark text on dark background.) */
 
 @media (-moz-bool-pref: "uc.tweak.floating-tabs") {
   :root:not(:-moz-lwtheme),
+
   /* `--newtab-background-color-secondary used` to differentiate between a dark
   * private window and private window with the 'Dark' theme enabled.
   * May not be the most reliable method, but works for now up to FF 123.

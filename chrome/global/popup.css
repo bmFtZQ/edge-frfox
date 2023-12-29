@@ -384,6 +384,7 @@ panelview .toolbarbutton-1,
     margin: 4px 0 !important;
   }
 
+  /* Search suggestions. */
   & .autocomplete-richlistitem,
   & .search-panel-header {
     padding-block: 2px !important;
@@ -396,8 +397,17 @@ panelview .toolbarbutton-1,
     }
   }
 
+  /* Search engine selector. */
   & .search-one-offs {
-    padding-block-start: 0 !important;
+    padding-block: 0 5px !important;
+
+    & #searchbar-one-offs-header-label {
+      margin-inline-start: 0 !important;
+    }
+
+    & .search-panel-one-offs-container {
+      margin-inline: 1px 7px !important;
+    }
   }
 
 }
