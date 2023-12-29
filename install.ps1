@@ -18,7 +18,7 @@ function set_pref {
   )
 
   Write-Output "setting $pref to $bool in user.js";
-	Write-Output "user_pref(`"$pref`", $bool);" | % { $_ -replace ' +$','' } | out-file "$PROFILE_ROOTDIR\user.js" -append -Encoding UTF8
+	Write-Output "user_pref(`"$pref`", $bool);" | % { $_ -replace ' +$','' } | out-file "$PROFILE_ROOTDIR\user.js" -append -Encoding ascii
 }
 
 function delete_pref {
@@ -32,6 +32,15 @@ function delete_pref {
   (Get-Content "$PROFILE_ROOTDIR\user.js")  | 
   Where-Object {$_ -ne $Pref}               | 
   Set-Content -Path $Userjs;
+}
+
+function ask_question {
+  param($prompt, $defaultAns)
+
+  $userInput = (Read-Host -Prompt "$prompt").ToLower()
+  $userInput = if (-not $userInput) { $defaultAns } else { $userInput }
+
+  $userInput -eq 'yes' -or $userInput -eq 'y'
 }
 
 #####################
@@ -132,16 +141,12 @@ if (!($?)) {
 
 Write-Host "Copying theme folder..."
 Copy-Item -Recurse -Path "$env:temp\$PROJECT_NAME-main\chrome" -Destination $PROFILE_ROOTDIR -Force
-Get-Content "$env:temp\$PROJECT_NAME-main\user.js" | Out-File "$PROFILE_ROOTDIR\user.js" -append -Encoding UTF8 | Out-Null
+Get-Content "$env:temp\$PROJECT_NAME-main\user.js" | Out-File "$PROFILE_ROOTDIR\user.js" -append -Encoding ascii | Out-Null
 
 # firefox will automatically sort out any duplicate issues, whatever is at the end of the file takes priority, so this works.
 Write-Output "Setting preferences...";
 foreach ($key in $OPTIONALS.Keys) {
-  $ans = "n"
-  $in = Read-Host -Prompt "Set $key to $($optionals[$key]) [y/N]"
-  $ans = if ($in) { $in } else { $ans }
-
-  if (!($ans.ToLower() -match "^(yes|y)$")) {
+  if (!(ask_question "Set $key to $($OPTIONALS[$key])? [y/N]" "n")) {
     continue
   }
 
