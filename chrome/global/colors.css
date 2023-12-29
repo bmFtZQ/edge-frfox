@@ -19,8 +19,7 @@
   --chrome-content-separator-color: light-dark(#bfbfbf, #686868) !important;
   --lwt-toolbarbutton-icon-fill-attention: light-dark(#0078D4, #4C98D1) !important;
   --toolbarbutton-icon-fill-attention: light-dark(#0078D4, #4C98D1) !important;
-  --lwt-tab-text: var(--toolbar-color) !important;
-  --lwt-selected-tab-background-color: unset !important;
+  --tab-attention-icon-color: light-dark(#0078D4, #93d0ff) !important;
   --tab-selected-textcolor: light-dark(#000, #fff) !important;
   --tab-selected-textcolor-inactive: light-dark(#3E3E3E, #CBCBCB) !important;
   --tab-selected-bgcolor: var(--toolbar-bgcolor) !important;
@@ -75,10 +74,8 @@
   --panel-banner-item-update-supported-bgcolor: light-dark(#188038, #81C995) !important;
   --focus-outline-color: light-dark(#0055D7, #63ADE5) !important;
   --panel-shortcut-color: inherit !important;
-  --toolbarbutton-hover-background: light-dark(rgb(0 0 0 / .08), rgb(255 255 255 / .1)) !important;
-  --toolbarbutton-active-background: light-dark(rgb(0 0 0 / .12), rgb(255 255 255 / .16)) !important;
-  --uc-private-browsing-indicator: var(--button-primary-bgcolor);
-  --uc-private-browsing-indicator-text: var(--button-primary-color);
+  --toolbarbutton-hover-background: light-dark(rgb(0 0 0 / .08), rgb(255 255 255 / .08)) !important;
+  --toolbarbutton-active-background: light-dark(rgb(0 0 0 / .135), rgb(255 255 255 / .135)) !important;
   --tab-icon-overlay-stroke: light-dark(#fff, #4b4b4b) !important;
   --tab-icon-overlay-fill: light-dark(#252525, #fff) !important;
   --toolbarseparator-color: color-mix(in srgb, currentColor 25%, transparent) !important;

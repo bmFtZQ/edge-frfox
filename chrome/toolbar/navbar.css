@@ -6,7 +6,7 @@
   --toolbarbutton-inner-padding: 7px !important;
   --uc-toolbarbutton-inner-inline-padding: 12px !important;
   --toolbarbutton-outer-padding: 2px !important;
-  --tabs-navbar-shadow-size: 0 !important;
+  --tabs-navbar-shadow-size: 0px !important;
 }
 
 #nav-bar .toolbarbutton-1>.toolbarbutton-icon {

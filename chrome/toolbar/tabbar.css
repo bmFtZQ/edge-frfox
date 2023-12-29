@@ -25,15 +25,15 @@
     }
   }
 
-  & #titlebar {
+  & #TabsToolbar {
     --tab-min-height: 32px !important;
     --inline-tab-padding: 11px !important;
     --uc-inline-pinned-tab-padding: 12px !important;
     --tab-border-radius: 4px !important;
-    --uc-toolbarbutton-inner-padding: 6px !important;
-    --uc-toolbarbutton-inline-inner-padding: 8px !important;
+    --toolbarbutton-inner-padding: 6px !important;
+    --uc-toolbarbutton-inner-inline-padding: 8px !important;
     --toolbarbutton-border-radius: 4px !important;
-    --tabs-navbar-shadow-size: 0 !important;
+    --tabs-navbar-shadow-size: 0px !important;
     --tab-shadow-max-size: 0 !important;
     --uc-tab-separator-height: 20px;
     --uc-toolbarbutton-block-margin: 2px;
@@ -92,22 +92,22 @@
   & .toolbarbutton-1 > .toolbarbutton-icon,
   & .toolbarbutton-1 > .toolbarbutton-badge-stack {
     border-radius: var(--toolbarbutton-border-radius) !important;
-    padding: var(--uc-toolbarbutton-inner-padding) var(--uc-toolbarbutton-inline-inner-padding) !important;
+    padding: var(--toolbarbutton-inner-padding) var(--uc-toolbarbutton-inner-inline-padding) !important;
     /* Add margin-block to buttons so they are positioned correctly. */
     margin: var(--uc-toolbarbutton-block-margin) 0 !important;
   }
 
   & .toolbarbutton-1 > .toolbarbutton-icon {
-    width: calc(2 * var(--uc-toolbarbutton-inline-inner-padding) + 16px) !important;
-    height: calc(2 * var(--uc-toolbarbutton-inner-padding) + 16px) !important;
+    width: calc(2 * var(--uc-toolbarbutton-inner-inline-padding) + 16px) !important;
+    height: calc(2 * var(--toolbarbutton-inner-padding) + 16px) !important;
   }
 
   /* Keep certain buttons (such as new tab) square shaped. */
   & #tabs-newtab-button > .toolbarbutton-icon,
   & #alltabs-button > .toolbarbutton-badge-stack,
   & #tabbrowser-tabs[hasadjacentnewtabbutton][overflow] ~ #new-tab-button > .toolbarbutton-icon {
-    padding: var(--uc-toolbarbutton-inner-padding) !important;
-    width: calc(2 * var(--uc-toolbarbutton-inner-padding) + 16px) !important;
+    padding: var(--toolbarbutton-inner-padding) !important;
+    width: calc(2 * var(--toolbarbutton-inner-padding) + 16px) !important;
   }
 
   /* Toolbar buttons should use the same colour as unselected tabs. */
@@ -169,8 +169,8 @@
 #scrollbutton-down:not(.menupopup-scrollbutton) {
   border-width: 2px !important;
   border-radius: calc(var(--toolbarbutton-border-radius) + 2px) !important;
-  padding-inline: calc(var(--uc-toolbarbutton-inner-padding) - 4px) !important;
-  padding-block: var(--uc-toolbarbutton-inner-padding) !important;
+  padding-inline: calc(var(--toolbarbutton-inner-padding) - 4px) !important;
+  padding-block: var(--toolbarbutton-inner-padding) !important;
 }
 
 /* Add margin to the side of the button facing the tabs so the buttons line up
@@ -240,6 +240,12 @@
   /* Pinned tab padding. */
   &[pinned] {
     padding: 0 var(--uc-inline-pinned-tab-padding) !important;
+  }
+
+  /* Indicator for when the title of a pinned tab changes. */
+  &[pinned][titlechanged]:not([selected]),
+  .tabbrowser-tab:is([image], [pinned]) &[attention]:not([selected]) {
+    background-position: center bottom 2px !important;
   }
 }
 
@@ -632,10 +638,10 @@
   /* Allow space for the gradient to underlay other toolbar items. */
   margin-inline: -16px -16px !important;
   padding-inline: 32px 24px !important;
-  color: var(--uc-private-browsing-indicator-text, var(--toolbar-bgcolor)) !important;
+  color: var(--button-primary-color, var(--toolbar-bgcolor)) !important;
   text-shadow: none !important;
   background: var(--uc-gradient);
-  --uc-bg-color: var(--uc-private-browsing-indicator, var(--toolbarbutton-icon-fill-attention));
+  --uc-bg-color: var(--button-primary-bgcolor, var(--toolbarbutton-icon-fill-attention));
 
   /* Primay gradient, fades to transparent on the left. */
   --uc-gradient: linear-gradient(to right, transparent, var(--uc-bg-color) 35%);
