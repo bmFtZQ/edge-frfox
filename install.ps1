@@ -10,6 +10,14 @@ $OPTIONALS=@{
   "browser.theme.dark-private-windows" = "false"
 };
 
+function append_to_file {
+  param (
+    $path,
+    $output
+  )
+
+  [System.IO.File]::AppendAllText([string]$path, [string[]]$output)
+}
 # UTILITY FUNCTIONS
 function set_pref {
   param (
@@ -18,7 +26,7 @@ function set_pref {
   )
 
   Write-Output "setting $pref to $bool in user.js";
-	Write-Output "user_pref(`"$pref`", $bool);" | % { $_ -replace ' +$','' } | out-file "$PROFILE_ROOTDIR\user.js" -append -Encoding ascii
+  append_to_file "$PROFILE_ROOTDIR\user.js" (Write-Output "user_pref(`"$pref`", $bool);" | ForEach-Object { $_ -replace ' +$','' })
 }
 
 function delete_pref {
@@ -29,8 +37,7 @@ function delete_pref {
   $Userjs="$PROFILE_ROOTDIR\user.js";
 
   Write-Output "resetting $Pref to default";
-  (Get-Content "$PROFILE_ROOTDIR\user.js")  | 
-  Where-Object {$_ -ne $Pref}               | 
+  (Get-Content "$PROFILE_ROOTDIR\user.js").Replace($Pref, "")  |  
   Set-Content -Path $Userjs;
 }
 
@@ -96,14 +103,14 @@ if ($args[0] -eq "uninstall") {
     }
   } 
 
-  $ans = "n"
-  Write-Host "NOTE: etner 'a' to answer 'yes' to all questions." -ForegroundColor Cyan
+  $ans = "y"
+  Write-Host "NOTE: enter 'a' to answer 'yes' to all questions." -ForegroundColor Cyan
   foreach ($key in $OPTIONALS.Keys) {
     $setting = "user_pref(`"${key}`", $($OPTIONALS[$key]));"
 
     if (-not ($ans.ToLower() -match "^(all|a)$")) {
-        $ans = "n"
-        $in = Read-Host -Prompt "Remove setting $setting from user.js? [y/a/N]"
+        $ans = "y"
+        $in = Read-Host -Prompt "Remove setting $setting from user.js? [Y/a/n]"
         $ans = if ($in) { $in.ToLower() } else { $ans }
 
         if (-not ($ans -match "^(yes|y|all|a)$")) {
@@ -141,7 +148,7 @@ if (!($?)) {
 
 Write-Host "Copying theme folder..."
 Copy-Item -Recurse -Path "$env:temp\$PROJECT_NAME-main\chrome" -Destination $PROFILE_ROOTDIR -Force
-Get-Content "$env:temp\$PROJECT_NAME-main\user.js" | Out-File "$PROFILE_ROOTDIR\user.js" -append -Encoding ascii | Out-Null
+append_to_file "$PROFILE_ROOTDIR\user.js" (Get-Content "$env:temp\$PROJECT_NAME-main\user.js")
 
 # firefox will automatically sort out any duplicate issues, whatever is at the end of the file takes priority, so this works.
 Write-Output "Setting preferences...";
