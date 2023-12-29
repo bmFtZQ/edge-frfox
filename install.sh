@@ -36,6 +36,15 @@ delete_pref() {
   mv "$Userjs.tmp" $Userjs
 }
 
+ask_question() {
+  local defaultAns="$2"
+  
+  read -e -p "$1" in
+  defaultAns="${in:-$defaultAns}";
+  defaultAns="$(echo $defaultAns | tr '[:upper:]' '[:lower:]')"
+  [[ $defaultAns =~ ^(yes|y)$ ]];
+}
+
 #####################
 # PRE-INSTALL PHASE #
 #####################
@@ -71,13 +80,9 @@ fi
 # Check if issued `./installer.sh uninstall`
 if [[ $1 == "uninstall" ]]; then
   echo -e "${YELLOW}NOTE: This is the final opportunity to abort uninstallation by pressing Ctrl+C${NC}";
-  ans="n"
-  read -e -p "Do you want to delete $PROFILE_ROOTDIR/chrome? [y/N]: " in
-  ans="${in:-$ans}";
-
-  if [[ ${ans,,} =~ ^(yes|y)$ ]]; then
+  if ask_question "Delete all files in $PROFILE_ROOTDIR/chrome? [Y/n]: " "y"; then
     rm -rf $PROFILE_ROOTDIR/chrome;
-  fi
+  fi;
 
   # Download changed user.js from online
   FETCHED_PREFS=();
@@ -137,13 +142,9 @@ cat $TMP_DIR/user.js | tee -a $PROFILE_ROOTDIR/user.js >/dev/null;
 
 echo "Optional settings, refer to https://github.com/bmFtZQ/edge-frfox/tree/main#how-to-install";
 for ((i = 0; i < ${#OPTIONALS[@]}; i += 2)); do
-  ans="n"
-  read -e -p "Set ${OPTIONALS[i]} to ${OPTIONALS[i+1]?} [y/N]: " in
-  ans="${in:-$ans}";
-
-  if [[ ! ${ans,,} =~ ^(yes|y)$ ]]; then
+  if ! ask_question "Set ${OPTIONALS[i]} to ${OPTIONALS[i+1]}? [y/N]: " "n"; then
     continue;
-  fi
+  fi;
 
   set_pref ${OPTIONALS[i]} ${OPTIONALS[i+1]}
 
