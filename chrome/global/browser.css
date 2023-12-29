@@ -17,7 +17,7 @@ the menu bar. */
 @media (-moz-bool-pref: "uc.tweak.rounded-corners") {
   /* Since Firefox 120, when the bookmarks bar is set to only open on new tabs,
   the bookmarks bar overlaps the #browser element. */
-
+  
   /* Change the element that shifts the browser content to the correct position. */
   :root[BookmarksToolbarOverlapsBrowser] .newTabBrowserPanel,
   :root[BookmarksToolbarOverlapsBrowser] #sidebar-box {
@@ -105,5 +105,10 @@ the menu bar. */
   /* Apply colour to the frame around the browser window. */
   #browser {
     background-color: var(--browser-frame-bgcolor);
+  }
+
+  /* Change colour of page when loading */
+  #tabbrowser-tabpanels {
+    background-color: transparent !important;
   }
 }

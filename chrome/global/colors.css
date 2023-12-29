@@ -129,11 +129,6 @@
   --urlbar-box-focus-bgcolor: inherit !important;
 }
 
-/* Change Colour of page when loading */
-:root:not(:-moz-lwtheme) #tabbrowser-tabpanels {
-  background-color: transparent !important;
-}
-
 /* make the titlebar buttons black/white on default themes */
 :root:not(:-moz-lwtheme)[tabsintitlebar] .titlebar-buttonbox {
   color: var(--toolbar-color) !important;
