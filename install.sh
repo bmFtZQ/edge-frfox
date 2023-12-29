@@ -31,9 +31,7 @@ set_pref() {
 
 delete_pref() {
   echo "resetting $(echo $1 | cut -d '"' -f 2) to default";
-  Userjs=$PROFILE_ROOTDIR/user.js
-  grep -v $1 $Userjs > "$Userjs.tmp"
-  mv "$Userjs.tmp" $Userjs
+  sed -i "/$1/d" "$PROFILE_ROOTDIR/user.js"
 }
 
 ask_question() {
