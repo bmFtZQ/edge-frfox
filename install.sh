@@ -32,6 +32,10 @@ set_pref() {
 delete_pref() {
   echo "resetting $(echo $1 | cut -d '"' -f 2) to default";
   sed -i "/$1/d" "$PROFILE_ROOTDIR/user.js"
+
+  if $2; then
+    sed -i "/$1/d" "$PROFILE_ROOTDIR/prefs.js"
+  fi;
 }
 
 ask_question() {
@@ -82,6 +86,12 @@ if [[ $1 == "uninstall" ]]; then
     rm -rf $PROFILE_ROOTDIR/chrome;
   fi;
 
+  reset_all= ask_question "Reset settings in about:config to default? (a backup of user.js and prefs.js will be created if yes) [y/N]: " "n";
+  if $reset_all; then
+    cp "$PROFILE_ROOTDIR/prefs.js" "$PROFILE_ROOTDIR/prefs.js.bak";
+    cp "$PROFILE_ROOTDIR/user.js" "$PROFILE_ROOTDIR/user.js.bak";
+  fi;
+
   # Download changed user.js from online
   FETCHED_PREFS=();
   if ping -c 1 raw.githubusercontent.com &> /dev/null; then
@@ -93,7 +103,7 @@ if [[ $1 == "uninstall" ]]; then
   fi;
 
   for ((i = 0; i < ${#FETCHED_PREFS[@]}; i++)); do
-    delete_pref ${FETCHED_PREFS[i]};
+    delete_pref "${FETCHED_PREFS[i]}" $reset_all;
   done;
 
   ans="y"
@@ -112,7 +122,7 @@ if [[ $1 == "uninstall" ]]; then
       fi
     fi;
 
-    delete_pref $setting;
+    delete_pref "$setting" $reset_all;
   done;
 
   echo "uninstall complete."
@@ -132,7 +142,12 @@ fi
 
 echo "Copying theme folder...";
 cp -r $TMP_DIR/chrome $PROFILE_ROOTDIR;
-cat $TMP_DIR/user.js | tee -a $PROFILE_ROOTDIR/user.js >/dev/null;
+cat $TMP_DIR/user.js | 
+  while read line; do
+    if ! grep -qF "$line" $PROFILE_ROOTDIR/user.js; then
+      echo "$line" | tee -a $PROFILE_ROOTDIR/user.js >/dev/null;
+    fi;
+  done;
 
 #####################
 # OPTIONAL SETTINGS #
@@ -140,6 +155,10 @@ cat $TMP_DIR/user.js | tee -a $PROFILE_ROOTDIR/user.js >/dev/null;
 
 echo "Optional settings, refer to https://github.com/bmFtZQ/edge-frfox/tree/main#how-to-install";
 for ((i = 0; i < ${#OPTIONALS[@]}; i += 2)); do
+  if grep -qF "user_pref(\"${OPTIONALS[i]}\", ${OPTIONALS[i+1]});" $PROFILE_ROOTDIR/user.js; then
+    continue;
+  fi;
+
   if ! ask_question "Set ${OPTIONALS[i]} to ${OPTIONALS[i+1]}? [y/N]: " "n"; then
     continue;
   fi;
