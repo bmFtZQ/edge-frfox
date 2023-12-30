@@ -1,4 +1,5 @@
-/* Edge-Frfox - browser.css */
+/* Edge-Frfox - browser.css
+ * https://github.com/bmFtZQ/edge-frfox */
 
 /* Windows has 1px missing space on top of window. */
 @media (-moz-platform: windows) {
@@ -75,7 +76,7 @@
   }
 
   /* Apply rounded corners to the browser container. */
-  #appcontent .browserContainer {
+  #appcontent .browserStack {
     margin-inline: var(--uc-tweak-rounded-corners-padding) !important;
     margin-block-end: var(--uc-tweak-rounded-corners-padding) !important;
     border-radius: var(--uc-tweak-rounded-corners-radius) !important;
