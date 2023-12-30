@@ -10,14 +10,6 @@ $OPTIONALS=@{
   "browser.theme.dark-private-windows" = "false"
 };
 
-function append_to_file {
-  param (
-    $path,
-    $output
-  )
-
-  [System.IO.File]::AppendAllText([string]$path, [string[]]$output)
-}
 # UTILITY FUNCTIONS
 function set_pref {
   param (
@@ -26,7 +18,9 @@ function set_pref {
   )
 
   Write-Output "setting $pref to $bool in user.js";
-  append_to_file "$PROFILE_ROOTDIR\user.js" (Write-Output "user_pref(`"$pref`", $bool);" | ForEach-Object { $_ -replace ' +$','' })
+  $path="$PROFILE_ROOTDIR\user.js"
+  $output=(Write-Output "user_pref(`"$pref`", $bool);" | % { $_ -replace ' +$','' })
+  [System.IO.File]::AppendAllLines([string]$path, [string[]]$output)
 }
 
 function delete_pref {
@@ -158,7 +152,9 @@ if (!($?)) {
 
 Write-Host "Copying theme folder..."
 Copy-Item -Recurse -Path "$env:temp\$PROJECT_NAME-main\chrome" -Destination $PROFILE_ROOTDIR -Force
-append_to_file "$PROFILE_ROOTDIR\user.js" (Get-Content "$env:temp\$PROJECT_NAME-main\user.js")
+$path="$PROFILE_ROOTDIR\user.js"
+$output=(Get-Content "$env:temp\$PROJECT_NAME-main\user.js")
+[System.IO.File]::AppendAllLines([string]$path, [string[]]$output)
 
 # firefox will automatically sort out any duplicate issues, whatever is at the end of the file takes priority, so this works.
 Write-Output "Setting preferences...";
