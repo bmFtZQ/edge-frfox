@@ -31,14 +31,18 @@ function set_pref {
 
 function delete_pref {
   param (
-    $Pref
+    $Pref,
+    $Bool
   )
-
-  $Userjs="$PROFILE_ROOTDIR\user.js";
 
   Write-Output "resetting $Pref to default";
   (Get-Content "$PROFILE_ROOTDIR\user.js").Replace($Pref, "")  |  
-  Set-Content -Path $Userjs;
+  Set-Content -Path "$PROFILE_ROOTDIR\user.js";
+
+  if ($Bool) {
+    (Get-Content "$PROFILE_ROOTDIR\prefs.js").Replace($Pref, "")  |
+    Set-Content -Path "$PROFILE_ROOTDIR\prefs.js";
+  }
 }
 
 function ask_question {
@@ -86,6 +90,12 @@ if ($args[0] -eq "uninstall") {
   Write-Host "NOTE: This is the final opportunity to abort uninstallation by pressing Ctrl+C" -ForegroundColor Yellow;
   Remove-Item "$PROFILE_ROOTDIR\chrome" -Recurse -Confirm:$true -Force -ErrorAction SilentlyContinue;
 
+  $reset_all = ask_question "Reset settings in about:config to default? (a backup of user.js and prefs.js will be created if yes) [y/N]: " "n";
+  if ($reset_all) {
+    Copy-Item "$PROFILE_ROOTDIR\user.js" "$PROFILE_ROOTDIR\user.js.bak"
+    Copy-Item "$PROFILE_ROOTDIR\prefs.js" "$PROFILE_ROOTDIR\prefs.js.bak"
+  }
+
   # Download changed user.js from online
   $fail=$false
   Invoke-Webrequest -Uri "https://raw.githubusercontent.com/bmFtZQ/edge-frfox/main/user.js" -UseBasicParsing -OutFile "$env:temp\user.js"
@@ -99,7 +109,7 @@ if ($args[0] -eq "uninstall") {
     $FETCHED_PREFS= @()
     $FETCHED_PREFS += Select-String -Path "$env:temp\user.js" -Pattern "user_pref\(`"([a-zA-Z0-9.-]+)`",\s*(true|false)\);" | ForEach-Object {$_.Line -replace ".*\\", ""}
     foreach ($pref in $FETCHED_PREFS) {
-      delete_pref "$pref";
+      delete_pref "$pref" $reset_all;
     }
   } 
 
@@ -109,16 +119,16 @@ if ($args[0] -eq "uninstall") {
     $setting = "user_pref(`"${key}`", $($OPTIONALS[$key]));"
 
     if (-not ($ans.ToLower() -match "^(all|a)$")) {
-        $ans = "y"
-        $in = Read-Host -Prompt "Remove setting $setting from user.js? [Y/a/n]"
-        $ans = if ($in) { $in.ToLower() } else { $ans }
+      $ans = "y"
+      $in = Read-Host -Prompt "Remove setting $setting from user.js? [Y/a/n]"
+      $ans = if ($in) { $in.ToLower() } else { $ans }
 
-        if (-not ($ans -match "^(yes|y|all|a)$")) {
-            continue
-        }
+      if (-not ($ans -match "^(yes|y|all|a)$")) {
+        continue
+      }
     }
 
-    delete_pref $setting;
+    delete_pref "$setting" $reset_all;
   }
 
   Write-Output "uninstall complete.";
