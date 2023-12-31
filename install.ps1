@@ -6,7 +6,6 @@ $PROJECT_NAME=$($GITHUB_REPO.Split("/")[-1] -replace ".git", "")
 $FIREFOX_DIR="$env:APPDATA\Mozilla\Firefox";
 $PROFILE_ROOTDIR="$($FIREFOX_DIR)\Profiles\$((Select-String -Path "$($FIREFOX_DIR)\profiles.ini" -Pattern "Path=.*\.(dev-edition-default|default-.*)" | Select-Object -Last 1).Line.Substring(14))";
 $OPTIONALS=@{
-  "widget.macos.native-context-menus" = "false"
   "browser.theme.dark-private-windows" = "false"
 };
 
