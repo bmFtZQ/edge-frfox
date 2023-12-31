@@ -112,6 +112,10 @@ if ($args[0] -eq "uninstall") {
     $setting = "user_pref(`"${key}`", $($OPTIONALS[$key]));"
 
     if (-not ($ans.ToLower() -match "^(all|a)$")) {
+      if (!(Get-Content "$PROFILE_ROOTDIR\user.js").Contains($setting)) {
+        continue
+      }
+
       $ans = "y"
       $in = Read-Host -Prompt "Remove setting $setting from user.js? [Y/a/n]"
       $ans = if ($in) { $in.ToLower() } else { $ans }
@@ -153,7 +157,6 @@ Write-Host "Copying theme folder..."
 Copy-Item -Recurse -Path "$env:temp\$PROJECT_NAME-main\chrome" -Destination $PROFILE_ROOTDIR -Force
 $path="$PROFILE_ROOTDIR\user.js"
 (Get-Content "$env:temp\$PROJECT_NAME-main\user.js") | ForEach-Object { 
-  Write-Host "Adding $_ to user.js........................................................"
   if (Test-Path "$path") {
     if (! (Get-Content "$path").Contains($_)) {
       [System.IO.File]::AppendAllLines([string]$path, [string[]]$_) 
