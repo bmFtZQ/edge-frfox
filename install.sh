@@ -31,10 +31,15 @@ set_pref() {
 
 delete_pref() {
   echo "resetting $(echo $1 | cut -d '"' -f 2) to default";
-  sed -i "/$1/d" "$PROFILE_ROOTDIR/user.js"
+  case $(sed --help 2>&1) in
+    *GNU*) sed_i () { sed -i "$@"; };;
+    *) sed_i () { sed -i '' "$@"; };;
+  esac
+
+  sed_i "/$1/d" "$PROFILE_ROOTDIR/user.js"
 
   if $2; then
-    sed -i "/$1/d" "$PROFILE_ROOTDIR/prefs.js"
+    sed_i "/$1/d" "$PROFILE_ROOTDIR/prefs.js"
   fi;
 }
 
