@@ -122,6 +122,10 @@ if [[ $1 == "uninstall" ]]; then
     setting="user_pref(\"${OPTIONALS[i]}\", ${OPTIONALS[i+1]});";
 
     if [[ ! "$ans" =~ ^(all|a)$ ]]; then
+      if ! grep -qF "$setting" "$PROFILE_ROOTDIR/user.js" --no-messages; then
+        continue;
+      fi;
+
       ans="y"
       read -e -p "Remove setting $setting from user.js? [Y/a/n]: " in
       ans="${in:-$ans}";
