@@ -584,6 +584,7 @@ panelview .toolbarbutton-1,
   menuitem:is(.menuitem-iconic:not([data-usercontextid]), [type="checkbox"], [type="radio"], [checked], [selected]) .menu-iconic-icon {
     -moz-context-properties: fill !important;
     fill: currentColor !important;
+    appearance: none !important;
   }
 
   .menu-right,
