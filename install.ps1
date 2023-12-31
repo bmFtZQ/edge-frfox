@@ -155,7 +155,11 @@ Copy-Item -Recurse -Path "$env:temp\$PROJECT_NAME-main\chrome" -Destination $PRO
 $path="$PROFILE_ROOTDIR\user.js"
 (Get-Content "$env:temp\$PROJECT_NAME-main\user.js") | ForEach-Object { 
   Write-Host "Adding $_ to user.js........................................................"
-  if (! (Get-Content "$path").Contains($_)) {
+  if (Test-Path "$path") {
+    if (! (Get-Content "$path").Contains($_)) {
+      [System.IO.File]::AppendAllLines([string]$path, [string[]]$_) 
+    }
+  } else {
     [System.IO.File]::AppendAllLines([string]$path, [string[]]$_) 
   }
 }
@@ -163,8 +167,11 @@ $path="$PROFILE_ROOTDIR\user.js"
 # firefox will automatically sort out any duplicate issues, whatever is at the end of the file takes priority, so this works.
 Write-Output "Setting preferences...";
 foreach ($key in $OPTIONALS.Keys) {
-  if ((Get-Content "$PROFILE_ROOTDIR\user.js").Contains("user_pref(`"${key}`", $($OPTIONALS[$key]));")) {
-    continue
+  $path="$PROFILE_ROOTDIR\user.js";
+  if (Test-Path "$path") {
+    if ((Get-Content $path).Contains("user_pref(`"${key}`", $($OPTIONALS[$key]));")) {
+      continue
+    }
   }
 
   if (!(ask_question "Set $key to $($OPTIONALS[$key])? [y/N]" "n")) {
