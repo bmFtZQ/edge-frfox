@@ -86,7 +86,12 @@ if [[ $1 == "uninstall" ]]; then
     rm -rf "$PROFILE_ROOTDIR/chrome";
   fi;
 
-  reset_all= ask_question "Reset settings in about:config to default? (a backup of user.js and prefs.js will be created if yes) [y/N]: " "n";
+  if ask_question "Reset settings in about:config to default? (a backup of user.js and prefs.js will be created if yes) [y/N]: " "n"; then
+    reset_all=true;
+  else
+    reset_all=false;
+  fi;
+  
   if $reset_all; then
     cp "$PROFILE_ROOTDIR/prefs.js" "$PROFILE_ROOTDIR/prefs.js.bak";
     cp "$PROFILE_ROOTDIR/user.js" "$PROFILE_ROOTDIR/user.js.bak";
@@ -145,7 +150,7 @@ cp -r $TMP_DIR/chrome "$PROFILE_ROOTDIR";
 cat $TMP_DIR/user.js | 
   while read line; do
     path="$PROFILE_ROOTDIR/user.js";
-    if ! grep -qF "$line" "$path"; then
+    if ! grep -qF "$line" "$path" --no-messages; then
       echo "$line" >> "$path";
     fi;
   done;
@@ -156,7 +161,7 @@ cat $TMP_DIR/user.js |
 
 echo "Optional settings, refer to https://github.com/bmFtZQ/edge-frfox/tree/main#how-to-install";
 for ((i = 0; i < ${#OPTIONALS[@]}; i += 2)); do
-  if grep -qF "user_pref(\"${OPTIONALS[i]}\", ${OPTIONALS[i+1]});" "$PROFILE_ROOTDIR/user.js"; then
+  if grep -qF "user_pref(\"${OPTIONALS[i]}\", ${OPTIONALS[i+1]});" "$PROFILE_ROOTDIR/user.js" --no-messages; then
     continue;
   fi;
 
