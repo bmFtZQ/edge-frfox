@@ -26,7 +26,7 @@ RED='\033[0;31m'
 # UTILITY FUNCTIONS
 set_pref() {
   echo "setting $1 to $2 in user.js";
-  echo "user_pref(\"$1\", $2);" >> $PROFILE_ROOTDIR/user.js;
+  echo "user_pref(\"$1\", $2);" >> "$PROFILE_ROOTDIR/user.js";
 }
 
 delete_pref() {
@@ -83,7 +83,7 @@ fi
 if [[ $1 == "uninstall" ]]; then
   echo -e "${YELLOW}NOTE: This is the final opportunity to abort uninstallation by pressing Ctrl+C${NC}";
   if ask_question "Delete all files in $PROFILE_ROOTDIR/chrome? [Y/n]: " "y"; then
-    rm -rf $PROFILE_ROOTDIR/chrome;
+    rm -rf "$PROFILE_ROOTDIR/chrome";
   fi;
 
   reset_all= ask_question "Reset settings in about:config to default? (a backup of user.js and prefs.js will be created if yes) [y/N]: " "n";
@@ -141,11 +141,12 @@ if ! curl -L "https://github.com/bmFtZQ/edge-frfox/archive/refs/heads/main.tar.g
 fi
 
 echo "Copying theme folder...";
-cp -r $TMP_DIR/chrome $PROFILE_ROOTDIR;
+cp -r $TMP_DIR/chrome "$PROFILE_ROOTDIR";
 cat $TMP_DIR/user.js | 
   while read line; do
-    if ! grep -qF "$line" $PROFILE_ROOTDIR/user.js; then
-      echo "$line" >> "$PROFILE_ROOTDIR/user.js";
+    path="$PROFILE_ROOTDIR/user.js";
+    if ! grep -qF "$line" "$path"; then
+      echo "$line" >> "$path";
     fi;
   done;
 
@@ -155,7 +156,7 @@ cat $TMP_DIR/user.js |
 
 echo "Optional settings, refer to https://github.com/bmFtZQ/edge-frfox/tree/main#how-to-install";
 for ((i = 0; i < ${#OPTIONALS[@]}; i += 2)); do
-  if grep -qF "user_pref(\"${OPTIONALS[i]}\", ${OPTIONALS[i+1]});" $PROFILE_ROOTDIR/user.js; then
+  if grep -qF "user_pref(\"${OPTIONALS[i]}\", ${OPTIONALS[i+1]});" "$PROFILE_ROOTDIR/user.js"; then
     continue;
   fi;
 
