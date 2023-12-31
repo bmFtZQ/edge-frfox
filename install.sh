@@ -91,7 +91,7 @@ if [[ $1 == "uninstall" ]]; then
   else
     reset_all=false;
   fi;
-  
+
   if $reset_all; then
     cp "$PROFILE_ROOTDIR/prefs.js" "$PROFILE_ROOTDIR/prefs.js.bak";
     cp "$PROFILE_ROOTDIR/user.js" "$PROFILE_ROOTDIR/user.js.bak";
@@ -116,13 +116,14 @@ if [[ $1 == "uninstall" ]]; then
   for ((i = 0; i < ${#OPTIONALS[@]}; i+=2)); do
     setting="user_pref(\"${OPTIONALS[i]}\", ${OPTIONALS[i+1]});";
 
-    if [[ ! ${ans,,} =~ ^(all|a)$ ]]; then
+    if [[ ! "$ans" =~ ^(all|a)$ ]]; then
       ans="y"
       read -e -p "Remove setting $setting from user.js? [Y/a/n]: " in
       ans="${in:-$ans}";
+      ans="$(echo "$ans" | tr '[:upper:]' '[:lower:]')"
 
       
-      if [[ ! ${ans,,} =~ ^(yes|y|all|a)$ ]]; then
+      if [[ ! "$ans" =~ ^(yes|y|all|a)$ ]]; then
         continue;
       fi
     fi;
