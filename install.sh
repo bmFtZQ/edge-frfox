@@ -43,12 +43,16 @@ delete_pref() {
   fi;
 }
 
+to_lowercase() {
+  echo "$1" | tr "[:upper:]" "[:lower:]"
+}
+
 ask_question() {
   local defaultAns="$2"
   
   read -e -p "$1" in
   defaultAns="${in:-$defaultAns}";
-  defaultAns="$(echo $defaultAns | tr '[:upper:]' '[:lower:]')"
+  defaultAns="$(to_lowercase "$defaultAns")"
   [[ $defaultAns =~ ^(yes|y)$ ]];
 }
 
@@ -129,8 +133,7 @@ if [[ $1 == "uninstall" ]]; then
       ans="y"
       read -e -p "Remove setting $setting from user.js? [Y/a/n]: " in
       ans="${in:-$ans}";
-      ans="$(echo "$ans" | tr '[:upper:]' '[:lower:]')"
-
+      ans=$(to_lowercase "$ans");
       
       if [[ ! "$ans" =~ ^(yes|y|all|a)$ ]]; then
         continue;
