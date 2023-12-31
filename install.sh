@@ -145,7 +145,7 @@ cp -r $TMP_DIR/chrome $PROFILE_ROOTDIR;
 cat $TMP_DIR/user.js | 
   while read line; do
     if ! grep -qF "$line" $PROFILE_ROOTDIR/user.js; then
-      echo "$line" | tee -a $PROFILE_ROOTDIR/user.js >/dev/null;
+      echo "$line" >> "$PROFILE_ROOTDIR/user.js";
     fi;
   done;
 
