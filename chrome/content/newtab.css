@@ -48,6 +48,22 @@ url-prefix("about:firefoxview") {
     --newtab-status-success: #50B080 !important;
   }
 
+  /* Custom GTK colours. */
+  @media (-moz-gtk-csd-available) {
+    :root:not([lwt-newtab]):not([style*="color"]) {
+      /* Colour adjusted for readability. */
+      --uc-accent-adjusted: light-dark(
+        color-mix(in oklch, AccentColor 92%, black),
+        color-mix(in oklch, AccentColor 60%, white)
+      );
+      --newtab-background-color: light-dark(-moz-dialog, color-mix(in srgb, -moz-dialog 82%, black)) !important;
+      --newtab-background-color-secondary: light-dark(Field, color-mix(in srgb, -moz-dialog 86%, white)) !important;
+      --newtab-text-primary-color: -moz-dialogtext !important;
+      --newtab-wordmark-color: light-dark(color-mix(in srgb, -moz-dialogtext 65%, transparent), -moz-dialogtext) !important;
+      --newtab-primary-action-background: var(--uc-accent-adjusted) !important;
+    }
+  }
+
   /* Adjustments for themes. */
   :root[style*="--newtab-background-color"] {
     /* Make the Firefox logo workmark follow text colour. */
@@ -73,6 +89,11 @@ url-prefix("about:firefoxview") {
 
 @-moz-document url-prefix("about:newtab"),
 url-prefix("about:home") {
+  /* Enforce system font selection. */
+  body {
+    font-family: system-ui !important;
+  }
+
   /* hide pin */
   .icon.icon-pin-small {
     display: none !important;
@@ -115,6 +136,10 @@ url-prefix("about:home") {
 
   .search-disabled .search-handoff-button {
     opacity: 0 !important;
+  }
+
+  .icon-settings {
+    background-image: url("../icons/settings.svg") !important;
   }
 
   /* top sites */
@@ -188,6 +213,22 @@ url-prefix("about:home") {
 
     @media (-moz-bool-pref: "browser.theme.dark-private-windows") {
       color-scheme: dark !important;
+    }
+  }
+
+  /* Custom GTK colours. */
+  @media (-moz-gtk-csd-available) {
+    :root:not([lwt-newtab]):not([style*="color"]) {
+      /* Colour adjusted for readability. */
+      --uc-accent-adjusted: light-dark(
+        color-mix(in oklch, AccentColor 92%, black),
+        color-mix(in oklch, AccentColor 60%, white)
+      );
+
+      --in-content-page-background: light-dark(-moz-dialog, color-mix(in srgb, -moz-dialog 82%, black)) !important;
+      --uc-background-color-secondary: light-dark(Field, color-mix(in srgb, -moz-dialog 86%, white)) !important;
+      --in-content-page-color: -moz-dialogtext !important;
+      --in-content-focus-outline-color: var(--uc-accent-adjusted) !important;
     }
   }
 
