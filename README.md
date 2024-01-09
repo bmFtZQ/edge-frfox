@@ -26,12 +26,14 @@ Attach `-ArgumentList $('uninstall')` **inside the quotes** at the end to uninst
 2. Download the repository and extract the files.
 3. From the repository folder, copy the `chrome` folder and `user.js` file into your Firefox profile folder.
 4. Close and restart Firefox, if performed correctly, the theme should now be installed.
-5. Optionally, listed below are some settings that can be changed using `about:config`:
+5. Optionally, listed below are some additional Firefox settings that can be changed using `about:config`:
 
-   | Description                              | Preference Name                      | Value   |
-   | ---------------------------------------- | ------------------------------------ | ------- |
-   | Use Edge-themed context menu on macOS    | `widget.macos.native-context-menus`  | `false` |
-   | Use light theme in private browsing mode | `browser.theme.dark-private-windows` | `false` |
+   | Description                                                                                           | Preference Name                                      | Value   |
+   | ----------------------------------------------------------------------------------------------------- | ---------------------------------------------------- | ------- |
+   | Use Edge-themed context menu on macOS                                                                 | `widget.macos.native-context-menus`                  | `false` |
+   | Use light theme in private browsing mode                                                              | `browser.theme.dark-private-windows`                 | `false` |
+   | Use rounded bottom window corners on Linux                                                            | `widget.gtk.rounded-bottom-corners.enabled `         | `true`  |
+   | Use Windows accent colour in tabs toolbar (must use Windows 'show accent colour in title bar' option) | `browser.theme.windows.accent-color-in-tabs.enabled` | `true`  |
 
    Additional tweaks can also be applied to the theme such as Floating tabs, Rounded browser corners and more. See [Tweaks](#tweaks).
 
@@ -43,6 +45,7 @@ Attach `-ArgumentList $('uninstall')` **inside the quotes** at the end to uninst
 | Default (Windows 11)                         | ![Light][s-light]                        | ![Dark][s-dark]                        |
 | Floating Tabs + Rounded Corners (Windows 11) | ![Light, Floating Tabs][s-light-ft]      | ![Dark, Floating Tabs][s-dark-ft]      |
 | Hide Tabs Bar + Rounded Corners (macOS)      | ![Light, Hide Tabs Bar][s-light-mac-htb] | ![Dark, Hide Tabs Bar][s-dark-mac-htb] |
+| Rounded Corners (Linux, Ubuntu Yaru theme)   | ![Light, Rounded Corners][s-light-linux] | ![Dark, Rounded Corners][s-dark-linux] |
 
 ## Tweaks
 Certain tweaks can be applied to the theme, to enable them navigate to `about:config` and create a boolean key for each tweak you want to use and set it to `true`.
@@ -67,7 +70,7 @@ redesign of Edge.
 ---
 
 ### Hide tabs toolbar
-This hides the tabs toolbar and is useful when using vertical tab addons such as
+This hides the tabs toolbar, useful for when using vertical tab addons such as
 Sidebery, Tree Style Tab or Tab Center Reborn.
 
 **Note: Only works on Windows or macOS.**
@@ -178,13 +181,6 @@ Disable the custom Edge-themed context menu and use the default Firefox menus.
 
 ---
 
-## Mica Tweak Notice
-Mica is broken due to changes made in the Firefox 115 update, Mica has now been
-removed from this theme.
-
-If you still have `uc.tweak.win11-mica` set in `about:config` you can safely
-delete it.
-
 ## Acknowledgements
 [muckSponge](https://github.com/muckSponge) - [MaterialFox](https://github.com/muckSponge/MaterialFox)
 
@@ -199,8 +195,10 @@ delete it.
 [s-light]: screenshots/Windows_default_light.png
 [s-light-ft]: screenshots/Windows_floating-tabs_light.png
 [s-light-mac-htb]: screenshots/macOS_hide-tabs-bar_light.png
+[s-light-linux]: screenshots/Linux_light.png
 
 <!-- dark mode screenshot links -->
 [s-dark]: screenshots/Windows_default_dark.png
 [s-dark-ft]: screenshots/Windows_floating-tabs_dark.png
 [s-dark-mac-htb]: screenshots/macOS_hide-tabs-bar_dark.png
+[s-dark-linux]: screenshots/Linux_dark.png

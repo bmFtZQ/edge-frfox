@@ -1,4 +1,4 @@
-/* Edge-Frfox */
+/* Edge-Frfox main files */
 @import url("icons/icons.css");
 @import url("toolbar/tabbar.css");
 @import url("toolbar/navbar.css");
@@ -7,9 +7,12 @@
 @import url("toolbar/urlbar.css");
 @import url("global/colors.css");
 @import url("global/popup.css");
-@import url("global/tweaks.css");
 @import url("global/browser.css");
 @import url("global/tree.css");
 
-/* import custom stylesheet instead of modifying Edge-Frfox theme files */
+/* Edge-Frfox tweaks */
+@import url("global/tweaks.css");
+@import url("tweaks/hide-tabs-bar.css") (-moz-bool-pref: "uc.tweak.hide-tabs-bar");
+
+/* Import custom stylesheet instead of modifying Edge-Frfox theme files. */
 @import url("custom.css");

@@ -41,14 +41,12 @@
 }
 
 /* Fix window background colours. */
-@media not (-moz-gtk-csd-available) {
-  :root:not(:-moz-lwtheme) #navigator-toolbox {
-    background-color: var(--lwt-accent-color) !important;
-    color: var(--lwt-text-color) !important;
-  }
+#navigator-toolbox:not(:-moz-lwtheme) {
+  background-color: var(--lwt-accent-color) !important;
+  color: var(--lwt-text-color) !important;
 
   /* Inactive window background colours. */
-  :root:not(:-moz-lwtheme) #navigator-toolbox:-moz-window-inactive {
+  &:-moz-window-inactive {
     background-color: var(--lwt-accent-color-inactive, var(--lwt-accent-color)) !important;
     color: var(--lwt-text-color-inactive, var(--lwt-text-color)) !important;
   }
@@ -206,6 +204,19 @@
     }
   }
 }
+
+/* Linux titlebar button positioning. */
+@media (-moz-platform: linux) {
+  .titlebar-buttonbox-container {
+    /* Add space between buttons and other toolbar buttons. */
+    margin-inline: 8px 0 !important;
+    
+    @media (-moz-gtk-csd-reversed-placement) {
+      /* Compensate for padding added to the Tabs Toolbar. */
+      margin-inline: -8px 8px !important;
+    }
+  }
+}
 /* #endregion */
 
 
@@ -224,11 +235,11 @@
   }
 
   /* Enforce tab foreground colour. */
-  &:is([visuallyselected], [multiselected]):not(:-moz-lwtheme) {
+  &:is([visuallyselected], [multiselected]) {
     color: var(--tab-selected-textcolor) !important;
 
     &:-moz-window-inactive {
-      color: var(--tab-selected-textcolor-inactive) !important;
+      color: var(--tab-selected-textcolor-inactive, var(--tab-selected-textcolor)) !important;
     }
   }
 }
@@ -649,23 +660,13 @@
   /* Alternate gradient, fades to transparent on both sides. */
   --uc-gradient-alt: linear-gradient(to right, transparent, var(--uc-bg-color) 25%, var(--uc-bg-color) 75%, transparent);
 
-  /* On Linux, the background should be a different colour. */
-  @media (-moz-gtk-csd-available) {
-    &:not(:-moz-lwtheme) {
-      --uc-bg-color: -moz-accent-color !important;
-      color: -moz-accent-color-foreground !important;
-    }
-  }
-
   /* If the titlebar buttons are on the right, then use the alternate gradient
    * if the menu bar is not permanently enabled.
    */
   @media (-moz-platform: windows),
-  (-moz-gtk-csd-available) {
-    @media not (-moz-gtk-csd-reversed-placement) {
-      :root[tabsintitlebar] #toolbar-menubar:not([autohide="false"]) ~ #TabsToolbar & {
-        background: var(--uc-gradient-alt);
-      }
+  (-moz-gtk-csd-available) and (not (-moz-gtk-csd-reversed-placement)) {
+    :root[tabsintitlebar] #toolbar-menubar:not([autohide="false"]) ~ #TabsToolbar & {
+      background: var(--uc-gradient-alt);
     }
   }
 

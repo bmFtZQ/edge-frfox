@@ -612,9 +612,10 @@ panelview .toolbarbutton-1,
   }
 
   menuitem[checked="true"] > .menu-iconic-left,
-  .menu-iconic > .menu-iconic-left,
-  .menuitem-iconic > .menu-iconic-left {
+  menu > .menu-iconic-left,
+  menuitem > .menu-iconic-left {
     margin: 0 !important;
+    padding: 0 !important
   }
 
   #context-navigation:not([hidden]) {
