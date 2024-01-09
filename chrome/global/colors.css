@@ -6,7 +6,7 @@
 /* `--newtab-background-color-secondary used` to differentiate between a dark
  * private window and private window with the 'Dark' theme enabled.
  * May not be the most reliable method, but works for now up to FF 123. */
-:root[privatebrowsingmode="temporary"][style*="--lwt-accent-color: rgb(28, 27, 34)"]:not([style*="--newtab-background-color-secondary: rgb(66, 65, 77)"]) {
+:root[privatebrowsingmode="temporary"]:where([style*="--lwt-accent-color: rgb(28, 27, 34)"]:not([style*="--newtab-background-color-secondary: rgb(66, 65, 77)"])) {
   /* Toolbars */
   --lwt-accent-color: light-dark(#cecece, #1C1C1C) !important;
   --lwt-accent-color-inactive: light-dark(#e8e8e8, #2e2e2e) !important;
@@ -26,8 +26,8 @@
   --newtab-background-color: light-dark(#f7f7f7, #252525) !important;
   --tabpanel-background-color: var(--newtab-background-color, var(--toolbar-bgcolor, transparent)) !important;
   /* Toolbar button overlays */
-  --toolbarbutton-hover-background: light-dark(rgb(0 0 0 / .08), rgb(255 255 255 / .08)) !important;
-  --toolbarbutton-active-background: light-dark(rgb(0 0 0 / .135), rgb(255 255 255 / .135)) !important;
+  --toolbarbutton-hover-background: color-mix(in srgb, currentColor 8%, transparent) !important;
+  --toolbarbutton-active-background: color-mix(in srgb, currentColor 13.5%, transparent) !important;
   /* Tab audio indicator overlay icon */
   --tab-icon-overlay-fill: var(--toolbar-color) !important;
   --tab-icon-overlay-stroke: var(--toolbar-bgcolor) !important;
@@ -152,6 +152,16 @@
     border-color: var(--arrowpanel-border-color) !important;
   }
 
+  /* Use accent colour in titlebar when Windows option is enabled. */
+  @media (-moz-windows-accent-color-in-titlebar) and (-moz-bool-pref: "browser.theme.windows.accent-color-in-tabs.enabled") {
+    :root:not(:-moz-lwtheme) {
+      --lwt-accent-color: ActiveCaption !important;
+      --lwt-text-color: CaptionText !important;
+      --lwt-accent-color-inactive: InActiveCaption !important;
+      --lwt-text-color-inactive: InActiveCaptionText !important;
+    }
+  }
+
   .titlebar-button:not(.titlebar-close):hover {
     background-color: color-mix(in srgb, currentColor 11%, transparent) !important;
 
@@ -251,7 +261,7 @@
   /* `--newtab-background-color-secondary used` to differentiate between a dark
    * private window and private window with the 'Dark' theme enabled.
    * May not be the most reliable method, but works for now up to FF 123. */
-  :root[privatebrowsingmode="temporary"][style*="--lwt-accent-color: rgb(28, 27, 34)"]:not([style*="--newtab-background-color-secondary: rgb(66, 65, 77)"]) {
+  :root[privatebrowsingmode="temporary"]:where([style*="--lwt-accent-color: rgb(28, 27, 34)"]:not([style*="--newtab-background-color-secondary: rgb(66, 65, 77)"])) {
     /* Used for mixing colours differently in light/dark themes. */
     --uc-tint: light-dark(black, white);
     /* Colour adjusted for readability. */
@@ -287,9 +297,6 @@
     --urlbarView-highlight-color: var(--toolbar-field-color) !important;
     --urlbarView-hover-background: var(--panel-item-active-bgcolor) !important;
     --urlbarView-separator-color: var(--panel-separator-color) !important;
-    /* Toolbar button hover & click backgrounds. */
-    --toolbarbutton-hover-background: color-mix(in srgb, -moz-dialogtext 8%, transparent) !important;
-    --toolbarbutton-active-background: color-mix(in srgb, -moz-dialogtext 13.5%, transparent) !important;
     /* Menus/panels */
     --arrowpanel-background: Field !important;
     --arrowpanel-color: FieldText !important;

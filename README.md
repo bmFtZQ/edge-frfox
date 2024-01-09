@@ -13,11 +13,12 @@ Screenshot: macOS / Firefox 120 / Tweaks: rounded corners, hide forward button.
 4. Close and restart Firefox, if performed correctly, the theme should now be installed.
 5. Optionally, listed below are some additional Firefox settings that can be changed using `about:config`:
 
-   | Description                                | Preference Name                              | Value   |
-   | ------------------------------------------ | -------------------------------------------- | ------- |
-   | Use Edge-themed context menu on macOS      | `widget.macos.native-context-menus`          | `false` |
-   | Use light theme in private browsing mode   | `browser.theme.dark-private-windows`         | `false` |
-   | Use rounded bottom window corners on Linux | `widget.gtk.rounded-bottom-corners.enabled ` | `true`  |
+   | Description                                                                                           | Preference Name                                      | Value   |
+   | ----------------------------------------------------------------------------------------------------- | ---------------------------------------------------- | ------- |
+   | Use Edge-themed context menu on macOS                                                                 | `widget.macos.native-context-menus`                  | `false` |
+   | Use light theme in private browsing mode                                                              | `browser.theme.dark-private-windows`                 | `false` |
+   | Use rounded bottom window corners on Linux                                                            | `widget.gtk.rounded-bottom-corners.enabled `         | `true`  |
+   | Use Windows accent colour in tabs toolbar (must use Windows 'show accent colour in title bar' option) | `browser.theme.windows.accent-color-in-tabs.enabled` | `true`  |
 
    Additional tweaks can also be applied to the theme such as Floating tabs, Rounded browser corners and more. See [Tweaks](#tweaks).
 
