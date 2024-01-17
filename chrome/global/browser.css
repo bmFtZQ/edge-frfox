@@ -60,6 +60,10 @@
 
     @media (-moz-bool-pref: "uc.tweak.floating-tabs") {
       --browser-frame-bgcolor: var(--lwt-accent-color);
+
+      &:-moz-window-inactive {
+        --browser-frame-bgcolor: var(--lwt-accent-color-inactive, var(--lwt-accent-color));
+      }
     }
   }
 

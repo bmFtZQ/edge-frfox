@@ -162,15 +162,6 @@ Disable the custom Edge-themed context menu and use the default Firefox menus.
 
 ---
 
-### Use system accent colours
-Uses the system titlebar colours for the tabs toolbar, this can be useful if you
-use the Windows option: 'Show accent colour on title bars and windows borders',
-as the Firefox titlebar will match other windows.
-
-`uc.tweak.colors.system-accent-color`
-
----
-
 ## Acknowledgements
 [muckSponge](https://github.com/muckSponge) - [MaterialFox](https://github.com/muckSponge/MaterialFox)
 
