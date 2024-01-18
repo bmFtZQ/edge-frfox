@@ -212,3 +212,10 @@ bugs with certain themes eg. dark text on dark background.) */
     display: none !important;
   }
 }
+
+@media (-moz-bool-pref: "uc.tweak.context-menu.hide-firefox-account") {
+  #appMenu-fxa-status2,
+  #appMenu-fxa-separator {
+    display: none !important;
+  }
+}

@@ -162,6 +162,14 @@ Disable the custom Edge-themed context menu and use the default Firefox menus.
 
 ---
 
+### Hide Firefox account from app menu
+Hides the Firefox account menu item from the app menu (button with three dots),
+the Firefox account menu can still be accessed from the Firefox account button.
+
+`uc.tweak.context-menu.hide-firefox-account`
+
+---
+
 ## Acknowledgements
 [muckSponge](https://github.com/muckSponge) - [MaterialFox](https://github.com/muckSponge/MaterialFox)
 
