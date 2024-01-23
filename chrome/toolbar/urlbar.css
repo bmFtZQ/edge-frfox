@@ -8,10 +8,11 @@
   --urlbar-icon-border-radius: 99px !important;
   --urlbar-icon-padding: calc(var(--toolbarbutton-inner-padding) - 2px) !important;
   --urlbar-margin-inline: 6px !important;
-  --identity-box-margin-inline: 4px !important;
+  --identity-box-margin-inline: 6px !important;
   --uc-urlbar-icon-inline-padding: calc(var(--uc-toolbarbutton-inner-inline-padding) - 2px);
-  --uc-urlbar-inline-padding: 5px;
+  --uc-urlbar-inline-padding: 6px;
   --uc-urlbar-shadow: 0 0 4px rgb(0 0 0 / .1);
+  --urlbarView-rich-suggestion-default-icon-size: 32px !important;
 
   /* urlbar height */
   & #urlbar-container {
@@ -26,7 +27,7 @@
 
   /* Spacing for urlbar suggestion icons. */
   .urlbarView-row {
-    --urlbarView-icon-margin-start: 0 !important;
+    --urlbarView-icon-margin-start: 0px !important;
     --urlbarView-icon-margin-end: calc(var(--uc-urlbar-icon-inline-padding) + var(--identity-box-margin-inline)) !important;
   }
 }
@@ -86,6 +87,12 @@
 
   & .urlbarView-row-inner {
     padding-block: 8px !important;
+  }
+
+  /* Vertically align search suggestion thumbnail images. */
+  &[rich-suggestion] > .urlbarView-row-inner > .urlbarView-favicon {
+    margin-inline-start: calc(var(--urlbarView-icon-margin-start) + (16px - var(--urlbarView-rich-suggestion-default-icon-size)) / 2) !important;
+    margin-inline-end: calc(var(--urlbarView-icon-margin-end) + (16px - var(--urlbarView-rich-suggestion-default-icon-size)) / 2) !important;
   }
 }
 
