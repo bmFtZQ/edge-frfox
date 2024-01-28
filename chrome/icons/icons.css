@@ -941,6 +941,7 @@
   border-radius: 99px;
   display: inline-block;
   height: 16px;
+  vertical-align: text-bottom;
 }
 
 #PanelUI-bookmarks .panel-header>h1>span::before {

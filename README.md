@@ -70,16 +70,12 @@ redesign of Edge.
 ---
 
 ### Hide tabs toolbar
-This hides the tabs toolbar, useful for when using vertical tab addons such as
+This hides the tabs toolbar when using a vertical tabs extension such as
 Sidebery, Tree Style Tab or Tab Center Reborn.
 
 **Note: Only works on Windows or macOS.**
 
 `uc.tweak.hide-tabs-bar`
-
-**Optional: Only enable when in fullscreen mode (macOS only).**
-
-`uc.tweak.hide-tabs-bar.only-when-maximised`
 
 ---
 
@@ -178,6 +174,14 @@ Windows users.
 Disable the custom Edge-themed context menu and use the default Firefox menus.
 
 `uc.tweak.revert-context-menu`
+
+---
+
+### Hide Firefox account from app menu
+Hides the Firefox account menu item from the app menu (button with three dots),
+the Firefox account menu can still be accessed from the Firefox account button.
+
+`uc.tweak.context-menu.hide-firefox-account`
 
 ---
 

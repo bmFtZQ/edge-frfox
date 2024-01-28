@@ -40,24 +40,6 @@
   }
 }
 
-/* Fix window background colours. */
-#navigator-toolbox:not(:-moz-lwtheme) {
-  background-color: var(--lwt-accent-color) !important;
-  color: var(--lwt-text-color) !important;
-
-  /* Inactive window background colours. */
-  &:-moz-window-inactive {
-    background-color: var(--lwt-accent-color-inactive, var(--lwt-accent-color)) !important;
-    color: var(--lwt-text-color-inactive, var(--lwt-text-color)) !important;
-  }
-}
-
-/* Make sure that the tab toolbar opacity is always 1, inactive window colours
- * are already supplied by this theme. */
-:root[tabsintitlebar] #titlebar:-moz-window-inactive {
-  opacity: 1 !important;
-}
-
 /* ::::: Tab transitions ::::: */
 
 /* Tab grow/shrink transition. */
