@@ -310,6 +310,88 @@
   fill-opacity: 1 !important;
 }
 
+/* ::::: Extensions Pop-up ::::: */
+/* #region */
+
+.toolbaritem-combined-buttons:is(:not([cui-areatype="toolbar"]), [overflowedItem="true"]) > toolbarbutton:not(.toolbarbutton-1)[disabled] {
+  opacity: 1 !important;
+  color: var(--panel-disabled-color) !important;
+}
+
+/* Removes space above extensions items. */
+#unified-extensions-messages-container {
+  margin-block: 0 !important;
+}
+
+:root {
+  --uei-icon-size: 24px !important;
+}
+
+@media (-moz-bool-pref: "uc.tweak.context-menu.compact-extensions-menu") {
+  :root {
+    --uei-icon-size: 16px !important;
+  }
+
+  /* Hide site access permissions label. */
+  .unified-extensions-item-message-deck {
+    display: none !important;
+  }
+
+  /* Use smaller toolbar extension icon if available. */
+  toolbaritem:is([overflowedItem="true"], [cui-areatype="panel"]) > .webextension-browser-action {
+    list-style-image: var(--webextension-toolbar-image, var(--webextension-menupanel-image, inherit)) !important;
+  }
+}
+
+/* Use smaller font-size in extensions menu on Windows. */
+@media (-moz-platform: windows) {
+  #unified-extensions-panel .toolbarbutton-text {
+    font: menu !important;
+  }
+}
+
+/* Prevent extension labels from using >1 line, adding ellipsis if necessary. */
+.unified-extensions-item-contents {
+  flex: 1 !important;
+
+  & > .unified-extensions-item-name,
+  & > .unified-extensions-item-message-deck > .unified-extensions-item-message {
+    max-width: calc(100% - 4px) !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+}
+
+/* Extension item menu button. */
+.unified-extensions-item-menu-button {
+  padding: 0 !important;
+
+  & > .toolbarbutton-icon {
+    border: none !important;
+    padding-inline: var(--arrowpanel-menuitem-padding-inline) !important;
+    padding-block: var(--arrowpanel-menuitem-padding-block) !important;
+    margin-inline-start: var(--uc-arrowpanel-menuitem-margin-inline) !important;
+  }
+}
+
+/* Add grayscale filter to extensions with no access to current site. */
+.unified-extensions-list .unified-extensions-item-action-button:has(.unified-extensions-item-message[data-l10n-id="origin-controls-state-no-access"]) .unified-extensions-item-icon {
+  filter: grayscale(1) !important;
+}
+
+/* Adjust spacing between the extension item's icon and label. */
+.unified-extensions-item-name,
+.unified-extensions-item-message {
+  padding-inline-start: var(--uc-arrowpanel-menuicon-margin-inline) !important;
+}
+
+.unified-extensions-item-icon,
+.unified-extensions-item .webextension-browser-action > .toolbarbutton-badge-stack {
+  margin-inline-end: 0 !important;
+}
+/* #endregion */
+
 /* auto complete popup */
 #PopupAutoComplete {
   /* workaround for inaccessible shadow-root element

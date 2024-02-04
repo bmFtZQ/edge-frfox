@@ -170,6 +170,14 @@ the Firefox account menu can still be accessed from the Firefox account button.
 
 ---
 
+### Compact Extensions Menu
+Makes the unified extensions menu more compact, and closer to the design seen in
+Edge. This hides the permissions indicator label and makes the icons smaller.
+
+`uc.tweak.context-menu.compact-extensions-menu`
+
+---
+
 ## Acknowledgements
 [muckSponge](https://github.com/muckSponge) - [MaterialFox](https://github.com/muckSponge/MaterialFox)
 

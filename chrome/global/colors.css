@@ -58,7 +58,7 @@
   --arrowpanel-dimmed-further: light-dark(#707070, #707070) !important;
   --panel-separator-color: light-dark(#dadada, #636363) !important;
   --panel-description-color: light-dark(#000a, #fffb) !important;
-  --panel-disabled-color: light-dark(#9E9E9E, #ABABAA) !important;
+  --panel-disabled-color: light-dark(#9E9E9E, #B9B9B9) !important;
   --panel-item-hover-bgcolor: light-dark(#eee, #646464) !important;
   --panel-item-active-bgcolor: light-dark(#ddd, #747474) !important;
   --panel-banner-item-update-supported-bgcolor: light-dark(#188038, #81C995) !important;
