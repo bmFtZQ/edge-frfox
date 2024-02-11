@@ -56,6 +56,11 @@
   transition: transform 200ms cubic-bezier(0, .75, .25, 1) !important;
 }
 
+/* Remove tab toolbar background transition on inactive windows. */
+#navigator-toolbox {
+  transition: none !important;
+}
+
 /* ::::: Tabs toolbar & button appearance ::::: */
 /* #region */
 

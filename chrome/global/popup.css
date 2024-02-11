@@ -347,6 +347,7 @@
 @media (-moz-platform: windows) {
   #unified-extensions-panel .toolbarbutton-text {
     font: menu !important;
+    font-family: inherit !important;
   }
 }
 
