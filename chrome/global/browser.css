@@ -92,9 +92,30 @@
     margin-inline: var(--uc-tweak-rounded-corners-padding) !important;
     margin-block-end: var(--uc-tweak-rounded-corners-padding) !important;
     border-radius: var(--uc-tweak-rounded-corners-radius) !important;
-    overflow: hidden !important;
     box-shadow: var(--uc-tweak-rounded-corners-shadow) !important;
     background-color: var(--tabpanel-background-color) !important;
+    position: relative !important;
+
+    /* Use pseudo element overlay to simulate rounded corners, similar to the
+     * tab corners, fixes bug with backdrop-filter. */
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      /* Draw toolbar background on the negative corner space, then draw the
+       * same from the browser window shadow on top. */
+      box-shadow:
+        var(--uc-tweak-rounded-corners-shadow, 0 0 transparent),
+        0 0 0 16px var(--browser-frame-bgcolor) !important;
+      clip-path: inset(0);
+      pointer-events: none;
+    }
+  }
+
+  /* Prevent status panel corners and shadow from appearing outside the browser. */
+  #statuspanel {
+    overflow: hidden;
   }
 
   /* Apply rounded corners to sidebar. */
