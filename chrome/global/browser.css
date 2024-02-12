@@ -104,7 +104,7 @@
       inset: 0;
       border-radius: inherit;
       /* Draw toolbar background on the negative corner space, then draw the
-       * same from the browser window shadow on top. */
+       * same shadow from the browser window on top. */
       box-shadow:
         var(--uc-tweak-rounded-corners-shadow, 0 0 transparent),
         0 0 0 16px var(--browser-frame-bgcolor) !important;

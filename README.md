@@ -58,8 +58,6 @@ redesign of Edge.
 This hides the tabs toolbar when using a vertical tabs extension such as
 Sidebery, Tree Style Tab or Tab Center Reborn.
 
-**Note: Only works on Windows or macOS.**
-
 `uc.tweak.hide-tabs-bar`
 
 ---

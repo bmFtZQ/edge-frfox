@@ -24,6 +24,20 @@
     padding-top: var(--uc-tab-top-margin, 0) !important;
   }
 
+  /* Set background colour of the menu bar to maintain consistency with the navbar */
+  @media not (-moz-bool-pref: "uc.tweak.floating-tabs") {
+    #toolbar-menubar {
+      background-color: var(--toolbar-bgcolor) !important;
+      color: var(--toolbar-color) !important;
+    }
+  }
+
+  /* Make sure window controls are removed in full screen mode. */
+  &[inDOMFullscreen] #TabsToolbar .titlebar-buttonbox,
+  &[inFullscreen] #navigator-toolbox[style*="margin-top"] #TabsToolbar .titlebar-buttonbox {
+    visibility: collapse !important;
+  }
+
   /* macOS specific positioning */
   @media (-moz-platform: macos) {
     /* Offset navbar contents to make space for the window controls */
@@ -55,7 +69,7 @@
   @media (-moz-platform: windows) {
     /* Offset navbar contents to make space for the window controls */
     &:where([inFullscreen], [tabsintitlebar]) #nav-bar {
-      padding-right: calc(140px + var(--uc-titlebar-drag-space)) !important;
+      padding-inline-end: calc(140px + var(--uc-titlebar-drag-space)) !important;
 
       /* Remove the padding from the side of the navbar */
       & #PanelUI-menu-button {
@@ -64,21 +78,75 @@
     }
 
     /* Positioning of the window controls */
-    & #toolbar-menubar[inactive] + #TabsToolbar .titlebar-buttonbox {
+    & :where(#toolbar-menubar[inactive]) + #TabsToolbar .titlebar-buttonbox {
       visibility: visible !important;
       position: fixed !important;
       top: 0;
-      right: 0;
+      inset-inline-end: 0;
       height: calc(var(--uc-navbar-height) + var(--uc-tab-top-margin, 0)) !important;
-      z-index: 3 !important;
+      z-index: 100 !important;
       color: var(--toolbar-color) !important;
     }
 
-    /* Set background colour of the menu bar to maintain consistency with the navbar */
-    @media not (-moz-bool-pref: "uc.tweak.floating-tabs") {
-      #toolbar-menubar {
-        background-color: var(--toolbar-bgcolor) !important;
-        color: var(--toolbar-color) !important;
+  }
+
+  /* Linux/GTK specific positioning, only needed if there is at least one window
+   * control button. */
+  @media (-moz-gtk-csd-minimize-button),
+  (-moz-gtk-csd-maximize-button),
+  (-moz-gtk-csd-close-button) {
+    /* Width of single window control button. */
+    --uc-window-control-btn: 34px;
+
+    /* Navbar space reserved for one button. */
+    --uc-window-controls-width: var(--uc-window-control-btn);
+
+    /* Navbar space reserved for two buttons. */
+    @media (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-maximize-button),
+    (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-close-button),
+    (-moz-gtk-csd-maximize-button) and (-moz-gtk-csd-close-button) {
+      --uc-window-controls-width: calc(var(--uc-window-control-btn) * 2);
+    }
+
+    /* Navbar space reserved for three buttons. */
+    @media (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-maximize-button) and (-moz-gtk-csd-close-button) {
+      --uc-window-controls-width: calc(var(--uc-window-control-btn) * 3);
+    }
+
+    /* Offset navbar contents to make space for the window controls */
+    &:where([inFullscreen], [tabsintitlebar]) #nav-bar {
+      /* Window controls on the right. */
+      @media not (-moz-gtk-csd-reversed-placement) {
+        padding-inline: 0 calc(var(--uc-window-controls-width, 0px) + var(--uc-titlebar-drag-space)) !important;
+
+        /* Remove the padding from the side of the navbar */
+        & #PanelUI-menu-button {
+          padding-inline-end: 0 !important;
+        }
+      }
+
+      /* Window controls on the left. */
+      @media (-moz-gtk-csd-reversed-placement) {
+        padding-inline: calc(var(--uc-window-controls-width, 0px) + var(--uc-titlebar-drag-space)) 0 !important;
+
+        /* Remove the padding from the side of the navbar */
+        & #nav-bar-customization-target > :is(toolbarbutton, toolbaritem):first-child {
+          padding-inline-start: 0 !important;
+        }
+      }
+    }
+
+    /* Positioning of the window controls */
+    & :where(#toolbar-menubar[inactive]) + #TabsToolbar .titlebar-buttonbox {
+      visibility: visible !important;
+      position: fixed !important;
+      top: 0;
+      height: calc(var(--uc-navbar-height) + var(--uc-tab-top-margin, 0)) !important;
+      z-index: 100 !important;
+      inset-inline: auto 0;
+
+      @media (-moz-gtk-csd-reversed-placement) {
+        inset-inline: 0 auto !important;
       }
     }
   }
