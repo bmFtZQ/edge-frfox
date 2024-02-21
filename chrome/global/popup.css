@@ -807,3 +807,21 @@ dialog {
     outline-offset: -2px !important;
   }
 }
+
+/* FF123+ tab preview pop-up.
+ * CSS reference: https://searchfox.org/mozilla-central/source/browser/components/tabpreview/tabpreview.css
+ * Requires `browser.tabs.cardPreview.enabled` set to `true` */
+.tab-preview-container {
+  background-color: var(--arrowpanel-background) !important;
+  color: var(--arrowpanel-color) !important;
+  border: 0.5px solid var(--panel-separator-color) !important;
+  border-radius: 8.5px !important;
+
+  /* Place thumbnail at the top of the tooltip. */
+  display: flex !important;
+  flex-direction: column-reverse !important;
+
+  & .tab-preview-uri {
+    color: var(--panel-description-color) !important;
+  }
+}
