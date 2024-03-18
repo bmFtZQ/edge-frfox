@@ -461,7 +461,9 @@
   list-style-image: url("desktop-notification-blocked.svg") !important;
 }
 
-.camera-icon {
+.camera-icon,
+#webRTC-sharingCamera-menu,
+#webrtc-sharing-icon[sharing="camera"] {
   list-style-image: url("camera.svg") !important;
 }
 
@@ -469,7 +471,9 @@
   list-style-image: url("camera-blocked.svg") !important;
 }
 
-.microphone-icon {
+.microphone-icon,
+#webRTC-sharingMicrophone-menu,
+#webrtc-sharing-icon[sharing="microphone"] {
   list-style-image: url("microphone.svg") !important;
 }
 
@@ -477,7 +481,9 @@
   list-style-image: url("microphone-blocked.svg") !important;
 }
 
-.screen-icon {
+.screen-icon,
+#webRTC-sharingScreen-menu,
+#webrtc-sharing-icon[sharing="screen"] {
   list-style-image: url("screen.svg") !important;
 }
 
