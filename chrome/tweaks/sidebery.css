@@ -46,7 +46,7 @@
 
   /* Linux/GTK support, side effect: Firefox themes do not work. */
   @media (-moz-gtk-csd-available) {
-    body {
+    body:not([style*="--s-frame-bg"]) {
       --s-frame-bg: light-dark(color-mix(in srgb, ActiveCaption 90%, black), ActiveCaption) !important;
       --s-frame-fg: CaptionText !important;
       --s-toolbar-bg: light-dark(-moz-dialog, color-mix(in srgb, -moz-dialog 92%, white)) !important;
