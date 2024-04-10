@@ -45,6 +45,10 @@ toolbar .toolbaritem-combined-buttons {
   margin-inline: calc(var(--uc-toolbarbutton-inner-inline-padding) - var(--toolbarbutton-inner-padding)) !important;
 }
 
+#TabsToolbar #fxa-toolbar-menu-button>.toolbarbutton-badge-stack {
+  margin-inline: calc(var(--uc-toolbarbutton-inner-inline-padding) - (var(--toolbarbutton-inner-padding) + 2px)) !important;
+}
+
 #fxa-toolbar-menu-button {
   display: flex !important;
 }

@@ -7,16 +7,14 @@
   --uc-tab-top-margin: 8px !important;
 
   /* Remove extra space at the top of the window when in fullscreen or when
-   * title bars are enabled.
-   */
+   * title bars are enabled. */
   &[inFullscreen],
   &:not([tabsintitlebar]) {
     --uc-tab-top-margin: 0px !important;
   }
 
   /* Remove extra space at the top when the window is maximised or the menu bar
-   * is active, only on platforms other than macOS.
-   */
+   * is active, only on platforms other than macOS. */
   @media not (-moz-platform: macos) {
     &[sizemode="maximized"],
     & #toolbar-menubar:not([inactive]) + #TabsToolbar,
@@ -37,6 +35,14 @@
     --tab-shadow-max-size: 0 !important;
     --uc-tab-separator-height: 20px;
     --uc-toolbarbutton-block-margin: 2px;
+
+    /* Gap between tab and adjacent buttons (+2px button margin). */
+    --uc-toolbarbutton-tab-gap: 2px;
+
+    @media (-moz-bool-pref: "uc.tweak.rounded-corners") {
+      --tab-border-radius: 8px !important;
+      --uc-toolbarbutton-tab-gap: 6px;
+    }
   }
 }
 
@@ -113,11 +119,10 @@
     /* Add space after the last toolbar button before the tabs. */
     & > .toolbarbutton-1:nth-last-child(1 of .toolbarbutton-1:not(#tabbrowser-tabs ~ *)),
     :root[privatebrowsingmode] & > .toolbarbutton-1:nth-last-child(1 of .toolbarbutton-1:not(#tabbrowser-tabs ~ *):not(#firefox-view-button)) {
-      margin-inline-end: 4px !important;
+      margin-inline-end: calc(var(--uc-toolbarbutton-tab-gap) + 2px) !important;
 
       /* Reduces space between this button and the tab scroll button when
-       * overflowed for consistency.
-       */
+       * overflowed for consistency. */
       &:has(~ #tabbrowser-tabs[overflow]) {
         margin-inline-end: 2px !important;
       }
@@ -146,7 +151,7 @@
 
 /* Add space between last tab and new tab button. */
 #tabbrowser-tabs #tabs-newtab-button {
-  margin-inline-start: 2px !important;
+  margin-inline-start: var(--uc-toolbarbutton-tab-gap) !important;
 }
 
 /* Tab scrolling buttons. */
@@ -197,7 +202,7 @@
   .titlebar-buttonbox-container {
     /* Add space between buttons and other toolbar buttons. */
     margin-inline: 8px 0 !important;
-    
+
     @media (-moz-gtk-csd-reversed-placement) {
       /* Compensate for padding added to the Tabs Toolbar. */
       margin-inline: -8px 8px !important;
@@ -420,8 +425,7 @@
   }
 
   /* When tabs are selected but not active, they should have a partially
-   * transparent background.
-   */
+   * transparent background. */
   #tabbrowser-tabs &[multiselected]:not([selected]) {
     box-shadow: none !important;
     opacity: 0.7 !important;
@@ -535,27 +539,30 @@
 /* #region */
 
 /* Tab and toolbar shadows. */
-:root,
-:root  .tabbrowser-tab {
-  /* Light mode shadows. */
-  --uc-titlebar-shadow:
-    0 -1px var(--tabs-navbar-shadow-color, transparent) inset,
-    0 -3px 2px -3px rgb(0 0 0 / .2) inset;
-  --uc-tab-shadow:
-    0 0 0 1px var(--lwt-tab-line-color, transparent),
-    0 4px 5px rgb(0 0 0 / .21),
-    0 0px 2px rgb(0 0 0 / .18);
-
-  & [brighttext],
-  & [brighttext] .tabbrowser-tab {
-    /* Dark mode shadows. */
+@media not (-moz-bool-pref: "uc.tweak.rounded-corners") {
+  /* Edge now removes the shadow when rounded corners are enabled. */
+  :root,
+  :root .tabbrowser-tab {
+    /* Light mode shadows. */
     --uc-titlebar-shadow:
       0 -1px var(--tabs-navbar-shadow-color, transparent) inset,
-      0 -3px 2px -3px rgb(0 0 0 / .7) inset;
+      0 -3px 2px -3px rgb(0 0 0 / .2) inset;
     --uc-tab-shadow:
       0 0 0 1px var(--lwt-tab-line-color, transparent),
-      0 5px 7px rgb(0 0 0 / .44),
-      0 0px 2px rgb(0 0 0 / .7);
+      0 4px 5px rgb(0 0 0 / .21),
+      0 0px 2px rgb(0 0 0 / .18);
+
+    & [brighttext],
+    & [brighttext] .tabbrowser-tab {
+      /* Dark mode shadows. */
+      --uc-titlebar-shadow:
+        0 -1px var(--tabs-navbar-shadow-color, transparent) inset,
+        0 -3px 2px -3px rgb(0 0 0 / .7) inset;
+      --uc-tab-shadow:
+        0 0 0 1px var(--lwt-tab-line-color, transparent),
+        0 5px 7px rgb(0 0 0 / .44),
+        0 0px 2px rgb(0 0 0 / .7);
+    }
   }
 }
 
@@ -648,8 +655,7 @@
   --uc-gradient-alt: linear-gradient(to right, transparent, var(--uc-bg-color) 25%, var(--uc-bg-color) 75%, transparent);
 
   /* If the titlebar buttons are on the right, then use the alternate gradient
-   * if the menu bar is not permanently enabled.
-   */
+   * if the menu bar is not permanently enabled. */
   @media (-moz-platform: windows),
   (-moz-gtk-csd-available) and (not (-moz-gtk-csd-reversed-placement)) {
     :root[tabsintitlebar] #toolbar-menubar:not([autohide="false"]) ~ #TabsToolbar & {
