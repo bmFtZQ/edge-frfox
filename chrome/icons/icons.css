@@ -567,6 +567,10 @@
   list-style-image: url("reader-mode.svg") !important;
 }
 
+#appMenu-report-broken-site-button {
+  list-style-image: url("report.svg") !important;
+}
+
 /* disable context menu icons when this tweak is applied */
 @media not (-moz-bool-pref: "uc.tweak.revert-context-menu") {
 
@@ -971,6 +975,11 @@
 
   #unified-extensions-panel &::before {
     --header-image: url("extension.svg");
+    --uc-enabled: 1;
+  }
+
+  #report-broken-site-popup-mainView &::before {
+    --header-image: url("report.svg");
     --uc-enabled: 1;
   }
 }
