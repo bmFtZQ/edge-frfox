@@ -239,11 +239,11 @@ Edge. This hides the permissions indicator label and makes the icons smaller.
 <!-- light mode screenshot links -->
 [s-light]: screenshots/Windows_default_light.png
 [s-light-ft]: screenshots/Windows_floating-tabs_light.png
-[s-light-mac-htb]: screenshots/macOS_hide-tabs-bar_light.png
+[s-light-mac-htb]: screenshots/macOS_hide-tabs-bar_sidebery_light.png
 [s-light-linux]: screenshots/Linux_light.png
 
 <!-- dark mode screenshot links -->
 [s-dark]: screenshots/Windows_default_dark.png
 [s-dark-ft]: screenshots/Windows_floating-tabs_dark.png
-[s-dark-mac-htb]: screenshots/macOS_hide-tabs-bar_dark.png
+[s-dark-mac-htb]: screenshots/macOS_hide-tabs-bar_sidebery_dark.png
 [s-dark-linux]: screenshots/Linux_dark.png
