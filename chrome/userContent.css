@@ -1,3 +1,4 @@
 /* Edge-Frfox */
 @import url("content/common.css");
 @import url("content/newtab.css");
+@import url("tweaks/sidebery.css") (-moz-bool-pref: "uc.tweak.theme.sidebery");

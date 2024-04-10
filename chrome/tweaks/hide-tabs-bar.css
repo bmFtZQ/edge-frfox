@@ -155,4 +155,79 @@
       }
     }
   }
+
+  /* Sidebar tweaks */
+  --sidebar-background-color: var(--toolbar-bgcolor) !important;
+  --sidebar-text-color: var(--toolbar-color) !important;
+  --sidebar-border-color: var(--chrome-content-separator-color) !important;
+
+  /* Floating tabs tweak uses the tab toolbar background instead. */
+  @media (-moz-bool-pref: "uc.tweak.floating-tabs") {
+    --sidebar-background-color: var(--lwt-accent-color) !important;
+    --sidebar-text-color: var(--lwt-text-color) !important;
+
+    &:-moz-window-inactive {
+      --sidebar-background-color: var(--lwt-accent-color-inactive) !important;
+      --sidebar-text-color: var(--lwt-text-color-inactive) !important;
+    }
+  }
+
+  /* Use :where() to lower specificity. */
+  :where(&) #sidebar-box {
+    position: relative;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+
+    & #sidebar-header {
+      border-bottom: 0 !important;
+      padding: 10px 4px 0 !important;
+      overflow: hidden;
+      position: relative;
+
+      & #sidebar-switcher-target,
+      & #sidebar-close {
+        width: auto !important;
+        height: 28px !important;
+        padding: 0 8px !important;
+        border: none !important;
+        margin-inline: 0 !important;
+      }
+
+      & #sidebar-spacer {
+        min-width: 8px !important;
+      }
+    }
+
+    /* Sidebar positioned on the left. */
+    &:not([positionend]) {
+      border-inline-end: 1px solid var(--sidebar-border-color);
+      /* Use less padding on the side with the border. */
+      padding-inline: 4px 3px;
+    }
+
+    /* Sidebar positioned on the right. */
+    &[positionend] {
+      border-inline-start: 1px solid var(--sidebar-border-color);
+      /* Use less padding on the side with the border. */
+      padding-inline: 3px 4px;
+    }
+
+    /* Rounded corners tweak optimisations. */
+    @media (-moz-bool-pref: "uc.tweak.rounded-corners") {
+      /* Remove padding and border from sidebar. */
+      &:not([positionend]),
+      &[positionend] {
+        border-inline: none;
+        padding-inline: 0;
+      }
+
+      &:not([positionend]) {
+        padding-inline-end: 3px;
+      }
+
+      & #sidebar-header {
+        padding-top: 4px !important;
+      }
+    }
+  }
 }

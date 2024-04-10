@@ -25,12 +25,12 @@ Screenshot: macOS / Firefox 120 / Tweaks: rounded corners, hide forward button.
 **Note: Most frequently tested on macOS**
 
 ## Screenshots
-| Theme                                        | Light                                    | Dark                                   |
-| -------------------------------------------- | ---------------------------------------- | -------------------------------------- |
-| Default (Windows 11)                         | ![Light][s-light]                        | ![Dark][s-dark]                        |
-| Floating Tabs + Rounded Corners (Windows 11) | ![Light, Floating Tabs][s-light-ft]      | ![Dark, Floating Tabs][s-dark-ft]      |
-| Hide Tabs Bar + Rounded Corners (macOS)      | ![Light, Hide Tabs Bar][s-light-mac-htb] | ![Dark, Hide Tabs Bar][s-dark-mac-htb] |
-| Rounded Corners (Linux, Ubuntu Yaru theme)   | ![Light, Rounded Corners][s-light-linux] | ![Dark, Rounded Corners][s-dark-linux] |
+| Theme                                                    | Light                                    | Dark                                   |
+| -------------------------------------------------------- | ---------------------------------------- | -------------------------------------- |
+| Default (Windows 11)                                     | ![Light][s-light]                        | ![Dark][s-dark]                        |
+| Floating Tabs + Rounded Corners (Windows 11)             | ![Light, Floating Tabs][s-light-ft]      | ![Dark, Floating Tabs][s-dark-ft]      |
+| Hide Tabs Bar + Rounded Corners + Sidebery theme (macOS) | ![Light, Hide Tabs Bar][s-light-mac-htb] | ![Dark, Hide Tabs Bar][s-dark-mac-htb] |
+| Rounded Corners (Linux, Ubuntu Yaru theme)               | ![Light, Rounded Corners][s-light-linux] | ![Dark, Rounded Corners][s-dark-linux] |
 
 ## Tweaks
 Certain tweaks can be applied to the theme, to enable them navigate to `about:config` and create a boolean key for each tweak you want to use and set it to `true`.
@@ -59,6 +59,56 @@ This hides the tabs toolbar when using a vertical tabs extension such as
 Sidebery, Tree Style Tab or Tab Center Reborn.
 
 `uc.tweak.hide-tabs-bar`
+
+---
+
+### Sidebery Theme
+Enables the Sidebery extension sidebar theme, can be used with or without the
+hide tabs toolbar tweak. For a preview of the Sidebery theme, see the macOS
+screenshot in the [Screenshots](#screenshots) section.
+
+#### Setup
+Download and install [Sidebery][sidebery] from the Firefox addons store.
+
+On Linux the colour theme may not work properly. To fix this, you can enable the
+"auto: dark/light" colour scheme option inside Sidebery (though this will
+disable the custom Firefox theme colours, and only use system light/dark
+colours).
+
+To open the Sidebery settings page, find its icon in the toolbar or in the
+extensions menu, then right-click it and select 'Open settings'.
+
+<!-- Use <details> for collapseable section. -->
+<details>
+<summary>Recommended settings</summary>
+
+* Context menu:
+  * Use native context menu: 'on'
+* Navigation bar:
+  * layout: 'horizontal' or 'hidden'
+  * Bottom bar of tabs panel:
+    * Recently closed tabs: 'off'
+    * Bookmarks: 'off'
+    * History: 'off'
+* Tabs:
+  * Show new tab buttons: 'on' or 'off'
+  * New tab buttons:
+    * position: 'after tabs'
+  * Position of new tab:
+    * Place new tab opened from another tab: 'do not move it'
+* Pinned tabs:
+  * Pinned tabs position: 'in panel - top'
+  * Show titles of pinned tabs: 'on' or 'off'
+* Appearance:
+  * Theme: 'proton'
+  * Color scheme: 'firefox'
+
+</details>
+
+Alternatively, you can import the provided `sidebery.json` configuration file,
+but this will restore Sidebery to the default settings before applying it.
+
+`uc.tweak.theme.sidebery`
 
 ---
 
@@ -184,7 +234,7 @@ Edge. This hides the permissions indicator label and makes the icons smaller.
 [KibSquib48](https://github.com/KibSquib48) - [MicaFox](https://github.com/KibSquib48/MicaFox)
 
 <!-- links -->
-[1]: https://github.com/lassekongo83/adw-gtk3
+[sidebery]: https://addons.mozilla.org/en-GB/firefox/addon/sidebery/
 
 <!-- light mode screenshot links -->
 [s-light]: screenshots/Windows_default_light.png

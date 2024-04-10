@@ -1,0 +1,20 @@
+{
+  "settings": {
+    "nativeScrollbars": true,
+    "nativeScrollbarsThin": true,
+    "ctxMenuNative": true,
+    "navBarLayout": "hidden",
+    "subPanelRecentlyClosedBar": false,
+    "subPanelBookmarks": false,
+    "subPanelHistory": false,
+    "showNewTabBtns": true,
+    "tabRmBtn": "always",
+    "newTabBarPosition": "after_tabs",
+    "moveNewTabParent": "default",
+    "pinnedTabsPosition": "panel",
+    "pinnedTabsList": true,
+    "theme": "proton",
+    "colorScheme": "ff"
+  },
+  "ver": "5.1.1"
+}
