@@ -225,6 +225,10 @@
         padding-inline-end: 3px;
       }
 
+      &[positionend] {
+        padding-inline-start: 3px;
+      }
+
       & #sidebar-header {
         padding-top: 4px !important;
       }

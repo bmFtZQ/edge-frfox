@@ -99,11 +99,3 @@ url-prefix(about:addons) {
     --toggle-dot-transform-x: calc(var(--toggle-width) - 2 * var(--toggle-dot-margin) - 2 * var(--toggle-border-width) - var(--toggle-dot-width)) !important;
   }
 }
-
-/* fix page flashes when loading some websites */
-@-moz-document url(about:blank) {
-  body {
-    background: var(--in-content-page-background);
-    color: var(--in-content-page-color);
-  }
-}
