@@ -38,7 +38,7 @@
   border-radius: calc(var(--urlbar-icon-border-radius) + 2px) !important;
 
   /* Shadow for URL bar, only appears in light mode. */
-  :root:not(:-moz-lwtheme) #nav-bar:not([brighttext]) & {
+  :root:not([lwtheme]) #nav-bar:not([brighttext]) & {
     box-shadow: var(--uc-urlbar-shadow, none);
   }
 
@@ -49,7 +49,7 @@
     box-shadow: 0 10px 16px rgb(0 0 0 / 0.18), 0 3px 5px rgb(0 0 0 / 0.33) !important;
     outline: 0.5px solid var(--arrowpanel-border-color) !important;
 
-    &:not(:-moz-lwtheme) {
+    :root:not([lwtheme]) & {
       outline-color: var(--panel-separator-color) !important;
     }
   }
@@ -128,7 +128,7 @@
 
 /* Search engine indicator. */
 #urlbar-search-mode-indicator {
-  :root:not(:-moz-lwtheme) & {
+  :root:not([lwtheme]) & {
     background-color: var(--urlbar-box-hover-bgcolor) !important;
   }
 

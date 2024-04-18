@@ -2,7 +2,7 @@
  * https://github.com/bmFtZQ/edge-frfox */
 
 /* default colours (light & dark) */
-:root:not(:-moz-lwtheme),
+:root:not([lwtheme]),
 /* `--newtab-background-color-secondary used` to differentiate between a dark
  * private window and private window with the 'Dark' theme enabled.
  * May not be the most reliable method, but works for now up to FF 123. */
@@ -122,7 +122,7 @@
 }
 
 /* Apply colours to the default 'Auto' theme. */
-#navigator-toolbox:not(:-moz-lwtheme) {
+:root:not([lwtheme]) #navigator-toolbox {
   background-color: var(--lwt-accent-color) !important;
   color: var(--lwt-text-color) !important;
 
@@ -140,7 +140,7 @@
 }
 
 /* Make the titlebar buttons black/white on default themes */
-:root:not(:-moz-lwtheme)[tabsintitlebar] .titlebar-buttonbox {
+:root:not([lwtheme])[tabsintitlebar] .titlebar-buttonbox {
   color: var(--lwt-text-color) !important;
 }
 
@@ -173,7 +173,7 @@
   /* Use accent colour in titlebar when Windows option is enabled. */
   @media (-moz-windows-accent-color-in-titlebar) and (-moz-bool-pref: "browser.theme.windows.accent-color-in-tabs.enabled") {
     /* Uses :root:root to beat specificity of floating tabs adjustments. */
-    :root:root:not(:-moz-lwtheme) {
+    :root:root:not([lwtheme]) {
       --lwt-accent-color: ActiveCaption !important;
       --lwt-text-color: CaptionText !important;
       --lwt-accent-color-inactive: InActiveCaption !important;
@@ -276,7 +276,7 @@
 
 /* Linux / GTK csd support */
 @media (-moz-gtk-csd-available) {
-  :root:not(:-moz-lwtheme),
+  :root:not([lwtheme]),
   /* `--newtab-background-color-secondary used` to differentiate between a dark
    * private window and private window with the 'Dark' theme enabled.
    * May not be the most reliable method, but works for now up to FF 123. */

@@ -8,7 +8,7 @@
   background-color: var(--toolbar-field-background-color) !important;
 
   /* Add shadow when in light mode with no theme applied, like the URL bar. */
-  &:not(:-moz-lwtheme) {
+  :root:not([lwtheme]) & {
     box-shadow: 0 0 4px light-dark(rgb(0 0 0 / .1), transparent) !important;
   }
 
