@@ -1,6 +1,9 @@
 /* Edge-Frfox - navbar.css
  * https://github.com/bmFtZQ/edge-frfox */
 
+/*
+  MARK: Variables
+*/
 :root {
   --toolbarbutton-border-radius: 4px !important;
   --toolbarbutton-inner-padding: 7px !important;
@@ -9,6 +12,13 @@
   --tabs-navbar-shadow-size: 0px !important;
 }
 
+#nav-bar {
+  border-top: none !important;
+}
+
+/*
+  MARK: Toolbar buttons
+*/
 #nav-bar .toolbarbutton-1>.toolbarbutton-icon {
   width: calc(2 * var(--uc-toolbarbutton-inner-inline-padding) + 16px) !important;
 }
@@ -33,7 +43,9 @@ toolbar .toolbaritem-combined-buttons {
   margin-inline: var(--toolbarbutton-outer-padding) !important;
 }
 
-/* account button */
+/*
+  MARK: Account button
+*/
 .browser-toolbar #fxa-toolbar-menu-button,
 .browser-toolbar #fxa-toolbar-menu-button>.toolbarbutton-badge-stack,
 #fxa-avatar-image {
@@ -61,7 +73,9 @@ toolbar .toolbaritem-combined-buttons {
   scale: 1.5 !important;
 }
 
-/* button background transition */
+/*
+  MARK: Button transitions
+*/
 @media not (prefers-reduced-motion) {
   .toolbarbutton-1>.toolbarbutton-icon,
   .toolbarbutton-1>.toolbarbutton-text,

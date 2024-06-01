@@ -1,6 +1,8 @@
 /* Edge-Frfox - content/common.css */
 
-/* colours */
+/*
+  MARK: Default colours
+*/
 @-moz-document url-prefix(about:) {
   :root {
     --in-content-page-color: light-dark(#252525, #fff) !important;
@@ -56,7 +58,9 @@
   }
 }
 
-/* preferences */
+/*
+  MARK: Preferences page
+*/
 @-moz-document url-prefix(about:preferences),
 url-prefix(about:addons) {
   .category[selected] {

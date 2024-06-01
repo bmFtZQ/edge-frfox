@@ -1,7 +1,9 @@
 /* Edge-Frfox - colors.css
  * https://github.com/bmFtZQ/edge-frfox */
 
-/* default colours (light & dark) */
+/*
+  MARK: Default colours
+*/
 :root:not([lwtheme]),
 /* `--newtab-background-color-secondary used` to differentiate between a dark
  * private window and private window with the 'Dark' theme enabled.
@@ -157,6 +159,9 @@
   }
 }
 
+/*
+  MARK: Windows
+*/
 @media (-moz-platform: windows) {
   /* Colour the text selection background and foreground. */
   ::selection {
@@ -274,7 +279,9 @@
   }
 }
 
-/* Linux / GTK csd support */
+/*
+  MARK: Linux / GTK csd
+*/
 @media (-moz-gtk-csd-available) {
   :root:not([lwtheme]),
   /* `--newtab-background-color-secondary used` to differentiate between a dark

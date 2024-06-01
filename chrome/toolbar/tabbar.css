@@ -1,7 +1,9 @@
 /* Edge-Frfox - tabbar.css
  * https://github.com/bmFtZQ/edge-frfox */
 
-/* Variables */
+/*
+  MARK: Variables
+*/
 :root {
   /* Extra space at the top of the window. */
   --uc-tab-top-margin: 8px !important;
@@ -46,8 +48,6 @@
   }
 }
 
-/* ::::: Tab transitions ::::: */
-
 /* Tab grow/shrink transition. */
 .tabbrowser-tab:not([pinned]) {
   transition-property: min-width, max-width !important;
@@ -67,7 +67,9 @@
   transition: none !important;
 }
 
-/* ::::: Tabs toolbar & button appearance ::::: */
+/*
+  MARK: Toolbar & buttons
+*/
 /* #region */
 
 #TabsToolbar {
@@ -164,8 +166,7 @@
 }
 
 /* Add margin to the side of the button facing the tabs so the buttons line up
- * on the opposite side with others in the toolbar.
- */
+ * on the opposite side with others in the toolbar. */
 #scrollbutton-up:not(.menupopup-scrollbutton) {
   margin-inline: 0 2px !important;
 }
@@ -212,7 +213,9 @@
 /* #endregion */
 
 
-/* ::::: Tab appearance ::::: */
+/*
+  MARK: Tab inner content
+*/
 /* #region */
 
 .tabbrowser-tab {
@@ -305,7 +308,9 @@
   }
 }
 
-/* ::::: Tab audio indicator ::::: */
+/*
+  MARK: Sound playing indicator
+*/
 
 /* Move the audio indicator to the right of the tab's icon. */
 #tabbrowser-tabs:not([closebuttons="activetab"]) .tab-icon-overlay:not([pinned]) {
@@ -350,7 +355,9 @@
 /* #endregion */
 
 
-/* ::::: Tab background and bottom rounded corners ::::: */
+/*
+  MARK: Background and corners
+*/
 /* #region */
 
 .tab-background {
@@ -453,7 +460,9 @@
 /* #endregion */
 
 
-/* ::::: Tab separators ::::: */
+/*
+  MARK: Tab separators
+*/
 /* #region */
 
 .tabbrowser-tab .tab-stack {
@@ -535,7 +544,9 @@
 /* #endregion */
 
 
-/* ::::: Tab shadows ::::: */
+/*
+  MARK: Tab shadows
+*/
 /* #region */
 
 /* Tab and toolbar shadows. */
@@ -598,7 +609,7 @@
     margin-inline-start: -8px !important;
     margin-inline-end: calc(-1 * var(--tab-border-radius)) !important;
 
-    #tabbrowser-arrowscrollbox .tabbrowser-tab:nth-child(1 of .tabbrowser-tab:not([hidden])) {
+    :where(#tabbrowser-arrowscrollbox .tabbrowser-tab:nth-child(1 of .tabbrowser-tab:not([hidden]))) {
       margin-inline-start: 8px !important;
     }
   }
@@ -611,7 +622,9 @@
 /* #endregion */
 
 
-/* ::::: Private browsing indicator ::::: */
+/*
+  MARK: Private browsing icon
+*/
 /* #region */
 
 :root[privatebrowsingmode="temporary"] {

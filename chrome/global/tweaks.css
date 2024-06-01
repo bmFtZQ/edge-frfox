@@ -1,12 +1,18 @@
 /* Edge-Frfox - tweaks.css */
 
-/* disable drag space above tabs */
+/*
+  MARK: Disable drag space
+*/
 @media (-moz-bool-pref: "uc.tweak.disable-drag-space") {
+  /* disable drag space above tabs */
   :root {
     --uc-tab-top-margin: 0px !important;
   }
 }
 
+/*
+  MARK: Force tab colour
+*/
 /* force tabs to toolbar bg (useful for proton themes) (might experience some
 bugs with certain themes eg. dark text on dark background.) */
 @media (-moz-bool-pref: "uc.tweak.force-tab-colour") {
@@ -16,7 +22,9 @@ bugs with certain themes eg. dark text on dark background.) */
   }
 }
 
-/* remove tab separators */
+/*
+  MARK: Remove tab separators
+*/
 @media (-moz-bool-pref: "uc.tweak.remove-tab-separators") {
   .tabbrowser-tab .tab-stack {
     &::before,
@@ -26,6 +34,9 @@ bugs with certain themes eg. dark text on dark background.) */
   }
 }
 
+/*
+  MARK: Floating tabs
+*/
 @media (-moz-bool-pref: "uc.tweak.floating-tabs") {
   :root:not([lwtheme]),
   /* `--newtab-background-color-secondary used` to differentiate between a dark
@@ -171,6 +182,9 @@ bugs with certain themes eg. dark text on dark background.) */
   }
 }
 
+/*
+  MARK: Vertical context nav
+*/
 @media (not (-moz-platform: macos)) and (not (-moz-bool-pref: "uc.tweak.revert-context-menu")) {
   @media (-moz-bool-pref: "uc.tweak.vertical-context-navigation") {
     #context-navigation {
@@ -190,6 +204,9 @@ bugs with certain themes eg. dark text on dark background.) */
   }
 }
 
+/*
+  MARK: Hide access key
+*/
 @media (-moz-bool-pref: "uc.tweak.context-menu.hide-access-key") {
   :where(menuitem, menu) > :is(.menu-text, .menu-iconic-text)[value]:not([value=""]) {
     &::before {
@@ -201,18 +218,27 @@ bugs with certain themes eg. dark text on dark background.) */
   }
 }
 
+/*
+  MARK: Show tab close button
+*/
 @media (-moz-bool-pref: "uc.tweak.show-tab-close-button-on-hover") {
   #tabbrowser-tabs[closebuttons="activetab"] .tabbrowser-tab:not([pinned], [selected]):hover .tab-close-button {
     display: flex !important;
   }
 }
 
+/*
+  MARK: Hide forward button
+*/
 @media (-moz-bool-pref: "uc.tweak.hide-forward-button") {
   :root:not([customizing]) #forward-button[disabled] {
     display: none !important;
   }
 }
 
+/*
+  MARK: Hide Firefox account
+*/
 @media (-moz-bool-pref: "uc.tweak.context-menu.hide-firefox-account") {
   #appMenu-fxa-status2,
   #appMenu-fxa-separator {

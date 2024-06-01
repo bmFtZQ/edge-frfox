@@ -20,11 +20,14 @@
     -moz-osx-font-smoothing: auto !important;
   }
 
-  /* ::::: Default theme colours ::::: */
+  /*
+    MARK: Default theme colours
+  */
+
   /* macOS light mode. */
   body[style*="--s-frame-fg: rgba(0, 0, 0, 0.847)"],
   /* macOS dark mode. */
-  body[style*="--s-frame-bg: rgb(30, 30, 30)"],
+  body[style*="--s-frame-fg: rgba(255, 255, 255, 0.847)"],
   /* Windows light mode. */
   body[style*="--s-frame-bg: rgb(240, 240, 240)"],
   /* Windows dark mode. */
@@ -61,7 +64,9 @@
     }
   }
 
-  /* ::::: Variables ::::: */
+  /*
+    MARK: Variables
+  */
   #root.root {
     --frame-bg: var(--s-toolbar-bg) !important;
     --frame-fg: var(--s-toolbar-fg) !important;
@@ -100,10 +105,12 @@
     }
   }
 
-  /* ::::: Floating tabs adjustments ::::: */
+  /*
+    MARK: Floating tabs vars
+  */
   @media (-moz-bool-pref: "uc.tweak.floating-tabs") {
     body[style*="--s-frame-fg: rgba(0, 0, 0, 0.847)"],
-    body[style*="--s-frame-bg: rgb(30, 30, 30)"],
+    body[style*="--s-frame-fg: rgba(255, 255, 255, 0.847)"],
     body[style*="--s-frame-bg: rgb(240, 240, 240)"],
     body[style*="--s-frame-bg: rgb(35, 34, 43)"],
     body:not([style*="--s-frame-bg"]) {
@@ -128,8 +135,9 @@
     }
   }
 
-  /* ::::: Tabs appearance ::::: */
-
+  /*
+    MARK: Tabs appearance
+  */
   .Tab {
     /* Active tab border. */
     &[data-active="true"] .body {
@@ -227,7 +235,7 @@
     }
 
     /* Pinned tab list. */
-    #root[data-pinned-tabs-position="panel"][data-pinned-tabs-list="true"]  & {
+    #root[data-pinned-tabs-position="panel"][data-pinned-tabs-list="true"] & {
       padding-bottom: 1px !important;
     }
 
@@ -242,7 +250,9 @@
     }
   }
 
-  /* New tab button styling. */
+  /*
+    MARK: New tab button
+  */
   .TabsPanel .new-tab-btns {
     /* Add space for the separator. */
     padding-top: calc(var(--tabs-margin) + 1px) !important;
@@ -300,7 +310,9 @@
     display: none !important;
   }
 
-  /* ::::: Icons ::::: */
+  /*
+    MARK: Icons
+  */
 
   /* New tab page icon. */
   #icon_ff path {

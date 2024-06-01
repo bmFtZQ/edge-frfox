@@ -1,6 +1,8 @@
 /* Edge-Frfox - icons.css */
 
-/* Windows 11 style window control icons. */
+/*
+  MARK: Win 11 window controls
+*/
 @media (-moz-platform: windows) {
   .titlebar-min {
     list-style-image: url("win11-minimize.svg") !important;
@@ -571,6 +573,10 @@
   list-style-image: url("report.svg") !important;
 }
 
+/*
+  MARK: Context menu
+*/
+
 /* disable context menu icons when this tweak is applied */
 @media not (-moz-bool-pref: "uc.tweak.revert-context-menu") {
 
@@ -932,6 +938,10 @@
   }
 }
 
+/*
+  MARK: App menu header
+*/
+
 /* Header icons for the app menu sub menus (eg. fx account, history...) */
 .panel-header > h1 > span {
   &::before {
@@ -983,6 +993,10 @@
     --uc-enabled: 1;
   }
 }
+
+/*
+  MARK: Tree items
+*/
 
 /* Tree items used for side bar and library windows */
 treechildren::-moz-tree-image {

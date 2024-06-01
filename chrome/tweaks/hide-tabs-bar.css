@@ -43,10 +43,12 @@
     visibility: collapse !important;
   }
 
-  /* macOS specific positioning */
+  /*
+    MARK: macOS styles
+  */
   @media (-moz-platform: macos) {
     /* Offset navbar contents to make space for the window controls */
-    &[tabsintitlebar] #nav-bar:not([inFullscreen]) {
+    &[tabsintitlebar]:not([inFullscreen]) #nav-bar {
       padding-left: calc(70px + var(--uc-titlebar-drag-space)) !important;
 
       /* Remove the padding from the side of the navbar */
@@ -70,7 +72,9 @@
     }
   }
 
-  /* Windows specific positioning */
+  /*
+    MARK: Windows styles
+  */
   @media (-moz-platform: windows) {
     /* Offset navbar contents to make space for the window controls */
     &:where([inFullscreen], [tabsintitlebar]) #nav-bar {
@@ -95,8 +99,9 @@
 
   }
 
-  /* Linux/GTK specific positioning, only needed if there is at least one window
-   * control button. */
+  /*
+    MARK: Linux/GTK styles
+  */
   @media (-moz-gtk-csd-minimize-button),
   (-moz-gtk-csd-maximize-button),
   (-moz-gtk-csd-close-button) {
@@ -156,7 +161,9 @@
     }
   }
 
-  /* Sidebar tweaks */
+  /*
+    MARK: Sidebar styles
+  */
   --sidebar-background-color: var(--toolbar-bgcolor) !important;
   --sidebar-text-color: var(--toolbar-color) !important;
   --sidebar-border-color: var(--chrome-content-separator-color) !important;

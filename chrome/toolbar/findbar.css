@@ -1,7 +1,9 @@
 /* Edge-Frfox - findbar.css
  * https://github.com/bmFtZQ/edge-frfox */
 
-/* Findbar text input box. */
+/*
+  MARK: Findbar textbox
+*/
 .findbar-textbox {
   border: 0 !important;
   border-radius: var(--toolbarbutton-border-radius) !important;
@@ -37,7 +39,9 @@
   }
 }
 
-/* Findbar buttons. */
+/*
+  MARK: Findbar buttons
+*/
 .findbar-find-previous,
 .findbar-find-next,
 findbar .close-icon {
@@ -52,7 +56,9 @@ findbar .close-icon {
   }
 }
 
-/* Rounded corners optimisations. */
+/*
+  MARK: Rounded corners
+*/
 @media (-moz-bool-pref: "uc.tweak.rounded-corners") {
   findbar {
     border: none !important;

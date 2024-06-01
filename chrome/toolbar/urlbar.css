@@ -1,7 +1,9 @@
 /* Edge-Frfox - urlbar.css
  * https://github.com/bmFtZQ/edge-frfox */
 
-/* Variables */
+/*
+  MARK: Variables
+*/
 :root {
   --urlbar-min-height: 30px !important;
   --urlbarView-item-inline-padding: calc(1px + var(--uc-urlbar-inline-padding) + var(--uc-urlbar-icon-inline-padding)) !important;
@@ -32,7 +34,9 @@
   }
 }
 
-/* Appearance for URL bar. */
+/*
+  MARK: URL bar
+*/
 #urlbar-background,
 #searchbar {
   border-radius: calc(var(--urlbar-icon-border-radius) + 2px) !important;
@@ -142,7 +146,9 @@
   border-top: 0 !important;
 }
 
-/* Buttons inside the URL bar. */
+/*
+  MARK: URL bar buttons
+*/
 .urlbar-page-action,
 #urlbar-go-button,
 .search-go-button,
@@ -203,6 +209,10 @@
 #nav-bar:not([brighttext]) #identity-box #identity-icon-label {
   opacity: var(--urlbar-icon-fill-opacity) !important;
 }
+
+/*
+  MARK: URL bar label
+*/
 
 /* Label on the left of the URL bar, shown when viewing Firefox or extension pages. */
 #identity-box[pageproxystate="valid"]:is(.notSecureText, .chromeUI, .extensionPage) > .identity-box-button {

@@ -1,5 +1,8 @@
 /* Edge-Frfox - content/newtab.css */
 
+/*
+  MARK: Default colours
+*/
 @-moz-document url-prefix("about:newtab"),
 url-prefix("about:home"),
 url-prefix("about:firefoxview") {
@@ -47,7 +50,9 @@ url-prefix("about:firefoxview") {
     --newtab-status-success: #50B080 !important;
   }
 
-  /* Custom GTK colours. */
+  /*
+    MARK: Custom GTK colours
+  */
   @media (-moz-gtk-csd-available) {
     :root:not([lwt-newtab]):not([style*="color"]) {
       /* Colour adjusted for readability. */
@@ -83,6 +88,9 @@ url-prefix("about:firefoxview") {
   }
 }
 
+/*
+  MARK: New tab page
+*/
 @-moz-document url-prefix("about:newtab"),
 url-prefix("about:home") {
   /* Enforce system font selection. */
@@ -100,7 +108,9 @@ url-prefix("about:home") {
     opacity: 0.7 !important;
   }
 
-  /* Search bar. */
+  /*
+    MARK: Search bar
+  */
   .search-wrapper {
     & .search-handoff-button {
       border-radius: 99px !important;
@@ -171,7 +181,9 @@ url-prefix("about:home") {
     background-image: url("../icons/settings.svg") !important;
   }
 
-  /* Top sites tiles. */
+  /*
+    MARK: Top sites tiles
+  */
   .top-site-outer {
     & .tile {
       border-radius: 12px !important;
@@ -198,7 +210,9 @@ url-prefix("about:home") {
     }
   }
 
-  /* Recent activity / Pocket cards */
+  /*
+    MARK: Recent activity cards
+  */
   .card-outer {
     --uc-border-radius: 8px;
 
@@ -243,7 +257,9 @@ url-prefix("about:home") {
   }
 }
 
-/* private browsing newtab */
+/*
+  MARK: Private browsing
+*/
 @-moz-document url-prefix(about:privatebrowsing) {
   :root {
     --uc-wordmark-color: light-dark(#737373, #fff);
@@ -266,7 +282,9 @@ url-prefix("about:home") {
     }
   }
 
-  /* Private browsing search bar. */
+  /*
+    MARK: Search bar
+  */
   .search-inner-wrapper {
     height: 44px !important;
     
@@ -327,6 +345,9 @@ url-prefix("about:home") {
 
 }
 
+/*
+  MARK: Background images
+*/
 @media (-moz-bool-pref: "uc.tweak.newtab-background") {
   @-moz-document url(about:newtab),
   url(about:home),

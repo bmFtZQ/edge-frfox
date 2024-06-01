@@ -1,6 +1,9 @@
 /* Edge-Frfox - personalbar.css
  * https://github.com/bmFtZQ/edge-frfox */
 
+/*
+  MARK: Variables
+*/
 :root {
   --bookmark-block-padding: 6px !important;
   --bookmark-inline-padding: 6px !important;
@@ -14,7 +17,9 @@
   padding-bottom: var(--uc-bookmark-toolbar-padding-bottom) !important;
 }
 
-/* Bookmarks bar item sizing */
+/*
+  MARK: Bookmark items
+*/
 #personal-toolbar-empty-description,
 #PersonalToolbar .toolbarbutton-1,
 toolbarbutton.bookmark-item:not(.subviewbutton) {
@@ -36,7 +41,24 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
   padding: 0 !important;
 }
 
-/* Bookmarks bar separators */
+/* Spacing between icon and label for bookmarks bar items */
+#managed-bookmarks>.toolbarbutton-icon,
+#bookmarks-toolbar-placeholder>.toolbarbutton-icon,
+#PlacesToolbarItems>.bookmark-item>.toolbarbutton-icon[label]:not([label=""]),
+#OtherBookmarks.bookmark-item[container]>.toolbarbutton-icon {
+  margin-inline-end: 8px !important;
+}
+
+/* Sizing for bookmarks bar icons */
+#PersonalToolbar .toolbarbutton-1>.toolbarbutton-icon {
+  width: calc(2 * var(--bookmark-block-padding) + 16px) !important;
+  height: calc(2 * var(--bookmark-block-padding) + 16px) !important;
+  padding: var(--bookmark-block-padding) !important;
+}
+
+/*
+  MARK: Separators
+*/
 #PlacesToolbarItems > toolbarseparator {
   padding-inline: calc(3px - var(--bookmark-inline-margin)) !important;
   align-items: center !important;
@@ -61,17 +83,3 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
   padding-inline: calc(var(--toolbar-start-end-padding) - 2px) calc(var(--toolbar-start-end-padding) + 4px) !important;
 }
 
-/* Spacing between icon and label for bookmarks bar items */
-#managed-bookmarks>.toolbarbutton-icon,
-#bookmarks-toolbar-placeholder>.toolbarbutton-icon,
-#PlacesToolbarItems>.bookmark-item>.toolbarbutton-icon[label]:not([label=""]),
-#OtherBookmarks.bookmark-item[container]>.toolbarbutton-icon {
-  margin-inline-end: 8px !important;
-}
-
-/* Sizing for bookmarks bar icons */
-#PersonalToolbar .toolbarbutton-1>.toolbarbutton-icon {
-  width: calc(2 * var(--bookmark-block-padding) + 16px) !important;
-  height: calc(2 * var(--bookmark-block-padding) + 16px) !important;
-  padding: var(--bookmark-block-padding) !important;
-}

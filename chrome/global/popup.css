@@ -1,5 +1,8 @@
 /* Edge-Frfox - popup.css */
 
+/*
+  MARK: Variables
+*/
 :root {
   --panel-subview-body-padding: 2px 0 !important;
   --arrowpanel-border-radius: 8px !important;
@@ -39,7 +42,9 @@
   --uc-contextmenu-separator-horizontal: 0;
 }
 
-/* app menu */
+/*
+  MARK: App menu
+*/
 .addon-banner-item,
 .panel-banner-item {
   margin: 2px 4px 2px !important;
@@ -255,7 +260,9 @@
   margin-block-start: calc(var(--panel-separator-margin-vertical) * -.5) !important;
 }
 
-/* downloads popup */
+/*
+  MARK: Downloads
+*/
 .downloadTypeIcon {
   height: 16px !important;
   width: 16px !important;
@@ -310,7 +317,9 @@
   fill-opacity: 1 !important;
 }
 
-/* ::::: Extensions Pop-up ::::: */
+/*
+  MARK: Extensions
+*/
 /* #region */
 
 .toolbaritem-combined-buttons:is(:not([cui-areatype="toolbar"]), [overflowedItem="true"]) > toolbarbutton:not(.toolbarbutton-1)[disabled] {
@@ -393,7 +402,9 @@
 }
 /* #endregion */
 
-/* auto complete popup */
+/*
+  MARK: Autocomplete
+*/
 #PopupAutoComplete {
   /* workaround for inaccessible shadow-root element
   moves the shadow-root element underneath, and away from panel edges */
@@ -466,7 +477,9 @@ panelview .toolbarbutton-1,
   min-height: calc(16px + var(--uc-contextmenu-menuitem-padding-block) * 2) !important;
 }
 
-/* Search bar suggestions */
+/*
+  MARK: Search bar suggestions
+*/
 #PopupSearchAutoComplete {
   & .searchbar-separator {
     margin: 4px 0 !important;
@@ -499,6 +512,10 @@ panelview .toolbarbutton-1,
   }
 
 }
+
+/*
+  MARK: Context menu
+*/
 
 /* disable context menu when this tweak is applied */
 @media not (-moz-bool-pref: "uc.tweak.revert-context-menu") {
@@ -769,7 +786,9 @@ panelview .toolbarbutton-1,
   }
 }
 
-/* ::::: Dialog theme ::::: */
+/*
+  MARK: Dialog box
+*/
 
 /* Dialog shadow and outline adjustments. */
 .dialogBox:not(.spotlightBox) {

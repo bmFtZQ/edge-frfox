@@ -15,7 +15,9 @@
   box-shadow: 0 -3px 5px 3px light-dark(rgb(0 0 0 / .3), rgb(0 0 0 / .6)) !important;
 }
 
-/* Rounded Corners Tweak */
+/*
+  MARK: Rounded corners (Rc)
+*/
 @media (-moz-bool-pref: "uc.tweak.rounded-corners") {
   /* Since Firefox 120, when the bookmarks bar is set to only open on new tabs,
    * the bookmarks bar overlaps the #browser element. */
@@ -41,7 +43,9 @@
     z-index: 1 !important;
   }
 
-  /* Variables used for the rounded corners. */
+  /*
+    MARK: Rc Variables
+  */
   #main-window:not([chromehidden~="toolbar"]) {
     --uc-tweak-rounded-corners-padding: 4px;
     --uc-tweak-rounded-corners-radius: 8px;
@@ -87,7 +91,9 @@
     --uc-tweak-rounded-corners-shadow: unset;
   }
 
-  /* Apply rounded corners to the browser container. */
+  /*
+    MARK: Rc Browser
+  */
   #appcontent .browserStack {
     margin-inline: var(--uc-tweak-rounded-corners-padding) !important;
     margin-block-end: var(--uc-tweak-rounded-corners-padding) !important;
@@ -113,23 +119,14 @@
     }
   }
 
-  .browserContainer.responsive-mode {
-    background-color: transparent !important;
-
-    & .rdm-toolbar {
-      margin-inline: var(--uc-tweak-rounded-corners-padding) !important;
-      border-top-left-radius: var(--uc-tweak-rounded-corners-radius) !important;
-      border-top-right-radius: var(--uc-tweak-rounded-corners-radius) !important;
-      width: calc(100% - var(--uc-tweak-rounded-corners-padding) * 2) !important;
-    }
-  }
-
   /* Prevent status panel corners and shadow from appearing outside the browser. */
   #statuspanel {
     overflow: hidden;
   }
 
-  /* Apply rounded corners to sidebar. */
+  /*
+    MARK: Rc Sidebar
+  */
   #sidebar-box {
     margin-inline-start: var(--uc-tweak-rounded-corners-padding) !important;
     margin-block-end: var(--uc-tweak-rounded-corners-padding) !important;
@@ -142,6 +139,10 @@
       margin-inline-end: var(--uc-tweak-rounded-corners-padding) !important;
     }
   }
+
+  /*
+    MARK: Rc Devtools
+  */
 
   /* Devtools window when docked to the left or right. */
   .devtools-toolbox-side-iframe {
@@ -174,6 +175,18 @@
   .devtools-side-splitter,
   .devtools-horizontal-splitter {
     background-color: transparent !important;
+  }
+
+  /* Responsive design mode. */
+  .browserContainer.responsive-mode {
+    background-color: transparent !important;
+
+    & .rdm-toolbar {
+      margin-inline: var(--uc-tweak-rounded-corners-padding) !important;
+      border-top-left-radius: var(--uc-tweak-rounded-corners-radius) !important;
+      border-top-right-radius: var(--uc-tweak-rounded-corners-radius) !important;
+      width: calc(100% - var(--uc-tweak-rounded-corners-padding) * 2) !important;
+    }
   }
 
   /* Remove sidebar border when not in full screen. */
