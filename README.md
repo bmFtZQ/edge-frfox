@@ -113,7 +113,9 @@ but this will restore Sidebery to the default settings before applying it.
 ---
 
 ### Remove extra space at the top of the window
-Removes the extra space at the top of the window when not maximised.
+Removes the additional space at the top of the window above the tabs that
+appears when the window is not maximised. Enabling this will cause the tabs to
+touch the top edge of the window at all times.
 
 `uc.tweak.disable-drag-space`
 
