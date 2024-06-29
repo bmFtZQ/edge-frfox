@@ -304,11 +304,11 @@
   list-style-image: url("page-portrait.svg") !important;
 }
 
-#urlbar:not(.searchButton) > #urlbar-input-container > #identity-box[pageproxystate="invalid"] #identity-icon {
+#urlbar:not(.searchButton) > :is(#urlbar-input-container, .urlbar-input-container) > #identity-box[pageproxystate="invalid"] #identity-icon {
   list-style-image: url("search-glass.svg") !important;
 }
 
-#urlbar[actiontype="extension"] > #urlbar-input-container > #identity-box #identity-icon,
+#urlbar[actiontype="extension"] > :is(#urlbar-input-container, .urlbar-input-container) > #identity-box #identity-icon,
 #identity-box[pageproxystate="valid"].extensionPage #identity-icon {
   list-style-image: url("extension.svg") !important;
 }
@@ -318,7 +318,7 @@
   list-style-image: url("security.svg") !important;
 }
 
-#urlbar-input-container[pageproxystate="valid"] > #tracking-protection-icon-container > #tracking-protection-icon-box > #tracking-protection-icon {
+:is(#urlbar-input-container, .urlbar-input-container)[pageproxystate="valid"] > #tracking-protection-icon-container > #tracking-protection-icon-box > #tracking-protection-icon {
   list-style-image: url("tracking-protection.svg") !important;
 }
 

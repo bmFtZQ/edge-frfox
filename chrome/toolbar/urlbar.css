@@ -60,7 +60,7 @@
 }
 
 /* Add padding to sides of URL bar. */
-#urlbar-input-container,
+:is(#urlbar-input-container, .urlbar-input-container),
 #searchbar {
   padding-inline: var(--uc-urlbar-inline-padding) !important;
 }
