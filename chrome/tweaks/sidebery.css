@@ -295,6 +295,14 @@
         flex-shrink: 0 !important;
       }
 
+      /* Fix new tab icon when badge is placed above it (open in container). */
+      & > .-badge {
+        position: static !important;
+        margin-top: 10px !important;
+        margin-inline-start: calc(-1 * (14px + var(--tabs-inner-gap) / 2)) !important;
+        margin-inline-end: calc(var(--tabs-inner-gap) - 1px) !important;
+      }
+
       /* Add new tab label. */
       &::after {
         content: "New Tab" !important;

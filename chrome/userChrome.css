@@ -12,7 +12,7 @@
 
 /* Edge-Frfox tweaks */
 @import url("global/tweaks.css");
-@import url("tweaks/hide-tabs-bar.css") (-moz-bool-pref: "uc.tweak.hide-tabs-bar");
+@import url("tweaks/hide-tabs-bar.css");
 
 /* Import custom stylesheet instead of modifying Edge-Frfox theme files. */
 @import url("custom.css");
