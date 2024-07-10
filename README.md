@@ -60,6 +60,10 @@ Sidebery, Tree Style Tab or Tab Center Reborn.
 
 `uc.tweak.hide-tabs-bar`
 
+Optionally, the window controls can be hidden from the navbar by using:
+
+`uc.tweak.hide-tabs-bar.no-window-controls`
+
 ---
 
 ### Sidebery Theme
