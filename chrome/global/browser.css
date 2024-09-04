@@ -26,6 +26,7 @@
   #main-window[BookmarksToolbarOverlapsBrowser] .newTabBrowserPanel,
   #main-window[BookmarksToolbarOverlapsBrowser] #sidebar-box {
     padding-top: 0 !important;
+    margin-top: 0 !important;
   }
 
   #main-window[BookmarksToolbarOverlapsBrowser] #browser {
