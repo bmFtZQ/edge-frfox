@@ -936,6 +936,10 @@
   #sidebar-switcher-history {
     --menu-image: url("history.svg");
   }
+
+  #context-translate-selection {
+    --menu-image: url("translate.svg");
+  }
 }
 
 /*
