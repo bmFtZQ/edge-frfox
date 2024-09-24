@@ -260,6 +260,14 @@
   margin-block-start: calc(var(--panel-separator-margin-vertical) * -.5) !important;
 }
 
+#PlacesToolbar menuitem,
+#PlacesToolbar menu,
+panelview .toolbarbutton-1,
+.subviewbutton,
+.widget-overflow-list .toolbarbutton-1 {
+  min-height: calc(16px + var(--uc-contextmenu-menuitem-padding-block) * 2) !important;
+}
+
 /*
   MARK: Downloads
 */
@@ -405,97 +413,90 @@
 /*
   MARK: Autocomplete
 */
-#PopupAutoComplete {
-  /* workaround for inaccessible shadow-root element
-  moves the shadow-root element underneath, and away from panel edges */
-  padding-block: 10px !important;
-  padding-inline: 2px !important;
+panel[type="autocomplete-richlistbox"] {
+  --panel-shadow: none !important;
+  --panel-background: var(--arrowpanel-background) !important;
+  --panel-color: var(--arrowpanel-color) !important;
+  --panel-padding: var(--uc-contextmenu-padding) !important;
+  --panel-border-radius: var(--uc-contextmenu-border-radius) !important;
+  --panel-border-color: var(--arrowpanel-border-color) !important;
 
-  & > .autocomplete-richlistbox {
-    background: var(--arrowpanel-background) !important;
-    box-shadow: 0 0 0 1px inset var(--arrowpanel-border-color) !important;
-    height: auto !important;
-    margin-block: -10px !important;
-    margin-inline: -2px !important;
-    padding: var(--uc-contextmenu-padding) !important;
-    border-radius: var(--uc-contextmenu-border-radius) !important;
+  > .autocomplete-richlistbox {
+    background: transparent !important;
     color: inherit !important;
   }
 
-  & .autocomplete-richlistitem[originaltype="loginsFooter"] {
-    justify-content: start !important;
-    color: inherit !important;
-    background-color: transparent !important;
-    height: 28px !important;
-    min-height: 28px !important;
-    padding-inline-start: var(--uc-contextmenu-menuitem-padding-inline) !important;
-    position: relative !important;
-    overflow: visible !important;
-    margin-top: calc(var(--uc-contextmenu-separator-vertical) * 2 + 1px) !important;
+  .autocomplete-richlistitem {
+    &[originaltype="loginsFooter"] {
+      justify-content: start !important;
+      color: inherit !important;
+      background-color: transparent !important;
+      padding-inline-start: var(--uc-contextmenu-menuitem-padding-inline) !important;
+      position: relative !important;
+      overflow: visible !important;
+      margin-top: calc(var(--uc-contextmenu-separator-vertical) * 2 + 1px) !important;
+
+      /* Separator */
+      &::before {
+        content: "";
+        position: absolute;
+        width: calc(100% + var(--uc-contextmenu-menuitem-margin-inline) * 2);
+        border-top: 1px solid var(--panel-separator-color);
+        top: calc((var(--uc-contextmenu-separator-vertical) + var(--uc-contextmenu-menuitem-border-width)) * -1 - 1px);
+        left: calc(var(--uc-contextmenu-menuitem-margin-inline) * -1);
+      }
+    }
+
+    &:hover {
+      background-color: var(--panel-item-hover-bgcolor) !important;
+    }
+
+    &[selected] {
+      background-color: var(--panel-item-active-bgcolor) !important;
+      color: inherit !important;
+    }
   }
 
-  /* Separator */
-  & .autocomplete-richlistitem[originaltype="loginsFooter"]::before {
-    content: "";
-    width: calc(100% + var(--uc-contextmenu-menuitem-margin-inline) * 2);
-    border-top: 1px solid var(--panel-separator-color);
-    position: absolute;
-    top: calc((var(--uc-contextmenu-separator-vertical) + var(--uc-contextmenu-menuitem-border-width)) * -1 - 1px);
-    left: calc(var(--uc-contextmenu-menuitem-margin-inline) * -1);
-  }
-
-  & .autocomplete-richlistitem:hover {
-    background-color: var(--panel-item-hover-bgcolor) !important;
-  }
-
-  & .autocomplete-richlistitem[selected] {
-    background-color: var(--panel-item-active-bgcolor) !important;
-    color: inherit !important;
-  }
-
-  & .ac-site-icon {
+  .ac-site-icon {
     fill: currentColor !important;
     margin-block: auto !important;
     margin-inline: 0 var(--uc-autocomplete-panel-menuicon-padding-inline) !important;
   }
 
-  & .ac-title {
-    margin-inline: calc(16px + var(--uc-autocomplete-panel-menuicon-padding-inline)) !important;
+  .ac-title {
+    margin-inline-start: 0 !important;
   }
 
-  & .two-line-wrapper {
+  .two-line-wrapper {
     padding: 0 !important;
     gap: 0 !important;
+
+    > .labels-wrapper > .line2-label:empty {
+      /* Remove padding on empty element. */
+      padding-top: 0 !important;
+    }
   }
 }
 
-#PlacesToolbar menuitem,
-#PlacesToolbar menu,
-panelview .toolbarbutton-1,
-.subviewbutton,
-.widget-overflow-list .toolbarbutton-1 {
-  min-height: calc(16px + var(--uc-contextmenu-menuitem-padding-block) * 2) !important;
+#PopupAutoComplete {
+  .ac-site-icon {
+    display: flex !important;
+  }
 }
 
 /*
   MARK: Search bar suggestions
 */
 #PopupSearchAutoComplete {
-  & .searchbar-separator {
-    margin: 4px 0 !important;
-  }
-
-  /* Search suggestions. */
-  & .autocomplete-richlistitem,
   & .search-panel-header {
     padding-block: 2px !important;
     padding-inline: var(--uc-contextmenu-menuitem-padding-inline) !important;
     margin: 0 var(--uc-arrowpanel-menuitem-margin-inline) !important;
     border-radius: var(--arrowpanel-menuitem-border-radius) !important;
+  }
 
-    & > .ac-type-icon {
-      margin-inline-start: 0 !important;
-    }
+  & .autocomplete-richlistitem > .ac-type-icon {
+    margin-inline-start: 0 !important;
   }
 
   /* Search engine selector. */
@@ -510,7 +511,6 @@ panelview .toolbarbutton-1,
       margin-inline: 1px 7px !important;
     }
   }
-
 }
 
 /*
@@ -524,12 +524,11 @@ panelview .toolbarbutton-1,
   menupopup:not(.PanelUI-subView) menuitem,
   menupopup:not(.PanelUI-subView) menu,
   menupopup:not(.PanelUI-subView) menuseparator,
-  panel:not(#PopupSearchAutoComplete) {
+  panel:not([type="autocomplete-richlistbox"]) {
     appearance: none !important;
   }
 
   menupopup:not(.PanelUI-subView),
-  #PopupAutoComplete,
   menulist > menupopup:not(.PanelUI-subView) > menucaption {
     -moz-window-shadow: none !important;
     background: 0 !important;
@@ -538,7 +537,6 @@ panelview .toolbarbutton-1,
   }
 
   .popup-internal-box,
-  #PopupAutoComplete > .autocomplete-richlistbox,
   .menupopup-arrowscrollbox {
     background: var(--arrowpanel-background) !important;
     border: 1px solid var(--arrowpanel-border-color) !important;
@@ -619,8 +617,7 @@ panelview .toolbarbutton-1,
   }
 
   menupopup menuseparator,
-  panel menuseparator,
-  #PopupSearchAutoComplete .searchbar-separator {
+  panel menuseparator {
     margin: var(--uc-contextmenu-separator-vertical) 0 !important;
     padding: 0 !important;
     background: none !important;
@@ -638,8 +635,7 @@ panelview .toolbarbutton-1,
   menupopup menu,
   menupopup menuitem,
   menupopup menucaption,
-  #PopupAutoComplete > richlistbox > richlistitem,
-  #PopupSearchAutoComplete .autocomplete-richlistitem {
+  panel[type="autocomplete-richlistbox"] richlistitem {
     padding: var(--uc-contextmenu-menuitem-padding-block) var(--uc-contextmenu-menuitem-padding-inline) !important;
     margin: var(--uc-contextmenu-menuitem-margin) !important;
     border-radius: var(--uc-contextmenu-menuitem-border-radius) !important;
@@ -765,7 +761,7 @@ panelview .toolbarbutton-1,
     .menu-text,
     .menu-iconic-text,
     panel .toolbarbutton-text,
-    #PopupSearchAutoComplete .ac-title,
+    panel[type="autocomplete-richlistbox"] .ac-title,
     /* Used for vertical context navigation tweak. */
     #context-navigation > .menuitem-iconic::after {
       margin-inline-start: 0 !important;
@@ -778,7 +774,7 @@ panelview .toolbarbutton-1,
     panel .toolbarbutton-text,
     #appMenu-fxa-status2,
     .panel-header,
-    #PopupSearchAutoComplete,
+    panel[type="autocomplete-richlistbox"],
     /* Used for vertical context navigation tweak. */
     #context-navigation > .menuitem-iconic::after {
       font-size: 13.6px !important;

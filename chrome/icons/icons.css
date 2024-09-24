@@ -114,11 +114,16 @@
 }
 
 #appMenu-passwords-button,
-#password-notification-icon,
-#PopupAutoComplete > richlistbox > richlistitem[originaltype="generatedPassword"] > .two-line-wrapper > .ac-site-icon,
-#PopupAutoComplete > richlistbox > richlistitem[originaltype="loginWithOrigin"] > .two-line-wrapper > .ac-site-icon,
-#PopupAutoComplete > richlistbox > richlistitem[originaltype="login"] > .ac-site-icon {
+#password-notification-icon {
   list-style-image: url("passwords.svg") !important;
+}
+
+#PopupAutoComplete richlistitem[originaltype="generatedPassword"] .ac-site-icon,
+#PopupAutoComplete richlistitem[originaltype="loginWithOrigin"] .ac-site-icon:not([src^="page-icon:"]),
+#PopupAutoComplete richlistitem[originaltype="login"] .ac-site-icon:not([src^="page-icon:"]) {
+  /* content property doesn't work on xul|image, only html|img. */
+  background: url("passwords.svg") no-repeat center !important;
+  padding-left: 16px !important;
 }
 
 #nav-bar-overflow-button {
@@ -571,6 +576,10 @@
 
 #appMenu-report-broken-site-button {
   list-style-image: url("report.svg") !important;
+}
+
+#PopupAutoComplete .ac-login-item .ac-secondary-action {
+  background-image: url("settings.svg") !important;
 }
 
 /*
