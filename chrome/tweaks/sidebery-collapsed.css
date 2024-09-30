@@ -1,0 +1,53 @@
+@-moz-document regexp("^moz-extension://.*?/sidebar/sidebar.html") {
+  @media (max-width: 50px) {
+    #root {
+      --tabs-indent: unset !important;
+      --tabs-lvl-opacity: 0 !important;
+    }
+
+    .CtxMenu[data-active="true"] {
+      display: none;
+    }
+
+    .NavigationBar[data-layout="inline"] {
+      & .static-btns {
+        display: none !important;
+      }
+      & .nav-item[data-active="true"] {
+        background-color: unset !important;
+        box-shadow: unset !important;
+        margin: auto;
+        opacity: unset !important;
+        position: relative !important;
+        transform: unset !important;
+      }
+    }
+
+    .SearchBar[data-showed="true"] {
+      & .search-icon > svg {
+        margin: unset !important;
+      }
+      & .placeholder, & .input, & .clear-btn {
+        display: none !important;
+      }
+    }
+
+    .Tab .fav {
+      margin: auto !important;
+    }
+
+    .Tab .audio {
+      top: unset !important;
+      left: unset !important;
+      bottom: 0;
+      right: 0;
+      width: 14px !important;
+      height: 14px !important;
+    }
+
+    .Tab .t-box,
+    .Tab .close {
+      display: none;
+    }
+  }
+}
