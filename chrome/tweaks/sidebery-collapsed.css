@@ -32,6 +32,10 @@
       }
     }
 
+    .ScrollBox > .scroll-container {
+      scrollbar-width: none !important;
+    }
+
     .Tab .fav {
       margin: auto !important;
     }
