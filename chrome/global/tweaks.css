@@ -1,9 +1,9 @@
 /* Edge-Frfox - tweaks.css */
 
 /*
-  MARK: Disable tab close button
+  MARK: Hide tab close button
 */
-@media (-moz-bool-pref: "uc.tweak.disable-tab-close-button") {
+@media (-moz-bool-pref: "uc.tweak.hide-tab-close-button") {
   .tabbrowser-tab .tab-close-button {
     visibility: collapse !important;
   }

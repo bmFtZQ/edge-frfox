@@ -232,6 +232,15 @@ Edge. This hides the permissions indicator label and makes the icons smaller.
 
 ---
 
+### Hide tab close button
+
+Hide the close button on tabs. "Ctrl + W" and mouse middle click can still be
+used to close tabs.
+
+`uc.tweak.hide-tab-close-button`
+
+---
+
 ## Acknowledgements
 [muckSponge](https://github.com/muckSponge) - [MaterialFox](https://github.com/muckSponge/MaterialFox)
 
