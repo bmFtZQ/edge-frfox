@@ -1,6 +1,15 @@
 /* Edge-Frfox - tweaks.css */
 
 /*
+  MARK: Hide tab close button
+*/
+@media (-moz-bool-pref: "uc.tweak.hide-tab-close-button") {
+  .tabbrowser-tab .tab-close-button {
+    visibility: collapse !important;
+  }
+}
+
+/*
   MARK: Disable drag space
 */
 @media (-moz-bool-pref: "uc.tweak.disable-drag-space") {
@@ -106,6 +115,7 @@ bugs with certain themes eg. dark text on dark background.) */
   /* invert bottom corner radius for tabs */
   .tab-background {
     border-radius: var(--tab-border-radius) !important;
+    outline-offset: 0px !important;
 
     &::before,
     &::after {
