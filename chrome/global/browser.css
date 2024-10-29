@@ -95,7 +95,7 @@
   /*
     MARK: Rc Browser
   */
-  #appcontent .browserStack {
+  #tabbrowser-tabbox .browserStack {
     margin-inline: var(--uc-tweak-rounded-corners-padding) !important;
     margin-block-end: var(--uc-tweak-rounded-corners-padding) !important;
     border-radius: var(--uc-tweak-rounded-corners-radius) !important;
