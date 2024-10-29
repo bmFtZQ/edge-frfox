@@ -1,6 +1,15 @@
 /* Edge-Frfox - tweaks.css */
 
 /*
+  MARK: Hide tab close button
+*/
+@media (-moz-bool-pref: "uc.tweak.hide-tab-close-button") {
+  .tabbrowser-tab .tab-close-button {
+    visibility: collapse !important;
+  }
+}
+
+/*
   MARK: Disable drag space
 */
 @media (-moz-bool-pref: "uc.tweak.disable-drag-space") {
