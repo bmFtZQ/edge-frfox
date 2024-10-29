@@ -106,6 +106,7 @@ bugs with certain themes eg. dark text on dark background.) */
   /* invert bottom corner radius for tabs */
   .tab-background {
     border-radius: var(--tab-border-radius) !important;
+    outline-offset: 0px !important;
 
     &::before,
     &::after {
