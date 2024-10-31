@@ -82,8 +82,8 @@
       @media (-moz-platform: windows) {
         /* Offset navbar contents to make space for the window controls */
         &:where([inFullscreen], [tabsintitlebar]) #nav-bar {
-          padding-inline-end: calc(140px + var(--uc-titlebar-drag-space)) !important;
-
+          margin-right: 140px !important;
+          padding-inline-end: var(--uc-titlebar-drag-space) !important;
           /* Remove the padding from the side of the navbar */
           #PanelUI-menu-button {
             padding-inline-end: 0 !important;
