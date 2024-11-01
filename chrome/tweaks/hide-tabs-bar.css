@@ -22,7 +22,8 @@
     }
 
     /* Fix issue with missing window controls. */
-    &[tabsintitlebar] #titlebar {
+    &[tabsintitlebar] #titlebar,
+    &[tabsintitlebar] #TabsToolbar {
       will-change: auto !important;
     }
 
@@ -39,36 +40,17 @@
       }
     }
 
-    /* Make sure window controls are removed in full screen mode. */
-    &[inDOMFullscreen] #TabsToolbar .titlebar-buttonbox,
-    &[inFullscreen] #navigator-toolbox[style*="margin-top"] #TabsToolbar .titlebar-buttonbox {
-      visibility: collapse !important;
-    }
+    /*
+      MARK: Window controls
+    */
+    #toolbar-menubar:not([autohide="false"]) ~ #nav-bar {
+      /* Firefox 133 added window controls to nav-bar. */
+      .titlebar-buttonbox-container {
+        display: flex !important;
+        margin-top: calc(-1 * var(--uc-tab-top-margin, 0)) !important;
 
-    /* Disable the replacement window controls if tweak is enabled. */
-    @media not (-moz-bool-pref: "uc.tweak.hide-tabs-bar.no-window-controls") {
-      /*
-        MARK: macOS styles
-      */
-      @media (-moz-platform: macos) {
-        /* Offset navbar contents to make space for the window controls */
-        &[tabsintitlebar]:not([inFullscreen]) #nav-bar {
-          padding-left: calc(70px + var(--uc-titlebar-drag-space)) !important;
-
-          /* Remove the padding from the side of the navbar */
-          #nav-bar-customization-target > :is(toolbarbutton, toolbaritem):first-child {
-            padding-inline-start: 0 !important;
-          }
-        }
-
-        /* Positioning of the window controls */
-        #TabsToolbar .titlebar-buttonbox-container {
-          visibility: visible !important;
-          position: fixed !important;
-          height: calc(var(--uc-navbar-height) + var(--uc-tab-top-margin, 0px));
-          margin: 0 !important;
-          top: 0;
-          left: 0;
+        @media (-moz-platform: macos) {
+          margin-inline: 0 !important;
 
           .titlebar-buttonbox {
             margin-inline: calc((var(--uc-navbar-height) + var(--uc-tab-top-margin, 0px) - 14px) / 2) !important;
@@ -76,61 +58,75 @@
         }
       }
 
-      /*
-        MARK: Windows styles
-      */
-      @media (-moz-platform: windows) {
-        /* Offset navbar contents to make space for the window controls */
-        &:where([inFullscreen], [tabsintitlebar]) #nav-bar {
-          padding-inline-end: calc(140px + var(--uc-titlebar-drag-space)) !important;
+      /* Space between window controls and navbar items. */
+      .titlebar-spacer {
+        width: max(calc(var(--uc-titlebar-drag-space, 0px) - var(--toolbar-start-end-padding, 0px)), 0px) !important;
+      }
 
-          /* Remove the padding from the side of the navbar */
-          #PanelUI-menu-button {
-            padding-inline-end: 0 !important;
-          }
-        }
-
-        /* Positioning of the window controls */
-        :where(#toolbar-menubar[inactive]) + #TabsToolbar .titlebar-buttonbox {
-          visibility: visible !important;
-          position: fixed !important;
-          top: 0;
-          inset-inline-end: 0;
-          height: calc(var(--uc-navbar-height) + var(--uc-tab-top-margin, 0)) !important;
-          z-index: 100 !important;
-          color: var(--toolbar-color) !important;
+      /* Display left spacer (macOS and certain Linux configs). */
+      @media (-moz-platform: macos),
+      (-moz-gtk-csd-reversed-placement) {
+        .titlebar-spacer[type*="pre"] {
+          display: flex !important;
         }
       }
 
-      /*
-        MARK: Linux/GTK styles
-      */
-      @media (-moz-gtk-csd-minimize-button),
-      (-moz-gtk-csd-maximize-button),
-      (-moz-gtk-csd-close-button) {
-        /* Width of single window control button. */
-        --uc-window-control-btn: 34px;
+      /* Display right spacer (Windows and Linux). */
+      @media (-moz-platform: windows),
+      (-moz-gtk-csd-close-button) and (not (-moz-gtk-csd-reversed-placement)) {
+        .titlebar-spacer[type*="post"] {
+          display: flex !important;
+        }
+      }
+    }
 
-        /* Navbar space reserved for one button. */
-        --uc-window-controls-width: var(--uc-window-control-btn);
+    /* Older versions of Firefox, move window controls from TabsToolbar. */
+    &:not(:has(#nav-bar > .titlebar-buttonbox-container)) {
 
-        /* Navbar space reserved for two buttons. */
-        @media (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-maximize-button),
-        (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-close-button),
-        (-moz-gtk-csd-maximize-button) and (-moz-gtk-csd-close-button) {
-          --uc-window-controls-width: calc(var(--uc-window-control-btn) * 2);
+      /* Make sure window controls are removed in full screen mode. */
+      &[inDOMFullscreen] #TabsToolbar .titlebar-buttonbox,
+      &[inFullscreen] #navigator-toolbox[style*="margin-top"] #TabsToolbar .titlebar-buttonbox {
+        visibility: collapse !important;
+      }
+
+      /* Disable the replacement window controls if tweak is enabled. */
+      @media not (-moz-bool-pref: "uc.tweak.hide-tabs-bar.no-window-controls") {
+        /*
+          MARK: macOS styles
+        */
+        @media (-moz-platform: macos) {
+          /* Offset navbar contents to make space for the window controls */
+          &[tabsintitlebar]:not([inFullscreen]) #nav-bar {
+            padding-left: calc(70px + var(--uc-titlebar-drag-space)) !important;
+
+            /* Remove the padding from the side of the navbar */
+            #nav-bar-customization-target > :is(toolbarbutton, toolbaritem):first-child {
+              padding-inline-start: 0 !important;
+            }
+          }
+
+          /* Positioning of the window controls */
+          #TabsToolbar .titlebar-buttonbox-container {
+            visibility: visible !important;
+            position: fixed !important;
+            height: calc(var(--uc-navbar-height) + var(--uc-tab-top-margin, 0px));
+            margin: 0 !important;
+            top: 0;
+            left: 0;
+
+            .titlebar-buttonbox {
+              margin-inline: calc((var(--uc-navbar-height) + var(--uc-tab-top-margin, 0px) - 14px) / 2) !important;
+            }
+          }
         }
 
-        /* Navbar space reserved for three buttons. */
-        @media (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-maximize-button) and (-moz-gtk-csd-close-button) {
-          --uc-window-controls-width: calc(var(--uc-window-control-btn) * 3);
-        }
-
-        /* Offset navbar contents to make space for the window controls */
-        &:where([inFullscreen], [tabsintitlebar]) #nav-bar {
-          /* Window controls on the right. */
-          @media not (-moz-gtk-csd-reversed-placement) {
-            padding-inline-end: calc(var(--uc-window-controls-width, 0px) + var(--uc-titlebar-drag-space)) !important;
+        /*
+          MARK: Windows styles
+        */
+        @media (-moz-platform: windows) {
+          /* Offset navbar contents to make space for the window controls */
+          &:where([inFullscreen], [tabsintitlebar]) #nav-bar {
+            padding-inline-end: calc(140px + var(--uc-titlebar-drag-space)) !important;
 
             /* Remove the padding from the side of the navbar */
             #PanelUI-menu-button {
@@ -138,28 +134,77 @@
             }
           }
 
-          /* Window controls on the left. */
-          @media (-moz-gtk-csd-reversed-placement) {
-            padding-inline-start: calc(var(--uc-window-controls-width, 0px) + var(--uc-titlebar-drag-space)) !important;
-
-            /* Remove the padding from the side of the navbar */
-            #nav-bar-customization-target > :is(toolbarbutton, toolbaritem):first-child {
-              padding-inline-start: 0 !important;
-            }
+          /* Positioning of the window controls */
+          :where(#toolbar-menubar[inactive]) + #TabsToolbar .titlebar-buttonbox {
+            visibility: visible !important;
+            position: fixed !important;
+            top: 0;
+            inset-inline-end: 0;
+            height: calc(var(--uc-navbar-height) + var(--uc-tab-top-margin, 0)) !important;
+            z-index: 100 !important;
+            color: var(--toolbar-color) !important;
           }
         }
 
-        /* Positioning of the window controls */
-        :where(#toolbar-menubar[inactive]) + #TabsToolbar .titlebar-buttonbox {
-          visibility: visible !important;
-          position: fixed !important;
-          top: 0;
-          height: calc(var(--uc-navbar-height) + var(--uc-tab-top-margin, 0)) !important;
-          z-index: 100 !important;
-          inset-inline: auto 0;
+        /*
+          MARK: Linux/GTK styles
+        */
+        @media (-moz-gtk-csd-minimize-button),
+        (-moz-gtk-csd-maximize-button),
+        (-moz-gtk-csd-close-button) {
+          /* Width of single window control button. */
+          --uc-window-control-btn: 34px;
 
-          @media (-moz-gtk-csd-reversed-placement) {
-            inset-inline: 0 auto !important;
+          /* Navbar space reserved for one button. */
+          --uc-window-controls-width: var(--uc-window-control-btn);
+
+          /* Navbar space reserved for two buttons. */
+          @media (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-maximize-button),
+          (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-close-button),
+          (-moz-gtk-csd-maximize-button) and (-moz-gtk-csd-close-button) {
+            --uc-window-controls-width: calc(var(--uc-window-control-btn) * 2);
+          }
+
+          /* Navbar space reserved for three buttons. */
+          @media (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-maximize-button) and (-moz-gtk-csd-close-button) {
+            --uc-window-controls-width: calc(var(--uc-window-control-btn) * 3);
+          }
+
+          /* Offset navbar contents to make space for the window controls */
+          &:where([inFullscreen], [tabsintitlebar]) #nav-bar {
+            /* Window controls on the right. */
+            @media not (-moz-gtk-csd-reversed-placement) {
+              padding-inline-end: calc(var(--uc-window-controls-width, 0px) + var(--uc-titlebar-drag-space)) !important;
+
+              /* Remove the padding from the side of the navbar */
+              #PanelUI-menu-button {
+                padding-inline-end: 0 !important;
+              }
+            }
+
+            /* Window controls on the left. */
+            @media (-moz-gtk-csd-reversed-placement) {
+              padding-inline-start: calc(var(--uc-window-controls-width, 0px) + var(--uc-titlebar-drag-space)) !important;
+
+              /* Remove the padding from the side of the navbar */
+              #nav-bar-customization-target > :is(toolbarbutton, toolbaritem):first-child {
+                padding-inline-start: 0 !important;
+              }
+            }
+          }
+
+          /* Positioning of the window controls */
+          :where(#toolbar-menubar[inactive]) + #TabsToolbar .titlebar-buttonbox {
+            visibility: visible !important;
+            position: fixed !important;
+            top: 0;
+            height: calc(var(--uc-navbar-height) + var(--uc-tab-top-margin, 0)) !important;
+            z-index: 100 !important;
+            inset-inline: auto 0;
+
+            @media (-moz-gtk-csd-reversed-placement) {
+              inset-inline: 0 auto !important;
+            }
           }
         }
       }
