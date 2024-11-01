@@ -234,38 +234,40 @@
     }
   }
 
-  #sidebar-header {
-    border-bottom: 0 !important;
-    padding: 10px 4px 0 !important;
-    overflow: hidden;
-    position: relative;
+  @media not (-moz-bool-pref: "uc.tweak.collapse-sidebery") {
+    #sidebar-header {
+      border-bottom: 0 !important;
+      padding: 10px 4px 0 !important;
+      overflow: hidden;
+      position: relative;
 
-    #sidebar-switcher-target,
-    #sidebar-close {
-      width: auto !important;
-      height: 28px !important;
-      padding: 0 8px !important;
-      border: none !important;
-      margin-inline: 0 !important;
+      #sidebar-switcher-target,
+      #sidebar-close {
+        width: auto !important;
+        height: 28px !important;
+        padding: 0 8px !important;
+        border: none !important;
+        margin-inline: 0 !important;
+      }
+
+      #sidebar-spacer {
+        min-width: 8px !important;
+      }
     }
 
-    #sidebar-spacer {
-      min-width: 8px !important;
+    /* Sidebar positioned on the left. */
+    &:not([positionend]) {
+      border-inline-end: 1px solid var(--sidebar-border-color);
+      /* Use less padding on the side with the border. */
+      padding-inline: 4px 3px;
     }
-  }
 
-  /* Sidebar positioned on the left. */
-  &:not([positionend]) {
-    border-inline-end: 1px solid var(--sidebar-border-color);
-    /* Use less padding on the side with the border. */
-    padding-inline: 4px 3px;
-  }
-
-  /* Sidebar positioned on the right. */
-  &[positionend] {
-    border-inline-start: 1px solid var(--sidebar-border-color);
-    /* Use less padding on the side with the border. */
-    padding-inline: 3px 4px;
+    /* Sidebar positioned on the right. */
+    &[positionend] {
+      border-inline-start: 1px solid var(--sidebar-border-color);
+      /* Use less padding on the side with the border. */
+      padding-inline: 3px 4px;
+    }
   }
 
   /* Rounded corners tweak optimisations. */
