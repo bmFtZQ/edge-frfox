@@ -2,61 +2,19 @@
   "settings": {
     "nativeScrollbars": true,
     "nativeScrollbarsThin": true,
-    "updateSidebarTitle": true,
-    "ctxMenuNative": false,
-    "navBarLayout": "horizontal",
-    "navBarInline": true,
+    "ctxMenuNative": true,
+    "navBarLayout": "hidden",
     "subPanelRecentlyClosedBar": false,
     "subPanelBookmarks": false,
     "subPanelHistory": false,
-    "searchBarMode": "dynamic",
-    "tabRmBtn": "always",
-    "tabsRmUndoNote": false,
     "showNewTabBtns": true,
+    "tabRmBtn": "always",
     "newTabBarPosition": "after_tabs",
     "moveNewTabParent": "default",
     "pinnedTabsPosition": "panel",
     "pinnedTabsList": true,
-    "bookmarksRmUndoNote": false,
     "theme": "proton",
     "colorScheme": "ff"
-  },
-  "sidebar": {
-    "nav": [
-      "bookmarks",
-      "history",
-      "tabs",
-      "search"
-    ],
-    "panels": {
-      "bookmarks": {
-        "type": 1,
-        "id": "bookmarks",
-        "name": "Bookmarks",
-        "iconSVG": "icon_bookmarks",
-        "tempMode": true,
-        "skipOnSwitching": true,
-        "viewMode": "tree"
-      },
-      "history": {
-        "type": 4,
-        "id": "history",
-        "name": "History",
-        "color": "toolbar",
-        "iconSVG": "icon_clock",
-        "tempMode": true,
-        "skipOnSwitching": true,
-        "viewMode": "history"
-      },
-      "tabs": {
-        "type": 2,
-        "id": "tabs",
-        "name": "Tabs",
-        "color": "toolbar",
-        "iconSVG": "icon_tabs",
-        "skipOnSwitching": false
-      }
-    }
   },
   "ver": "5.2.0"
 }

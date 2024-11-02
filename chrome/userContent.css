@@ -2,4 +2,3 @@
 @import url("content/common.css");
 @import url("content/newtab.css");
 @import url("tweaks/sidebery.css") (-moz-bool-pref: "uc.tweak.theme.sidebery");
-@import url("tweaks/sidebery-collapsed.css") (-moz-bool-pref: "uc.tweak.collapse-sidebery");

@@ -50,10 +50,8 @@
     & #sidebar-splitter {
       display: none;
     }
-  }
 
-  :root:not([customizing]):has(#sidebar-title[value="Sidebery"]:not([hidden])),
-  :root:not([customizing]):has(#sidebar-title[value="Tabs"]:not([hidden])) {
+
     --uc-sidebar-collapse-duration: 0ms;
     --uc-sidebar-collapse-delay: 0ms;
     --uc-sidebar-expand-duration: 100ms;
@@ -67,7 +65,7 @@
     }
 
     & #sidebar-box:hover {
-      & #sidebar-header, & #sidebar {
+      & #sidebar {
         width: var(--uc-sidebar-width) !important;
         transition-duration: var(--uc-sidebar-expand-duration);
         transition-delay: var(--uc-sidebar-expand-delay);
