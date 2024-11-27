@@ -110,6 +110,8 @@
     --in-content-box-background: var(--input-bgcolor) !important;
     --in-content-box-border-color: var(--input-border-color) !important;
   }
+
+  accent-color: var(--button-primary-bgcolor) !important;
 }
 
 /* Ensure that dark mode is enabled completely in private browsing mode. */

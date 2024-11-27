@@ -149,6 +149,10 @@
   &[haspinnedtabs]:not([positionpinnedtabs]) .tabbrowser-tab:nth-child(1 of :not([pinned], [hidden])) {
     margin-inline-start: 0 !important;
   }
+
+  &[orient="horizontal"] {
+    --tabstrip-min-height: auto !important;
+  }
 }
 
 /* Add space between last tab and new tab button. */
