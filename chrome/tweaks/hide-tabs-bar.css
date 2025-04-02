@@ -22,13 +22,13 @@
     }
 
     /* Fix issue with missing window controls. */
-    &:not([drawtitle]) #titlebar,
-    &:not([drawtitle]) #TabsToolbar {
+    &[customtitlebar] #titlebar,
+    &[customtitlebar] #TabsToolbar {
       will-change: auto !important;
     }
 
     /* Add some padding to the top of the navbar */
-    &:not([drawtitle]) #nav-bar {
+    &[customtitlebar] #nav-bar {
       padding-top: var(--uc-tab-top-margin, 0) !important;
     }
 

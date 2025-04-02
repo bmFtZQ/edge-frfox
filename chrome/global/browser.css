@@ -4,7 +4,7 @@
 /* Windows has 1px missing space on top of window, but not when accent colour is
  * applied to the title bar. */
 @media (-moz-platform: windows) and (not (-moz-windows-accent-color-in-titlebar)) {
-  :root[sizemode="normal"]:not([drawtitle]):not([inFullscreen]) #navigator-toolbox {
+  :root[sizemode="normal"][customtitlebar]:not([inFullscreen]) #navigator-toolbox {
     padding-top: 1px !important;
   }
 }

@@ -139,12 +139,12 @@
 
 /* Make sure that the tab toolbar opacity is always 1, inactive window colours
  * are already supplied by this theme. */
- :root:not([drawtitle]) #titlebar:-moz-window-inactive {
+ :root[customtitlebar] #titlebar:-moz-window-inactive {
   opacity: 1 !important;
 }
 
 /* Make the titlebar buttons black/white on default themes */
-:root:not([lwtheme]):not([drawtitle]) .titlebar-buttonbox {
+:root:not([lwtheme])[customtitlebar] .titlebar-buttonbox {
   color: var(--lwt-text-color) !important;
 }
 
