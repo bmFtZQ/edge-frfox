@@ -140,7 +140,7 @@ bugs with certain themes eg. dark text on dark background.) */
     }
   }
 
-  :root:is([inFullscreen], :not([tabsintitlebar])) {
+  :root:is([inFullscreen], [drawtitle]) {
     --uc-tab-top-margin: 4px !important;
   }
 
