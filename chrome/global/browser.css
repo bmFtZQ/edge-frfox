@@ -197,7 +197,7 @@
 
   /* Apply colour to the frame around the browser window. */
   #browser {
-    background-color: var(--browser-frame-bgcolor);
+    background-color: var(--browser-frame-bgcolor) !important;
   }
 
   /* Change colour of page when loading */
