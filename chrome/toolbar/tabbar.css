@@ -41,7 +41,7 @@
     /* Gap between tab and adjacent buttons (+2px button margin). */
     --uc-toolbarbutton-tab-gap: 2px;
 
-    @media (-moz-bool-pref: "uc.tweak.rounded-corners") {
+    @media -moz-pref("uc.tweak.rounded-corners") {
       --tab-border-radius: 8px !important;
       --uc-toolbarbutton-tab-gap: 6px;
     }
@@ -428,7 +428,7 @@
       background-color: rgb(255 255 255 / .3) !important;
       --uc-tab-corner-bg: rgb(255 255 255 / .3) !important;
 
-      @media (-moz-bool-pref: "uc.tweak.floating-tabs") {
+      @media -moz-pref("uc.tweak.floating-tabs") {
         background-color: var(--toolbar-bgcolor) !important;
         --uc-tab-corner-bg: var(--toolbar-bgcolor) !important;
       }
@@ -554,7 +554,7 @@
 /* #region */
 
 /* Tab and toolbar shadows. */
-@media not (-moz-bool-pref: "uc.tweak.rounded-corners") {
+@media not -moz-pref("uc.tweak.rounded-corners") {
   /* Edge now removes the shadow when rounded corners are enabled. */
   :root,
   :root .tabbrowser-tab {

@@ -100,7 +100,7 @@
       --nav-btn-active-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.071), 0 1px 3px 0 rgb(0 0 0 / 0.212) !important;
     }
 
-    @media (-moz-bool-pref: "uc.tweak.rounded-corners") {
+    @media -moz-pref("uc.tweak.rounded-corners") {
       --tabs-border-radius: 8px !important;
     }
   }
@@ -108,7 +108,7 @@
   /*
     MARK: Floating tabs vars
   */
-  @media (-moz-bool-pref: "uc.tweak.floating-tabs") {
+  @media -moz-pref("uc.tweak.floating-tabs") {
     body[style*="--s-frame-fg: rgba(0, 0, 0, 0.847)"],
     body[style*="--s-frame-fg: rgba(255, 255, 255, 0.847)"],
     body[style*="--s-frame-bg: rgb(240, 240, 240)"],

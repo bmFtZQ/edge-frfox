@@ -4,8 +4,8 @@
 /*
   MARK: Hide tabs toolbar
 */
-@media (-moz-bool-pref: "uc.tweak.hide-tabs-bar"),
-(-moz-bool-pref: "uc.tweak.hide-tabs-bar.no-window-controls") {
+@media -moz-pref("uc.tweak.hide-tabs-bar"),
+-moz-pref("uc.tweak.hide-tabs-bar.no-window-controls") {
   /* Only hide the tabs toolbar if one of the following sidebar extensions is
    * active: Sidebery, Tree Style Tab, or Tab Center Reborn. */
   :root:not([customizing]):has(#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]:not([hidden])),
@@ -33,7 +33,7 @@
     }
 
     /* Set background colour of the menu bar to maintain consistency with the navbar */
-    @media not (-moz-bool-pref: "uc.tweak.floating-tabs") {
+    @media not -moz-pref("uc.tweak.floating-tabs") {
       #toolbar-menubar {
         background-color: var(--toolbar-bgcolor) !important;
         color: var(--toolbar-color) !important;
@@ -90,7 +90,7 @@
       }
 
       /* Disable the replacement window controls if tweak is enabled. */
-      @media not (-moz-bool-pref: "uc.tweak.hide-tabs-bar.no-window-controls") {
+      @media not -moz-pref("uc.tweak.hide-tabs-bar.no-window-controls") {
         /*
           MARK: macOS styles
         */
@@ -224,7 +224,7 @@
   position: relative !important;
 
   /* Floating tabs tweak uses the tab toolbar background instead. */
-  @media (-moz-bool-pref: "uc.tweak.floating-tabs") {
+  @media -moz-pref("uc.tweak.floating-tabs") {
     --sidebar-background-color: var(--lwt-accent-color) !important;
     --sidebar-text-color: var(--lwt-text-color) !important;
 
@@ -269,7 +269,7 @@
   }
 
   /* Rounded corners tweak optimisations. */
-  @media (-moz-bool-pref: "uc.tweak.rounded-corners") {
+  @media -moz-pref("uc.tweak.rounded-corners") {
     /* Remove padding and border from sidebar. */
     &:not([positionend]),
     &[positionend] {
@@ -277,7 +277,7 @@
       padding-inline: 0;
     }
 
-    @media (-moz-bool-pref: "uc.tweak.theme.sidebery") {
+    @media -moz-pref("uc.tweak.theme.sidebery") {
       border-radius: 0 !important;
       box-shadow: none !important;
 

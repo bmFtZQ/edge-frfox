@@ -3,7 +3,7 @@
 /*
   MARK: Hide tab close button
 */
-@media (-moz-bool-pref: "uc.tweak.hide-tab-close-button") {
+@media -moz-pref("uc.tweak.hide-tab-close-button") {
   .tabbrowser-tab .tab-close-button {
     visibility: collapse !important;
   }
@@ -12,7 +12,7 @@
 /*
   MARK: Disable drag space
 */
-@media (-moz-bool-pref: "uc.tweak.disable-drag-space") {
+@media -moz-pref("uc.tweak.disable-drag-space") {
   /* disable drag space above tabs */
   :root {
     --uc-tab-top-margin: 0px !important;
@@ -24,7 +24,7 @@
 */
 /* force tabs to toolbar bg (useful for proton themes) (might experience some
 bugs with certain themes eg. dark text on dark background.) */
-@media (-moz-bool-pref: "uc.tweak.force-tab-colour") {
+@media -moz-pref("uc.tweak.force-tab-colour") {
   :root[lwtheme] {
     --tab-selected-bgcolor: var(--toolbar-bgcolor) !important;
     --tab-selected-textcolor: var(--toolbar-color) !important;
@@ -34,7 +34,7 @@ bugs with certain themes eg. dark text on dark background.) */
 /*
   MARK: Remove tab separators
 */
-@media (-moz-bool-pref: "uc.tweak.remove-tab-separators") {
+@media -moz-pref("uc.tweak.remove-tab-separators") {
   .tabbrowser-tab .tab-stack {
     &::before,
     &::after {
@@ -46,7 +46,7 @@ bugs with certain themes eg. dark text on dark background.) */
 /*
   MARK: Floating tabs
 */
-@media (-moz-bool-pref: "uc.tweak.floating-tabs") {
+@media -moz-pref("uc.tweak.floating-tabs") {
   :root:not([lwtheme]),
   /* `--newtab-background-color-secondary used` to differentiate between a dark
    * private window and private window with the 'Dark' theme enabled.
@@ -144,7 +144,7 @@ bugs with certain themes eg. dark text on dark background.) */
     --uc-tab-top-margin: 4px !important;
   }
 
-  @media (-moz-bool-pref: "uc.tweak.disable-drag-space") {
+  @media -moz-pref("uc.tweak.disable-drag-space") {
     :root {
       --uc-tab-top-margin: 4px !important;
     }
@@ -195,8 +195,8 @@ bugs with certain themes eg. dark text on dark background.) */
 /*
   MARK: Vertical context nav
 */
-@media (not (-moz-platform: macos)) and (not (-moz-bool-pref: "uc.tweak.revert-context-menu")) {
-  @media (-moz-bool-pref: "uc.tweak.vertical-context-navigation") {
+@media (not (-moz-platform: macos)) and (not -moz-pref("uc.tweak.revert-context-menu")) {
+  @media -moz-pref("uc.tweak.vertical-context-navigation") {
     #context-navigation {
       /* Stack menu items vertically. */
       flex-direction: column !important;
@@ -217,7 +217,7 @@ bugs with certain themes eg. dark text on dark background.) */
 /*
   MARK: Hide access key
 */
-@media (-moz-bool-pref: "uc.tweak.context-menu.hide-access-key") {
+@media -moz-pref("uc.tweak.context-menu.hide-access-key") {
   :where(menuitem, menu) > :is(.menu-text, .menu-iconic-text)[value]:not([value=""]) {
     &::before {
       /* The default value is -moz-label-content, which takes the data from the
@@ -231,7 +231,7 @@ bugs with certain themes eg. dark text on dark background.) */
 /*
   MARK: Show tab close button
 */
-@media (-moz-bool-pref: "uc.tweak.show-tab-close-button-on-hover") {
+@media -moz-pref("uc.tweak.show-tab-close-button-on-hover") {
   #tabbrowser-tabs[closebuttons="activetab"] .tabbrowser-tab:not([pinned], [selected]):hover .tab-close-button {
     display: flex !important;
   }
@@ -240,7 +240,7 @@ bugs with certain themes eg. dark text on dark background.) */
 /*
   MARK: Hide forward button
 */
-@media (-moz-bool-pref: "uc.tweak.hide-forward-button") {
+@media -moz-pref("uc.tweak.hide-forward-button") {
   :root:not([customizing]) #forward-button[disabled] {
     display: none !important;
   }
@@ -249,7 +249,7 @@ bugs with certain themes eg. dark text on dark background.) */
 /*
   MARK: Hide Firefox account
 */
-@media (-moz-bool-pref: "uc.tweak.context-menu.hide-firefox-account") {
+@media -moz-pref("uc.tweak.context-menu.hide-firefox-account") {
   #appMenu-fxa-status2,
   #appMenu-fxa-separator {
     display: none !important;

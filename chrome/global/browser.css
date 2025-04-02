@@ -18,7 +18,7 @@
 /*
   MARK: Rounded corners (Rc)
 */
-@media (-moz-bool-pref: "uc.tweak.rounded-corners") {
+@media -moz-pref("uc.tweak.rounded-corners") {
   /* Since Firefox 120, when the bookmarks bar is set to only open on new tabs,
    * the bookmarks bar overlaps the #browser element. */
 
@@ -63,7 +63,7 @@
         0 0.5px 1.5px rgb(0 0 0 / 0.1);
     }
 
-    @media (-moz-bool-pref: "uc.tweak.floating-tabs") {
+    @media -moz-pref("uc.tweak.floating-tabs") {
       --browser-frame-bgcolor: var(--lwt-accent-color);
 
       &:-moz-window-inactive {

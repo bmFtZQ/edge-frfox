@@ -344,7 +344,7 @@ panelview .toolbarbutton-1,
   --uei-icon-size: 24px !important;
 }
 
-@media (-moz-bool-pref: "uc.tweak.context-menu.compact-extensions-menu") {
+@media -moz-pref("uc.tweak.context-menu.compact-extensions-menu") {
   :root {
     --uei-icon-size: 16px !important;
   }
@@ -518,7 +518,7 @@ panel[type="autocomplete-richlistbox"] {
 */
 
 /* disable context menu when this tweak is applied */
-@media not (-moz-bool-pref: "uc.tweak.revert-context-menu") {
+@media not -moz-pref("uc.tweak.revert-context-menu") {
   /* Context Menu */
   menupopup:not(.PanelUI-subView),
   menupopup:not(.PanelUI-subView) menuitem,
@@ -757,7 +757,7 @@ panel[type="autocomplete-richlistbox"] {
     fill: var(--lwt-toolbarbutton-icon-fill-attention, var(--toolbarbutton-icon-fill-attention, currentColor)) !important;
   }
 
-  @media (not (-moz-bool-pref: "uc.tweak.smaller-context-menu-text")) and (-moz-platform: windows) {
+  @media (not -moz-pref("uc.tweak.smaller-context-menu-text")) and (-moz-platform: windows) {
     .menu-text,
     .menu-iconic-text,
     panel .toolbarbutton-text,

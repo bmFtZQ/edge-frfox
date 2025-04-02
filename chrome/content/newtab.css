@@ -171,7 +171,7 @@ url-prefix("about:home") {
     body:not(.inline-onboarding) .fixed-search.visible-logo main {
       padding-top: 246px !important;
 
-      @media (-moz-bool-pref: "uc.tweak.hide-newtab-logo") {
+      @media -moz-pref("uc.tweak.hide-newtab-logo") {
         padding-top: 82px !important;
       }
     }
@@ -246,7 +246,7 @@ url-prefix("about:home") {
     }
   }
 
-  @media (-moz-bool-pref: "uc.tweak.hide-newtab-logo") {
+  @media -moz-pref("uc.tweak.hide-newtab-logo") {
     .logo-and-wordmark {
       display: none !important;
     }
@@ -265,7 +265,7 @@ url-prefix("about:home") {
     --uc-wordmark-color: light-dark(#737373, #fff);
     --uc-background-color-secondary: light-dark(#fff, #4a4a4a);
 
-    @media (-moz-bool-pref: "browser.theme.dark-private-windows") {
+    @media -moz-pref("browser.theme.dark-private-windows") {
       color-scheme: dark !important;
     }
   }
@@ -348,7 +348,7 @@ url-prefix("about:home") {
 /*
   MARK: Background images
 */
-@media (-moz-bool-pref: "uc.tweak.newtab-background") {
+@media -moz-pref("uc.tweak.newtab-background") {
   @-moz-document url(about:newtab),
   url(about:home),
   url(about:privatebrowsing) {
@@ -374,7 +374,7 @@ url-prefix("about:home") {
         --newtab-element-active-color: rgb(66 66 66 / .55) !important;
       }
 
-      @media not (-moz-bool-pref: "browser.theme.dark-private-windows") {
+      @media not -moz-pref("browser.theme.dark-private-windows") {
         :root.private & {
           background-image: var(--bg-0) !important;
 
