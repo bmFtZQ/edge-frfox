@@ -40,41 +40,43 @@
       }
     }
 
-    /*
-      MARK: Window controls
-    */
-    #toolbar-menubar:not([autohide="false"]) ~ #nav-bar {
-      .titlebar-buttonbox-container {
-        display: flex !important;
-        margin-top: calc(-1 * var(--uc-tab-top-margin, 0)) !important;
+    @media not -moz-pref("uc.tweak.hide-tabs-bar.no-window-controls") {
+      /*
+        MARK: Window controls
+      */
+      &:not([macOSNativeFullscreen]) #toolbar-menubar:not([autohide="false"]) ~ #nav-bar {
+        .titlebar-buttonbox-container {
+          display: flex !important;
+          margin-top: calc(-1 * var(--uc-tab-top-margin, 0)) !important;
 
-        @media (-moz-platform: macos) {
-          margin-inline: 0 !important;
+          @media (-moz-platform: macos) {
+            margin-inline: 0 !important;
 
-          .titlebar-buttonbox {
-            margin-inline: calc((var(--uc-navbar-height) + var(--uc-tab-top-margin, 0px) - 14px) / 2) !important;
+            .titlebar-buttonbox {
+              margin-inline: calc((var(--uc-navbar-height) + var(--uc-tab-top-margin, 0px) - 14px) / 2) !important;
+            }
           }
         }
-      }
 
-      /* Space between window controls and navbar items. */
-      .titlebar-spacer {
-        width: max(calc(var(--uc-titlebar-drag-space, 0px) - var(--toolbar-start-end-padding, 0px)), 0px) !important;
-      }
-
-      /* Display left spacer (macOS and certain Linux configs). */
-      @media (-moz-platform: macos),
-      (-moz-gtk-csd-reversed-placement) {
-        .titlebar-spacer[type*="pre"] {
-          display: flex !important;
+        /* Space between window controls and navbar items. */
+        .titlebar-spacer {
+          width: max(calc(var(--uc-titlebar-drag-space, 0px) - var(--toolbar-start-end-padding, 0px)), 0px) !important;
         }
-      }
 
-      /* Display right spacer (Windows and Linux). */
-      @media (-moz-platform: windows),
-      (-moz-gtk-csd-close-button) and (not (-moz-gtk-csd-reversed-placement)) {
-        .titlebar-spacer[type*="post"] {
-          display: flex !important;
+        /* Display left spacer (macOS and certain Linux configs). */
+        @media (-moz-platform: macos),
+        (-moz-gtk-csd-close-button) and (-moz-gtk-csd-reversed-placement) {
+          .titlebar-spacer[type*="pre"] {
+            display: flex !important;
+          }
+        }
+
+        /* Display right spacer (Windows and Linux). */
+        @media (-moz-platform: windows),
+        (-moz-gtk-csd-close-button) and (not (-moz-gtk-csd-reversed-placement)) {
+          .titlebar-spacer[type*="post"] {
+            display: flex !important;
+          }
         }
       }
     }
