@@ -140,18 +140,21 @@
 #appMenu-zoomEnlarge-button2:not([disabled], [open], :active):is(:hover),
 #appMenu-fullscreen-button2:not([disabled], [open], :active):is(:hover),
 #appMenu-zoomReset-button2:not([disabled], [open], :active):is(:hover) {
-  background-color: var(--panel-item-hover-bgcolor) !important;
+  background-color: var(--button-background-color-ghost-hover) !important;
+  color: var(--button-text-color-ghost-hover) !important;
 }
 
 #appMenu-zoomReduce-button2:not([disabled]):is([open], :hover:active),
 #appMenu-zoomEnlarge-button2:not([disabled]):is([open], :hover:active),
 #appMenu-fullscreen-button2:not([disabled]):is([open], :hover:active),
 #appMenu-zoomReset-button2:not([disabled]):is([open], :hover:active) {
-  background-color: var(--panel-item-active-bgcolor) !important;
+  background-color: var(--button-background-color-ghost-active) !important;
+  color: var(--button-text-color-ghost-active) !important;
 }
 
 #appMenu-zoomReduce-button2 > .toolbarbutton-icon,
 #appMenu-zoomEnlarge-button2 > .toolbarbutton-icon {
+  color: inherit !important;
   fill: currentColor !important;
   stroke: none !important;
 }
@@ -331,8 +334,8 @@ panelview .toolbarbutton-1,
 /* #region */
 
 .toolbaritem-combined-buttons:is(:not([cui-areatype="toolbar"]), [overflowedItem="true"]) > toolbarbutton:not(.toolbarbutton-1)[disabled] {
-  opacity: 1 !important;
-  color: var(--panel-disabled-color) !important;
+  opacity: var(--button-opacity-disabled) !important;
+  color: var(--button-text-color-ghost-disabled) !important;
 }
 
 /* Removes space above extensions items. */
@@ -448,12 +451,13 @@ panel[type="autocomplete-richlistbox"] {
     }
 
     &:hover {
-      background-color: var(--panel-item-hover-bgcolor) !important;
+      background-color: var(--button-background-color-ghost-hover) !important;
+      color: var(--button-text-color-ghost-hover) !important;
     }
 
     &[selected] {
-      background-color: var(--panel-item-active-bgcolor) !important;
-      color: inherit !important;
+      background-color: var(--button-background-color-ghost-active) !important;
+      color: var(--button-text-color-ghost-active) !important;
     }
   }
 
@@ -598,22 +602,23 @@ panel[type="autocomplete-richlistbox"] {
 
   menupopup menu[disabled="true"],
   menupopup menuitem[disabled="true"] {
-    color: var(--panel-disabled-color) !important;
-    background: none !important;
+    background: var(--button-background-color-ghost-disabled) !important;
+    color: var(--button-text-color-ghost-disabled) !important;
+    opacity: var(--button-opacity-disabled) !important;
   }
 
   menupopup menu:hover:not([disabled=true]),
   menupopup menuitem:hover:not([disabled=true]),
   menupopup menu[_moz-menuactive]:not([disabled=true]),
   menupopup menuitem[_moz-menuactive]:not([disabled=true]) {
-    background-color: var(--panel-item-hover-bgcolor) !important;
-    color: inherit !important;
+    background-color: var(--button-background-color-ghost-hover) !important;
+    color: var(--button-text-color-ghost-hover) !important;
   }
 
   menupopup menuitem:hover:active:not([disabled=true]),
   menupopup menu:hover:active:not([disabled=true]) {
-    background-color: var(--panel-item-active-bgcolor) !important;
-    color: inherit !important;
+    background-color: var(--button-background-color-ghost-active) !important;
+    color: var(--button-text-color-ghost-active) !important;
   }
 
   menupopup menuseparator,
@@ -838,6 +843,6 @@ dialog {
   flex-direction: column-reverse !important;
 
   & .tab-preview-uri {
-    color: var(--panel-description-color) !important;
+    color: var(--text-color-deemphasized) !important;
   }
 }
