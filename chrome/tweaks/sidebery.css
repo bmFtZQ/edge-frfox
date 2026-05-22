@@ -331,4 +331,60 @@
   #icon_plus path {
     d: path("M7 1a.5.5 0 01 1 0v6h6a.5.5 0 01 0 1H8v6a.5.5 0 01-1 0V8H1a.5.5 0 01 0-1h6z") !important;
   }
+
+  @media (-moz-bool-pref: "uc.tweak.collapse-sidebery") and (max-width: 50px) {
+    #root {
+      --tabs-indent: unset !important;
+      --tabs-lvl-opacity: 0 !important;
+    }
+
+    .CtxMenu[data-active="true"] {
+      display: none;
+    }
+
+    .NavigationBar[data-layout="inline"] {
+      & .static-btns {
+        display: none !important;
+      }
+      & .nav-item[data-active="true"] {
+        background-color: unset !important;
+        box-shadow: unset !important;
+        margin: auto;
+        opacity: unset !important;
+        position: relative !important;
+        transform: unset !important;
+      }
+    }
+
+    .SearchBar[data-showed="true"] {
+      & .search-icon > svg {
+        margin: unset !important;
+      }
+      & .placeholder, & .input, & .clear-btn {
+        display: none !important;
+      }
+    }
+
+    .ScrollBox > .scroll-container {
+      scrollbar-width: none !important;
+    }
+
+    .Tab .fav {
+      margin: auto !important;
+    }
+
+    .Tab .audio {
+      top: unset !important;
+      left: unset !important;
+      bottom: 0;
+      right: 0;
+      width: 14px !important;
+      height: 14px !important;
+    }
+
+    .Tab .t-box,
+    .Tab .close {
+      display: none;
+    }
+  }
 }

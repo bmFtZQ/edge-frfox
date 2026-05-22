@@ -1,0 +1,75 @@
+@media (-moz-bool-pref: "uc.tweak.collapse-sidebery") {
+  :root:not([customizing]):has(#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]:not([hidden])) {
+    --uc-sidebar-width: 256px;
+    --uc-sidebar-collapsed-width: 48px;
+
+    & #sidebar-box {
+      position: relative;
+      min-width: var(--uc-sidebar-collapsed-width) !important;
+      width: var(--uc-sidebar-collapsed-width) !important;
+      max-width: var(--uc-sidebar-width) !important;
+      z-index: calc(var(--browser-area-z-index-tabbox, 0) + 1) !important;
+    }
+
+    & #sidebar-box[positionend] {
+      direction: rtl;
+    }
+    & #sidebar-box[positionend] > * {
+      direction: ltr;
+    }
+
+    & #sidebar-box[positionend]:-moz-locale-dir(rtl) {
+      direction: ltr;
+    }
+    & #sidebar-box[positionend]:-moz-locale-dir(rtl) > * {
+      direction: rtl;
+    }
+
+    & #sidebar-box[positionend] {
+      & #sidebar {
+        border-left: 1px solid var(--sidebar-border-color);
+      }
+    }
+    & #sidebar-box:not([positionend]) {
+      & #sidebar {
+        border-right: 1px solid var(--sidebar-border-color);
+      }
+    }
+
+    & #sidebar-header {
+      display: none;
+    }
+
+    & #sidebar {
+      background-color: inherit;
+      overflow: hidden;
+      padding-inline: 4px;
+      width: var(--uc-sidebar-width) !important;
+    }
+
+    & #sidebar-splitter {
+      display: none;
+    }
+
+
+    --uc-sidebar-collapse-duration: 0ms;
+    --uc-sidebar-collapse-delay: 0ms;
+    --uc-sidebar-expand-duration: 100ms;
+    --uc-sidebar-expand-delay: 400ms;
+
+    & #sidebar {
+      width: var(--uc-sidebar-collapsed-width) !important;
+      transition-property: width;
+      transition-duration: var(--uc-sidebar-collapse-duration);
+      transition-delay: var(--uc-sidebar-collapse-delay);
+    }
+
+    & #sidebar-box:hover {
+      & #sidebar {
+        width: var(--uc-sidebar-width) !important;
+        transition-duration: var(--uc-sidebar-expand-duration);
+        transition-delay: var(--uc-sidebar-expand-delay);
+      }
+    }
+  }
+}

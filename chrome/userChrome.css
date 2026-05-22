@@ -13,6 +13,7 @@
 /* Edge-Frfox tweaks */
 @import url("global/tweaks.css");
 @import url("tweaks/hide-tabs-bar.css");
+@import url("tweaks/collapse-sidebery.css");
 
 /* Import custom stylesheet instead of modifying Edge-Frfox theme files. */
 @import url("custom.css");
