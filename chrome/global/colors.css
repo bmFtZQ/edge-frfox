@@ -181,9 +181,9 @@
   }
 
   tooltip {
-    background-color: var(--arrowpanel-background) !important;
-    color: var(--arrowpanel-color) !important;
-    border-color: var(--arrowpanel-border-color) !important;
+    background-color: var(--panel-background) !important;
+    color: var(--panel-color) !important;
+    border-color: var(--panel-border-color) !important;
   }
 
   /* Use accent colour in titlebar when Windows option is enabled. */
