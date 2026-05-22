@@ -58,6 +58,9 @@
   --arrowpanel-border-color: light-dark(#fff, #636363) !important;
   --arrowpanel-dimmed: light-dark(#565656, #565656) !important;
   --arrowpanel-dimmed-further: light-dark(#707070, #707070) !important;
+  --panel-color: var(--arrowpanel-color) !important;
+  --panel-background: var(--arrowpanel-background) !important;
+  --panel-border-color: var(--arrowpanel-border-color) !important;
   --panel-separator-color: light-dark(#dadada, #636363) !important;
   --button-background-color-ghost: transparent !important;
   --button-background-color-ghost-hover: light-dark(#eee, #646464) !important;
@@ -336,6 +339,9 @@ body {
     --arrowpanel-border-color: light-dark(transparent, var(--panel-separator-color)) !important;
     --arrowpanel-dimmed: color-mix(in srgb, currentColor 17%, transparent) !important;
     --arrowpanel-dimmed-further: color-mix(in srgb, currentColor 30%, transparent) !important;
+    --panel-color: var(--arrowpanel-color) !important;
+    --panel-background: var(--arrowpanel-background) !important;
+    --panel-border-color: var(--arrowpanel-border-color) !important;
     --panel-separator-color: color-mix(in srgb, currentColor 17%, var(--arrowpanel-background)) !important;
     --button-background-color-ghost-hover: color-mix(in srgb, currentColor 8%, transparent) !important;
     --button-background-color-ghost-active: color-mix(in srgb, currentColor 13%, transparent) !important;

@@ -418,11 +418,8 @@ panelview .toolbarbutton-1,
 */
 panel[type="autocomplete-richlistbox"] {
   --panel-shadow: none !important;
-  --panel-background: var(--arrowpanel-background) !important;
-  --panel-color: var(--arrowpanel-color) !important;
   --panel-padding: var(--uc-contextmenu-padding) !important;
   --panel-border-radius: var(--uc-contextmenu-border-radius) !important;
-  --panel-border-color: var(--arrowpanel-border-color) !important;
 
   > .autocomplete-richlistbox {
     background: transparent !important;
@@ -532,18 +529,26 @@ panel[type="autocomplete-richlistbox"] {
     appearance: none !important;
   }
 
+  :is(menupopup, panel):where(:not([type="arrow"])) {
+    --panel-background: inherit !important;
+    --panel-color: inherit !important;
+    --panel-padding: inherit !important;
+    --panel-border-radius: inherit !important;
+    --panel-border-color: inherit !important;
+  }
+
   menupopup:not(.PanelUI-subView),
   menulist > menupopup:not(.PanelUI-subView) > menucaption {
     -moz-window-shadow: none !important;
     background: 0 !important;
     border: 0 !important;
-    color: var(--arrowpanel-color) !important;
+    color: var(--panel-color) !important;
   }
 
   .popup-internal-box,
   .menupopup-arrowscrollbox {
-    background: var(--arrowpanel-background) !important;
-    border: 1px solid var(--arrowpanel-border-color) !important;
+    background: var(--panel-background) !important;
+    border: 1px solid var(--panel-border-color) !important;
   }
 
   /* make room for menu shadow */
@@ -833,8 +838,8 @@ dialog {
  * CSS reference: https://searchfox.org/mozilla-central/source/browser/components/tabpreview/tabpreview.css
  * Requires `browser.tabs.cardPreview.enabled` set to `true` */
 .tab-preview-container {
-  background-color: var(--arrowpanel-background) !important;
-  color: var(--arrowpanel-color) !important;
+  background-color: var(--panel-background) !important;
+  color: var(--panel-color) !important;
   border: 0.5px solid var(--panel-separator-color) !important;
   border-radius: 8.5px !important;
 
