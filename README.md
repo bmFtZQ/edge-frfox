@@ -7,6 +7,21 @@ A Firefox userChrome.css theme that aims to recreate the look and feel of Micros
 Screenshot: macOS / Firefox 120 / Tweaks: rounded corners, hide forward button.
 
 ## How to install
+### Via Linux and macOS shell script
+Paste this into your terminal emulator:
+```sh
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/bmFtZQ/edge-frfox/HEAD/install.sh)"
+```
+Attach `-s uninstall` at the end of this command to uninstall.
+
+### Via Windows Powershell script
+Paste this into powershell:
+```ps
+powershell -nop -ExecutionPolicy Bypass -c "Invoke-Command -ScriptBlock ([scriptblock]::Create([System.Text.Encoding]::UTF8.GetString((New-Object Net.WebClient).DownloadData('https://raw.githubusercontent.com/bmFtZQ/edge-frfox/HEAD/install.ps1'))))"
+```
+Attach `-ArgumentList $('uninstall')` **inside the quotes** at the end to uninstall.
+
+### Manual Installation
 1. Go to `about:support` and click the "Open Folder/Show in Finder" button for the root directory of your browser profile.
 2. Download the repository and extract the files.
 3. From the repository folder, copy the `chrome` folder and `user.js` file into your Firefox profile folder.
