@@ -150,7 +150,8 @@
 
 #sync-button,
 .urlbarView-row[source="tabs"] > .urlbarView-row-inner > .urlbarView-no-wrap > .urlbarView-favicon,
-#urlbar-engine-one-off-item-tabs {
+#urlbar-engine-one-off-item-tabs,
+#appMenuRecentlyClosedTabs {
   list-style-image: url("tab.svg") !important;
 }
 
@@ -174,13 +175,38 @@
   list-style-image: url("print.svg") !important;
 }
 
-.searchbar-search-icon {
+.searchbar-search-icon,
+#panelMenu_searchBookmarks,
+#appMenuSearchHistory,
+#allTabsMenu-searchTabs {
   list-style-image: url("search-glass.svg") !important;
 }
 
 #find-button,
 #appMenu-find-button2 {
   list-style-image: url("search-page.svg") !important;
+}
+
+#appMenu-restoreSession {
+  list-style-image: url("edit-undo.svg") !important;
+}
+
+#appMenuClearRecentHistory,
+#identity-popup-clear-sitedata-button {
+  list-style-image: url("edit-delete.svg") !important;
+}
+
+#panelMenu_showAllBookmarks,
+#PanelUI-historyMore,
+#profiles-manage-profiles-button,
+toolbarbutton[command="Browser:OpenAboutContainers"] {
+  list-style-image: url("manage.svg") !important;
+}
+
+#panelMenu_viewBookmarksToolbar,
+#toolbar-context-autohide-downloads-button,
+#allTabsMenu-hiddenTabsButton {
+  list-style-image: url("hide.svg") !important;
 }
 
 #appMenu-translate-button,
@@ -264,7 +290,8 @@
 }
 
 #new-window-button,
-#appMenu-new-window-button2 {
+#appMenu-new-window-button2,
+#appMenuRecentlyClosedWindows {
   list-style-image: url("window.svg") !important;
 }
 
@@ -357,7 +384,8 @@
   list-style-image: url("security-warning.svg") !important;
 }
 
-#identity-popup[connection=net-error-page] .identity-popup-security-connection {
+#identity-popup[connection=net-error-page] .identity-popup-security-connection,
+#identity-popup-more-info {
   list-style-image: url("info.svg") !important;
 }
 
@@ -406,7 +434,8 @@
 }
 
 #pageAction-panel-bookmark,
-#star-button {
+#star-button,
+#panelMenuBookmarkThisPage {
   list-style-image: url("bookmark-hollow.svg") !important;
 }
 
@@ -643,7 +672,8 @@
     }
   }
 
-  #context-savepage {
+  #context-savepage,
+  #context-savelink {
     --menu-image: url("save.svg");
   }
 
@@ -730,7 +760,11 @@
   #context-searchselect {
     --menu-image: url("search-glass.svg");
   }
-
+  
+  #context-searchselect-private {
+    --menu-image: url("search-private.svg") !important;
+  }
+  
   #context-viewimage {
     --menu-image: url("image-open.svg");
   }
@@ -790,6 +824,7 @@
 
   #context-openlinkintab,
   #context-openlinkincontainertab,
+  .openintabs-menuitem,
   menuitem[id="placesContext_open:newtab"],
   menuitem[id="placesContext_openLinks:tabs"],
   menuitem[id="placesContext_openBookmarkLinks:tabs"],
@@ -816,10 +851,6 @@
   #context-openlinkprivate,
   menuitem[id="placesContext_open:newprivatewindow"] {
     --menu-image: url("private-window.svg");
-  }
-
-  #context-savelink {
-    --menu-image: url("downloads.svg");
   }
 
   #spell-add-to-dictionary {
@@ -906,12 +937,28 @@
   #BMB_bookmarksShowAllTop,
   #BMB_bookmarksShowAll,
   .customize-context-manageExtension,
-  .unified-extensions-context-menu-manage-extension {
+  .unified-extensions-context-menu-manage-extension,
+  menuitem[command="Browser:OpenAboutContainers"] {
     --menu-image: url("manage.svg");
   }
 
-  menuitem[id="placesContext_new:bookmark"],
-  menuitem[id="placesContext_new:folder"],
+  #new-tab-button-popup>menuitem[data-usercontextid="0"],
+  .new-tab-popup>menuitem[data-usercontextid="0"] {
+    --menu-image: url("block.svg") !important;
+  }
+
+    menuitem[id="placesContext_sortBy:name"] {
+    --menu-image: url("sort.svg") !important;
+  }
+
+  menuitem[id="placesContext_new:bookmark"] {
+    --menu-image: url("add-bookmark.svg") !important;
+  }
+  
+  menuitem[id="placesContext_new:folder"] {
+    --menu-image: url("add-folder.svg") !important;
+  }
+
   menuitem[id="placesContext_new:separator"] {
     --menu-image: url("plus.svg");
   }
@@ -933,13 +980,19 @@
     --menu-image: url("container-tab.svg");
   }
 
-  #context_closeTab {
+  #context_closeTab,
+  .customize-context-removeFromToolbar,
+  .customize-context-removeFromPanel {
     --menu-image: url("close.svg");
   }
 
   .customize-context-reportExtension,
   .unified-extensions-context-menu-report-extension {
     --menu-image: url("report.svg");
+  }
+
+  .customizationPanelItemContextMenuUnpin {
+    --menu-image: url("pin-blocked.svg") !important;
   }
 
   #sidebar-switcher-history {
