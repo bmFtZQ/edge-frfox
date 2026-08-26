@@ -32,6 +32,13 @@
     --tab-border-color-accent: linear-gradient(var(--tab-background-color-selected), var(--tab-background-color-selected)) !important;
     --tab-border-color-selected-leading: var(--tab-background-color-selected) !important;
     --tab-border-color-selected-trailing: var(--tab-background-color-selected) !important;
+
+    /* Nova also paints the *entire* #navigator-toolbox with a violet->orange
+     * branding gradient via --toolbox-background-image (built from
+     * --toolbox-background-gradient), independent of the tab border above.
+     * This is what actually produced the visible gradient across the tab
+     * strip/toolbar - disable it entirely for the flat edge-frfox look. */
+    --toolbox-background-image: none !important;
   }
   --toolbar-color: light-dark(#000, #fff) !important;
   --toolbarbutton-icon-fill: var(--toolbar-color) !important;
