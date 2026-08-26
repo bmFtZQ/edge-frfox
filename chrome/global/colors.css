@@ -413,4 +413,17 @@ body {
     padding: 0 !important;
     gap: 0 !important;
   }
+
+  /* #navigator-toolbox itself has class="chrome-block" in the markup
+   * (browser.xhtml), which gives it the same 1px floating-card border as
+   * .browserContainer above. That border sits right at the very top edge
+   * of the window, and its (invisible, but still hit-tested) box eats the
+   * first ~1 device-pixel row of clicks - so in a maximized window, the
+   * topmost pixel of the tab strip doesn't register clicks/drags, it hits
+   * #navigator-toolbox's border instead of the tab underneath. Zero it out
+   * to restore the classic flush edge. */
+  #navigator-toolbox.chrome-block {
+    border: none !important;
+    border-radius: 0 !important;
+  }
 }
