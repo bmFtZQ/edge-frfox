@@ -241,6 +241,18 @@ used to close tabs.
 
 ---
 
+### Force urlbar row wrap
+
+Firefox's "Nova" urlbar redesign only stacks each suggestion's title above
+its URL (instead of placing them side-by-side) when the urlbar is narrower
+than 650px. On wider urlbars this can make the suggestion list look ragged,
+since each row's title/URL column widths vary independently. This tweak
+forces the stacked layout at any urlbar width.
+
+`uc.tweak.force-urlbar-row-wrap`
+
+---
+
 ## Acknowledgements
 [muckSponge](https://github.com/muckSponge) - [MaterialFox](https://github.com/muckSponge/MaterialFox)
 
