@@ -381,3 +381,36 @@ body {
     margin-inline-start: -4px !important;
   }
 }
+
+/*
+  MARK: Nova content-area border (FF 155+)
+*/
+/* Nova wraps the page content (.browserContainer) in a rounded "card" with a
+ * 1px solid border (content-area.css:
+ * "#tabbrowser-tabpanels > :not(.split-view-panel) .browserContainer") and
+ * adds --chrome-window-gap margins around #navigator-toolbox/#browser, so
+ * every page now sits inside a visible outline instead of flush against the
+ * chrome. edge-frfox (based on Edge) doesn't have this floating-card look,
+ * so remove the border/radius/gap and restore the flush classic layout. */
+@media -moz-pref("browser.nova.enabled") {
+  #tabbrowser-tabpanels > :not(.split-view-panel) .browserContainer {
+    border: none !important;
+    border-radius: 0 !important;
+  }
+
+  /* Scoped to non-fullscreen: Firefox's fullscreen auto-hide toggles the
+   * toolbar via an inline `style="margin-top: ..."` on #navigator-toolbox
+   * (browser-fullScreenAndPointerLock.js showNavToolbox/hideNavToolbox).
+   * An unscoped `!important` here permanently pinned margin-top to 0,
+   * which kept the toolbox from sliding out of view and broke the
+   * reveal-on-hover hit-testing at the top edge in fullscreen (tabs
+   * couldn't be clicked, window couldn't be dragged there). */
+  :root:not([inFullscreen], [inDOMFullscreen]) #navigator-toolbox {
+    margin: 0 !important;
+  }
+
+  :root:not([inFullscreen], [inDOMFullscreen]) #browser {
+    padding: 0 !important;
+    gap: 0 !important;
+  }
+}
