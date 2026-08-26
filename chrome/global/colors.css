@@ -19,6 +19,20 @@
   --tab-background-color-selected: var(--toolbar-background-color) !important;
   --tab-attention-icon-color: light-dark(#0078D4, #93d0ff) !important;
   --toolbar-background-color: light-dark(#f7f7f7, #3B3B3B) !important;
+
+  /* Nova (FF 155+) paints selected tabs with a violet->orange gradient
+   * border via --tab-border-color-accent. Flatten it to match the solid
+   * edge-frfox tab background instead of Microsoft Edge's plain tabs.
+   * NOTE: --tab-border-color-accent is consumed as a `background-image`
+   * layer (`... border-box border-area`), so it must resolve to a valid
+   * <image>, not a plain <color> - a solid colour there makes the whole
+   * `background:` shorthand invalid, which made selected tabs render
+   * fully transparent. Use a same-stop linear-gradient instead. */
+  @media -moz-pref("browser.nova.enabled") {
+    --tab-border-color-accent: linear-gradient(var(--tab-background-color-selected), var(--tab-background-color-selected)) !important;
+    --tab-border-color-selected-leading: var(--tab-background-color-selected) !important;
+    --tab-border-color-selected-trailing: var(--tab-background-color-selected) !important;
+  }
   --toolbar-color: light-dark(#000, #fff) !important;
   --toolbarbutton-icon-fill: var(--toolbar-color) !important;
   --toolbarbutton-icon-fill-attention: light-dark(#0078D4, #4C98D1) !important;
