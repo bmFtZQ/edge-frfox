@@ -30,7 +30,7 @@
     --inline-tab-padding: 11px !important;
     --uc-inline-pinned-tab-padding: 12px !important;
     --tab-border-radius: 4px !important;
-    --toolbarbutton-inner-padding: 6px !important;
+    --toolbarbutton-padding-inner: 6px !important;
     --uc-toolbarbutton-inner-inline-padding: 8px !important;
     --toolbarbutton-border-radius: 4px !important;
     --tabs-navbar-shadow-size: 0px !important;
@@ -93,22 +93,22 @@
   & .toolbarbutton-1 > .toolbarbutton-icon,
   & .toolbarbutton-1 > .toolbarbutton-badge-stack {
     border-radius: var(--toolbarbutton-border-radius) !important;
-    padding: var(--toolbarbutton-inner-padding) var(--uc-toolbarbutton-inner-inline-padding) !important;
+    padding: var(--toolbarbutton-padding-inner) var(--uc-toolbarbutton-inner-inline-padding) !important;
     /* Add margin-block to buttons so they are positioned correctly. */
     margin: var(--uc-toolbarbutton-block-margin) 0 !important;
   }
 
   & .toolbarbutton-1 > .toolbarbutton-icon {
     width: calc(2 * var(--uc-toolbarbutton-inner-inline-padding) + 16px) !important;
-    height: calc(2 * var(--toolbarbutton-inner-padding) + 16px) !important;
+    height: calc(2 * var(--toolbarbutton-padding-inner) + 16px) !important;
   }
 
   /* Keep certain buttons (such as new tab) square shaped. */
   & #tabs-newtab-button > .toolbarbutton-icon,
   & #alltabs-button > .toolbarbutton-badge-stack,
   & #tabbrowser-tabs[hasadjacentnewtabbutton][overflow] ~ #new-tab-button > .toolbarbutton-icon {
-    padding: var(--toolbarbutton-inner-padding) !important;
-    width: calc(2 * var(--toolbarbutton-inner-padding) + 16px) !important;
+    padding: var(--toolbarbutton-padding-inner) !important;
+    width: calc(2 * var(--toolbarbutton-padding-inner) + 16px) !important;
   }
 
   /* Toolbar buttons should use the same colour as unselected tabs. */
@@ -174,8 +174,8 @@
 #scrollbutton-down:not(.menupopup-scrollbutton) {
   border-width: 2px !important;
   border-radius: calc(var(--toolbarbutton-border-radius) + 2px) !important;
-  padding-inline: calc(var(--toolbarbutton-inner-padding) - 4px) !important;
-  padding-block: var(--toolbarbutton-inner-padding) !important;
+  padding-inline: calc(var(--toolbarbutton-padding-inner) - 4px) !important;
+  padding-block: var(--toolbarbutton-padding-inner) !important;
 }
 
 /* Add margin to the side of the button facing the tabs so the buttons line up

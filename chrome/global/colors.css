@@ -32,17 +32,17 @@
   --newtab-background-color: light-dark(#f7f7f7, #252525) !important;
   --tabpanel-background-color: var(--newtab-background-color, var(--toolbar-background-color, transparent)) !important;
   /* Toolbar button overlays */
-  --toolbarbutton-hover-background: color-mix(in srgb, currentColor 8%, transparent) !important;
-  --toolbarbutton-active-background: color-mix(in srgb, currentColor 13.5%, transparent) !important;
+  --toolbarbutton-background-color-hover: color-mix(in srgb, currentColor 8%, transparent) !important;
+  --toolbarbutton-background-color-active: color-mix(in srgb, currentColor 13.5%, transparent) !important;
   /* Tab audio indicator overlay icon */
   --tab-icon-overlay-fill: var(--toolbar-color) !important;
   --tab-icon-overlay-stroke: var(--toolbar-background-color) !important;
   /* URL bar */
   --toolbar-field-background-color: light-dark(#fff, #2B2B2B) !important;
-  --toolbar-field-color: light-dark(#000, #fff) !important;
+  --toolbar-field-text-color: light-dark(#000, #fff) !important;
   --toolbar-field-border-color: transparent !important;
   --toolbar-field-background-color-focus: var(--toolbar-field-background-color) !important;
-  --toolbar-field-focus-color: var(--toolbar-field-color) !important;
+  --toolbar-field-text-color-focus: var(--toolbar-field-color) !important;
   --toolbar-field-focus-border-color: light-dark(#0055D780, #63ADE5) !important;
   --urlbar-icon-fill-opacity: 0.58 !important;
   --urlbar-box-background-color: light-dark(rgb(0 0 0 / .09), rgb(255 255 255 / .11)) !important;
@@ -52,15 +52,16 @@
   /* URL bar suggestions */
   --link-color: light-dark(#0078D4, #75B6E8) !important;
   --uc-urlbarView-accent-color: light-dark(#1A6397, #75B6E8) !important;
-  --urlbarView-highlight-background: light-dark(#F2F2F2, #383838) !important;
+  --urlbarview-background-color-selected: light-dark(#F2F2F2, #383838) !important;
   --urlbarView-highlight-color: light-dark(#000, #fff) !important;
-  --urlbarView-hover-background: light-dark(#e5e5e5, #444444) !important;
+  --urlbarview-background-color-hover: light-dark(#e5e5e5, #444444) !important;
   --urlbarView-separator-color: light-dark(#EFEFEF, #5F5F5F) !important;
   /* Menus/panels */
   --panel-text-color:  light-dark(#1c1c1c, #fff) !important;
   --panel-background-color: light-dark(#fff, #4A4A4A) !important;
   --panel-border-color: light-dark(#fff, #636363) !important;
   --panel-separator-color: light-dark(#dadada, #636363) !important;
+
   --button-background-color-ghost: transparent !important;
   --button-background-color-ghost-hover: light-dark(#eee, #646464) !important;
   --button-background-color-ghost-active: light-dark(#ddd, #747474) !important;
@@ -70,6 +71,7 @@
   --button-text-color-ghost-active: inherit !important;
   --button-text-color-ghost-disabled: inherit !important;
   --panel-banner-item-update-supported-bgcolor: light-dark(#188038, #81C995) !important;
+
   /* Primary button */
   --button-text-color-primary: light-dark(#fff, #fff) !important;
   --button-background-color-primary: light-dark(#0078D4, #006CBE) !important;
@@ -80,6 +82,8 @@
   --button-background-color: light-dark(#EFEFEF, #5C5C5C) !important;
   --button-background-color-hover: light-dark(#D5D5D5, #6E6E6E) !important;
   --button-background-color-active: light-dark(#C0C0C0, #7C7C7C) !important;
+  --button-border-color: transparent !important;
+  --button-border-radius: 8px !important;
   /* Text input field, e.g. bookmarks editor */
   --focus-outline-color: light-dark(#0055D780, #63ADE5) !important;
   --input-bgcolor: light-dark(#fff, #404040) !important;

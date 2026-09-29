@@ -149,20 +149,7 @@
     }
 
     @media -moz-pref("uc.tweak.theme.sidebery") {
-      border-radius: 0 !important;
       box-shadow: none !important;
-
-      &:not([positionend]) {
-        padding-inline-end: 3px;
-      }
-
-      &[positionend] {
-        padding-inline-start: 3px;
-      }
-    }
-
-    #sidebar-header {
-      padding-top: 4px !important;
     }
   }
 }

@@ -6,9 +6,9 @@
 */
 :root {
   --toolbarbutton-border-radius: 4px !important;
-  --toolbarbutton-inner-padding: 7px !important;
+  --toolbarbutton-padding-inner: 7px !important;
   --uc-toolbarbutton-inner-inline-padding: 12px !important;
-  --toolbarbutton-outer-padding: 2px !important;
+  --toolbarbutton-padding-outer: 2px !important;
   --tabs-navbar-shadow-size: 0px !important;
 }
 
@@ -38,16 +38,6 @@
   padding-inline: var(--uc-toolbarbutton-inner-inline-padding) !important;
 }
 
-/* move reload/stop icon to middle of button */
-#reload-button>.toolbarbutton-animatable-box,
-#stop-button>.toolbarbutton-animatable-box {
-  top: calc(50% - 10px) !important;
-}
-
-#nav-bar-customization-target :where(#reload-button, #stop-button)>.toolbarbutton-icon {
-  padding: var(--toolbarbutton-inner-padding) var(--uc-toolbarbutton-inner-inline-padding) !important;
-}
-
 toolbar .toolbaritem-combined-buttons {
   margin-inline: var(--toolbarbutton-outer-padding) !important;
 }
@@ -62,12 +52,12 @@ toolbar .toolbaritem-combined-buttons {
 }
 
 .browser-toolbar #fxa-toolbar-menu-button>.toolbarbutton-badge-stack {
-  padding: var(--toolbarbutton-inner-padding) !important;
-  margin-inline: calc(var(--uc-toolbarbutton-inner-inline-padding) - var(--toolbarbutton-inner-padding)) !important;
+  padding: var(--toolbarbutton-padding-inner) !important;
+  margin-inline: calc(var(--uc-toolbarbutton-inner-inline-padding) - var(--toolbarbutton-padding-inner)) !important;
 }
 
 #TabsToolbar #fxa-toolbar-menu-button>.toolbarbutton-badge-stack {
-  margin-inline: calc(var(--uc-toolbarbutton-inner-inline-padding) - (var(--toolbarbutton-inner-padding) + 2px)) !important;
+  margin-inline: calc(var(--uc-toolbarbutton-inner-inline-padding) - (var(--toolbarbutton-padding-inner) + 2px)) !important;
 }
 
 #fxa-toolbar-menu-button {

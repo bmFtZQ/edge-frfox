@@ -9,24 +9,23 @@
   --urlbarView-item-inline-padding: calc(1px + var(--uc-urlbar-inline-padding) + var(--uc-urlbar-icon-inline-padding)) !important;
   --urlbar-icon-border-radius: 99px !important;
   --urlbar-inner-border-radius: 99px !important;
-  --urlbar-icon-padding: calc(var(--toolbarbutton-inner-padding) - 2px) !important;
+  --urlbar-icon-padding: calc(var(--toolbarbutton-padding-inner) - 2px) !important;
   --urlbar-margin-inline: 6px !important;
   --identity-box-margin-inline: 6px !important;
   --uc-urlbar-icon-inline-padding: var(--uc-toolbarbutton-inner-inline-padding);
   --uc-urlbar-inline-padding: 5px;
   --uc-urlbar-shadow: 0 0 4px rgb(0 0 0 / .1);
   --urlbarView-rich-suggestion-default-icon-size: 32px !important;
-  --uc-urlbar-open-border-radius: 8px !important;
 
   /* urlbar height */
   & #urlbar-container {
-    --urlbar-container-height: calc(8px + 16px + var(--toolbarbutton-inner-padding) * 2) !important;
+    --urlbar-container-height: calc(8px + 16px + var(--toolbarbutton-padding-inner) * 2) !important;
   }
 
   & #urlbar {
-    --urlbar-toolbar-height: calc(8px + 16px + var(--toolbarbutton-inner-padding) * 2) !important;
-    --urlbar-height: calc(16px + var(--toolbarbutton-inner-padding) * 2) !important;
-    --urlbar-min-height: calc(16px + var(--toolbarbutton-inner-padding) * 2) !important;
+    --urlbar-toolbar-height: calc(8px + 16px + var(--toolbarbutton-padding-inner) * 2) !important;
+    --urlbar-height: calc(16px + var(--toolbarbutton-padding-inner) * 2) !important;
+    --urlbar-min-height: calc(16px + var(--toolbarbutton-padding-inner) * 2) !important;
   }
 
   /* Spacing for urlbar suggestion icons. */
@@ -34,30 +33,32 @@
     --urlbarView-icon-margin-start: 0px !important;
     --urlbarView-icon-margin-end: calc(var(--uc-urlbar-icon-inline-padding) + var(--identity-box-margin-inline)) !important;
   }
+  
+  --urlbar-background-overhang-open: 4px !important;
+  --urlbarView-margin-inline: 0px !important;
+  --urlbar-border-radius: 8px !important;
+  --urlbarView-row-gutter: 0px !important;
+	--urlbarView-row-padding-inline: 21px !important;
+	--urlbarView-padding: 0 !important;
+}
+
+.urlbar, #searchbar {
+	--urlbar-background-border-open: var(--urlbar-input-container-border-width) solid transparent !important;
+	--urlbar-background-border-top-radius-open: var(--urlbar-background-border-radius) !important;
+	--urlbar-background-box-shadow-open: 0 10px 16px rgb(0 0 0 / 0.18), 0 3px 5px rgb(0 0 0 / 0.33) !important;
+	--urlbar-input-container-outline-open-focused: transparent !important;
 }
 
 /*
   MARK: URL bar
 */
-.urlbar-background,
+.urlbar:not([open]) .urlbar-background,
 #searchbar {
   border-radius: calc(var(--urlbar-icon-border-radius) + 2px) !important;
 
   /* Shadow for URL bar, only appears in light mode. */
   :root:not([lwtheme]) #nav-bar:not([brighttext]) & {
     box-shadow: var(--uc-urlbar-shadow, none);
-  }
-
-  /* Appearance when the URL bar is expanded. */
-  #urlbar[open] & {
-    border-radius: var(--uc-urlbar-open-border-radius) !important;
-    border-color: transparent !important;
-    box-shadow: 0 10px 16px rgb(0 0 0 / 0.18), 0 3px 5px rgb(0 0 0 / 0.33) !important;
-    outline: 0.5px solid var(--panel-border-color) !important;
-
-    :root:not([lwtheme]) & {
-      outline-color: var(--panel-separator-color) !important;
-    }
   }
 }
 
@@ -75,8 +76,11 @@
   padding-block: 0 !important;
 
   & .urlbarView-body-inner {
-    width: 100% !important;
-    margin-inline: 0 !important;
+    /* Align edge of items with edge of open panel */
+    margin: calc(-1 * var(--urlbar-background-overhang-open)) !important;
+    margin-top: 0 !important;
+    padding-top: var(--urlbar-background-overhang-open) !important;
+    padding-bottom: var(--urlbar-border-radius) !important;
   }
 
   /* Remove padding from top of URL bar results, not needed as URL bar input already has padding. */
@@ -153,7 +157,8 @@
 #urlbar-go-button,
 .search-go-button,
 #tracking-protection-icon-container,
-#identity-icon-box {
+#identity-icon-box,
+#trust-icon-container {
   padding-inline: var(--uc-urlbar-icon-inline-padding) !important;
   width: calc(var(--uc-urlbar-icon-inline-padding) * 2 + 16px) !important;
 }

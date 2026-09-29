@@ -46,28 +46,4 @@
 .findbar-find-next,
 findbar .close-icon {
   border-radius: var(--toolbarbutton-border-radius) !important;
-
-  &:not([disabled]):hover {
-    background-color: var(--toolbarbutton-hover-background, rgb(190 190 190 / .2)) !important;
-
-    &:active {
-      background-color: var(--toolbarbutton-active-background, rgb(190 190 190 / .4)) !important;
-    }
-  }
-}
-
-/*
-  MARK: Rounded corners
-*/
-@media -moz-pref("uc.tweak.rounded-corners") {
-  findbar {
-    border: none !important;
-    margin-bottom: var(--uc-tweak-rounded-corners-padding, 0px) !important;
-    background-color: transparent !important;
-    padding-inline: var(--uc-tweak-rounded-corners-padding, 0px) !important;
-
-    &[hidden] {
-      margin-bottom: calc(var(--uc-tweak-rounded-corners-padding, 0px) - 40px) !important;
-    }
-  }
 }

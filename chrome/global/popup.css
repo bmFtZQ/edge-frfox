@@ -15,6 +15,7 @@
   --uc-panel-menuitem-margin-block: 2px;
   --panel-separator-padding-vertical: 2px !important;
   --panel-separator-padding-horizontal: 0 !important;
+  --panel-separator-padding: var(--panel-separator-padding-vertical, --panel-separator-padding-horizontal) !important;
 
   --uc-panel-zoom-button-padding: 8px;
   --uc-panel-zoom-button-inline-padding: 9px;
@@ -281,7 +282,7 @@ panelview .toolbarbutton-1,
 
 .downloadButton {
   min-width: calc(16px + var(--uc-toolbarbutton-inner-inline-padding) * 2) !important;
-  height: calc(16px + var(--toolbarbutton-inner-padding) * 2) !important;
+  height: calc(16px + var(--toolbarbutton-padding-inner) * 2) !important;
   border-radius: var(--toolbarbutton-border-radius) !important;
 }
 
