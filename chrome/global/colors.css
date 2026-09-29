@@ -16,6 +16,11 @@
   --lwt-text-color-inactive: light-dark(#3A3A3A, #CBCBCB) !important;
   --tab-selected-textcolor: light-dark(#000, #fff) !important;
   --tab-selected-textcolor-inactive: light-dark(#3E3E3E, #CBCBCB) !important;
+
+  /* Firefox Nova tab colour changes */
+  --tab-background-color: transparent !important;
+  --tab-border-color-accent: none !important;
+
   --tab-background-color-selected: var(--toolbar-background-color) !important;
   --tab-attention-icon-color: light-dark(#0078D4, #93d0ff) !important;
   --toolbar-background-color: light-dark(#f7f7f7, #3B3B3B) !important;
