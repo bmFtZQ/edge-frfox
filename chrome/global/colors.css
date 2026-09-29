@@ -24,6 +24,27 @@
   --tab-background-color-selected: var(--toolbar-background-color) !important;
   --tab-attention-icon-color: light-dark(#0078D4, #93d0ff) !important;
   --toolbar-background-color: light-dark(#f7f7f7, #3B3B3B) !important;
+
+  /* Nova (FF 155+) paints selected tabs with a violet->orange gradient
+   * border via --tab-border-color-accent. Flatten it to match the solid
+   * edge-frfox tab background instead of Microsoft Edge's plain tabs.
+   * NOTE: --tab-border-color-accent is consumed as a `background-image`
+   * layer (`... border-box border-area`), so it must resolve to a valid
+   * <image>, not a plain <color> - a solid colour there makes the whole
+   * `background:` shorthand invalid, which made selected tabs render
+   * fully transparent. Use a same-stop linear-gradient instead. */
+  @media -moz-pref("browser.nova.enabled") {
+    --tab-border-color-accent: linear-gradient(var(--tab-background-color-selected), var(--tab-background-color-selected)) !important;
+    --tab-border-color-selected-leading: var(--tab-background-color-selected) !important;
+    --tab-border-color-selected-trailing: var(--tab-background-color-selected) !important;
+
+    /* Nova also paints the *entire* #navigator-toolbox with a violet->orange
+     * branding gradient via --toolbox-background-image (built from
+     * --toolbox-background-gradient), independent of the tab border above.
+     * This is what actually produced the visible gradient across the tab
+     * strip/toolbar - disable it entirely for the flat edge-frfox look. */
+    --toolbox-background-image: none !important;
+  }
   --toolbar-color: light-dark(#000, #fff) !important;
   --toolbarbutton-icon-fill: var(--toolbar-color) !important;
   --toolbarbutton-icon-fill-attention: light-dark(#0078D4, #4C98D1) !important;
@@ -367,5 +388,51 @@ body {
     width: 4px !important;
     background-color: transparent !important;
     margin-inline-start: -4px !important;
+  }
+}
+
+/*
+  MARK: Nova content-area border (FF 155+)
+*/
+/* Nova wraps the page content (.browserContainer) in a rounded "card" with a
+ * 1px solid border (content-area.css:
+ * "#tabbrowser-tabpanels > :not(.split-view-panel) .browserContainer") and
+ * adds --chrome-window-gap margins around #navigator-toolbox/#browser, so
+ * every page now sits inside a visible outline instead of flush against the
+ * chrome. edge-frfox (based on Edge) doesn't have this floating-card look,
+ * so remove the border/radius/gap and restore the flush classic layout. */
+@media -moz-pref("browser.nova.enabled") {
+  #tabbrowser-tabpanels > :not(.split-view-panel) .browserContainer {
+    border: none !important;
+    border-radius: 0 !important;
+  }
+
+  /* Scoped to non-fullscreen: Firefox's fullscreen auto-hide toggles the
+   * toolbar via an inline `style="margin-top: ..."` on #navigator-toolbox
+   * (browser-fullScreenAndPointerLock.js showNavToolbox/hideNavToolbox).
+   * An unscoped `!important` here permanently pinned margin-top to 0,
+   * which kept the toolbox from sliding out of view and broke the
+   * reveal-on-hover hit-testing at the top edge in fullscreen (tabs
+   * couldn't be clicked, window couldn't be dragged there). */
+  :root:not([inFullscreen], [inDOMFullscreen]) #navigator-toolbox {
+    margin: 0 !important;
+  }
+
+  :root:not([inFullscreen], [inDOMFullscreen]) #browser {
+    padding: 0 !important;
+    gap: 0 !important;
+  }
+
+  /* #navigator-toolbox itself has class="chrome-block" in the markup
+   * (browser.xhtml), which gives it the same 1px floating-card border as
+   * .browserContainer above. That border sits right at the very top edge
+   * of the window, and its (invisible, but still hit-tested) box eats the
+   * first ~1 device-pixel row of clicks - so in a maximized window, the
+   * topmost pixel of the tab strip doesn't register clicks/drags, it hits
+   * #navigator-toolbox's border instead of the tab underneath. Zero it out
+   * to restore the classic flush edge. */
+  #navigator-toolbox.chrome-block {
+    border: none !important;
+    border-radius: 0 !important;
   }
 }

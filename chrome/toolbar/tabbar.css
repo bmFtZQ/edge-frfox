@@ -49,6 +49,16 @@
     /* Gap between tab and adjacent buttons (+2px button margin). */
     --uc-toolbarbutton-tab-gap: 2px;
 
+    /* Nova (FF 155+) bumps --tab-margin-block to 6px and switches
+     * --tab-background-color-selected to --background-color-box (a panel
+     * token, not the toolbar token edge-frfox controls). Pin both back to
+     * the classic values so tab height/colour stay consistent with the
+     * rest of the theme. */
+    @media -moz-pref("browser.nova.enabled") {
+      --tab-margin-block: var(--dimension-4, 4px) !important;
+      --background-color-box: var(--tab-background-color-selected) !important;
+    }
+
     @media -moz-pref("uc.tweak.rounded-corners") {
       --tab-border-radius: 8px !important;
       --uc-toolbarbutton-tab-gap: 6px;
